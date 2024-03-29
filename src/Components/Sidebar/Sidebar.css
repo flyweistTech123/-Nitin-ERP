@@ -1,0 +1,83 @@
+.sidebar{
+    width: 262px;
+    height: auto;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+    background-color: #FFFFFF;
+    cursor: pointer;
+    border: 1px solid ;
+}
+
+
+.sidebar1{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+
+.sidebar2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.sidebar2 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #3F3F3F;
+}
+
+
+.sidebar3{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+
+.sidebar4{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.sidebar4 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #3F3F3F;
+}
+
+
+.sidebar5{
+    width: 222px;
+    height: auto;
+    border-radius: 16px;
+    background: linear-gradient(to right, #F4F4F4 66%, #FFFFFF 100%);
+    padding-bottom: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+
+.sidebar6{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    gap: 10px;
+}
+
+.sidebar6 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #3F3F3F;
+}

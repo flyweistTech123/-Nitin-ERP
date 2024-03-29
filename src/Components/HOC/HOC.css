@@ -1,0 +1,24 @@
+.container1 {
+  height: 100vh;
+}
+
+.sidebar {
+  flex: 0 0 auto;
+  display: flex;
+}
+
+.content {
+  flex: 1;
+}
+
+.child-component {
+  flex: 1;
+  padding: 10px;
+  background-color: #f4f4f4;
+}
+
+
+
+.sidebar-hidden .content {
+  flex: 1 1 100%;
+}
