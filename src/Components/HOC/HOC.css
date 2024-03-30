@@ -1,24 +1,37 @@
+/* HOC.css */
+
 .container1 {
-  height: 100vh;
-}
-
-.sidebar {
-  flex: 0 0 auto;
   display: flex;
+  flex-direction: column;
+  height: 100vh; 
 }
 
-.content {
-  flex: 1;
+.hocnavbar {
+  flex: 0 0 auto;
+}
+
+.hoccontainer {
+  display: flex;
+  flex: 1; 
+}
+
+.hocsidebar {
+  flex: 0 0 auto; 
+  width: 262px; 
 }
 
 .child-component {
-  flex: 1;
+  flex: 1; 
   padding: 10px;
-  background-color: #f4f4f4;
 }
 
-
-
-.sidebar-hidden .content {
-  flex: 1 1 100%;
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .hoccontainer {
+    flex-direction: column; 
+  }
+  
+  .hocsidebar {
+    width: 100%; 
+  }
 }

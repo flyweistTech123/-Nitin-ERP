@@ -1,10 +1,11 @@
 .sidebar{
     width: 262px;
     height: auto;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+    box-shadow: 0px  4px 10px rgba(0, 0, 0, 0.8); 
     background-color: #FFFFFF;
     cursor: pointer;
-    border: 1px solid ;
+    /* border: 2px solid ; */
+    padding-bottom: 20px;
 }
 
 
@@ -12,8 +13,6 @@
     padding-left: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-top: 20px;
 }
 
 
@@ -21,6 +20,7 @@
     display: flex;
     align-items: center;
     gap: 20px;
+    padding-top: 30px;
 }
 
 
@@ -30,6 +30,7 @@
     font-size: 14px;
     line-height: 19.1px;
     color: #3F3F3F;
+    margin: 0;
 }
 
 
@@ -54,6 +55,7 @@
     font-size: 14px;
     line-height: 19.1px;
     color: #3F3F3F;
+    margin: 0;
 }
 
 
@@ -64,6 +66,7 @@
     background: linear-gradient(to right, #F4F4F4 66%, #FFFFFF 100%);
     padding-bottom: 20px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+    margin-top: 20px;
 }
 
 
@@ -72,6 +75,7 @@
     align-items: center;
     padding-left: 20px;
     gap: 10px;
+    padding-top: 20px;
 }
 
 .sidebar6 p{
@@ -80,4 +84,29 @@
     font-size: 14px;
     line-height: 19.1px;
     color: #3F3F3F;
+    margin: 0;
+
+}
+
+.sidebar7{
+    /* padding-top: 20px; */
+
+}
+
+
+
+
+.subMenu{
+
+}
+
+
+.subMenu ul li{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #3F3F3F;
+    padding-top: 10px;
+    margin: 0;
 }

@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react';
 import './Sidebar.css'
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 
 import img from '../../Img/img6.png'
@@ -17,120 +17,231 @@ import img10 from '../../Img/img15.png'
 import img11 from '../../Img/img17.png'
 import img12 from '../../Img/img18.png'
 import img13 from '../../Img/img19.png'
+import { Link } from 'react-router-dom';
+
+
+
 
 const Sidebar = () => {
+
+    const [expandedMenus, setExpandedMenus] = useState([]);
+    const [expandedMenus1, setExpandedMenus1] = useState([]);
+    const [expandedMenus2, setExpandedMenus2] = useState([]);
+    const [expandedMenus3, setExpandedMenus3] = useState([]);
+
+    const toggleMenu = (index) => {
+        const newExpandedMenus = [...expandedMenus];
+        if (newExpandedMenus.includes(index)) {
+            newExpandedMenus.splice(newExpandedMenus.indexOf(index), 1);
+        } else {
+            newExpandedMenus.push(index);
+        }
+        setExpandedMenus(newExpandedMenus);
+    };
+    const toggleMenu1 = (index) => {
+        const newExpandedMenus = [...expandedMenus1];
+        if (newExpandedMenus.includes(index)) {
+            newExpandedMenus.splice(newExpandedMenus.indexOf(index), 1);
+        } else {
+            newExpandedMenus.push(index);
+        }
+        setExpandedMenus1(newExpandedMenus);
+    };
+    const toggleMenu2 = (index) => {
+        const newExpandedMenus = [...expandedMenus2];
+        if (newExpandedMenus.includes(index)) {
+            newExpandedMenus.splice(newExpandedMenus.indexOf(index), 1);
+        } else {
+            newExpandedMenus.push(index);
+        }
+        setExpandedMenus2(newExpandedMenus);
+    };
+    const toggleMenu3 = (index) => {
+        const newExpandedMenus = [...expandedMenus3];
+        if (newExpandedMenus.includes(index)) {
+            newExpandedMenus.splice(newExpandedMenus.indexOf(index), 1);
+        } else {
+            newExpandedMenus.push(index);
+        }
+        setExpandedMenus3(newExpandedMenus);
+    };
     return (
         <>
             <div className='sidebar'>
-                <div className='sidebar1'>
-                    <div className='sidebar2'>
-                        <img src={img} alt="" />
-                        <p>Dashboard</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img1} alt="" />
-                        <p>CRM</p>
-                    </div>
-                    <div className='sidebar3'>
-                        <div className='sidebar4'>
-                            <img src={img2} alt="" />
-                            <p>Section</p>
-                        </div>
-                        <IoIosArrowDown />
-                    </div>
-                    <div className='sidebar3'>
-                        <div className='sidebar4'>
-                            <img src={img3} alt="" />
-                            <p>Template</p>
-                        </div>
-                        <IoIosArrowDown />
-                    </div>
-                    <div className='sidebar3'>
-                        <div className='sidebar4'>
-                            <img src={img4} alt="" />
-                            <p>Automation Report</p>
-                        </div>
-                        <IoIosArrowDown />
-                    </div>
 
-                    <div className='sidebar5'>
-                        <div className='sidebar6'>
-                            <img src={img11} alt="" />
-                            <p>Document</p>
+                <div className='sidebar7'>
+                    <div className='sidebar1'>
+                        <Link to={'/dashboard'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img} alt="" />
+                                <p>Dashboard</p>
+                            </div>
+                        </Link>
+                        <div className='sidebar2'>
+                            <img src={img1} alt="" />
+                            <p>CRM</p>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img12} alt="" />
-                            <p>IT Report</p>
+                        <div className='sidebar2'>
+                            <div className='sidebar3' onClick={() => toggleMenu(0)}>
+                                <div className='sidebar4'>
+                                    <img src={img2} alt="" />
+                                    <p>Section</p>
+                                </div>
+                                <div>
+                                    {expandedMenus.includes(0) ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                </div>
+
+                            </div>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img12} alt="" />
-                            <p>IT Target Report</p>
+                        {expandedMenus.includes(0) && (
+                            <div className='subMenu'>
+                                <ul>
+                                    <Link to={'/admission'} className='link'>
+                                        <li>Admission</li>
+                                    </Link>
+                                    <li>Backend</li>
+                                    <li>Service</li>
+                                </ul>
+                            </div>
+                        )}
+
+                        <div className='sidebar2'>
+                            <div className='sidebar3' onClick={() => toggleMenu1(0)}>
+                                <div className='sidebar4'>
+                                    <img src={img3} alt="" />
+                                    <p>Template</p>
+                                </div>
+                                <div>
+                                    {expandedMenus1.includes(0) ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                </div>
+
+                            </div>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img12} alt="" />
-                            <p>IT Target Analysis</p>
+                        {expandedMenus1.includes(0) && (
+                            <div className='subMenu'>
+                                <ul>
+                                    <li>Admission</li>
+                                    <li>Backend</li>
+                                    <li>Service</li>
+                                </ul>
+                            </div>
+                        )}
+                        <div className='sidebar2'>
+                            <div className='sidebar3' onClick={() => toggleMenu2(0)}>
+                                <div className='sidebar4'>
+                                    <img src={img4} alt="" />
+                                    <p>Automation Report </p>
+                                </div>
+                                <div>
+                                    {expandedMenus2.includes(0) ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                </div>
+
+                            </div>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img12} alt="" />
-                            <p>Daily Report Template</p>
+                        {expandedMenus2.includes(0) && (
+                            <div className='subMenu'>
+                                <ul>
+                                    <li>Admission</li>
+                                    <li>Backend</li>
+                                    <li>Service</li>
+                                </ul>
+                            </div>
+                        )}
+
+                        <div className='sidebar5'>
+                            <div className='sidebar6'>
+                                <img src={img11} alt="" />
+                                <p>Document</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img12} alt="" />
+                                <p>IT Report</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img12} alt="" />
+                                <p>IT Target Report</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img12} alt="" />
+                                <p>IT Target Analysis</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img12} alt="" />
+                                <p>Daily Report Template</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img13} alt="" />
+                                <p>Call Recording Storage</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img12} alt="" />
+                                <p>IT Reporting Template</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img12} alt="" />
+                                <p>Sales Target</p>
+                            </div>
+                            <div className='sidebar6'>
+                                <img src={img13} alt="" />
+                                <p>Call Recording Analysis</p>
+                            </div>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img13} alt="" />
-                            <p>Call Recording Storage</p>
+                        <div className='sidebar2'>
+                            <img src={img5} alt="" />
+                            <p>Drive</p>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img12} alt="" />
-                            <p>IT Reporting Template</p>
+                        <div className='sidebar2'>
+                            <img src={img6} alt="" />
+                            <p>Employees</p>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img12} alt="" />
-                            <p>Sales Target</p>
+                        <div className='sidebar2'>
+                            <img src={img7} alt="" />
+                            <p>Company Structure</p>
                         </div>
-                        <div className='sidebar6'>
-                            <img src={img13} alt="" />
-                            <p>Call Recording Analysis</p>
+                        <div className='sidebar2'>
+                            <img src={img8} alt="" />
+                            <p>History</p>
                         </div>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img5} alt="" />
-                        <p>Drive</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img6} alt="" />
-                        <p>Employees</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img7} alt="" />
-                        <p>Company Structure</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img8} alt="" />
-                        <p>History</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img9} alt="" />
-                        <p>Permission Access</p>
-                    </div>
-                    <div className='sidebar3'>
-                        <div className='sidebar4'>
-                            <img src={img10} alt="" />
-                            <p>Setting</p>
+                        <div className='sidebar2'>
+                            <img src={img9} alt="" />
+                            <p>Permission Access</p>
                         </div>
-                        <IoIosArrowDown />
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img9} alt="" />
-                        <p>Reference Form Data</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img9} alt="" />
-                        <p>Petty Cash</p>
-                    </div>
-                    <div className='sidebar2'>
-                        <img src={img9} alt="" />
-                        <p>Expense</p>
+                        <div className='sidebar2'>
+                            <div className='sidebar3' onClick={() => toggleMenu3(0)}>
+                                <div className='sidebar4'>
+                                    <img src={img10} alt="" />
+                                    <p>Setting</p>
+                                </div>
+                                <div>
+                                    {expandedMenus3.includes(0) ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                                </div>
+
+                            </div>
+                        </div>
+                        {expandedMenus3.includes(0) && (
+                            <div className='subMenu'>
+                                <ul>
+                                    <li>Admission</li>
+                                    <li>Backend</li>
+                                    <li>Service</li>
+                                </ul>
+                            </div>
+                        )}
+                        <div className='sidebar2'>
+                            <img src={img9} alt="" />
+                            <p>Reference Form Data</p>
+                        </div>
+                        <div className='sidebar2'>
+                            <img src={img9} alt="" />
+                            <p>Petty Cash</p>
+                        </div>
+                        <div className='sidebar2'>
+                            <img src={img9} alt="" />
+                            <p>Expense</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </>
     )
