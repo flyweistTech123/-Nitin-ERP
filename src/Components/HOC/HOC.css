@@ -6,23 +6,24 @@
   height: 100vh; 
 }
 
-.hocnavbar {
+/* .hocnavbar {
   flex: 0 0 auto;
-}
+} */
 
 .hoccontainer {
   display: flex;
-  flex: 1; 
 }
 
 .hocsidebar {
-  flex: 0 0 auto; 
-  width: 262px; 
+  width: 20%;
 }
 
 .child-component {
-  flex: 1; 
-  padding: 10px;
+  width: 80%;
+  padding: '10px';
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #f4f4f4;
 }
 
 /* Media query for smaller screens */

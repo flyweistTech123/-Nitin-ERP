@@ -1,0 +1,27 @@
+.payreceived{
+}
+
+
+.payreceived1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.payreceived1 button{
+    width: auto;
+    height: auto;
+    background-color: #2155CD;
+    border-radius: 4px;
+    padding: 12px 25px 12px 25px;
+    border: none;
+    outline: none;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+    cursor: pointer;
+}

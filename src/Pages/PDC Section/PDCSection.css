@@ -1,0 +1,88 @@
+.pdc{
+
+}
+
+
+.pdc1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+
+
+.pdc1 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.pdc2{
+    border: 1px solid #3F3F3F;
+    flex: 1;
+    max-width: 80% !important;   
+    width: auto; 
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+}
+
+.pdc5{
+    display: flex;
+    gap: 70px;
+    width: 78%;
+}
+
+.pdc2 input{
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    width: 100%;
+}
+
+
+.pdc3{
+    width: auto;
+    height: auto;
+    padding: 10px 26px 10px 26px;
+    background-color: #1B55E2;
+    border-radius: 0px 4px 4px 0px;
+}
+
+
+.pdc3 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+
+
+.pdc4 button{
+    width: auto;
+    height: auto;
+    background-color: #2155CD;
+    padding: 12px 54px 12px 54px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+    cursor: pointer;
+}

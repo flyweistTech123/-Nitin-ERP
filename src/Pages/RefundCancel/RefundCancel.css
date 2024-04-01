@@ -1,0 +1,56 @@
+.cancel {
+}
+
+.cancel1 {
+  width: auto;
+  height: auto;
+  background-color: #2155cd;
+  padding: 12px 42px 12px 42px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel1 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cancel2 {
+  width: auto;
+  height: auto;
+  background-color: #40af0c;
+  padding: 12px 43px 12px 43px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel2 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cancel3 {
+  width: auto;
+  height: auto;
+  background-color: #ff0000;
+  padding: 12px 34px 12px 34px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cancel3 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}

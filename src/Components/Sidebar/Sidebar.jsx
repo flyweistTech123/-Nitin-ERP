@@ -106,6 +106,25 @@ const Sidebar = () => {
                                         <li>Service</li>
                                     </Link>
 
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Pending Online Payments</li>
+                                    </Link>
+                                    <Link to={'/paymentreceived'} className='link'>
+                                        <li>Payment Received</li>
+                                    </Link>
+                                    <Link to={'/refundcancel'} className='link'>
+                                        <li>Refund/Cancel</li>
+                                    </Link>
+                                    <Link to={'/pdc'} className='link'>
+                                        <li>PDC Section</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Exam Attendance Status</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Results</li>
+                                    </Link>
+
                                 </ul>
                             </div>
                         )}
@@ -125,9 +144,18 @@ const Sidebar = () => {
                         {expandedMenus1.includes(0) && (
                             <div className='subMenu'>
                                 <ul>
-                                    <li>Admission</li>
-                                    <li>Backend</li>
-                                    <li>Service</li>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Whatsapp</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Telegram</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>E-mail</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>SMS</li>
+                                    </Link>
                                 </ul>
                             </div>
                         )}
@@ -146,9 +174,18 @@ const Sidebar = () => {
                         {expandedMenus2.includes(0) && (
                             <div className='subMenu'>
                                 <ul>
-                                    <li>Admission</li>
-                                    <li>Backend</li>
-                                    <li>Service</li>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Whatsapp</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>Telegram</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>E-mail</li>
+                                    </Link>
+                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                        <li>SMS</li>
+                                    </Link>
                                 </ul>
                             </div>
                         )}

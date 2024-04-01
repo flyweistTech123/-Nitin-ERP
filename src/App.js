@@ -7,6 +7,10 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import Admission from './Pages/Admission/Admission';
 import Service from './Pages/Service/Service';
 import Backend from './Pages/Backend/Backend';
+import PendingOnlinePayments from './Pages/Pending Online Payments/PendingOnlinePayments';
+import PaymentReceived from './Pages/Payment Received/PaymentReceived';
+import RefundCancel from './Pages/RefundCancel/RefundCancel';
+import PDCSection from './Pages/PDC Section/PDCSection';
 
 function App() {
   return (
@@ -19,6 +23,10 @@ function App() {
           <Route path="/admission" element={<Admission />} />
           <Route path="/service" element={<Service />} />
           <Route path="/backend" element={<Backend />} />
+          <Route path="/pendingonlinepayments" element={<PendingOnlinePayments />} />
+          <Route path="/paymentreceived" element={<PaymentReceived />} />
+          <Route path="/refundcancel" element={<RefundCancel />} />
+          <Route path="/pdc" element={<PDCSection />} />
         </Routes>
       </BrowserRouter>
     </>
