@@ -99,8 +99,13 @@ const Sidebar = () => {
                                     <Link to={'/admission'} className='link'>
                                         <li>Admission</li>
                                     </Link>
-                                    <li>Backend</li>
-                                    <li>Service</li>
+                                    <Link to={'/backend'} className='link'>
+                                        <li>Backend</li>
+                                    </Link>
+                                    <Link to={'/service'} className='link'>
+                                        <li>Service</li>
+                                    </Link>
+
                                 </ul>
                             </div>
                         )}
