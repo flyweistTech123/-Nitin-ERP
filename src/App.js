@@ -13,6 +13,8 @@ import RefundCancel from './Pages/RefundCancel/RefundCancel';
 import PDCSection from './Pages/PDC Section/PDCSection';
 import ExamAttendanceStatus from './Pages/Exam Attendance Status/ExamAttendanceStatus';
 import Results from './Pages/Results/Results';
+import Template from './Pages/Template/Template';
+import TelegramTemplate from './Pages/Template/TelegramTemplate';
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/pdc" element={<PDCSection />} />
           <Route path="/examattendancestatus" element={<ExamAttendanceStatus />} />
           <Route path="/results" element={<Results />} />
+          <Route path="/template" element={<Template />} />
+          <Route path="/telegramtemplate" element={<TelegramTemplate />} />
         </Routes>
       </BrowserRouter>
     </>

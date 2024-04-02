@@ -144,7 +144,7 @@ const Sidebar = () => {
                         {expandedMenus1.includes(0) && (
                             <div className='subMenu'>
                                 <ul>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/template'} className='link'>
                                         <li>Whatsapp</li>
                                     </Link>
                                     <Link to={'/pendingonlinepayments'} className='link'>
@@ -174,7 +174,7 @@ const Sidebar = () => {
                         {expandedMenus2.includes(0) && (
                             <div className='subMenu'>
                                 <ul>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/template'} className='link'>
                                         <li>Whatsapp</li>
                                     </Link>
                                     <Link to={'/pendingonlinepayments'} className='link'>
