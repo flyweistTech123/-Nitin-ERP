@@ -118,10 +118,10 @@ const Sidebar = () => {
                                     <Link to={'/pdc'} className='link'>
                                         <li>PDC Section</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/examattendancestatus'} className='link'>
                                         <li>Exam Attendance Status</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/results'} className='link'>
                                         <li>Results</li>
                                     </Link>
 

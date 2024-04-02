@@ -39,6 +39,7 @@ const PDCSection = () => {
             nextFollowDate: "DD/MM/YYYY",
             historyLogs: "DD/MM/YYYY",
             changedDate: "DD/MM/YYYY",
+            addedOn: "DD/MM/YYYY",
             changedBy: "Loren Epsom",
             callrecordingoption: "Call.mp3",
         },
@@ -69,6 +70,7 @@ const PDCSection = () => {
             nextFollowDate: "DD/MM/YYYY",
             historyLogs: "DD/MM/YYYY",
             changedDate: "DD/MM/YYYY",
+            addedOn: "DD/MM/YYYY",
             changedBy: "Loren Epsom",
             callrecordingoption: "Call.mp3",
         },
@@ -98,6 +100,7 @@ const PDCSection = () => {
             nextFollowDate: "DD/MM/YYYY",
             historyLogs: "DD/MM/YYYY",
             changedDate: "DD/MM/YYYY",
+            addedOn: "DD/MM/YYYY",
             changedBy: "Loren Epsom",
             callrecordingoption: "Call.mp3",
         },
@@ -127,6 +130,7 @@ const PDCSection = () => {
             nextFollowDate: "DD/MM/YYYY",
             historyLogs: "DD/MM/YYYY",
             changedDate: "DD/MM/YYYY",
+            addedOn: "DD/MM/YYYY",
             changedBy: "Loren Epsom",
             callrecordingoption: "Call.mp3",
         },
@@ -156,6 +160,7 @@ const PDCSection = () => {
             nextFollowDate: "DD/MM/YYYY",
             historyLogs: "DD/MM/YYYY",
             changedDate: "DD/MM/YYYY",
+            addedOn: "DD/MM/YYYY",
             changedBy: "Loren Epsom",
             callrecordingoption: "Call.mp3",
         },
@@ -185,6 +190,7 @@ const PDCSection = () => {
             nextFollowDate: "DD/MM/YYYY",
             historyLogs: "DD/MM/YYYY",
             changedDate: "DD/MM/YYYY",
+            addedOn: "DD/MM/YYYY",
             changedBy: "Loren Epsom",
             callrecordingoption: "Call.mp3",
         },
@@ -273,7 +279,7 @@ const PDCSection = () => {
                                     <th>Assigned Date</th>
                                     <th>Follow Up Created</th>
                                     <th>Follow Up Status</th>
-                                    <th>Follow Up status Filter</th>                                    <th>University</th>
+                                    <th>Follow Up status Filter</th>
                                     <th>Priority</th>
                                     <th>Absent Records</th>
                                     <th>Present Records</th>
@@ -297,12 +303,35 @@ const PDCSection = () => {
                                         <td><img src={img} alt="" /></td>
                                         <td>{data.university}</td>
                                         <td>{data.course}</td>
-                                        <td><RiErrorWarningFill /></td>
+                                        <td><RiErrorWarningFill color='#2155CD' size={25} /></td>
                                         <td>{data.feeStructureMode}</td>
-                                        <td>{data.course}</td>
-                                        <td><IoEye /></td>
-                                        <td><IoEye /></td>
+                                        <td><IoEye color='#2155CD' size={25} /></td>
+                                        <td><IoEye color='#2155CD' size={25} /></td>
                                         <td>{data.followUpData}</td>
+                                        <td>{data.responsiblePerson}</td>
+                                        <td>{data.contact}</td>
+                                        <td>{data.contact}</td>
+                                        <td>{data.email}</td>
+                                        <td>{data.serviceManager}</td>
+                                        <td>{data.skipBatch}</td>
+                                        <td>{data.admissionDate}</td>
+                                        <td>{data.assignedDate}</td>
+                                        <td>{data.followUpCreated}</td>
+                                        <td>{data.status}</td>
+                                        <td>{data.followUpstatusFilter}</td>
+                                        <td>{data.priority}</td>
+                                        <td>{data.absentRecords}</td>
+                                        <td>{data.presentRecords}</td>
+                                        <td>{data.lastBatch}</td>
+                                        <td>{data.totalAmount}</td>
+                                        <td>{data.receivedAmount}</td>
+                                        <td>{data.balance}</td>
+                                        <td>{data.nextFollowDate}</td>
+                                        <td>{data.historyLogs}</td>
+                                        <td>{data.changedDate}</td>
+                                        <td>{data.addedOn}</td>
+                                        <td>{data.changedBy}</td>
+                                        <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }}>{data.callrecordingoption}</td>
                                         <td>
                                             <div className='admission14'>
                                                 <button>History</button>
@@ -313,6 +342,32 @@ const PDCSection = () => {
                             </tbody>
                         </table>
                     </div>
+                </div>
+
+
+
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
+                    </div>
+                </div>
+
+                <div className='admission18'>
+                    <button>Previous</button>
+                    <button>Next</button>
                 </div>
 
             </div>

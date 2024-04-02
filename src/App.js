@@ -11,6 +11,8 @@ import PendingOnlinePayments from './Pages/Pending Online Payments/PendingOnline
 import PaymentReceived from './Pages/Payment Received/PaymentReceived';
 import RefundCancel from './Pages/RefundCancel/RefundCancel';
 import PDCSection from './Pages/PDC Section/PDCSection';
+import ExamAttendanceStatus from './Pages/Exam Attendance Status/ExamAttendanceStatus';
+import Results from './Pages/Results/Results';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path="/paymentreceived" element={<PaymentReceived />} />
           <Route path="/refundcancel" element={<RefundCancel />} />
           <Route path="/pdc" element={<PDCSection />} />
+          <Route path="/examattendancestatus" element={<ExamAttendanceStatus />} />
+          <Route path="/results" element={<Results />} />
         </Routes>
       </BrowserRouter>
     </>
