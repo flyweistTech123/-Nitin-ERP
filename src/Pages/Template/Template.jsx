@@ -24,7 +24,7 @@ const Template = () => {
                         <div className='template3'>
                             <img src={img} alt="" />
                         </div>
-                        <Link to={'/telegramtemplate'} className='link'>
+                        <Link to={'/telegramtemplate'} className='link11'>
                             <div className='template4'>
                                 <p>Whatsapp</p>
                             </div>

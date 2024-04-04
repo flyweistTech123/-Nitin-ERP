@@ -1,5 +1,5 @@
 .dashboard {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .dashboard p {
@@ -14,22 +14,26 @@
 .dashboard1 {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   margin-top: 20px;
   justify-content: space-between;
 }
 
 .dashboard2 {
-  flex: 1;
-  max-width: 200px;
-  height: 139px;
+  flex-basis: calc(15% - 5px);
+  max-height: 139px;
+  max-width: 222px;
   border-radius: 12px;
   background-color: #ffffff;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  cursor: pointer;
 }
 
 .dashboard3 {
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .dashboard3 p {
@@ -39,19 +43,19 @@
   line-height: 20px;
   color: #000000;
   margin: 0;
-  padding-top: 10px;
 }
 
 .dashboard4 {
   display: flex;
   align-items: center;
-  gap: 15px;
-  justify-content: space-between;
-  margin-top: 10px;
+  gap: 30px;
+  margin-top: 30px;
 }
 
 .dashboard5 {
-  width: 343px;
+  flex-basis: calc(55% - 5px);
+  /* max-width: 343px; */
+  max-width: 100%;
   height: 315px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -190,7 +194,10 @@
 }
 
 .dashboard11 {
-  width: 370px;
+  flex-basis: calc(55% - 5px);
+  /* width: 370px;
+  height: 315px; */
+  max-width: 100%;
   height: 315px;
   background-color: #ffffff;
   border-radius: 12px;
@@ -310,12 +317,15 @@
 .dashboard19 {
   margin-top: 30px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 30px;
+  /* flex-wrap: wrap; */
+  /* justify-content: space-between; */
 }
 
 .dashboard20 {
-  width: 521px;
+  flex-basis: calc(55% - 5px);
+  /* width: 521px; */
+  max-width: 100%;
   height: auto;
   background-color: #ffffff;
   border-radius: 12px;
@@ -475,14 +485,17 @@
 
 .dashboard36 {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   align-items: center;
-  justify-content: space-between;
+  gap: 30px;
+  /* justify-content: space-between; */
   margin-top: 30px;
 }
 
 .dashboard37 {
-  width: 521px;
+  flex-basis: calc(55% - 5px);
+  /* width: 521px; */
+  max-width: 100%;
   height: auto;
   background-color: #ffffff;
   border-radius: 12px;
@@ -519,32 +532,29 @@
   margin: 0;
 }
 
-
 .dashboard41 {
   margin-top: 30px;
 }
 
-
-.dashboard35 table{
+.dashboard35 table {
   width: 95%;
   margin: auto;
   border-collapse: collapse;
 }
 
-
-.dashboard35 table th{
-  background-color: #2155CD;
+.dashboard35 table th {
+  background-color: #2155cd;
   text-align: center;
   height: 36px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
 }
 
-.dashboard35 table td{
+.dashboard35 table td {
   text-align: center;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
@@ -555,22 +565,19 @@
   height: 36px;
 }
 
-
-
-.dashboard42{
+.dashboard42 {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.dashboard42 img{
+.dashboard42 img {
   max-width: 21px;
   height: 21px;
 }
 
-
-.dashboard42 p{
+.dashboard42 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -579,9 +586,7 @@
   margin: 0;
 }
 
-
-
-.dashboard43{
+.dashboard43 {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -590,53 +595,51 @@
   margin-top: 30px;
 }
 
-.dashboard44{
+.dashboard44 {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.dashboard44 p{
+.dashboard44 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
   color: #000000;
-  margin: 0
+  margin: 0;
 }
 
-
-.dashboard45{
+.dashboard45 {
   width: 101px;
   height: 32px;
-  border: 1px solid #3F3F3F;
+  border: 1px solid #3f3f3f;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
-.dashboard45 p{
+.dashboard45 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #3F3F3F;
-  margin: 0
+  color: #3f3f3f;
+  margin: 0;
 }
 
-.dashboard46{
+.dashboard46 {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-.dashboard46 button{
+.dashboard46 button {
   width: auto;
   height: 28px;
   padding: 4px 16px 4px 16px;
-  background-color: #2155CD;
+  background-color: #2155cd;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -644,17 +647,10 @@
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #FFFFFF;
-  margin: 0
+  color: #ffffff;
+  margin: 0;
 }
 
-
-
-
-
-
-
-.link{
+.link {
   text-decoration: none;
-  
 }

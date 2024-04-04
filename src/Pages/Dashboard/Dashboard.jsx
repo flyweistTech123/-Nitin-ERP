@@ -336,8 +336,6 @@ const Dashboard = () => {
                             </div>
                         </Link>
                     </div>
-
-
                     <div className='dashboard2'>
                         <div className='dashboard3'>
                             <img src={img1} alt="" />
@@ -378,7 +376,7 @@ const Dashboard = () => {
                             <p>Engineering</p>
                         </div>
                         <div id="chart">
-                            <ReactApexChart options={options} series={series} type="donut" />
+                            <ReactApexChart options={options} series={series} type="donut"  width={320} />
                             <p>Total Students: 1000</p>
                         </div>
 
@@ -402,7 +400,7 @@ const Dashboard = () => {
                             </select>
                         </div>
                         <div id="chart">
-                            <ReactApexChart options={options1} series={series1} type="donut" />
+                            <ReactApexChart options={options1} series={series1} type="donut" width={320}/>
                             <div className='dashboard10'>
                                 <p>Total Revenue: ₹ 10,00,000</p>
                                 <span>See Student List</span>
