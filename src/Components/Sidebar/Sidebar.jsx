@@ -147,13 +147,13 @@ const Sidebar = () => {
                                     <Link to={'/template'} className='link'>
                                         <li>Whatsapp</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/template'} className='link'>
                                         <li>Telegram</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/template'} className='link'>
                                         <li>E-mail</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/template'} className='link'>
                                         <li>SMS</li>
                                     </Link>
                                 </ul>

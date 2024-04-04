@@ -9,7 +9,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import img from '../../Img/img33.png'
 
 
-const TelegramTemplate = () => {
+const EmailTemplate = () => {
     const tableData = [
         {
             id: 1,
@@ -60,7 +60,7 @@ const TelegramTemplate = () => {
         <>
             <div className='admission'>
                 <div className='admission1'>
-                    <p>Telegram Template</p>
+                    <p>Email Template</p>
                     <div className='admission2'>
                         <div className='cancel1'>
                             <p>ADD TELEGRAM TEMPLATE</p>
@@ -112,4 +112,4 @@ const TelegramTemplate = () => {
     )
 }
 
-export default HOC(TelegramTemplate)
+export default HOC(EmailTemplate)

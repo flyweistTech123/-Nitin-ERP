@@ -19,41 +19,53 @@ const Template = () => {
                 </div>
 
                 <div className='template1'>
+                    <Link to={'/watitemplate'} className='link11'>
+                        <div className='template2'>
+                            <div className='template3'>
+                                <img src={img} alt="" />
+                            </div>
 
-                    <div className='template2'>
-                        <div className='template3'>
-                            <img src={img} alt="" />
-                        </div>
-                        <Link to={'/telegramtemplate'} className='link11'>
                             <div className='template4'>
                                 <p>Whatsapp</p>
                             </div>
-                        </Link>
-                    </div>
-                    <div className='template2'>
-                        <div className='template5'>
-                            <img src={img1} alt="" />
+
                         </div>
-                        <div className='template4'>
-                            <p>Telegram</p>
+                    </Link>
+                    <Link to={'/telegramtemplate'} className='link11'>
+                        <div className='template2'>
+                            <div className='template5'>
+                                <img src={img1} alt="" />
+                            </div>
+
+                            <div className='template4'>
+                                <p>Telegram</p>
+                            </div>
+
                         </div>
-                    </div>
-                    <div className='template2'>
-                        <div className='template6'>
-                            <img src={img2} alt="" />
+                    </Link>
+                    <Link to={'/emailtemplate'} className='link11'>
+                        <div className='template2'>
+                            <div className='template6'>
+                                <img src={img2} alt="" />
+                            </div>
+
+                            <div className='template4'>
+                                <p>E-mail</p>
+                            </div>
+
                         </div>
-                        <div className='template4'>
-                            <p>E-mail</p>
+                    </Link>
+                    <Link to={'/smstemplate'} className='link11'>
+                        <div className='template2'>
+                            <div className='template7'>
+                                <img src={img3} alt="" />
+                            </div>
+
+                            <div className='template4'>
+                                <p>SMS</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className='template2'>
-                        <div className='template7'>
-                            <img src={img3} alt="" />
-                        </div>
-                        <div className='template4'>
-                            <p>SMS</p>
-                        </div>
-                    </div>
+                    </Link>
                 </div>
             </div >
         </>

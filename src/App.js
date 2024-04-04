@@ -15,6 +15,9 @@ import ExamAttendanceStatus from './Pages/Exam Attendance Status/ExamAttendanceS
 import Results from './Pages/Results/Results';
 import Template from './Pages/Template/Template';
 import TelegramTemplate from './Pages/Template/TelegramTemplate';
+import EmailTemplate from './Pages/Template/EmailTemplate';
+import SMSTemplate from './Pages/Template/SMSTemplate';
+import WatiTemplate from './Pages/Template/Whatsapp Template/WatiTemplate';
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
           <Route path="/results" element={<Results />} />
           <Route path="/template" element={<Template />} />
           <Route path="/telegramtemplate" element={<TelegramTemplate />} />
+          <Route path="/emailtemplate" element={<EmailTemplate />} />
+          <Route path="/smstemplate" element={<SMSTemplate />} />
+          <Route path="/watitemplate" element={<WatiTemplate />} />
         </Routes>
       </BrowserRouter>
     </>
