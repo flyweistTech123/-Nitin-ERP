@@ -2,8 +2,9 @@
 
 .container1 {
   /* display: flex;
-  flex-direction: column;
-  height: 100vh;  */
+  flex-direction: column; */
+  height: 100%; 
+  background-color: #f4f4f4;
 }
 
 .hocnavbar {
@@ -21,7 +22,7 @@
 .child-component {
   flex: 1;
   padding: 20px;
-  background-color: #f4f4f4;
+  width: 75%;
 }
 
 /* Media query for smaller screens */

@@ -84,7 +84,7 @@ const Admission = () => {
             paidDate: 'DD/MM/YYYY',
             history: 'History'
         },
-        
+
     ];
     return (
         <>
@@ -193,8 +193,8 @@ const Admission = () => {
                     <button>Previous</button>
                     <button>Next</button>
                 </div>
-                <div className='admission11'>
-                </div>
+                {/* <div className='admission11'>
+                </div> */}
             </div>
         </>
     )

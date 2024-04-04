@@ -1,10 +1,12 @@
 .backend{
+    margin-top: 20px;
 
 }
 
 
 .backend1{
     margin-top: 30px;
+    padding-left: 20px;
 }
 
 .backend1 p{
@@ -14,7 +16,7 @@
     line-height: 20px;
     color: #000000;
     margin: 0;
-    width: 97%;
+    /* width: 97%; */
     margin: auto;
 }
 
@@ -88,5 +90,4 @@
     align-items: center;
     justify-content: end;
     gap: 30px;
-    width: 97%;
 }
