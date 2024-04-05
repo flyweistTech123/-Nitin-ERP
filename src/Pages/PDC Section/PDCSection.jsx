@@ -331,7 +331,7 @@ const PDCSection = () => {
                                         <td>{data.changedDate}</td>
                                         <td>{data.addedOn}</td>
                                         <td>{data.changedBy}</td>
-                                        <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }}>{data.callrecordingoption}</td>
+                                        <td>{data.callrecordingoption}</td>
                                         <td>
                                             <div className='admission14'>
                                                 <button>History</button>

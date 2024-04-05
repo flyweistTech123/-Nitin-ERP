@@ -1,5 +1,5 @@
 import React from 'react'
-import './Template.css'
+import './Automation.css'
 import HOC from '../../Components/HOC/HOC'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,11 +10,13 @@ import img from '../../Img/img34.png'
 import img1 from '../../Img/img35.png'
 import img2 from '../../Img/img36.png'
 import img3 from '../../Img/img37.png'
+import img4 from '../../Img/img38.png'
+import img5 from '../../Img/img39.png'
 import { Link, useNavigate } from 'react-router-dom'
 
 
 
-const Template = () => {
+const Automation = () => {
     const [modalShow, setModalShow] = React.useState(false);
     const navigate = useNavigate()
 
@@ -30,12 +32,12 @@ const Template = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className='template17'>
-                        <div className='template18' onClick={()=>navigate('/watitemplate')}>
+                        <div className='template18' onClick={()=>navigate('/watiautomation')}>
                             <h6>Wati</h6>
                             <h6>Template</h6>
                         </div>
                         <div className='template19'>
-                            <div className='template18' onClick={()=>navigate('/interakttemplate')}>
+                            <div className='template18' onClick={()=>navigate('/interaktautomation')}>
                                 <h6>Interakt</h6>
                                 <h6>Template</h6>
                             </div>
@@ -53,7 +55,7 @@ const Template = () => {
             />
             <div className='template'>
                 <div className='admission1'>
-                    <p>Template</p>
+                    <p>Automation Logs</p>
                 </div>
 
                 <div className='template1'>
@@ -66,7 +68,7 @@ const Template = () => {
                         </div>
 
                     </div>
-                    <div className='template2' onClick={() => navigate('/telegramtemplate')}>
+                    <div className='template2' onClick={() => navigate('/telegramautomation')}>
                         <div className='template5'>
                             <img src={img1} alt="" />
                         </div>
@@ -77,7 +79,7 @@ const Template = () => {
 
                     </div>
 
-                    <div className='template2' onClick={() => navigate('/emailtemplate')}>
+                    <div className='template2' onClick={() => navigate('/emailautomation')}>
                         <div className='template6'>
                             <img src={img2} alt="" />
                         </div>
@@ -88,7 +90,7 @@ const Template = () => {
 
                     </div>
 
-                    <div className='template2' onClick={() => navigate('/smstemplate')}>
+                    <div className='template2' onClick={() => navigate('/smsautomation')}>
                         <div className='template7'>
                             <img src={img3} alt="" />
                         </div>
@@ -97,10 +99,28 @@ const Template = () => {
                             <p>SMS</p>
                         </div>
                     </div>
+                    <div className='template2' onClick={() => navigate('/zoomautomation')}>
+                        <div className=''>
+                            <img src={img4} alt="" />
+                        </div>
+
+                        <div className='template4'>
+                            <p>Zoom</p>
+                        </div>
+                    </div>
+                    <div className='template2' onClick={() => navigate('/meetingautomation')}>
+                        <div className=''>
+                            <img src={img5} alt="" />
+                        </div>
+
+                        <div className='template4'>
+                            <p>Meeting</p>
+                        </div>
+                    </div>
                 </div>
             </div >
         </>
     )
 }
 
-export default HOC(Template)
+export default HOC(Automation)

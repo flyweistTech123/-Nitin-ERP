@@ -1,0 +1,40 @@
+.salestarget{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+.salestarget button:nth-child(1){
+    width: auto;
+    height: auto;
+    padding: 8px 24px 8px 24px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #00C165;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+.salestarget button:nth-child(2){
+    width: auto;
+    height: auto;
+    padding: 8px 16px 8px 16px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    background-color: #FF0000;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #FFFFFF;
+    margin: 0;
+}

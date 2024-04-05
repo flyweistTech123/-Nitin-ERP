@@ -77,10 +77,12 @@ const Sidebar = () => {
                                 <p>Dashboard</p>
                             </div>
                         </Link>
-                        <div className='sidebar2'>
-                            <img src={img1} alt="" />
-                            <p>CRM</p>
-                        </div>
+                        <Link to={'/crm'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img1} alt="" />
+                                <p>CRM</p>
+                            </div>
+                        </Link>
                         <div className='sidebar2'>
                             <div className='sidebar3' onClick={() => toggleMenu(0)}>
                                 <div className='sidebar4'>
@@ -174,16 +176,16 @@ const Sidebar = () => {
                         {expandedMenus2.includes(0) && (
                             <div className='subMenu'>
                                 <ul>
-                                    <Link to={'/template'} className='link'>
+                                    <Link to={'/automationlogs'} className='link'>
                                         <li>Whatsapp</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/automationlogs'} className='link'>
                                         <li>Telegram</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/automationlogs'} className='link'>
                                         <li>E-mail</li>
                                     </Link>
-                                    <Link to={'/pendingonlinepayments'} className='link'>
+                                    <Link to={'/automationlogs'} className='link'>
                                         <li>SMS</li>
                                     </Link>
                                 </ul>
@@ -191,22 +193,30 @@ const Sidebar = () => {
                         )}
 
                         <div className='sidebar5'>
-                            <div className='sidebar6'>
-                                <img src={img11} alt="" />
-                                <p>Document</p>
-                            </div>
-                            <div className='sidebar6'>
-                                <img src={img12} alt="" />
-                                <p>IT Report</p>
-                            </div>
-                            <div className='sidebar6'>
-                                <img src={img12} alt="" />
-                                <p>IT Target Report</p>
-                            </div>
-                            <div className='sidebar6'>
-                                <img src={img12} alt="" />
-                                <p>IT Target Analysis</p>
-                            </div>
+                            <Link to={'/automationlogs'} className='link'>
+                                <div className='sidebar6'>
+                                    <img src={img11} alt="" />
+                                    <p>Document</p>
+                                </div>
+                            </Link>
+                            <Link to={'/itreport'} className='link'>
+                                <div className='sidebar6'>
+                                    <img src={img12} alt="" />
+                                    <p>IT Report</p>
+                                </div>
+                            </Link>
+                            <Link to={'/ittargetreport'} className='link'>
+                                <div className='sidebar6'>
+                                    <img src={img12} alt="" />
+                                    <p>IT Target Report</p>
+                                </div>
+                            </Link>
+                            <Link to={'/ittargetanalysis'} className='link'>
+                                <div className='sidebar6'>
+                                    <img src={img12} alt="" />
+                                    <p>IT Target Analysis</p>
+                                </div>
+                            </Link>
                             <div className='sidebar6'>
                                 <img src={img12} alt="" />
                                 <p>Daily Report Template</p>
@@ -219,14 +229,18 @@ const Sidebar = () => {
                                 <img src={img12} alt="" />
                                 <p>IT Reporting Template</p>
                             </div>
-                            <div className='sidebar6'>
-                                <img src={img12} alt="" />
-                                <p>Sales Target</p>
-                            </div>
-                            <div className='sidebar6'>
-                                <img src={img13} alt="" />
-                                <p>Call Recording Analysis</p>
-                            </div>
+                            <Link to={'/salestarget'} className='link'>
+                                <div className='sidebar6'>
+                                    <img src={img12} alt="" />
+                                    <p>Sales Target</p>
+                                </div>
+                            </Link>
+                            <Link to={'/callrecordinganalysis'} className='link'>
+                                <div className='sidebar6'>
+                                    <img src={img13} alt="" />
+                                    <p>Call Recording Analysis</p>
+                                </div>
+                            </Link>
                         </div>
                         <div className='sidebar2'>
                             <img src={img5} alt="" />

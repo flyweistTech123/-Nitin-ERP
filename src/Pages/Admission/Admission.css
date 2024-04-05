@@ -127,13 +127,12 @@
 
 .admission10 {
   width: auto;
-  max-width: 85px;
+  max-width: 100px;
   height: 36px;
   background-color: #2155cd;
   display: flex;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  justify-content: center;
   border-radius: 4px;
   gap: 20px;
   cursor: pointer;
@@ -216,6 +215,8 @@
   width: 100%;
 }
 
+
+
 .admission13 table th {
   height: 48px;
   background-color: #2155cd;
@@ -225,9 +226,11 @@
   line-height: 20px;
   color: #ffffff;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer;
   white-space: nowrap;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .admission13 table tr {
@@ -242,9 +245,11 @@
   line-height: 20px;
   color: #000000;
   margin: 0;
-  text-align: center;
+  /* text-align: center; */
   cursor: pointer;
   white-space: nowrap;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .admission14 button {

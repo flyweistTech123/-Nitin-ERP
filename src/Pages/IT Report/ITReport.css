@@ -1,0 +1,45 @@
+.itreport {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.itreport button:nth-child(1) {
+  width: 138px;
+  height: 45px;
+  background-color: #00ab55;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.itreport button:nth-child(2) {
+  width: 138px;
+  height: 45px;
+  background-color: #40AF0C;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+
+.itreport1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}

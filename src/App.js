@@ -18,6 +18,21 @@ import TelegramTemplate from './Pages/Template/TelegramTemplate';
 import EmailTemplate from './Pages/Template/EmailTemplate';
 import SMSTemplate from './Pages/Template/SMSTemplate';
 import WatiTemplate from './Pages/Template/Whatsapp Template/WatiTemplate';
+import InteraktTemplate from './Pages/Template/Whatsapp Template/InteraktTemplate';
+import Automation from './Pages/Automation Logs/Automation';
+import TelegramAutomation from './Pages/Automation Logs/TelegramAutomation';
+import EmailAutomation from './Pages/Automation Logs/EmailAutomation';
+import InteraktAutomation from './Pages/Automation Logs/InteraktAutomation';
+import MeetingAutomation from './Pages/Automation Logs/MeetingAutomation';
+import SMSAutomation from './Pages/Automation Logs/SMSAutomation';
+import WatiAutomation from './Pages/Automation Logs/WatiAutomation';
+import ZoomAutomation from './Pages/Automation Logs/ZoomAutomation';
+import ITReport from './Pages/IT Report/ITReport';
+import ITTargetReport from './Pages/IT Target Report/ITTargetReport';
+import ITTargetAnalysis from './Pages/IT Target Analysis/ITTargetAnalysis';
+import CallRecordingAnalysis from './Pages/Call Recording Analysis/CallRecordingAnalysis';
+import SalesTarget from './Pages/Sales Target/SalesTarget';
+import CRM from './Pages/CRM/CRM';
 
 function App() {
   return (
@@ -41,6 +56,21 @@ function App() {
           <Route path="/emailtemplate" element={<EmailTemplate />} />
           <Route path="/smstemplate" element={<SMSTemplate />} />
           <Route path="/watitemplate" element={<WatiTemplate />} />
+          <Route path="/interakttemplate" element={<InteraktTemplate />} />
+          <Route path="/automationlogs" element={<Automation />} />
+          <Route path="/telegramautomation" element={<TelegramAutomation />} />
+          <Route path="/emailautomation" element={<EmailAutomation />} />
+          <Route path="/interaktautomation" element={<InteraktAutomation />} />
+          <Route path="/meetingautomation" element={<MeetingAutomation />} />
+          <Route path="/smsautomation" element={<SMSAutomation />} />
+          <Route path="/watiautomation" element={<WatiAutomation />} />
+          <Route path="/zoomautomation" element={<ZoomAutomation />} />
+          <Route path="/itreport" element={<ITReport />} />
+          <Route path="/ittargetreport" element={<ITTargetReport />} />
+          <Route path="/ittargetanalysis" element={<ITTargetAnalysis />} />
+          <Route path="/callrecordinganalysis" element={<CallRecordingAnalysis />} />
+          <Route path="/salestarget" element={<SalesTarget />} />
+          <Route path="/crm" element={<CRM />} />
         </Routes>
       </BrowserRouter>
     </>

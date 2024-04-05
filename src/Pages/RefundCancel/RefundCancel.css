@@ -55,3 +55,65 @@
   color: #ffffff;
   margin: 0;
 }
+
+
+
+.cancel4{
+  width: 70%;
+  height: 75px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.cancel5{
+  padding-left: 30px;
+}
+
+
+.cancel5 button{
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 12px 42px 12px 42px;
+  background-color: #2155CD;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+
+.cancel4 input{
+  flex: 1;
+  border: none;
+  outline: none;
+  padding-right: 10px;
+}
+
+
+
+
+.cancel5{
+
+}
+
+
+.cancel5 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #2155CD;
+  margin: 0;
+  text-decoration: underline;
+}
