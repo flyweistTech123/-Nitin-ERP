@@ -133,13 +133,17 @@ const PendingOnlinePayments = () => {
                                             <td>{data.Date}</td>
                                             <td>{data.OrderID}</td>
                                             <td>{data.amount}</td>
-                                            <td>{data.paymentype}</td>
+                                            <div className='admission20'>
+                                                <p>{data.paymentype}</p>
+                                            </div>
                                             <td>
                                                 <div className='admission14'>
                                                     <button>{data.Status}</button>
                                                 </div>
                                             </td>
-                                            <td>{data.Remarks}</td>
+                                            <div className='admission19'>
+                                                <p>{data.Remarks}</p>
+                                            </div>
                                             <td>
                                                 <div className='admission14'>
                                                     <button>History</button>

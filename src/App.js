@@ -33,6 +33,23 @@ import ITTargetAnalysis from './Pages/IT Target Analysis/ITTargetAnalysis';
 import CallRecordingAnalysis from './Pages/Call Recording Analysis/CallRecordingAnalysis';
 import SalesTarget from './Pages/Sales Target/SalesTarget';
 import CRM from './Pages/CRM/CRM';
+import Employees from './Pages/Employees/Employees';
+import University from './Pages/Setting/University';
+import Courses from './Pages/Setting/Courses';
+import Specialization from './Pages/Setting/Specialization';
+import Subject from './Pages/Setting/Subject';
+import BankAccount from './Pages/Setting/BankAccount';
+import StudyMedium from './Pages/Setting/StudyMedium';
+import CourseFeesHead from './Pages/Setting/CourseFeesHead';
+import AutoBackup from './Pages/Setting/AutoBackup';
+import PDCFollowUpStatus from './Pages/Setting/PDCFollowUpStatus';
+import ExpenseType from './Pages/Setting/ExpenseType';
+import IdleTime from './Pages/Setting/IdleTime';
+import PendingdocumentList from './Pages/Setting/PendingdocumentList';
+import CourierSection from './Pages/Setting/CourierSection';
+import StudentRequestType from './Pages/Setting/StudentRequestType';
+import StudentComplaintType from './Pages/Setting/StudentComplaintType';
+import AdmissionConfirmStatus from './Pages/Setting/AdmissionConfirmStatus';
 
 function App() {
   return (
@@ -71,6 +88,23 @@ function App() {
           <Route path="/callrecordinganalysis" element={<CallRecordingAnalysis />} />
           <Route path="/salestarget" element={<SalesTarget />} />
           <Route path="/crm" element={<CRM />} />
+          <Route path="/employees" element={<Employees />} />
+          <Route path="/university" element={<University />} />
+          <Route path="/courses" element={<Courses />} />
+          <Route path="/specialization" element={<Specialization />} />
+          <Route path="/subject" element={<Subject />} />
+          <Route path="/bankaccount" element={<BankAccount />} />
+          <Route path="/studymedium" element={<StudyMedium />} />
+          <Route path="/coursefeeshead" element={<CourseFeesHead />} />
+          <Route path="/autobackup" element={<AutoBackup />} />
+          <Route path="/pdcfollowupStatus" element={<PDCFollowUpStatus />} />
+          <Route path="/expensetype" element={<ExpenseType />} />
+          <Route path="/idletime" element={<IdleTime />} />
+          <Route path="/pendingdocumentlist" element={<PendingdocumentList />} />
+          <Route path="/couriersection" element={<CourierSection />} />
+          <Route path="/studentrequesttype" element={<StudentRequestType />} />
+          <Route path="/studentcomplainttype" element={<StudentComplaintType />} />
+          <Route path="/admissionconfirmstatus" element={<AdmissionConfirmStatus />} />
         </Routes>
       </BrowserRouter>
     </>

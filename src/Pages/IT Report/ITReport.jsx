@@ -89,8 +89,8 @@ const ITReport = () => {
                     <p>IT Report</p>
                 </div>
 
-                <div className='admission8'>
-                    <div>
+                <div className='itreport2'>
+                    <div className='itreport3'>
                         <p>Filter</p>
                     </div>
                     <div className='admission9'>

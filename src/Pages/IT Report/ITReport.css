@@ -1,9 +1,9 @@
 .itreport {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-top: 20px;
-    gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 20px;
+  gap: 20px;
 }
 
 .itreport button:nth-child(1) {
@@ -24,7 +24,7 @@
 .itreport button:nth-child(2) {
   width: 138px;
   height: 45px;
-  background-color: #40AF0C;
+  background-color: #40af0c;
   border: none;
   border-radius: 4px;
   outline: none;
@@ -36,10 +36,31 @@
   margin: 0;
 }
 
+.itreport1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.itreport2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  gap: 30px;
+}
 
-.itreport1{
-    display: flex;
-    align-items: center;
-    justify-content: space-between
+.itreport3{
+
+}
+
+.itreport3 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
 }

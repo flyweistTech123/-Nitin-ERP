@@ -167,7 +167,9 @@ const Backend = () => {
                                         <td>{data.name}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
-                                        <td>{data.address}</td>
+                                        <div className='admission19'>
+                                            <p>{data.address}</p>
+                                        </div>
                                         <td>{data.course}</td>
                                         <td>{data.feesPaid}</td>
                                         <td>{data.callrecording}</td>

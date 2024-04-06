@@ -157,7 +157,9 @@ const Admission = () => {
                                         <td>{data.name}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
-                                        <td>{data.address}</td>
+                                        <div className='admission19'>
+                                            <p>{data.address}</p>
+                                        </div>
                                         <td>{data.course}</td>
                                         <td>{data.admissionDate}</td>
                                         <td>{data.feesPaid}</td>
@@ -181,7 +183,7 @@ const Admission = () => {
                     </div>
                     <div className='admission16'>
                         <p>SELECT ACTION</p>
-                        <IoIosArrowDown  color='#3F3F3F'/>
+                        <IoIosArrowDown color='#3F3F3F' />
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

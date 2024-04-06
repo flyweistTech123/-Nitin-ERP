@@ -246,10 +246,12 @@ const Sidebar = () => {
                             <img src={img5} alt="" />
                             <p>Drive</p>
                         </div>
-                        <div className='sidebar2'>
-                            <img src={img6} alt="" />
-                            <p>Employees</p>
-                        </div>
+                        <Link to={'/employees'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img6} alt="" />
+                                <p>Employees</p>
+                            </div>
+                        </Link>
                         <div className='sidebar2'>
                             <img src={img7} alt="" />
                             <p>Company Structure</p>
@@ -277,9 +279,75 @@ const Sidebar = () => {
                         {expandedMenus3.includes(0) && (
                             <div className='subMenu'>
                                 <ul>
-                                    <li>Admission</li>
-                                    <li>Backend</li>
-                                    <li>Service</li>
+                                    <Link to={'/university'} className='link'>
+                                        <li>University</li>
+                                    </Link>
+                                    <Link to={'/courses'} className='link'>
+                                        <li>Courses</li>
+                                    </Link>
+                                    <Link to={'/specialization'} className='link'>
+                                        <li>Specialization</li>
+                                    </Link>
+                                    <Link to={'/subject'} className='link'>
+                                        <li>Subject</li>
+                                    </Link>
+                                    <Link to={'/bankaccount'} className='link'>
+                                        <li>Bank Account</li>
+                                    </Link>
+                                    <Link to={'/studymedium'} className='link'>
+                                        <li>Study Medium</li>
+                                    </Link>
+                                    <Link to={'/coursefeeshead'} className='link'>
+                                        <li>Course fee structure</li>
+                                    </Link>
+                                    <Link to={'/autobackup'} className='link'>
+                                        <li>Auto Backup</li>
+                                    </Link>
+                                    <li>Restore Setting</li>
+                                    <li>Birthday Wishes</li>
+                                    <li>Work Anniversary</li>
+                                    <li>Telegram API</li>
+                                    <li>Easebuzz API</li>
+                                    <li>CC Avenue API</li>
+                                    <li>Paytm Gateway</li>
+                                    <li>Keka</li>
+                                    <li>Wati API</li>
+                                    <li>Interakt API</li>
+                                    <li>KIT 19</li>
+                                    <Link to={'/pdcfollowupStatus'} className='link'>
+                                        <li>PDC Follow Up Status</li>
+                                    </Link>
+                                    <Link to={'/expensetype'} className='link'>
+                                        <li>Expense Type</li>
+                                    </Link>
+                                    <Link to={'/idletime'} className='link'>
+                                        <li>Idle Time</li>
+                                    </Link>
+                                    <Link to={'/pendingdocumentlist'} className='link'>
+                                        <li>Pending Document List</li>
+                                    </Link>
+                                    <li>Final Approval Cash Temp</li>
+                                    <Link to={'/couriersection'} className='link'>
+                                        <li>Courier Section</li>
+                                    </Link>
+                                    <li>Pending Docs List Temp</li>
+                                    <li>Petty Cash Template</li>
+                                    <li>Courier Section Template</li>
+                                    <li>Email Template</li>
+                                    <li>FONADA API</li>
+                                    <li>ERP Settings</li>
+                                    <li>Payment Type Mode</li>
+                                    <Link to={'/studentrequesttype'} className='link'>
+                                        <li>Student Request Type</li>
+                                    </Link>
+                                    <Link to={'/studentcomplainttype'} className='link'>
+                                        <li>Student Complaint Type</li>
+                                    </Link>
+                                    <li>Callyzer API</li>
+                                    <li>Fee Receipt Format</li>
+                                    <Link to={'/admissionconfirmstatus'} className='link'>
+                                        <li>Admission Confirm Status</li>
+                                    </Link>
                                 </ul>
                             </div>
                         )}
