@@ -1,0 +1,55 @@
+.loginhistory{
+    background-color: #f4f4f4;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+
+.loginhistory1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loginhistory2{
+    width: 50%;
+    height: 50px;
+    background-color: #FFFFFF;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+
+
+
+.loginhistory2 input{
+    border: none;
+    outline: none;
+    padding-left: 20px;
+    flex: 1;
+}
+
+.loginhistory2 input::placeholder{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #000000;
+    margin: 0;
+}
+
+
+
+.loginhistory3{
+    width: 32px;
+    height: 32px;
+    background-color: #72FFBB;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -96,7 +96,10 @@
   color: #2155cd;
   margin: 0;
   outline: none;
+  cursor: pointer;
 }
+
+
 
 .dashboard7 {
   padding-top: 20px;
@@ -422,14 +425,18 @@
 }
 
 .dashboard29 {
-  width: 209px;
+  width: auto;
+  max-width: 209px;
   height: 50px;
   border: 2px solid #2155cd;
   border-radius: 7px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 30px;
+  padding-right: 30px;
   gap: 10px;
+  cursor: pointer;
 }
 
 .dashboard29 p {
@@ -657,4 +664,312 @@
 
 .link {
   text-decoration: none;
+}
+
+
+
+
+
+/* Add Notice Modal css */
+
+
+
+.dashboard50{
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38.73px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.dashboard51{
+
+}
+
+
+.dashboard52{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+
+.dashboard52 input{
+  width: 390px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #F4F4F4;
+  padding-left: 20px;
+}
+
+.dashboard53{
+  margin-top: 20px;
+}
+
+.dashboard53 textarea{
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  background-color: #F4F4F4;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+
+.dashboard54{
+  text-align: center;
+  margin-top: 100px;
+}
+
+
+.dashboard54 button{
+  width: 154px;
+  height: 45px;
+  background-color: #2155CD;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19.36px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+
+/* Date  Modal  css */
+
+.dashboard55{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 150px;
+}
+
+
+
+
+.dashboard55 select{
+  width: 583px;
+  height: 38px;
+  border: 1px solid #3F3F3F99;
+  outline: none;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  padding-left: 20px;
+}
+
+
+
+/* User  Modal  css */
+
+
+.dashboard56{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 150px;
+}
+
+
+
+
+.dashboard57{
+  width: 585px;
+  height: 41px;
+  border: 1px solid #2155CD;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard58{
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  gap: 10px;
+}
+
+.dashboard58 p{
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #2155CD;
+  margin: 0;
+}
+
+
+
+.dashboard59{
+  padding-right: 20px;
+}
+
+
+
+/* Filter  Modal  css */
+
+
+
+.dashboard60{
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #000000B2;
+  margin: 0;
+}
+
+
+.dashboard61{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+
+
+.dashboard62{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+
+.dashboard62 input{
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3F3F3F;
+  background-color: #D9D9D9;
+}
+
+
+.dashboard63{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+.dashboard64{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dashboard64 p{
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+
+.dashboard65{
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 30px;
+}
+
+
+.dashboard65 button{
+  width: 221px;
+  height: 50px;
+  background-color: #2155CD;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+
+
+
+
+/* Compare  Modal  css */
+
+
+
+
+.dashboard66{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+
+.dashboard67{
+
+}
+
+
+.dashboard67 p{
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.dashboard68{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 10px;
+}
+
+
+
+.dashboard68 input{
+  width: 227px;
+  height: 50px;
+  border: 1px solid #000000;
+  border-radius: 11px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 28px;
+  color: #00000080;
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+
+.dashboard68 p{
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #2155CD;
+  margin: 0;
 }

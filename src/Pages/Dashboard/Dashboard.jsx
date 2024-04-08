@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link, useNavigate } from 'react-router-dom'
+import ReactApexChart from 'react-apexcharts';
 import './Dashboard.css'
 import HOC from '../../Components/HOC/HOC'
-import ReactApexChart from 'react-apexcharts';
+
+
 import { FaCalendarDays } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa";
+import { FaAngleDown } from "react-icons/fa";
+
 
 import img from '../../Img/img20.png'
 import img1 from '../../Img/img21.png'
@@ -18,7 +25,16 @@ import img9 from '../../Img/img29.png'
 import img10 from '../../Img/img30.png'
 import img11 from '../../Img/img31.png'
 import img12 from '../../Img/img32.png'
-import { Link } from 'react-router-dom';
+import img13 from '../../Img/img41.png'
+import img14 from '../../Img/img42.png'
+import img15 from '../../Img/img43.png'
+import img16 from '../../Img/img44.png'
+import img17 from '../../Img/img45.png'
+import img18 from '../../Img/img46.png'
+
+
+
+
 export const percentageData = [50, 10, 70];
 
 const Dashboard = () => {
@@ -321,8 +337,222 @@ const Dashboard = () => {
         }
     };
 
+
+    // Add Notice  Modal // 
+    const [modalShow, setModalShow] = React.useState(false);
+    const navigate = useNavigate()
+
+    function AddNoticeModal(props) {
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='dashboard50'>Add Notice</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className='dashboard51'>
+                        <div className='dashboard52'>
+                            <input type="text" placeholder='Enter the subject' />
+                            <input type="text" placeholder='Enter the subject' />
+                        </div>
+                        <div className='dashboard53'>
+                            <textarea name="" id="" cols="100" rows="5" placeholder='Add Notice Here'></textarea>
+                        </div>
+
+                        <div className='dashboard54'>
+                            <button>Add Notice</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // Date  Modal // 
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    function DateModal(props) {
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            ><Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className='dashboard51'>
+                        <div className='dashboard55'>
+                            <select name="" id="">
+                                <option value="">Any Date</option>
+                                <option value="">Yesterday</option>
+                                <option value="">Current Day</option>
+                                <option value="">Tomorrow</option>
+                                <option value="">This Week</option>
+                                <option value="">This Month</option>
+                                <option value="">Current Quarter</option>
+                                <option value="">Last 7 days</option>
+                            </select>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // User  Modal // 
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    function UserModal(props) {
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            ><Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className='dashboard56'>
+                        <div className='dashboard57'>
+                            <div className='dashboard58'>
+                                <FaUser color='#2155CD' size={20} />
+                                <p>Select User</p>
+                            </div>
+                            <div className='dashboard59'>
+                                <FaAngleDown color='#2155CD' />
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+    // Filter  Modal // 
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+    function FilterModal(props) {
+
+        return (
+            <Modal
+                {...props}
+                size="md"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            ><Modal.Header closeButton>
+                    <Modal.Title className='dashboard60'>Select Filters</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className='dashboard61'>
+                        <div className='dashboard62'>
+                            <input type="checkbox" />
+                            <input type="checkbox" />
+                            <input type="checkbox" />
+                            <input type="checkbox" />
+                            <input type="checkbox" />
+                            <input type="checkbox" />
+                        </div>
+
+                        <div className='dashboard63'>
+                            <img src={img13} alt="" />
+                            <img src={img14} alt="" />
+                            <img src={img15} alt="" />
+                            <img src={img16} alt="" />
+                            <img src={img17} alt="" />
+                            <img src={img18} alt="" />
+                        </div>
+
+                        <div className='dashboard64'>
+                            <p>EaseBuzz Online Payment</p>
+                            <p>Cash Payment</p>
+                            <p>NEFT Payment</p>
+                            <p>DD Payment</p>
+                            <p>Bank Deposit</p>
+                            <p>CCAvenue Online Payment</p>
+                        </div>
+                    </div>
+                    <div className='dashboard65'>
+                        <button>SUBMIT</button>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+    // Compare  Modal // 
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+    function CompareModal(props) {
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            ><Modal.Header closeButton>
+                </Modal.Header>
+                <Modal.Body>
+                    <div className='dashboard66'>
+                        <div className='dashboard67'>
+                            <p>Previous Date Range</p>
+                            <div className='dashboard68'>
+                                <input type="date" />
+                                <p>TO</p>
+                                <input type="date" />
+                            </div>
+                        </div>
+                        <div className='dashboard67'>
+                            <p>Current Date Range</p>
+                            <div className='dashboard68'>
+                                <input type="date" />
+                                <p>TO</p>
+                                <input type="date" />
+                            </div>
+                        </div>
+                        <div className='dashboard65'>
+                            <button>COMPARE </button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+
     return (
         <>
+            <AddNoticeModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <DateModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
+            <UserModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <FilterModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
+            <CompareModal
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
             <div className='dashboard'>
                 <p>Departments</p>
 
@@ -380,6 +610,11 @@ const Dashboard = () => {
 
                             <select name="" id="">
                                 <option value="">Select Course</option>
+                                <option value="" style={{ color: "#000000" }}>Engineering</option>
+                                <option value="" style={{ color: "#000000" }}>MBA</option>
+                                <option value="" style={{ color: "#000000" }}>BA</option>
+                                <option value="" style={{ color: "#000000" }}>B.Sc</option>
+                                <option value="" style={{ color: "#000000" }}>M.Sc</option>
                             </select>
                         </div>
 
@@ -401,6 +636,11 @@ const Dashboard = () => {
 
                             <select name="" id="">
                                 <option value="">Select Course</option>
+                                <option value="" style={{ color: "#000000" }}>Engineering</option>
+                                <option value="" style={{ color: "#000000" }}>MBA</option>
+                                <option value="" style={{ color: "#000000" }}>BA</option>
+                                <option value="" style={{ color: "#000000" }}>B.Sc</option>
+                                <option value="" style={{ color: "#000000" }}>M.Sc</option>
                             </select>
                         </div>
 
@@ -408,6 +648,10 @@ const Dashboard = () => {
                             <p>Engineering</p>
                             <select name="" id="">
                                 <option value="">Select Year</option>
+                                <option value="" style={{ color: "#000000" }}>1st Year</option>
+                                <option value="" style={{ color: "#000000" }}>2nd Year</option>
+                                <option value="" style={{ color: "#000000" }}>3rd Year</option>
+                                <option value="" style={{ color: "#000000" }}>4th Year</option>
                             </select>
                         </div>
                         <div id="chart">
@@ -426,7 +670,7 @@ const Dashboard = () => {
                         <div className='dashboard12'>
                             <h6>Notice</h6>
                             <div className='dashboard13'>
-                                <button>Add Notice</button>
+                                <button onClick={() => setModalShow(true)}>Add Notice</button>
                             </div>
                         </div>
 
@@ -515,11 +759,11 @@ const Dashboard = () => {
                             <p>Admission Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -558,11 +802,11 @@ const Dashboard = () => {
                             <p>Student Complaint Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -579,11 +823,11 @@ const Dashboard = () => {
                             <p>Student Request Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -604,11 +848,11 @@ const Dashboard = () => {
                             <p>Admission Follow Ups Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -626,11 +870,11 @@ const Dashboard = () => {
                             <p>PDC Follow Ups Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -650,11 +894,11 @@ const Dashboard = () => {
                             <p>Refund Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -669,16 +913,20 @@ const Dashboard = () => {
                     </div>
                     <div className='dashboard37'>
                         <div className='dashboard27'>
-                            <p>PDC Follow Ups Records</p>
+                            <p>Payment Received Records</p>
                         </div>
-                        <div className='dashboard28'>
-                            <div className='dashboard29'>
+                        <div className='dashboard28' >
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
+                            </div>
+
+                            <div className='dashboard29' onClick={() => setModalShow3(true)}>
+                                <p>Filter</p>
                             </div>
                         </div>
 
@@ -696,11 +944,11 @@ const Dashboard = () => {
                             <p>Approved Admission Reports</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -756,11 +1004,11 @@ const Dashboard = () => {
                             <p>Follow Ups Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -780,11 +1028,11 @@ const Dashboard = () => {
                             <p>Follow Ups Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -802,11 +1050,11 @@ const Dashboard = () => {
                             <p>Follow Ups Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -826,7 +1074,7 @@ const Dashboard = () => {
                             <p>Pending Cash Record to Authority</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
@@ -859,7 +1107,7 @@ const Dashboard = () => {
                             <p>Expense Team Available Cash Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
@@ -894,7 +1142,7 @@ const Dashboard = () => {
                             <p>Payment Received Mode Records </p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
@@ -922,11 +1170,11 @@ const Dashboard = () => {
                             <p>Approved Admission Compare</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow4(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Compare</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -945,11 +1193,11 @@ const Dashboard = () => {
                             <p>Admission Department Justification Record</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -1020,11 +1268,11 @@ const Dashboard = () => {
                             <p>IT  Department Justification Record</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>
@@ -1097,11 +1345,11 @@ const Dashboard = () => {
                             <p>Pending Tasks Employees Records</p>
                         </div>
                         <div className='dashboard28'>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow1(true)}>
                                 <FaCalendarDays color='#2155CD' size={20} />
                                 <p>Date</p>
                             </div>
-                            <div className='dashboard29'>
+                            <div className='dashboard29' onClick={() => setModalShow2(true)}>
                                 <FaUser color='#2155CD' size={20} />
                                 <p>Select User</p>
                             </div>

@@ -50,6 +50,9 @@ import CourierSection from './Pages/Setting/CourierSection';
 import StudentRequestType from './Pages/Setting/StudentRequestType';
 import StudentComplaintType from './Pages/Setting/StudentComplaintType';
 import AdmissionConfirmStatus from './Pages/Setting/AdmissionConfirmStatus';
+import LogInHistory from './Pages/Log In History/LogInHistory';
+import Attendee from './Pages/Attendees/Attendee';
+import Expense from './Pages/Expense/Expense';
 
 function App() {
   return (
@@ -105,6 +108,9 @@ function App() {
           <Route path="/studentrequesttype" element={<StudentRequestType />} />
           <Route path="/studentcomplainttype" element={<StudentComplaintType />} />
           <Route path="/admissionconfirmstatus" element={<AdmissionConfirmStatus />} />
+          <Route path="/loginhistory" element={<LogInHistory />} />
+          <Route path="/attendee" element={<Attendee />} />
+          <Route path="/expense" element={<Expense />} />
         </Routes>
       </BrowserRouter>
     </>

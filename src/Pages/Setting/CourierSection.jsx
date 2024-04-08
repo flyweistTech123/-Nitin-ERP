@@ -14,15 +14,7 @@ const CourierSection = () => {
     };
 
     const [step, setStep] = useState(0);
-    const incCnt = () => {
-        setStep((prev) => prev + 1);
-    };
-    const decCnt = () => {
-        setStep((prev) => prev - 1);
-    };
-    const handlePrint = () => {
-        window.print();
-    };
+
     const tableData = [
         {
             id: 1,

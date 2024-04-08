@@ -1,0 +1,43 @@
+.expense30{
+
+}
+
+
+.expense30 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #2155CD;
+    margin: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+
+
+.expense31{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+.expense31 button{
+    width: auto;
+    height: auto;
+    background-color: #2155CD;
+    outline: none;
+    border: none;
+    padding: 12px 29px 12px 29px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27.28px;
+    color: #FFFFFF;
+}
+
+

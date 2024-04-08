@@ -18,7 +18,7 @@ const Template = () => {
     const [modalShow, setModalShow] = React.useState(false);
     const navigate = useNavigate()
 
-    function SosStatusModal(props) {
+    function WhatsappModal(props) {
 
         return (
             <Modal
@@ -47,7 +47,7 @@ const Template = () => {
     }
     return (
         <>
-            <SosStatusModal
+            <WhatsappModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
