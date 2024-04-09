@@ -355,10 +355,12 @@ const Sidebar = () => {
                             <img src={img9} alt="" />
                             <p>Reference Form Data</p>
                         </div>
-                        <div className='sidebar2'>
-                            <img src={img9} alt="" />
-                            <p>Petty Cash</p>
-                        </div>
+                        <Link to={'/pettycashpayment'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img9} alt="" />
+                                <p>Petty Cash</p>
+                            </div>
+                        </Link>
                         <Link to={'/expense'} className='link'>
                             <div className='sidebar2'>
                                 <img src={img9} alt="" />

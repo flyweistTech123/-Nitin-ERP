@@ -53,6 +53,7 @@ import AdmissionConfirmStatus from './Pages/Setting/AdmissionConfirmStatus';
 import LogInHistory from './Pages/Log In History/LogInHistory';
 import Attendee from './Pages/Attendees/Attendee';
 import Expense from './Pages/Expense/Expense';
+import PettyCashPayment from './Pages/PettyCash Payment/PettyCashPayment';
 
 function App() {
   return (
@@ -111,6 +112,7 @@ function App() {
           <Route path="/loginhistory" element={<LogInHistory />} />
           <Route path="/attendee" element={<Attendee />} />
           <Route path="/expense" element={<Expense />} />
+          <Route path="/pettycashpayment" element={<PettyCashPayment />} />
         </Routes>
       </BrowserRouter>
     </>

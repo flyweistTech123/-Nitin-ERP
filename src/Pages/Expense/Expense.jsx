@@ -171,8 +171,8 @@ const Expense = () => {
                                         <td>{data.ReturnRemarks}</td>
                                         <td>{data.ReturnAmount}</td>
                                         <td>
-                                            <div className='cancel1'>
-                                                <p>Return</p>
+                                            <div className='expense33'>
+                                                <button>Return</button>
                                             </div>
                                         </td>
                                     </tr>
