@@ -321,3 +321,114 @@
   text-decoration: underline;
   cursor: pointer;
 }
+
+
+
+
+/* search Modal css */
+
+
+
+.searchModal{
+
+}
+
+
+.searchModal1{
+  border-bottom: 1px solid grey;
+}
+
+
+.searchModal1 h6{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+  opacity: 0.7;
+}
+
+
+
+.searchModal2{
+  display: flex;
+  align-items: center;
+}
+
+
+
+.searchModal3{
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #D9D9D9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.searchModal2 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+  opacity: 0.7;
+}
+
+
+
+
+.searchModal4{
+  border-bottom: 1px solid grey;
+
+}
+
+
+
+.searchModal4 h6{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24.55px;
+  color: #000000;
+  margin: 0;
+  opacity: 0.7;
+}
+
+
+
+.searchModal5{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 10px; 
+}
+
+
+
+.searchModal6{
+  width: auto;
+  height: auto;
+  padding: 12px 43px 12px 43px;
+  background-color: #B1FFF6;
+  border-radius: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+
+.searchModal6 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #000000;
+  margin: 0;
+}

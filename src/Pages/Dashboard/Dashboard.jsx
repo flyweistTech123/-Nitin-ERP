@@ -378,6 +378,7 @@ const Dashboard = () => {
     const [modalShow1, setModalShow1] = React.useState(false);
 
     function DateModal(props) {
+        const [showdate, setShowdate] = useState(0)
 
         return (
             <Modal
@@ -389,18 +390,180 @@ const Dashboard = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className='dashboard51'>
-                        <div className='dashboard55'>
-                            <select name="" id="">
-                                <option value="">Any Date</option>
-                                <option value="">Yesterday</option>
-                                <option value="">Current Day</option>
-                                <option value="">Tomorrow</option>
-                                <option value="">This Week</option>
-                                <option value="">This Month</option>
-                                <option value="">Current Quarter</option>
-                                <option value="">Last 7 days</option>
-                            </select>
-                        </div>
+                        {showdate === 0 ? (
+                            <div className='dashboard55'>
+                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                    <option value="0">Any Date</option>
+                                    <option value="0">Yesterday</option>
+                                    <option value="0">Current Day</option>
+                                    <option value="0">Tomorrow</option>
+                                    <option value="0">This Week</option>
+                                    <option value="0">This Month</option>
+                                    <option value="0">Current Quarter</option>
+                                    <option value="0">Last 7 days</option>
+                                    <option value="0">Last 30 days</option>
+                                    <option value="0">Last 60 days</option>
+                                    <option value="0">Last 90 days</option>
+                                    <option value="0">Last N days</option>
+                                    <option value="0">Next N days</option>
+                                    <option value="1">Month</option>
+                                    <option value="0">Quarter</option>
+                                    <option value="2">Year</option>
+                                    <option value="3">Exact Date</option>
+                                    <option value="0">Last Week</option>
+                                    <option value="0">Last Month</option>
+                                    <option value="4">Custom Range</option>
+                                    <option value="0">Next Week</option>
+                                    <option value="0">Next Month</option>
+                                </select>
+                            </div>
+                        ) : showdate === 1 ? (
+                            <div className='dashboard70'>
+                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                    <option value="0">Any Date</option>
+                                    <option value="0">Yesterday</option>
+                                    <option value="0">Current Day</option>
+                                    <option value="0">Tomorrow</option>
+                                    <option value="0">This Week</option>
+                                    <option value="0">This Month</option>
+                                    <option value="0">Current Quarter</option>
+                                    <option value="0">Last 7 days</option>
+                                    <option value="0">Last 30 days</option>
+                                    <option value="0">Last 60 days</option>
+                                    <option value="0">Last 90 days</option>
+                                    <option value="0">Last N days</option>
+                                    <option value="0">Next N days</option>
+                                    <option value="1">Month</option>
+                                    <option value="0">Quarter</option>
+                                    <option value="2">Year</option>
+                                    <option value="3">Exact Date</option>
+                                    <option value="0">Last Week</option>
+                                    <option value="0">Last Month</option>
+                                    <option value="4">Custom Range</option>
+                                    <option value="0">Next Week</option>
+                                    <option value="0">Next Month</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="0">January</option>
+                                    <option value="0">February</option>
+                                    <option value="0">March</option>
+                                    <option value="0">April</option>
+                                    <option value="0">May</option>
+                                    <option value="0">June</option>
+                                    <option value="0">July</option>
+                                    <option value="0">August</option>
+                                    <option value="0">September</option>
+                                    <option value="0">October</option>
+                                    <option value="0">November</option>
+                                    <option value="0">December</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="0">2023</option>
+                                    <option value="0">2022</option>
+                                    <option value="0">2021</option>
+                                    <option value="0">2020</option>
+                                    <option value="0">2019</option>
+                                    <option value="0">2018</option>
+                                    <option value="0">2017</option>
+                                </select>
+                            </div>
+                        ) : showdate === 2 ? (
+                            <div className='dashboard70'>
+                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                    <option value="0">Any Date</option>
+                                    <option value="0">Yesterday</option>
+                                    <option value="0">Current Day</option>
+                                    <option value="0">Tomorrow</option>
+                                    <option value="0">This Week</option>
+                                    <option value="0">This Month</option>
+                                    <option value="0">Current Quarter</option>
+                                    <option value="0">Last 7 days</option>
+                                    <option value="0">Last 30 days</option>
+                                    <option value="0">Last 60 days</option>
+                                    <option value="0">Last 90 days</option>
+                                    <option value="0">Last N days</option>
+                                    <option value="0">Next N days</option>
+                                    <option value="1">Month</option>
+                                    <option value="0">Quarter</option>
+                                    <option value="2">Year</option>
+                                    <option value="3">Exact Date</option>
+                                    <option value="0">Last Week</option>
+                                    <option value="0">Last Month</option>
+                                    <option value="4">Custom Range</option>
+                                    <option value="0">Next Week</option>
+                                    <option value="0">Next Month</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="0">2023</option>
+                                    <option value="0">2022</option>
+                                    <option value="0">2021</option>
+                                    <option value="0">2020</option>
+                                    <option value="0">2019</option>
+                                    <option value="0">2018</option>
+                                    <option value="0">2017</option>
+                                </select>
+                            </div>
+                        ) : showdate === 3 ? (
+                            <div className='dashboard70'>
+                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                    <option value="0">Any Date</option>
+                                    <option value="0">Yesterday</option>
+                                    <option value="0">Current Day</option>
+                                    <option value="0">Tomorrow</option>
+                                    <option value="0">This Week</option>
+                                    <option value="0">This Month</option>
+                                    <option value="0">Current Quarter</option>
+                                    <option value="0">Last 7 days</option>
+                                    <option value="0">Last 30 days</option>
+                                    <option value="0">Last 60 days</option>
+                                    <option value="0">Last 90 days</option>
+                                    <option value="0">Last N days</option>
+                                    <option value="0">Next N days</option>
+                                    <option value="1">Month</option>
+                                    <option value="0">Quarter</option>
+                                    <option value="2">Year</option>
+                                    <option value="3">Exact Date</option>
+                                    <option value="0">Last Week</option>
+                                    <option value="0">Last Month</option>
+                                    <option value="4">Custom Range</option>
+                                    <option value="0">Next Week</option>
+                                    <option value="0">Next Month</option>
+                                </select>
+                                <input type="date" />
+                            </div>
+                        ) : showdate === 4 ? (
+                            <div className='dashboard70'>
+                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                    <option value="0">Any Date</option>
+                                    <option value="0">Yesterday</option>
+                                    <option value="0">Current Day</option>
+                                    <option value="0">Tomorrow</option>
+                                    <option value="0">This Week</option>
+                                    <option value="0">This Month</option>
+                                    <option value="0">Current Quarter</option>
+                                    <option value="0">Last 7 days</option>
+                                    <option value="0">Last 30 days</option>
+                                    <option value="0">Last 60 days</option>
+                                    <option value="0">Last 90 days</option>
+                                    <option value="0">Last N days</option>
+                                    <option value="0">Next N days</option>
+                                    <option value="1">Month</option>
+                                    <option value="0">Quarter</option>
+                                    <option value="2">Year</option>
+                                    <option value="3">Exact Date</option>
+                                    <option value="0">Last Week</option>
+                                    <option value="0">Last Month</option>
+                                    <option value="4">Custom Range</option>
+                                    <option value="0">Next Week</option>
+                                    <option value="0">Next Month</option>
+                                </select>
+                                <input type="date" />
+                                <input type="date" />
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
                     </div>
                 </Modal.Body>
             </Modal>
@@ -410,9 +573,30 @@ const Dashboard = () => {
 
     // User  Modal // 
     const [modalShow2, setModalShow2] = React.useState(false);
+    const [showdate1, setShowdate1] = useState(0);
+    const [selectedOptions, setSelectedOptions] = useState({
+        employee: null,
+        department: null,
+        team: null
+    });
+    const [isOpen, setIsOpen] = useState({
+        employee: false,
+        department: false,
+        team: false
+    });
 
+    const options111 = [
+        { value: 'employee', label: 'Select Employee' },
+        { value: 'department', label: 'Select Department' },
+        { value: 'team', label: 'Select Team' },
+    ];
+
+    const handleOptionClick = (option, type) => {
+        setSelectedOptions({ ...selectedOptions, [type]: option });
+        setIsOpen({ ...isOpen, [type]: false });
+    };
     function UserModal(props) {
-
+        const [showdate1, setShowdate1] = useState(0)
         return (
             <Modal
                 {...props}
@@ -423,15 +607,75 @@ const Dashboard = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className='dashboard56'>
-                        <div className='dashboard57'>
-                            <div className='dashboard58'>
-                                <FaUser color='#2155CD' size={20} />
-                                <p>Select User</p>
+                        {showdate1 === 0 ? (
+                            <div className='dashboard57' onClick={() => setShowdate1(1)}>
+                                <div className='dashboard58'>
+                                    <FaUser color='#2155CD' size={20} />
+                                    <p>Select User</p>
+                                </div>
+                                <div className='dashboard59'>
+                                    <FaAngleDown color='#2155CD' />
+                                </div>
                             </div>
-                            <div className='dashboard59'>
-                                <FaAngleDown color='#2155CD' />
+                        ) : showdate1 === 1 ? (
+                            <div className='dashboard71'>
+                                <div className="custom-dropdown">
+                                    <div className='dashboard72' onClick={() => setIsOpen(!isOpen)}>
+                                        <p>{selectedOptions ? selectedOptions.label : 'Select an option'}</p>
+                                        <div className='dashboard59'>
+                                            <FaAngleDown color='#2155CD' />
+                                        </div>
+                                        {isOpen && (
+                                            <ul className="options">
+                                                {options111.map((option, index) => (
+                                                    <li key={index} onClick={() => handleOptionClick(option)}>
+                                                        {option.label}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="custom-dropdown">
+                                    <div className='dashboard72' onClick={() => setIsOpen(!isOpen)}>
+                                        <p>{selectedOptions ? selectedOptions.label : 'Select an option'}</p>
+                                        <div className='dashboard59'>
+                                            <FaAngleDown color='#2155CD' />
+                                        </div>
+                                        {isOpen && (
+                                            <ul className="options">
+                                                {options111.map((option, index) => (
+                                                    <li key={index} onClick={() => handleOptionClick(option)}>
+                                                        {option.label}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className="custom-dropdown">
+                                    <div className='dashboard72' onClick={() => setIsOpen(!isOpen)}>
+                                        <p>{selectedOptions ? selectedOptions.label : 'Select an option'}</p>
+                                        <div className='dashboard59'>
+                                            <FaAngleDown color='#2155CD' />
+                                        </div>
+                                        {isOpen && (
+                                            <ul className="options">
+                                                {options111.map((option, index) => (
+                                                    <li key={index} onClick={() => handleOptionClick(option)}>
+                                                        {option.label}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+
+
+                        ) : (
+                            ""
+                        )}
                     </div>
                 </Modal.Body>
             </Modal>

@@ -20,6 +20,7 @@ import img13 from '../../Img/img58.png'
 import { Link, useNavigate } from 'react-router-dom'
 import { FaUser } from "react-icons/fa";
 import { LuHistory } from "react-icons/lu";
+import { FaUserAlt } from "react-icons/fa";
 
 
 
@@ -33,7 +34,7 @@ const Navbar = () => {
 
 
 
-    function AddNoticeModal(props) {
+    function ProfileModal(props) {
         const [step, setStep] = useState(0);
 
 
@@ -67,14 +68,14 @@ const Navbar = () => {
                         </div>
 
                         <div className='profileModal1'>
-                            <div className='profileModal6' onClick={()=>navigate('/loginhistory')}>
+                            <div className='profileModal6' onClick={() => navigate('/loginhistory')}>
                                 <LuHistory color='#444444' size={30} />
                                 <h6>Login History</h6>
                             </div>
                         </div>
 
                         <div className='profileModal1'>
-                            <div className='profileModal6' onClick={()=>navigate('/attendee')}>
+                            <div className='profileModal6' onClick={() => navigate('/attendee')}>
                                 <img src={img3} alt="" />
                                 <h6>Attendees</h6>
                             </div>
@@ -160,21 +161,100 @@ const Navbar = () => {
         );
     }
 
+
+
+    // search Modal
+
+
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+
+
+    function SearcheModal(props) {
+        const [step, setStep] = useState(0);
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body>
+                    <div className='searchModal'>
+                        <div className='searchModal1'>
+                            <h6>Employees</h6>
+                        </div>
+
+                        <div className='searchModal2'>
+                            <div className='searchModal3' color='#444444' size='20'>
+                                <FaUserAlt />
+                            </div>
+                            <p>Loren Epsom</p>
+                        </div>
+
+                        <div className='searchModal4'>
+                            <h6>CRM: contact</h6>
+                        </div>
+                        <div className='searchModal5'>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+
+
+
     return (
         <>
 
-            <AddNoticeModal
+            <ProfileModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            <SearcheModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div class='navbar'>
                 <div class='navbar-left'>
-                    <div class='logo' onClick={()=>navigate('/dashboard')}>
+                    <div class='logo' onClick={() => navigate('/dashboard')}>
                         <p>Logo</p>
                     </div>
                 </div>
                 <div class='navbar-center'>
-                    <div class='search'>
+                    <div class='search' onClick={() => setModalShow1(true)}>
                         <div class='search-icon'>
                             <IoMdSearch color='#3F3F3F' size={20} />
                         </div>

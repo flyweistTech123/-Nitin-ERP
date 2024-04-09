@@ -99,8 +99,6 @@
   cursor: pointer;
 }
 
-
-
 .dashboard7 {
   padding-top: 20px;
   padding-left: 15px;
@@ -666,15 +664,9 @@
   text-decoration: none;
 }
 
-
-
-
-
 /* Add Notice Modal css */
 
-
-
-.dashboard50{
+.dashboard50 {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 28px;
@@ -683,54 +675,47 @@
   margin: 0;
 }
 
-
-
-.dashboard51{
-
+.dashboard51 {
 }
 
-
-.dashboard52{
+.dashboard52 {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-
-.dashboard52 input{
+.dashboard52 input {
   width: 390px;
   height: 40px;
   border: none;
   outline: none;
   border-radius: 8px;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   padding-left: 20px;
 }
 
-.dashboard53{
+.dashboard53 {
   margin-top: 20px;
 }
 
-.dashboard53 textarea{
+.dashboard53 textarea {
   border: none;
   outline: none;
   border-radius: 8px;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   padding-left: 20px;
   padding-top: 20px;
 }
 
-
-.dashboard54{
+.dashboard54 {
   text-align: center;
   margin-top: 100px;
 }
 
-
-.dashboard54 button{
+.dashboard54 button {
   width: 154px;
   height: 45px;
-  background-color: #2155CD;
+  background-color: #2155cd;
   border: none;
   outline: none;
   border-radius: 8px;
@@ -738,27 +723,23 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 19.36px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
 }
 
-
 /* Date  Modal  css */
 
-.dashboard55{
+.dashboard55 {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-bottom: 150px;
+  padding-bottom: 300px;
 }
 
-
-
-
-.dashboard55 select{
+.dashboard55 select {
   width: 583px;
   height: 38px;
-  border: 1px solid #3F3F3F99;
+  border: 1px solid #3f3f3f99;
   outline: none;
   font-family: "Nunito", sans-serif;
   font-weight: 500;
@@ -769,25 +750,63 @@
   padding-left: 20px;
 }
 
+.dashboard55 select:optional {
+  overflow-y: scroll;
+}
 
+.dashboard70 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 300px;
+}
+
+.dashboard70 select {
+  width: 215px;
+  height: 38px;
+  border: 1px solid #3f3f3f99;
+  outline: none;
+  border-radius: 4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.dashboard70 input {
+  width: 215px;
+  height: 38px;
+  border: 1px solid #3f3f3f99;
+  outline: none;
+  border-radius: 4px;
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+  padding-left: 20px;
+  cursor: pointer;
+}
 
 /* User  Modal  css */
 
-
-.dashboard56{
+.dashboard56 {
   display: flex;
   align-items: center;
   justify-content: center;
   padding-bottom: 150px;
 }
 
-
-
-
-.dashboard57{
+.dashboard57 {
   width: 585px;
   height: 41px;
-  border: 1px solid #2155CD;
+  border: 1px solid #2155cd;
   border-radius: 4px;
   cursor: pointer;
   display: flex;
@@ -795,14 +814,50 @@
   justify-content: space-between;
 }
 
-.dashboard58{
+.dashboard58 {
   display: flex;
   align-items: center;
   padding-left: 20px;
   gap: 10px;
 }
 
-.dashboard58 p{
+.dashboard58 p {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #2155cd;
+  margin: 0;
+}
+
+.dashboard59 {
+  padding-right: 20px;
+}
+
+.dashboard71 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 150px;
+}
+
+.dashboard72{
+  width: auto;
+  height: 41px;
+  border: 1px solid #2155CD;
+  outline: none;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.dashboard72 p{
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -812,67 +867,86 @@
 }
 
 
-
-.dashboard59{
-  padding-right: 20px;
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
 }
+
+.selected-option {
+  padding: 10px;
+  border: 1px solid #f51b1b;
+  cursor: pointer;
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  border: 1px solid #ccc;
+  background-color: #fff;
+}
+
+.options li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background-color: #f0f0f0;
+}
+
+
 
 
 
 /* Filter  Modal  css */
 
-
-
-.dashboard60{
+.dashboard60 {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  color: #000000B2;
+  color: #000000b2;
   margin: 0;
 }
 
-
-.dashboard61{
+.dashboard61 {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-
-
-.dashboard62{
+.dashboard62 {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-
-
-.dashboard62 input{
+.dashboard62 input {
   width: 20px;
   height: 20px;
-  border: 1px solid #3F3F3F;
-  background-color: #D9D9D9;
+  border: 1px solid #3f3f3f;
+  background-color: #d9d9d9;
 }
 
-
-.dashboard63{
+.dashboard63 {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
 }
 
-
-
-.dashboard64{
+.dashboard64 {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.dashboard64 p{
+.dashboard64 p {
   font-family: "Nunito", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -881,20 +955,16 @@
   margin: 0;
 }
 
-
-
-
-.dashboard65{
+.dashboard65 {
   text-align: center;
   margin-top: 50px;
   padding-bottom: 30px;
 }
 
-
-.dashboard65 button{
+.dashboard65 button {
   width: 221px;
   height: 50px;
-  background-color: #2155CD;
+  background-color: #2155cd;
   border: none;
   outline: none;
   border-radius: 9px;
@@ -902,20 +972,13 @@
   font-weight: 700;
   font-size: 20px;
   line-height: 28px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
 }
 
-
-
-
-
 /* Compare  Modal  css */
 
-
-
-
-.dashboard66{
+.dashboard66 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -923,13 +986,10 @@
   gap: 30px;
 }
 
-
-.dashboard67{
-
+.dashboard67 {
 }
 
-
-.dashboard67 p{
+.dashboard67 p {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -938,18 +998,14 @@
   margin: 0;
 }
 
-
-
-.dashboard68{
+.dashboard68 {
   display: flex;
   align-items: center;
   gap: 30px;
   margin-top: 10px;
 }
 
-
-
-.dashboard68 input{
+.dashboard68 input {
   width: 227px;
   height: 50px;
   border: 1px solid #000000;
@@ -964,12 +1020,11 @@
   padding-right: 10px;
 }
 
-
-.dashboard68 p{
+.dashboard68 p {
   font-family: "Nunito", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 28px;
-  color: #2155CD;
+  color: #2155cd;
   margin: 0;
 }
