@@ -226,6 +226,47 @@ const Navbar = () => {
                                 <p>Loren Epsom</p>
                             </div>
                         </div>
+                        <div className='searchModal9'>
+                            <p>More</p>
+                        </div>
+                        <div className='searchModal4'>
+                            <h6>CRM: leads</h6>
+                        </div>
+                        <div className='searchModal5'>
+                            <div className='searchModal6'>
+                                <p>Loren Epsom</p>
+                            </div>
+                        </div>
+                        <div className='searchModal4'>
+                            <h6>Search</h6>
+                        </div>
+
+                        <div className='searchModal7'>
+                            <div className='searchModal8'>
+                                <p>Lead</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>Deals</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>Contact</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>My Activities</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>Task</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>Calender</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>Feed</p>
+                            </div>
+                            <div className='searchModal8'>
+                                <p>Workflow</p>
+                            </div>
+                        </div>
                     </div>
                 </Modal.Body>
             </Modal>

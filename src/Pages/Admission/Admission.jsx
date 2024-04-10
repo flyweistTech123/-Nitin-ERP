@@ -157,6 +157,7 @@ const Admission = () => {
                                         <td>{data.name}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
+                                        {/* <td>{data.address}</td> */}
                                         <div className='admission19'>
                                             <p>{data.address}</p>
                                         </div>

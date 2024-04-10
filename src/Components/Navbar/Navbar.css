@@ -336,6 +336,7 @@
 
 .searchModal1{
   border-bottom: 1px solid grey;
+  padding-bottom: 20px
 }
 
 
@@ -354,6 +355,10 @@
 .searchModal2{
   display: flex;
   align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  cursor: pointer;
+
 }
 
 
@@ -385,7 +390,8 @@
 
 .searchModal4{
   border-bottom: 1px solid grey;
-
+  margin-top: 20px;
+  padding-bottom: 20px
 }
 
 
@@ -406,6 +412,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   grid-gap: 10px; 
+  margin-top: 20px;
 }
 
 
@@ -431,4 +438,59 @@
   line-height: 19.1px;
   color: #000000;
   margin: 0;
+}
+
+
+
+
+.searchModal7{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-gap: 10px; 
+  margin-top: 20px;
+}
+
+
+
+.searchModal8{
+  width: auto;
+  height: auto;
+  padding: 12px 20px 12px 20px;
+  border: 1px solid #000000;
+  border-radius: 37px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.searchModal8 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.searchModal9{
+  text-align: end;
+  margin-top: 20px;
+  cursor: pointer;
+  padding-right: 10px;
+}
+
+
+.searchModal9 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16.37px;
+  color: #2155CD;
+  margin: 0;
+  text-decoration: underline;
 }

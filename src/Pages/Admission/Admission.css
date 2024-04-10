@@ -228,7 +228,7 @@
   margin: 0;
   /* text-align: center; */
   cursor: pointer;
-  /* white-space: nowrap; */
+  white-space: nowrap;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -247,7 +247,7 @@
   margin: 0;
   /* text-align: center; */
   cursor: pointer;
-  /* white-space: nowrap; */
+  white-space: nowrap;
   padding-left: 20px;
   padding-right: 20px;
 }
