@@ -54,6 +54,12 @@ import LogInHistory from './Pages/Log In History/LogInHistory';
 import Attendee from './Pages/Attendees/Attendee';
 import Expense from './Pages/Expense/Expense';
 import PettyCashPayment from './Pages/PettyCash Payment/PettyCashPayment';
+import Whatsapp from './Pages/WHATSAPP/Whatsapp';
+import Telegram from './Pages/Telegram/Telegram';
+import VoiceCall from './Pages/Voice Call/VoiceCall';
+import Zoommeeting from './Pages/Zoom meeting Page/Zoommeeting';
+import Email from './Pages/Email Page/Email';
+// import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
   return (
@@ -113,6 +119,11 @@ function App() {
           <Route path="/attendee" element={<Attendee />} />
           <Route path="/expense" element={<Expense />} />
           <Route path="/pettycashpayment" element={<PettyCashPayment />} />
+          <Route path="/whatsapp" element={<Whatsapp />} />
+          <Route path="/telegram" element={<Telegram />} />
+          <Route path="/voicecall" element={<VoiceCall />} />
+          <Route path="/zoommeeting" element={<Zoommeeting />} />
+          <Route path="/email" element={<Email />} />
         </Routes>
       </BrowserRouter>
     </>

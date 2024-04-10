@@ -7,6 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 import img from '../../Img/img33.png'
+import { Link } from 'react-router-dom';
 
 
 const Admission = () => {
@@ -92,21 +93,31 @@ const Admission = () => {
                 <div className='admission1'>
                     <p>Admission</p>
                     <div className='admission2'>
-                        <div className='admission3'>
-                            <p>What’s App</p>
-                        </div>
-                        <div className='admission4'>
-                            <p>Email</p>
-                        </div>
-                        <div className='admission5'>
-                            <p>Telegram</p>
-                        </div>
-                        <div className='admission6'>
-                            <p>Zoom</p>
-                        </div>
-                        <div className='admission7'>
-                            <p>Voice Call</p>
-                        </div>
+                        <Link to={'/whatsapp'} className='link'>
+                            <div className='admission3'>
+                                <p>What’s App</p>
+                            </div>
+                        </Link>
+                        <Link to={'/email'} className='link'>
+                            <div className='admission4'>
+                                <p>Email</p>
+                            </div>
+                        </Link>
+                        <Link to={'/telegram'} className='link'>
+                            <div className='admission5'>
+                                <p>Telegram</p>
+                            </div>
+                        </Link>
+                        <Link to={'/zoommeeting'} className='link'>
+                            <div className='admission6'>
+                                <p>Zoom</p>
+                            </div>
+                        </Link>
+                        <Link to={'/voicecall'} className='link'>
+                            <div className='admission7'>
+                                <p>Voice Call</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
 

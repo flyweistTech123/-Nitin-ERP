@@ -1,0 +1,113 @@
+.email{
+
+}
+
+
+
+.email1{
+
+}
+
+
+.email2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.email2 h6{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 27.28px;
+    color: #000000;
+    margin: 0;
+}
+
+
+
+.email3{
+    display: flex;
+    align-items: center;
+}
+
+
+.email3 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.email3 select{
+    width: 128px;
+    height: 22px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #000000;
+    margin: 0;
+}
+
+
+
+.email4{
+    background-color: #FFFFFF;
+    border: 1px solid black;
+    border-radius: 11px;
+    padding: 20px;
+}
+
+
+.email5{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #444444;
+}
+
+
+.email5 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.email6{
+    display: flex;
+    align-items: center;
+}
+
+
+.email6 label{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.email6 input{
+    width: 869px;
+    height: 48px;
+    outline: none;
+    border: 1px solid #3F3F3F;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
