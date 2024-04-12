@@ -5,9 +5,17 @@ import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import Modal from 'react-bootstrap/Modal';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { IoIosMore } from "react-icons/io";
 import { FaSearch } from "react-icons/fa";
+import { IoReloadSharp } from "react-icons/io5";
+import { ImLink } from "react-icons/im";
+import { MdOutlineCancel } from "react-icons/md";
+import { PiUserCircleFill } from "react-icons/pi";
+import { AiFillPlusCircle } from "react-icons/ai";
+import { IoIosArrowRoundForward } from "react-icons/io";
+import { BiMessageRounded } from "react-icons/bi";
 
 import img from '../../Img/img33.png'
 import { Link } from 'react-router-dom';
@@ -104,10 +112,6 @@ const Admission = () => {
         setModalShow1(false)
     }
 
-    const handleModals1 = () => {
-        setModalShow(false)
-        setModalShow2(true)
-    }
 
 
     function FilterModal(props) {
@@ -315,7 +319,7 @@ const Admission = () => {
 
 
                                     <div className='filter19'>
-                                        <p onClick={handleModals1}>Add Field</p>
+                                        <p onClick={() => setModalShow2(true)}>Add Field</p>
                                         <span>Restore default fields </span>
                                     </div>
 
@@ -613,7 +617,7 @@ const Admission = () => {
                                 </div>
 
                                 <div className='filter19'>
-                                    <p>Add Field</p>
+                                    <p onClick={() => setModalShow2(true)}>Add Field</p>
                                     <span>Restore default fields </span>
                                 </div>
 
@@ -645,11 +649,11 @@ const Admission = () => {
         return (
             <Modal
                 {...props}
-                size="lg"
+                size="xl"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <Modal.Body className="no-padding">
+                <Modal.Body className="no-padding1">
                     <div className='addfield'>
                         <div className='addfield4'>
                             <div className='addfield1'>
@@ -670,12 +674,534 @@ const Admission = () => {
                             </div>
                         </div>
 
+
+
+                        <div className='addfield8'>
+                            <div className='addfield6'>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Admission Details</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Payment</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Personal Details</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Fee Structure</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Contact Details</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Guardian Details</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Certificate</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Education Details</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Application Number</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Phone</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Admission Date</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Status</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>University</p>
+                                </div>
+                            </div>
+                            <div className='addfield6'>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Counsellor commitment</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Date</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Book Fee</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Course Fee</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>GST</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Other</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Reg.</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>TOC</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Course</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Counselor</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Created Date</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Name</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Email-Id</p>
+                                </div>
+                            </div>
+                            <div className='addfield6'>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>BOOK</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Date</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>LE</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Multiple</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Phone</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Download</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Certificate</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Remark</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>View</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Exam Type</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Subject</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Stream</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Passing Year</p>
+                                </div>
+                            </div>
+                            <div className='addfield6'>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>University/Board</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Division/Grade</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Marksheet</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Address</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Guardian name</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Guardian Number</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Gender</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Occupation</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Designation</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Department</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Net Income</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Whatsapp Number</p>
+                                </div>
+                                <div className='addfield7'>
+                                    <input type="checkbox" name="" id="" />
+                                    <p>Request Letter Status</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className='addfield9'>
+                            <div className='addfield10'>
+                                <div className='addfield11'>
+                                    <IoReloadSharp color='#444444' size={20} />
+                                    <h6>Default</h6>
+                                </div>
+
+                                <div className='addfield12'>
+                                    <div className='addfield13'>
+                                        <input type="checkbox" />
+                                        <label htmlFor="">Apply for Users</label>
+                                    </div>
+                                    <div className='addfield13'>
+                                        <input type="checkbox" />
+                                        <label htmlFor="">Apply for Users</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='addfield14'>
+                                <p>Select All</p>
+                                <p>Select none</p>
+                            </div>
+                        </div>
+
+
                     </div>
                 </Modal.Body>
             </Modal>
         );
     }
 
+
+    // Admission Follow Up Modal
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    function Example() {
+        const [step, setStep] = useState(0);
+
+
+        return (
+            <>
+                <Offcanvas show={show} onHide={handleClose} placement="end" style={{ width: '80%' }}>
+                    <Offcanvas.Body className='Admissionfollowup101'>
+                        <div className='Admissionfollowup'>
+                            <div className='Admissionfollowup1'>
+                                <div className='Admissionfollowup2'>
+                                    <h6>Admission Follow Up </h6>
+                                    <ImLink color='#000000' size={20} />
+                                </div>
+                                <div className='Admissionfollowup3' onClick={handleClose}>
+                                    <MdOutlineCancel color='#000000' size={25} />
+                                </div>
+                            </div>
+
+
+                            <div className='Admissionfollowup3'>
+                                <div className='Admissionfollowup4'>
+                                    <div className={step === 0 ? "Admissionfollowup5" : "Admissionfollowup6"} onClick={() => setStep(0)}>
+                                        <p>General</p>
+                                    </div>
+                                    <div className={step === 1 ? "Admissionfollowup5" : "Admissionfollowup6"} onClick={() => setStep(1)}>
+                                        <p>History</p>
+                                    </div>
+                                </div>
+
+                                <div className='Admissionfollowup7'>
+                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                </div>
+                            </div>
+
+                            <div className='Admissionfollowup8'>
+                                <div className='Admissionfollowup9'>
+                                    <div className='Admissionfollowup10'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>Student Information</h6>
+                                            <p>Edit</p>
+                                        </div>
+
+                                        <div className='Admissionfollowup12'>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Student Name</label>
+                                                <p>Loren Epsom</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Course</label>
+                                                <p>Engineering</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">University</label>
+                                                <p>Aligarh Univerisity</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Responsible Person</label>
+                                                <p>Loren Epsom</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Service Manager</label>
+                                                <p>Loren Epsom</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Total Fees</label>
+                                                <p>INR 10,000</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Received Fees</label>
+                                                <p>INR 10,000</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Balance Fee</label>
+                                                <p>INR 10,000</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Priority</label>
+                                                <p>High</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup14'>
+                                        <p>Add Section</p>
+                                        <p>Create a field</p>
+                                    </div>
+                                </div>
+
+                                <div className='Admissionfollowup15'>
+
+                                    <div className='Admissionfollowup27'>
+                                        <div className='Admissionfollowup28'>
+                                        </div>
+
+                                        <div className='Admissionfollowup29'>
+                                            <div className='Admissionfollowup30'>
+                                            <BiMessageRounded color='#FFFFFF' size={25} />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div>
+                                        <div className='Admissionfollowup16'>
+                                            <div className='Admissionfollowup17'>
+                                                <div className={step === 2 ? "Admissionfollowup18" : "Admissionfollowup19"} onClick={() => setStep(2)}>
+                                                    <p>Comment</p>
+                                                </div>
+                                                <div className={step === 3 ? "Admissionfollowup18" : "Admissionfollowup19"} onClick={() => setStep(3)}>
+                                                    <p>Task</p>
+                                                </div>
+                                                <div className={step === 4 ? "Admissionfollowup18" : "Admissionfollowup19"} onClick={() => setStep(4)}>
+                                                    <p>SMS</p>
+                                                </div>
+                                                <div className={step === 5 ? "Admissionfollowup18" : "Admissionfollowup19"} onClick={() => setStep(5)}>
+                                                    <p>E-mail</p>
+                                                </div>
+                                                <div className={step === 6 ? "Admissionfollowup18" : "Admissionfollowup19"} onClick={() => setStep(6)}>
+                                                    <p>What’sapp</p>
+                                                </div>
+                                            </div>
+                                            <input type="text" placeholder='Leave a Comment' />
+                                        </div>
+
+                                        <div className='Admissionfollowup20'>
+                                            <PiUserCircleFill color='#000000' size={20} />
+                                            <p>Invite to chat</p>
+                                        </div>
+
+                                        <div className='Admissionfollowup20'>
+                                            <AiFillPlusCircle color='#52FF00' size={20} />
+                                            <p>Add a new activity</p>
+                                        </div>
+
+
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup25'>
+                                            <p>PDC Created  <span>4:31 PM</span></p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+                                            <div className='Admissionfollowup26'>
+                                                <p>abc</p>
+                                                <p>Source: call</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </Offcanvas.Body>
+                </Offcanvas>
+            </>
+        );
+    }
 
 
 
@@ -693,6 +1219,10 @@ const Admission = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <Example
+                show={show}
+                onHide={handleClose}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -742,7 +1272,7 @@ const Admission = () => {
                 </div>
 
                 <div className='admission12'>
-                    <button  onClick={() => setModalShow2(true)}>Add</button>
+                    <button>Add</button>
                     <button>Delete</button>
                     <button>Export</button>
                 </div>
@@ -769,7 +1299,7 @@ const Admission = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td><input type="checkbox" /></td>
-                                        <td><img src={img} alt="" /></td>
+                                        <td onClick={handleShow}><img src={img} alt="" /></td>
                                         <td>{data.name}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
