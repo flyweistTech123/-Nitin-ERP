@@ -155,6 +155,7 @@ const Backend = () => {
                                     <th>Total Fees</th>
                                     <th>Call Recording</th>
                                     <th>Status</th>
+                                    <th>Reverification</th>
                                     <th>Free Date fpr Verification</th>
                                     <th>History</th>
                                 </tr>
@@ -172,10 +173,15 @@ const Backend = () => {
                                         </div>
                                         <td>{data.course}</td>
                                         <td>{data.feesPaid}</td>
-                                        <td>{data.callrecording}</td>
+                                        <td style={{color:"#2155CD", textDecoration:"underline"}}>{data.callrecording}</td>
                                         <td>
                                             <div className='admission14'>
                                                 <button>{data.status}</button>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className='backend5'>
+                                                <button>N/A</button>
                                             </div>
                                         </td>
                                         <td>{data.verificationdate}</td>
