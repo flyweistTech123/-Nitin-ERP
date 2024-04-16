@@ -19,3 +19,84 @@
     margin: 0;
     color: #FFFFFF;
 }
+
+
+
+/* ResultStatus Modal css */
+
+.ResultStatusModal1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #00000099;
+    padding-bottom: 10px;
+}
+
+
+
+.ResultStatusModal1 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0;
+    color: #3F3F3F;
+}
+
+
+.ResultStatusModal2{
+    margin-top: 20px;
+}
+
+
+.ResultStatusModal2 h6{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    margin: 0;
+    color: #3F3F3F;
+}
+
+
+.ResultStatusModal3{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
+.ResultStatusModal4{
+    width: 155px;
+    height: 43px;
+    border: 2px solid #3F3F3F80;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    gap: 10px;
+}
+
+
+.ResultStatusModal4 input{
+    width: 22px;
+    height: 22px;
+    border: 1px solid #ABABAB;
+}
+
+
+.ResultStatusModal5{
+    display: flex;
+    gap: 10px;
+}
+
+
+.ResultStatusModal5 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    color: #9F9F9F;
+}

@@ -87,3 +87,137 @@
     margin: 0;
     cursor: pointer;
 }
+
+
+
+
+
+/* FeeStructure Modal  css  */
+
+.feestructureModal101{
+    background-color: #f0f0f0;
+}
+
+.feestructureModal{
+
+}
+
+
+.feestructureModal1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.feestructureModal1 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.feestructureModal2{
+    width: 100%;
+    height: 87px;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.feestructureModal3{
+    width: auto;
+    height: auto;
+    background-color: #2155CD;
+    padding: 12px 39px 12px 39px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.feestructureModal3 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+.feestructureModal4{
+    width: auto;
+    height: auto;
+    border: 1px solid #2155CD;
+    background-color: #FFFFFF;
+    padding: 12px 39px 12px 39px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.feestructureModal4 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2155CD;
+    margin: 0;
+}
+
+
+
+
+
+/* EducationDetails Modal css  */
+
+
+
+.EducationDetailsModal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+
+.EducationDetailsModal p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0;
+}
+
+
+
+.EducationDetailsModal1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.EducationDetailsModal1 select{
+    border: none;
+    outline: none;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #444444;
+    margin: 0;
+}
+
+
+
+/* Document Details Modal  */

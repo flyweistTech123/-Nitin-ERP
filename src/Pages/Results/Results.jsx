@@ -4,8 +4,12 @@ import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoMdCheckmarkCircle } from "react-icons/io";
+import { RiErrorWarningFill } from "react-icons/ri";
 
-
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const Results = () => {
@@ -79,8 +83,65 @@ const Results = () => {
         },
 
     ];
+
+
+
+    // ResultStatus Modal 
+
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function ResultStatus(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body>
+                    <div className='ResultStatusModal'>
+                        <div className='ResultStatusModal1'>
+                            <p>Status</p>
+                            <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => setModalShow(false)} />
+                        </div>
+
+                        <div className='ResultStatusModal2'>
+                            <h6>Change Status</h6>
+
+                            <div className='ResultStatusModal3'>
+                                <div className='ResultStatusModal4'>
+                                    <input type="radio" />
+                                    <div className='ResultStatusModal5'>
+                                        <IoMdCheckmarkCircle color='#40AF0C' size={20} />
+                                        <p>Pass</p>
+                                    </div>
+                                </div>
+                                <div className='ResultStatusModal4'>
+                                    <input type="radio" />
+                                    <div className='ResultStatusModal5'>
+                                        <RiErrorWarningFill color='#FF0000' size={20} />
+                                        <p>Fail</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
     return (
         <>
+            <ResultStatus
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='pdc'>
                 <div className='admission1'>
                     <p>Results</p>
@@ -148,10 +209,10 @@ const Results = () => {
                                         <td>{data.university}</td>
                                         <td>{data.BatchNumber}</td>
                                         <td>{data.examBatch}</td>
-                                        <td>
+                                        <td onClick={() => setModalShow(true)}>
                                             <div className='result'>
                                                 <p>Pass</p>
-                                                <FiEdit  color='#FFFFFF' size={20}/>
+                                                <FiEdit color='#FFFFFF' size={20} />
                                             </div>
                                         </td>
                                         <td>

@@ -1,13 +1,13 @@
 import React from 'react'
 import './PendingOnlinePayments.css'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
 
-import img from '../../Img/img33.png'
 
 const PendingOnlinePayments = () => {
     const tableData = [
@@ -74,8 +74,199 @@ const PendingOnlinePayments = () => {
         },
 
     ];
+
+    // StudentDetails Modal 
+
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function StudentDetails(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body className='callrecordingModal'>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Student Details</Modal.Title>
+                    </Modal.Header>
+                    <div className='studentdetailModal'>
+                        <div className='studentdetailModal1'>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Name</label>
+                                <div className='studentdetailModal3'>
+                                    <p>LOREM IPSUM</p>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Email</label>
+                                <div className='studentdetailModal3'>
+                                    <p>loremipsum@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='studentdetailModal1'>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Phone</label>
+                                <div className='studentdetailModal3'>
+                                    <p>12345667890</p>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Admission No.</label>
+                                <div className='studentdetailModal3'>
+                                    <p>IMTS-67845</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='studentdetailModal1'>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Admission Date</label>
+                                <div className='studentdetailModal3'>
+                                    <p>DD/MM/YYYY</p>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Course</label>
+                                <div className='studentdetailModal3'>
+                                    <p>BA</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='studentdetailModal1'>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">University</label>
+                                <div className='studentdetailModal3'>
+                                    <p>LOREM IPSUM</p>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal2'>
+                                <label htmlFor="">Counselor</label>
+                                <div className='studentdetailModal3'>
+                                    <p>LOREM IPSUM</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='studentdetailModal4'>
+                            <button onClick={() => setModalShow(false)}>Close</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+        // Approve Online Payment Modal 
+
+
+        const [modalShow1, setModalShow1] = React.useState(false);
+
+
+
+        function ApproveOnlinePayment(props) {
+    
+    
+            return (
+                <Modal
+                    {...props}
+                    size="lg"
+                    aria-labelledby="contained-modal-title-vcenter"
+                    centered
+                >
+                    <Modal.Body className='callrecordingModal'>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Approve Online Payment</Modal.Title>
+                        </Modal.Header>
+                        <div className='studentdetailModal'>
+                            <div className='studentdetailModal1'>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Name</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>LOREM IPSUM</p>
+                                    </div>
+                                </div>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Email</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>loremipsum@gmail.com</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal1'>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Phone</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>12345667890</p>
+                                    </div>
+                                </div>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Admission No.</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>IMTS-67845</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal1'>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Admission Date</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>DD/MM/YYYY</p>
+                                    </div>
+                                </div>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Course</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>BA</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='studentdetailModal1'>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">University</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>LOREM IPSUM</p>
+                                    </div>
+                                </div>
+                                <div className='studentdetailModal2'>
+                                    <label htmlFor="">Counselor</label>
+                                    <div className='studentdetailModal3'>
+                                        <p>LOREM IPSUM</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='approvepaymentmodal'>
+                                <h6>Are you sure to approve payment : <span>12500</span> and Order ID : <span>IMTS-67845</span>?</h6>
+                            </div>
+    
+                            <div className='approvepaymentmodal1'>
+                                <button onClick={() => setModalShow1(false)}>Yes</button>
+                                <button onClick={() => setModalShow1(false)}>No</button>
+                            </div>
+                        </div>
+                    </Modal.Body>
+                </Modal>
+            );
+        }
+
     return (
         <>
+            <StudentDetails
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <ApproveOnlinePayment
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div className='pendingpayment'>
                 <div className='pendingpayment1'>
                     <p>Pending Online Payments</p>
@@ -119,12 +310,12 @@ const PendingOnlinePayments = () => {
                                                 <div className='pendingpayment3'>
                                                     <input type="checkbox" />
                                                     {data.name}
-                                                    <div className='pendingpayment4'>
+                                                    <div className='pendingpayment4' onClick={() => setModalShow(true)}>
                                                         <IoEye color='#FFFFFF' size={20} />
                                                     </div>
 
-                                                    <div className='pendingpayment5'>
-                                                        <FaCheck color='#FFFFFF' size={18} />
+                                                    <div className='pendingpayment5' onClick={() => setModalShow1(true)}>
+                                                        <FaCheck color='#FFFFFF' size={18}  />
                                                         <p>Approve</p>
                                                     </div>
                                                 </div>

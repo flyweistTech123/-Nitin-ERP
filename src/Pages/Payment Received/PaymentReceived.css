@@ -1,28 +1,173 @@
-.payreceived{
+.payreceived {
+  margin-top: 20px;
+}
+
+.payreceived1 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.payreceived1 button {
+  width: auto;
+  height: auto;
+  background-color: #2155cd;
+  border-radius: 4px;
+  padding: 12px 25px 12px 25px;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Remarks Modal  */
+
+.paymentremarkmodal {
+  padding: 20px;
+}
+
+.paymentremarkmodal1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.paymentremarkmodal1 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 25px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.paymentremarkmodal2 {
+  margin-top: 20px;
+}
+
+.paymentremarkmodal2 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000b2;
+  margin: 0;
+}
+
+/* paymentStatus Modal css */
+
+.paymentstatusModal {
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  cursor: pointer;
+}
+
+.paymentstatusModal1 {
+}
+
+.paymentstatusModal1 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.paymentstatusModal2 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+.paymentstatusModal3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.paymentstatusModal3 input {
+  width: 24px;
+  height: 24px;
+  border: 1px solid #40af0c;
+}
+
+.paymentstatusModal4 {
+  width: auto;
+  height: 34px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paymentstatusModal4 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+
+.paymentstatusModal5{
+    margin-top: 50px;
+}
+
+
+.paymentstatusModal5 h6{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.paymentstatusModal5 textarea{
+    border: 1px solid #000000;
+    background-color: #EEEEEE;
+    width: 90%;
+    height: 217px;
+    outline: none;
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+
+
+.paymentstatusModal6{
+    text-align: center;
     margin-top: 20px;
 }
 
 
-.payreceived1{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.payreceived1 button{
-    width: auto;
-    height: auto;
-    background-color: #2155CD;
-    border-radius: 4px;
-    padding: 12px 25px 12px 25px;
+.paymentstatusModal6 button{
+    width: 200px;
+    height: 50px;
     border: none;
+    border-radius: 5px;
+    background-color: #2155CD;
     outline: none;
     font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 12px;
+    font-weight: 700;
+    font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
     margin: 0;
-    cursor: pointer;
 }

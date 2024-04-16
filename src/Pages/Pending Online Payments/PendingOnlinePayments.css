@@ -70,12 +70,12 @@
 }
 
 .pendingpayment6 {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    /* width: 97%; */
-    margin: auto;
-    margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* width: 97%; */
+  margin: auto;
+  margin-top: 30px;
 }
 
 .pendingpayment7 {
@@ -118,49 +118,172 @@
   text-transform: uppercase;
 }
 
-
-
-.pendingpayment9{
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.pendingpayment9 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-
-.pendingpayment9 p{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: #000000;
-    margin: 0;
+.pendingpayment9 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
 }
 
-
-.pendingpayment10{
-    width: 101px;
-    height: 32px;
-    border: 1px solid #3F3F3F;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
+.pendingpayment10 {
+  width: 101px;
+  height: 32px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
 }
 
-
-.pendingpayment10 p{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000000;
-    margin: 0;
+.pendingpayment10 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
 }
 
+.pendingpayment11 {
+  margin-top: 60px;
+}
 
+/* StudentDetails Modal css */
 
-.pendingpayment11{
-    margin-top: 60px;
+.studentdetailModal {
+}
+
+.studentdetailModal1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.studentdetailModal2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.studentdetailModal2 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16.37px;
+  color: #000000;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.studentdetailModal3 {
+  width: 262px;
+  height: 40px;
+  border: 1px solid #d9d9d9;
+  border-radius: 29px;
+  display: flex;
+  align-items: center;
+}
+
+.studentdetailModal3 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16.37px;
+  color: #000000;
+  margin: 0;
+  padding-left: 10px;
+}
+
+.studentdetailModal4 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.studentdetailModal4 button {
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  background-color: #44444480;
+  border-radius: 4px;
+  padding: 10px 123px 10px 123px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Approve Online Payment Modal css */
+
+.approvepaymentmodal {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.approvepaymentmodal h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #ff0000;
+  margin: 0;
+}
+
+.approvepaymentmodal span {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ff0000;
+  margin: 0;
+}
+
+.approvepaymentmodal1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.approvepaymentmodal1 button:nth-child(1) {
+  width: 282px;
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: #2155cd;
+  border-radius: 4px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.approvepaymentmodal1 button:nth-child(2) {
+  width: 282px;
+  height: 40px;
+  border: 1px solid #FF0000;
+  outline: none;
+  background-color: #ffffff;
+  border-radius: 4px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #FF0000;
+  margin: 0;
 }
