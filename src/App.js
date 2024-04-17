@@ -59,6 +59,11 @@ import Telegram from './Pages/Telegram/Telegram';
 import VoiceCall from './Pages/Voice Call/VoiceCall';
 import Zoommeeting from './Pages/Zoom meeting Page/Zoommeeting';
 import Email from './Pages/Email Page/Email';
+import Documents from './Pages/Documents/Documents';
+import DailyReportTemplate from './Pages/Daily Report Template/DailyReportTemplate';
+import CallRecordingStorage from './Pages/Call Recording Storage/CallRecordingStorage';
+import ITReportingTemplate from './Pages/IT Reporting Template/ITReportingTemplate';
+import CompanyStructure from './Pages/Company Structure/CompanyStructure';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -124,6 +129,11 @@ function App() {
           <Route path="/voicecall" element={<VoiceCall />} />
           <Route path="/zoommeeting" element={<Zoommeeting />} />
           <Route path="/email" element={<Email />} />
+          <Route path="/documents" element={<Documents />} />
+          <Route path="/dailyReporttemplate" element={<DailyReportTemplate />} />
+          <Route path="/callrecordingstorage" element={<CallRecordingStorage />} />
+          <Route path="/itreportingtemplate" element={<ITReportingTemplate />} />
+          <Route path="/companystructure" element={<CompanyStructure />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,46 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import './ITTargetAnalysis.css'
+import './ITReportingTemplate.css'
 import HOC from '../../Components/HOC/HOC'
 import { IoIosArrowDown } from "react-icons/io";
 
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import img1 from '../../Img/img60.png'
+import img2 from '../../Img/img61.png'
+import img3 from '../../Img/img62.png'
+import img4 from '../../Img/img63.png'
+import img5 from '../../Img/img64.png'
+import img6 from '../../Img/img65.png'
+import img7 from '../../Img/img71.png'
+import { GoListUnordered } from "react-icons/go";
+import { MdFormatListNumbered } from "react-icons/md";
+import { RiDoubleQuotesR } from "react-icons/ri";
+import { MdMoreHoriz } from "react-icons/md";
 
 
-const ITTargetAnalysis = () => {
+const ITReportingTemplate = () => {
     const [faltu, setFaltu] = useState(null);
 
     const handleFaltu = (index) => {
         setFaltu(index);
     };
-    const tableData = [
-        {
-            id: 1,
-            Website: 'www.sdhdif.com',
-        },
-
-        {
-            id: 1,
-            Website: 'www.sdhdif.com',
-        },
-        {
-            id: 1,
-            Website: 'www.sdhdif.com',
-        },
-        {
-            id: 1,
-            Website: 'www.sdhdif.com',
-        },
-        {
-            id: 1,
-            Website: 'www.sdhdif.com',
-        },
-        {
-            id: 1,
-            Website: 'www.sdhdif.com',
-        },
-
-    ];
+    
 
     // ITTargetAnalysis Modal 
 
@@ -121,7 +105,7 @@ const ITTargetAnalysis = () => {
             />
             <div className='admission'>
                 <div className='admission1'>
-                    <p>IT Target Analysis</p>
+                    <p>Report Template</p>
                 </div>
 
                 <div className='targetanalysis2'>
@@ -131,19 +115,13 @@ const ITTargetAnalysis = () => {
 
                     <div className='admission2'>
                         <div className='cancel1' onClick={() => setModalShow(true)}>
-                            <p>Add</p>
+                            <p>Save</p>
                         </div>
                         <div className='targetanalysis' onClick={() => setModalShow(true)}>
                             <p>Edit</p>
                         </div>
                         <div className='cancel3'>
                             <p>Delete</p>
-                        </div>
-                        <div className='cancel1'>
-                            <p>Import</p>
-                        </div>
-                        <div className='cancel1'>
-                            <p>Export</p>
                         </div>
                     </div>
                 </div>
@@ -163,68 +141,91 @@ const ITTargetAnalysis = () => {
                 </div>
 
 
-
-                <div className='admission13'>
-                    <div className='table-container'>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th><input type="checkbox" /></th>
-                                    <th>Website</th>
-                                    <th>Total Traffic</th>
-                                    <th>Total Leads</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td><input type="checkbox" /></td>
-                                        <td>{data.Website}</td>
-                                        <td>
-                                            <div className='targetanalysis7'>
-
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className='targetanalysis7'>
-
-                                            </div>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
+                <div className='dailyreportemplate'>
+                    <div className='email8'>
+                        <p>B</p>
+                        <p>I</p>
+                        <p>U</p>
+                        <img src={img1} alt="" />
+                        <img src={img2} alt="" />
+                        <select name="" id="">
+                            <option value="">Font</option>
+                        </select>
+                        <img src={img3} alt="" />
+                        <img src={img4} alt="" />
+                        <img src={img5} alt="" />
+                        <GoListUnordered color='#444444' />
+                        <MdFormatListNumbered color='#444444' />
+                        <RiDoubleQuotesR color='#444444' />
+                        <img src={img7} alt="" />
                     </div>
 
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
+                    <div className='dailyreportemplate1'>
+                        <div className='dailyreportemplate2'>
+                            <input type="checkbox" />
+                            <p>Active</p>
+                        </div>
+                        <div className='dailyreportemplate2'>
+                            <input type="checkbox" />
+                            <p>Non active</p>
+                        </div>
 
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
+                        <div className='dailyreportemplate3'>
+                            <button>Add Variable</button>
                         </div>
                     </div>
                 </div>
 
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
+
+                <div className='dailyreportemplate4'>
+                    <div className='dailyreportemplate8'>
+                        <h6>Values</h6>
+                    </div>
+                    <div className='dailyreportemplate5'>
+                        <div className='dailyreportemplate6'>
+                            <p>URL</p>
+                            <div className='dailyreportemplate7'>
+                                <MdMoreHoriz color='#444444' size={20} />
+                            </div>
+                        </div>
+                        <div className='dailyreportemplate6'>
+                            <p>Website</p>
+                            <div className='dailyreportemplate7'>
+                                <MdMoreHoriz color='#444444' size={20} />
+                            </div>
+                        </div>
+                        <div className='dailyreportemplate6'>
+                            <p>Justification</p>
+                            <div className='dailyreportemplate7'>
+                                <MdMoreHoriz color='#444444' size={20} />
+                            </div>
+                        </div>
+                        <div className='dailyreportemplate6'>
+                            <p>Content</p>
+                            <div className='dailyreportemplate7'>
+                                <MdMoreHoriz color='#444444' size={20} />
+                            </div>
+                        </div>
+                        <div className='dailyreportemplate6'>
+                            <p>Content Word Count</p>
+                            <div className='dailyreportemplate7'>
+                                <MdMoreHoriz color='#444444' size={20} />
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
+                <div className='dailyreportemplate9'>
+                    <div className='dailyreportemplate10'>
+                        <p>Dear,</p>
+                        <p>Variable Selected</p>
+                        <p>Employee Name</p>
+                    </div>
+
+                </div>
             </div>
         </>
     )
 }
 
-export default HOC(ITTargetAnalysis)
+export default HOC(ITReportingTemplate)

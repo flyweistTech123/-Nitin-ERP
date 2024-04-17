@@ -1,0 +1,213 @@
+.documnets1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+
+
+.documnets2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+
+.documnets2 button:nth-child(1){
+    width: auto;
+    height: auto;
+    padding: 10px 33px 10px 33px;
+    background-color: #2155CD;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+.documnets2 button:nth-child(2){
+    width: auto;
+    height: auto;
+    padding: 10px 33px 10px 33px;
+    background-color: #FFFFFF;
+    border: 1px solid #2155CD;
+    outline: none;
+    border-radius: 4px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #2155CD;
+    margin: 0;
+}
+
+
+
+.documnets3{
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    gap: 5px;
+}
+
+
+.documnets3 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #000000;
+    margin: 0;
+}
+
+
+
+.documnets4{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+/* MarksheetUpload Modal css  */
+
+
+
+.MarksheetUploadmodal1{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32.74px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.MarksheetUploadmodal2{
+    border-bottom: 1px solid #000000;
+}
+
+
+
+.MarksheetUploadmodal3{
+    margin-top: 20px;
+}
+
+
+
+.MarksheetUploadmodal4{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.MarksheetUploadmodal5{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.MarksheetUploadmodal5 label{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27.28px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.MarksheetUploadmodal5 select{
+    width: 251px;
+    height: 40px;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 20px;
+}
+
+
+.MarksheetUploadmodal8{
+    margin-top: 30px;
+
+}
+
+
+.MarksheetUploadmodal6{
+    width: 251px;
+    height: 40px;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    outline: none;
+    padding-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+}
+
+
+.MarksheetUploadmodal5 textarea{
+    height: 118px;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+
+.MarksheetUploadmodal7{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    gap: 30px;
+}
+
+
+.MarksheetUploadmodal7 button:nth-child(1){
+    width: auto;
+    height: auto;
+    padding: 12px 64px 12px 64px;
+    background-color: #2155CD;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+
+
+.MarksheetUploadmodal7 button:nth-child(2){
+    width: auto;
+    height: auto;
+    padding: 12px 64px 12px 64px;
+    background-color: #FFFFFF;
+    border: 1px solid #3F3F3F;
+    outline: none;
+    border-radius: 4px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 19.1px;
+    color: #3F3F3F;
+    margin: 0;
+}

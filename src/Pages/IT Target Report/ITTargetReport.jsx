@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ITTargetReport.css'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
@@ -90,8 +92,76 @@ const ITTargetReport = () => {
         },
 
     ];
+
+    // ListEmployee Modal 
+
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function ListEmployee(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body>
+                    <div className='listEmployeemodal'>
+                        <div className='listEmployeemodal1'>
+                            <h6>List of IT Department Employee</h6>
+                            <div className='listEmployeemodal2'>
+                                <select name="" id="">
+                                    <option value="">Year</option>
+                                </select>
+                                <select name="" id="">
+                                    <option value="">Month</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div className='admission13'>
+                            <div className='table-container'>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" />  Employee Name</th>
+                                            <th>Number_Target</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {tableData.map((data) => (
+                                            <tr key={data.id}>
+                                                <td><input type="checkbox" />  {data.employeename}</td>
+                                                <td>
+                                                    <div className='listEmployeemodal3'>
+
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div className='MarksheetUploadmodal7'>
+                            <button onClick={() => setModalShow(false)}>SAVE</button>
+                            <button onClick={() => setModalShow(false)}>RESET</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
     return (
         <>
+            <ListEmployee
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>IT Target Reports</p>
@@ -102,7 +172,7 @@ const ITTargetReport = () => {
                     </div>
 
                     <div className='admission2'>
-                        <div className='cancel1'>
+                        <div className='cancel1' onClick={() => setModalShow(true)}>
                             <p>Target Allotments</p>
                         </div>
                     </div>

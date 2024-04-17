@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Results.css'
 import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
@@ -7,6 +7,8 @@ import { FiEdit } from "react-icons/fi";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoMdCheckmarkCircle } from "react-icons/io";
 import { RiErrorWarningFill } from "react-icons/ri";
+import { BsFillPlusCircleFill } from "react-icons/bs";
+import { AiFillMinusCircle } from "react-icons/ai";
 
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -94,7 +96,17 @@ const Results = () => {
 
 
     function ResultStatus(props) {
-
+        const [selected, setSelected] = useState('');
+        const [number, setNumber] = useState(1); // Initial value is 1
+        const handleIncrement = () => {
+            setNumber((prevNumber) => prevNumber + 1);
+        };
+        const handleDecrement = () => {
+            setNumber((prevNumber) => {
+                // Prevent the number from going below zero
+                return prevNumber > 0 ? prevNumber - 1 : prevNumber;
+            });
+        };
 
         return (
             <Modal
@@ -114,20 +126,49 @@ const Results = () => {
                             <h6>Change Status</h6>
 
                             <div className='ResultStatusModal3'>
-                                <div className='ResultStatusModal4'>
-                                    <input type="radio" />
-                                    <div className='ResultStatusModal5'>
+                                <div className={`ResultStatusModal4 ${selected === 'pass' ? 'selected' : ''}`}>
+                                    <input
+                                        type="radio"
+                                        name="status"
+                                        value="pass"
+                                        onChange={() => setSelected('pass')}
+                                    />
+                                    <div className={`ResultStatusModal5 ${selected === 'pass' ? 'selected' : ''}`}>
                                         <IoMdCheckmarkCircle color='#40AF0C' size={20} />
-                                        <p>Pass</p>
+                                        <p style={{ color: selected === 'pass' ? '#40AF0C' : '#9F9F9F' }}>Pass</p>
                                     </div>
                                 </div>
-                                <div className='ResultStatusModal4'>
-                                    <input type="radio" />
-                                    <div className='ResultStatusModal5'>
+                                <div className={`ResultStatusModal4 ${selected === 'fail' ? 'selected11' : ''}`}>
+                                    <input
+                                        type="radio"
+                                        name="status"
+                                        value="fail"
+                                        onChange={() => setSelected('fail')}
+                                    />
+                                    <div className={`ResultStatusModal5 ${selected === 'fail' ? 'selected' : ''}`}>
                                         <RiErrorWarningFill color='#FF0000' size={20} />
-                                        <p>Fail</p>
+                                        <p style={{ color: selected === 'fail' ? '#FF0000' : '#9F9F9F' }}>Fail</p>
                                     </div>
                                 </div>
+                            </div>
+
+                            {selected === 'fail' ? (
+                                <div className='ResultStatusModal6'>
+                                    <h6>No. of Back Papers</h6>
+
+                                    <div className='ResultStatusModal7'>
+                                        <AiFillMinusCircle color='#2155CD' size={25} onClick={handleDecrement} />
+                                        <p>{number}</p>
+                                        <BsFillPlusCircleFill color='#2155CD' size={25} onClick={handleIncrement} />
+                                    </div>
+                                </div>
+                            ):(
+                                ''
+                            )}
+
+
+                            <div className='ResultStatusModal8'>
+                                <button onClick={() => setModalShow(false)}>SUBMIT</button>
                             </div>
                         </div>
                     </div>

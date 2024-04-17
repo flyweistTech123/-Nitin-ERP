@@ -1,9 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import './ITReport.css'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
+import { GoListUnordered } from "react-icons/go";
+import { MdFormatListNumbered } from "react-icons/md";
+import { RiDoubleQuotesR } from "react-icons/ri";
 
+import img1 from '../../Img/img60.png'
+import img2 from '../../Img/img61.png'
+import img3 from '../../Img/img62.png'
+import img4 from '../../Img/img63.png'
+import img5 from '../../Img/img64.png'
+import img7 from '../../Img/img71.png'
 
 const ITReport = () => {
     const tableData = [
@@ -82,8 +93,67 @@ const ITReport = () => {
         },
 
     ];
+
+
+    // ContentAdded Modal 
+
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function ContentAdded(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body>
+                    <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                        <Modal.Title className='MarksheetUploadmodal1'>Content Added</Modal.Title>
+                    </Modal.Header>
+
+                    <div className='ContentAddedmodal1'>
+                        <div className='email8'>
+                            <p>B</p>
+                            <p>I</p>
+                            <p>U</p>
+                            <img src={img1} alt="" />
+                            <img src={img2} alt="" />
+                            <select name="" id="">
+                                <option value="">Font</option>
+                            </select>
+                            <img src={img3} alt="" />
+                            <img src={img4} alt="" />
+                            <img src={img5} alt="" />
+                            <GoListUnordered color='#444444' />
+                            <MdFormatListNumbered color='#444444' />
+                            <RiDoubleQuotesR color='#444444' />
+                            <img src={img7} alt="" />
+                        </div>
+
+                        <div className='ContentAddedmodal2'>
+                            <p>Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.</p>
+                            <p>Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.</p>
+                            <p>Porem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.</p>
+                        </div>
+                    </div>
+
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
     return (
         <>
+            <ContentAdded
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>IT Report</p>
@@ -139,7 +209,7 @@ const ITReport = () => {
                                         <td><input type="checkbox" /></td>
                                         <td>{data.recordeddate}</td>
                                         <td>{data.website}</td>
-                                        <td style={{  color: "#00B25D", textDecoration: "underline" }}>{data.contentAdded}</td>
+                                        <td style={{ color: "#00B25D", textDecoration: "underline" }} onClick={() => setModalShow(true)}>{data.contentAdded}</td>
                                         <td>{data.contentwordCount}</td>
                                         <td>{data.URL}</td>
                                         <td>{data.topic}</td>
