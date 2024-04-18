@@ -64,6 +64,10 @@ import DailyReportTemplate from './Pages/Daily Report Template/DailyReportTempla
 import CallRecordingStorage from './Pages/Call Recording Storage/CallRecordingStorage';
 import ITReportingTemplate from './Pages/IT Reporting Template/ITReportingTemplate';
 import CompanyStructure from './Pages/Company Structure/CompanyStructure';
+import PermissionAccess from './Pages/Permission Access/PermissionAccess';
+import AccessPermission from './Pages/Permission Access/AccessPermission';
+import ManagePermissionAccess from './Pages/Permission Access/ManagePermissionAccess';
+import ReferenceFormData from './Pages/Reference Form Data/ReferenceFormData';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -134,6 +138,10 @@ function App() {
           <Route path="/callrecordingstorage" element={<CallRecordingStorage />} />
           <Route path="/itreportingtemplate" element={<ITReportingTemplate />} />
           <Route path="/companystructure" element={<CompanyStructure />} />
+          <Route path="/permissionaccess" element={<PermissionAccess />} />
+          <Route path="/accesspermission" element={<AccessPermission />} />
+          <Route path="/managepermissionaccess" element={<ManagePermissionAccess />} />
+          <Route path="/referenceformdata" element={<ReferenceFormData />} />
         </Routes>
       </BrowserRouter>
     </>

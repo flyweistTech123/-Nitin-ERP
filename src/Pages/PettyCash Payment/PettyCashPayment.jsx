@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './PettyCashPayment.css'
 import HOC from '../../Components/HOC/HOC'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineClose } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoEye } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
-
-import img from '../../Img/img33.png'
 
 
 const PettyCashPayment = () => {
@@ -87,8 +87,191 @@ const PettyCashPayment = () => {
         },
 
     ];
+
+
+    const navigate = useNavigate()
+
+
+
+    // New Payment Request  Modal 
+
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function NewPaymentRequest(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest2'>
+                            <p>New Payment Request</p>
+                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow(false)} />
+                        </div>
+
+                        <div className='newpaymentrequest3'>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Title</label>
+                                <input type="text" />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Details</label>
+                                <input type="text" />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Amount</label>
+                                <input type="text" />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Reason</label>
+                                <select name="" id="" onClick={() => setModalShow1(true)}>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Authority (Final Only)</label>
+                                <select name="" id="">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className='newpaymentrequest5'>
+                            <button onClick={() => setModalShow(false)}>Submit</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+
+    // Cash Request Reason  Modal 
+
+
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+
+
+    function CashRequestReason(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest6'>
+                            <p>Cash Request Reason</p>
+                        </div>
+
+                        <div className='admission13'>
+                            <div className='table-container'>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" /></th>
+                                            <th>Reason</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" /></td>
+                                            <td>REASON Type</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" /></td>
+                                            <td>REASON Type</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div className='admission2'>
+                            <div className='cancel1' onClick={() => setModalShow2(true)} >
+                                <p>Add</p>
+                            </div>
+                            <div className='cancel2'>
+                                <p>Edit</p>
+                            </div>
+                            <div className='cancel3'>
+                                <p>Delete</p>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // Add record  Modal 
+
+
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
+
+    function Addrecord(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest7'>
+                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow2(false)} />
+                        </div>
+
+                        <div className='newpaymentrequest3'>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Record</label>
+                                <input type="text" placeholder='Add Here' />
+                            </div>
+                        </div>
+
+                        <div className='newpaymentrequest5'>
+                            <button onClick={() => setModalShow2(false)} style={{ backgroundColor: "#2155CD" }} >Add</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
     return (
         <>
+            <NewPaymentRequest
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <CashRequestReason
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
+            <Addrecord
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>PettyCash Payment</p>
@@ -121,9 +304,9 @@ const PettyCashPayment = () => {
                 </div>
 
 
-                <div className='expense31'>
-                    <button>Add Expense</button>
-                    <button>Available Cash on user</button>
+                <div className='pettycashpayment'>
+                    <button onClick={() => setModalShow(true)}>New Payment Request</button>
+                    <button onClick={() => navigate('/expense')}>Expense</button>
                 </div>
                 <div className='admission13'>
                     <div className='table-container'>

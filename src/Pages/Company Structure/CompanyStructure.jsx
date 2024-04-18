@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { TbUsersPlus } from "react-icons/tb";
 import { FiPlus } from "react-icons/fi";
 
-
+import img from '../../Img/img78.png'
 
 
 
@@ -49,6 +49,12 @@ const CompanyStructure = () => {
                                 <div className='companystructure4'>
                                     <p>Marketing Team</p>
                                 </div>
+
+                                <div className='companystructure8'>
+                                    <img src={img} alt="" />
+                                    <p>Employee</p>
+                                </div>
+
                             </div>
                         </div>
                     </div>

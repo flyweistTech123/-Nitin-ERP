@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './Expense.css'
 import HOC from '../../Components/HOC/HOC'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineClose } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
+import { IoCloseSharp } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
+
 
 
 import img from '../../Img/img33.png'
@@ -93,8 +97,327 @@ const Expense = () => {
         },
 
     ];
+
+
+
+    const navigate = useNavigate()
+
+
+    // Add Expense  Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function AddExpense(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest2'>
+                            <p>Expense</p>
+                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow(false)} />
+                        </div>
+
+                        <div className='newpaymentrequest3'>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Title</label>
+                                <input type="text" />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Amount</label>
+                                <input type="text" />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Voucher No</label>
+                                <div className='AddExpenseModal'>
+                                    <input type="text" name="" id="" />
+                                    <input type="text" name="" id="" />
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Description</label>
+                                <input type="text" />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Expense Type</label>
+                                <select name="" id="" onClick={() => setModalShow1(true)}>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Expense Bill Upload</label>
+                                <div className='AddExpenseModal1'>
+                                    <input type="text" name="" id="" />
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Warranty Bill Upload</label>
+                                <div className='AddExpenseModal1'>
+                                    <input type="text" name="" id="" />
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='newpaymentrequest5'>
+                            <button onClick={() => setModalShow(false)}>Submit</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // Cash Request Reason  Modal 
+
+
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+
+
+    function CashRequestReason(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest6'>
+                            <p>Cash Request Reason</p>
+                        </div>
+
+                        <div className='admission13'>
+                            <div className='table-container'>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th><input type="checkbox" /></th>
+                                            <th>Reason</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="checkbox" /></td>
+                                            <td>REASON Type</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox" /></td>
+                                            <td>REASON Type</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div className='admission2'>
+                            <div className='cancel1' onClick={() => setModalShow2(true)} >
+                                <p>Add</p>
+                            </div>
+                            <div className='cancel2'>
+                                <p>Edit</p>
+                            </div>
+                            <div className='cancel3'>
+                                <p>Delete</p>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+    // Add record  Modal 
+
+
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
+
+    function Addrecord(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest7'>
+                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow2(false)} />
+                        </div>
+
+                        <div className='newpaymentrequest3'>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Record</label>
+                                <input type="text" placeholder='Add Here' />
+                            </div>
+                        </div>
+
+                        <div className='newpaymentrequest5'>
+                            <button onClick={() => setModalShow2(false)} style={{ backgroundColor: "#2155CD" }} >Add</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+
+
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+
+    // Edit Expense  Modal 
+
+    function EditExpense(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="sl"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='newpaymentrequest1'>
+                        <div className='newpaymentrequest2'>
+                            <p>Edit Expense</p>
+                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow3(false)} />
+                        </div>
+
+                        <div className='newpaymentrequest3'>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Title</label>
+                                <input type="text" placeholder='LOREM IPSUM' />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Amount</label>
+                                <input type="text" placeholder='₹ 100.32' />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Voucher No</label>
+                                <div className='AddExpenseModal'>
+                                    <input type="text" name="" id="" placeholder='1234' />
+                                    <input type="text" name="" id="" />
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Description</label>
+                                <input type="text" placeholder='dsaffhrjyukyujfewferwt' />
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Expense Type</label>
+                                <select name="" id="" onClick={() => setModalShow1(true)}>
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Expense Bill Upload</label>
+                                <div className='AddExpenseModal1'>
+                                    <input type="text" name="" id="" />
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                            <div className='newpaymentrequest4'>
+                                <label htmlFor="">Warranty Bill Upload</label>
+                                <div className='AddExpenseModal1'>
+                                    <input type="text" name="" id="" />
+                                    <button>Upload</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='newpaymentrequest5'>
+                            <button onClick={() => setModalShow1(false)}>Submit</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    // Return Modal 
+
+    function Return(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Body >
+                    <div className='returnmodal3'>
+                        <div className='returnmodal'>
+                            <div className='returnmodal1'>
+                                <label htmlFor="">Return Amount</label>
+                                <input type="text" />
+                            </div>
+                            <div className='returnmodal1'>
+                                <label htmlFor="">Return Remarks</label>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                            </div>
+                        </div>
+
+                        <div className='returnmodal2'>
+                            <button onClick={() => setModalShow4(false)}>Add</button>
+                        </div>
+                    </div>
+
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
     return (
         <>
+            <AddExpense
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <CashRequestReason
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
+            <Addrecord
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <EditExpense
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
+            <Return
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Expense</p>
@@ -102,7 +425,7 @@ const Expense = () => {
                         <div className='expense30'>
                             <p>Create a field</p>
                         </div>
-                        <div className='cancel2'>
+                        <div className='cancel2' onClick={() => setModalShow3(true)}>
                             <p>Edit</p>
                         </div>
                         <div className='cancel3'>
@@ -128,7 +451,7 @@ const Expense = () => {
 
 
                 <div className='expense31'>
-                    <button>Add Expense</button>
+                    <button onClick={() => setModalShow(true)}>Add Expense</button>
                     <button>Available Cash on user</button>
                 </div>
                 <div className='admission13'>
@@ -171,8 +494,8 @@ const Expense = () => {
                                         <td>{data.ReturnRemarks}</td>
                                         <td>{data.ReturnAmount}</td>
                                         <td>
-                                            <div className='expense33'>
-                                                <button>Return</button>
+                                            <div className='expense33' >
+                                                <button onClick={() => setModalShow4(true)}>Return</button>
                                             </div>
                                         </td>
                                     </tr>

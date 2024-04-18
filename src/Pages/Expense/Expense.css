@@ -56,3 +56,157 @@
     line-height: 16.37px;
     color: #FFFFFF;
 }
+
+
+
+
+
+/* Add Expense  Modal css */
+
+
+
+.AddExpenseModal {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.AddExpenseModal input:nth-child(1){
+    width: 134px;
+    height: 40px;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+.AddExpenseModal input:nth-child(2){
+    width: 120px;
+    height: 40px;
+    border: 1px solid #3F3F3F;
+    border-radius: 4px;
+    outline: none;
+}
+
+
+.AddExpenseModal button{
+    width: auto;
+    height: auto;
+    border: none;
+    outline: none;
+    background-color: #FFB800;
+    padding: 10px 47px 10px 47px;
+    border-radius: 8px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16.37px;
+    color: #000000;
+}
+
+
+.AddExpenseModal1{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.AddExpenseModal1 input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #3F3F3F;
+    outline: none;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+
+.AddExpenseModal1 button{
+    width: auto;
+    height: auto;
+    border: none;
+    outline: none;
+    background-color: #FFB800;
+    padding: 10px 47px 10px 47px;
+    border-radius: 8px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16.37px;
+    color: #000000;
+}
+
+
+
+/* Return Modal css  */
+
+
+.returnmodal{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.returnmodal1{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+.returnmodal1 label{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16.37px;
+    color: #000000;
+    margin: 0;
+}
+
+
+.returnmodal1 input{
+    width: 100%;
+    height: 40px;
+    border: 1px solid #444444;
+    outline: none;
+    border-radius: 4px;
+    padding-left: 10px;
+}
+
+.returnmodal1 textarea{
+    width: 100%;
+    border: 1px solid #444444;
+    outline: none;
+    border-radius: 4px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+.returnmodal2{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.returnmodal2 button{
+    width: auto;
+    height: auto;
+    border: none;
+    outline: none;
+    background-color: #2155CD;
+    padding: 12px 80px 12px 80px;
+    border-radius: 8px;
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.82px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+
+.returnmodal3{
+    padding: 30px;
+}

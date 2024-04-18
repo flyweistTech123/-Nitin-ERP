@@ -268,10 +268,12 @@ const Sidebar = () => {
                             <img src={img8} alt="" />
                             <p>History</p>
                         </div>
-                        <div className='sidebar2'>
-                            <img src={img9} alt="" />
-                            <p>Permission Access</p>
-                        </div>
+                        <Link to={'/permissionaccess'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img9} alt="" />
+                                <p>Permission Access</p>
+                            </div>
+                        </Link>
                         <div className='sidebar2'>
                             <div className='sidebar3' onClick={() => toggleMenu3(0)}>
                                 <div className='sidebar4'>
@@ -359,10 +361,12 @@ const Sidebar = () => {
                                 </ul>
                             </div>
                         )}
-                        <div className='sidebar2'>
-                            <img src={img9} alt="" />
-                            <p>Reference Form Data</p>
-                        </div>
+                        <Link to={'/referenceformdata'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img9} alt="" />
+                                <p>Reference Form Data</p>
+                            </div>
+                        </Link>
                         <Link to={'/pettycashpayment'} className='link'>
                             <div className='sidebar2'>
                                 <img src={img9} alt="" />

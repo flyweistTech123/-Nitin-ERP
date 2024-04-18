@@ -115,3 +115,23 @@
     left: 250px;
     top: -35px;
 }
+
+
+.companystructure8{
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+    padding-left: 30px;
+    gap: 10px;
+    cursor: pointer;
+}
+
+
+.companystructure8 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    color: #3F3F3F;
+    margin: 0;
+}
