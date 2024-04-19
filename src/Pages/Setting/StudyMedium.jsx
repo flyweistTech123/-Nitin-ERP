@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Setting.css'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import HOC from '../../Components/HOC/HOC'
 import { ImSearch } from "react-icons/im";
 import { IoIosArrowDown } from "react-icons/io";
 
-
-
-import img from '../../Img/img33.png'
 
 
 const StudyMedium = () => {
@@ -38,8 +37,48 @@ const StudyMedium = () => {
         },
 
     ];
+
+    // AddBank  Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
+    function AddStudyMedium(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Study Medium</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className=''>
+                        <div className='returnmodal'>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Study Medium<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow(false)}>Save</button>
+                            <button onClick={() => setModalShow(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
     return (
         <>
+            <AddStudyMedium
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Study Medium</p>
@@ -50,7 +89,7 @@ const StudyMedium = () => {
                         <ImSearch color='#444444' size={20} />
                     </div>
                     <div className='setting4'>
-                        <button>New</button>
+                        <button onClick={() => setModalShow(true)}>New</button>
                     </div>
                 </div>
 

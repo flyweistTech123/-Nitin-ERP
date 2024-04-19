@@ -11,8 +11,6 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-import img from '../../Img/img33.png'
-
 
 const Expense = () => {
     const tableData = [

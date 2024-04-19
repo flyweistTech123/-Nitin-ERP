@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import { MdOutlineClose } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
+import { CgAsterisk } from "react-icons/cg";
 
-
-import img from '../../Img/img33.png'
 
 
 const University = () => {
@@ -82,8 +84,184 @@ const University = () => {
         },
 
     ];
+
+    // AddUniversity  Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function AddUniversity(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Create University/college</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className='addUniversityModal1'>
+                        <div className='addUniversityModal2'>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Name<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal3'>
+                                    <label htmlFor="">Address</label>
+                                    <textarea name="" id="" cols="50" rows="3"></textarea>
+                                </div>
+                                <div className='addUniversityModal3'>
+                                    <label htmlFor="">Description</label>
+                                    <textarea name="" id="" cols="50" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Registration Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">RR Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">TOC Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Gap Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">LE Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Back Paper Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Multiple Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow(false)}>Save</button>
+                            <button onClick={() => setModalShow(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // AddUniversity  Modal 
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+
+
+    function EditUniversity(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Edit University/college</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className='addUniversityModal1'>
+                        <div className='addUniversityModal2'>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Name<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal3'>
+                                    <label htmlFor="">Address</label>
+                                    <textarea name="" id="" cols="50" rows="3"></textarea>
+                                </div>
+                                <div className='addUniversityModal3'>
+                                    <label htmlFor="">Description</label>
+                                    <textarea name="" id="" cols="50" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Registration Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">RR Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">TOC Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Gap Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">LE Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Back Paper Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Multiple Charges<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow1(false)}>Save</button>
+                            <button onClick={() => setModalShow1(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
     return (
         <>
+            <AddUniversity
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <EditUniversity
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>University</p>
@@ -100,7 +278,7 @@ const University = () => {
                         </div>
                     </div>
                     <div className='payreceived1'>
-                        <button>New</button>
+                        <button onClick={() => setModalShow(true)}>New</button>
                     </div>
                 </div>
 
@@ -133,7 +311,7 @@ const University = () => {
                                         <td>{data.BackPapercharges}</td>
                                         <td>
                                             <div className='setting'>
-                                                <button><MdEdit /> Edit</button>
+                                                <button onClick={() => setModalShow1(true)}><MdEdit /> Edit</button>
                                                 <button><RiDeleteBin6Fill /> Delete</button>
                                             </div>
                                         </td>

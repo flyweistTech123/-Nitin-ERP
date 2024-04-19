@@ -307,14 +307,16 @@ const Sidebar = () => {
                                     <Link to={'/studymedium'} className='link'>
                                         <li>Study Medium</li>
                                     </Link>
-                                    <Link to={'/coursefeeshead'} className='link'>
+                                    <Link to={'/coursefeesstructure'} className='link'>
                                         <li>Course fee structure</li>
                                     </Link>
                                     <Link to={'/autobackup'} className='link'>
                                         <li>Auto Backup</li>
                                     </Link>
                                     <li>Restore Setting</li>
-                                    <li>Birthday Wishes</li>
+                                    <Link to={'/birthdaywishes'} className='link'>
+                                        <li>Birthday Wishes</li>
+                                    </Link>
                                     <li>Work Anniversary</li>
                                     <li>Telegram API</li>
                                     <li>Easebuzz API</li>

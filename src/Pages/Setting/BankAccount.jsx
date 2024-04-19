@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineClose } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
@@ -58,8 +60,155 @@ const BankAccount = () => {
         },
 
     ];
+
+
+    // AddBank  Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
+    function AddBank(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Create Bank</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className=''>
+                        <div className='returnmodal'>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Bank Name<span>*</span></label>
+                                <select name="" id="">
+                                    <option value="">State Bank of india</option>
+                                    <option value="">ICICI Bank</option>
+                                    <option value="">Yes Bank</option>
+                                    <option value="">Bank of Baroda</option>
+                                    <option value="">PNB Bank</option>
+                                    <option value="">HDFC Bank</option>
+                                    <option value="">UCO Bank</option>
+                                </select>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Account Number<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">IFSC Number<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Bank Branch<span>*</span></label>
+                                    <select name="" id="">
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow(false)}>Save</button>
+                            <button onClick={() => setModalShow(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // EditBank  Modal 
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    function EditBank(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Edit Bank</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className=''>
+                        <div className='returnmodal'>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Bank Name<span>*</span></label>
+                                <select name="" id="">
+                                    <option value="">State Bank of india</option>
+                                    <option value="">ICICI Bank</option>
+                                    <option value="">Yes Bank</option>
+                                    <option value="">Bank of Baroda</option>
+                                    <option value="">PNB Bank</option>
+                                    <option value="">HDFC Bank</option>
+                                    <option value="">UCO Bank</option>
+                                </select>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Account Number<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">IFSC Number<span>*</span></label>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='addUniversityModal4'>
+                                <div className='addUniversityModal5'>
+                                    <label htmlFor="">Bank Branch<span>*</span></label>
+                                    <select name="" id="">
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                        <option value="">SLoren Epsom</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow(false)}>Save</button>
+                            <button onClick={() => setModalShow(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+
     return (
         <>
+            <AddBank
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <EditBank
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Bank</p>
@@ -76,7 +225,7 @@ const BankAccount = () => {
                         </div>
                     </div>
                     <div className='payreceived1'>
-                        <button>New</button>
+                        <button onClick={() => setModalShow(true)}>New</button>
                     </div>
                 </div>
 
@@ -101,7 +250,7 @@ const BankAccount = () => {
                                         <td>{data.Branch}</td>
                                         <td>
                                             <div className='setting'>
-                                                <button><MdEdit /> Edit</button>
+                                                <button onClick={() => setModalShow1(true)}><MdEdit /> Edit</button>
                                                 <button><RiDeleteBin6Fill /> Delete</button>
                                             </div>
                                         </td>

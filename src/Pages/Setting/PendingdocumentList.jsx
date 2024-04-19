@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 import { MdHistory } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
@@ -40,13 +43,57 @@ const PendingdocumentList = () => {
         },
 
     ];
+
+
+    // AddUniversity  Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
+
+
+    function AddDocument(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Document</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className='addUniversityModal1'>
+                        <div className='addUniversityModal2'>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Document Name<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow(false)}>Save</button>
+                            <button onClick={() => setModalShow(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
     return (
         <>
+            <AddDocument
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Pending Document List</p>
                     <div className='admission2'>
-                        <div className='cancel1'>
+                        <div className='cancel1' onClick={() => setModalShow(true)}>
                             <p>Add</p>
                         </div>
                         <div className='cancel1'>

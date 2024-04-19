@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
+import Modal from 'react-bootstrap/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineClose } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
@@ -8,7 +10,6 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
 
 
-import img from '../../Img/img33.png'
 
 
 const Subject = () => {
@@ -52,8 +53,112 @@ const Subject = () => {
         },
 
     ];
+
+
+
+    // AddSpecialization  Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
+    function AddSubject(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Add Subject</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className=''>
+                        <div className='returnmodal'>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Subject Name<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Description<span>*</span></label>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                            </div>
+                            <div className='EditCourses2'>
+                                <label htmlFor="">Upload Book</label>
+                                <select name="" id="">
+                                    <option value="">Select File Type</option>
+                                </select>
+                                <button>Upload </button>
+                                <p>.pdf ,  .doc .png, .jpeg . supported files only</p>
+                            </div>
+                        </div>
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow(false)}>Save</button>
+                            <button onClick={() => setModalShow(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // AddSpecialization  Modal 
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    function EditSubject(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Edit Subject</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className=''>
+                        <div className='returnmodal'>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Subject Name<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Description<span>*</span></label>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div className='EditCourses2'>
+                            <label htmlFor="">Upload Book</label>
+                            <select name="" id="">
+                                <option value="">Select File Type</option>
+                            </select>
+                            <button>Upload </button>
+                            <p>.pdf ,  .doc .png, .jpeg . supported files only</p>
+                        </div>
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow1(false)}>Save</button>
+                            <button onClick={() => setModalShow1(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
     return (
         <>
+            <AddSubject
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <EditSubject
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Subject</p>
@@ -70,7 +175,7 @@ const Subject = () => {
                         </div>
                     </div>
                     <div className='payreceived1'>
-                        <button>New</button>
+                        <button onClick={() => setModalShow(true)}>New</button>
                     </div>
                 </div>
 
@@ -89,15 +194,13 @@ const Subject = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td><MdHistory color='#000000' size={20} />      {data.subjectname}</td>
-                                        <td style={{fontWeight:'700', fontSize:'16px', color:'#2155CD', textDecoration:"underline"}}>{data.Books}</td>
-                                        <td>
-                                            <div className='setting1'>
-                                                <p>{data.Description}</p>
-                                            </div>
-                                        </td>
+                                        <td style={{ fontWeight: '700', fontSize: '16px', color: '#2155CD', textDecoration: "underline" }}>{data.Books}</td>
+                                        <div className='setting1'>
+                                            <p>{data.Description}</p>
+                                        </div>
                                         <td>
                                             <div className='setting'>
-                                                <button><MdEdit /> Edit</button>
+                                                <button onClick={() => setModalShow1(true)}><MdEdit /> Edit</button>
                                                 <button><RiDeleteBin6Fill /> Delete</button>
                                             </div>
                                         </td>

@@ -275,9 +275,8 @@
 }
 
 .slide-button-container.active .slide-button-background {
-    background-color: #2155CD; /* Green background when active */
+    background-color: #2155CD; 
 }
-
 .slide-button-container.active .slide-button-handle {
-    transform: translateX(35px); /* Move handle to the right when active */
+    transform: translateX(35px); 
 }

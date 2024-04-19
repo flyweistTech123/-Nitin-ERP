@@ -40,7 +40,7 @@ import Specialization from './Pages/Setting/Specialization';
 import Subject from './Pages/Setting/Subject';
 import BankAccount from './Pages/Setting/BankAccount';
 import StudyMedium from './Pages/Setting/StudyMedium';
-import CourseFeesHead from './Pages/Setting/CourseFeesHead';
+import CoursefeesStructure from './Pages/Setting/CoursefeesStructure';
 import AutoBackup from './Pages/Setting/AutoBackup';
 import PDCFollowUpStatus from './Pages/Setting/PDCFollowUpStatus';
 import ExpenseType from './Pages/Setting/ExpenseType';
@@ -68,6 +68,7 @@ import PermissionAccess from './Pages/Permission Access/PermissionAccess';
 import AccessPermission from './Pages/Permission Access/AccessPermission';
 import ManagePermissionAccess from './Pages/Permission Access/ManagePermissionAccess';
 import ReferenceFormData from './Pages/Reference Form Data/ReferenceFormData';
+import BirthdayWishes from './Pages/Setting/BirthdayWishes';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -114,7 +115,7 @@ function App() {
           <Route path="/subject" element={<Subject />} />
           <Route path="/bankaccount" element={<BankAccount />} />
           <Route path="/studymedium" element={<StudyMedium />} />
-          <Route path="/coursefeeshead" element={<CourseFeesHead />} />
+          <Route path="/coursefeesstructure" element={<CoursefeesStructure />} />
           <Route path="/autobackup" element={<AutoBackup />} />
           <Route path="/pdcfollowupStatus" element={<PDCFollowUpStatus />} />
           <Route path="/expensetype" element={<ExpenseType />} />
@@ -142,6 +143,7 @@ function App() {
           <Route path="/accesspermission" element={<AccessPermission />} />
           <Route path="/managepermissionaccess" element={<ManagePermissionAccess />} />
           <Route path="/referenceformdata" element={<ReferenceFormData />} />
+          <Route path="/birthdaywishes" element={<BirthdayWishes />} />
         </Routes>
       </BrowserRouter>
     </>
