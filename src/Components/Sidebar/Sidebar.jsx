@@ -317,15 +317,33 @@ const Sidebar = () => {
                                     <Link to={'/birthdaywishes'} className='link'>
                                         <li>Birthday Wishes</li>
                                     </Link>
-                                    <li>Work Anniversary</li>
-                                    <li>Telegram API</li>
-                                    <li>Easebuzz API</li>
-                                    <li>CC Avenue API</li>
-                                    <li>Paytm Gateway</li>
-                                    <li>Keka</li>
-                                    <li>Wati API</li>
-                                    <li>Interakt API</li>
-                                    <li>KIT 19</li>
+                                    <Link to={'/workanniversory'} className='link'>
+                                        <li>Work Anniversary</li>
+                                    </Link>
+                                    <Link to={'/telegramAPI'} className='link'>
+                                        <li>Telegram API</li>
+                                    </Link>
+                                    <Link to={'/easebuzzAPI'} className='link'>
+                                        <li>Easebuzz API</li>
+                                    </Link>
+                                    <Link to={'/ccavenueAPI'} className='link'>
+                                        <li>CC Avenue API</li>
+                                    </Link>
+                                    <Link to={'/paytmgateway'} className='link'>
+                                        <li>Paytm Gateway</li>
+                                    </Link>
+                                    <Link to={'/keka'} className='link'>
+                                        <li>Keka</li>
+                                    </Link>
+                                    <Link to={'/watiApi'} className='link'>
+                                        <li>Wati API</li>
+                                    </Link>
+                                    <Link to={'/interktAPI'} className='link'>
+                                        <li>Interakt API</li>
+                                    </Link>
+                                    <Link to={'/kit19'} className='link'>
+                                        <li>KIT 19</li>
+                                    </Link>
                                     <Link to={'/pdcfollowupStatus'} className='link'>
                                         <li>PDC Follow Up Status</li>
                                     </Link>
@@ -342,21 +360,39 @@ const Sidebar = () => {
                                     <Link to={'/couriersection'} className='link'>
                                         <li>Courier Section</li>
                                     </Link>
-                                    <li>Pending Docs List Temp</li>
-                                    <li>Petty Cash Template</li>
-                                    <li>Courier Section Template</li>
-                                    <li>Email Template</li>
-                                    <li>FONADA API</li>
-                                    <li>ERP Settings</li>
-                                    <li>Payment Type Mode</li>
+                                    <Link to={'/pendingdocumentLlisttemplate'} className='link'>
+                                        <li>Pending Docs List Temp</li>
+                                    </Link>
+                                    <Link to={'/pettycashtemplate'} className='link'>
+                                        <li>Petty Cash Template</li>
+                                    </Link>
+                                    <Link to={'/couriersectiontemplate'} className='link'>
+                                        <li>Courier Section Template</li>
+                                    </Link>
+                                    <Link to={'/settingemailtemplate'} className='link'>
+                                        <li>Email Template</li>
+                                    </Link>
+                                    <Link to={'/fonadaapi'} className='link'>
+                                        <li>FONADA API</li>
+                                    </Link>
+                                    <Link to={'/erpaettings'} className='link'>
+                                        <li>ERP Settings</li>
+                                    </Link>
+                                    <Link to={'/paymenttypemode'} className='link'>
+                                        <li>Payment Type Mode</li>
+                                    </Link>
                                     <Link to={'/studentrequesttype'} className='link'>
                                         <li>Student Request Type</li>
                                     </Link>
                                     <Link to={'/studentcomplainttype'} className='link'>
                                         <li>Student Complaint Type</li>
                                     </Link>
-                                    <li>Callyzer API</li>
-                                    <li>Fee Receipt Format</li>
+                                    <Link to={'/callyzerapi'} className='link'>
+                                        <li>Callyzer API</li>
+                                    </Link>
+                                    <Link to={'/callyzerapi'} className='link'>
+                                        <li>Fee Receipt Format</li>
+                                    </Link>
                                     <Link to={'/admissionconfirmstatus'} className='link'>
                                         <li>Admission Confirm Status</li>
                                     </Link>

@@ -31,7 +31,7 @@ import { GoListUnordered } from "react-icons/go";
 import { MdFormatListNumbered } from "react-icons/md";
 import { RiDoubleQuotesR } from "react-icons/ri";
 
-const BirthdayWishes = () => {
+const WorkAnniversory = () => {
     const [isActive, setIsActive] = useState(false);
 
     // Function to toggle the state of the button
@@ -46,7 +46,7 @@ const BirthdayWishes = () => {
                     <div className='birthdaywishes2'>
                         <div className='birthdaywishes3'>
                             <div className='birthdaywishes4'>
-                                <h6>Birthday Wishes</h6>
+                                <h6>Work Anniversary</h6>
                                 <img src={img} alt="" />
                             </div>
 
@@ -111,13 +111,7 @@ const BirthdayWishes = () => {
 
                         <div className='birthdaywishes13'>
                             <div className='birthdaywishes14'>
-                                <p>#Wish you happy birthday</p>
-                            </div>
-                            <div className='birthdaywishes14'>
-                                <p>#Happy birthday</p>
-                            </div>
-                            <div className='birthdaywishes14'>
-                                <p>#Have a great day</p>
+                                <p>#Wish you happy Work Anniversary</p>
                             </div>
                         </div>
 
@@ -131,7 +125,7 @@ const BirthdayWishes = () => {
                     <div className='birthdaywishes16'>
                         <div className='birthdaywishes17'>
                             <div className='birthdaywishes18'>
-                                <h6>Upcoming Birthday</h6>
+                                <h6>Upcoming work Anniversary</h6>
                             </div>
                             <div>
                                 <div className='birthdaywishes19'>
@@ -226,4 +220,4 @@ const BirthdayWishes = () => {
     )
 }
 
-export default BirthdayWishes
+export default WorkAnniversory

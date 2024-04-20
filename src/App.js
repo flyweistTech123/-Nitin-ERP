@@ -69,6 +69,27 @@ import AccessPermission from './Pages/Permission Access/AccessPermission';
 import ManagePermissionAccess from './Pages/Permission Access/ManagePermissionAccess';
 import ReferenceFormData from './Pages/Reference Form Data/ReferenceFormData';
 import BirthdayWishes from './Pages/Setting/BirthdayWishes';
+import WorkAnniversory from './Pages/Setting/WorkAnniversory';
+import TelegramAPI from './Pages/Setting/TelegramAPI';
+import EasebuzzAPI from './Pages/Setting/EasebuzzAPI';
+import CCAvenueAPI from './Pages/Setting/CCAvenueAPI';
+import PaytmGateway from './Pages/Setting/PaytmGateway';
+import Keka from './Pages/Setting/Keka';
+import WatiApi from './Pages/Setting/WatiApi';
+import InterktAPI from './Pages/Setting/InterktAPI';
+import KIT19 from './Pages/Setting/KIT19';
+import PettyCashTemplate from './Pages/Setting/PettyCashTemplate';
+import CourierSectionTemplate from './Pages/Setting/CourierSectionTemplate';
+import Waticouriersectiontemplate from './Pages/Setting/Waticouriersectiontemplate';
+import Intakeouriersectiontemplate from './Pages/Setting/Intakeouriersectiontemplate';
+import PendingDocumentListTemplate from './Pages/Setting/PendingDocumentListTemplate';
+import SettingEmailTemplate from './Pages/Setting/SettingEmailTemplate';
+import FONADAAPI from './Pages/Setting/FONADAAPI';
+import ERPSettings from './Pages/Setting/ERPSettings';
+import PaymentTypeMode from './Pages/Setting/PaymentTypeMode';
+import ForInternalpayment from './Pages/Setting/ForInternalpayment';
+import ForPublicPayment from './Pages/Setting/ForPublicPayment';
+import CallyzerAPI from './Pages/Setting/CallyzerAPI';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -144,6 +165,27 @@ function App() {
           <Route path="/managepermissionaccess" element={<ManagePermissionAccess />} />
           <Route path="/referenceformdata" element={<ReferenceFormData />} />
           <Route path="/birthdaywishes" element={<BirthdayWishes />} />
+          <Route path="/workanniversory" element={<WorkAnniversory />} />
+          <Route path="/telegramAPI" element={<TelegramAPI />} />
+          <Route path="/easebuzzAPI" element={<EasebuzzAPI />} />
+          <Route path="/ccavenueAPI" element={<CCAvenueAPI />} />
+          <Route path="/paytmgateway" element={<PaytmGateway />} />
+          <Route path="/keka" element={<Keka />} />
+          <Route path="/watiApi" element={<WatiApi />} />
+          <Route path="/interktAPI" element={<InterktAPI />} />
+          <Route path="/kit19" element={<KIT19 />} />
+          <Route path="/pettycashtemplate" element={<PettyCashTemplate />} />
+          <Route path="/couriersectiontemplate" element={<CourierSectionTemplate />} />
+          <Route path="/waticouriersectiontemplate" element={<Waticouriersectiontemplate />} />
+          <Route path="/intakeouriersectiontemplate" element={<Intakeouriersectiontemplate />} />
+          <Route path="/pendingdocumentLlisttemplate" element={<PendingDocumentListTemplate />} />
+          <Route path="/settingemailtemplate" element={<SettingEmailTemplate />} />
+          <Route path="/fonadaapi" element={<FONADAAPI />} />
+          <Route path="/erpaettings" element={<ERPSettings />} />
+          <Route path="/paymenttypemode" element={<PaymentTypeMode />} />
+          <Route path="/forinternalpayment" element={<ForInternalpayment />} />
+          <Route path="/forpublicPayment" element={<ForPublicPayment />} />
+          <Route path="/callyzerapi" element={<CallyzerAPI />} />
         </Routes>
       </BrowserRouter>
     </>
