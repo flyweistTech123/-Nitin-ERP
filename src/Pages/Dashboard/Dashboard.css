@@ -1028,3 +1028,26 @@
   color: #2155cd;
   margin: 0;
 }
+
+
+
+
+
+/* Responsive css for dashboard  */
+
+
+
+@media screen and (max-width: 580px) {
+  .dashboard1 {
+    
+  }
+  .dashboard2{
+    flex-basis: calc(50% - 5px);
+  }
+  .dashboard4 {
+    flex-direction: column;
+  }
+  .dashboard5 {
+    flex-basis: calc(25% - 5px);
+  }
+}

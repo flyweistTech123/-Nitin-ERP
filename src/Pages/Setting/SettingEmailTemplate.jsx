@@ -8,41 +8,16 @@ import { GoPlusCircle } from "react-icons/go";
 import { IoMdInformationCircleOutline } from "react-icons/io";
 import { FiEdit } from "react-icons/fi";
 
-
+import { useNavigate } from 'react-router-dom';
 
 
 const SettingEmailTemplate = () => {
-    const tableData = [
-        {
-            id: 1,
-            StudyMedium: 'Hindi',
-        },
 
-        {
-            id: 1,
-            StudyMedium: 'English',
-        },
-        {
-            id: 1,
-            StudyMedium: 'Urdu',
-        },
-        {
-            id: 1,
-            StudyMedium: 'Punjabi',
-        },
-        {
-            id: 1,
-            StudyMedium: 'Guajarati',
-        },
-        {
-            id: 1,
-            StudyMedium: 'Marathi',
-        },
-
-    ];
 
     // AddBank  Modal 
     const [modalShow, setModalShow] = React.useState(false);
+
+    const navigate = useNavigate()
 
     function AddStudyMedium(props) {
 
@@ -118,7 +93,7 @@ const SettingEmailTemplate = () => {
                             </div>
 
                             <div className='settingemailtemplate7'>
-                                <button><FiEdit /> Edit</button>
+                                <button onClick={()=>navigate('/settingEditemailtemplate')}><FiEdit /> Edit</button>
                                 <button>Delete</button>
                             </div>
                         </div>

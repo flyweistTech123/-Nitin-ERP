@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Sidebar.css'
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 import img from '../../Img/img6.png'
@@ -65,10 +66,15 @@ const Sidebar = () => {
         }
         setExpandedMenus3(newExpandedMenus);
     };
+
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <>
             <div className='sidebar'>
-
                 <div className='sidebar7'>
                     <div className='sidebar1'>
                         <Link to={'/dashboard'} className='link'>
@@ -390,7 +396,7 @@ const Sidebar = () => {
                                     <Link to={'/callyzerapi'} className='link'>
                                         <li>Callyzer API</li>
                                     </Link>
-                                    <Link to={'/callyzerapi'} className='link'>
+                                    <Link to={'/feereceiptformat'} className='link'>
                                         <li>Fee Receipt Format</li>
                                     </Link>
                                     <Link to={'/admissionconfirmstatus'} className='link'>

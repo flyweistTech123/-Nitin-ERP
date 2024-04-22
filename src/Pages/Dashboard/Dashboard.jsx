@@ -866,7 +866,7 @@ const Dashboard = () => {
                             <p>Engineering</p>
                         </div>
                         <div id="chart">
-                            <ReactApexChart options={options} series={series} type="donut" width={320} />
+                            <ReactApexChart options={options} series={series} type="donut" width={320}  className="dososo" />
                             <p>Total Students: 1000</p>
                         </div>
 

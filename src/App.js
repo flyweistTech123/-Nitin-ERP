@@ -90,6 +90,10 @@ import PaymentTypeMode from './Pages/Setting/PaymentTypeMode';
 import ForInternalpayment from './Pages/Setting/ForInternalpayment';
 import ForPublicPayment from './Pages/Setting/ForPublicPayment';
 import CallyzerAPI from './Pages/Setting/CallyzerAPI';
+import FeeReceiptFormat from './Pages/Setting/FeeReceiptFormat';
+import StudentEditTemplate from './Pages/Setting/StudentEditTemplate';
+import InternalEditTemplate from './Pages/Setting/InternalEditTemplate';
+import SettingEditEmailTemplate from './Pages/Setting/SettingEditEmailTemplate';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -186,6 +190,10 @@ function App() {
           <Route path="/forinternalpayment" element={<ForInternalpayment />} />
           <Route path="/forpublicPayment" element={<ForPublicPayment />} />
           <Route path="/callyzerapi" element={<CallyzerAPI />} />
+          <Route path="/feereceiptformat" element={<FeeReceiptFormat />} />
+          <Route path="/studentedittemplate" element={<StudentEditTemplate />} />
+          <Route path="/Internaledittemplate" element={<InternalEditTemplate />} />
+          <Route path="/settingEditemailtemplate" element={<SettingEditEmailTemplate />} />
         </Routes>
       </BrowserRouter>
     </>

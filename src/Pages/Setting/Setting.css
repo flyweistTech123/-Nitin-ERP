@@ -2007,12 +2007,11 @@
 
 /* ERPSettings css   */
 
-
 .erpsettings101 {
   width: 55%;
   height: auto;
   padding-bottom: 50px;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   margin-top: 50px;
 }
 
@@ -2080,11 +2079,10 @@
   margin: 0;
 }
 
-
-.erpsettings5{
+.erpsettings5 {
   width: 273px;
   height: 29px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2092,37 +2090,30 @@
   margin-top: 20px;
 }
 
-
-.erpsettings5 p{
+.erpsettings5 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 20px;
-  color: #000000B2;
+  color: #000000b2;
   margin: 0;
 }
 
-
-
 /* PaymentTypeMode css   */
 
-
-.paymenttypemode{
+.paymenttypemode {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
 }
 
-
-
 .paymenttypemode1 {
   padding-left: 20px;
   padding-top: 20px;
 }
 
-
-.paymenttypemode1 p{
+.paymenttypemode1 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   font-size: 30px;
@@ -2131,13 +2122,12 @@
   margin: 0;
 }
 
-
-.paymenttypemode2{
+.paymenttypemode2 {
   padding-left: 20px;
   padding-top: 20px;
 }
 
-.paymenttypemode2 p{
+.paymenttypemode2 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -2146,8 +2136,7 @@
   margin: 0;
 }
 
-
-.paymenttypemode2 span{
+.paymenttypemode2 span {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -2156,32 +2145,288 @@
   margin: 0;
 }
 
-.paymenttypemode4{
+.paymenttypemode4 {
   margin-top: 100px;
   padding-left: 60px;
 }
 
-.paymenttypemode3{
+.paymenttypemode3 {
   display: flex;
   align-items: center;
   gap: 30px;
 }
 
-
 /* CallyzerAPI css  */
 
-.callyzerapi{
-
+.callyzerapi {
 }
 
-
-.callyzerapi1{
-
+.callyzerapi1 {
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
-
-.callyzerapi1 textarea{
+.callyzerapi1 textarea {
   width: 476px;
+  height: 225px;
   box-shadow: 0px 4px 10px 0px #00000040;
-  background: #FFFFFF;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+/* FeeReceiptFormat css */
+
+.feeReceiptFormat {
+  width: 400px;
+  height: 250px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.feeReceiptFormat h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 62.16px;
+  color: #000000b2;
+  margin: 0;
+}
+
+/* studentedittemplate css  */
+
+.studentedittemplate {
+  height: 100%;
+  background-color: #f0f0f0;
+  padding-bottom: 50px;
+}
+
+.studentedittemplate1 {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  width: 70%;
+  margin: auto;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.studentedittemplate1 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate2 {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 10px;
+  width: 80%;
+  margin-top: 30px;
+}
+
+.studentedittemplate2 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 19.1px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate3 {
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.studentedittemplate4 {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 11px;
+  padding-bottom: 50px;
+}
+
+.studentedittemplate5 {
+  text-align: end;
+  width: 95%;
+  padding-top: 30px;
+}
+
+.studentedittemplate5 button {
+  width: 145px;
+  height: 40px;
+  background-color: #2155cd;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17.5px;
+  line-height: 23.87px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.studentedittemplate6 {
+  margin-top: 20px;
+  padding-left: 50px;
+}
+
+.studentedittemplate7 {
+  width: 85%;
+  height: auto;
+  background-color: #f4f4f4;
+  margin: auto;
+  border-radius: 13px;
+  padding-left: 30px;
+  padding-top: 40px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.studentedittemplate7 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate8 {
+  margin-top: 20px;
+}
+
+.studentedittemplate8 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate9 {
+  margin-top: 30px;
+}
+
+.studentedittemplate9 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate10 {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  gap: 30px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.studentedittemplate11 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0.5;
+}
+
+.studentedittemplate11 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate12{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.studentedittemplate12 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+.studentedittemplate13 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-top: 30px;
+  width: 95%;
+  margin: auto;
+}
+
+.studentedittemplate13 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.studentedittemplate14 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.studentedittemplate14 button {
+  width: 145px;
+  height: 40px;
+  background-color: #2155cd;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 17.5px;
+  line-height: 23.87px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.studentedittemplate14 input {
+  width: 800px;
+  height: 48px;
+  border: 1px solid #3f3f3f;
+  outline: none;
+  padding-left: 20px;
+  border-radius: 5px;
 }

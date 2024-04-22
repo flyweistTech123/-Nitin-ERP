@@ -16,11 +16,35 @@ import img10 from '../../Img/img55.png'
 import img11 from '../../Img/img56.png'
 import img12 from '../../Img/img57.png'
 import img13 from '../../Img/img58.png'
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 import { Link, useNavigate } from 'react-router-dom'
 import { FaUser } from "react-icons/fa";
 import { LuHistory } from "react-icons/lu";
 import { FaUserAlt } from "react-icons/fa";
+import { BsFilterLeft } from "react-icons/bs";
+
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
+// import img from '../../Img/img6.png'
+
+
+
+// import img from '../../Img/img6.png'
+// import img1 from '../../Img/img7.png'
+// import img2 from '../../Img/img16.png'
+// import img3 from '../../Img/img8.png'
+// import img4 from '../../Img/img9.png'
+// import img5 from '../../Img/img10.png'
+// import img6 from '../../Img/img11.png'
+// import img7 from '../../Img/img12.png'
+// import img8 from '../../Img/img13.png'
+// import img9 from '../../Img/img14.png'
+// import img10 from '../../Img/img15.png'
+// import img11 from '../../Img/img17.png'
+// import img12 from '../../Img/img18.png'
+// import img13 from '../../Img/img19.png'
+// import { Link } from 'react-router-dom';
 
 
 
@@ -277,6 +301,8 @@ const Navbar = () => {
 
 
 
+
+
     return (
         <>
 
@@ -303,6 +329,9 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div class='navbar-right'>
+                    {/* <div className='navbar101' onClick={handleShow}>
+                        <BsFilterLeft  color='#000000' size={35}/>
+                    </div> */}
                     <div class='navbar2'>
                         <button>Payment</button>
                     </div>
