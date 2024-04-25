@@ -675,6 +675,7 @@
 
 .dashboard52 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 30px;
 }
@@ -1064,5 +1065,28 @@
   .dashboard29 {
     padding-left: 10px;
     padding-right: 10px;
+  }
+  .dashboard13 button {
+    width: auto;
+    height: auto;
+    padding: 8px;
+  }
+  .dashboard18 button {
+    width: auto;
+    height: auto;
+    padding: 8px;
+  }
+  .dashboard52 input {
+    width: 100%;
+  }
+  .dashboard53 textarea{
+    width: 100%;
+  }
+  .dashboard64 p{
+    font-size: 15px;
+  }
+  .dashboard68 {
+    flex-direction: column;
+    gap: 10px;
   }
 }

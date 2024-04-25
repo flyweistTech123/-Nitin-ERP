@@ -14,9 +14,9 @@ const HOC = (WrappedComponent) => {
                 </div>
 
                 <div className="hoccontainer">
-                    {/* <div className="hocsidebar">
+                    <div className="hocsidebar">
                         <Sidebar/>
-                    </div> */}
+                    </div>
                     <div className="child-component">
                         <WrappedComponent />
                     </div>

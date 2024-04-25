@@ -93,6 +93,12 @@
 }
 
 /* profile Modal css */
+.custom-modal122 {
+  position: absolute;
+  top: 9%;
+  right: 10%;
+  transform: translateX(30%);
+}
 
 .profileModal {
   display: flex;
@@ -441,8 +447,16 @@
   text-decoration: underline;
 }
 
-/* Responsive css for navbar  */
+.navbar101 {
+  display: none;
+}
+.navbar102 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
+/* Responsive css for navbar  */
 
 @media screen and (max-width: 580px) {
   .navbar {
@@ -455,7 +469,6 @@
     margin-left: 0;
   }
 
-
   .search {
     width: 90%;
   }
@@ -466,8 +479,20 @@
   .navbar2 button {
     width: 100px;
   }
-  .navbar101{
-    padding-right: 50px;
+  .navbar101 {
+    display: block;
+    padding-right: 100px;
     color: #00216d;
   }
+  .navbar102 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* Responsive css for profileModal  */
+
+@media screen and (max-width: 580px) {
+  
 }

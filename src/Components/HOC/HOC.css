@@ -1,8 +1,6 @@
 /* HOC.css */
 
 .container1 {
-  /* display: flex;
-  flex-direction: column; */
   height: 100%; 
   background-color: #f0f0f0;
 }
@@ -12,7 +10,7 @@
 }
 
 .hoccontainer {
-  /* display: flex; */
+  display: flex;
 }
 
 .hocsidebar {
@@ -20,19 +18,25 @@
 }
 
 .child-component {
-  /* flex: 1; */
+  flex: 1;
   padding: 20px;
-  /* width: 75%; */
-  width: 100%;
+  width: 75%;
+  /* width: 100%; */
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
+
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
   .hoccontainer {
     flex-direction: column; 
   }
-  
+
   .hocsidebar {
+    display: none; 
+  }
+
+  .child-component {
     width: 100%; 
   }
 }
