@@ -246,12 +246,7 @@
   margin: 0;
 }
 
-
-
 /* Add Refund/ Cancel Requests Modal css  */
-
-
-
 
 .addrfundModal {
   margin-top: 20px;
@@ -260,21 +255,19 @@
   gap: 20px;
 }
 
-
-.addrfundModal1{
+.addrfundModal1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-.addrfundModal2{
+.addrfundModal2 {
   display: flex;
   flex-direction: column;
   gap: 1px;
 }
 
-
-.addrfundModal2 label{
+.addrfundModal2 label {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -283,39 +276,36 @@
   margin: 0;
 }
 
-
-.addrfundModal2 input{
+.addrfundModal2 input {
   width: 500px;
   height: 36px;
-  border: 1px solid #3F3F3F;
+  border: 1px solid #3f3f3f;
   border-radius: 4px;
   outline: none;
   padding-left: 10px;
 }
 
-.addrfundModal2 textarea{
-  border: 1px solid #3F3F3F;
+.addrfundModal2 textarea {
+  border: 1px solid #3f3f3f;
   border-radius: 4px;
   outline: none;
   padding-left: 10px;
   padding-top: 20px;
 }
 
-
-.addrfundModal2 select{
+.addrfundModal2 select {
   width: 500px;
   height: 36px;
-  border: 1px solid #3F3F3F;
+  border: 1px solid #3f3f3f;
   border-radius: 4px;
   outline: none;
   padding-left: 10px;
 }
 
-
-.addrfundModal3{
+.addrfundModal3 {
   width: 500px;
   height: 36px;
-  border: 1px solid #3F3F3F;
+  border: 1px solid #3f3f3f;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -323,18 +313,16 @@
   padding-left: 20px;
 }
 
-
-.addrfundModal4{
+.addrfundModal4 {
   width: auto;
   height: auto;
   padding: 4px 20px 4px 20px;
-  background-color: #D9D9D9;
+  background-color: #d9d9d9;
   border-radius: 8px;
   cursor: pointer;
 }
 
-
-.addrfundModal4 p{
+.addrfundModal4 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 10px;
@@ -343,8 +331,6 @@
   margin: 0;
 }
 
-
-
 .addrfundModal5 {
   display: flex;
   align-items: center;
@@ -352,12 +338,11 @@
   gap: 20px;
 }
 
-
-.addrfundModal5 button{
+.addrfundModal5 button {
   width: auto;
   height: auto;
   padding: 8px 49px 8px 49px;
-  background-color: #2155CD;
+  background-color: #2155cd;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -365,18 +350,14 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 19.1px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
 }
 
-
-
-.addrfundModal6{
-  
+.addrfundModal6 {
 }
 
-
-.addrfundModal6 p{
+.addrfundModal6 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 12px;
@@ -385,21 +366,13 @@
   margin: 0;
 }
 
-
-
-
-
 /* Delete Refund/ Cancel Requests Modal css */
 
-
-
-.deleterefund{
+.deleterefund {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
-
 
 .deleterefund1 {
   display: flex;
@@ -413,7 +386,7 @@
   width: auto;
   height: auto;
   padding: 12px 42px 12px 42px;
-  background-color: #FF0000;
+  background-color: #ff0000;
   border: none;
   outline: none;
   border-radius: 4px;
@@ -430,32 +403,44 @@
   height: auto;
   padding: 12px 42px 12px 42px;
   background-color: #ffffff;
-  border: 1px solid #FF0000;
+  border: 1px solid #ff0000;
   outline: none;
   border-radius: 4px;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 21.82px;
-  color: #FF0000;
+  color: #ff0000;
   margin: 0;
 }
 
-
-
-.deleterefund2{
+.deleterefund2 {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
 
-
-.deleterefund2 p{
+.deleterefund2 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 20px;
   line-height: 32.74px;
   color: #000000;
   margin: 0;
+}
+
+/* Responsive css for Refund cancel  */
+
+@media screen and (max-width: 580px) {
+  .cancel4 {
+    width: 100%;
+  }
+  .cancel5 button {
+    padding: 12px 15px 12px 15px;
+  }
+
+  .cancel1, .cancel2, .cancel3 {
+    padding: 12px 15px 12px 15px;
+  }
 }

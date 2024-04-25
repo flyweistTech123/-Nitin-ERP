@@ -221,3 +221,40 @@
 
 
 /* Document Details Modal  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive css for PDC  */
+
+
+@media screen and (max-width: 580px) {
+    .pdc5{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .pdc1{
+        align-items: normal;
+    }
+    .pdc1 p{
+        padding-top: 10px;
+    }
+    .pdc2{
+        max-width: 100% !important;   
+    }
+    .pdc3{
+        padding: 5px 15px 5px 15px;
+    }
+}

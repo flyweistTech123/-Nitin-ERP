@@ -71,9 +71,9 @@
 
 .pendingpayment6 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  /* width: 97%; */
   margin: auto;
   margin-top: 30px;
 }
@@ -276,7 +276,7 @@
 .approvepaymentmodal1 button:nth-child(2) {
   width: 282px;
   height: 40px;
-  border: 1px solid #FF0000;
+  border: 1px solid #ff0000;
   outline: none;
   background-color: #ffffff;
   border-radius: 4px;
@@ -284,6 +284,14 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 19.1px;
-  color: #FF0000;
+  color: #ff0000;
   margin: 0;
+}
+
+/* Responsive css for pendingpayment  */
+
+@media screen and (max-width: 580px) {
+  .pendingpayment6{
+    gap: 10px;
+  }
 }

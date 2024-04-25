@@ -1,5 +1,6 @@
 .documnets1{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
     justify-content: space-between;
@@ -210,4 +211,25 @@
     line-height: 19.1px;
     color: #3F3F3F;
     margin: 0;
+}
+
+
+
+
+/* Responsive css for document  */
+
+
+@media screen and (max-width: 580px) {
+    .backend3 button:nth-child(1){
+        padding: 12px 15px 12px 15px;
+    }
+
+    .backend3 button:nth-child(2){
+        padding: 12px 15px 12px 15px;
+    }
+
+    .backend2{
+        gap: 10px;
+        margin-top: 10px;
+    }
 }

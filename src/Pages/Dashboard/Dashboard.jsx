@@ -90,13 +90,13 @@ const Dashboard = () => {
         },
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 1000,
+                        width: 300,
                     },
                     legend: {
-                        position: 'top',
+                        position: 'right',
                     },
                 },
             },
@@ -125,13 +125,13 @@ const Dashboard = () => {
         },
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 1000,
+                        width: 300,
                     },
                     legend: {
-                        position: 'top',
+                        position: 'right',
                     },
                 },
             },
@@ -159,13 +159,13 @@ const Dashboard = () => {
         },
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 130,
+                        width: 300,
                     },
                     legend: {
-                        position: 'top',
+                        position: 'right',
                     },
                 },
             },
@@ -193,13 +193,13 @@ const Dashboard = () => {
         },
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 130,
+                        width: 300,
                     },
                     legend: {
-                        position: 'top',
+                        position: 'right',
                     },
                 },
             },
@@ -227,13 +227,13 @@ const Dashboard = () => {
         },
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 130,
+                        width: 300,
                     },
                     legend: {
-                        position: 'top',
+                        position: 'right',
                     },
                 },
             },
@@ -261,13 +261,13 @@ const Dashboard = () => {
         },
         responsive: [
             {
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 130,
+                        width: 300,
                     },
                     legend: {
-                        position: 'top',
+                        position: 'right',
                     },
                 },
             },
@@ -283,13 +283,13 @@ const Dashboard = () => {
             colors: ['#4198D7', '#7A61BA', '#D8B655'],
             labels: ['Resolved', 'Rejected', 'Pending'],
             responsive: [{
-                breakpoint: 480,
+                breakpoint: 580,
                 options: {
                     chart: {
-                        width: 200
+                        width: 300
                     },
                     legend: {
-                        position: 'bottom'
+                        position: 'right'
                     }
                 }
             }]

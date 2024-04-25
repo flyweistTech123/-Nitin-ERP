@@ -95,3 +95,13 @@
   margin: 0;
 }
 
+/* Responsive css for service  */
+
+@media screen and (max-width: 580px) {
+  .service5 button:nth-child(1) {
+    padding: 12px 15px 12px 15px;
+  }
+  .service5 button:nth-child(2) {
+    padding: 12px 15px 12px 15px;
+  }
+}

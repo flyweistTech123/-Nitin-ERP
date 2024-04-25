@@ -54,13 +54,11 @@
 
 .dashboard5 {
   flex-basis: calc(55% - 5px);
-  /* max-width: 343px; */
   max-width: 100%;
   height: 315px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  /* padding-bottom: 20px;  */
   padding-left: 10px;
 }
 
@@ -200,13 +198,12 @@
 
 .dashboard11 {
   flex-basis: calc(55% - 5px);
-  /* width: 370px;
-  height: 315px; */
   max-width: 100%;
   height: 315px;
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  padding-bottom: 10px;
 }
 
 .dashboard12 {
@@ -323,8 +320,6 @@
   margin-top: 30px;
   display: flex;
   gap: 30px;
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
 }
 
 .dashboard20 {
@@ -416,6 +411,7 @@
 
 .dashboard28 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
   margin-top: 25px;
@@ -494,10 +490,8 @@
 
 .dashboard36 {
   display: flex;
-  /* flex-wrap: wrap; */
   align-items: center;
   gap: 30px;
-  /* justify-content: space-between; */
   margin-top: 30px;
 }
 
@@ -597,6 +591,7 @@
 
 .dashboard43 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   width: 95%;
@@ -1048,6 +1043,26 @@
     flex-direction: column;
   }
   .dashboard5 {
-    flex-basis: calc(25% - 5px);
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  #chart{
+    margin-top: 20px;
+  }
+  .dashboard19{
+    flex-direction: column;
+  }
+  .dashboard36{
+    flex-direction: column;
+  }
+  .dashboard20, .dashboard37{
+    width: 100%;
+  }
+  .dashboard43{
+    gap: 10px;
+  }
+  .dashboard29 {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }

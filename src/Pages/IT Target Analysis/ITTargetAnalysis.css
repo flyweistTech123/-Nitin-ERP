@@ -1,210 +1,205 @@
-.targetanalysis{
-    width: auto;
-    height: auto;
-    background-color: #00C165;
-    padding: 12px 43px 12px 43px;
-    border-radius: 4px;
-    cursor: pointer;
+.targetanalysis {
+  width: auto;
+  height: auto;
+  background-color: #00c165;
+  padding: 12px 43px 12px 43px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .targetanalysis p {
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21.82px;
-    color: #ffffff;
-    margin: 0;
-  }
-
-
-.targetanalysis1{
-    flex: 1;
-    max-width: 90%;
-    width: 400px;
-    height: 65px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
 }
 
-
-.targetanalysis1 p{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 27.28px;
-    color: #000000;
-    margin: 0;
-    padding-left: 20px;
+.targetanalysis1 {
+  flex: 1;
+  max-width: 90%;
+  width: 400px;
+  height: 65px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-
-
-.targetanalysis2{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    margin-top: 20px;
+.targetanalysis1 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+  padding-left: 20px;
 }
 
-
-.targetanalysis3{
-    width: 100%;
-    height: 132px;
-    background-color: #FFFFFF;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
+.targetanalysis2 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-top: 20px;
 }
 
-
+.targetanalysis3 {
+  width: 100%;
+  height: 132px;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
 
 .targetanalysis4 {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
 }
 
 .targetanalysis5 {
-    cursor: pointer;
-    width: auto;
-    height: auto;
-    padding: 12px 40px 12px 40px;
-    border-radius: 4px;
-    background-color: #2155CD;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21.82px;
-    color: #FFFFFF;
-    margin: 0;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 12px 40px 12px 40px;
+  border-radius: 4px;
+  background-color: #2155cd;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
 }
-
-
 
 .targetanalysis6 {
-    cursor: pointer;
-    width: auto;
-    height: auto;
-    padding: 12px 40px 12px 40px;
-    border-radius: 4px;
-    border: 1px solid #2155CD;
-    background-color: #FFFFFF;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21.82px;
-    color: #2155CD;
-    margin: 0;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 12px 40px 12px 40px;
+  border-radius: 4px;
+  border: 1px solid #2155cd;
+  background-color: #ffffff;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #2155cd;
+  margin: 0;
 }
 
-
-
-
-.targetanalysis7{
-    width: 254.09px;
-    height: 39px;
-    border: 1px solid #444444;
-    border-radius: 4px;
+.targetanalysis7 {
+  width: 254.09px;
+  height: 39px;
+  border: 1px solid #444444;
+  border-radius: 4px;
 }
-
-
-
-
 
 /* ITTargetAnalysis Modal css  */
 
-
-
-.ITTargetanalysismodal{
-
+.ITTargetanalysismodal {
 }
 
+.ITTargetanalysismodal1 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 
+.ITTargetanalysismodal1 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
 
-.ITTargetanalysismodal1{
-    display: flex;
+.ITTargetanalysismodal1 input {
+  width: 100%;
+  height: 48px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 10px;
+}
+
+.ITTargetanalysismodal2 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.ITTargetanalysismodal2 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.ITTargetanalysismodal2 select {
+  width: 295px;
+  height: 45px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+  padding-left: 10px;
+  outline: none;
+}
+
+.ITTargetanalysismodal3 {
+  margin-top: 20px;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ITTargetanalysismodal4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ITTargetanalysismodal4 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+/* Responsive css for target analysis  */
+
+@media screen and (max-width: 580px) {
+  .targetanalysis2 {
     flex-direction: column;
-    gap: 5px;
-
-}
-
-
-.ITTargetanalysismodal1 label{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21.82px;
-    color: #000000;
-    margin: 0;
-}
-
-
-.ITTargetanalysismodal1 input{
+    gap: 20px;
+  }
+  .targetanalysis1 {
     width: 100%;
-    height: 48px;
-    border: 1px solid #3F3F3F;
-    border-radius: 4px;
-    outline: none;
-    padding-left: 10px;
-}
+    height: auto;
+    padding: 20px;
+  }
+  .targetanalysis3  {
+    padding: 20px;
+  }
+  .targetanalysis5 {
+    padding: 12px 15px 12px 15px;
 
+  }
+  .targetanalysis6 {
+    padding: 12px 15px 12px 15px;
 
-.ITTargetanalysismodal2{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-top: 20px;
-}
-
-
-.ITTargetanalysismodal2 label{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: #000000;
-    margin: 0;
-}
-
-
-.ITTargetanalysismodal2 select{
-    width: 295px;
-    height: 45px;
-    border-radius: 4px;
-    border: 1px solid #D9D9D9;
-    padding-left: 10px;
-    outline: none;
-}
-
-
-
-.ITTargetanalysismodal3{
-    margin-top: 20px;
-    margin-left: 50px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-
-
-.ITTargetanalysismodal4{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-
-.ITTargetanalysismodal4 label{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 21.82px;
-    color: #000000;
-    margin: 0;
+  }
 }

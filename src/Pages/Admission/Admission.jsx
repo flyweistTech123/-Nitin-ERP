@@ -2668,8 +2668,6 @@ const Admission = () => {
                     <button>Previous</button>
                     <button>Next</button>
                 </div>
-                {/* <div className='admission11'>
-                </div> */}
             </div>
         </>
     )

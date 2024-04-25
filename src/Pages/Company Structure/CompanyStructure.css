@@ -1,137 +1,159 @@
-
-
-
-.companystructure{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.companystructure {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-
-
-.companystructure button:nth-child(1){
-    width: 183px;
-    height: 44px;
-    background-color: #FFB800;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #FFFFFF;
-    margin: 0;
+.companystructure button:nth-child(1) {
+  width: 183px;
+  height: 44px;
+  background-color: #ffb800;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
 }
 
-
-.companystructure button:nth-child(2){
-    width: 183px;
-    height: 44px;
-    background-color: #2155CD;
-    border: none;
-    outline: none;
-    border-radius: 4px;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 20px;
-    color: #FFFFFF;
-    margin: 0;
+.companystructure button:nth-child(2) {
+  width: 183px;
+  height: 44px;
+  background-color: #2155cd;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
 }
 
-
-
-.companystructure1{
-    width: 95%;
-    margin: auto;
-    height: 865px;
-    background-color: #FFFFFF;
-    border-radius: 5px;
-    margin-top: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.companystructure1 {
+  width: 95%;
+  margin: auto;
+  height: 865px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.companystructure2 {
+  width: 653px;
+  height: 371px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.companystructure3 {
+  width: 294px;
+  height: 152px;
+  border-radius: 8px;
+  background: #2155cd33;
+}
 
-.companystructure2{
-    width: 653px;
+.companystructure4 {
+  border-bottom: 1px solid #2155cd;
+  padding: 10px;
+}
+
+.companystructure4 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2155cd;
+  margin: 0;
+}
+
+.companystructure5 {
+  width: 527px;
+  height: 31px;
+  border-top: 1px solid #00000080;
+  border-left: 1px solid #00000080;
+  border-right: 1px solid #00000080;
+  position: relative;
+  margin-top: 34px;
+}
+
+.companystructure6 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.companystructure7 {
+  width: 1px;
+  height: 36px;
+  border-left: 1px solid #00000080;
+  position: absolute;
+  left: 250px;
+  top: -35px;
+}
+
+.companystructure8 {
+  display: flex;
+  align-items: center;
+  padding-top: 70px;
+  padding-left: 30px;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.companystructure8 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #3f3f3f;
+  margin: 0;
+}
+
+/* Responsive css for companystructure  */
+
+@media screen and (max-width: 580px) {
+  .companystructure button:nth-child(1) {
+    width: auto;
+    padding: 12px 15px 12px 15px;
+  }
+
+  .companystructure button:nth-child(2) {
+    width: auto;
+    padding: 12px 15px 12px 15px;
+  }
+  .companystructure1 {
+    width: 100%;
+    height: auto;
+  }
+
+  .companystructure2 {
+    width: 100%;
     height: 371px;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+    padding-top: 50px;
+  }
 
+  .companystructure3{
+    width: 140px;
+  }
 
-.companystructure3{
-    width: 294px;
-    height: 152px;
-    border-radius: 8px;
-    background: #2155CD33;
-}
-
-
-.companystructure4{
-    border-bottom: 1px solid #2155CD;
-    padding: 10px;
-}
-
-
-.companystructure4 p{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: #2155CD;
-    margin: 0;
-}
-
-
-.companystructure5{
-    width: 527px;
+  .companystructure5{
+    width: 80%;
     height: 31px;
-    border-top: 1px solid #00000080;
-    border-left: 1px solid #00000080;
-    border-right: 1px solid #00000080;
-    position: relative;
-    margin-top: 34px;
-}
-
-
-.companystructure6{
-    display: flex;
-    align-items: center;
-    gap: 50px;
-}
-
-
-.companystructure7 {
-    width: 1px;
-    height: 36px;
-    border-left: 1px solid #00000080;
-    position: absolute;
-    left: 250px;
-    top: -35px;
-}
-
-
-.companystructure8{
-    display: flex;
-    align-items: center;
-    padding-top: 70px;
-    padding-left: 30px;
-    gap: 10px;
-    cursor: pointer;
-}
-
-
-.companystructure8 p{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 20px;
-    color: #3F3F3F;
-    margin: 0;
+  }
+  .companystructure7{
+    left: 140px;
+  }
+  
 }

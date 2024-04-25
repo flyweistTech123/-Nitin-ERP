@@ -12,7 +12,7 @@
 }
 
 .hoccontainer {
-  display: flex;
+  /* display: flex; */
 }
 
 .hocsidebar {
@@ -20,9 +20,10 @@
 }
 
 .child-component {
-  flex: 1;
+  /* flex: 1; */
   padding: 20px;
-  width: 75%;
+  /* width: 75%; */
+  width: 100%;
 }
 
 /* Media query for smaller screens */

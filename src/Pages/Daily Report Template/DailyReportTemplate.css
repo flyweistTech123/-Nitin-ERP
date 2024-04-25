@@ -143,3 +143,21 @@
     margin: 0;
 
 }
+
+
+/* Responsive css for dailyreportemplate  */
+
+
+@media screen and (max-width: 580px) {
+    .dailyreportemplate4{
+        width: 100%;
+        padding: 0;
+        padding-bottom: 20px;
+    }
+
+    .dailyreportemplate6{
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}

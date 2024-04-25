@@ -816,8 +816,6 @@ const PDCSection = () => {
                         </div>
                     </div>
 
-
-
                 </div>
 
                 <div className='admission13'>
