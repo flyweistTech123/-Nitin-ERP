@@ -1,15 +1,14 @@
 import React from 'react'
 import HOC from '../../Components/HOC/HOC'
-import Modal from 'react-bootstrap/Modal';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import {CallRecoding, Remarks, AdmissionStatus} from '../Modals/Modals'
+
+
+
+
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-import { IoIosPlayCircle } from "react-icons/io";
-import { MdStar } from "react-icons/md";
-import { IoMdStarOutline } from "react-icons/io";
-import { IoMdClose } from "react-icons/io";
-import { IoMdCheckmark } from "react-icons/io";
+
 
 import img from '../../Img/img33.png'
 
@@ -91,272 +90,19 @@ const Backend = () => {
         },
 
     ];
-    const tableData1 = [
-        {
-            id: 1,
-            CreatedOn: 'Loren Epsom',
-            ResponsiblePersonName: 'DD/MM/YYYY',
-            FileSize: '50 KB',
-            ResponsiblePersonNumber: '1234567890',
-        },
-
-        {
-            id: 1,
-            CreatedOn: 'Loren Epsom',
-            ResponsiblePersonName: 'DD/MM/YYYY',
-            FileSize: '50 KB',
-            ResponsiblePersonNumber: '1234567890',
-        },
-        {
-            id: 1,
-            CreatedOn: 'Loren Epsom',
-            ResponsiblePersonName: 'DD/MM/YYYY',
-            FileSize: '50 KB',
-            ResponsiblePersonNumber: '1234567890',
-        },
-        {
-            id: 1,
-            CreatedOn: 'Loren Epsom',
-            ResponsiblePersonName: 'DD/MM/YYYY',
-            FileSize: '50 KB',
-            ResponsiblePersonNumber: '1234567890',
-        },
-        {
-            id: 1,
-            CreatedOn: 'Loren Epsom',
-            ResponsiblePersonName: 'DD/MM/YYYY',
-            FileSize: '50 KB',
-            ResponsiblePersonNumber: '1234567890',
-        },
-        {
-            id: 1,
-            CreatedOn: 'Loren Epsom',
-            ResponsiblePersonName: 'DD/MM/YYYY',
-            FileSize: '50 KB',
-            ResponsiblePersonNumber: '1234567890',
-        },
-
-    ];
-
 
     // call Recoding Modal 
-
-
     const [modalShow, setModalShow] = React.useState(false);
 
-
-
-    function CallRecoding(props) {
-
-
-        return (
-            <Modal
-                {...props}
-                size="xl"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body className='callrecordingModal'>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Call Recoding</Modal.Title>
-                    </Modal.Header>
-                    <div className='callrecordingModal1'>
-                        <div className='admission13'>
-                            <div className='table-container'>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Created On</th>
-                                            <th>Responsible Person Name</th>
-                                            <th>Play</th>
-                                            <th>File Size</th>
-                                            <th>Responsible Person Number</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {tableData1.map((data) => (
-                                            <tr key={data.id}>
-                                                <td>{data.CreatedOn}</td>
-                                                <td>{data.ResponsiblePersonName}</td>
-                                                <td><IoIosPlayCircle size={25} color='#2155CD' /></td>
-                                                <td onClick={() => setModalShow1(true)}>{data.FileSize}</td>
-                                                <td>{data.ResponsiblePersonNumber}</td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
-
-
     // Remarks Modal 
-
-
     const [modalShow1, setModalShow1] = React.useState(false);
 
 
-
-    function Remarks(props) {
-
-
-        return (
-            <Modal
-                {...props}
-                size="sl"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Remarks</Modal.Title>
-                    </Modal.Header>
-                    <div className='ramarksmodal'>
-                        <div className='ramarksmodal1'>
-                            <p>1.Bad</p>
-                            <p>2.Good</p>
-                            <p>3.Great</p>
-                            <p>4.Best</p>
-                            <p>5.Other</p>
-                        </div>
-
-                        <div className='ramarksmodal2'>
-                            <p>
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                            </p>
-                            <p>
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <IoMdStarOutline size={20} color='#E2A03F' />
-                                <IoMdStarOutline size={20} color='#E2A03F' />
-                            </p>
-                            <p>
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <IoMdStarOutline size={20} color='#E2A03F' />
-                            </p>
-                            <p>
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <IoMdStarOutline size={20} color='#E2A03F' />
-                                <IoMdStarOutline size={20} color='#E2A03F' />
-                                <IoMdStarOutline size={20} color='#E2A03F' />
-                            </p>
-                            <p>
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                                <MdStar size={20} color='#E2A03F' />
-                            </p>
-                        </div>
-                    </div>
-
-                    <div className='ramarksmodal3'>
-                        <button onClick={() => setModalShow1(false)}>SAVE</button>
-                        <button onClick={() => setModalShow1(false)}>CANCEL</button>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
-
-
     // AdmissionStatus Modal 
-
-
     const [modalShow2, setModalShow2] = React.useState(false);
 
 
-    function AdmissionStatus(props) {
-
-
-        return (
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body>
-                    <div className='admissionstatus1'>
-                        <div className='admissionstatus2'>
-                            <p>Admission Status</p>
-                            <IoMdClose color='#000000' onClick={() => setModalShow2(false)} />
-                        </div>
-
-                        <div className='admissionstatus3'>
-                            <div className='admissionstatus4'>
-                                <div className='admissionstatus5'></div>
-                                <div className='admissionstatus6'>
-                                    <div className='admissionstatus7'>
-                                        <IoMdCheckmark color='#FFFFFF' />
-                                    </div>
-                                    <div className='admissionstatus7'>
-                                        <IoMdCheckmark color='#FFFFFF' />
-                                    </div>
-                                    <div className='admissionstatus7'>
-                                        <IoMdCheckmark color='#FFFFFF' />
-                                    </div>
-                                    <div className='admissionstatus7'>
-                                        <IoMdCheckmark color='#FFFFFF' />
-                                    </div>
-                                    <div className='admissionstatus9'>
-                                    </div>
-                                    <div className='admissionstatus9'>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='admissionstatus8'>
-                                <p>Fee Collected</p>
-                                <p>Documents Collected</p>
-                                <p>Student Verification Call</p>
-                                <p>Feedback of Admission Process</p>
-                                <p>Follow up Pop up form</p>
-                                <p>Get Enrollment</p>
-                            </div>
-                        </div>
-
-                        <div className='admissionstatus10'>
-                            <h6>Change Admission Status</h6>
-                            <div className='admissionstatus11'>
-                                <div className='admissionstatus12'>
-                                    <input type="radio" />
-                                    <div className='admissionstatus13' style={{backgroundColor:"#FFB800"}}>
-                                        <p>N/A</p>
-                                    </div>
-                                </div>
-                                <div className='admissionstatus12'>
-                                    <input type="radio" />
-                                    <div className='admissionstatus13' style={{backgroundColor:"#40AF0C"}}>
-                                        <p>Re-Verified</p>
-                                    </div>
-                                </div>
-                                <div className='admissionstatus12'>
-                                    <input type="radio" />
-                                    <div className='admissionstatus13' style={{backgroundColor:"#FF0000"}}>
-                                        <p>Reverification Rejected</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
+    
 
 
     return (
@@ -364,6 +110,7 @@ const Backend = () => {
             <CallRecoding
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                setModalShow1={setModalShow1}
             />
             <Remarks
                 show={modalShow1}

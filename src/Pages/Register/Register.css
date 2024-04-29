@@ -69,12 +69,12 @@
   padding-top: 20px;
 }
 
-.register55 p{
+.register55 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: #0E1726;
+  color: #0e1726;
   margin: 0;
   padding-left: 20px;
   padding-top: 10px;
@@ -142,43 +142,42 @@
 }
 
 .register9 {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .register9::before,
-  .register9::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 180px;
-    border-bottom: 2px solid #EBEDF2; /* Adjust line color and style as needed */
-  }
-  
-  .register9::before {
-    right: 100%;
-    margin-right: 10px; 
-  }
-  
-  .register9::after {
-    left: 100%; 
-    margin-left: 10px; 
-  }
-  
-  .register9 p {
-    position: relative;
-    padding: 0 10px; 
-    z-index: 1; 
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 19.1px;
-    color: #888EA8;
-    margin: 0;
-  }
-  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register9::before,
+.register9::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 180px;
+  border-bottom: 2px solid #ebedf2; /* Adjust line color and style as needed */
+}
+
+.register9::before {
+  right: 100%;
+  margin-right: 10px;
+}
+
+.register9::after {
+  left: 100%;
+  margin-left: 10px;
+}
+
+.register9 p {
+  position: relative;
+  padding: 0 10px;
+  z-index: 1;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #888ea8;
+  margin: 0;
+}
 
 .register10 {
   display: flex;
@@ -229,8 +228,6 @@
   cursor: pointer;
 }
 
-
-
 .register13 {
   display: flex;
   align-items: center;
@@ -238,19 +235,52 @@
   gap: 10px;
 }
 
-.register13 label{
+.register13 label {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
   line-height: 20px;
-  color: #888EA8;
+  color: #888ea8;
   margin: 0;
   cursor: pointer;
 }
 
-
-.register13 input{
+.register13 input {
   width: 15px;
   height: 15px;
   border-radius: 4px;
+}
+
+/* Responsive css for Register  */
+
+@media screen and (max-width: 580px) {
+  .register {
+    flex-direction: column;
+  }
+  .register1 {
+    width: 100%;
+  }
+  .register4 {
+    width: 100%;
+  }
+  .register55 h6{
+    font-size: 20px;
+
+  }
+  .register5 {
+    width: 100%;
+    margin: auto;
+  }
+  .register7 input {
+    width: 100%;
+  }
+  .register8 button {
+    width: auto;
+    height: auto;
+    padding: 12px 15px 12px 15px;
+  }
+  .register10{
+    width: 98%;
+    margin: auto;
+  }
 }
