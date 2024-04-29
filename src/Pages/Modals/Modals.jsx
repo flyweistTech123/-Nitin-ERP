@@ -31,6 +31,10 @@ import { IoIosPlayCircle } from "react-icons/io";
 import { MdStar } from "react-icons/md";
 import { IoMdStarOutline } from "react-icons/io";
 import { IoMdCheckmark } from "react-icons/io";
+import { IoIosCloseCircleOutline } from "react-icons/io";
+import { IoEye } from "react-icons/io5";
+import { IoCloseOutline } from "react-icons/io5";
+import { PiWarningCircle } from "react-icons/pi";
 
 
 
@@ -42,8 +46,8 @@ import img2 from '../../Img/img61.png'
 import img3 from '../../Img/img62.png'
 import img4 from '../../Img/img63.png'
 import img5 from '../../Img/img64.png'
-import img6 from '../../Img/img65.png'
 import img7 from '../../Img/img71.png'
+import img8 from '../../Img/img72.png'
 import { GoListUnordered } from "react-icons/go";
 import { MdFormatListNumbered } from "react-icons/md";
 import { RiDoubleQuotesR } from "react-icons/ri";
@@ -2927,6 +2931,977 @@ export function ApproveOnlinePayment(props) {
                         <button onClick={() => props.onHide()}>Yes</button>
                         <button onClick={() => props.onHide()}>No</button>
                     </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  Remarks Modal for payment page
+export function Remarkspayment(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body >
+                <div className='paymentremarkmodal'>
+                    <div className='paymentremarkmodal1'>
+                        <h6>Remarks</h6>
+                        <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => props.onHide()} />
+                    </div>
+
+                    <div className='paymentremarkmodal2'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit, eros id scelerisque eleifend, lorem urna tincidunt sem, quis semper dolor risus non enim. Donec eget enim dolor. Sed sit amet augue tellus. Mauris placerat hendrerit efficitur. Phasellus ultricies condimentum volutpat. Nunc facilisis congue elit, ac maximus nisi pharetra eget. Suspendisse potenti. Vivamus nec finibus metus. Etiam in lorem et ligula congue porttitor eu nec lorem. Maecenas lobortis dui magna, ac ultricies augue gravida et. Nullam rhoncus tortor nec bibendum tincidunt.
+                            Praesent suscipit maximus arcu. Praesent sit amet leo id quam volutpat interdum sit amet id elit. Maecenas cursus fermentum eros consequat eleifend. Duis at fermentum magna, eget mattis urna. Vivamus elit nisi, finibus in arcu vitae, laoreet tincidunt nibh. Donec gravida facilisis accumsan. Donec sit amet ligula nisl. Suspendisse quam sapien, interdum sed ipsum non, feugiat rutrum eros. Ut placerat finibus lacinia. Proin nibh lectus, dictum in hendrerit vitae, tincidunt sit amet nulla. Quisque eu sapien ante. Aliquam auctor sem a libero congue, vel rhoncus ante tempor.</p>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+//  paymentStatus Modal for payment page
+export function PaymentStatus(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body >
+                <div className='paymentremarkmodal'>
+                    <div className='paymentstatusModal'>
+                        <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => props.onHide()} />
+                    </div>
+
+
+                    <div className='paymentstatusModal1'>
+                        <h6>Change Admission Status</h6>
+                        <div className='paymentstatusModal2'>
+                            <div className='paymentstatusModal3'>
+                                <input type="radio" name='pending' />
+                                <div className='paymentstatusModal4' style={{ backgroundColor: "#FFB800" }}>
+                                    <p>Pending</p>
+                                </div>
+                            </div>
+                            <div className='paymentstatusModal3'>
+                                <input type="radio" name='pending' />
+                                <div className='paymentstatusModal4' style={{ backgroundColor: "#40AF0C" }}>
+                                    <p>Approved</p>
+                                </div>
+                            </div>
+                            <div className='paymentstatusModal3'>
+                                <input type="radio" name='pending' />
+                                <div className='paymentstatusModal4' style={{ backgroundColor: "#FF0000" }}>
+                                    <p>Rejected</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='paymentstatusModal5'>
+                        <h6>Remarks</h6>
+
+                        <textarea name="" id="" cols="30" rows="10" placeholder='Type Here.....'></textarea>
+                    </div>
+
+                    <div className='paymentstatusModal6'>
+                        <button onClick={() => props.onHide()}>SUBMIT</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+
+
+
+//  UploadDocuments Modal for refund/cancel page
+export function UploadDocuments(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton>
+                    <Modal.Title>Upload Documents</Modal.Title>
+                </Modal.Header>
+                <div className='uploaddocumentModal'>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                    <div className='uploaddocumentModal1'>
+                        <p>Document 1</p>
+                        <IoEye color='#2155CD' size={25} />
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+//  AddRemark Modal for refund/cancel page
+export function AddRemark(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <div className='addremarkmodal'>
+                    <div className='addremarkmodal1'>
+                        <p>Add Remark</p>
+                        <IoCloseOutline color='#000000' size={25} onClick={() => props.onHide()} />
+                    </div>
+
+                    <div className='addremarkmodal2'>
+                        <label htmlFor="">Add Remark</label>
+                        <textarea name="" id="" cols="30" rows="5"></textarea>
+                    </div>
+
+                    <div className='addremarkmodal3'>
+                        <button onClick={() => props.onHide()}>Save</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  View Remark Modal for refund/cancel page
+export function ViewRemark(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <div className='addremarkmodal'>
+                    <div className='addremarkmodal1'>
+                        <p>Remark</p>
+                        <IoCloseOutline color='#000000' size={25} onClick={() => props.onHide()} />
+                    </div>
+
+                    <div className='addremarkmodal2'>
+                        <label htmlFor="">Remark</label>
+                        <div className='viewremarkmodal'>
+                            <p>Corem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//  Add Refund/Cancel Modal for refund/cancel page
+export function AddRefundCancelRequests(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <div className='addremarkmodal'>
+                    <div className='addremarkmodal1'>
+                        <p>Add Refund/ Cancel Requests</p>
+                        <IoCloseOutline color='#000000' size={25} onClick={() => props.onHide()} />
+                    </div>
+
+                    <div className='addrfundModal'>
+                        <div className='addrfundModal1'>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Admission No</label>
+                                <input type="text" />
+                            </div>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Student Name</label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div className='addrfundModal1'>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Course</label>
+                                <input type="text" />
+                            </div>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">University</label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div className='addrfundModal1'>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Upload Document</label>
+                                <div className='addrfundModal3'>
+                                    <div className='addrfundModal4'>
+                                        <p>loren <IoCloseOutline color='#000000' size={18} /></p>
+                                    </div>
+                                    <div className='addrfundModal4'>
+                                        <p>loren <IoCloseOutline color='#000000' size={18} /></p>
+                                    </div>
+                                    <div className='addrfundModal4'>
+                                        <p>loren <IoCloseOutline color='#000000' size={18} /></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='addrfundModal5'>
+                                <button>Upload</button>
+                                <div className='addrfundModal6'>
+                                    <p>.pdf ,  .doc .png, .jpeg . supported files only</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='addrfundModal1'>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Request User Name</label>
+                                <input type="text" />
+                            </div>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Reason for Refund</label>
+                                <select name="" id="">
+                                    <option value="">Select Action</option>
+                                    <option value="">Lorem Ipsum 1</option>
+                                    <option value="">Lorem Ipsum 2</option>
+                                    <option value="">Lorem Ipsum 3</option>
+                                    <option value="">Lorem Ipsum 4</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className='addrfundModal1'>
+                            <div className='addrfundModal2'>
+                                <label htmlFor="">Remark</label>
+                                <textarea name="" id="" cols="65" rows="4"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='addremarkmodal3'>
+                        <button onClick={() => props.onHide()}>Save</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//  Edit Refund/ Cancel Modal for refund/cancel page
+export function EditRefundCancelRequests(props) {
+    const tableData1 = [
+        {
+            id: 1,
+            name: 'Loren Epsom',
+            admissionNo: '123445',
+            course: 'Engineering',
+            University: 'Aligarh University',
+            requestaddedon: "DD/MM/YYYY  10:30AM",
+            uploadDocument: 'View Document',
+            requestingUserBy: 'Loren Epsom',
+            statusChangedOn: "DD/MM/ YYYY   10:30 AM",
+            Details: "Details"
+        },
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <div className='addremarkmodal'>
+                    <div className='addremarkmodal1'>
+                        <p>Add Refund/ Cancel Requests</p>
+                        <IoCloseOutline color='#000000' size={25} onClick={() => props.onHide()} />
+                    </div>
+                    {tableData1.map((data) => (
+                        <div className='addrfundModal'>
+                            <div className='addrfundModal1'>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Admission No</label>
+                                    <input type="text" value={data.admissionNo} />
+                                </div>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Student Name</label>
+                                    <input type="text" value={data.name} />
+                                </div>
+                            </div>
+                            <div className='addrfundModal1'>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Course</label>
+                                    <input type="text" value={data.course} />
+                                </div>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">University</label>
+                                    <input type="text" value={data.University} />
+                                </div>
+                            </div>
+                            <div className='addrfundModal1'>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Upload Document</label>
+                                    <div className='addrfundModal3'>
+                                        <div className='addrfundModal4'>
+                                            <p>loren <IoCloseOutline color='#000000' size={18} /></p>
+                                        </div>
+                                        <div className='addrfundModal4'>
+                                            <p>loren <IoCloseOutline color='#000000' size={18} /></p>
+                                        </div>
+                                        <div className='addrfundModal4'>
+                                            <p>loren <IoCloseOutline color='#000000' size={18} /></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='addrfundModal5'>
+                                    <button>Upload</button>
+                                    <div className='addrfundModal6'>
+                                        <p>.pdf ,  .doc .png, .jpeg . supported files only</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='addrfundModal1'>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Request User Name</label>
+                                    <input type="text" value={data.requestingUserBy} />
+                                </div>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Reason for Refund</label>
+                                    <select name="" id="">
+                                        <option value="">Select Action</option>
+                                        <option value="">Lorem Ipsum 1</option>
+                                        <option value="">Lorem Ipsum 2</option>
+                                        <option value="">Lorem Ipsum 3</option>
+                                        <option value="">Lorem Ipsum 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className='addrfundModal1'>
+                                <div className='addrfundModal2'>
+                                    <label htmlFor="">Remark</label>
+                                    <textarea name="" id="" cols="65" rows="4"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    <div className='addremarkmodal3'>
+                        <button onClick={() => props.onHide()}>Save</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+// Delete Refund/ Cancel Modal for refund/cancel page
+export function DeleteRequest(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <div className='deleterefund'>
+                    <div className='deleterefund2'>
+                        <img src={img8} alt="" />
+
+                        <p>Are you Sure you want to Delete the Request?</p>
+                    </div>
+
+                    <div className='deleterefund1'>
+                        <button onClick={() => props.onHide()}>Delete</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+
+// FeeStructure Modal for PDC page
+export function FeeStructure(props) {
+    const [step, setStep] = useState(0);
+    const tableData1 = [
+        {
+            id: 1,
+            BookFee: '₹1000',
+            Coursefee: '₹1000',
+            GST: '₹1000',
+            Other: '₹1000',
+            Reg: "₹1000",
+            TOC: '₹1000',
+            Book: '₹1000',
+            LE: "₹1000",
+            Multiple: "₹1000",
+            Total: "₹1000",
+        },
+
+        {
+            id: 1,
+            BookFee: '₹1000',
+            Coursefee: '₹1000',
+            GST: '₹1000',
+            Other: '₹1000',
+            Reg: "₹1000",
+            TOC: '₹1000',
+            Book: '₹1000',
+            LE: "₹1000",
+            Multiple: "₹1000",
+            Total: "₹1000",
+        },
+        {
+            id: 1,
+            BookFee: '₹1000',
+            Coursefee: '₹1000',
+            GST: '₹1000',
+            Other: '₹1000',
+            Reg: "₹1000",
+            TOC: '₹1000',
+            Book: '₹1000',
+            LE: "₹1000",
+            Multiple: "₹1000",
+            Total: "₹1000",
+        },
+        {
+            id: 1,
+            BookFee: '₹1000',
+            Coursefee: '₹1000',
+            GST: '₹1000',
+            Other: '₹1000',
+            Reg: "₹1000",
+            TOC: '₹1000',
+            Book: '₹1000',
+            LE: "₹1000",
+            Multiple: "₹1000",
+            Total: "₹1000",
+        },
+        {
+            id: 1,
+            BookFee: '₹1000',
+            Coursefee: '₹1000',
+            GST: '₹1000',
+            Other: '₹1000',
+            Reg: "₹1000",
+            TOC: '₹1000',
+            Book: '₹1000',
+            LE: "₹1000",
+            Multiple: "₹1000",
+            Total: "₹1000",
+        },
+        {
+            id: 1,
+            BookFee: '₹1000',
+            Coursefee: '₹1000',
+            GST: '₹1000',
+            Other: '₹1000',
+            Reg: "₹1000",
+            TOC: '₹1000',
+            Book: '₹1000',
+            LE: "₹1000",
+            Multiple: "₹1000",
+            Total: "₹1000",
+        },
+
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='feestructureModal101'>
+                <div className='feestructureModal'>
+                    <div className='feestructureModal1'>
+                        <p>Fee Structure</p>
+                        <IoCloseOutline color='#000000' size={20} onClick={() => props.onHide(false)} />
+                    </div>
+                    <div className='feestructureModal2'>
+                        <div className={step === 0 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(0)}>
+                            <p>Batch 1</p>
+                        </div>
+                        <div className={step === 1 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(1)}>
+                            <p>Batch 2</p>
+                        </div>
+                        <div className={step === 2 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(2)}>
+                            <p>Batch 3</p>
+                        </div>
+                        <div className={step === 3 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(3)}>
+                            <p>Batch 4</p>
+                        </div>
+                        <div className={step === 4 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(4)}>
+                            <p>Batch 5</p>
+                        </div>
+                        <div className={step === 5 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(5)}>
+                            <p>Batch 6</p>
+                        </div>
+                        <div className={step === 6 ? "feestructureModal3" : "feestructureModal4"} onClick={() => setStep(6)}>
+                            <p>Batch 7</p>
+                        </div>
+                    </div>
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Book Fee</th>
+                                        <th>Course fee</th>
+                                        <th>GST</th>
+                                        <th>Other</th>
+                                        <th>Reg.</th>
+                                        <th>TOC</th>
+                                        <th>Book</th>
+                                        <th>LE</th>
+                                        <th>Multiple</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData1.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>{data.BookFee}</td>
+                                            <td>{data.Coursefee}</td>
+                                            <td>{data.GST}</td>
+                                            <td>{data.Other}</td>
+                                            <td>{data.Reg}</td>
+                                            <td>{data.TOC}</td>
+                                            <td>{data.Book}</td>
+                                            <td>{data.LE}</td>
+                                            <td>{data.Multiple}</td>
+                                            <td>{data.Total}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+// EducationDetails Modal for PDC page
+export function EducationDetails(props) {
+    const tableData2 = [
+        {
+            id: 1,
+            Examtype: '10th',
+            Course: 'BSc',
+            Stream: 'Science',
+            Remarks: 'AB',
+            PassingYear: "2016",
+            UniversityBoardName: 'Loren epsom',
+            TotalMarks: '450',
+            MarksObtained: "340",
+            PercentageCGPA: "8.9 CGPA",
+        },
+
+        {
+            id: 1,
+            Examtype: '10th',
+            Course: 'BSc',
+            Stream: 'Science',
+            Remarks: 'AB',
+            PassingYear: "2016",
+            UniversityBoardName: 'Loren epsom',
+            TotalMarks: '450',
+            MarksObtained: "340",
+            PercentageCGPA: "8.9 CGPA",
+        },
+        {
+            id: 1,
+            Examtype: '10th',
+            Course: 'BSc',
+            Stream: 'Science',
+            Remarks: 'AB',
+            PassingYear: "2016",
+            UniversityBoardName: 'Loren epsom',
+            TotalMarks: '450',
+            MarksObtained: "340",
+            PercentageCGPA: "8.9 CGPA",
+        },
+        {
+            id: 1,
+            Examtype: '10th',
+            Course: 'BSc',
+            Stream: 'Science',
+            Remarks: 'AB',
+            PassingYear: "2016",
+            UniversityBoardName: 'Loren epsom',
+            TotalMarks: '450',
+            MarksObtained: "340",
+            PercentageCGPA: "8.9 CGPA",
+        },
+        {
+            id: 1,
+            Examtype: '10th',
+            Course: 'BSc',
+            Stream: 'Science',
+            Remarks: 'AB',
+            PassingYear: "2016",
+            UniversityBoardName: 'Loren epsom',
+            TotalMarks: '450',
+            MarksObtained: "340",
+            PercentageCGPA: "8.9 CGPA",
+        },
+        {
+            id: 1,
+            Examtype: '10th',
+            Course: 'BSc',
+            Stream: 'Science',
+            Remarks: 'AB',
+            PassingYear: "2016",
+            UniversityBoardName: 'Loren epsom',
+            TotalMarks: '450',
+            MarksObtained: "340",
+            PercentageCGPA: "8.9 CGPA",
+        },
+
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='feestructureModal101'>
+                <div className='feestructureModal'>
+                    <div className='EducationDetailsModal'>
+                        <p>Education Details</p>
+                        <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => props.onHide(false)} />
+                    </div>
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Exam type</th>
+                                        <th>Course</th>
+                                        <th>Stream</th>
+                                        <th>Subject</th>
+                                        <th>Remarks</th>
+                                        <th>Passing Year</th>
+                                        <th>University/Board Name</th>
+                                        <th>Total Marks</th>
+                                        <th>Marks Obtained</th>
+                                        <th>Percentage/CGPA</th>
+                                        <th>Marksheet</th>
+                                        <th>Certificate</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData2.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>{data.Examtype}</td>
+                                            <td>{data.Course}</td>
+                                            <td>{data.Stream}</td>
+                                            <td>
+                                                <div className='EducationDetailsModal1'>
+                                                    <select name="" id="">
+                                                        <option value="">Loren</option>
+                                                        <option value="">Loren</option>
+                                                        <option value="">Loren</option>
+                                                        <option value="">Loren</option>
+                                                    </select>
+                                                </div>
+                                            </td>
+                                            <td>{data.Remarks}</td>
+                                            <td>{data.PassingYear}</td>
+                                            <td>{data.UniversityBoardName}</td>
+                                            <td>{data.TotalMarks}</td>
+                                            <td>{data.MarksObtained}</td>
+                                            <td>{data.PercentageCGPA}</td>
+                                            <td><IoEye color='#2155CD' size={25} /></td>
+                                            <td><IoEye color='#2155CD' size={25} /></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+// Document Details Modal for PDC page
+export function DocumentDetails(props) {
+    const tableData3 = [
+        {
+            id: 1,
+            CertificateName: 'Certificate Name',
+            Remark: 'Loren Epsom',
+        },
+
+        {
+            id: 1,
+            CertificateName: 'Certificate Name',
+            Remark: 'Loren Epsom',
+        },
+        {
+            id: 1,
+            CertificateName: 'Certificate Name',
+            Remark: 'Loren Epsom',
+        },
+        {
+            id: 1,
+            CertificateName: 'Certificate Name',
+            Remark: 'Loren Epsom',
+        },
+        {
+            id: 1,
+            CertificateName: 'Certificate Name',
+            Remark: 'Loren Epsom',
+        },
+        {
+            id: 1,
+            CertificateName: 'Certificate Name',
+            Remark: 'Loren Epsom',
+        },
+
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='feestructureModal101'>
+                <div className='feestructureModal'>
+                    <div className='EducationDetailsModal'>
+                        <p>Document Details</p>
+                        <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => props.onHide(false)} />
+                    </div>
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Certificate Name</th>
+                                        <th>Remark</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData3.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>{data.CertificateName}</td>
+                                            <td>{data.Remark}</td>
+                                            <td><IoEye color='#444444' size={25} /></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+// Call Recording list Modal for PDC page
+export function CallRecordinglist(props) {
+    const tableData4 = [
+        {
+            id: 1,
+            calls: 'Calls.mp3',
+            Responsible: 'Loren epsom',
+            Addedon: 'DD/MM/YYYY',
+            Remarks: 'Loren',
+            RatedOn: 'DD/MM/YYYY',
+            Rating: "5"
+        },
+
+        {
+            id: 1,
+            calls: 'Calls.mp3',
+            Responsible: 'Loren epsom',
+            Addedon: 'DD/MM/YYYY',
+            Remarks: 'Loren',
+            RatedOn: 'DD/MM/YYYY',
+            Rating: "2"
+        },
+        {
+            id: 1,
+            calls: 'Calls.mp3',
+            Responsible: 'Loren epsom',
+            Addedon: 'DD/MM/YYYY',
+            Remarks: 'Loren',
+            RatedOn: 'DD/MM/YYYY',
+            Rating: "1"
+        },
+        {
+            id: 1,
+            calls: 'Calls.mp3',
+            Responsible: 'Loren epsom',
+            Addedon: 'DD/MM/YYYY',
+            Remarks: 'Loren',
+            RatedOn: 'DD/MM/YYYY',
+            Rating: "2"
+        },
+        {
+            id: 1,
+            calls: 'Calls.mp3',
+            Responsible: 'Loren epsom',
+            Addedon: 'DD/MM/YYYY',
+            Remarks: 'Loren',
+            RatedOn: 'DD/MM/YYYY',
+            Rating: "4"
+        },
+        {
+            id: 1,
+            calls: 'Calls.mp3',
+            Responsible: 'Loren epsom',
+            Addedon: 'DD/MM/YYYY',
+            Remarks: 'Loren',
+            RatedOn: 'DD/MM/YYYY',
+            Rating: "3"
+        },
+
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='feestructureModal101'>
+                <div className='feestructureModal'>
+                    <div className='EducationDetailsModal'>
+                        <p>Call Recording list</p>
+                        <IoCloseOutline color='#000000' size={25} onClick={() => props.onHide(false)} />
+                    </div>
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Calls</th>
+                                        <th>Responsible Person</th>
+                                        <th>Added on</th>
+                                        <th>Play</th>
+                                        <th>Remarks</th>
+                                        <th>Rating</th>
+                                        <th>Rated On</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData4.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>{data.calls}</td>
+                                            <td>{data.Responsible}</td>
+                                            <td>{data.Addedon}</td>
+                                            <td><IoIosPlayCircle size={25} color='#2155CD' /></td>
+                                            <td>{data.Remarks} <PiWarningCircle size={20} color='#2155CD' /></td>
+                                            <td>
+                                                {/* Render stars based on the 'Rating' */}
+                                                {Array.from({ length: parseInt(data.Rating, 10) }, (_, index) => (
+                                                    <MdStar key={index} size={20} color='#E2A03F' />
+                                                ))}
+                                            </td>
+
+                                            <td>{data.RatedOn}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
                 </div>
             </Modal.Body>
         </Modal>

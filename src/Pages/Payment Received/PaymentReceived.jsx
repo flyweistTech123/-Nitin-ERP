@@ -1,13 +1,13 @@
 import React from 'react'
 import './PaymentReceived.css'
 import HOC from '../../Components/HOC/HOC'
-import Modal from 'react-bootstrap/Modal';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import {Remarkspayment, PaymentStatus} from '../Modals/Modals'
+
+
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosMore } from "react-icons/io";
-import { IoIosCloseCircleOutline } from "react-icons/io";
 
 import img from '../../Img/img33.png'
 
@@ -138,107 +138,16 @@ const PaymentReceived = () => {
     ];
 
     // Remarks Modal 
-
-
     const [modalShow, setModalShow] = React.useState(false);
 
-
-
-    function Remarks(props) {
-
-
-        return (
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body >
-                    <div className='paymentremarkmodal'>
-                        <div className='paymentremarkmodal1'>
-                            <h6>Remarks</h6>
-                            <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => setModalShow(false)} />
-                        </div>
-
-                        <div className='paymentremarkmodal2'>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque blandit, eros id scelerisque eleifend, lorem urna tincidunt sem, quis semper dolor risus non enim. Donec eget enim dolor. Sed sit amet augue tellus. Mauris placerat hendrerit efficitur. Phasellus ultricies condimentum volutpat. Nunc facilisis congue elit, ac maximus nisi pharetra eget. Suspendisse potenti. Vivamus nec finibus metus. Etiam in lorem et ligula congue porttitor eu nec lorem. Maecenas lobortis dui magna, ac ultricies augue gravida et. Nullam rhoncus tortor nec bibendum tincidunt.
-                                Praesent suscipit maximus arcu. Praesent sit amet leo id quam volutpat interdum sit amet id elit. Maecenas cursus fermentum eros consequat eleifend. Duis at fermentum magna, eget mattis urna. Vivamus elit nisi, finibus in arcu vitae, laoreet tincidunt nibh. Donec gravida facilisis accumsan. Donec sit amet ligula nisl. Suspendisse quam sapien, interdum sed ipsum non, feugiat rutrum eros. Ut placerat finibus lacinia. Proin nibh lectus, dictum in hendrerit vitae, tincidunt sit amet nulla. Quisque eu sapien ante. Aliquam auctor sem a libero congue, vel rhoncus ante tempor.</p>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
-
-
     // paymentStatus Modal 
-
-
     const [modalShow1, setModalShow1] = React.useState(false);
 
 
 
-    function PaymentStatus(props) {
-
-
-        return (
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body >
-                    <div className='paymentremarkmodal'>
-                        <div className='paymentstatusModal'>
-                            <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => setModalShow1(false)} />
-                        </div>
-
-
-                        <div className='paymentstatusModal1'>
-                            <h6>Change Admission Status</h6>
-                            <div className='paymentstatusModal2'>
-                                <div className='paymentstatusModal3'>
-                                    <input type="radio"  name='pending'/>
-                                    <div className='paymentstatusModal4' style={{ backgroundColor: "#FFB800" }}>
-                                        <p>Pending</p>
-                                    </div>
-                                </div>
-                                <div className='paymentstatusModal3'>
-                                    <input type="radio" name='pending'/>
-                                    <div className='paymentstatusModal4' style={{ backgroundColor: "#40AF0C" }}>
-                                        <p>Approved</p>
-                                    </div>
-                                </div>
-                                <div className='paymentstatusModal3'>
-                                    <input type="radio" name='pending'/>
-                                    <div className='paymentstatusModal4' style={{ backgroundColor: "#FF0000" }}>
-                                        <p>Rejected</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className='paymentstatusModal5'>
-                            <h6>Remarks</h6>
-
-                            <textarea name="" id="" cols="30" rows="10" placeholder='Type Here.....'></textarea>
-                        </div>
-
-                        <div className='paymentstatusModal6'>
-                            <button onClick={() => setModalShow1(false)}>SUBMIT</button>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
-
-
     return (
         <>
-            <Remarks
+            <Remarkspayment
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
