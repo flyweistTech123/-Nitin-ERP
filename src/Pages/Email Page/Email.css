@@ -21,6 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 
@@ -224,4 +225,29 @@
     line-height: 21.82px;
     color: #000000;
     margin: 0;
+}
+
+.email66161{
+    margin-left: 5%;
+}
+
+
+
+
+
+/* Responsive css for email  */
+
+@media screen and (max-width: 580px) {
+    .email6{
+        flex-direction: column;
+        width: 100%;
+        align-items: normal;
+        gap: 10px;
+    }
+    .email66161{
+        margin-left: 0;
+    }
+    .email9 textarea{
+        width: 100%;
+    }
 }

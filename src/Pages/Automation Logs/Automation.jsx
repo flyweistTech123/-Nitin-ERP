@@ -32,15 +32,13 @@ const Automation = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className='template17'>
-                        <div className='template18' onClick={()=>navigate('/watiautomation')}>
+                        <div className='template18' onClick={() => navigate('/watiautomation')}>
                             <h6>Wati</h6>
                             <h6>Template</h6>
                         </div>
-                        <div className='template19'>
-                            <div className='template18' onClick={()=>navigate('/interaktautomation')}>
-                                <h6>Interakt</h6>
-                                <h6>Template</h6>
-                            </div>
+                        <div className='template18' onClick={() => navigate('/interaktautomation')}>
+                            <h6>Interakt</h6>
+                            <h6>Template</h6>
                         </div>
                     </div>
                 </Modal.Body>

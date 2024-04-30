@@ -1932,6 +1932,7 @@
 
 .whatsappModal2 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 50px;
 }
@@ -1963,23 +1964,16 @@
   }
   .historyModal2 {
     width: 100%;
+  }
+  .whatsappModal2 select {
+    width: 94%;
+  }
+  .whatsappModal2 {
+    gap: 10px;
+    align-items: normal;
+    padding-left: 10px;
+  }
 }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* call Recoding Modal  */
 
@@ -2187,32 +2181,25 @@
   margin: 0;
 }
 
-
-
-
 /* Responsive css for admissionstatus  */
 
 @media screen and (max-width: 580px) {
-  .admissionstatus6{
+  .admissionstatus6 {
     /* width: 100%; */
     left: 15px;
   }
-  .admissionstatus11{
+  .admissionstatus11 {
     width: 100%;
     gap: 2px;
   }
-  .admissionstatus13{
+  .admissionstatus13 {
     padding-left: 10px;
     padding-right: 10px;
   }
-  .admissionstatus13 p{
+  .admissionstatus13 p {
     font-size: 12px;
   }
 }
-
-
-
-
 
 /* StudentDetails Modal css */
 
@@ -2282,18 +2269,16 @@
   margin: 0;
 }
 
-
 /* Responsive css for studentdetailModal  */
 
 @media screen and (max-width: 580px) {
-  .studentdetailModal1{
+  .studentdetailModal1 {
     gap: 10px;
     align-items: normal;
   }
   .studentdetailModal3 {
   }
 }
-
 
 /* Approve Online Payment Modal css */
 
@@ -2358,13 +2343,6 @@
   margin: 0;
 }
 
-
-
-
-
-
-
-
 /* Remarks payment Modal  */
 
 .paymentremarkmodal {
@@ -2403,11 +2381,10 @@
 /* Responsive css for paymentremarkmoda  */
 
 @media screen and (max-width: 580px) {
-  .paymentremarkmodal2 p{
+  .paymentremarkmodal2 p {
     font-size: 15px;
   }
 }
-
 
 /* paymentStatus Modal css */
 
@@ -2470,67 +2447,54 @@
   margin: 0;
 }
 
-
-
-.paymentstatusModal5{
-    margin-top: 50px;
+.paymentstatusModal5 {
+  margin-top: 50px;
 }
 
-
-.paymentstatusModal5 h6{
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 20px;
-    color: #000000;
-    margin: 0;
+.paymentstatusModal5 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
 }
 
-
-.paymentstatusModal5 textarea{
-    border: 1px solid #000000;
-    background-color: #EEEEEE;
-    width: 90%;
-    height: 217px;
-    outline: none;
-    margin-top: 20px;
-    padding-left: 20px;
-    padding-top: 20px;
+.paymentstatusModal5 textarea {
+  border: 1px solid #000000;
+  background-color: #eeeeee;
+  width: 90%;
+  height: 217px;
+  outline: none;
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
-
-
-.paymentstatusModal6{
-    text-align: center;
-    margin-top: 20px;
+.paymentstatusModal6 {
+  text-align: center;
+  margin-top: 20px;
 }
 
-
-.paymentstatusModal6 button{
-    width: 200px;
-    height: 50px;
-    border: none;
-    border-radius: 5px;
-    background-color: #2155CD;
-    outline: none;
-    font-family: "Nunito Sans", sans-serif;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 20px;
-    color: #FFFFFF;
-    margin: 0;
+.paymentstatusModal6 button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2155cd;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
 }
-
 
 /* Responsive css for paymentstatusModa  */
 
 @media screen and (max-width: 580px) {
-
 }
-
-
-
-
 
 /* UploadDocuments Modal css  */
 
@@ -2678,7 +2642,6 @@
   margin: 0;
 }
 
-
 /* Responsive css for viewremarkmodal  */
 
 @media screen and (max-width: 580px) {
@@ -2808,7 +2771,6 @@
   margin: 0;
 }
 
-
 /* Responsive css for addrfundModal  */
 
 @media screen and (max-width: 580px) {
@@ -2827,10 +2789,10 @@
     padding-left: 10px;
     padding-right: 10px;
   }
-  .addrfundModal4{
+  .addrfundModal4 {
     padding: 4px 10px 4px 10px;
   }
-  .addrfundModal2 textarea{
+  .addrfundModal2 textarea {
     width: 100%;
   }
 }
@@ -2897,4 +2859,292 @@
   line-height: 32.74px;
   color: #000000;
   margin: 0;
+}
+
+/* FeeStructure Modal  css  */
+
+.feestructureModal101 {
+  background-color: #f0f0f0;
+}
+
+.feestructureModal {
+}
+
+.feestructureModal1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.feestructureModal1 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.feestructureModal2 {
+  width: 100%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.feestructureModal3 {
+  width: auto;
+  height: auto;
+  background-color: #2155cd;
+  padding: 12px 39px 12px 39px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feestructureModal3 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.feestructureModal4 {
+  width: auto;
+  height: auto;
+  border: 1px solid #2155cd;
+  background-color: #ffffff;
+  padding: 12px 39px 12px 39px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feestructureModal4 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #2155cd;
+  margin: 0;
+}
+
+/* Responsive css for feestructureModal  */
+
+@media screen and (max-width: 580px) {
+  .feestructureModal {
+  }
+}
+
+/* EducationDetails Modal css  */
+
+.EducationDetailsModal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.EducationDetailsModal p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.EducationDetailsModal1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.EducationDetailsModal1 select {
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444444;
+  margin: 0;
+}
+
+/* Document Details Modal  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MarksheetUpload Modal css  */
+
+
+
+.MarksheetUploadmodal1{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32.74px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.MarksheetUploadmodal2{
+  border-bottom: 1px solid #000000;
+}
+
+
+
+.MarksheetUploadmodal3{
+  margin-top: 20px;
+}
+
+
+
+.MarksheetUploadmodal4{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.MarksheetUploadmodal5{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.MarksheetUploadmodal5 label{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.MarksheetUploadmodal5 select{
+  width: 251px;
+  height: 40px;
+  border: 1px solid #3F3F3F;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 20px;
+}
+
+
+.MarksheetUploadmodal8{
+  margin-top: 30px;
+
+}
+
+
+.MarksheetUploadmodal6{
+  width: 251px;
+  height: 40px;
+  border: 1px solid #3F3F3F;
+  border-radius: 4px;
+  outline: none;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  cursor: pointer;
+}
+
+
+.MarksheetUploadmodal5 textarea{
+  height: 118px;
+  border: 1px solid #3F3F3F;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+
+.MarksheetUploadmodal7{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  gap: 30px;
+}
+
+
+.MarksheetUploadmodal7 button:nth-child(1){
+  width: auto;
+  height: auto;
+  padding: 12px 64px 12px 64px;
+  background-color: #2155CD;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+
+
+
+.MarksheetUploadmodal7 button:nth-child(2){
+  width: auto;
+  height: auto;
+  padding: 12px 64px 12px 64px;
+  background-color: #FFFFFF;
+  border: 1px solid #3F3F3F;
+  outline: none;
+  border-radius: 4px;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #3F3F3F;
+  margin: 0;
+}
+
+
+
+
+/* Responsive css for MarksheetUploadmoda  */
+
+@media screen and (max-width: 580px) {
+  .MarksheetUploadmodal4{
+    flex-direction: column;
+    align-items: normal;
+  }
+  .MarksheetUploadmodal5 select{
+    width: 100%;
+  }
+  .MarksheetUploadmodal6{
+    width: 100%;
+  }
+
 }

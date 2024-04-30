@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'
@@ -46,11 +46,12 @@ import img24 from '../../Img/img15.png'
 import img25 from '../../Img/img17.png'
 import img26 from '../../Img/img18.png'
 import img27 from '../../Img/img19.png'
-// import { Link } from 'react-router-dom';
+import { IoIosCloseCircle } from "react-icons/io";
 
 
 
 const Navbar = () => {
+    const [step, setStep] = useState(0);
 
     const [expandedMenus, setExpandedMenus] = useState([]);
     const [expandedMenus1, setExpandedMenus1] = useState([]);
@@ -105,6 +106,41 @@ const Navbar = () => {
 
     const [modalShow, setModalShow] = React.useState(false);
     const navigate = useNavigate()
+
+
+
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+      // Update the state based on screen size on component mount
+      const handleResize = () => {
+        setIsSmallScreen(window.innerWidth < 768); // Example breakpoint (adjust as needed)
+      };
+  
+      // Initial check
+      handleResize();
+  
+      // Listen for window resize events
+      window.addEventListener('resize', handleResize);
+  
+      // Clean up event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    const handleClick = () => {
+      if (isSmallScreen) {
+        handleShow1(); // Call handleShow if screen is small
+      } else {
+        setModalShow(true); // Otherwise, setModalShow(true)
+      }
+    };
 
 
 
@@ -261,6 +297,7 @@ const Navbar = () => {
                     <div className='searchModal'>
                         <div className='searchModal1'>
                             <h6>Employees</h6>
+                            <IoIosCloseCircle color='#OOOOOO' size={25} onClick={() => setModalShow1(false)} />
                         </div>
 
                         <div className='searchModal2'>
@@ -391,7 +428,7 @@ const Navbar = () => {
                         <div class='profile-img1'>
                             <img src={img1} alt="" />
                         </div>
-                        <div class='profile-img'  onClick={() => setModalShow(true)}>
+                        <div class='profile-img' onClick={handleClick}>
                             <img src={img2} alt="" />
                         </div>
                     </div>
@@ -758,6 +795,128 @@ const Navbar = () => {
                             </div>
                         </div>
 
+                    </div>
+                </Offcanvas.Body>
+            </Offcanvas>
+
+
+
+
+
+
+
+            <Offcanvas show={show1}  placement="end" onHide={handleClose1} style={{ width: "100%"}}>
+                <Offcanvas.Header closeButton>
+                </Offcanvas.Header>
+                <Offcanvas.Body Admissionfollowup101>
+                    <div className='profileModal'>
+                        <div className='profileModal1'>
+                            <div className='profileModal111'>
+                                <div className='profileModal2'>
+                                    <div className='profileModal3'>
+                                        <FaUser color='#FFFFFF' />
+                                    </div>
+                                    <div className='profileModal4'>
+                                        <h6>Loren Epsom</h6>
+                                        <p>Designation</p>
+                                    </div>
+                                </div>
+
+                                <div className='profileModal5'>
+                                    <p>See Profile</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div className='profileModal1'>
+                            <div className='profileModal6' onClick={() => navigate('/loginhistory')}>
+                                <LuHistory color='#444444' size={30} />
+                                <h6>Login History</h6>
+                            </div>
+                        </div>
+
+                        <div className='profileModal1'>
+                            <div className='profileModal6' onClick={() => navigate('/attendee')}>
+                                <img src={img3} alt="" />
+                                <h6>Attendees</h6>
+                            </div>
+                        </div>
+                        <div className='profileModal1'>
+                            <div className='profileModal6'>
+                                <img src={img4} alt="" />
+                                <h6>Notification</h6>
+                            </div>
+                        </div>
+                        <div className='profileModal1'>
+                            <div className='profileModal6666'>
+                                <img src={img5} alt="" />
+                                <div className='profileModal7'>
+                                    <button>Task</button>
+                                    <div className='profileModal8'>
+                                        <h6 style={{ color: '#FFB800' }}>Pending  04</h6>
+                                        <h6 style={{ color: '#40AF0C' }}>Resolved  14</h6>
+                                        <h6 style={{ color: '#FF0000' }}>Rejected  20</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className='profileModal9'>
+                            <div className={step === 0 ? "profileModal20" : "profileModal22"} onClick={() => setStep(0)}>
+                                <div className='profileModal21'>
+                                    <img src={img6} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 1 ? "profileModal20" : "profileModal22"} onClick={() => setStep(1)}>
+                                <div className='profileModal21'>
+                                    <img src={img7} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 2 ? "profileModal20" : "profileModal22"} onClick={() => setStep(2)}>
+                                <div className='profileModal21'>
+                                    <img src={img8} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 3 ? "profileModal20" : "profileModal22"} onClick={() => setStep(3)}>
+                                <div className='profileModal21'>
+                                    <img src={img9} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 4 ? "profileModal20" : "profileModal22"} onClick={() => setStep(4)}>
+                                <div className='profileModal21'>
+                                    <img src={img10} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 5 ? "profileModal20" : "profileModal22"} onClick={() => setStep(5)}>
+                                <div className='profileModal21'>
+                                    <img src={img11} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 6 ? "profileModal20" : "profileModal22"} onClick={() => setStep(6)}>
+                                <div className='profileModal21'>
+                                    <img src={img12} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                            <div className={step === 7 ? "profileModal20" : "profileModal22"} onClick={() => setStep(7)}>
+                                <div className='profileModal21'>
+                                    <img src={img13} alt="" />
+                                </div>
+                                <p>Set Theme</p>
+                            </div>
+                        </div>
+
+                        <div className='profileModal23'>
+                            <p>Load More</p>
+                        </div>
                     </div>
                 </Offcanvas.Body>
             </Offcanvas>

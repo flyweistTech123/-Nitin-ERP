@@ -30,15 +30,13 @@ const Template = () => {
                 </Modal.Header>
                 <Modal.Body>
                     <div className='template17'>
-                        <div className='template18' onClick={()=>navigate('/watitemplate')}>
+                        <div className='template18' onClick={() => navigate('/watitemplate')}>
                             <h6>Wati</h6>
                             <h6>Template</h6>
                         </div>
-                        <div className='template19'>
-                            <div className='template18' onClick={()=>navigate('/interakttemplate')}>
-                                <h6>Interakt</h6>
-                                <h6>Template</h6>
-                            </div>
+                        <div className='template18' onClick={() => navigate('/interakttemplate')}>
+                            <h6>Interakt</h6>
+                            <h6>Template</h6>
                         </div>
                     </div>
                 </Modal.Body>

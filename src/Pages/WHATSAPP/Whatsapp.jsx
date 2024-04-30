@@ -74,7 +74,7 @@ const Whatsapp = () => {
                                     </div>
 
                                     <div className='whatsapp20'>
-                                        <button onClick={()=>navigate('/admission')}>Send</button>
+                                        <button onClick={() => navigate('/admission')}>Send</button>
                                     </div>
                                 </div>
                             </div>

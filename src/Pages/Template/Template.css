@@ -144,16 +144,20 @@
 
 .template10 {
   width: 96%;
-  height: 87px;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   background-color: #ffffff;
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   padding-left: 20px;
   padding-right: 20px;
+  gap: 10px;
 }
 
 .template11 {
@@ -222,9 +226,7 @@
   outline: none;
 }
 
-
-
-.template15{
+.template15 {
   width: 113px;
   height: 35px;
   border-radius: 26px;
@@ -233,8 +235,7 @@
   justify-content: center;
 }
 
-
-.template15 p{
+.template15 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -243,26 +244,25 @@
   margin: 0;
 }
 
-
-.template16{
+.template16 {
   /* display: flex;
   align-items: center; */
   /* justify-content: center; */
 }
 
-
-.template17{
+.template17 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 20px;
 }
 
-.template18{
+.template18 {
   width: 200px;
   height: 200px;
   border: 0.3px solid #444444;
-  background-color: #F4F4F4;
+  background-color: #f4f4f4;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -271,8 +271,7 @@
   cursor: pointer;
 }
 
-
-.template18 h6{
+.template18 h6 {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 30px;
@@ -281,8 +280,19 @@
   margin: 0;
 }
 
+.template19 {
+}
 
+/* Responsive css for template  */
 
-.template19{
-
+@media screen and (max-width: 580px) {
+  .template18 {
+    width: 100%;
+  }
+  .template18 h6 {
+    font-size: 20px;
+  }
+  .template10 {
+    width: 100%;
+  }
 }

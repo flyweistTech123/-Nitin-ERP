@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './Modals.css'
 import Modal from 'react-bootstrap/Modal';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -2332,7 +2332,7 @@ export function Email(props) {
                                 </div>
                                 <div className='email6'>
                                     <label htmlFor="">To:</label>
-                                    <input type="text" name="" id="" placeholder='+ Add Recipient' style={{ marginLeft: "35px" }} />
+                                    <input type="text" name="" id="" placeholder='+ Add Recipient' className='email66161' />
                                 </div>
                                 <div className='email6'>
                                     <label htmlFor="">Subject:</label>
@@ -3399,6 +3399,7 @@ export function DeleteRequest(props) {
 
 // FeeStructure Modal for PDC page
 export function FeeStructure(props) {
+
     const [step, setStep] = useState(0);
     const tableData1 = [
         {
@@ -3903,6 +3904,1029 @@ export function CallRecordinglist(props) {
                     </div>
 
                 </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+// MarksheetUpload Modal for document page
+export function MarksheetUpload(props) {
+
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Marksheet</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+// ID Card Upload Modal for document page
+export function IDCardUpload(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>ID Card</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+// Admit Card Upload Modal for document page
+export function AdmitCardUpload(props) {
+
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Admit Card</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// Result Status Upload Modal for document page
+export function ResultStatusUpload(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Result Status</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+// Transcript Modal for document page
+export function TranscriptUpload(props) {
+
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Transcript</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// Admission Letter Modal for document page
+export function AdmissionLetterUpload(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Admission Letter</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+// Certificate Letter Modal for document page
+export function CertificateUpload(props) {
+
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Certificate</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+// Provisional Letter Modal for document page
+export function ProvisionalUpload(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Provisional</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// Other Document Modal for document page
+export function OtherDocumentApply(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Other Document Apply</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//Migration Upload Modal for document page
+export function MigrationUpload(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Migration</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// Degree Upload Modal for document page
+export function DegreeUpload(props) {
+
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Degree</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+// Attestation Upload Modal for document page
+export function AttestationUpload(props) {
+    const fileInputRef = useRef(null);
+
+    // Function to handle the click event on your custom element
+    const handleClick = () => {
+        // Trigger the click event on the file input element
+        fileInputRef.current.click();
+    };
+
+    // Function to handle the file change event
+    const handleFileChange = (event) => {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            // Handle file upload here
+            console.log('Files selected:', files);
+        }
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                    <Modal.Title className='MarksheetUploadmodal1'>Attestation</Modal.Title>
+                </Modal.Header>
+
+                <div className='MarksheetUploadmodal3'>
+                    <div className='MarksheetUploadmodal4'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Batch</label>
+                            <select name="" id="">
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                                <option value="">4</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Status</label>
+                            <select name="" id="">
+                                <option value="">None</option>
+                                <option value="">Applied</option>
+                                <option value="">Available</option>
+                                <option value="">Not Available</option>
+                                <option value="">Sent</option>
+                            </select>
+                        </div>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">File</label>
+                            <div className='MarksheetUploadmodal6' onClick={handleClick}>
+                                <input
+                                    type="file"
+                                    ref={fileInputRef} // Use the ref to control the file input
+                                    style={{ display: 'none' }} // Hide the file input
+                                    onChange={handleFileChange} // Handle file changes
+                                />
+                                <img src={img2} alt="" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal8'>
+                        <div className='MarksheetUploadmodal5'>
+                            <label htmlFor="">Comment</label>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+
             </Modal.Body>
         </Modal>
     );

@@ -46,7 +46,7 @@ const Email = () => {
                             </div>
                             <div className='email6'>
                                 <label htmlFor="">To:</label>
-                                <input type="text" name="" id="" placeholder='+ Add Recipient'  style={{marginLeft:"35px"}}/>
+                                <input type="text" name="" id="" placeholder='+ Add Recipient'  className='email66161'/>
                             </div>
                             <div className='email6'>
                                 <label htmlFor="">Subject:</label>
