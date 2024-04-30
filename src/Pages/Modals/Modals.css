@@ -3087,6 +3087,7 @@
 
 .MarksheetUploadmodal7{
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   margin-top: 30px;
@@ -3145,6 +3146,12 @@
   }
   .MarksheetUploadmodal6{
     width: 100%;
+  }
+  .MarksheetUploadmodal7 button:nth-child(1){
+    padding: 12px 15px 12px 15px;
+  }
+  .MarksheetUploadmodal7 button:nth-child(2){
+    padding: 12px 15px 12px 15px;
   }
 
 }

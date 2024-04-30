@@ -271,6 +271,9 @@
   .whatsapp4 {
     width: 100%;
   }
+  .whatsapp6 h6 {
+    font-size: 15px;
+  }
   .whatsapp7 select {
     width: 90%;
   }
