@@ -7,11 +7,16 @@
   align-items: center;
 }
 
+
 .navbar-left,
 .navbar-center,
 .navbar-right {
   display: flex;
   align-items: center;
+}
+
+.navbar101 {
+  display: none;
 }
 
 .logo p {
@@ -71,6 +76,7 @@
   margin-right: 10px;
   cursor: pointer;
 }
+
 .profile-img {
   cursor: pointer;
   position: relative;
@@ -86,6 +92,73 @@
   border-radius: 50%;
   margin-right: 15px;
 }
+
+
+
+
+
+/* Responsive css for navbar  */
+
+@media screen and (max-width: 580px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+
+  .navbar-left{
+    gap: 20px;
+  }
+
+  .logo p {
+    margin-left: 0;
+  }
+
+  .search {
+    width: 100%;
+  }
+
+  .search input {
+    width: 70%;
+  }
+
+  .navbar2 button {
+    width: 100px;
+  }
+
+  .navbar101 {
+    display: block;
+    color: #00216d;
+  }
+
+  .navbar102 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+
+
+@media screen and (max-width: 980px) {
+  .navbar101 {
+    display: block;
+  }
+
+  .search {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
 /* profile Modal css */
 .custom-modal122 {
@@ -104,12 +177,13 @@
 }
 
 .profileModal1 {
-  width: 453px;
-  height: 80px;
+  width: 100%;
+  height: auto;
   border-radius: 16px;
   background-color: #ffffff;
   box-shadow: 0px 0px 4px 2px #00000040;
   cursor: pointer;
+  padding-bottom: 20px;
 }
 
 .profileModal111 {
@@ -137,8 +211,7 @@
   justify-content: center;
 }
 
-.profileModal4 {
-}
+.profileModal4 {}
 
 .profileModal4 h6 {
   font-family: "Nunito Sans", sans-serif;
@@ -178,7 +251,7 @@
   margin: 0;
 }
 
-.profileModal6666{
+.profileModal6666 {
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -290,6 +363,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .profileModal22 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
@@ -299,8 +373,7 @@
   margin: 0;
 }
 
-.profileModal23 {
-}
+.profileModal23 {}
 
 .profileModal23 p {
   font-family: "Nunito Sans", sans-serif;
@@ -315,8 +388,7 @@
 
 /* search Modal css */
 
-.searchModal {
-}
+.searchModal {}
 
 .searchModal1 {
   display: flex;
@@ -459,78 +531,61 @@
   .searchModal5 {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .searchModal7 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.navbar101 {
-  display: none;
-}
-.navbar102 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
 
 
 
-/* Responsive css for navbar  */
 
-@media screen and (max-width: 580px) {
-  .navbar {
-    flex-direction: column;
-    height: auto;
-    gap: 20px;
-  }
 
-  .logo p {
-    margin-left: 0;
-  }
 
-  .search {
-    width: 90%;
-  }
-  .search input {
-    width: 70%;
-  }
-
-  .navbar2 button {
-    width: 100px;
-  }
-  .navbar101 {
-    display: block;
-    padding-right: 100px;
-    color: #00216d;
-  }
-  .navbar102 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-}
 
 /* Responsive css for profileModal  */
+@media screen and (max-width: 980px) {
+  .profileModal9 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .profileModal20 {
+    width: 100%;
+  }
+
+  .profileModal21 {
+    width: 100%;
+  }
+
+  .profileModal22 {
+    width: 100%;
+  }
+}
 
 @media screen and (max-width: 580px) {
   .profileModal1 {
     width: 100%;
+    height: auto;
   }
+
   .profileModal6666 {
     margin-top: 5px;
   }
+
   .profileModal9 {
-    width: 99%;
-    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
   }
+
   .profileModal20 {
-    width: 180px;
+    width: 100%;
   }
+
   .profileModal21 {
-    width: 180px;
+    width: 100%;
   }
+
   .profileModal22 {
-    width: 180px;
+    width: 100%;
   }
 }

@@ -117,29 +117,29 @@ const Navbar = () => {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
 
     useEffect(() => {
-      // Update the state based on screen size on component mount
-      const handleResize = () => {
-        setIsSmallScreen(window.innerWidth < 768); // Example breakpoint (adjust as needed)
-      };
-  
-      // Initial check
-      handleResize();
-  
-      // Listen for window resize events
-      window.addEventListener('resize', handleResize);
-  
-      // Clean up event listener on component unmount
-      return () => {
-        window.removeEventListener('resize', handleResize);
-      };
+        // Update the state based on screen size on component mount
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 868); // Example breakpoint (adjust as needed)
+        };
+
+        // Initial check
+        handleResize();
+
+        // Listen for window resize events
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
-  
+
     const handleClick = () => {
-      if (isSmallScreen) {
-        handleShow1(); // Call handleShow if screen is small
-      } else {
-        setModalShow(true); // Otherwise, setModalShow(true)
-      }
+        if (isSmallScreen) {
+            handleShow1(); // Call handleShow if screen is small
+        } else {
+            setModalShow(true); // Otherwise, setModalShow(true)
+        }
     };
 
 
@@ -405,11 +405,14 @@ const Navbar = () => {
             />
             <div class='navbar'>
                 <div class='navbar-left'>
-                    <div class='logo' onClick={() => navigate('/dashboard')}>
+                    <div className='navbar101' onClick={handleShow}>
+                        <BsFilterLeft color='#000000' size={35} />
+                    </div>
+                    <div className='logo' onClick={() => navigate('/dashboard')}>
                         <p>Logo</p>
                     </div>
                 </div>
-                <div class='navbar-center'>
+                <div className='navbar-center'>
                     <div class='search' onClick={() => setModalShow1(true)}>
                         <div class='search-icon'>
                             <IoMdSearch color='#3F3F3F' size={20} />
@@ -417,26 +420,22 @@ const Navbar = () => {
                         <input type="search" placeholder='Search' />
                     </div>
                 </div>
-                <div class='navbar-right'>
-                    <div className='navbar101' onClick={handleShow}>
-                        <BsFilterLeft color='#000000' size={35} />
+                <div className='navbar-right'>
+                    <div class='navbar2'>
+                        <button onClick={()=>navigate('/paymentnow')}>Payment</button>
                     </div>
-                    <div className='navbar102'>
-                        <div class='navbar2'>
-                            <button>Payment</button>
-                        </div>
-                        <div class='profile-img1'>
-                            <img src={img1} alt="" />
-                        </div>
-                        <div class='profile-img' onClick={handleClick}>
-                            <img src={img2} alt="" />
-                        </div>
+                    <div class='profile-img1'>
+                        <img src={img1} alt="" />
                     </div>
-
+                    <div class='profile-img' onClick={handleClick}>
+                        <img src={img2} alt="" />
+                    </div>
                 </div>
             </div>
 
-
+            {/* <div className='navbar101' onClick={handleShow}>
+                        <BsFilterLeft color='#000000' size={35} />
+                    </div> */}
 
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton>
@@ -805,7 +804,7 @@ const Navbar = () => {
 
 
 
-            <Offcanvas show={show1}  placement="end" onHide={handleClose1} style={{ width: "100%"}}>
+            <Offcanvas show={show1} placement="end" onHide={handleClose1} style={{ width: "100%" }}>
                 <Offcanvas.Header closeButton>
                 </Offcanvas.Header>
                 <Offcanvas.Body Admissionfollowup101>

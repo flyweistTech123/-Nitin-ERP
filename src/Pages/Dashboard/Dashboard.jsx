@@ -93,14 +93,25 @@ const Dashboard = () => {
                 breakpoint: 580,
                 options: {
                     chart: {
-                        width: 300,
+                        width: 300
                     },
                     legend: {
-                        position: 'right',
-                    },
-                },
+                        position: 'right'
+                    }
+                }
             },
-        ],
+            {
+                breakpoint: 968, // Example of another breakpoint (e.g., tablet)
+                options: {
+                    chart: {
+                        width: 300 // Adjust width for tablet screens
+                    },
+                    legend: {
+                        position: 'right' // Example of changing legend position for tablets
+                    }
+                }
+            }
+        ]
     });
 
     const [series1, setSeries1] = useState([78, 22]);
@@ -128,14 +139,25 @@ const Dashboard = () => {
                 breakpoint: 580,
                 options: {
                     chart: {
-                        width: 300,
+                        width: 300
                     },
                     legend: {
-                        position: 'right',
-                    },
-                },
+                        position: 'right'
+                    }
+                }
             },
-        ],
+            {
+                breakpoint: 968, // Example of another breakpoint (e.g., tablet)
+                options: {
+                    chart: {
+                        width: 300 // Adjust width for tablet screens
+                    },
+                    legend: {
+                        position: 'right' // Example of changing legend position for tablets
+                    }
+                }
+            }
+        ]
     });
     const [series2, setSeries2] = useState([44, 25, 80]);
     const [options2, setOptions2] = useState({
@@ -264,14 +286,25 @@ const Dashboard = () => {
                 breakpoint: 580,
                 options: {
                     chart: {
-                        width: 300,
+                        width: 300
                     },
                     legend: {
-                        position: 'right',
-                    },
-                },
+                        position: 'right'
+                    }
+                }
             },
-        ],
+            {
+                breakpoint: 968, // Example of another breakpoint (e.g., tablet)
+                options: {
+                    chart: {
+                        width: 300 // Adjust width for tablet screens
+                    },
+                    legend: {
+                        position: 'bottom' // Example of changing legend position for tablets
+                    }
+                }
+            }
+        ]
     });
     const [chartState, setChartState] = useState({
         series: [60, 10, 30],
@@ -282,17 +315,30 @@ const Dashboard = () => {
             },
             colors: ['#4198D7', '#7A61BA', '#D8B655'],
             labels: ['Resolved', 'Rejected', 'Pending'],
-            responsive: [{
-                breakpoint: 580,
-                options: {
-                    chart: {
-                        width: 300
-                    },
-                    legend: {
-                        position: 'right'
+            responsive: [
+                {
+                    breakpoint: 580,
+                    options: {
+                        chart: {
+                            width: 300
+                        },
+                        legend: {
+                            position: 'right'
+                        }
+                    }
+                },
+                {
+                    breakpoint: 968, // Example of another breakpoint (e.g., tablet)
+                    options: {
+                        chart: {
+                            width: 300 // Adjust width for tablet screens
+                        },
+                        legend: {
+                            position: 'bottom' // Example of changing legend position for tablets
+                        }
                     }
                 }
-            }]
+            ]
         }
     });
 

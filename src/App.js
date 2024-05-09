@@ -94,6 +94,11 @@ import FeeReceiptFormat from './Pages/Setting/FeeReceiptFormat';
 import StudentEditTemplate from './Pages/Setting/StudentEditTemplate';
 import InternalEditTemplate from './Pages/Setting/InternalEditTemplate';
 import SettingEditEmailTemplate from './Pages/Setting/SettingEditEmailTemplate';
+import PaymentNow from './Pages/PaymentNow/PaymentNow';
+import PaymentDeteails from './Pages/PaymentNow/PaymentDeteails';
+import EasebuzzPayment from './Pages/PaymentNow/EasebuzzPayment';
+import General from './Pages/General/General';
+import Task from './Pages/Task/Task';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -194,6 +199,11 @@ function App() {
           <Route path="/studentedittemplate" element={<StudentEditTemplate />} />
           <Route path="/Internaledittemplate" element={<InternalEditTemplate />} />
           <Route path="/settingEditemailtemplate" element={<SettingEditEmailTemplate />} />
+          <Route path="/paymentnow" element={<PaymentNow />} />
+          <Route path="/paymentdetails" element={<PaymentDeteails />} />
+          <Route path="/easebuzzpayment" element={<EasebuzzPayment />} />
+          <Route path="/general" element={<General />} />
+          <Route path="/task" element={<Task />} />
         </Routes>
       </BrowserRouter>
     </>

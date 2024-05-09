@@ -79,8 +79,7 @@
   margin-top: 30px;
 }
 
-.setting4 {
-}
+.setting4 {}
 
 .setting4 button {
   width: auto;
@@ -201,8 +200,7 @@
   margin: 0;
 }
 
-.setting10 {
-}
+.setting10 {}
 
 .setting10 button {
   width: auto;
@@ -358,8 +356,7 @@
   cursor: pointer;
 }
 
-.setting19 {
-}
+.setting19 {}
 
 .setting19 button {
   width: 201px;
@@ -379,8 +376,7 @@
 
 /* AddUniversity  Modal css  */
 
-.AddUniversityModal1 {
-}
+.AddUniversityModal1 {}
 
 .addUniversityModal2 {
   display: flex;
@@ -412,7 +408,7 @@
 }
 
 .addUniversityModal4 {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -519,6 +515,47 @@
   color: #000000;
   margin: 0;
 }
+
+
+/* Responsive css for addUniversityModal  */
+
+@media screen and (max-width: 980px) {
+  .addUniversityModal5 input {
+    width: 100%;
+  }
+
+  .addUniversityModal6 button:nth-child(1) {
+    padding: 12px 16px 12px 16px;
+  }
+
+  .addUniversityModal6 button:nth-child(2) {
+    padding: 12px 16px 12px 16px;
+  }
+
+  .addUniversityModal5 select {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .addUniversityModal5 input {
+    width: 100%;
+  }
+
+  .addUniversityModal6 button:nth-child(1) {
+    padding: 12px 16px 12px 16px;
+  }
+
+  .addUniversityModal6 button:nth-child(2) {
+    padding: 12px 16px 12px 16px;
+  }
+
+  .addUniversityModal5 select {
+    width: 100%;
+  }
+}
+
+
 
 /* AddCourses  Modal css  */
 
@@ -685,10 +722,9 @@
 .addcoursesmodal6 {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(
-    3,
-    1fr
-  ); /* This creates three columns of equal width */
+  grid-template-columns: repeat(3,
+      1fr);
+  /* This creates three columns of equal width */
   gap: 10px;
 }
 
@@ -712,6 +748,21 @@
   line-height: 24.55px;
   color: #000000;
   margin: 0;
+}
+
+
+/* Responsive css for addUniversityModal  */
+
+@media screen and (max-width: 580px) {
+  .addcoursesmodal6 {
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+  }
+
+  .addcoursesmodal7 {
+    /* width: auto;
+    height:auto; */
+  }
 }
 
 /* EditCourses  Modal css  */
@@ -765,6 +816,7 @@
 
 .EditCourses2 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-top: 20px;
@@ -815,11 +867,9 @@
 
 /* AddBank  Modal  css  */
 
-.deleterecordmodal {
-}
+.deleterecordmodal {}
 
-.deleterecordmodal1 {
-}
+.deleterecordmodal1 {}
 
 .deleterecordmodal1 h6 {
   font-family: "Nunito Sans", sans-serif;
@@ -851,8 +901,10 @@
 
 .SendCourierModal3 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: 10px;
 }
 
 .SendCourierModal3 input {
@@ -1026,6 +1078,7 @@
   border-radius: 17px;
   padding-top: 10px;
 }
+
 .SendCourierModal10 input {
   width: 100%;
   height: 40px;
@@ -1181,8 +1234,7 @@
   gap: 20px;
 }
 
-.birthdaywishes2 {
-}
+.birthdaywishes2 {}
 
 .birthdaywishes3 {
   display: flex;
@@ -1225,11 +1277,12 @@
 }
 
 .birthdaywishes5 button {
-  width: 145px;
-  height: 40px;
+  width: auto;
+  height: auto;
   border: none;
   outline: none;
   border-radius: 4px;
+  padding: 10px 20px 10px 20px;
   background-color: #2155cd;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
@@ -1272,13 +1325,14 @@
 .birthdaywishes6.active .birthdaywishes7 {
   background-color: #6750a4;
 }
+
 .birthdaywishes6.active .birthdaywishes8 {
   transform: translateX(25px);
 }
 
 .birthdaywishes9 {
   width: 100%;
-  height: 572px;
+  height: auto;
   border-radius: 24px;
   border: 1px solid #3f3f3f;
   background-color: #ffffff;
@@ -1289,6 +1343,7 @@
   background-repeat: no-repeat;
   padding-left: 20px;
   padding-top: 20px;
+  padding-bottom: 50px;
   margin-top: 20px;
 }
 
@@ -1328,6 +1383,7 @@
 
 .birthdaywishes13 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-top: 40px;
@@ -1391,8 +1447,7 @@
   margin: 0;
 }
 
-.birthdaywishes16 {
-}
+.birthdaywishes16 {}
 
 .birthdaywishes17 {
   width: 343px;
@@ -1463,6 +1518,64 @@
   gap: 10px;
 }
 
+
+@media screen and (max-width: 980px) {
+  .birthdaywishes17 {
+    width: 100%;
+    padding-right: 50px;
+  }
+  .birthdaywishes4 h6 {
+    font-size: 20px;
+  }
+  .birthdaywishes5 button {
+    padding: 10px 15px 10px 15px;
+    font-size: 14.5px;
+  }
+  .birthdaywishes9 {
+    width:auto;
+  }
+  .birthdaywishes15 button:nth-child(1) {
+    padding: 10px 15px 10px 15px;
+  }
+  .birthdaywishes15 button:nth-child(2) {
+    padding: 10px 15px 10px 15px;
+  }
+  
+.birthdaywishes18 h6 {
+  font-size: 15px;
+}
+}
+
+@media screen and (max-width: 580px) {
+  .birthdaywishes1 {
+    flex-direction: column;
+  }
+  .birthdaywishes17 {
+    width: 100%;
+  }
+  .birthdaywishes4 h6 {
+    font-size: 20px;
+  }
+  .birthdaywishes5 button {
+    padding: 10px 15px 10px 15px;
+    font-size: 12.5px;
+  }
+  .birthdaywishes9 {
+    width:auto;
+  }
+  .birthdaywishes15 button:nth-child(1) {
+    padding: 10px 15px 10px 15px;
+  }
+  .birthdaywishes15 button:nth-child(2) {
+    padding: 10px 15px 10px 15px;
+  }
+  
+.birthdaywishes18 h6 {
+  font-size: 15px;
+}
+}
+
+
 /* TelegramAPI css */
 
 .telegramapi {
@@ -1489,8 +1602,7 @@
   margin: 0;
 }
 
-.telegramapi2 {
-}
+.telegramapi2 {}
 
 .telegramapi3 {
   display: flex;
@@ -1599,8 +1711,7 @@
   padding-bottom: 100px;
 }
 
-.pettyCashTemplate3 {
-}
+.pettyCashTemplate3 {}
 
 .pettyCashTemplate3 P {
   font-family: "Nunito Sans", sans-serif;
@@ -1649,6 +1760,7 @@
   border: 1px solid #3f3f3f99;
   outline: none;
 }
+
 .pettyCashTemplate6 {
   display: flex;
   align-items: center;
@@ -1752,8 +1864,7 @@
 
 /* PendingDocumentListTemplate */
 
-.PendingDocumentListTemplate11 {
-}
+.PendingDocumentListTemplate11 {}
 
 .PendingDocumentListTemplate11 p {
   font-family: "Nunito Sans", sans-serif;
@@ -1762,6 +1873,7 @@
   line-height: 27.28px;
   color: #000000;
   margin: 0;
+  padding-left: 10px;
 }
 
 .PendingDocumentListTemplate11 ul li {
@@ -1939,8 +2051,7 @@
   margin-top: 100px;
 }
 
-.fonadaapi1 {
-}
+.fonadaapi1 {}
 
 .fonadaapi1 h6 {
   font-family: "Nunito Sans", sans-serif;
@@ -2160,8 +2271,7 @@
 
 /* CallyzerAPI css  */
 
-.callyzerapi {
-}
+.callyzerapi {}
 
 .callyzerapi1 {
   margin-top: 50px;
@@ -2384,6 +2494,7 @@
 
 .studentedittemplate13 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   padding-top: 30px;
@@ -2402,6 +2513,7 @@
 
 .studentedittemplate14 {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 20px;
 }
@@ -2432,21 +2544,25 @@
 
 /* Responsive css for setting  */
 
-@media screen and (max-width: 580px) {
+
+@media screen and (max-width: 980px) {
   .setting3 {
     flex-direction: column;
     align-items: normal;
     gap: 10px;
   }
+
   .setting2 {
     width: 100%;
     margin-left: 0;
   }
-  .setting9 {
-  }
+
+  .setting9 {}
+
   .setting9 button:nth-child(2) {
     padding: 12px 15px 12px 15px;
   }
+
   .setting9 button:nth-child(3) {
     padding: 12px 15px 12px 15px;
   }
@@ -2456,94 +2572,348 @@
     align-items: normal;
     width: 100%;
   }
+
   .telegramapi3 input {
     width: 100%;
   }
+
   .easebuzzAPI {
     width: 100%;
   }
+
   .paytmgateway {
     flex-direction: column;
     align-items: normal;
     width: 100%;
   }
+
   .paytmgateway input {
     width: 100%;
   }
+
   .setting12 {
     flex-direction: column;
     align-items: normal;
   }
-  .setting11{
+
+  .setting11 {
     height: auto;
     padding: 20px;
     align-items: normal;
     justify-content: start;
   }
-  .setting13{
+
+  .setting13 {
     align-items: normal;
   }
-  .setting13 input{
+
+  .setting13 input {
     width: 100%;
   }
+
   .crm6 {
     flex-direction: column;
     gap: 20px;
     align-items: normal;
   }
-  .setting16{
+
+  .setting16 {
     gap: 20px;
   }
-  .setting19 button{
+
+  .setting19 button {
     width: auto;
     padding: 12px 15px 12px 15px;
   }
+
   .pettyCashTemplate4 {
     flex-direction: column;
     gap: 10px;
   }
-  .pettyCashTemplate9 button{
+
+  .pettyCashTemplate9 button {
     padding: 12px 15px 12px 15px;
   }
-  .email8{
+
+  .email8 {
     flex-wrap: wrap;
   }
-  .PendingDocumentListTemplate14 h6{
+
+  .PendingDocumentListTemplate14 h6 {
     font-size: 15px;
     width: 50%;
   }
+
   .PendingDocumentListTemplate13 {
-    padding-left: 0;
+    padding-left: 20px;
 
   }
-  .pettyCashTemplate505{
+  .pettyCashTemplate2 {
     width: 100%;
   }
+
+  .pettyCashTemplate505 {
+    width: 100%;
+  }
+
   .pettyCashTemplate5 {
     flex-direction: column;
   }
-  .pettyCashTemplate5 select{
+
+  .pettyCashTemplate5 select {
     width: 100%;
   }
-  .pettyCashTemplate6{
+
+  .pettyCashTemplate6 {
     flex-direction: column;
     align-items: normal;
     gap: 10px;
   }
+
   .pettyCashTemplate8 p {
     font-size: 15px;
   }
+
   .couriersectiontemplate2 {
     flex-direction: column;
   }
+
   .couriersectiontemplate3 {
     width: auto;
     padding: 50px;
     height: auto;
   }
+
   .couriersectiontemplate3 h6 {
     font-size: 25px;
   }
+
+  /* .settingemailtemplate3 {
+    flex-direction: column;
+    gap: 10px;
+  } */
+
+  .settingemailtemplate7 button:nth-child(1) {
+    width: auto;
+    height: auto;
+    padding: 5px 20px 5px 20px;
+  }
+
+  .settingemailtemplate7 button:nth-child(2) {
+    width: auto;
+    height: auto;
+    padding: 5px 20px 5px 20px;
+  }
+
+  .fonadaapi2 {
+    width: 95%;
+  }
+
+  .erpsettings101 {
+    width: 95%;
+  }
+
+  .erpsettings {
+    flex-direction: column;
+  }
+
+  .paymenttypemode4 {
+    padding-left: 10px;
+  }
+
+  .callyzerapi1 textarea {
+    width: 100%;
+  }
+
+  .callyzerapi1 {
+    margin-left: 10px;
+  }
+
+  .feeReceiptFormat {
+    width: auto;
+    padding: 50px;
+    height: auto;
+  }
+
+  .studentedittemplate7 {
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  .studentedittemplate7 p {
+    font-size: 15px;
+
+  }
+
+  .SendCourierModal4 button:nth-child(1) {
+    padding: 10px 15px 10px 15px;
+  }
+
+  .SendCourierModal4 button:nth-child(2) {
+    padding: 10px 15px 10px 15px;
+  }
+
+  .SendCourierModal77 input {
+    width: 100%;
+  }
+
+  .SendCourierModal77 select {
+    width: 100%;
+  }
+
+  .SendCourierModal12 input {
+    width: 100%;
+  }
+
+  .SendCourierModal13 input {
+    width: 100%;
+  }
+
+  .studentedittemplate14 input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .setting3 {
+    flex-direction: column;
+    align-items: normal;
+    gap: 10px;
+  }
+
+  .setting2 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .setting9 {}
+
+  .setting9 button:nth-child(2) {
+    padding: 12px 15px 12px 15px;
+  }
+
+  .setting9 button:nth-child(3) {
+    padding: 12px 15px 12px 15px;
+  }
+
+  .telegramapi3 {
+    flex-direction: column;
+    align-items: normal;
+    width: 100%;
+  }
+
+  .telegramapi3 input {
+    width: 100%;
+  }
+
+  .easebuzzAPI {
+    width: 100%;
+  }
+
+  .paytmgateway {
+    flex-direction: column;
+    align-items: normal;
+    width: 100%;
+  }
+
+  .paytmgateway input {
+    width: 100%;
+  }
+
+  .setting12 {
+    flex-direction: column;
+    align-items: normal;
+  }
+
+  .setting11 {
+    height: auto;
+    padding: 20px;
+    align-items: normal;
+    justify-content: start;
+  }
+
+  .setting13 {
+    align-items: normal;
+  }
+
+  .setting13 input {
+    width: 100%;
+  }
+
+  .crm6 {
+    flex-direction: column;
+    gap: 20px;
+    align-items: normal;
+  }
+
+  .setting16 {
+    gap: 20px;
+  }
+
+  .setting19 button {
+    width: auto;
+    padding: 12px 15px 12px 15px;
+  }
+
+  .pettyCashTemplate4 {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .pettyCashTemplate9 button {
+    padding: 12px 15px 12px 15px;
+  }
+
+  .email8 {
+    flex-wrap: wrap;
+  }
+
+  .PendingDocumentListTemplate14 h6 {
+    font-size: 15px;
+    width: 50%;
+  }
+
+  .PendingDocumentListTemplate13 {
+    padding-left: 0;
+
+  }
+
+  .pettyCashTemplate505 {
+    width: 100%;
+  }
+
+  .pettyCashTemplate5 {
+    flex-direction: column;
+  }
+
+  .pettyCashTemplate5 select {
+    width: 100%;
+  }
+
+  .pettyCashTemplate6 {
+    flex-direction: column;
+    align-items: normal;
+    gap: 10px;
+  }
+
+  .pettyCashTemplate8 p {
+    font-size: 15px;
+  }
+
+  .couriersectiontemplate2 {
+    flex-direction: column;
+  }
+
+  .couriersectiontemplate3 {
+    width: auto;
+    padding: 50px;
+    height: auto;
+  }
+
+  .couriersectiontemplate3 h6 {
+    font-size: 25px;
+  }
+
   .settingemailtemplate3 {
     flex-direction: column;
     gap: 10px;
@@ -2554,40 +2924,78 @@
     height: auto;
     padding: 5px 20px 5px 20px;
   }
+
   .settingemailtemplate7 button:nth-child(2) {
     width: auto;
     height: auto;
     padding: 5px 20px 5px 20px;
   }
-  .fonadaapi2{
+
+  .fonadaapi2 {
     width: 95%;
   }
+
   .erpsettings101 {
     width: 95%;
   }
-  .erpsettings{
+
+  .erpsettings {
     flex-direction: column;
   }
-  .paymenttypemode4{
+
+  .paymenttypemode4 {
     padding-left: 10px;
   }
-  .callyzerapi1 textarea{
+
+  .callyzerapi1 textarea {
     width: 100%;
   }
+
   .callyzerapi1 {
     margin-left: 10px;
   }
+
   .feeReceiptFormat {
     width: auto;
     padding: 50px;
     height: auto;
   }
-  .studentedittemplate7{
+
+  .studentedittemplate7 {
     padding-left: 10px;
     width: 100%;
   }
+
   .studentedittemplate7 p {
     font-size: 15px;
 
+  }
+
+  .SendCourierModal4 button:nth-child(1) {
+    padding: 10px 15px 10px 15px;
+  }
+
+  .SendCourierModal4 button:nth-child(2) {
+    padding: 10px 15px 10px 15px;
+  }
+
+  .SendCourierModal77 input {
+    width: 100%;
+  }
+
+  .SendCourierModal77 select {
+    width: 100%;
+  }
+
+  .SendCourierModal12 input {
+    width: 100%;
+  }
+
+  .SendCourierModal13 input {
+    width: 100%;
+  }
+
+  .studentedittemplate14 input {
+    width: 100%;
   }
 }

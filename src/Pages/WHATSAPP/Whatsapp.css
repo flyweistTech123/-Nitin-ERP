@@ -266,6 +266,50 @@
 }
 
 /* Responsive css for whatsapp  */
+@media screen and (max-width: 980px) {
+  .whatsapp4 {
+    width: 100%;
+  }
+  .whatsapp6 h6 {
+    font-size: 15px;
+  }
+  .whatsapp7 select {
+    width: 90%;
+  }
+  .whatsapp7 {
+    flex-direction: column;
+  }
+  .whatsapp5 {
+    width: 90%;
+  }
+  .whatsapp18 {
+    flex-direction: column;
+    gap: 10px;
+    align-items: normal;
+    padding-left: 10px;
+  }
+  .whatsapp12 {
+    gap: 10px;
+    align-items: normal;
+    padding-left: 10px;
+  }
+
+  .whatsapp18 select {
+    width: 90%;
+  }
+  .whatsapp18 input {
+    width: 90%;
+  }
+  .whatsapp19 textarea {
+    width: 90%;
+  }
+  .whatsapp19 {
+    margin-left: 20px;
+  }
+  .whatsapp20 button {
+    padding: 10px 15px 10px 15px;
+  }
+}
 
 @media screen and (max-width: 580px) {
   .whatsapp4 {

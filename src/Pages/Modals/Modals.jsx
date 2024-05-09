@@ -466,7 +466,7 @@ export function FilterModal(props) {
                                 </div>
 
                                 <div className='filter19'>
-                                    <p onClick={() => props.centeredsetModalShow2(true)}>Add Field</p>
+                                    <p onClick={() => props.setModalShow2(true)}>Add Field</p>
                                     <span>Restore default fields</span>
                                 </div>
 
@@ -881,18 +881,25 @@ export function AdmissionFollowUp(props) {
 
     useEffect(() => {
         const handleResize = () => {
-            // Update the width style based on screen size
             const screenWidth = window.innerWidth;
-            const newWidthStyle = screenWidth < 580 ? '100%' : '82%'; // Adjust breakpoint as needed
+            let newWidthStyle;
+
+            if (screenWidth < 580) {
+                newWidthStyle = '100%'; // Full width for screens less than 580px
+            } else if (screenWidth < 980) {
+                newWidthStyle = '100%';
+            } else {
+                newWidthStyle = '82%';
+            }
 
             setWidthStyle(newWidthStyle);
         };
 
+        // Call handleResize on initial mount
+        handleResize();
+
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
-
-        // Initial call to set width based on current screen size
-        handleResize();
 
         // Clean up event listener on component unmount
         return () => {
@@ -1207,24 +1214,24 @@ export function AdmissionFollowUp(props) {
 // New Lead Modal for admission page
 export function NeWLead(props) {
     const [widthStyle, setWidthStyle] = useState('82%');
-    const [leftstyl, Setleftstyl] = useState('18.1%');
+    const [leftStyle, setLeftStyle] = useState('18.1%');
+
 
     useEffect(() => {
         const handleResize = () => {
-            // Update the width style based on screen size
             const screenWidth = window.innerWidth;
             const newWidthStyle = screenWidth < 580 ? '100%' : '82%'; // Adjust breakpoint as needed
-            const newLeftstyl = screenWidth < 580 ? '0' : '18.1%'; // Adjust breakpoint as needed
+            const newLeftStyle = screenWidth < 980 ? '100%' : '18.1%'; // Adjust breakpoint as needed
 
             setWidthStyle(newWidthStyle);
-            Setleftstyl(newLeftstyl)
+            setLeftStyle(newLeftStyle);
         };
+
+        // Call handleResize on initial mount
+        handleResize();
 
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
-
-        // Initial call to set width based on current screen size
-        handleResize();
 
         // Clean up event listener on component unmount
         return () => {
@@ -1234,7 +1241,7 @@ export function NeWLead(props) {
 
     return (
         <>
-            <Offcanvas show={props.show} onHide={props.onHide} placement="top" style={{ width: widthStyle, height: "100%", top: '10%', left: leftstyl }}>
+            <Offcanvas show={props.show} onHide={props.onHide} placement="top" style={{ width: widthStyle, height: "100%", top: '10%', left: leftStyle }}>
                 <Offcanvas.Body className='Admissionfollowup101'>
                     <div className='Admissionfollowup'>
                         <div className='Admissionfollowup1'>
@@ -1761,18 +1768,25 @@ export function NewTask(props) {
 
     useEffect(() => {
         const handleResize = () => {
-            // Update the width style based on screen size
             const screenWidth = window.innerWidth;
-            const newWidthStyle = screenWidth < 580 ? '100%' : '82%'; // Adjust breakpoint as needed
+            let newWidthStyle;
+
+            if (screenWidth < 580) {
+                newWidthStyle = '100%'; // Full width for screens less than 580px
+            } else if (screenWidth < 980) {
+                newWidthStyle = '100%';
+            } else {
+                newWidthStyle = '82%';
+            }
 
             setWidthStyle(newWidthStyle);
         };
 
+        // Call handleResize on initial mount
+        handleResize();
+
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
-
-        // Initial call to set width based on current screen size
-        handleResize();
 
         // Clean up event listener on component unmount
         return () => {
@@ -1892,18 +1906,25 @@ export function SMS(props) {
 
     useEffect(() => {
         const handleResize = () => {
-            // Update the width style based on screen size
             const screenWidth = window.innerWidth;
-            const newWidthStyle = screenWidth < 580 ? '100%' : '82%'; // Adjust breakpoint as needed
+            let newWidthStyle;
+
+            if (screenWidth < 580) {
+                newWidthStyle = '100%'; // Full width for screens less than 580px
+            } else if (screenWidth < 980) {
+                newWidthStyle = '100%';
+            } else {
+                newWidthStyle = '82%';
+            }
 
             setWidthStyle(newWidthStyle);
         };
 
+        // Call handleResize on initial mount
+        handleResize();
+
         // Add event listener for window resize
         window.addEventListener('resize', handleResize);
-
-        // Initial call to set width based on current screen size
-        handleResize();
 
         // Clean up event listener on component unmount
         return () => {
@@ -4927,6 +4948,492 @@ export function AttestationUpload(props) {
                     </div>
                 </div>
 
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+// ListEmployee Modal for IT target report page
+export function ListEmployee(props) {
+
+    const tableData = [
+        {
+            id: 1,
+            employeename: 'Loren Epsom',
+            month: 'January',
+            year: '2023',
+            targetallotted: 'Loren',
+            targetCompleted: 'Yes',
+            URLAllotted: '5',
+            URLCompleted: '4',
+            Present: '13 days',
+            Absent: '10 days',
+            CompletedURL: '60%'
+        },
+
+        {
+            id: 1,
+            employeename: 'Loren Epsom',
+            month: 'January',
+            year: '2023',
+            targetallotted: 'Loren',
+            targetCompleted: 'Yes',
+            URLAllotted: '5',
+            URLCompleted: '4',
+            Present: '13 days',
+            Absent: '10 days',
+            CompletedURL: '60%'
+        },
+        {
+            id: 1,
+            employeename: 'Loren Epsom',
+            month: 'January',
+            year: '2023',
+            targetallotted: 'Loren',
+            targetCompleted: 'Yes',
+            URLAllotted: '5',
+            URLCompleted: '4',
+            Present: '13 days',
+            Absent: '10 days',
+            CompletedURL: '60%'
+        },
+        {
+            id: 1,
+            employeename: 'Loren Epsom',
+            month: 'January',
+            year: '2023',
+            targetallotted: 'Loren',
+            targetCompleted: 'Yes',
+            URLAllotted: '5',
+            URLCompleted: '4',
+            Present: '13 days',
+            Absent: '10 days',
+            CompletedURL: '60%'
+        },
+        {
+            id: 1,
+            employeename: 'Loren Epsom',
+            month: 'January',
+            year: '2023',
+            targetallotted: 'Loren',
+            targetCompleted: 'Yes',
+            URLAllotted: '5',
+            URLCompleted: '4',
+            Present: '13 days',
+            Absent: '10 days',
+            CompletedURL: '60%'
+        },
+        {
+            id: 1,
+            employeename: 'Loren Epsom',
+            month: 'January',
+            year: '2023',
+            targetallotted: 'Loren',
+            targetCompleted: 'Yes',
+            URLAllotted: '5',
+            URLCompleted: '4',
+            Present: '13 days',
+            Absent: '10 days',
+            CompletedURL: '60%'
+        },
+
+    ];
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body>
+                <div className='listEmployeemodal'>
+                    <div className='listEmployeemodal1'>
+                        <h6>List of IT Department Employee</h6>
+                        <div className='listEmployeemodal2'>
+                            <select name="" id="">
+                                <option value="">Year</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">Month</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" />  Employee Name</th>
+                                        <th>Number_Target</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData.map((data) => (
+                                        <tr key={data.id}>
+                                            <td><input type="checkbox" />  {data.employeename}</td>
+                                            <td>
+                                                <div className='listEmployeemodal3'>
+
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>RESET</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+// AddSales Target Modal for sales target page
+export function AddSalesTarget(props) {
+    const tableData = [
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                <Modal.Title className='MarksheetUploadmodal1'>Sales Target</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='addsalestargetmodal'>
+                    <div className='addsalestargetmodal1'>
+                        <div className='addsalestargetmodal2'>
+                            <label htmlFor="">Select Year</label>
+                            <select name="" id="">
+                                <option value="">Year</option>
+                                <option value="">2013</option>
+                                <option value="">2014</option>
+                                <option value="">2015</option>
+                                <option value="">2016</option>
+                                <option value="">2017</option>
+                                <option value="">2018</option>
+                                <option value="">2019</option>
+                                <option value="">2020</option>
+                                <option value="">2021</option>
+                                <option value="">2022</option>
+                                <option value="">2023</option>
+                                <option value="">2024</option>
+                            </select>
+                        </div>
+                        <div className='addsalestargetmodal2'>
+                            <label htmlFor="">Select Month</label>
+                            <select name="" id="">
+                                <option value="">Month</option>
+                                <option value="">January</option>
+                                <option value="">February</option>
+                                <option value="">March</option>
+                                <option value="">April</option>
+                                <option value="">May</option>
+                                <option value="">June</option>
+                                <option value="">July</option>
+                                <option value="">August</option>
+                                <option value="">September</option>
+                                <option value="">October</option>
+                                <option value="">November</option>
+                                <option value="">December</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>List of Admission Department Team</th>
+                                        <th>Target</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>{data.ListTeam}</td>
+                                            <td>{data.target}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  EditSalesTarget Modal for sales target page
+export function EditSalesTarget(props) {
+    const tableData = [
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+        {
+            id: 1,
+            target: '200',
+            targetMonth: 'Jan 2023',
+            AddedOn: 'DD/MM/YYYY',
+            ListTeam: 'Loren epsom'
+        },
+
+    ];
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton className='MarksheetUploadmodal2' >
+                <Modal.Title className='MarksheetUploadmodal1'>Edit Sales Target</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='addsalestargetmodal'>
+                    <div className='addsalestargetmodal1'>
+                        <div className='addsalestargetmodal2'>
+                            <label htmlFor="">Select Year</label>
+                            <select name="" id="">
+                                <option value="">2023</option>
+                                <option value="">2013</option>
+                                <option value="">2014</option>
+                                <option value="">2015</option>
+                                <option value="">2016</option>
+                                <option value="">2017</option>
+                                <option value="">2018</option>
+                                <option value="">2019</option>
+                                <option value="">2020</option>
+                                <option value="">2021</option>
+                                <option value="">2022</option>
+                                <option value="">2023</option>
+                                <option value="">2024</option>
+                            </select>
+                        </div>
+                        <div className='addsalestargetmodal2'>
+                            <label htmlFor="">Select Month</label>
+                            <select name="" id="">
+                                <option value="">January</option>
+                                <option value="">January</option>
+                                <option value="">February</option>
+                                <option value="">March</option>
+                                <option value="">April</option>
+                                <option value="">May</option>
+                                <option value="">June</option>
+                                <option value="">July</option>
+                                <option value="">August</option>
+                                <option value="">September</option>
+                                <option value="">October</option>
+                                <option value="">November</option>
+                                <option value="">December</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>List of Admission Department Team</th>
+                                        <th>Target</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>{data.ListTeam}</td>
+                                            <td>{data.target}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div className='MarksheetUploadmodal7'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  InviteUsers Modal for sales employees page
+export function InviteUsers(props) {
+    const [step, setStep] = useState(0);
+    const [isActive, setIsActive] = useState(false);
+
+    // Function to toggle the state of the button
+    const toggleButton = () => {
+        setIsActive(prevState => !prevState);
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton className='inviteusersmodal1' >
+                <Modal.Title className='inviteusersmodal2'>Invite Users</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className='inviteusersmodal'>
+                <div className='inviteusersmodal3'>
+                    <div className='inviteusersmodal4'>
+                        <div className='inviteusersmodal5'>
+                            <div className={step === 0 ? "inviteusersmodal6" : "inviteusersmodal7"} onClick={() => setStep(0)}>
+                                <p>Invite via Link</p>
+                            </div>
+                            <div className={step === 1 ? "inviteusersmodal6" : "inviteusersmodal7"} onClick={() => setStep(1)}>
+                                <p>Bulk Invitation</p>
+                            </div>
+                            <div className={step === 2 ? "inviteusersmodal6" : "inviteusersmodal7"} onClick={() => setStep(2)}>
+                                <p>Invite to Department</p>
+                            </div>
+                            <div className={step === 3 ? "inviteusersmodal6" : "inviteusersmodal7"} onClick={() => setStep(3)}>
+                                <p>Add New User</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='inviteusersmodal8'>
+                        <div className='inviteusersmodal9'>
+                            <p>Invite via Link</p>
+                        </div>
+
+                        <div className='inviteusersmodal10'>
+                            <p>Allow quick Registration</p>
+                            <div
+                                className={`slide-button-container ${isActive ? 'active' : ''}`}
+                                onClick={toggleButton} // Handle click to toggle the state
+                            >
+                                <div className="slide-button-background">
+                                    <div className="slide-button-handle"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className='inviteusersmodal11'>
+                            <label htmlFor="">Quick Registration Link</label>
+                            <div className='inviteusersmodal12'>
+                                <p>www.loremipsum.com</p>
+                            </div>
+                        </div>
+
+                        <div className='inviteusersmodal13'>
+                            <input type="checkbox" />
+                            <p>Request Administrator Approval to join</p>
+                        </div>
+                    </div>
+                </div>
             </Modal.Body>
         </Modal>
     );

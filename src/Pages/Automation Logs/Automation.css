@@ -197,6 +197,22 @@
 }
 
 /* Responsive css for admissionfollowup  */
+@media screen and (max-width: 980px) {
+  .telegramautomation4 {
+    width: 100%;
+  }
+
+  .telegramautomation2 h6 {
+    font-size: 20px;
+  }
+  .telegramautomation6 button {
+    padding: 12px 15px 12px 15px;
+  }
+  .telegramautomation {
+   height: 100vh;
+  }
+  
+}
 
 @media screen and (max-width: 580px) {
   .telegramautomation4 {

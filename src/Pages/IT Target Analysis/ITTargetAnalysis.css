@@ -181,6 +181,29 @@
 
 /* Responsive css for target analysis  */
 
+@media screen and (max-width: 980px) {
+  .targetanalysis2 {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .targetanalysis1 {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+  }
+  .targetanalysis3  {
+    padding: 20px;
+  }
+  .targetanalysis5 {
+    padding: 12px 15px 12px 15px;
+
+  }
+  .targetanalysis6 {
+    padding: 12px 15px 12px 15px;
+
+  }
+}
+
 @media screen and (max-width: 580px) {
   .targetanalysis2 {
     flex-direction: column;

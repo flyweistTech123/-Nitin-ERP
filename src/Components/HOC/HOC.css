@@ -27,7 +27,12 @@
 
 
 /* Media query for small screens */
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 968px) {
+  .container1 {
+    height: 100%;
+    min-height: 100vh; 
+  }
   .hoccontainer {
     flex-direction: column; 
   }

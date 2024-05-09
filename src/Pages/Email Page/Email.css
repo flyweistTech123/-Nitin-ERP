@@ -237,6 +237,24 @@
 
 /* Responsive css for email  */
 
+@media screen and (max-width: 980px) {
+    .email6{
+        flex-direction: column;
+        width: 100%;
+        align-items: normal;
+        gap: 10px;
+    }
+    .email66161{
+        margin-left: 0;
+    }
+    .email9 textarea{
+        width: 100%;
+    }
+    .email1{
+        width: 100%;
+    }
+}
+
 @media screen and (max-width: 580px) {
     .email6{
         flex-direction: column;

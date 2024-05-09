@@ -31,6 +31,7 @@
     outline: none;
     padding-left: 20px;
     flex: 1;
+    background-color: transparent;
 }
 
 .loginhistory2 input::placeholder{

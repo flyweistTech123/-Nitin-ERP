@@ -355,6 +355,26 @@
 
 
 
+
+/* Responsive css for Admission  */
+
+@media screen and (max-width: 980px) {
+  .admission {
+    margin-bottom: 50px;
+  }
+  .admission13 .table-container {
+    overflow-x: auto; 
+  }
+  .admission13 {
+    overflow: auto;
+  }
+  .admission8{
+    flex-direction: column;
+    align-items:normal;
+  }
+
+}
+
 /* Responsive css for Admission  */
 
 @media screen and (max-width: 580px) {
@@ -362,7 +382,7 @@
     margin-bottom: 50px;
   }
   .admission13 .table-container {
-    overflow-x: auto; /* Use auto instead of scroll for better user experience */
+    overflow-x: auto; 
   }
   .admission13 {
     overflow: auto;

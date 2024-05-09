@@ -210,3 +210,17 @@
 .returnmodal3{
     padding: 30px;
 }
+
+
+
+
+/* Responsive css for Add Expense modal  */
+
+@media screen and (max-width: 580px) {
+    .AddExpenseModal input:nth-child(1){
+        width: 100%;
+    }
+    .AddExpenseModal input:nth-child(2){
+        width: 100%;
+    }
+}
