@@ -35,7 +35,13 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { PiWarningCircle } from "react-icons/pi";
-
+import { IoAttach } from "react-icons/io5";
+import { GoListUnordered } from "react-icons/go";
+import { MdFormatListNumbered } from "react-icons/md";
+import { RiDoubleQuotesR } from "react-icons/ri";
+import { GrDocumentText } from "react-icons/gr";
+import { RiDoubleQuotesL } from "react-icons/ri";
+import { VscMention } from "react-icons/vsc";
 
 
 
@@ -48,10 +54,8 @@ import img4 from '../../Img/img63.png'
 import img5 from '../../Img/img64.png'
 import img7 from '../../Img/img71.png'
 import img8 from '../../Img/img72.png'
-import { GoListUnordered } from "react-icons/go";
-import { MdFormatListNumbered } from "react-icons/md";
-import { RiDoubleQuotesR } from "react-icons/ri";
-import { GrDocumentText } from "react-icons/gr";
+import img9 from '../../Img/img108.png'
+
 
 
 
@@ -5434,6 +5438,171 @@ export function InviteUsers(props) {
                         </div>
                     </div>
                 </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//  tell about yourself Modal for general page
+export function Tellaboutyourself(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton className='inviteusersmodal1' >
+                <Modal.Title className='tellmeaboutmodal'>About Me</Modal.Title>
+            </Modal.Header>
+            <Modal.Body className='tellmeaboutmodalpadding'>
+
+                <div className='tellmeaboutmodal1'>
+                    <div className='tellmeaboutmodal2'>
+                        <div className='email8'>
+                            <p>B</p>
+                            <p>I</p>
+                            <p>U</p>
+                            <img src={img1} alt="" />
+                            <img src={img2} alt="" />
+                            <select name="" id="">
+                                <option value="">Font</option>
+                            </select>
+                            <img src={img3} alt="" />
+                            <img src={img4} alt="" />
+                            <img src={img5} alt="" />
+                            <GoListUnordered color='#444444' />
+                            <MdFormatListNumbered color='#444444' />
+                            <RiDoubleQuotesR color='#444444' />
+                            <img src={img7} alt="" />
+                        </div>
+                        <textarea name="" id="" rows={5}></textarea>
+                    </div>
+
+                    <div className='tellmeaboutmodal3'>
+                        <button>Send</button>
+                        <button>Cancel</button>
+                    </div>
+
+
+                    <div className='tellmeaboutmodal4'>
+                        <div className='tellmeaboutmodal5'>
+                            <div className='tellmeaboutmodal6'>
+                                <IoAttach color='#444444' />
+                                <p>File</p>
+                            </div>
+                            <div className='tellmeaboutmodal6'>
+                                <GrDocumentText color='#444444' />
+                                <p>Create Document</p>
+                            </div>
+                            <div className='tellmeaboutmodal6'>
+                                <VscMention color='#444444' />
+                                <p>Mention</p>
+                            </div>
+                            <div className='tellmeaboutmodal6'>
+                                <RiDoubleQuotesL color='#444444' />
+                                <p>Quote</p>
+                            </div>
+                        </div>
+
+                        <div className='tellmeaboutmodal7'>
+                            <p>A</p>
+                        </div>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+//  PasswordInfo  Modal for general page
+export function PasswordInfo(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton className='inviteusersmodal1' >
+                <Modal.Title className='tellmeaboutmodal'>Password Info</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+
+                <div className='passwordinfo'>
+                    <div className='passwordinfo1'>
+                        <div className='passwordinfo2'>
+                            <h6>Pasword</h6>
+                        </div>
+
+                        <div className='passwordinfo3'>
+                            {/* <input type="password" /> */}
+                            <div className='passwordinfo33'>
+                                <div className='passwordinfo6'>
+                                    <p>* * * * * * * * * * * *</p>
+                                </div>
+                                <img src={img9} alt="" />
+                            </div>
+
+
+                            <div className='passwordinfo4'>
+                                <button onClick={() => props.setModalShow1()}>edit</button>
+                            </div>
+                        </div>
+                        <div className='passwordinfo5'>
+                            <p>Last changed at DD/MM/YYYY, 10:30 Am</p>
+                        </div>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+//  PasswordInfo  Modal for general page
+export function PasswordInfo1(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton className='inviteusersmodal1' >
+                <Modal.Title className='tellmeaboutmodal'>Password Info</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+
+                <div className='passwordinfo'>
+                    <div className='passwordinfo1'>
+                        <div className='passwordinfo2'>
+                            <h6>Pasword</h6>
+                        </div>
+
+                        <div className='passwordinfo3'>
+                            <input type="password" placeholder='Enter New Password'/>
+                            <div className='passwordinfo4'>
+                                <button>Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </Modal.Body>
         </Modal>
     );

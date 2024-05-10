@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './General.css'
 import HOC from '../../Components/HOC/HOC'
 import TopPart from '../Toppart/TopPart';
+import {Tellaboutyourself} from '../Modals/Modals'
 
 
 import { GiPlainCircle } from "react-icons/gi";
@@ -23,8 +24,17 @@ const General = () => {
     // const showhandle =()=>{
     //     setshow((prevShow) => !prevShow);
     // }
+
+
+    // tell about yourself Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
     return (
         <>
+            <Tellaboutyourself
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='general'>
                 <div className='general1'>
                     <TopPart />
@@ -88,7 +98,7 @@ const General = () => {
                                 <div className='general21'>
                                     <p>Share interesting life's stories or tell other users about
                                         yourself, upload photos of memorable moments</p>
-                                    <button>Tell About Yourself</button>
+                                    <button onClick={()=>setModalShow(true)}>Tell About Yourself</button>
                                 </div>
                             </div>
                         </div>
@@ -191,7 +201,7 @@ const General = () => {
                                 <h6># Interesting</h6>
                             </div>
                             <div className='general21'>
-                                <button onClick={()=>setshow(true)}>Add your Interest</button>
+                                <button onClick={() => setshow(true)}>Add your Interest</button>
                             </div>
                             {show && (
                                 <div className='general31'>

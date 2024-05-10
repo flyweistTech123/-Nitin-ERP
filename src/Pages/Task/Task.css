@@ -101,3 +101,14 @@
     align-items: center;
     justify-content: center;
 }
+
+
+
+.task9 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  margin: auto;
+  margin-top: 10px;
+}

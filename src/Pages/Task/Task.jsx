@@ -8,6 +8,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { IoSettings } from "react-icons/io5";
 import { MdOutlineClose } from "react-icons/md";
 import { IoSearchSharp } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
 
 import img8 from '../../Img/img33.png'
 
@@ -124,7 +125,6 @@ const Task = () => {
                     <TopPart />
                 </div>
                 <div className='task1'>
-
                     <div className='task2'>
                         <div className='task3'>
                             <button>Create</button>
@@ -194,6 +194,37 @@ const Task = () => {
                                 </tbody>
                             </table>
                         </div>
+                    </div>
+                </div>
+
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div className='task9'>
+                    <div className='admission16'>
+                        <p>SELECT ACTION</p>
+                        <IoIosArrowDown color='#3F3F3F' />
+                    </div>
+                    <div className='admission17'>
+                        <input type="checkbox" />
+                        <p>For All</p>
                     </div>
                 </div>
 

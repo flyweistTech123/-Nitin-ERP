@@ -99,6 +99,9 @@ import PaymentDeteails from './Pages/PaymentNow/PaymentDeteails';
 import EasebuzzPayment from './Pages/PaymentNow/EasebuzzPayment';
 import General from './Pages/General/General';
 import Task from './Pages/Task/Task';
+import Calender from './Pages/Calender/Calender';
+import Drive from './Pages/Drive/Drive';
+import WorkReport from './Pages/Work Report/WorkReport';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -204,6 +207,9 @@ function App() {
           <Route path="/easebuzzpayment" element={<EasebuzzPayment />} />
           <Route path="/general" element={<General />} />
           <Route path="/task" element={<Task />} />
+          <Route path="/calender" element={<Calender />} />
+          <Route path="/drive" element={<Drive />} />
+          <Route path="/workreport" element={<WorkReport />} />
         </Routes>
       </BrowserRouter>
     </>
