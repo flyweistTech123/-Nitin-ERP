@@ -7,6 +7,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
+import { MdEdit } from "react-icons/md";
 
 
 import img8 from '../../Img/img33.png'
@@ -321,12 +322,14 @@ const Admission = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
+                                        <div className='admission202'>
+                                            <button onClick={()=>navigate('/editprofile')}><MdEdit size={20}/> Edit</button>
+                                        </div>
                                         <td><input type="checkbox" /></td>
                                         <td onClick={handleShow}><img src={img8} alt="" /></td>
                                         <td>{data.name}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
-                                        {/* <td>{data.address}</td> */}
                                         <div className='admission19'>
                                             <p>{data.address}</p>
                                         </div>

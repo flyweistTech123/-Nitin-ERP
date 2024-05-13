@@ -3846,38 +3846,31 @@
   margin: 0;
 }
 
-
-
-.passwordinfo3{
+.passwordinfo3 {
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
 }
 
-.passwordinfo33{
+.passwordinfo33 {
   display: flex;
   align-items: center;
   gap: 20px;
 }
 
-
-.passwordinfo3 input{
+.passwordinfo3 input {
   border: none;
   border-bottom: 1px solid #000000;
   height: 38px;
   border-radius: 4px;
   outline: none;
   padding-left: 10px;
-
 }
 
-
-.passwordinfo4{
-
+.passwordinfo4 {
 }
 
-
-.passwordinfo4 button{
+.passwordinfo4 button {
   width: auto;
   height: auto;
   background-color: #2155cd;
@@ -3893,14 +3886,11 @@
   margin: 0;
 }
 
-
-
-.passwordinfo5{
+.passwordinfo5 {
   margin-top: 20px;
 }
 
-
-.passwordinfo5 p{
+.passwordinfo5 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -3909,17 +3899,215 @@
   margin: 0;
 }
 
-
-.passwordinfo6{
-
+.passwordinfo6 {
 }
 
-
-.passwordinfo6 p{
+.passwordinfo6 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 24px;
   line-height: 19.1px;
   color: #000000;
   margin: 0;
+}
+
+/* Notification Modal csss  */
+
+.notificationmodal {
+  background-color: #1a1a1a;
+  padding-bottom: 50px;
+}
+
+.notificationmodal1 {
+}
+
+.notificationmodal2 {
+  width: 100%;
+  height: 56px;
+  background-color: #000000;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-left: 30px;
+}
+
+.notificationmodal3 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.notificationmodal3 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.notificationmodal4 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.notificationmodal4 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.notificationmodal5 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.notificationmodal5 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.notificationmodal6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  gap: 20px;
+}
+
+.notificationmodal6 button:nth-child(1) {
+  width: auto;
+  height: auto;
+  padding: 12px 58px 12px 58px;
+  border-radius: 8px;
+  background-color: #404040;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.notificationmodal6 button:nth-child(2) {
+  width: auto;
+  height: auto;
+  padding: 12px 58px 12px 58px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #404040;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.notificationmodal7{
+  margin-top: 50px;
+
+}
+
+
+.notificationmodal8{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 30px;
+}
+
+.notificationmodal8 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.notificationmodal9{
+  width: 100%;
+  height: 38px;
+  background-color: #130E0E;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+
+.notificationmodal9 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.notificationmodal10{
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+
+.notificationmodal11{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.notificationmodal11 label{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+.notificationmodal12{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+
+.notificationmodal13{
+  display: flex;
+  align-items: center;
+  gap: 100px;
+}
+
+
+.notificationmodal13 input{
+  background-color: #444444;
+}
+
+
+
+.notificationmodal14{
+  margin-top: 50px;
 }

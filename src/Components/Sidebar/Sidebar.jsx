@@ -254,10 +254,12 @@ const Sidebar = () => {
                                 </div>
                             </Link>
                         </div>
-                        <div className='sidebar2'>
-                            <img src={img5} alt="" />
-                            <p>Drive</p>
-                        </div>
+                        <Link to={'/drive'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img5} alt="" />
+                                <p>Drive</p>
+                            </div>
+                        </Link>
                         <Link to={'/employees'} className='link'>
                             <div className='sidebar2'>
                                 <img src={img6} alt="" />

@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css'
-import { IoMdSearch } from "react-icons/io";
+import { Link, useNavigate } from 'react-router-dom'
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
+import {NotificationModal, NotificationModal2} from '../../Pages/Modals/Modals'
+
 import img1 from '../../Img/img4.png'
 import img2 from '../../Img/img5.png'
 import img3 from '../../Img/img48.png'
@@ -16,15 +20,16 @@ import img10 from '../../Img/img55.png'
 import img11 from '../../Img/img56.png'
 import img12 from '../../Img/img57.png'
 import img13 from '../../Img/img58.png'
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
-import { Link, useNavigate } from 'react-router-dom'
+
+
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { IoMdSearch } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import { LuHistory } from "react-icons/lu";
 import { FaUserAlt } from "react-icons/fa";
 import { BsFilterLeft } from "react-icons/bs";
 
-import Offcanvas from 'react-bootstrap/Offcanvas';
 
 
 
@@ -171,7 +176,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
-                                <div className='profileModal5'>
+                                <div className='profileModal5' onClick={() => navigate('/general')}>
                                     <p>See Profile</p>
                                 </div>
                             </div>
@@ -191,14 +196,14 @@ const Navbar = () => {
                                 <h6>Attendees</h6>
                             </div>
                         </div>
-                        <div className='profileModal1'>
+                        <div className='profileModal1' onClick={() => setModalShow2(true)}>
                             <div className='profileModal6'>
                                 <img src={img4} alt="" />
                                 <h6>Notification</h6>
                             </div>
                         </div>
                         <div className='profileModal1'>
-                            <div className='profileModal6'>
+                            <div className='profileModal6' onClick={() => navigate('/task')}>
                                 <img src={img5} alt="" />
                                 <div className='profileModal7'>
                                     <button>Task</button>
@@ -388,6 +393,11 @@ const Navbar = () => {
 
 
 
+    const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+
+
 
 
 
@@ -402,6 +412,15 @@ const Navbar = () => {
             <SearcheModal
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
+            />
+            <NotificationModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+                setModalShow3={setModalShow3}
+            />
+            <NotificationModal2
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
             />
             <div class='navbar'>
                 <div class='navbar-left'>
@@ -422,9 +441,9 @@ const Navbar = () => {
                 </div>
                 <div className='navbar-right'>
                     <div class='navbar2'>
-                        <button onClick={()=>navigate('/paymentnow')}>Payment</button>
+                        <button onClick={() => navigate('/paymentnow')}>Payment</button>
                     </div>
-                    <div class='profile-img1'>
+                    <div class='profile-img1' onClick={() => setModalShow2(true)}>
                         <img src={img1} alt="" />
                     </div>
                     <div class='profile-img' onClick={handleClick}>
@@ -622,10 +641,12 @@ const Navbar = () => {
                                         </div>
                                     </Link>
                                 </div>
-                                <div className='sidebar2'>
-                                    <img src={img19} alt="" />
-                                    <p>Drive</p>
-                                </div>
+                                <Link to={'/Drive'} className='link'>
+                                    <div className='sidebar2'>
+                                        <img src={img19} alt="" />
+                                        <p>Drive</p>
+                                    </div>
+                                </Link>
                                 <Link to={'/employees'} className='link'>
                                     <div className='sidebar2'>
                                         <img src={img20} alt="" />
@@ -821,7 +842,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
 
-                                <div className='profileModal5'>
+                                <div className='profileModal5' onClick={() => navigate('./general')}>
                                     <p>See Profile</p>
                                 </div>
                             </div>
@@ -841,14 +862,14 @@ const Navbar = () => {
                                 <h6>Attendees</h6>
                             </div>
                         </div>
-                        <div className='profileModal1'>
+                        <div className='profileModal1' onClick={() => setModalShow2(true)}>
                             <div className='profileModal6'>
                                 <img src={img4} alt="" />
                                 <h6>Notification</h6>
                             </div>
                         </div>
                         <div className='profileModal1'>
-                            <div className='profileModal6666'>
+                            <div className='profileModal6666' onClick={() => navigate('/task')}>
                                 <img src={img5} alt="" />
                                 <div className='profileModal7'>
                                     <button>Task</button>

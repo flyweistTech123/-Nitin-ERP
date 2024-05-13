@@ -5595,14 +5595,192 @@ export function PasswordInfo1(props) {
                         </div>
 
                         <div className='passwordinfo3'>
-                            <input type="password" placeholder='Enter New Password'/>
+                            <input type="password" placeholder='Enter New Password' />
                             <div className='passwordinfo4'>
-                                <button>Save</button>
+                                <button onClick={() => props.onHide()}>Save</button>
                             </div>
                         </div>
                     </div>
                 </div>
 
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  Notification  Modal for general page
+export function NotificationModal(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='notificationmodal'>
+                <div className='notificationmodal1'>
+                    <div className='notificationmodal2'>
+                        <div className='notificationmodal3'>
+                            <input type="radio" />
+                            <label htmlFor="">Simple Mode</label>
+                        </div>
+                        <div className='notificationmodal3' onClick={() => props.setModalShow3(true)}>
+                            <input type="radio" />
+                            <label htmlFor="">Advance Mode</label>
+                        </div>
+                    </div>
+
+                    <div className='notificationmodal4'>
+                        <h6>Receive standard notification to:</h6>
+                        <div className='notificationmodal5'>
+                            <input type="checkbox" />
+                            <label htmlFor="">Websites, Mobile & Desktop Apps</label>
+                        </div>
+                        <div className='notificationmodal5'>
+                            <input type="checkbox" />
+                            <label htmlFor="">Email (lorenepsom034@gmail.com)</label>
+                        </div>
+                        <div className='notificationmodal5'>
+                            <input type="checkbox" />
+                            <label htmlFor="">Push Notification(Mobile Apps)</label>
+                        </div>
+                    </div>
+
+                    <div className='notificationmodal6'>
+                        <button onClick={() => props.onHide()}>Save</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  Notification  Modal for general page
+export function NotificationModal2(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='notificationmodal'>
+                <div className='notificationmodal1'>
+                    <div className='notificationmodal2'>
+                        <div className='notificationmodal3'>
+                            <input type="radio" />
+                            <label htmlFor="">Simple Mode</label>
+                        </div>
+                        <div className='notificationmodal3'>
+                            <input type="radio" />
+                            <label htmlFor="">Advance Mode</label>
+                        </div>
+                    </div>
+
+                    <div className='notificationmodal7'>
+                        <div className='notificationmodal8'>
+                            <p>Site and <br />Application</p>
+                            <p>Email</p>
+                            <p>Push <br /> Notification</p>
+                        </div>
+
+                        <div className='notificationmodal9'>
+                            <p>Chat & Calls</p>
+                        </div>
+
+                        <div className='notificationmodal10'>
+                            <div className='notificationmodal11'>
+                                <label htmlFor="">Personal chat message</label>
+                                <label htmlFor="">Private chat message</label>
+                                <label htmlFor="">Public chat message</label>
+                                <label htmlFor="">Chat likes</label>
+                                <label htmlFor="">Someone mentioned in the chat</label>
+                                <label htmlFor="">Unrecognized Notification</label>
+                            </div>
+
+
+                            <div className='notificationmodal12'>
+                                <div className='notificationmodal13'>
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div className='notificationmodal13'>
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div className='notificationmodal13'>
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div className='notificationmodal13'>
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div className='notificationmodal13'>
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                                <div className='notificationmodal13'>
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                    <input type="checkbox" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='notificationmodal14'>
+
+                            <div className='notificationmodal9'>
+                                <p>Conversation</p>
+                            </div>
+
+                            <div className='notificationmodal10'>
+                                <div className='notificationmodal11'>
+                                    <label htmlFor="">You were specified as a post recipient</label>
+                                    <label htmlFor="">Your message has been posted to Activity Stream.</label>
+                                    <label htmlFor="">A comment was added to your post</label>
+                                </div>
+
+
+                                <div className='notificationmodal12'>
+                                    <div className='notificationmodal13'>
+                                        <input type="checkbox" />
+                                        <input type="checkbox" />
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div className='notificationmodal13'>
+                                        <input type="checkbox" />
+                                        <input type="checkbox" />
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div className='notificationmodal13'>
+                                        <input type="checkbox" />
+                                        <input type="checkbox" />
+                                        <input type="checkbox" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div className='notificationmodal6'>
+                        <button  onClick={() => props.onHide()}>Save</button>
+                        <button  onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
             </Modal.Body>
         </Modal>
     );

@@ -102,6 +102,7 @@ import Task from './Pages/Task/Task';
 import Calender from './Pages/Calender/Calender';
 import Drive from './Pages/Drive/Drive';
 import WorkReport from './Pages/Work Report/WorkReport';
+import EditProfile from './Pages/EditProfile/EditProfile';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -210,6 +211,7 @@ function App() {
           <Route path="/calender" element={<Calender />} />
           <Route path="/drive" element={<Drive />} />
           <Route path="/workreport" element={<WorkReport />} />
+          <Route path="/editprofile" element={<EditProfile />} />
         </Routes>
       </BrowserRouter>
     </>
