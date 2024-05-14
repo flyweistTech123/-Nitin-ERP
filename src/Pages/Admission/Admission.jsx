@@ -323,7 +323,7 @@ const Admission = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <div className='admission202'>
-                                            <button onClick={()=>navigate('/editprofile')}><MdEdit size={20}/> Edit</button>
+                                            <button onClick={()=>navigate('/admission_details')}><MdEdit size={20}/> Edit</button>
                                         </div>
                                         <td><input type="checkbox" /></td>
                                         <td onClick={handleShow}><img src={img8} alt="" /></td>

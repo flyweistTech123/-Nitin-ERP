@@ -102,7 +102,11 @@ import Task from './Pages/Task/Task';
 import Calender from './Pages/Calender/Calender';
 import Drive from './Pages/Drive/Drive';
 import WorkReport from './Pages/Work Report/WorkReport';
-import EditProfile from './Pages/EditProfile/EditProfile';
+import Admission_Details from './Pages/EditProfile/Admission_Details';
+import Payment_section_Editprofile from './Pages/EditProfile/Payment_section_Editprofile';
+import Personal_Details from './Pages/EditProfile/Personal_Details';
+import Contact_Details from './Pages/EditProfile/Contact_Details';
+import Guardian_Details from './Pages/EditProfile/Guardian_Details';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -211,7 +215,11 @@ function App() {
           <Route path="/calender" element={<Calender />} />
           <Route path="/drive" element={<Drive />} />
           <Route path="/workreport" element={<WorkReport />} />
-          <Route path="/editprofile" element={<EditProfile />} />
+          <Route path="/admission_details" element={<Admission_Details />} />
+          <Route path="/payment_section" element={<Payment_section_Editprofile />} />
+          <Route path="/personal_details" element={<Personal_Details />} />
+          <Route path="/contact_details" element={<Contact_Details />} />
+          <Route path="/guardian_details" element={<Guardian_Details />} />
         </Routes>
       </BrowserRouter>
     </>
