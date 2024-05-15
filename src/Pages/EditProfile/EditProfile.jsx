@@ -36,11 +36,11 @@ const EditProfile = () => {
                         <p className={location.pathname === "/admission_details" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/admission_details")}>Admission Details</p>
                         <p className={location.pathname === "/payment_section" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/payment_section")}>Payment</p>
                         <p className={location.pathname === "/personal_details" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/personal_details")}>Personal Details</p>
-                        <p className={location.pathname === "/workreport" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/workreport")}>Fee Structure</p>
+                        <p className={location.pathname === "/automatic2feestructure" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/automatic2feestructure")}>Fee Structure</p>
                         <p className={location.pathname === "/contact_details" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/contact_details")}>Contact Details</p>
                         <p className={location.pathname === "/guardian_details" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/guardian_details")}>Guardian Details</p>
-                        <p className={location.pathname === "/drive" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/drive")}>Certificate</p>
-                        <p className={location.pathname === "/drive" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/drive")}>Educational Details</p>
+                        <p className={location.pathname === "/certificate" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/certificate")}>Certificate</p>
+                        <p className={location.pathname === "/education_details" ? "editprofile8" : "editprofile9"} onClick={() => navigate("/education_details")}>Educational Details</p>
                     </div>
                 </div>
 

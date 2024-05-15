@@ -107,6 +107,9 @@ import Payment_section_Editprofile from './Pages/EditProfile/Payment_section_Edi
 import Personal_Details from './Pages/EditProfile/Personal_Details';
 import Contact_Details from './Pages/EditProfile/Contact_Details';
 import Guardian_Details from './Pages/EditProfile/Guardian_Details';
+import Certificate from './Pages/EditProfile/Certificate';
+import Education_Details from './Pages/EditProfile/Education_Details';
+import Automatic2FeeStructure from './Pages/EditProfile/Automatic2Fee _Structure';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -220,6 +223,9 @@ function App() {
           <Route path="/personal_details" element={<Personal_Details />} />
           <Route path="/contact_details" element={<Contact_Details />} />
           <Route path="/guardian_details" element={<Guardian_Details />} />
+          <Route path="/certificate" element={<Certificate />} />
+          <Route path="/education_details" element={<Education_Details />} />
+          <Route path="/automatic2feestructure" element={<Automatic2FeeStructure />} />
         </Routes>
       </BrowserRouter>
     </>
