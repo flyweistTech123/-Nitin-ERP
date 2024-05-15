@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './EditProfile.css'
 import { useNavigate } from "react-router-dom";
-import EditProfile from './EditProfile';
+import EditProfile1 from './EditProfile1';
 import { FaLink } from "react-icons/fa6";
 
 import { LuDownload } from "react-icons/lu";
@@ -13,7 +13,7 @@ const Personal_Details = () => {
     return (
         <>
             <div className='editprofile1'>
-                <EditProfile />
+                <EditProfile1 />
 
                 <div className='editprofile26'>
                     <div className='editprofile39'>

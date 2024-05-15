@@ -1,0 +1,5 @@
+->Select User for reporting data on dashboard is not working same as design.
+->Yellow button for History is not working
+->Add Button is not Working to add admission
+->Delete Button is not selecting records
+->Application Form, Counsellor Form, Payment Link not working in listing

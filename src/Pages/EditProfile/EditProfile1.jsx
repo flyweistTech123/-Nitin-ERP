@@ -7,7 +7,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 
 import img from '../../Img/img109.png'
 
-const EditProfile = () => {
+const EditProfile1 = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [step, setStep] = useState(0);
@@ -16,16 +16,8 @@ const EditProfile = () => {
         <>
             <div className=''>
                 <div className='editprofile2'>
-                    <h6><FaArrowLeft onClick={()=>navigate('/dashboard')}/> EDUCATION</h6>
+                    <h6><FaArrowLeft onClick={() => navigate('/dashboard')} /> EDUCATION</h6>
                 </div>
-                {step === 0 ? (
-                    <div className='editprofile85'>
-                        <p className='editprofile85'>Create a field</p>
-                    </div>
-                ) : (
-                    ""
-                )}
-
                 <div className='editprofile3'>
                     <div className='editprofile4'>
                         <input type="search" placeholder='Search Here' />
@@ -33,16 +25,9 @@ const EditProfile = () => {
                     </div>
 
                     <div className='editprofile5'>
-                        {step === 1 ? (
-                            <div className='editprofile85'>
-                                <p className='editprofile85'>Create a field</p>
-                            </div>
-                        ) : step === 0 ? (
-                            <button>Generate Fee Structure</button>
-                        ) : (
-                            " "
-                        )}
-
+                        <div className='editprofile85'>
+                            <p className='editprofile85'>Create a field</p>
+                        </div>
                         <button>History</button>
                         <button>Counselor Form</button>
                     </div>
@@ -171,4 +156,4 @@ const EditProfile = () => {
     )
 }
 
-export default EditProfile
+export default EditProfile1

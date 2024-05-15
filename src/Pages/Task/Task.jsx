@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Task.css'
 import HOC from '../../Components/HOC/HOC'
 import TopPart from '../Toppart/TopPart';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 import { IoSettings } from "react-icons/io5";
@@ -127,7 +127,7 @@ const Task = () => {
                 <div className='task1'>
                     <div className='task2'>
                         <div className='task3'>
-                            <button>Create</button>
+                            <button onClick={()=>navigate('/createtask')}>Create</button>
                         </div>
 
                         <div className='task4'>

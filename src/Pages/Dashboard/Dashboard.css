@@ -845,6 +845,21 @@
   padding-bottom: 150px;
 }
 
+
+.dashboard711{
+  width: 200px;
+  height: 41px;
+  border: 1px solid #2155CD;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 28px;
+  color: #2155CD;
+  margin: 0;
+  border-radius: 4px;
+  outline: none;
+}
+
 .dashboard72 {
   width: auto;
   height: 41px;

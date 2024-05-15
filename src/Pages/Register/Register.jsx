@@ -26,6 +26,10 @@ const Register = () => {
                         </div>
                         <div className='register6'>
                             <div className='register7'>
+                                <label htmlFor="">Username</label>
+                                <input type="email" placeholder='Enter Email' />
+                            </div>
+                            <div className='register7'>
                                 <label htmlFor="">Email</label>
                                 <input type="email" placeholder='Enter Email' />
                             </div>
@@ -39,7 +43,7 @@ const Register = () => {
                             </div>
 
                             <div className='register8'>
-                                <button onClick={()=>navigate('/dashboard')}>Register</button>
+                                <button onClick={() => navigate('/dashboard')}>Register</button>
                             </div>
                             <div className='register9'>
                                 <p>OR</p>

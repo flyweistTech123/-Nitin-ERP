@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './EditProfile.css'
 import { useNavigate } from "react-router-dom";
-import EditProfile from './EditProfile';
+import EditProfile1 from './EditProfile1';
 
 import { IoMdEye } from "react-icons/io";
 
@@ -47,7 +47,7 @@ const Certificate = () => {
     return (
         <>
             <div className='editprofile1'>
-                <EditProfile />
+                <EditProfile1 />
 
                 <div className='editprofile26'>
                     <div className='editprofile52'>

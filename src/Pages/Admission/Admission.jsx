@@ -307,7 +307,7 @@ const Admission = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} /></th>
+                                    <th><IoSettings size={20}  onClick={() => setModalShow2(true)}/></th>
                                     <th>Student Name</th>
                                     <th>Contact</th>
                                     <th>Email</th>
@@ -339,7 +339,7 @@ const Admission = () => {
                                         <td>{data.paidDate}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>{data.history}</button>
+                                                <button onClick={() => setModalShow3(true)}>{data.history}</button>
                                             </div>
                                         </td>
                                     </tr>

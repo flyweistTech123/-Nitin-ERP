@@ -21,7 +21,9 @@ const Admission_Details = () => {
                             <div className='editprofile23'>
                                 <label htmlFor="">Admsision Confirmation Status</label>
                                 <select name="" id="">
-                                    <option value=""></option>
+                                    <option value="">Admission Confirm Status 1</option>
+                                    <option value="">Admission Confirm Status 2</option>
+                                    <option value="">Admission Confirm Status 3</option>
                                 </select>
                             </div>
                             <div className='editprofile24'>

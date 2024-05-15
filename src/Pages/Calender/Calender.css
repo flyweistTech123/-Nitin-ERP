@@ -5,8 +5,172 @@
   padding-bottom: 60px;
 }
 
+.calender1 {
+  margin-top: 50px;
+}
+
+.calender3{
+  margin-top: 30px
+}
 
 
-.calender1{
-    margin-top: 50px;
+.calender4 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.calender4 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.calender5 {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.calender6 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.calender7 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.calender7 input {
+  width: 264px;
+  height: 48px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  outline: none;
+}
+
+.calender8 {
+  width: 121px;
+  height: 48px;
+  border-radius: 4px;
+  border: 1px solid #3f3f3f;
+}
+
+
+.calender9{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.calender10 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+
+.calender10 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.calender10 select{
+  width: 506px;
+  height: 48px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  outline: none;
+}
+
+
+
+.calender11{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+
+.calender11 P{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.calender12{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+
+.calender12 button:nth-child(1){
+  width: auto;
+  height: auto;
+  padding: 12px 37px 12px 37px;
+  background-color: #FFB800;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.calender12 button:nth-child(2){
+  width: auto;
+  height: auto;
+  padding: 12px 37px 12px 37px;
+  background-color: transparent;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.calender13{
+  margin-top: 20px;
+  padding-left: 80px;
+}
+
+
+.calender13 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #2155CD;
+  margin: 0;
+  text-decoration: underline;
 }

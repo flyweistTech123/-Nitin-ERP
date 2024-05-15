@@ -28,7 +28,7 @@ const Calender = () => {
 
                     <div className='task2'>
                         <div className='task3'>
-                            <button>Create</button>
+                            <button onClick={()=>navigate('/createevent')}>Create</button>
                         </div>
 
                         <div className='task4'>

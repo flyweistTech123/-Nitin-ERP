@@ -5,6 +5,8 @@ import { Link, useNavigate } from 'react-router-dom'
 import ReactApexChart from 'react-apexcharts';
 import './Dashboard.css'
 import HOC from '../../Components/HOC/HOC'
+import { MultiSelect } from "react-multi-select-component";
+import Select from 'react-select';
 
 
 import { FaCalendarDays } from "react-icons/fa6";
@@ -31,6 +33,7 @@ import img15 from '../../Img/img43.png'
 import img16 from '../../Img/img44.png'
 import img17 from '../../Img/img45.png'
 import img18 from '../../Img/img46.png'
+import img19 from '../../Img/img83.png'
 
 
 
@@ -619,29 +622,36 @@ const Dashboard = () => {
 
     // User  Modal // 
     const [modalShow2, setModalShow2] = React.useState(false);
-    const [showdate1, setShowdate1] = useState(0);
-    const [selectedOptions, setSelectedOptions] = useState({
-        employee: null,
-        department: null,
-        team: null
-    });
-    const [isOpen, setIsOpen] = useState({
-        employee: false,
-        department: false,
-        team: false
-    });
 
-    const options111 = [
-        { value: 'employee', label: 'Select Employee' },
-        { value: 'department', label: 'Select Department' },
-        { value: 'team', label: 'Select Team' },
-    ];
-
-    const handleOptionClick = (option, type) => {
-        setSelectedOptions({ ...selectedOptions, [type]: option });
-        setIsOpen({ ...isOpen, [type]: false });
-    };
     function UserModal(props) {
+        const options = [
+            {
+                label: (
+                    <>
+                        <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                        Loren Epsom
+                    </>
+                ), value: "Loren Epsom1"
+            },
+            {
+                label: (
+                    <>
+                        <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                        Loren Epsom
+                    </>
+                ), value: "Loren Epsom2"
+            },
+            {
+                label: (
+                    <>
+                        <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                        Loren Epsom
+                    </>
+                ), value: "Loren Epsom3"
+            },
+        ];
+        const [selected, setSelected] = useState([]);
+
         const [showdate1, setShowdate1] = useState(0)
         return (
             <Modal
@@ -665,57 +675,27 @@ const Dashboard = () => {
                             </div>
                         ) : showdate1 === 1 ? (
                             <div className='dashboard71'>
-                                <div className="custom-dropdown">
-                                    <div className='dashboard72' onClick={() => setIsOpen(!isOpen)}>
-                                        <p>{selectedOptions ? selectedOptions.label : 'Select an option'}</p>
-                                        <div className='dashboard59'>
-                                            <FaAngleDown color='#2155CD' />
-                                        </div>
-                                        {isOpen && (
-                                            <ul className="options">
-                                                {options111.map((option, index) => (
-                                                    <li key={index} onClick={() => handleOptionClick(option)}>
-                                                        {option.label}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="custom-dropdown">
-                                    <div className='dashboard72' onClick={() => setIsOpen(!isOpen)}>
-                                        <p>{selectedOptions ? selectedOptions.label : 'Select an option'}</p>
-                                        <div className='dashboard59'>
-                                            <FaAngleDown color='#2155CD' />
-                                        </div>
-                                        {isOpen && (
-                                            <ul className="options">
-                                                {options111.map((option, index) => (
-                                                    <li key={index} onClick={() => handleOptionClick(option)}>
-                                                        {option.label}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                </div>
-                                <div className="custom-dropdown">
-                                    <div className='dashboard72' onClick={() => setIsOpen(!isOpen)}>
-                                        <p>{selectedOptions ? selectedOptions.label : 'Select an option'}</p>
-                                        <div className='dashboard59'>
-                                            <FaAngleDown color='#2155CD' />
-                                        </div>
-                                        {isOpen && (
-                                            <ul className="options">
-                                                {options111.map((option, index) => (
-                                                    <li key={index} onClick={() => handleOptionClick(option)}>
-                                                        {option.label}
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        )}
-                                    </div>
-                                </div>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                    className='dashboard711'
+                                />
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                    className='dashboard711'
+                                />
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                    className='dashboard711'
+                                />
                             </div>
 
 
@@ -912,7 +892,7 @@ const Dashboard = () => {
                             <p>Engineering</p>
                         </div>
                         <div id="chart">
-                            <ReactApexChart options={options} series={series} type="donut" width={320}  className="dososo" />
+                            <ReactApexChart options={options} series={series} type="donut" width={320} className="dososo" />
                             <p>Total Students: 1000</p>
                         </div>
 
