@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './Admission.css'
 import HOC from '../../Components/HOC/HOC'
 import { useNavigate, Link } from 'react-router-dom';
-
-
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
@@ -186,6 +187,69 @@ const Admission = () => {
 
 
 
+    // popoveraddbutton
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='popoveradd'>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Admission No</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Student Photo</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Aadhar Card</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Pan Card</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Passport</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Voter ID</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Driving License</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Marksheet</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Certificate</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Other</label>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+    
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='popoveradd'>
+                    <div className='popoveradd2'>
+                        <p>Export All Columns</p>
+                        <p>Export Open Columns</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
 
 
 
@@ -296,9 +360,16 @@ const Admission = () => {
                 </div>
 
                 <div className='admission12'>
-                    <button>Add</button>
-                    <button>Delete</button>
-                    <button>Export</button>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                        <button>Add</button>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                        <button>Delete</button>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                        <button>Export</button>
+                    </OverlayTrigger>
+
                 </div>
 
                 <div className='admission13'>
@@ -307,7 +378,7 @@ const Admission = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20}  onClick={() => setModalShow2(true)}/></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow2(true)} /></th>
                                     <th>Student Name</th>
                                     <th>Contact</th>
                                     <th>Email</th>
@@ -323,7 +394,7 @@ const Admission = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <div className='admission202'>
-                                            <button onClick={()=>navigate('/admission_details')}><MdEdit size={20}/> Edit</button>
+                                            <button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button>
                                         </div>
                                         <td><input type="checkbox" /></td>
                                         <td onClick={handleShow}><img src={img8} alt="" /></td>
@@ -355,8 +426,12 @@ const Admission = () => {
                         <p>START DIALING</p>
                     </div>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={()=>navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

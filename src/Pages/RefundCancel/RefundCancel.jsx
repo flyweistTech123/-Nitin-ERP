@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './RefundCancel.css'
 import HOC from '../../Components/HOC/HOC'
+import { useNavigate, Link } from 'react-router-dom';
 
 
 import {
-    UploadDocuments, 
+    UploadDocuments,
     AddRemark,
     ViewRemark,
     AddRefundCancelRequests,
     EditRefundCancelRequests,
-    DeleteRequest
+    DeleteRequest,
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    AdmissionFollowUp,
+    NewTask,
+    History,
+    NeWLead,
+    SMS,
+    Email,
+    Whatsapp
 } from '../Modals/Modals'
 
 import { IoSettings } from "react-icons/io5";
@@ -19,6 +30,7 @@ import { IoEye } from "react-icons/io5";
 import img from '../../Img/img33.png'
 
 const RefundCancel = () => {
+    const navigate = useNavigate();
     const tableData = [
         {
             id: 1,
@@ -116,6 +128,78 @@ const RefundCancel = () => {
 
 
 
+
+
+
+    // Filter Modal 
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+    // add field Modal
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+
+
+    // Admission Follow Up Modal
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    // New Lead Modal
+
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // History Modal
+
+
+    const [modalShow9, setModalShow9] = React.useState(false);
+
+
+
+
+
+
+    // NewTask Modal
+
+    const [show2, setShow2] = useState(false);
+
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+
+    // SMS Modal
+    const [show3, setShow3] = useState(false);
+
+    const handleClose3 = () => setShow3(false);
+    const handleShow3 = () => setShow3(true);
+
+
+
+
+    // Email Modal
+    const [show4, setShow4] = useState(false);
+
+    const handleClose4 = () => setShow4(false);
+    const handleShow4 = () => setShow4(true);
+
+
+
+    // Whatsapp Modal
+    const [show5, setShow5] = useState(false);
+
+    const handleClose5 = () => setShow5(false);
+    const handleShow5 = () => setShow5(true);
+
+
     return (
         <>
             <UploadDocuments
@@ -142,6 +226,63 @@ const RefundCancel = () => {
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
             />
+            <FilterModal
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+                setModalShow1={setModalShow7}
+                setModalShow2={setModalShow8}
+            />
+            <MYDEALSModal
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+                setModalShow={setModalShow6}
+                setModalShow2={setModalShow8}
+            />
+            <AddFieldModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+            />
+            <AdmissionFollowUp
+                show={show}
+                onHide={handleClose}
+                setModalShow3={modalShow9}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+            />
+            <NeWLead
+                show={show1}
+                onHide={handleClose1}
+                setModalShow3={modalShow9}
+                handleShow={handleShow}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+            />
+            <History
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
+            />
+            <NewTask
+                show={show2}
+                onHide={handleClose2}
+            />
+            <SMS
+                show={show3}
+                onHide={handleClose3}
+                setModalShow3={modalShow9}
+            />
+            <Email
+                show={show4}
+                onHide={handleClose4}
+            />
+            <Whatsapp
+                show={show5}
+                onHide={handleClose5}
+            />
             <div className='cancel'>
                 <div className='admission1'>
                     <p>Refund/ Cancel Requests</p>
@@ -161,7 +302,7 @@ const RefundCancel = () => {
 
 
                 <div className='cancel4'>
-                    <div className='cancel5'>
+                    <div className='cancel5' onClick={() => setModalShow6(true)}>
                         <button>Filter</button>
                     </div>
                     <input type="search" placeholder='Search Something ' />
@@ -173,7 +314,7 @@ const RefundCancel = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} /></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow8(true)} /></th>
                                     <th>Admission No.</th>
                                     <th>Student Name</th>
                                     <th>Course</th>
@@ -194,7 +335,7 @@ const RefundCancel = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td><input type="checkbox" /></td>
-                                        <td><img src={img} alt="" /></td>
+                                        <td onClick={handleShow}><img src={img} alt="" /></td>
                                         <td>{data.admissionNo}</td>
                                         <td>{data.name}</td>
                                         <td>{data.course}</td>

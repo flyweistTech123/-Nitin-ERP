@@ -3,6 +3,7 @@ import './Modals.css'
 import Modal from 'react-bootstrap/Modal';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { MultiSelect } from "react-multi-select-component";
 
 
 
@@ -42,6 +43,7 @@ import { RiDoubleQuotesR } from "react-icons/ri";
 import { GrDocumentText } from "react-icons/gr";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { VscMention } from "react-icons/vsc";
+import { FaRegCopy } from "react-icons/fa";
 
 
 
@@ -66,7 +68,116 @@ import img9 from '../../Img/img108.png'
 //Filter Modal for admission page
 export function FilterModal(props) {
     const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity", },
+    ];
+    const options1 = [
+        { label: "General", value: "General" },
+        { label: "OBC", value: "OBC" },
+        { label: "SC", value: "SC", },
+        { label: "ST", value: "ST", },
+    ];
+    const options2 = [
+        { label: "India", value: "India" },
+        { label: "UAE", value: "UAE" },
+        { label: "Ghana", value: "Ghana", },
+        { label: "Quatar", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options3 = [
+        { label: "O+", value: "O+" },
+        { label: "O-", value: "O-" },
+        { label: "A", value: "A", },
+        { label: "B", value: "B", },
+        { label: "AB", value: "AB", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+    const options5 = [
+        { label: "Loren Epsom", value: "India" },
+        { label: "Loren Epsom", value: "UAE" },
+        { label: "Loren Epsom", value: "Ghana", },
+        { label: "Loren Epsom", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options6 = [
+        { label: "Hindu", value: "India" },
+        { label: "Muslim", value: "UAE" },
+        { label: "Buddhist", value: "Ghana", },
+        { label: "Chrishtian", value: "Quatar", },
+        { label: "Others", value: "Yemen", },
+    ];
+    const options7 = [
+        { label: "Married", value: "India" },
+        { label: "Unmarried", value: "UAE" },
+        { label: "Divorced", value: "Ghana", }
+    ];
 
+    const options8 = [
+        { label: "Yes", value: "India" },
+        { label: "No", value: "UAE" },
+    ];
+    const options9 = [
+        { label: "Employed", value: "India" },
+        { label: "Unemployed", value: "UAE" },
+    ];
+    const options10 = [
+        { label: "Internal", value: "India" },
+        { label: "External", value: "UAE" },
+    ];
+    const options11 = [
+        { label: "Aadhar Card", value: "India" },
+        { label: "Passport", value: "UAE" },
+        { label: "Driving License", value: "India" },
+        { label: "Voter ID", value: "UAE" },
+        { label: "Other", value: "India" },
+    ];
+    const options12 = [
+        { label: "Reverified", value: "India" },
+        { label: "N/A", value: "UAE" },
+        { label: "Reverification Rejected", value: "India" },
+    ];
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+    const options17 = [
+        { label: "Send", value: "UAE" },
+        { label: "Received", value: "India" },
+        { label: "Waiting", value: "India" },
+    ];
+    const options14 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+    const options15 = [
+        { label: "Automatic", value: "India" },
+        { label: "Manual", value: "UAE" },
+    ];
+    const options16 = [
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+    ];
+
+    const [selected, setSelected] = useState([]);
 
     return (
         <Modal
@@ -115,63 +226,138 @@ export function FilterModal(props) {
 
                                 <div className='filter12'>
                                     <label htmlFor="">University</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Category</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options1}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Nationality</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options2}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Blood Group</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options3}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">State</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">District</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options5}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">City</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options5}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Religion</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options6}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Marital Status</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options7}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Minority Belonging</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options8}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Employment Status</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options9}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Domicile</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">ID Proof type</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options11}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Study Medium</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options11}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Assignment Type</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options10}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Free Date for Verification</label>
@@ -179,7 +365,12 @@ export function FilterModal(props) {
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Reverification</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options12}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Enrollment Number</label>
@@ -187,15 +378,30 @@ export function FilterModal(props) {
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Admission Confirmation </label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options13}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Admission Confirmation Status</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options17}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Admission Date</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options14}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Assign Backend Person</label>
@@ -207,11 +413,21 @@ export function FilterModal(props) {
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Fee Structure Type</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options15}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
                                 <div className='filter12'>
                                     <label htmlFor="">Admission Confirm Status</label>
-                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                    <MultiSelect
+                                        options={options16}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
                                 </div>
 
 
@@ -5777,8 +5993,191 @@ export function NotificationModal2(props) {
                     </div>
 
                     <div className='notificationmodal6'>
-                        <button  onClick={() => props.onHide()}>Save</button>
-                        <button  onClick={() => props.onHide()}>Cancel</button>
+                        <button onClick={() => props.onHide()}>Save</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//  Counsellorform  Modal for CRM page
+export function Counsellorform(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='counsellorformmodalpadding'>
+                <div className='counsellorformmodal'>
+                    <div className='counsellorformmodal1'>
+                        <h4>Counselor commitment form</h4>
+                        <h6>Application ID: 11123</h6>
+                    </div>
+
+                    <div className='counsellorformmodal2'>
+                        <div className='counsellorformmodal3'>
+                            <h5>Fill counsellor Form</h5>
+                            <p>Create a field</p>
+                        </div>
+
+                        <div className='counsellorformmodal4'>
+                            <div className='counsellorformmodal5'>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Id Card</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Admission type</label>
+                                    <select name="" id="">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Mode of Exam</label>
+                                    <select name="" id="">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Exam Batch by Counselor</label>
+                                    <input type="date" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Tentative Exam Time</label>
+                                    <input type="date" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Books</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Hall ticket</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Tentative Result & Document date</label>
+                                    <input type="date" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Exam Center</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Course type</label>
+                                    <select name="" id="">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Priority</label>
+                                    <select name="" id="">
+                                        <option value=""></option>
+                                    </select>
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Prov. Migration & Degree fees</label>
+                                    <input type="text" />
+                                </div>
+
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Suitable time for call</label>
+                                    <input type="date" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Verification Date</label>
+                                    <input type="date" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Time for forum processing working days</label>
+                                    <input type="date" />
+                                </div>
+
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Pending Docs.</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Additional Commitment type</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='counsellorformmodal6'>
+                                    <label htmlFor="">Exam Confirmation Remark</label>
+                                    <input type="text" />
+                                </div>
+
+                            </div>
+
+
+
+                            <div className='counsellorformmodal6' style={{ marginTop: "20px" }}>
+                                <label htmlFor="">Any Additional Comments</label>
+                                <textarea name="" id="" rows={5} ></textarea>
+                            </div>
+
+
+                            <div className='counsellorformmodal7'>
+                                <button>SUBMIT COUSELOR FORM</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//  Paymentlink  Modal for CRM page
+export function Paymentlink(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='counsellorformmodalpadding'>
+                <div className='paymentcrmmodal'>
+                    <div className='paymentcrmmodal1'>
+                        <h6>Counselor commitment form Link</h6>
+                        <p>Application ID: 1123</p>
+                    </div>
+
+                    <div className='paymentcrmmodal2'>
+                        <div className='paymentcrmmodal3'>
+                            <p>Counsellor Name: <span>loren Epsom</span></p>
+                            <p>Date: DD/MM/YYYY</p>
+                        </div>
+                        <div className='paymentcrmmodal4'>
+                            <p>From : Univeristy Name</p>
+                        </div>
+
+                        <div className='paymentcrmmodal4'>
+                            <div className='paymentcrmmodal5'>
+                                <p>Rorem ipsum/dolor sit amet/consectetur/adipiscing elit001/Rorem</p>
+                                <div className='paymentcrmmodal66'>
+                                    <FaRegCopy />
+                                </div>
+                            </div>
+                            <div className='paymentcrmmodal6'>
+                                <button>Send</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Modal.Body>

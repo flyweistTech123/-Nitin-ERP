@@ -4018,21 +4018,18 @@
   margin: 0;
 }
 
-
-.notificationmodal7{
+.notificationmodal7 {
   margin-top: 50px;
-
 }
 
-
-.notificationmodal8{
+.notificationmodal8 {
   display: flex;
   align-items: center;
   justify-content: end;
   gap: 30px;
 }
 
-.notificationmodal8 p{
+.notificationmodal8 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -4041,19 +4038,17 @@
   margin: 0;
 }
 
-
-.notificationmodal9{
+.notificationmodal9 {
   width: 100%;
   height: 38px;
-  background-color: #130E0E;
+  background-color: #130e0e;
   display: flex;
   align-items: center;
   padding-left: 20px;
   margin-top: 10px;
 }
 
-
-.notificationmodal9 p{
+.notificationmodal9 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -4062,8 +4057,7 @@
   margin: 0;
 }
 
-
-.notificationmodal10{
+.notificationmodal10 {
   display: flex;
   justify-content: space-between;
   width: 95%;
@@ -4071,14 +4065,13 @@
   margin-top: 20px;
 }
 
-
-.notificationmodal11{
+.notificationmodal11 {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.notificationmodal11 label{
+.notificationmodal11 label {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -4087,27 +4080,295 @@
   margin: 0;
 }
 
-
-.notificationmodal12{
+.notificationmodal12 {
   display: flex;
   flex-direction: column;
   gap: 25px;
 }
 
-
-.notificationmodal13{
+.notificationmodal13 {
   display: flex;
   align-items: center;
   gap: 100px;
 }
 
-
-.notificationmodal13 input{
+.notificationmodal13 input {
   background-color: #444444;
+}
+
+.notificationmodal14 {
+  margin-top: 50px;
+}
+
+/* Counsellorform  Modal for CRM page */
+
+.counsellorformmodalpadding {
+  padding: 0;
+}
+
+.counsellorformmodal {
+}
+
+.counsellorformmodal1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border-bottom: 1px solid #d9d9d9;
+  padding: 20px;
+}
+
+.counsellorformmodal1 h4 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  color: #3f3f3f;
+  margin: 0;
+}
+
+.counsellorformmodal1 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #3f3f3f;
+  margin: 0;
+}
+
+.counsellorformmodal2 {
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.counsellorformmodal3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.counsellorformmodal3 h5 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24.55px;
+  color: #000000;
+  margin: 0;
+}
+
+.counsellorformmodal3 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #2155cd;
+  margin: 0;
+  text-decoration: underline;
+}
+
+.counsellorformmodal5 {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.counsellorformmodal6 {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.counsellorformmodal6 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.counsellorformmodal6 input {
+  width: 100%;
+  height: 40px;
+  background-color: #F4F4F4;
+  border: none;
+  outline: none;
+  padding-left: 10px;
 }
 
 
 
-.notificationmodal14{
-  margin-top: 50px;
+.counsellorformmodal6 select {
+  width: 100%;
+  height: 40px;
+  background-color: #F4F4F4;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+
+
+.counsellorformmodal6 textarea{
+  width: 100%;
+  background-color: #F4F4F4;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+
+
+.counsellorformmodal7{
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+.counsellorformmodal7 button{
+  width: auto;
+  height: auto;
+  padding: 10px 36px 10px 36px;
+  border-radius: 4px;
+  background-color: #2155CD;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+
+
+/* Paymentlink  Modal for CRM page */
+
+
+.paymentcrmmodal{
+  
+}
+
+
+.paymentcrmmodal1{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #D9D9D9;
+  padding: 20px;
+}
+
+
+.paymentcrmmodal1 h6{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.paymentcrmmodal1 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.paymentcrmmodal2{
+  padding: 20px;
+}
+
+.paymentcrmmodal3{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.paymentcrmmodal3 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.paymentcrmmodal3 span{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+
+.paymentcrmmodal3 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.paymentcrmmodal4{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+.paymentcrmmodal5{
+  height: 64px;
+  border: 1px solid #3F3F3F;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+
+.paymentcrmmodal66{
+  border-left: 1px solid #000000;
+  padding-left: 10px;
+  height: 64px;
+}
+
+
+.paymentcrmmodal6 button{
+  width: auto;
+  height: auto;
+  padding: 10px 90px 10px 90px;
+  border-radius: 4px;
+  background-color: #2155CD;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
 }

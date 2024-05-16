@@ -4,12 +4,14 @@ import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-
+import { Counsellorform, Paymentlink } from '../Modals/Modals'
+import { useNavigate, Link } from 'react-router-dom';
 
 import img from '../../Img/img33.png'
 
 
 const CRM = () => {
+    const navigate = useNavigate()
     const [state, setState] = useState(null);
 
     const handleState = (index) => {
@@ -100,8 +102,25 @@ const CRM = () => {
         },
 
     ];
+
+    // Counsellorform Modal 
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+    // Counsellorform Modal 
+
+    const [modalShow1, setModalShow1] = React.useState(false);
     return (
         <>
+            <Counsellorform
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+
+            <Paymentlink
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div className='admission'>
                 <div className='crm'>
                     <p>Lorem</p>
@@ -151,21 +170,31 @@ const CRM = () => {
                     </div>
 
                     <div className='admission2'>
-                        <div className='admission3'>
-                            <p>What’s App</p>
-                        </div>
-                        <div className='admission4'>
-                            <p>Email</p>
-                        </div>
-                        <div className='admission5'>
-                            <p>Telegram</p>
-                        </div>
-                        <div className='admission6'>
-                            <p>Zoom</p>
-                        </div>
-                        <div className='admission7'>
-                            <p>Voice Call</p>
-                        </div>
+                        <Link to={'/whatsapp'} className='link'>
+                            <div className='admission3'>
+                                <p>What’s App</p>
+                            </div>
+                        </Link>
+                        <Link to={'/email'} className='link'>
+                            <div className='admission4'>
+                                <p>Email</p>
+                            </div>
+                        </Link>
+                        <Link to={'/telegram'} className='link'>
+                            <div className='admission5'>
+                                <p>Telegram</p>
+                            </div>
+                        </Link>
+                        <Link to={'/zoommeeting'} className='link'>
+                            <div className='admission6'>
+                                <p>Zoom</p>
+                            </div>
+                        </Link>
+                        <Link to={'/voicecall'} className='link'>
+                            <div className='admission7'>
+                                <p>Voice Call</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
 
@@ -198,9 +227,9 @@ const CRM = () => {
                                         <td>{data.university}</td>
                                         <td>{data.course}</td>
                                         <td>{data.createdDate}</td>
-                                        <td style={{ color: '#2155CD', textDecoration: "underline" }}>{data.Admissionform}</td>
-                                        <td style={{ color: '#2155CD', textDecoration: "underline" }}>{data.counsellorform}</td>
-                                        <td style={{ color: '#2155CD', textDecoration: "underline" }}>{data.Payment}</td>
+                                        <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => navigate('/admission_details')}>{data.Admissionform}</td>
+                                        <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => setModalShow(true)}>{data.counsellorform}</td>
+                                        <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => setModalShow1(true)}>{data.Payment}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -231,8 +260,12 @@ const CRM = () => {
                         <p>START DIALING</p>
                     </div>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

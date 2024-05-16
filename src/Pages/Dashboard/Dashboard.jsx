@@ -679,7 +679,7 @@ const Dashboard = () => {
                                     options={options}
                                     value={selected}
                                     onChange={setSelected}
-                                    labelledBy="Select"
+                                    labelledBy="Select Employee"
                                     className='dashboard711'
                                 />
                                 <MultiSelect

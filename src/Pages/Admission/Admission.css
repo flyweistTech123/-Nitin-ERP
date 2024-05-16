@@ -238,9 +238,6 @@
   position: relative;
 }
 
-
-
-
 .admission13 table td {
   height: 69px;
   font-family: "Nunito Sans", sans-serif;
@@ -281,17 +278,20 @@
   margin-top: 150px;
 }
 
-.admission16 {
+.admission16 select{
   width: auto;
   height: 44px;
   border: 1px solid #3f3f3f;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  gap: 10px;
   cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #3f3f3f;
+  margin: 0;
+  outline: none;
+  background-color: transparent;
 }
 
 .admission16 p {
@@ -356,18 +356,18 @@
   margin-bottom: 20px;
 }
 
-.admission202{
+.admission202 {
   display: none;
   position: absolute;
   top: 20px;
   left: 350px;
 }
 
-.admission202 button{
+.admission202 button {
   width: auto;
   height: auto;
   padding: 12px 38px 12px 38px;
-  background-color: #2155CD;
+  background-color: #2155cd;
   border-radius: 4px;
   border: none;
   outline: none;
@@ -384,20 +384,17 @@
 }
 
 .admission13 table tr:hover {
-  background: #B5C7F0B2;
-  .admission202{
+  background: #b5c7f0b2;
+  .admission202 {
     display: block;
     z-index: 1000;
   }
 }
-.admission202:hover{
+.admission202:hover {
   display: block;
 }
 
 /* Filter Modal  */
-
-
-
 
 /* Responsive css for Admission  */
 
@@ -406,16 +403,15 @@
     margin-bottom: 50px;
   }
   .admission13 .table-container {
-    overflow-x: auto; 
+    overflow-x: auto;
   }
   .admission13 {
     overflow: auto;
   }
-  .admission8{
+  .admission8 {
     flex-direction: column;
-    align-items:normal;
+    align-items: normal;
   }
-
 }
 
 /* Responsive css for Admission  */
@@ -425,14 +421,59 @@
     margin-bottom: 50px;
   }
   .admission13 .table-container {
-    overflow-x: auto; 
+    overflow-x: auto;
   }
   .admission13 {
     overflow: auto;
   }
-  .admission8{
+  .admission8 {
     flex-direction: column;
-    align-items:normal;
+    align-items: normal;
   }
+}
 
+/* popover */
+
+.popoveradd {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popoveradd1 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.popoveradd1 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.popoveradd2{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: pointer;
+}
+
+
+.popoveradd2 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.popoveradd2 p:hover{
+  color: #2155cd;
 }
