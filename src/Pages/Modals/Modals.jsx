@@ -44,6 +44,7 @@ import { GrDocumentText } from "react-icons/gr";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import { VscMention } from "react-icons/vsc";
 import { FaRegCopy } from "react-icons/fa";
+import { CgProfile } from "react-icons/cg";
 
 
 
@@ -708,6 +709,9 @@ export function FilterModal(props) {
 }
 
 
+
+
+
 //Mydeals Modal in filter  for admission page
 export function MYDEALSModal(props) {
 
@@ -1090,6 +1094,448 @@ export function AddFieldModal(props) {
 
 
 
+
+//DocumentFilterModal Modal for admission page
+export function DocumentFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity", },
+    ];
+    const options1 = [
+        { label: "1", value: "General" },
+        { label: "2", value: "OBC" },
+        { label: "3", value: "SC", },
+        { label: "4", value: "ST", },
+    ];
+    const options2 = [
+        { label: "None", value: "India" },
+        { label: "Applied", value: "UAE" },
+        { label: "Available", value: "Ghana", },
+        { label: "Not Available", value: "Quatar", },
+        { label: "Sent", value: "Yemen", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter2'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Application no/ Name/ Emil Id/ Mobile No.</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">State</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">University</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='documentfiltermodal'>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>MARKSHEET</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>ID CARD</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>ADMIT CARD</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>RESULT STATUS</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>ADMISSION LETTER</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>CERTIFICATE</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>PROVISIONAL</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>MIGRATION</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>DEGREE</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>TRANSCRIPT</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>ATTESTATION</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='documentfiltermodal5'>
+                                    <div className='documentfiltermodal1'>
+                                        <h6>OTHER DOCUMENT APPLY</h6>
+                                    </div>
+
+                                    <div className='documentfiltermodal2'>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Batch</label>
+                                            <MultiSelect
+                                                options={options1}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                        <div className='documentfiltermodal3'>
+                                            <label htmlFor="">Status</label>
+                                            <MultiSelect
+                                                options={options2}
+                                                value={selected}
+                                                onChange={setSelected}
+                                                labelledBy="Select"
+                                                className='documentfiltermodal4 multi-select11'
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
 //Admission Follow Up Modal for admission page
 
 
@@ -1134,7 +1580,7 @@ export function AdmissionFollowUp(props) {
                     <div className='Admissionfollowup'>
                         <div className='Admissionfollowup1'>
                             <div className='Admissionfollowup2'>
-                                <h6>Admission Follow Up </h6>
+                                <h6>{props.title} Follow Up </h6>
                                 <ImLink color='#000000' size={20} />
                             </div>
                             <div className='Admissionfollowup3' onClick={props.onHide}>
@@ -1979,6 +2425,560 @@ export function History(props) {
         </Modal>
     );
 }
+
+
+// History1 Modal for admission page
+export function History1(props) {
+
+    const tableData1 = [
+        {
+            id: 1,
+            EventDate: 'DD/MM/YYYY',
+            CreatedBy: 'Loren Epsom',
+            EventType: 'Assign Backend Manager',
+            Description: 'Created By System',
+        },
+
+        {
+            id: 1,
+            EventDate: 'DD/MM/YYYY',
+            CreatedBy: 'Loren Epsom',
+            EventType: 'Assign Backend Manager',
+            Description: 'Created By System',
+        },
+        {
+            id: 1,
+            EventDate: 'DD/MM/YYYY',
+            CreatedBy: 'Loren Epsom',
+            EventType: 'Assign Backend Manager',
+            Description: 'Created By System',
+        },
+        {
+            id: 1,
+            EventDate: 'DD/MM/YYYY',
+            CreatedBy: 'Loren Epsom',
+            EventType: 'Assign Backend Manager',
+            Description: 'Created By System',
+        },
+        {
+            id: 1,
+            EventDate: 'DD/MM/YYYY',
+            CreatedBy: 'Loren Epsom',
+            EventType: 'Assign Backend Manager',
+            Description: 'Created By System',
+        },
+        {
+            id: 1,
+            EventDate: 'DD/MM/YYYY',
+            CreatedBy: 'Loren Epsom',
+            EventType: 'Assign Backend Manager',
+            Description: 'Created By System',
+        },
+
+    ];
+    const [step, setStep] = useState(0);
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='historyModal101'>
+                <div className='Admissionfollowup'>
+                    <div className='Admissionfollowup1'>
+                        <div className='Admissionfollowup2'>
+                            <h6>abc</h6>
+                            <ImLink color='#000000' size={20} />
+                        </div>
+                        <div className='Admissionfollowup3' onClick={() => props.onHide()}>
+                            <MdOutlineCancel color='#000000' size={25} />
+                        </div>
+                    </div>
+
+
+                    <div className='Admissionfollowup3'>
+                        <div className='Admissionfollowup4'>
+                            <div className={props.modalShow3 === false ? "Admissionfollowup5" : "Admissionfollowup6"} onClick={() => setStep(0)}>
+                                <p onClick={props.onHide}>General</p>
+                            </div>
+                            <div className="Admissionfollowup5">
+                                <p>History</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className='historyModal'>
+                        <div className='historyModal1' onClick={() => props.setModalShow6(true)}>
+                            <p>+Event</p>
+                        </div>
+                    </div>
+
+                    <div className='historyModal2' onClick={() => props.setModalShow5(true)}>
+                        <input type="search" placeholder='Filter' />
+                        <IoSearch color='#000000' />
+                    </div>
+
+                    <div className='admission13'>
+                        <div className='table-container'>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th><input type="checkbox" /> <IoSettings size={20} /></th>
+                                        <th>Created By</th>
+                                        <th>Event Date</th>
+                                        <th>Event Type</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {tableData1.map((data) => (
+                                        <tr key={data.id}>
+                                            <td><input type="checkbox" /></td>
+                                            <td><PiUserCircleFill color='#444444' size={25} /> {data.CreatedBy}</td>
+                                            <td>{data.EventDate}</td>
+                                            <td>{data.EventType}</td>
+                                            <td>{data.Description}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div className='pendingpayment6'>
+                        <div className='pendingpayment7'>
+                            <h6>Total:</h6>
+                            <span>Show quantity</span>
+                        </div>
+
+                        <div className='pendingpayment8'>
+                            <p>Page :1</p>
+                        </div>
+
+                        <div className='pendingpayment9'>
+                            <p>Records</p>
+                            <div className='pendingpayment10'>
+                                <p>20</p>
+                                <IoIosArrowDown color='#3F3F3F' />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+// History1 Modal for admission page
+export function AddNewEvent(props) {
+
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton >
+                <Modal.Title className="addneweventhistory" >Add New Event</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='addneweventhistory1'>
+                    <div className='addneweventhistory2'>
+                        <p>Lead</p>
+                        <p>ABC</p>
+                    </div>
+                    <div className='addneweventhistory3'>
+                        <label htmlFor="">Event type</label>
+                        <select name="" id="">
+                            <option value=""></option>
+                            <option value="">Information</option>
+                            <option value="">Phone-Call</option>
+                            <option value="">E-mail has been sent</option>
+                        </select>
+                    </div>
+
+                    <div className='addneweventhistory4'>
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <div className='addneweventhistory2'>
+                        <p>Event Date</p>
+                        <p>DD/MM/YYYY</p>
+                    </div>
+
+                    <div className='addneweventhistory2'>
+                        <p>Attach files</p>
+                        <div className='addneweventhistory3'>
+                            <button>Upload</button>
+                            <span>No files chosen</span>
+                        </div>
+                    </div>
+
+                    <div className='addneweventhistory5'>
+                        <button onClick={() => props.onHide()}>Save</button>
+                        <button onClick={() => props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+//Filter Modal for admission page
+export function FilterModalhistory(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter222'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>CREATED TODAY</p>
+                        </div>
+                        <div className='filter5'>
+                            <p>CREATED YESTERDAY</p>
+                        </div>
+                        <div className='filter5'>
+                            <p>CREATED BY ME</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Type</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Event Type</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Created By</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Date</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter20'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//PaymentFilterModal Modal for admission page
+export function PaymentFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity", },
+    ];
+    const options1 = [
+        { label: "General", value: "General" },
+        { label: "OBC", value: "OBC" },
+        { label: "SC", value: "SC", },
+        { label: "ST", value: "ST", },
+    ];
+    const options2 = [
+        { label: "India", value: "India" },
+        { label: "UAE", value: "UAE" },
+        { label: "Ghana", value: "Ghana", },
+        { label: "Quatar", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options3 = [
+        { label: "O+", value: "O+" },
+        { label: "O-", value: "O-" },
+        { label: "A", value: "A", },
+        { label: "B", value: "B", },
+        { label: "AB", value: "AB", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+    const options5 = [
+        { label: "Loren Epsom", value: "India" },
+        { label: "Loren Epsom", value: "UAE" },
+        { label: "Loren Epsom", value: "Ghana", },
+        { label: "Loren Epsom", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options6 = [
+        { label: "Hindu", value: "India" },
+        { label: "Muslim", value: "UAE" },
+        { label: "Buddhist", value: "Ghana", },
+        { label: "Chrishtian", value: "Quatar", },
+        { label: "Others", value: "Yemen", },
+    ];
+    const options7 = [
+        { label: "Married", value: "India" },
+        { label: "Unmarried", value: "UAE" },
+        { label: "Divorced", value: "Ghana", }
+    ];
+
+    const options8 = [
+        { label: "Yes", value: "India" },
+        { label: "No", value: "UAE" },
+    ];
+    const options9 = [
+        { label: "Employed", value: "India" },
+        { label: "Unemployed", value: "UAE" },
+    ];
+    const options10 = [
+        { label: "Internal", value: "India" },
+        { label: "External", value: "UAE" },
+    ];
+    const options11 = [
+        { label: "Aadhar Card", value: "India" },
+        { label: "Passport", value: "UAE" },
+        { label: "Driving License", value: "India" },
+        { label: "Voter ID", value: "UAE" },
+        { label: "Other", value: "India" },
+    ];
+    const options12 = [
+        { label: "Reverified", value: "India" },
+        { label: "N/A", value: "UAE" },
+        { label: "Reverification Rejected", value: "India" },
+    ];
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+    const options17 = [
+        { label: "Send", value: "UAE" },
+        { label: "Received", value: "India" },
+        { label: "Waiting", value: "India" },
+    ];
+    const options14 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+    const options15 = [
+        { label: "Automatic", value: "India" },
+        { label: "Manual", value: "UAE" },
+    ];
+    const options16 = [
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter223'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY Filters</p>
+                        </div>
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter8'>
+                            <p>Payment filters</p>
+                        </div>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Admission No.</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Student Name</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">University</label>
+                                <MultiSelect
+                                    options={options1}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Course</label>
+                                <MultiSelect
+                                    options={options2}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Request Added On</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Request Added By</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Status Changed On</label>
+                                <MultiSelect
+                                    options={options5}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Status Changed By</label>
+                                <MultiSelect
+                                    options={options5}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='paymentfiltermodal'>
+                                <label htmlFor="">Status</label>
+                                <div className='paymentfiltermodal1'>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Pending</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Approved</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Rejected</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className='filter19'>
+                                <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                <span>Restore default fields </span>
+                            </div>
+
+                            <div className='filter20'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
 
 
 

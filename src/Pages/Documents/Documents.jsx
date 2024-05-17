@@ -1,7 +1,6 @@
 import React, { useRef } from 'react'
 import HOC from '../../Components/HOC/HOC'
-import 
-{
+import {
     MarksheetUpload,
     IDCardUpload,
     AdmitCardUpload,
@@ -13,7 +12,15 @@ import
     OtherDocumentApply,
     MigrationUpload,
     DegreeUpload,
-    AttestationUpload
+    AttestationUpload,
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+    DocumentFilterModal,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals'
 
 
@@ -130,6 +137,40 @@ const Documents = () => {
     const [modalShow11, setModalShow11] = React.useState(false);
 
 
+
+
+    // Filter Modal 
+
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow13, setModalShow13] = React.useState(false);
+
+    // add field Modal
+    const [modalShow14, setModalShow14] = React.useState(false);
+
+    // History Modal
+    const [modalShow15, setModalShow15] = React.useState(false);
+
+    // History Modal
+    const [modalShow16, setModalShow16] = React.useState(false);
+
+
+    
+    // History Modal
+
+    const [modalShow17, setModalShow17] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow18, setModalShow18] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow19, setModalShow19] = React.useState(false);
+
     return (
         <>
             <MarksheetUpload
@@ -181,6 +222,40 @@ const Documents = () => {
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
             />
+            <DocumentFilterModal
+                show={modalShow16}
+                onHide={() => setModalShow16(false)}
+                setModalShow1={setModalShow13}
+                setModalShow2={setModalShow14}
+            />
+            <MYDEALSModal
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
+                setModalShow={setModalShow16}
+                setModalShow2={setModalShow14}
+            />
+            <AddFieldModal
+                show={modalShow14}
+                onHide={() => setModalShow14(false)}
+            />
+            <History
+                show={modalShow15}
+                onHide={() => setModalShow15(false)}
+            />
+            <History1
+                show={modalShow17}
+                onHide={() => setModalShow17(false)}
+                setModalShow5={setModalShow18}
+                setModalShow6={setModalShow19}
+            />
+            <FilterModalhistory
+                show={modalShow18}
+                onHide={() => setModalShow18(false)}
+            />
+            <AddNewEvent
+                show={modalShow19}
+                onHide={() => setModalShow19(false)}
+            />
             <div className='backend'>
                 <div className='admission1'>
                     <p>Documents</p>
@@ -188,7 +263,7 @@ const Documents = () => {
 
 
                 <div className='documnets1'>
-                    <div className='admission8'>
+                    <div className='admission8' onClick={() => setModalShow16(true)}>
                         <div>
                             <p>Filter</p>
                         </div>
@@ -219,7 +294,7 @@ const Documents = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th><IoSettings size={20} /> Admission No</th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow14(true)} /> Admission No</th>
                                     <th>Email</th>
                                     <th>Phone</th>
                                     <th>State</th>
@@ -323,7 +398,7 @@ const Documents = () => {
                                         </td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>History</button>
+                                                <button onClick={() => setModalShow17(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

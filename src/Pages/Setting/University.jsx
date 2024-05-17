@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
+import { useNavigate, Link } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -11,7 +12,15 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
 import { CgAsterisk } from "react-icons/cg";
 
+// Modals 
 
+
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
 
 const University = () => {
     const tableData = [
@@ -88,7 +97,15 @@ const University = () => {
     // AddUniversity  Modal 
     const [modalShow, setModalShow] = React.useState(false);
 
+    // Filter Modal 
 
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
 
     function AddUniversity(props) {
 
@@ -171,7 +188,9 @@ const University = () => {
 
     // AddUniversity  Modal 
     const [modalShow1, setModalShow1] = React.useState(false);
+    // History Modal
 
+    const [modalShow3, setModalShow3] = React.useState(false);
 
 
     function EditUniversity(props) {
@@ -262,6 +281,26 @@ const University = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+            <FilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow12}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>University</p>
@@ -271,7 +310,7 @@ const University = () => {
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow11(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
@@ -301,7 +340,7 @@ const University = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20} />      {data.University}</td>
+                                        <td><MdHistory color='#000000' size={20}  onClick={() => setModalShow3(true)}/>      {data.University}</td>
                                         <td>{data.Registration}</td>
                                         <td>{data.toccharges}</td>
                                         <td>{data.lecharges}</td>

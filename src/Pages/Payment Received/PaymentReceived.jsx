@@ -12,7 +12,10 @@ import {
     NeWLead,
     SMS,
     Email,
-    Whatsapp
+    Whatsapp,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -224,6 +227,21 @@ const PaymentReceived = () => {
     const handleClose5 = () => setShow5(false);
     const handleShow5 = () => setShow5(true);
 
+
+    // History Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow8, setModalShow8] = React.useState(false);
+
     return (
         <>
             <Remarkspayment
@@ -241,8 +259,8 @@ const PaymentReceived = () => {
                 setModalShow2={setModalShow4}
             />
             <MYDEALSModal
-                show={modalShow2}
-                onHide={() => setModalShow1(false)}
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
                 setModalShow={setModalShow2}
                 setModalShow2={setModalShow4}
             />
@@ -259,6 +277,7 @@ const PaymentReceived = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                title={"Payment"}
             />
             <NeWLead
                 show={show1}
@@ -290,6 +309,20 @@ const PaymentReceived = () => {
             <Whatsapp
                 show={show5}
                 onHide={handleClose5}
+            />
+            <History1
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+                setModalShow5={setModalShow7}
+                setModalShow6={setModalShow8}
+            />
+            <FilterModalhistory
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
+            <AddNewEvent
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
             />
             <div className='payreceived'>
                 <div className='admission1'>
@@ -345,8 +378,8 @@ const PaymentReceived = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox"  /></th>
-                                    <th><IoSettings size={20} onClick={() => setModalShow4(true)}/></th>
+                                    <th><input type="checkbox" /></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow4(true)} /></th>
                                     <th>Student Name</th>
                                     <th>Admission No.</th>
                                     <th>Email_ID</th>
@@ -397,7 +430,7 @@ const PaymentReceived = () => {
                                         </td>
                                         <td>
                                             <div className='admission14'>
-                                                <button onClick={() => setModalShow3(true)}>History</button>
+                                                <button onClick={() => setModalShow6(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

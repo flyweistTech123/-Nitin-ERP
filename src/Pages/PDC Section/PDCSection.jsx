@@ -1,12 +1,29 @@
 import React, { useState } from 'react'
 import './PDCSection.css'
 import HOC from '../../Components/HOC/HOC'
+import { MdEdit } from "react-icons/md";
 import {
     FeeStructure,
     EducationDetails,
     DocumentDetails,
-    CallRecordinglist
+    CallRecordinglist,
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    AdmissionFollowUp,
+    NewTask,
+    History,
+    NeWLead,
+    SMS,
+    Email,
+    Whatsapp,
+    CallRecoding,
+    Remarks,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals'
+import { useNavigate, Link } from 'react-router-dom';
 
 
 
@@ -21,6 +38,7 @@ import img from '../../Img/img33.png'
 
 
 const PDCSection = () => {
+    const navigate = useNavigate();
     const tableData = [
         {
             id: 1,
@@ -226,7 +244,93 @@ const PDCSection = () => {
 
 
 
-    
+    // Filter Modal 
+
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+    // add field Modal
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+    // Admission Follow Up Modal
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    // New Lead Modal
+
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // History Modal
+
+
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+
+
+
+
+
+    // NewTask Modal
+
+    const [show2, setShow2] = useState(false);
+
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+
+    // SMS Modal
+    const [show3, setShow3] = useState(false);
+
+    const handleClose3 = () => setShow3(false);
+    const handleShow3 = () => setShow3(true);
+
+
+
+
+    // Email Modal
+    const [show4, setShow4] = useState(false);
+
+    const handleClose4 = () => setShow4(false);
+    const handleShow4 = () => setShow4(true);
+
+
+
+    // Whatsapp Modal
+    const [show5, setShow5] = useState(false);
+
+    const handleClose5 = () => setShow5(false);
+    const handleShow5 = () => setShow5(true);
+
+    // call Recoding Modal 
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+    const [modalShow9, setModalShow9] = React.useState(false);
+
+
+
+    // History Modal
+
+    const [modalShow10, setModalShow10] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow12, setModalShow12] = React.useState(false);
+
     return (
         <>
             <FeeStructure
@@ -245,28 +349,119 @@ const PDCSection = () => {
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
             />
+            <FilterModal
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+                setModalShow1={setModalShow5}
+                setModalShow2={setModalShow6}
+            />
+            <MYDEALSModal
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+                setModalShow={setModalShow4}
+                setModalShow2={setModalShow6}
+            />
+            <AddFieldModal
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+            />
+            <AdmissionFollowUp
+                show={show}
+                onHide={handleClose}
+                setModalShow3={setModalShow7}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+                title={"PDC"}
+            />
+            <NeWLead
+                show={show1}
+                onHide={handleClose1}
+                setModalShow3={setModalShow7}
+                handleShow={handleShow}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+            />
+            <History
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
+            <NewTask
+                show={show2}
+                onHide={handleClose2}
+            />
+            <SMS
+                show={show3}
+                onHide={handleClose3}
+                setModalShow3={setModalShow7}
+            />
+            <Email
+                show={show4}
+                onHide={handleClose4}
+            />
+            <Whatsapp
+                show={show5}
+                onHide={handleClose5}
+            />
+            <CallRecoding
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+                setModalShow1={setModalShow9}
+            />
+            <Remarks
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
+            />
+            <History1
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
+                setModalShow5={setModalShow11}
+                setModalShow6={setModalShow12}
+            />
+            <FilterModalhistory
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+            />
+            <AddNewEvent
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+            />
             <div className='pdc'>
                 <div className='admission1'>
                     <p>PDC</p>
                     <div className='admission2'>
-                        <div className='admission3'>
-                            <p>What’s App</p>
-                        </div>
-                        <div className='admission4'>
-                            <p>Email</p>
-                        </div>
-                        <div className='admission5'>
-                            <p>Telegram</p>
-                        </div>
-                        <div className='admission6'>
-                            <p>Zoom</p>
-                        </div>
-                        <div className='admission7'>
-                            <p>Voice Call</p>
-                        </div>
+                        <Link to={'/whatsapp'} className='link'>
+                            <div className='admission3'>
+                                <p>What’s App</p>
+                            </div>
+                        </Link>
+                        <Link to={'/email'} className='link'>
+                            <div className='admission4'>
+                                <p>Email</p>
+                            </div>
+                        </Link>
+                        <Link to={'/telegram'} className='link'>
+                            <div className='admission5'>
+                                <p>Telegram</p>
+                            </div>
+                        </Link>
+                        <Link to={'/zoommeeting'} className='link'>
+                            <div className='admission6'>
+                                <p>Zoom</p>
+                            </div>
+                        </Link>
+                        <Link to={'/voicecall'} className='link'>
+                            <div className='admission7'>
+                                <p>Voice Call</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
-                <div className='admission8'>
+                <div className='admission8' onClick={() => setModalShow4(true)}>
                     <div>
                         <p>Filter</p>
                     </div>
@@ -278,7 +473,7 @@ const PDCSection = () => {
                     </div>
                 </div>
                 <div className='service5'>
-                    <button>Call Recoding</button>
+                    <button onClick={() => setModalShow8(true)}>Call Recoding</button>
                     <button>Call Summary</button>
                 </div>
 
@@ -306,7 +501,7 @@ const PDCSection = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} /></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow6(true)} /></th>
                                     <th>University</th>
                                     <th>Course</th>
                                     <th>Batchwise Fee</th>
@@ -345,11 +540,14 @@ const PDCSection = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td><input type="checkbox" /></td>
-                                        <td><img src={img} alt="" /></td>
+                                        <td><img src={img} alt="" onClick={handleShow} /></td>
                                         <td>{data.university}</td>
                                         <td>{data.course}</td>
                                         <td onClick={() => setModalShow(true)}><RiErrorWarningFill color='#2155CD' size={25} /></td>
-                                        <td>{data.feeStructureMode}</td>
+                                        <td>
+                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                            {data.feeStructureMode}
+                                        </td>
                                         <td onClick={() => setModalShow1(true)}><IoEye color='#2155CD' size={25} /></td>
                                         <td onClick={() => setModalShow2(true)}><IoEye color='#2155CD' size={25} /></td>
                                         <td>{data.followUpData}</td>
@@ -379,7 +577,7 @@ const PDCSection = () => {
                                         <td style={{ color: "#2155CD", textDecoration: 'underline' }} onClick={() => setModalShow3(true)}>{data.callrecordingoption}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>History</button>
+                                                <button onClick={() => setModalShow10(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

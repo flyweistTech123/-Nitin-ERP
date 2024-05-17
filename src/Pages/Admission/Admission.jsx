@@ -28,7 +28,10 @@ import {
     NeWLead,
     SMS,
     Email,
-    Whatsapp
+    Whatsapp,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals.jsx'
 
 
@@ -146,7 +149,6 @@ const Admission = () => {
 
     // History Modal
 
-
     const [modalShow3, setModalShow3] = React.useState(false);
 
 
@@ -236,7 +238,7 @@ const Admission = () => {
             </Popover.Body>
         </Popover>
     );
-    
+
     const popover1 = (
         <Popover id="popover-basic">
             <Popover.Body>
@@ -250,6 +252,21 @@ const Admission = () => {
         </Popover>
     );
 
+
+
+    // History Modal
+
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
 
 
 
@@ -280,6 +297,7 @@ const Admission = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                title={"Admission"}
             />
             <NeWLead
                 show={show1}
@@ -311,6 +329,20 @@ const Admission = () => {
             <Whatsapp
                 show={show5}
                 onHide={handleClose5}
+            />
+            <History1
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
+            />
+            <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -393,12 +425,13 @@ const Admission = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <div className='admission202'>
-                                            <button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button>
-                                        </div>
+
                                         <td><input type="checkbox" /></td>
                                         <td onClick={handleShow}><img src={img8} alt="" /></td>
-                                        <td>{data.name}</td>
+                                        <td>
+                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                            {data.name}
+                                        </td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
                                         <div className='admission19'>
@@ -410,7 +443,7 @@ const Admission = () => {
                                         <td>{data.paidDate}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button onClick={() => setModalShow3(true)}>{data.history}</button>
+                                                <button onClick={() => setModalShow4(true)}>{data.history}</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -430,7 +463,7 @@ const Admission = () => {
                             <option value="">Select Action</option>
                             <option value="">Assign Responsible Person</option>
                             <option value="">Assign Service Manager</option>
-                            <option value="" onClick={()=>navigate('/paymentreceived')}>Assign Backend Person</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
                         </select>
                     </div>
                     <div className='admission17'>

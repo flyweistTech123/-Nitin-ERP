@@ -20,7 +20,11 @@ import {
     NeWLead,
     SMS,
     Email,
-    Whatsapp
+    Whatsapp,
+    PaymentFilterModal,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals'
 
 import { IoSettings } from "react-icons/io5";
@@ -159,8 +163,6 @@ const RefundCancel = () => {
     const handleShow1 = () => setShow1(true);
 
     // History Modal
-
-
     const [modalShow9, setModalShow9] = React.useState(false);
 
 
@@ -200,6 +202,23 @@ const RefundCancel = () => {
     const handleShow5 = () => setShow5(true);
 
 
+    // PaymentFilterModal Modal
+    const [modalShow10, setModalShow10] = React.useState(false);
+
+
+    // History Modal
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow13, setModalShow13] = React.useState(false);
     return (
         <>
             <UploadDocuments
@@ -242,6 +261,10 @@ const RefundCancel = () => {
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
             />
+            <PaymentFilterModal
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
+            />
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
@@ -251,6 +274,7 @@ const RefundCancel = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                title={"Refund/ Cancel Requests"}
             />
             <NeWLead
                 show={show1}
@@ -283,6 +307,20 @@ const RefundCancel = () => {
                 show={show5}
                 onHide={handleClose5}
             />
+            <History1
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow5={setModalShow12}
+                setModalShow6={setModalShow13}
+            />
+            <FilterModalhistory
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+            />
+            <AddNewEvent
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
+            />
             <div className='cancel'>
                 <div className='admission1'>
                     <p>Refund/ Cancel Requests</p>
@@ -301,8 +339,8 @@ const RefundCancel = () => {
 
 
 
-                <div className='cancel4'>
-                    <div className='cancel5' onClick={() => setModalShow6(true)}>
+                <div className='cancel4' onClick={() => setModalShow10(true)}>
+                    <div className='cancel5' >
                         <button>Filter</button>
                     </div>
                     <input type="search" placeholder='Search Something ' />
@@ -367,7 +405,7 @@ const RefundCancel = () => {
                                         <td onClick={() => setModalShow2(true)}><IoEye color='#2155CD' size={25} /></td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>History</button>
+                                                <button onClick={() => setModalShow11(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

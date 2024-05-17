@@ -3,12 +3,23 @@ import './ExamAttendanceStatus.css'
 import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate, Link } from 'react-router-dom';
 
-
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
+} from '../Modals/Modals.jsx'
 
 
 
 const ExamAttendanceStatus = () => {
+    const navigate = useNavigate();
+
     const tableData = [
         {
             id: 1,
@@ -79,35 +90,111 @@ const ExamAttendanceStatus = () => {
         },
 
     ];
+
+    // Filter Modal 
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    // History Modal
+
+
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+
+
+    
+    // History Modal
+
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
     return (
         <>
+            <FilterModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
+            <History1
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
+            />
+            <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+            />
             <div className='pdc'>
                 <div className='admission1'>
                     <p>Exam Attendance Status</p>
                     <div className='admission2'>
-                        <div className='admission3'>
-                            <p>What’s App</p>
-                        </div>
-                        <div className='admission4'>
-                            <p>Email</p>
-                        </div>
-                        <div className='admission5'>
-                            <p>Telegram</p>
-                        </div>
-                        <div className='admission6'>
-                            <p>Zoom</p>
-                        </div>
-                        <div className='admission7'>
-                            <p>Voice Call</p>
-                        </div>
+                        <Link to={'/whatsapp'} className='link'>
+                            <div className='admission3'>
+                                <p>What’s App</p>
+                            </div>
+                        </Link>
+                        <Link to={'/email'} className='link'>
+                            <div className='admission4'>
+                                <p>Email</p>
+                            </div>
+                        </Link>
+                        <Link to={'/telegram'} className='link'>
+                            <div className='admission5'>
+                                <p>Telegram</p>
+                            </div>
+                        </Link>
+                        <Link to={'/zoommeeting'} className='link'>
+                            <div className='admission6'>
+                                <p>Zoom</p>
+                            </div>
+                        </Link>
+                        <Link to={'/voicecall'} className='link'>
+                            <div className='admission7'>
+                                <p>Voice Call</p>
+                            </div>
+                        </Link>
                     </div>
                 </div>
                 <div className='admission8'>
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
-                        <div className='admission10'>
+                    <div className='admission9' onClick={() => setModalShow(true)}>
+                        <div className='admission10' >
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
                         </div>
@@ -167,7 +254,7 @@ const ExamAttendanceStatus = () => {
                                         </td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>History</button>
+                                                <button onClick={() => setModalShow4(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -183,8 +270,12 @@ const ExamAttendanceStatus = () => {
                         <p>START DIALING</p>
                     </div>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

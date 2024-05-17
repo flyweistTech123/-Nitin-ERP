@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './Task.css'
+import { useNavigate, Link } from 'react-router-dom';
 import HOC from '../../Components/HOC/HOC'
 import TopPart from '../Toppart/TopPart';
-import { useNavigate } from 'react-router-dom';
-
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    AdmissionFollowUp,
+} from '../Modals/Modals.jsx'
 
 import { IoSettings } from "react-icons/io5";
 import { MdOutlineClose } from "react-icons/md";
@@ -105,6 +110,17 @@ const Task = () => {
     ];
 
 
+    // Filter Modal 
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
     const getStatusColor = (status) => {
         switch (status) {
             case 'Pending':
@@ -120,6 +136,22 @@ const Task = () => {
 
     return (
         <>
+            <FilterModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
             <div className='admission'>
                 <div className='general1'>
                     <TopPart />
@@ -127,11 +159,11 @@ const Task = () => {
                 <div className='task1'>
                     <div className='task2'>
                         <div className='task3'>
-                            <button onClick={()=>navigate('/createtask')}>Create</button>
+                            <button onClick={() => navigate('/createtask')}>Create</button>
                         </div>
 
-                        <div className='task4'>
-                            <div className='task5'>
+                        <div className='task4' onClick={() => setModalShow(true)}>
+                            <div className='task5' >
                                 <p>In Progress</p>
                                 <MdOutlineClose color='#FFFFFF' size={20} />
                             </div>
@@ -219,8 +251,12 @@ const Task = () => {
 
                 <div className='task9'>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

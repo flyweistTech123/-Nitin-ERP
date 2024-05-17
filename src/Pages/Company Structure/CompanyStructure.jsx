@@ -8,18 +8,23 @@ import { FiPlus } from "react-icons/fi";
 
 import img from '../../Img/img78.png'
 
-
+import { InviteUsers } from '../Modals/Modals'
 
 
 const CompanyStructure = () => {
+    // InviteUsers Modal 
+    const [modalShow, setModalShow] = React.useState(false);
     return (
         <>
-
+            <InviteUsers
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Company Structure</p>
                     <div className='companystructure'>
-                        <button><TbUsersPlus color='#FFFFFF' size={20} /> Invite Users</button>
+                        <button onClick={() => setModalShow(true)}><TbUsersPlus color='#FFFFFF' size={20} /> Invite Users</button>
                         <button><FiPlus color='#FFFFFF' size={20} /> Department</button>
                     </div>
                 </div>

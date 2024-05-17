@@ -2,12 +2,21 @@ import React from 'react';
 import './ITTargetReport.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
+import { useNavigate, Link } from 'react-router-dom';
+
+
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+} from '../Modals/Modals.jsx'
 import { IoIosArrowDown } from "react-icons/io";
 
-import {ListEmployee} from '../Modals/Modals'
+import { ListEmployee } from '../Modals/Modals'
 
 
 const ITTargetReport = () => {
+    const navigate = useNavigate();
     const tableData = [
         {
             id: 1,
@@ -97,19 +106,44 @@ const ITTargetReport = () => {
     const [modalShow, setModalShow] = React.useState(false);
 
 
+    // Filter Modal 
 
-   
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
     return (
         <>
             <ListEmployee
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            <FilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>IT Target Reports</p>
                 </div>
-                <div className='targetanalysis2'>
+                <div className='targetanalysis2' onClick={() => setModalShow11(true)}>
                     <div className='targetanalysis1'>
                         <p>Filters</p>
                     </div>

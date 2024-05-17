@@ -2,7 +2,23 @@ import React from 'react'
 import './PendingOnlinePayments.css'
 import HOC from '../../Components/HOC/HOC'
 
-import {StudentDetails, ApproveOnlinePayment} from '../Modals/Modals'
+import {
+    StudentDetails,
+    ApproveOnlinePayment,
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    AdmissionFollowUp,
+    NewTask,
+    History,
+    NeWLead,
+    SMS,
+    Email,
+    Whatsapp,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
+} from '../Modals/Modals'
 
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
@@ -82,6 +98,32 @@ const PendingOnlinePayments = () => {
     // Approve Online Payment Modal 
     const [modalShow1, setModalShow1] = React.useState(false);
 
+    // Filter Modal 
+
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+    // add field Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+
+
+    // History Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
 
     return (
         <>
@@ -93,6 +135,36 @@ const PendingOnlinePayments = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+            <FilterModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+                setModalShow1={setModalShow3}
+                setModalShow2={setModalShow4}
+            />
+            <MYDEALSModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+                setModalShow={setModalShow2}
+                setModalShow2={setModalShow4}
+            />
+            <AddFieldModal
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
+            <History1
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+                setModalShow5={setModalShow6}
+                setModalShow6={setModalShow7}
+            />
+            <FilterModalhistory
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+            />
+            <AddNewEvent
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
             <div className='pendingpayment'>
                 <div className='pendingpayment1'>
                     <p>Pending Online Payments</p>
@@ -102,7 +174,7 @@ const PendingOnlinePayments = () => {
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow2(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
@@ -163,7 +235,7 @@ const PendingOnlinePayments = () => {
                                             </div>
                                             <td>
                                                 <div className='admission14'>
-                                                    <button>History</button>
+                                                    <button onClick={() => setModalShow5(true)}>History</button>
                                                 </div>
                                             </td>
                                         </tr>

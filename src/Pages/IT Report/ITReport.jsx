@@ -1,8 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './ITReport.css'
 import Modal from 'react-bootstrap/Modal';
+import { useNavigate, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    AdmissionFollowUp,
+    NewTask,
+    History,
+    NeWLead,
+    SMS,
+    Email,
+    Whatsapp
+} from '../Modals/Modals.jsx'
+
+
+
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { GoListUnordered } from "react-icons/go";
@@ -17,6 +33,7 @@ import img5 from '../../Img/img64.png'
 import img7 from '../../Img/img71.png'
 
 const ITReport = () => {
+    const navigate = useNavigate();
     const tableData = [
         {
             id: 1,
@@ -102,6 +119,17 @@ const ITReport = () => {
 
 
 
+
+    // Filter Modal 
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
     function ContentAdded(props) {
 
 
@@ -154,6 +182,22 @@ const ITReport = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            <FilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>IT Report</p>
@@ -163,7 +207,7 @@ const ITReport = () => {
                     <div className='itreport3'>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow11(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />

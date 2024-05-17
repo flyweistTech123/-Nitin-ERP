@@ -24,7 +24,10 @@ import {
     Email,
     Whatsapp,
     CallRecoding,
-    Remarks
+    Remarks,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 
 } from '../Modals/Modals.jsx'
 
@@ -157,6 +160,20 @@ const Service = () => {
     // call Recoding Modal 
     const [modalShow4, setModalShow4] = React.useState(false);
     const [modalShow5, setModalShow5] = React.useState(false);
+
+    // History Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow8, setModalShow8] = React.useState(false);
     return (
         <>
             <FilterModal
@@ -184,6 +201,7 @@ const Service = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                title={"Service"}
             />
             <NeWLead
                 show={show1}
@@ -224,6 +242,20 @@ const Service = () => {
             <Remarks
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
+            />
+            <History1
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+                setModalShow5={setModalShow7}
+                setModalShow6={setModalShow8}
+            />
+            <FilterModalhistory
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
+            <AddNewEvent
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
             />
             <div className='service'>
                 <div className='admission1'>
@@ -311,19 +343,19 @@ const Service = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <div className='admission202'>
-                                            <button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button>
-                                        </div>
                                         <td><input type="checkbox" /></td>
                                         <td onClick={handleShow}><img src={img} alt="" /></td>
-                                        <td>{data.name}</td>
+                                        <td>
+                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                            {data.name}
+                                        </td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
                                         <td>{data.university}</td>
                                         <td>{data.course}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button onClick={() => setModalShow3(true)}>History</button>
+                                                <button onClick={() => setModalShow6(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -340,8 +372,12 @@ const Service = () => {
                         <p>START DIALING</p>
                     </div>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

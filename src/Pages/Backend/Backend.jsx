@@ -13,7 +13,10 @@ import {
     NeWLead,
     SMS,
     Email,
-    Whatsapp
+    Whatsapp,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -175,6 +178,21 @@ const Backend = () => {
     const handleClose5 = () => setShow5(false);
     const handleShow5 = () => setShow5(true);
 
+
+    // History Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow9, setModalShow9] = React.useState(false);
+
     return (
         <>
             <CallRecoding
@@ -215,6 +233,7 @@ const Backend = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                title={"Backend"}
             />
             <NeWLead
                 show={show1}
@@ -246,6 +265,20 @@ const Backend = () => {
             <Whatsapp
                 show={show5}
                 onHide={handleClose5}
+            />
+            <History1
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+                setModalShow5={setModalShow8}
+                setModalShow6={setModalShow9}
+            />
+            <FilterModalhistory
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+            />
+            <AddNewEvent
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
             />
             <div className='backend'>
                 <div className='admission1'>
@@ -334,12 +367,12 @@ const Backend = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <div className='admission202'>
-                                            <button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button>
-                                        </div>
                                         <td><input type="checkbox" /></td>
                                         <td onClick={handleShow}><img src={img} alt="" /></td>
-                                        <td>{data.name}</td>
+                                        <td>
+                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                            {data.name}
+                                        </td>
                                         <td>{data.contact}</td>
                                         <td>{data.email}</td>
                                         <div className='admission19'>
@@ -361,7 +394,7 @@ const Backend = () => {
                                         <td>{data.verificationdate}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button onClick={() => setModalShow6(true)}>History</button>
+                                                <button onClick={() => setModalShow7(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

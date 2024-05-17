@@ -1,5 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './CallRecordingAnalysis.css'
+import { useNavigate, Link } from 'react-router-dom';
+
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    Remarks,
+    History,
+} from '../Modals/Modals.jsx'
+
 import HOC from '../../Components/HOC/HOC'
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosPlayCircle } from "react-icons/io";
@@ -67,8 +77,49 @@ const CallRecordingAnalysis = () => {
         },
 
     ];
+
+    // Filter Modal 
+
+    const [modalShow, setModalShow] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    //reamrks modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+    //history modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
     return (
         <>
+            <FilterModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <Remarks
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
+            <History
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Call Recording Analysis</p>
@@ -79,7 +130,7 @@ const CallRecordingAnalysis = () => {
                 </div>
 
                 <div className='targetanalysis2'>
-                    <div className='targetanalysis1'>
+                    <div className='targetanalysis1' onClick={() => setModalShow(true)}>
                         <p>Filters</p>
                     </div>
 
@@ -111,7 +162,7 @@ const CallRecordingAnalysis = () => {
                                         <td>{data.Responsible}</td>
                                         <td>{data.Addedon}</td>
                                         <td><IoIosPlayCircle size={25} color='#2155CD' /></td>
-                                        <td>{data.Remarks} <PiWarningCircle size={20} color='#2155CD' /></td>
+                                        <td onClick={() => setModalShow3(true)}>{data.Remarks} <PiWarningCircle size={20} color='#2155CD' /></td>
                                         <td>
                                             {/* Render stars based on the 'Rating' */}
                                             {Array.from({ length: parseInt(data.Rating, 10) }, (_, index) => (
@@ -122,7 +173,7 @@ const CallRecordingAnalysis = () => {
                                         <td>{data.RatedOn}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>History</button>
+                                                <button onClick={() => setModalShow4(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

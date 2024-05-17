@@ -1,8 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './DailyReportTemplate.css'
 import HOC from '../../Components/HOC/HOC'
-import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate, Link } from 'react-router-dom';
 
+import {
+    FilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+} from '../Modals/Modals.jsx'
+
+import { IoIosArrowDown } from "react-icons/io";
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from '../../Img/img60.png'
@@ -24,13 +31,21 @@ const DailyReportTemplate = () => {
     const handleFaltu = (index) => {
         setFaltu(index);
     };
-    
+
 
     // ITTargetAnalysis Modal 
 
 
     const [modalShow, setModalShow] = React.useState(false);
+    // Filter Modal 
 
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow1, setModalShow1] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
 
 
     function ITTargetAnalysis(props) {
@@ -103,13 +118,29 @@ const DailyReportTemplate = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
+            <FilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Report Template</p>
                 </div>
 
                 <div className='targetanalysis2'>
-                    <div className='targetanalysis1'>
+                    <div className='targetanalysis1' onClick={() => setModalShow(true)}>
                         <p>Filters</p>
                     </div>
 
