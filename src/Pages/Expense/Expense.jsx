@@ -10,6 +10,11 @@ import { IoCloseSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 
 
+import {
+    ExpenseFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+} from '../Modals/Modals.jsx'
 
 
 const Expense = () => {
@@ -394,6 +399,17 @@ const Expense = () => {
     }
 
 
+    // Filter Modal 
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+    // add field Modal
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+
     return (
         <>
             <AddExpense
@@ -416,6 +432,22 @@ const Expense = () => {
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
             />
+            <ExpenseFilterModal
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+                setModalShow1={setModalShow6}
+                setModalShow2={setModalShow7}
+            />
+            <MYDEALSModal
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+                setModalShow={setModalShow5}
+                setModalShow2={setModalShow7}
+            />
+            <AddFieldModal
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Expense</p>
@@ -432,8 +464,8 @@ const Expense = () => {
                     </div>
                 </div>
 
-                <div className='itreport2'>
-                    <div className='itreport3'>
+                <div className='itreport2'  onClick={() => setModalShow5(true)}>
+                    <div className='itreport3' >
                         <p>Filter</p>
                     </div>
                     <div className='admission9'>
@@ -509,8 +541,12 @@ const Expense = () => {
                         <p>START DIALING</p>
                     </div>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

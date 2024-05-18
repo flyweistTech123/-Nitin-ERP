@@ -10,7 +10,12 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
 
-
+import {
+    SpecializationFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
 
 const Specialization = () => {
     const tableData = [
@@ -89,44 +94,59 @@ const Specialization = () => {
     }
 
 
-        // AddSpecialization  Modal 
-        const [modalShow1, setModalShow1] = React.useState(false);
+    // AddSpecialization  Modal 
+    const [modalShow1, setModalShow1] = React.useState(false);
 
-        function EditSpecialization(props) {
-    
-    
-            return (
-                <Modal
-                    {...props}
-                    size="lg"
-                    aria-labelledby="contained-modal-title-vcenter"
-                    centered
-                >
-                    <Modal.Header closeButton>
-                        <Modal.Title className='addUniversityModal7'>Edit Specialization</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body >
-                        <div className=''>
-                            <div className='returnmodal'>
-                                <div className='EditCourses1'>
-                                    <label htmlFor="">Specialization Name<span>*</span></label>
-                                    <input type="text" />
-                                </div>
-                                <div className='EditCourses1'>
-                                    <label htmlFor="">Description<span>*</span></label>
-                                    <textarea name="" id="" cols="30" rows="5"></textarea>
-                                </div>
+    function EditSpecialization(props) {
+
+
+        return (
+            <Modal
+                {...props}
+                size="lg"
+                aria-labelledby="contained-modal-title-vcenter"
+                centered
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title className='addUniversityModal7'>Edit Specialization</Modal.Title>
+                </Modal.Header>
+                <Modal.Body >
+                    <div className=''>
+                        <div className='returnmodal'>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Specialization Name<span>*</span></label>
+                                <input type="text" />
                             </div>
-    
-                            <div className='addUniversityModal6'>
-                                <button onClick={() => setModalShow1(false)}>Save</button>
-                                <button onClick={() => setModalShow1(false)}>Cancel</button>
+                            <div className='EditCourses1'>
+                                <label htmlFor="">Description<span>*</span></label>
+                                <textarea name="" id="" cols="30" rows="5"></textarea>
                             </div>
                         </div>
-                    </Modal.Body>
-                </Modal>
-            );
-        }
+
+                        <div className='addUniversityModal6'>
+                            <button onClick={() => setModalShow1(false)}>Save</button>
+                            <button onClick={() => setModalShow1(false)}>Cancel</button>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
+        );
+    }
+
+
+    // Filter Modal 
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    // History Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
 
     return (
         <>
@@ -138,12 +158,32 @@ const Specialization = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+            <SpecializationFilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow12}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Specialization</p>
                 </div>
 
-                <div className='admission8'>
+                <div className='admission8' onClick={() => setModalShow11(true)}>
                     <div>
                         <p>Filter</p>
                     </div>
@@ -171,7 +211,7 @@ const Specialization = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20} />      {data.specializationName}</td>
+                                        <td><MdHistory color='#000000' size={20} onClick={() => setModalShow3(true)} />      {data.specializationName}</td>
                                         <div className='setting1'>
                                             <p>{data.Description}</p>
                                         </div>

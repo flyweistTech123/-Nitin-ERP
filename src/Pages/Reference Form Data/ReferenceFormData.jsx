@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './ReferenceFormData.css'
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -6,11 +6,30 @@ import HOC from '../../Components/HOC/HOC'
 import { GrCircleInformation } from "react-icons/gr";
 import { IoSettings } from "react-icons/io5";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import { useNavigate, Link } from 'react-router-dom';
 
 import img from '../../Img/img33.png'
 import img1 from '../../Img/img78.png'
 
+import {
+    ReferenceFormDataFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+    AdmissionFollowUp,
+    NewTask,
+    NeWLead,
+    SMS,
+    Email,
+    Whatsapp,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
+} from '../Modals/Modals.jsx'
+
 const ReferenceFormData = () => {
+    const navigate = useNavigate();
+
     const tableData = [
         {
             id: 1,
@@ -114,6 +133,17 @@ const ReferenceFormData = () => {
 
 
 
+
+    // Filter Modal 
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
     function Status(props) {
 
 
@@ -178,6 +208,9 @@ const ReferenceFormData = () => {
 
 
 
+
+    // History Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
     function ReferencePerson(props) {
 
 
@@ -192,7 +225,7 @@ const ReferenceFormData = () => {
                     <div className='referencepersonModal'>
                         <div className='referencepersonModal1'>
                             <h6>Reference Person Details</h6>
-                            <IoIosCloseCircleOutline  size={30} color='#000000'  onClick={() => setModalShow1(false)}/>
+                            <IoIosCloseCircleOutline size={30} color='#000000' onClick={() => setModalShow1(false)} />
                         </div>
 
                         <div className='referencepersonModal2'>
@@ -231,6 +264,66 @@ const ReferenceFormData = () => {
 
 
 
+    // Admission Follow Up Modal
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    // New Lead Modal
+
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // NewTask Modal
+
+    const [show2, setShow2] = useState(false);
+
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+
+    // SMS Modal
+    const [show3, setShow3] = useState(false);
+
+    const handleClose3 = () => setShow3(false);
+    const handleShow3 = () => setShow3(true);
+
+
+
+
+    // Email Modal
+    const [show4, setShow4] = useState(false);
+
+    const handleClose4 = () => setShow4(false);
+    const handleShow4 = () => setShow4(true);
+
+
+
+    // Whatsapp Modal
+    const [show5, setShow5] = useState(false);
+
+    const handleClose5 = () => setShow5(false);
+    const handleShow5 = () => setShow5(true);
+
+    // History Modal
+
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
     return (
         <>
             <Status
@@ -241,6 +334,79 @@ const ReferenceFormData = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+
+            <ReferenceFormDataFilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow12}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
+            <AdmissionFollowUp
+                show={show}
+                onHide={handleClose}
+                setModalShow3={setModalShow3}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+                title={"Reference Form"}
+            />
+            <NeWLead
+                show={show1}
+                onHide={handleClose1}
+                setModalShow3={setModalShow3}
+                handleShow={handleShow}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+            />
+            <NewTask
+                show={show2}
+                onHide={handleClose2}
+            />
+            <SMS
+                show={show3}
+                onHide={handleClose3}
+                setModalShow3={setModalShow3}
+            />
+            <Email
+                show={show4}
+                onHide={handleClose4}
+            />
+            <Whatsapp
+                show={show5}
+                onHide={handleClose5}
+            />
+            <History1
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
+            />
+            <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+            />
             <div className='cancel'>
                 <div className='admission1'>
                     <p>Reference Form</p>
@@ -248,7 +414,7 @@ const ReferenceFormData = () => {
 
 
 
-                <div className='targetanalysis2'>
+                <div className='targetanalysis2' onClick={() => setModalShow11(true)}>
                     <div className='targetanalysis1'>
                         <p>Filters</p>
                     </div>
@@ -266,7 +432,7 @@ const ReferenceFormData = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} /></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow2(true)} /></th>
                                     <th>ID</th>
                                     <th>Candidate Name</th>
                                     <th>Mobile No.</th>
@@ -289,7 +455,7 @@ const ReferenceFormData = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td><input type="checkbox" /></td>
-                                        <td><img src={img} alt="" /></td>
+                                        <td><img src={img} alt="" onClick={handleShow} /></td>
                                         <td>{data.ID}</td>
                                         <td>{data.CandidateName}</td>
                                         <td>{data.MobileNo}</td>
@@ -313,7 +479,7 @@ const ReferenceFormData = () => {
                                         </td>
                                         <td>
                                             <div className='admission14'>
-                                                <button>History</button>
+                                                <button onClick={() => setModalShow4(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

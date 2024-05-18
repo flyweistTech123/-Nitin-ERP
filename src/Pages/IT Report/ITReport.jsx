@@ -5,16 +5,12 @@ import { useNavigate, Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
 import {
-    FilterModal,
     MYDEALSModal,
     AddFieldModal,
-    AdmissionFollowUp,
-    NewTask,
-    History,
-    NeWLead,
-    SMS,
-    Email,
-    Whatsapp
+    ITReportFilterModal,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals.jsx'
 
 
@@ -130,6 +126,21 @@ const ITReport = () => {
     // add field Modal
     const [modalShow2, setModalShow2] = React.useState(false);
 
+    
+    // History Modal
+
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
     function ContentAdded(props) {
 
 
@@ -182,7 +193,7 @@ const ITReport = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <FilterModal
+            <ITReportFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}
@@ -197,6 +208,20 @@ const ITReport = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <History1
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
+            />
+            <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -259,7 +284,7 @@ const ITReport = () => {
                                         <td>{data.topic}</td>
                                         <td>{data.Keywords}</td>
                                         <td>{data.Responsible}</td>
-                                        <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }}>{data.history}</td>
+                                        <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }} onClick={() => setModalShow4(true)}>{data.history}</td>
                                     </tr>
                                 ))}
                             </tbody>

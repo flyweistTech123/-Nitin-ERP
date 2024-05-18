@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import HOC from '../../Components/HOC/HOC'
 import TopPart from '../Toppart/TopPart';
 import {
-    FilterModal,
+    TaskFilterModal,
     MYDEALSModal,
     AddFieldModal,
     AdmissionFollowUp,
@@ -136,7 +136,7 @@ const Task = () => {
 
     return (
         <>
-            <FilterModal
+            <TaskFilterModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}

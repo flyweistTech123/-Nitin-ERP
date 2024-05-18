@@ -112,6 +112,7 @@ import Education_Details from './Pages/EditProfile/Education_Details';
 import Automatic2FeeStructure from './Pages/EditProfile/Automatic2Fee _Structure';
 import CreateTask from './Pages/Task/CreateTask';
 import CreateEvent from './Pages/Calender/CreateEvent';
+import GeneralAdminMode from './Pages/General/GeneralAdminMode';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -230,6 +231,7 @@ function App() {
           <Route path="/automatic2feestructure" element={<Automatic2FeeStructure />} />
           <Route path="/createtask" element={<CreateTask />} />
           <Route path="/createevent" element={<CreateEvent />} />
+          <Route path="/generalAdminMode" element={<GeneralAdminMode />} />
         </Routes>
       </BrowserRouter>
     </>

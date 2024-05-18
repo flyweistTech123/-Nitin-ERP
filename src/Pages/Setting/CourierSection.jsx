@@ -8,6 +8,12 @@ import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 
 
+import {
+    CourierFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
 
 const CourierSection = () => {
     const [state1, setState1] = useState(null);
@@ -568,6 +574,18 @@ const CourierSection = () => {
     }
 
 
+
+    // Filter Modal 
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+    // add field Modal
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+
     return (
         <>
             <SendCourier
@@ -594,6 +612,22 @@ const CourierSection = () => {
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
             />
+            <CourierFilterModal
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+                setModalShow1={setModalShow7}
+                setModalShow2={setModalShow8}
+            />
+            <MYDEALSModal
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+                setModalShow={setModalShow6}
+                setModalShow2={setModalShow8}
+            />
+            <AddFieldModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Courier Section</p>
@@ -612,7 +646,7 @@ const CourierSection = () => {
                 </div>
 
 
-                <div className='admission8'>
+                <div className='admission8' onClick={() => setModalShow6(true)}>
                     <div>
                         <p>Filter</p>
                     </div>

@@ -39,6 +39,7 @@ const Login = () => {
                                 <input type="checkbox" id="newsletter-checkbox" />
                                 <label htmlFor="newsletter-checkbox">Subscribe to weekly newsletter</label>
                             </div>
+                        
                             <div className='register8'>
                                 <button  onClick={()=>navigate('/dashboard')}>SIGN IN</button>
                             </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './General.css'
 import HOC from '../../Components/HOC/HOC'
 import TopPart from '../Toppart/TopPart';
-import { Tellaboutyourself, PropertiesModal } from '../Modals/Modals'
+import { Tellaboutyourself } from '../Modals/Modals'
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
@@ -15,15 +15,16 @@ import { FaFacebook } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
 import { RiWhatsappFill } from "react-icons/ri";
-
+import { IoIosInformationCircle } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
+
 
 
 import img from '../../Img/img105.png'
 import img1 from '../../Img/img106.png'
 
-const General = () => {
-    const naviagte = useNavigate()
+const GeneralAdminMode = () => {
+    const naviagte  = useNavigate()
     const [show, setshow] = useState(false)
     // const showhandle =()=>{
     //     setshow((prevShow) => !prevShow);
@@ -32,40 +33,14 @@ const General = () => {
 
     // tell about yourself Modal 
     const [modalShow, setModalShow] = React.useState(false);
-    const [modalShow2, setModalShow2] = React.useState(false);
 
 
     const popover1 = (
         <Popover id="popover-basic">
             <Popover.Body>
                 <div className='popoveradd'>
-                    <div className='popoveradd2' onClick={() => naviagte('/generalAdminMode')}>
-                        <p>Admin Mode</p>
-                    </div>
-                </div>
-            </Popover.Body>
-        </Popover>
-    );
-
-    const popover = (
-        <Popover id="popover-basic">
-            <Popover.Body>
-                <div className="toppart7">
-                    <div className="toppart8" onClick={() => setModalShow2(true)}>
-                        <h6>String</h6>
-                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div className="toppart8">
-                        <h6>Date</h6>
-                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div className="toppart8">
-                        <h6>List</h6>
-                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                    <div className="toppart8">
-                        <h6>Yes/ No</h6>
-                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div className='popoveradd2' onClick={()=>naviagte('/general')}>
+                        <p>Exit Admin Mode</p>
                     </div>
                 </div>
             </Popover.Body>
@@ -78,13 +53,19 @@ const General = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <PropertiesModal
-                show={modalShow2}
-                onHide={() => setModalShow2(false)}
-            />
             <div className='general'>
                 <div className='general1'>
                     <TopPart />
+                </div>
+
+                <div className='general33'>
+                    <div className='general34'>
+                        <IoIosInformationCircle color='rgb(17, 186, 253)' size={25}/>
+                        <p>You are currently in social network administrator mode & can view & edit Restricted data.</p>
+                    </div>
+                    <div className='general35'>
+                        <button>Exit Administrator Mode</button>
+                    </div>
                 </div>
 
                 <div className='general2'>
@@ -243,11 +224,8 @@ const General = () => {
                         </div>
 
                         <div className='general30'>
-                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
-                                <p>Create a field</p>
-                            </OverlayTrigger>
+                            <p>Create a field</p>
                         </div>
-
                         <div className='general13'>
                             <div className='general14'>
                                 <h6># Interesting</h6>
@@ -296,4 +274,4 @@ const General = () => {
     )
 }
 
-export default HOC(General)
+export default HOC(GeneralAdminMode)

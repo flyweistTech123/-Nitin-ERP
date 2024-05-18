@@ -14,6 +14,16 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 
+
+import {
+    DocumentFilterModal11   ,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
+
+
+
 const PendingdocumentList = () => {
     const tableData = [
         {
@@ -83,11 +93,44 @@ const PendingdocumentList = () => {
     }
 
 
+    // Filter Modal 
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    // History Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
     return (
         <>
             <AddDocument
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+            />
+            <DocumentFilterModal11
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow12}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -103,8 +146,8 @@ const PendingdocumentList = () => {
                 </div>
 
 
-                <div className='itreport2'>
-                    <div className='itreport3'>
+                <div className='itreport2' onClick={() => setModalShow11(true)}>
+                    <div className='itreport3' >
                         <p>Filter</p>
                     </div>
                     <div className='admission9'>

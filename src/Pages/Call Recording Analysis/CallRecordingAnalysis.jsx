@@ -3,11 +3,14 @@ import './CallRecordingAnalysis.css'
 import { useNavigate, Link } from 'react-router-dom';
 
 import {
-    FilterModal,
+    CallRecordingAnalysisFilterModal,
     MYDEALSModal,
     AddFieldModal,
     Remarks,
     History,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
 } from '../Modals/Modals.jsx'
 
 import HOC from '../../Components/HOC/HOC'
@@ -94,9 +97,24 @@ const CallRecordingAnalysis = () => {
     //history modal
     const [modalShow4, setModalShow4] = React.useState(false);
 
+
+    // History Modal
+
+    const [modalShow44, setModalShow44] = React.useState(false);
+
+
+    // FilterModalhistory Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // AddNewEvent Modal
+
+    const [modalShow6, setModalShow6] = React.useState(false);
+
     return (
         <>
-            <FilterModal
+            <CallRecordingAnalysisFilterModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
@@ -119,6 +137,20 @@ const CallRecordingAnalysis = () => {
             <History
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
+            />
+            <History1
+                show={modalShow44}
+                onHide={() => setModalShow44(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
+            />
+            <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -173,7 +205,7 @@ const CallRecordingAnalysis = () => {
                                         <td>{data.RatedOn}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button onClick={() => setModalShow4(true)}>History</button>
+                                                <button onClick={() => setModalShow44(true)}>History</button>
                                             </div>
                                         </td>
                                     </tr>

@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 import {
-    FilterModal,
+    EmployeesFilterModal,
     MYDEALSModal,
     AddFieldModal,
 } from '../Modals/Modals.jsx'
@@ -228,7 +228,7 @@ const Employees = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <FilterModal
+            <EmployeesFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}

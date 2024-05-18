@@ -4,7 +4,7 @@ import HOC from '../../Components/HOC/HOC'
 import { useNavigate, Link } from 'react-router-dom';
 
 import {
-    FilterModal,
+    ITTargetReportsFilterModal,
     MYDEALSModal,
     AddFieldModal,
 } from '../Modals/Modals.jsx'
@@ -118,7 +118,7 @@ const DailyReportTemplate = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <FilterModal
+            <ITTargetReportsFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}
@@ -140,7 +140,7 @@ const DailyReportTemplate = () => {
                 </div>
 
                 <div className='targetanalysis2'>
-                    <div className='targetanalysis1' onClick={() => setModalShow(true)}>
+                    <div className='targetanalysis1' onClick={() => setModalShow11(true)}>
                         <p>Filters</p>
                     </div>
 

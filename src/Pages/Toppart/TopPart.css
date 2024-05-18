@@ -79,3 +79,42 @@
     margin: 0;
     text-decoration: underline;
 }
+
+
+
+
+
+
+
+.toppart7{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  cursor: pointer;
+}
+
+
+.toppart8{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.toppart8 h6{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+.toppart8 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #000000;
+  margin: 0;
+}
+

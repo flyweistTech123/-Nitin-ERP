@@ -13,6 +13,13 @@ import { MdHistory } from "react-icons/md";
 import img from '../../Img/img33.png'
 
 
+import {
+    BankAccountFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
+
 const BankAccount = () => {
     const tableData = [
         {
@@ -199,6 +206,21 @@ const BankAccount = () => {
 
 
 
+    // Filter Modal 
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
+
+    // History Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
     return (
         <>
             <AddBank
@@ -209,6 +231,26 @@ const BankAccount = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+            <BankAccountFilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow12}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Bank</p>
@@ -218,8 +260,8 @@ const BankAccount = () => {
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
-                        <div className='admission10'>
+                    <div className='admission9' onClick={() => setModalShow11(true)}>
+                        <div className='admission10' >
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
                         </div>
@@ -244,7 +286,7 @@ const BankAccount = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20} />      {data.BankName}</td>
+                                        <td><MdHistory color='#000000' size={20} onClick={() => setModalShow3(true)} />      {data.BankName}</td>
                                         <td>{data.AccountNumber}</td>
                                         <td>{data.IFSCCode}</td>
                                         <td>{data.Branch}</td>

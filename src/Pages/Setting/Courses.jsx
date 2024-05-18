@@ -14,7 +14,12 @@ import { RiCheckboxBlankCircleFill } from "react-icons/ri";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { AiFillMinusCircle } from "react-icons/ai";
 
-
+import {
+    CourseFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
 
 
 const Courses = () => {
@@ -266,6 +271,21 @@ const Courses = () => {
     }
 
 
+    // Filter Modal 
+
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+    // add field Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+    // History Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
     return (
         <>
             <AddCourses
@@ -276,12 +296,32 @@ const Courses = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+            <CourseFilterModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+                setModalShow1={setModalShow3}
+                setModalShow2={setModalShow4}
+            />
+            <MYDEALSModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+                setModalShow={setModalShow2}
+                setModalShow2={setModalShow4}
+            />
+            <AddFieldModal
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
+            <History
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Courses</p>
                 </div>
 
-                <div className='admission8'>
+                <div className='admission8' onClick={() => setModalShow2(true)}>
                     <div>
                         <p>Filter</p>
                     </div>
@@ -312,7 +352,7 @@ const Courses = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20} />      {data.University}</td>
+                                        <td><MdHistory color='#000000' size={20}  onClick={() => setModalShow5(true)}/>      {data.University}</td>
                                         <td>{data.Course}</td>
                                         <td>{data.Specialization}</td>
                                         <td>{data.exammode}</td>

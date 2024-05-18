@@ -69,43 +69,6 @@ const WorkReport = () => {
         
     };
 
-    // function SampleNextArrow(props) {
-    //     const { className, onClick } = props;
-    //     return (
-    //         <div
-    //             className={className}
-    //             onClick={onClick}
-    //             style={{
-    //                 position: 'absolute',
-    //                 top: '20%',
-    //                 right: '20px',
-    //                 transform: 'translateY(-50%)',
-    //                 zIndex: '1',
-    //             }}
-    //         >
-    //             <IoIosArrowForward color="#001848" size={30} />
-    //         </div>
-    //     );
-    // }
-
-    // function SamplePrevArrow(props) {
-    //     const { className, onClick } = props;
-    //     return (
-    //         <div
-    //             className={className}
-    //             onClick={onClick}
-    //             style={{
-    //                 position: 'absolute',
-    //                 top: '20%',
-    //                 left: '-30px',
-    //                 transform: 'translateY(-50%)',
-    //                 zIndex: '1',
-    //             }}
-    //         >
-    //             <IoIosArrowBack color="#001848" size={30} />
-    //         </div>
-    //     );
-    // }
 
 
 

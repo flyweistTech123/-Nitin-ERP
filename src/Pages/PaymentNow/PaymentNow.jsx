@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
 import './PaymentNow.css'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,7 +9,7 @@ import img3 from '../../Img/img103.png'
 import img4 from '../../Img/img104.png'
 
 const PaymentNow = () => {
-    const navigate  = useNavigate()
+    const navigate = useNavigate()
     return (
         <>
             <div className='paymentnow1'>
@@ -29,7 +29,7 @@ const PaymentNow = () => {
                             </div>
 
                             <div className='paymentnow8'>
-                                <button onClick={()=>navigate('/paymentdetails')}>SUBMIT</button>
+                                <button onClick={() => navigate('/paymentdetails')}>SUBMIT</button>
                             </div>
 
                             <div className='paymentnow9'>
@@ -40,43 +40,37 @@ const PaymentNow = () => {
                                 <h6>Contact Us</h6>
                                 <div className='paymentnow14'>
                                     <div className='paymentnow11'>
-                                        <div className='paymentnow12'>
-                                            <img src={img2} alt="" />
-                                            <p>Mobile Number</p>
+                                        <div className='paymentnow15'>
+                                            <div className='paymentnow12'>
+                                                <img src={img2} alt="" />
+                                                <p>Mobile Number</p>
+                                            </div>
+                                            <div className='paymentnow12'>
+                                                <img src={img1} alt="" />
+                                                <p>Email</p>
+                                            </div>
+                                            <div className='paymentnow12'>
+                                                <img src={img4} alt="" />
+                                                <p>Website</p>
+                                            </div>
+                                            <div className='paymentnow12'>
+                                                <img src={img3} alt="" />
+                                                <p>Address</p>
+                                            </div>
                                         </div>
-
-                                        <div className='paymentnow13'>
-                                            <p>+91-1234567890</p>
-                                        </div>
-                                    </div>
-                                    <div className='paymentnow11'>
-                                        <div className='paymentnow12'>
-                                            <img src={img1} alt="" />
-                                            <p>Email</p>
-                                        </div>
-
-                                        <div className='paymentnow13'>
-                                            <p>loremipsum@gmail.com</p>
-                                        </div>
-                                    </div>
-                                    <div className='paymentnow11'>
-                                        <div className='paymentnow12'>
-                                            <img src={img4} alt="" />
-                                            <p>Website</p>
-                                        </div>
-
-                                        <div className='paymentnow13'>
-                                            <p>www.loremipsum.com</p>
-                                        </div>
-                                    </div>
-                                    <div className='paymentnow11'>
-                                        <div className='paymentnow12'>
-                                            <img src={img3} alt="" />
-                                            <p>Address</p>
-                                        </div>
-
-                                        <div className='paymentnow13'>
-                                            <p>XYZ Street, Lorem Ipsum City</p>
+                                        <div className='paymentnow15'>
+                                            <div className='paymentnow13'>
+                                                <p>+91-1234567890</p>
+                                            </div>
+                                            <div className='paymentnow13'>
+                                                <p>loremipsum@gmail.com</p>
+                                            </div>
+                                            <div className='paymentnow13'>
+                                                <p>www.loremipsum.com</p>
+                                            </div>
+                                            <div className='paymentnow13'>
+                                                <p>XYZ Street, Lorem Ipsum City</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

@@ -271,7 +271,7 @@ const PaymentReceived = () => {
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
-                setModalShow3={setModalShow3}
+                setModalShow3={setModalShow5}
                 handleShow1={handleShow1}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}

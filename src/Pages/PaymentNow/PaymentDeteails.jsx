@@ -65,7 +65,7 @@ const PaymentDeteails = () => {
                                     <input type="text" />
                                 </div>
                                 <div className='paymentdetails7'>
-                                    <label htmlFor="">Payment Received</label>
+                                    <label htmlFor="">Course</label>
                                     <input type="text" />
                                 </div>
                             </div>

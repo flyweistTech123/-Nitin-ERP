@@ -6,7 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 
 
 import {
-    FilterModal,
+    ITTargetReportsFilterModal,
     MYDEALSModal,
     AddFieldModal,
 } from '../Modals/Modals.jsx'
@@ -123,7 +123,7 @@ const ITTargetReport = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <FilterModal
+            <ITTargetReportsFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}

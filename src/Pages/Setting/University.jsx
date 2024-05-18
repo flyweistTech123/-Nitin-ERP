@@ -16,7 +16,7 @@ import { CgAsterisk } from "react-icons/cg";
 
 
 import {
-    FilterModal,
+    UniversityFilterModal,
     MYDEALSModal,
     AddFieldModal,
     History,
@@ -188,8 +188,9 @@ const University = () => {
 
     // AddUniversity  Modal 
     const [modalShow1, setModalShow1] = React.useState(false);
-    // History Modal
 
+    
+    // History Modal
     const [modalShow3, setModalShow3] = React.useState(false);
 
 
@@ -281,7 +282,7 @@ const University = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
-            <FilterModal
+            <UniversityFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow12}

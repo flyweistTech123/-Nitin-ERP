@@ -58,7 +58,7 @@ import img5 from '../../Img/img64.png'
 import img7 from '../../Img/img71.png'
 import img8 from '../../Img/img72.png'
 import img9 from '../../Img/img108.png'
-
+import img19 from '../../Img/img83.png'
 
 
 
@@ -1536,11 +1536,2058 @@ export function DocumentFilterModal(props) {
 
 
 
+//IT Report Filter Modal for admission page
+export function ITReportFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter223'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Recoderd Date</label>
+                                <input type="date" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Website</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Content Added</label>
+                                <input type="text" />
+                            </div>
+
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">Content Word Count</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">URL</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Topic</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Keywords</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//IT Report Filter Modal for admission page
+export function ITTargetReportsFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+
+    const options1 = [
+        { label: "www.sdfdfdsfwdf.com", value: "Unoversity" },
+        { label: "www.sdfdfdsfwdf.com", value: "Unoversity" },
+        { label: "www.sdfdfdsfwdf.com", value: "Unoversity", },
+    ];
+
+    const options2 = [
+        { label: "0-500 words", value: "Unoversity" },
+        { label: "500-1000 word", value: "Unoversity" },
+        { label: "1000-1500 words", value: "Unoversity", },
+        { label: "1500-2000 words", value: "Unoversity" },
+        { label: "More than 2000 words", value: "Unoversity" },
+    ];
+
+    const options3 = [
+        { label: "Loren epsom", value: "Unoversity" },
+        { label: "Loren epsom", value: "Unoversity" },
+        { label: "Loren epsom", value: "Unoversity" },
+        { label: "Loren epsom", value: "Unoversity" },
+        { label: "Loren epsom", value: "Unoversity" },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter223'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY FILTERS</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Recorded Date</label>
+                                <input type="date" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Website</label>
+                                <MultiSelect
+                                    options={options1}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Content Added</label>
+                                <MultiSelect
+                                    options={options2}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">URL</label>
+                                <MultiSelect
+                                    options={options1}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Topic</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Keywords</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">History</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//CallRecordingAnalysisFilterModal  for admission page
+export function CallRecordingAnalysisFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const starCount = 5; // number of stars you want
+    const stars = Array(starCount).fill(<MdStar size={20} color='#E2A03F' />);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+
+    const options1 = [
+        { label: "1.Bad", value: "Unoversity" },
+        { label: "2.Good", value: "Unoversity" },
+        { label: "3.Great", value: "Unoversity", },
+        { label: "4.Best", value: "Unoversity", },
+        { label: "5.Other", value: "Unoversity", },
+    ];
+
+    const options2 = [
+        { label: <div>{stars}</div>, value: "Unoversity" },
+        { label: <div>{stars}</div>, value: "Unoversity" },
+        { label: <div>{stars}</div>, value: "Unoversity", },
+        { label: <div>{stars}</div>, value: "Unoversity" },
+        { label: <div>{stars}</div>, value: "Unoversity" },
+    ];
+
+
+    // 
+    // <MdStar size={20} color='#E2A03F' />
+    // <IoMdStarOutline size={20} color='#E2A03F' />
+    // <IoMdStarOutline size={20} color='#E2A03F' />
+
+    const options3 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter223'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY FILTERS</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Added On</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='callrecordinganalysisfiltermodal'>
+                                <div className='filter12'>
+                                    <label htmlFor="">Remark</label>
+                                    <MultiSelect
+                                        options={options1}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Remark Rating</label>
+                                    <MultiSelect
+                                        options={options2}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Overall Rating</label>
+                                <MultiSelect
+                                    options={options2}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Rated On</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Rated By User</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//University Filter Modal for admission page
+export function UniversityFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter223'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">University</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">Registration</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">TOC Charges</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">LE Charges</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">Multiple Charges</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">RR Charges</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">Gap Charges</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='Itreportfiltermodal'>
+                                <label htmlFor="">Back Paper Charges</label>
+                                <div className='Itreportfiltermodal1'>
+                                    <select name="" id="">
+                                        <option value="">Exact Value</option>
+                                        <option value="">Range</option>
+                                        <option value="">More than</option>
+                                        <option value="">Less than</option>
+                                    </select>
+                                    <input type="text" />
+                                </div>
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+export function CourseFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity", },
+    ];
+    const options1 = [
+        { label: "B.tech", value: "Unoversity" },
+        { label: "MBA", value: "Unoversity" },
+        { label: "Bsc", value: "Unoversity", },
+        { label: "Msc", value: "Unoversity" },
+        { label: "BA", value: "Unoversity" },
+        { label: "MA", value: "Unoversity", },
+        { label: "Bcom", value: "Unoversity" },
+        { label: "Mcom", value: "Unoversity" },
+        { label: "CA", value: "Unoversity", },
+        { label: "BCA", value: "Unoversity", },
+        { label: "BBA", value: "Unoversity", },
+        { label: "MBBS", value: "Unoversity", },
+        { label: "BHMS", value: "Unoversity", },
+        { label: "BAMS", value: "Unoversity", },
+        { label: "BDS", value: "Unoversity", },
+    ];
+    const options2 = [
+        { label: "Loren Epsom", value: "Unoversity" },
+        { label: "Loren Epsom ", value: "Unoversity" },
+        { label: "Loren Epsom", value: "Unoversity", },
+    ];
+    const options3 = [
+        { label: "Semester", value: "Unoversity" },
+        { label: "yearly", value: "Unoversity" },
+    ];
+    const options4 = [
+        { label: "1", value: "Unoversity" },
+        { label: "2", value: "Unoversity" },
+        { label: "3", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter222'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">University</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Course</label>
+                                <MultiSelect
+                                    options={options1}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Specialization</label>
+                                <MultiSelect
+                                    options={options2}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Exam Mode</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Course Duration</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+export function SpecializationFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom", value: "Unoversity" },
+        { label: "Loren Epsom ", value: "Unoversity" },
+        { label: "Loren Epsom", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter224'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Specialization Name </label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Description</label>
+                                <input type="text" />
+                            </div>
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function SubjectFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom", value: "Unoversity" },
+        { label: "Loren Epsom ", value: "Unoversity" },
+        { label: "Loren Epsom", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter224'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Subject Name</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Books / Description</label>
+                                <input type="text" />
+                            </div>
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function BankAccountFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom", value: "Unoversity" },
+        { label: "Loren Epsom ", value: "Unoversity" },
+        { label: "Loren Epsom", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter224'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Bank Name / Account No. /  IFSC Code / Bank Branch</label>
+                                <input type="text" />
+                            </div>
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+export function DocumentFilterModal11(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom", value: "Unoversity" },
+        { label: "Loren Epsom ", value: "Unoversity" },
+        { label: "Loren Epsom", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter224'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Document Name</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//Filter Modal for admission page
+export function CourierFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+    const options1 = [
+        { label: "General", value: "General" },
+        { label: "OBC", value: "OBC" },
+        { label: "SC", value: "SC", },
+        { label: "ST", value: "ST", },
+    ];
+    const options2 = [
+        { label: "India", value: "India" },
+        { label: "UAE", value: "UAE" },
+        { label: "Ghana", value: "Ghana", },
+        { label: "Quatar", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter225'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter8'>
+                            <div className={step === 0 ? "filter9" : "filter10"} onClick={() => setStep(0)}>
+                                <p>Personal Details</p>
+                            </div>
+                            <div className={step === 1 ? "filter9" : "filter10"} onClick={() => setStep(1)}>
+                                <p>Payment Details</p>
+                            </div>
+                        </div>
+                        {step === 0 ? (
+                            <div className='filter11'>
+                                <div className='filter12'>
+                                    <label htmlFor="">Sender Name</label>
+                                    <MultiSelect
+                                        options={options}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Receiver Name</label>
+                                    <MultiSelect
+                                        options={options}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Mobile No.</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Courier Company Name</label>
+                                    <MultiSelect
+                                        options={options}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Docket No.</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Doc Type</label>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Description</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Mobile No.</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Email ID</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">City</label>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">State</label>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Country</label>
+                                    <MultiSelect
+                                        options={options2}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Pin-Code</label>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Modified On</label>
+                                    <input type="date" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Status</label>
+                                    <MultiSelect
+                                        options={options13}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Address</label>
+                                    <input type="text" />
+                                </div>
+
+
+                                <div className='filter20'>
+                                    <button onClick={() => props.onHide()}>SAVE</button>
+                                    <button onClick={() => props.onHide()}>RESET</button>
+                                </div>
+
+
+                            </div>
+                        ) : step === 1 ? (
+                            <div className='filter11'>
+                                <div className='filter12'>
+                                    <label htmlFor="">Responsible Person</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Confirmation</label>
+                                    <div className='filter21'>
+                                        <p>Not Specified</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Approved Date</label>
+                                    <div className='filter21'>
+                                        <p>Any Date</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Book Fees (Batch)</label>
+                                    <div className='filter21'>
+                                        <p>Batch 1</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Exact Value</label>
+                                    <div className='filter22'>
+                                        <select name="" id="">
+                                            <option value="">Exact Value</option>
+                                        </select>
+                                        <input type="text" />
+                                        <IoIosMore color='#444444' size={25} />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Course Fees (Batch)</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Exam Fees</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Paid Fees</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Assignement Fees</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">GST (Batch)</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Other</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">TOC</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Reg</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">LE</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">GAP</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">RR</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Back Paper</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Multiple</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Type of fees strucure</label>
+                                    <div className='filter21'>
+                                        <p>Manual</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Profile Complete</label>
+                                    <div className='filter21'>
+                                        <p>10%</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Created On</label>
+                                    <div className='filter23'>
+                                        <select name="" id="">
+                                            <option value="">Any Date</option>
+                                        </select>
+                                        <IoIosMore color='#444444' size={25} />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Last Modified On</label>
+                                    <div className='filter23'>
+                                        <select name="" id="">
+                                            <option value="">Any Date</option>
+                                        </select>
+                                        <IoIosMore color='#444444' size={25} />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Last Modified By</label>
+                                    <div className='filter21'>
+                                        <p>Loren Epsom</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Course</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Type</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Gender</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Admission Status</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Specilization</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+
+                                <div className='filter19'>
+                                    <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                    <span>Restore default fields</span>
+                                </div>
+
+                                <div className='filter20'>
+                                    <button onClick={() => props.onHide()}>SAVE</button>
+                                    <button onClick={() => props.onHide()}>RESET</button>
+                                </div>
+
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+export function ReferenceFormDataFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const starCount = 5; // number of stars you want
+    const stars = Array(starCount).fill(<MdStar size={20} color='#E2A03F' />);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+
+    const options3 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+
+    const options22 = [
+        { label: "India", value: "India" },
+        { label: "UAE", value: "UAE" },
+        { label: "Ghana", value: "Ghana", },
+        { label: "Quatar", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+
+
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+
+    const options11 = [
+        { label: "B.tech", value: "Unoversity" },
+        { label: "MBA", value: "Unoversity" },
+        { label: "Bsc", value: "Unoversity", },
+        { label: "Msc", value: "Unoversity" },
+        { label: "BA", value: "Unoversity" },
+        { label: "MA", value: "Unoversity", },
+        { label: "Bcom", value: "Unoversity" },
+        { label: "Mcom", value: "Unoversity" },
+        { label: "CA", value: "Unoversity", },
+        { label: "BCA", value: "Unoversity", },
+        { label: "BBA", value: "Unoversity", },
+        { label: "MBBS", value: "Unoversity", },
+        { label: "BHMS", value: "Unoversity", },
+        { label: "BAMS", value: "Unoversity", },
+        { label: "BDS", value: "Unoversity", },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter223'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY FILTERS</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">ID / Candidate Name / Mobile No. / Email ID</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Country</label>
+                                <MultiSelect
+                                    options={options22}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">State</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">City</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Course</label>
+                                <MultiSelect
+                                    options={options11}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Status</label>
+                                <MultiSelect
+                                    options={options13}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+export function ExpenseFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+
+    const options3 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+
+    const options22 = [
+        { label: "India", value: "India" },
+        { label: "UAE", value: "UAE" },
+        { label: "Ghana", value: "Ghana", },
+        { label: "Quatar", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+
+
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+
+    const options11 = [
+        { label: "B.tech", value: "Unoversity" },
+        { label: "MBA", value: "Unoversity" },
+        { label: "Bsc", value: "Unoversity", },
+        { label: "Msc", value: "Unoversity" },
+        { label: "BA", value: "Unoversity" },
+        { label: "MA", value: "Unoversity", },
+        { label: "Bcom", value: "Unoversity" },
+        { label: "Mcom", value: "Unoversity" },
+        { label: "CA", value: "Unoversity", },
+        { label: "BCA", value: "Unoversity", },
+        { label: "BBA", value: "Unoversity", },
+        { label: "MBBS", value: "Unoversity", },
+        { label: "BHMS", value: "Unoversity", },
+        { label: "BAMS", value: "Unoversity", },
+        { label: "BDS", value: "Unoversity", },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter226'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY FILTERS</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Request date</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Title</label>
+                                <input type="date" name="" id="" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Approved By</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Final Approved By</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Final Approved On</label>
+                                <MultiSelect
+                                    options={options11}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Amount</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Final Status</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Request Approved On</label>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Request Approved By</label>
+                                <input type="text" name="" id="" />
+                            </div>
+
+
+                            <div className='paymentfiltermodal'>
+                                <label htmlFor="">Status</label>
+                                <div className='paymentfiltermodal1'>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Pending</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Approved</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Rejected</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className='filter19'>
+                                <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                <span>Restore default fields </span>
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function EmployeesFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom", value: "Unoversity" },
+        { label: "Loren Epsom ", value: "Unoversity" },
+        { label: "Loren Epsom", value: "Unoversity", },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter227'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Employee Name / Email / Work Phone</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Position</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Department</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function TaskFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+
+    const options4 = [
+        { label: "05887", value: "India" },
+        { label: "05887", value: "UAE" },
+        { label: "05887", value: "Ghana", },
+        { label: "05887", value: "Quatar", },
+        { label: "05887", value: "Yemen", },
+    ];
+
+
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+
+    const options11 = [
+        { label: "Loem", value: "UAE" },
+        { label: "Loem", value: "India" },
+        { label: "Loem", value: "India" },
+    ];
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter226'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY DEALS</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">ID</label>
+                                <MultiSelect
+                                    options={options4}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Name</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Created On</label>
+                                <input type="date" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Deadline</label>
+                                <input type="date" />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Created By</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Status</label>
+                                <MultiSelect
+                                    options={options13}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Title</label>
+                                <MultiSelect
+                                    options={options11}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Tags</label>
+                                <MultiSelect
+                                    options={options11}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+
 //Admission Follow Up Modal for admission page
-
-
-
-
 
 export function AdmissionFollowUp(props) {
     const [widthStyle, setWidthStyle] = useState('82%');
@@ -7184,3 +9231,86 @@ export function Paymentlink(props) {
         </Modal>
     );
 }
+
+
+
+
+
+
+
+
+
+
+//  Paymentlink  Modal for CRM page
+export function PropertiesModal(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='counsellorformmodalpadding'>
+                <div className='PropertiesModal1'>
+                    <div className='PropertiesModal2'>
+                        <p>Properties</p>
+                        <span>Edit</span>
+                    </div>
+                    <div className='PropertiesModal3'>
+                        <div className='PropertiesModal4'>
+                            <p>Section</p>
+                            <div className='PropertiesModal5'>
+                                <h6>+ADD</h6>
+                            </div>
+                        </div>
+
+
+                        <div className='PropertiesModal6'>
+                            <p>Field Name</p>
+                            <div className='PropertiesModal5'>
+                                <h6 style={{color:'#7E758F'}}>New Text</h6>
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal7'>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Required</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Multiple</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show them online</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show Always</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Make this filed visible to selected user’s only</p>
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal9'>
+                            <button >Save</button>
+                            <button>Cancel</button>
+                        </div>
+
+                        <div className='PropertiesModal10'>
+                            <p>Create a field</p>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+

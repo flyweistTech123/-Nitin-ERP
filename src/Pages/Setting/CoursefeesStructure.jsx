@@ -11,7 +11,12 @@ import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 
-
+import {
+    CourseFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    History,
+} from '../Modals/Modals.jsx'
 
 
 const CoursefeesStructure = () => {
@@ -147,11 +152,46 @@ const CoursefeesStructure = () => {
             </Modal>
         );
     }
+
+    // Filter Modal 
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // add field Modal
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
+    // History Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
     return (
         <>
             <CreateCourseFeesstructure
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+            />
+            <CourseFilterModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+                setModalShow1={setModalShow12}
+                setModalShow2={setModalShow2}
+            />
+            <MYDEALSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+                setModalShow={setModalShow11}
+                setModalShow2={setModalShow2}
+            />
+            <AddFieldModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+            />
+            <History
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -162,7 +202,7 @@ const CoursefeesStructure = () => {
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow11(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
@@ -189,7 +229,7 @@ const CoursefeesStructure = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory /> {data.University}</td>
+                                        <td><MdHistory  onClick={() => setModalShow3(true)}/> {data.University}</td>
                                         <td>{data.Course}</td>
                                         <td>{data.Specialization}</td>
                                         <td>{data.ExamMode}</td>

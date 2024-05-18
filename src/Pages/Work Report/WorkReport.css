@@ -83,6 +83,7 @@
 
 .workreport9{
     /* text-align: center; */
+    cursor: pointer;
 }
 
 .workreport9 h6{
@@ -93,6 +94,16 @@
     color: #000000;
     margin: 0;
 }
+
+
+.workreport9 h6:hover{
+    color: #40AF0C;
+}
+
+.workreport9 p:hover{
+    color: #40AF0C;
+}
+
 
 
 .workreport9 p{
