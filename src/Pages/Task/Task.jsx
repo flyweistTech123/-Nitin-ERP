@@ -7,7 +7,7 @@ import {
     TaskFilterModal,
     MYDEALSModal,
     AddFieldModal,
-    AdmissionFollowUp,
+    PendingTaskModal,
 } from '../Modals/Modals.jsx'
 
 import { IoSettings } from "react-icons/io5";
@@ -120,6 +120,9 @@ const Task = () => {
     // add field Modal
     const [modalShow2, setModalShow2] = React.useState(false);
 
+    // Task Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
 
     const getStatusColor = (status) => {
         switch (status) {
@@ -151,6 +154,10 @@ const Task = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <PendingTaskModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
             />
             <div className='admission'>
                 <div className='general1'>
@@ -214,7 +221,7 @@ const Task = () => {
                                                 </div>
                                             </td>
                                             <td>
-                                                <div className='task8' style={{ backgroundColor: getStatusColor(data.Status) }}>
+                                                <div className='task8' style={{ backgroundColor: getStatusColor(data.Status) }} onClick={() => setModalShow3(true)}>
                                                     {data.Status}
                                                 </div>
                                             </td>

@@ -245,7 +245,7 @@ const RefundCancel = () => {
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
             />
-            <FilterModal
+            <PaymentFilterModal
                 show={modalShow6}
                 onHide={() => setModalShow6(false)}
                 setModalShow1={setModalShow7}
@@ -260,10 +260,6 @@ const RefundCancel = () => {
             <AddFieldModal
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
-            />
-            <PaymentFilterModal
-                show={modalShow10}
-                onHide={() => setModalShow10(false)}
             />
             <AdmissionFollowUp
                 show={show}
@@ -339,7 +335,7 @@ const RefundCancel = () => {
 
 
 
-                <div className='cancel4' onClick={() => setModalShow10(true)}>
+                <div className='cancel4' onClick={() => setModalShow6(true)}>
                     <div className='cancel5' >
                         <button>Filter</button>
                     </div>

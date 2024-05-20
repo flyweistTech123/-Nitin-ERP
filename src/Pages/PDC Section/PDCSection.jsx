@@ -348,6 +348,7 @@ const PDCSection = () => {
             <CallRecordinglist
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
+                setModalShow1={setModalShow9}
             />
             <FilterModal
                 show={modalShow4}

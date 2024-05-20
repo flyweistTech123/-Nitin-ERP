@@ -6,9 +6,30 @@ import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { Counsellorform, Paymentlink } from '../Modals/Modals'
 import { useNavigate, Link } from 'react-router-dom';
+import { MdEdit } from "react-icons/md";
 
 import img from '../../Img/img33.png'
 
+// Modals 
+
+
+import {
+    CRMFilterModal,
+    MYDEALSModal,
+    AddFieldModal,
+    CRMNeWLead,
+    CRMNewTask,
+    History,
+    NeWLead,
+    SMS,
+    Email,
+    Whatsapp,
+    CRMAdmissionFollowUp,
+    CRMFieldModal,
+    History1,
+    FilterModalhistory,
+    AddNewEvent
+} from '../Modals/Modals.jsx'
 
 const CRM = () => {
     const navigate = useNavigate()
@@ -110,6 +131,82 @@ const CRM = () => {
     // Counsellorform Modal 
 
     const [modalShow1, setModalShow1] = React.useState(false);
+
+
+    // Filter Modal 
+
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+    // mydeals Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+    // add field Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+
+    // Admission Follow Up Modal
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    // New Lead Modal
+
+    const [show1, setShow1] = useState(false);
+
+    const handleClose1 = () => setShow1(false);
+    const handleShow1 = () => setShow1(true);
+
+    // History Modal
+
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // PaymentFieldModal
+    const [modalShow6, setModalShow6] = React.useState(false);
+
+
+
+    // NewTask Modal
+
+    const [show2, setShow2] = useState(false);
+
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
+
+
+    // SMS Modal
+    const [show3, setShow3] = useState(false);
+
+    const handleClose3 = () => setShow3(false);
+    const handleShow3 = () => setShow3(true);
+
+
+
+
+    // Email Modal
+    const [show4, setShow4] = useState(false);
+
+    const handleClose4 = () => setShow4(false);
+    const handleShow4 = () => setShow4(true);
+
+
+
+    // Whatsapp Modal
+    const [show5, setShow5] = useState(false);
+
+    const handleClose5 = () => setShow5(false);
+    const handleShow5 = () => setShow5(true);
+
+    // Whatsapp Modal
+    const [show6, setShow6] = useState(false);
+
+    const handleClose6 = () => setShow6(false);
+    const handleShow6 = () => setShow6(true);
+
     return (
         <>
             <Counsellorform
@@ -121,16 +218,90 @@ const CRM = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
+            <CRMFilterModal
+                show={modalShow2}
+                onHide={() => setModalShow2(false)}
+                setModalShow1={setModalShow3}
+                setModalShow2={setModalShow4}
+            />
+            <MYDEALSModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+                setModalShow={setModalShow2}
+                setModalShow2={setModalShow4}
+            />
+            <AddFieldModal
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
+            <CRMFieldModal
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+            />
+            <CRMNeWLead
+                show={show}
+                onHide={handleClose}
+                setModalShow3={setModalShow5}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+                handleShow6={handleShow6}
+                title={"Admission"}
+            />
+            <CRMAdmissionFollowUp
+                show={show6}
+                onHide={handleClose6}
+                setModalShow3={setModalShow5}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+                title={"Admission"}
+            />
+            <NeWLead
+                show={show1}
+                onHide={handleClose1}
+                setModalShow3={setModalShow5}
+                handleShow={handleShow}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
+            />
+            <History
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <CRMNewTask
+                show={show2}
+                onHide={handleClose2}
+            />
+            <SMS
+                show={show3}
+                onHide={handleClose3}
+                setModalShow3={setModalShow5}
+            />
+            <Email
+                show={show4}
+                onHide={handleClose4}
+            />
+            <Whatsapp
+                show={show5}
+                onHide={handleClose5}
+            />
             <div className='admission'>
                 <div className='crm'>
                     <p>Lorem</p>
                 </div>
 
-                <div className='admission8'>
+                <div className='admission8' >
                     <div>
                         <p>Leads</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow2(true)}>
                         <div className='admission10'>
                             <p>My leads</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
@@ -138,7 +309,7 @@ const CRM = () => {
                     </div>
 
                     <div className='crm1'>
-                        <button>CREATE</button>
+                        <button onClick={handleShow}>CREATE</button>
                     </div>
                 </div>
 
@@ -204,7 +375,7 @@ const CRM = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} /></th>
+                                    <th><IoSettings size={20}  onClick={() => setModalShow6(true)}/></th>
                                     <th>Student Name</th>
                                     <th>Email</th>
                                     <th>Contact</th>
@@ -221,7 +392,10 @@ const CRM = () => {
                                     <tr key={data.id}>
                                         <td><input type="checkbox" /></td>
                                         <td><img src={img} alt="" /></td>
-                                        <td>{data.name}</td>
+                                        <td>
+                                            <p className='admission202'><button onClick={handleShow}><MdEdit size={20} /> Edit</button></p>
+                                            {data.name}
+                                        </td>
                                         <td>{data.email}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.university}</td>

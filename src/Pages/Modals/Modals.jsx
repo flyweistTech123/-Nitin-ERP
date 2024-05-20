@@ -4,8 +4,10 @@ import Modal from 'react-bootstrap/Modal';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MultiSelect } from "react-multi-select-component";
+import { useNavigate } from 'react-router-dom';
 
-
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosMore } from "react-icons/io";
@@ -45,6 +47,7 @@ import { RiDoubleQuotesL } from "react-icons/ri";
 import { VscMention } from "react-icons/vsc";
 import { FaRegCopy } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { IoSearchSharp } from "react-icons/io5";
 
 
 
@@ -59,7 +62,8 @@ import img7 from '../../Img/img71.png'
 import img8 from '../../Img/img72.png'
 import img9 from '../../Img/img108.png'
 import img19 from '../../Img/img83.png'
-
+import img20 from '../../Img/img82.png'
+import { GiOverhead } from 'react-icons/gi';
 
 
 
@@ -2532,6 +2536,1815 @@ export function DocumentFilterModal11(props) {
 
 
 
+//CRMFilter Modal for admission page
+export function CRMFilterModal(props) {
+    const [step, setStep] = useState(0);
+
+    const options13 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+
+
+
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter228'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>LEADS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY LEADS</p>
+                        </div>
+                        <div className='filter5'>
+                            <p>CLOSED LEADS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Lead Name</label>
+                                <div className='filter22'>
+                                    <input type="text" />
+                                    <IoIosMore color='#444444' size={25} />
+                                </div>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Total</label>
+                                <div className='filter22'>
+                                    <select name="" id="">
+                                        <option value="">Any Date</option>
+                                        <option value="">Yesterday</option>
+                                        <option value="">Current Day</option>
+                                        <option value="">Tomorrow</option>
+                                        <option value="">This Week</option>
+                                        <option value="">This Month</option>
+                                        <option value="">Current Quarter</option>
+                                        <option value="">Last 7 days</option>
+                                    </select>
+                                    <input type="text" />
+                                    <IoIosMore color='#444444' size={25} />
+                                </div>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Created On</label>
+                                <div className='filter23'>
+                                    <select name="" id="">
+                                        <option value="">Any Date</option>
+                                        <option value="">Yesterday</option>
+                                        <option value="">Current Day</option>
+                                        <option value="">Tomorrow</option>
+                                        <option value="">This Week</option>
+                                        <option value="">This Month</option>
+                                        <option value="">Current Quarter</option>
+                                        <option value="">Last 7 days</option>
+                                    </select>
+                                    <IoIosMore color='#444444' size={25} />
+                                </div>
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Modified On</label>
+                                <div className='filter23'>
+                                    <select name="" id="">
+                                        <option value="">Any Date</option>
+                                        <option value="">Yesterday</option>
+                                        <option value="">Current Day</option>
+                                        <option value="">Tomorrow</option>
+                                        <option value="">This Week</option>
+                                        <option value="">This Month</option>
+                                        <option value="">Current Quarter</option>
+                                        <option value="">Last 7 days</option>
+                                    </select>
+                                    <IoIosMore color='#444444' size={25} />
+                                </div>
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Change Responsible Person</label>
+                                <div className='filter23'>
+                                    <select name="" id="">
+                                        <option value="">Any Date</option>
+                                        <option value="">Yesterday</option>
+                                        <option value="">Current Day</option>
+                                        <option value="">Tomorrow</option>
+                                        <option value="">This Week</option>
+                                        <option value="">This Month</option>
+                                        <option value="">Current Quarter</option>
+                                        <option value="">Last 7 days</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">Status</label>
+                                <MultiSelect
+                                    options={options13}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+
+                            <div className='filter19'>
+                                <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                <span>Restore default fields</span>
+                            </div>
+
+                            <div className='filter20'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// New Lead Modal for admission page
+export function CRMNeWLead(props) {
+    const [widthStyle, setWidthStyle] = useState('82%');
+    const [leftStyle, setLeftStyle] = useState('18.1%');
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            const newWidthStyle = screenWidth < 580 ? '100%' : '82%'; // Adjust breakpoint as needed
+            const newLeftStyle = screenWidth < 980 ? '100%' : '18.1%'; // Adjust breakpoint as needed
+
+            setWidthStyle(newWidthStyle);
+            setLeftStyle(newLeftStyle);
+        };
+
+        // Call handleResize on initial mount
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    return (
+        <>
+            <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle, height: "100%", left: leftStyle }}>
+                <Offcanvas.Body className='Admissionfollowup101'>
+                    <div className='Admissionfollowup'>
+                        <div className='Admissionfollowup1'>
+                            <div className='Admissionfollowup2'>
+                                <h6>New Lead</h6>
+                                <ImLink color='#000000' size={20} />
+                            </div>
+                            <div className='Admissionfollowup3' onClick={props.onHide}>
+                                <MdOutlineCancel color='#000000' size={25} />
+                            </div>
+                        </div>
+
+
+                        <div className='Admissionfollowup3'>
+                            <div className='Admissionfollowup4'>
+                                <div className='Admissionfollowup5'>
+                                    <p>General</p>
+                                </div>
+                                <div className='Admissionfollowup6'>
+                                    <p onClick={() => props.setModalShow3(true)}>History</p>
+                                </div>
+                            </div>
+
+                            <div className='Admissionfollowup7'>
+                                <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                            </div>
+                        </div>
+
+                        <div className='Admissionfollowup8'>
+                            <div className='newleadModal6'>
+                                <div className='newleadModal1'>
+                                    <div className='Admissionfollowup11'>
+                                        <h6>LEADS INFORMATION</h6>
+                                        <p onClick={props.onHide}>Cancel</p>
+                                    </div>
+
+                                    <div className='newleadModal2'>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Student Name</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Amount & Currency</label>
+                                            <div className='newleadModal4'>
+                                                <input type="text" />
+                                                <div className='newleadModal5'>
+                                                    <p>Indian Rupee</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Email</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Contact Number</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">University/ College</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Phone</label>
+                                            <input type="text" />
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className='newleadModal1'>
+                                    <div className='Admissionfollowup11'>
+                                        <h6>LEADS INFORMATION</h6>
+                                        <p onClick={props.onHide}>Cancel</p>
+                                    </div>
+                                    <div className='newleadModal2'>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Course</label>
+                                            <select name="" id="">
+                                                <option value="">Not Selected</option>
+                                            </select>
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">WhatsApp Status</label>
+                                            <select name="" id="">
+                                                <option value="">Not Selected</option>
+                                            </select>
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Email</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Which Form</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">City</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">State</label>
+                                            <input type="text" />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Country</label>
+                                            <input type="text" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='newleadModal1'>
+                                    <div className='Admissionfollowup11'>
+                                        <h6>MORE</h6>
+                                        <p onClick={props.onHide}>Cancel</p>
+                                    </div>
+                                    <div className='newleadModal2'>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Lead Source</label>
+                                            <input type="text" placeholder='Call' />
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Lead Source</label>
+                                            <div className='newleadModal7'>
+                                                <div className='newleadModal8'>
+                                                    <FaUserCircle color='#000000' size={25} />
+                                                    <p>Dhiraj Rajput</p>
+                                                </div>
+                                                <div className='newleadModal9'>
+                                                    <p>Change</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className='newleadModal10'>
+                                            <p>Observers</p>
+
+                                            <h6>+Add Participant</h6>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='newleadModal11'>
+                                    <button onClick={props.handleShow6}>Save</button>
+                                    <button onClick={props.handleShow6}>Cancel</button>
+                                </div>
+                            </div>
+
+
+
+                            <div className='Admissionfollowup15'>
+
+                                <div className='Admissionfollowup27'>
+                                    <div className='Admissionfollowup28'>
+                                    </div>
+
+                                    <div className='Admissionfollowup29'>
+                                        <div className='Admissionfollowup30'>
+                                            <BiSolidMessageRounded color='#FFFFFF' size={25} />
+                                        </div>
+                                        <div className='Admissionfollowup31'>
+                                            <FiMessageSquare color='#FFFFFF' size={25} />
+                                        </div>
+                                        <div className='Admissionfollowup43'>
+                                            <div className='Admissionfollowup44'>
+                                                <p>Things to do</p>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup32'>
+                                            <RiErrorWarningFill color='#FFFFFF' size={25} />
+                                        </div>
+                                        <div className='Admissionfollowup35'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup36'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup37'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup38'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup39'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup40'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+
+                                        <div className='Admissionfollowup41'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+
+                                        <div className='Admissionfollowup42'>
+                                            <IoMdInformation color='#000000' size={20} opacity={0.6} />
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div>
+                                    <div className='Admissionfollowup16'>
+                                        <div className='Admissionfollowup17'>
+                                            <div className='Admissionfollowup18'>
+                                                <p>Comment</p>
+                                            </div>
+                                            <div className='Admissionfollowup19' >
+                                                <p onClick={props.handleShow2}>Task</p>
+                                            </div>
+                                            <div className='Admissionfollowup19'>
+                                                <p onClick={props.handleShow3}>SMS</p>
+                                            </div>
+                                            <div className='Admissionfollowup19'>
+                                                <p onClick={props.handleShow4}>E-mail</p>
+                                            </div>
+                                            <div className='Admissionfollowup19'>
+                                                <p onClick={props.handleShow5}>What’sapp</p>
+                                            </div>
+                                        </div>
+                                        <input type="text" placeholder='Leave a Comment' />
+                                    </div>
+
+                                    <div className='Admissionfollowup20'>
+                                        <PiUserCircleFill color='#000000' size={20} />
+                                        <p>Invite to chat</p>
+                                    </div>
+
+                                    <div className='Admissionfollowup20'>
+                                        <AiFillPlusCircle color='#52FF00' size={20} />
+                                        <p>Add a new activity</p>
+                                    </div>
+
+
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup25'>
+                                        <p>PDC Created  <span>4:31 PM</span></p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+                                        <div className='Admissionfollowup26'>
+                                            <p>abc</p>
+                                            <p>Source: call</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Offcanvas.Body>
+            </Offcanvas>
+        </>
+    );
+}
+
+
+export function CRMAdmissionFollowUp(props) {
+    const [widthStyle, setWidthStyle] = useState('82%');
+
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            let newWidthStyle;
+
+            if (screenWidth < 580) {
+                newWidthStyle = '100%'; // Full width for screens less than 580px
+            } else if (screenWidth < 980) {
+                newWidthStyle = '100%';
+            } else {
+                newWidthStyle = '82%';
+            }
+
+            setWidthStyle(newWidthStyle);
+        };
+
+        // Call handleResize on initial mount
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    return (
+        <>
+            <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle }}>
+                <Offcanvas.Body className='Admissionfollowup101'>
+                    <div className='Admissionfollowup'>
+                        <div className='Admissionfollowup1'>
+                            <div className='Admissionfollowup2'>
+                                <h6>New Lead</h6>
+                                <ImLink color='#000000' size={20} />
+                            </div>
+                            <div className='Admissionfollowup3' onClick={props.onHide}>
+                                <MdOutlineCancel color='#000000' size={25} />
+                            </div>
+                        </div>
+
+
+                        <div className='Admissionfollowup3'>
+                            <div className='Admissionfollowup4'>
+                                <div className='Admissionfollowup5'>
+                                    <p>General</p>
+                                </div>
+                                <div className='Admissionfollowup6'>
+                                    <p onClick={() => props.setModalShow3(true)}>History</p>
+                                </div>
+                            </div>
+
+                            <div className='Admissionfollowup7'>
+                                <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                            </div>
+                        </div>
+
+                        <div className='Admissionfollowup8'>
+                            <div className='Admissionfollowup9'>
+                                <div className='Admissionfollowup10'>
+                                    <div className='Admissionfollowup11'>
+                                        <h6>LEADS INFORMATION</h6>
+                                        <p onClick={props.handleShow1}>Edit</p>
+                                    </div>
+
+                                    <div className='Admissionfollowup12'>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Student Name</label>
+                                            <p>Loren Epsom</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Amount & Currency</label>
+                                            <p>Rs. 5,000</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Email</label>
+                                            <p>LorenEpsom@gmail.com</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Responsible Person</label>
+                                            <p>Loren Epsom</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Contact Number</label>
+                                            <p>9999999999</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">University/ College</label>
+                                            <p>Loren Epsom</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Created Date</label>
+                                            <p>DD/MM/YYYY</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='Admissionfollowup15'>
+
+                                <div className='Admissionfollowup27'>
+                                    <div className='Admissionfollowup28'>
+                                    </div>
+
+                                    <div className='Admissionfollowup29'>
+                                        <div className='Admissionfollowup30'>
+                                            <BiSolidMessageRounded color='#FFFFFF' size={25} />
+                                        </div>
+                                        <div className='Admissionfollowup31'>
+                                            <FiMessageSquare color='#FFFFFF' size={25} />
+                                        </div>
+                                        <div className='Admissionfollowup43'>
+                                            <div className='Admissionfollowup44'>
+                                                <p>Things to do</p>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup32'>
+                                            <RiErrorWarningFill color='#FFFFFF' size={25} />
+                                        </div>
+                                        <div className='Admissionfollowup35'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup36'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup37'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup38'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup39'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+                                        <div className='Admissionfollowup40'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+
+                                        <div className='Admissionfollowup41'>
+                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                        </div>
+
+                                        <div className='Admissionfollowup42'>
+                                            <IoMdInformation color='#000000' size={20} opacity={0.6} />
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div>
+                                    <div className='Admissionfollowup16'>
+                                        <div className='Admissionfollowup17'>
+                                            <div className='Admissionfollowup18'>
+                                                <p>Comment</p>
+                                            </div>
+                                            <div className='Admissionfollowup19' >
+                                                <p onClick={props.handleShow2}>Task</p>
+                                            </div>
+                                            <div className='Admissionfollowup19'>
+                                                <p onClick={props.handleShow3}>SMS</p>
+                                            </div>
+                                            <div className='Admissionfollowup19'>
+                                                <p onClick={props.handleShow4}>E-mail</p>
+                                            </div>
+                                            <div className='Admissionfollowup19'>
+                                                <p onClick={props.handleShow5}>What’sapp</p>
+                                            </div>
+                                        </div>
+                                        <input type="text" placeholder='Leave a Comment' />
+                                    </div>
+
+                                    <div className='Admissionfollowup20'>
+                                        <PiUserCircleFill color='#000000' size={20} />
+                                        <p>Invite to chat</p>
+                                    </div>
+
+                                    <div className='Admissionfollowup20'>
+                                        <AiFillPlusCircle color='#52FF00' size={20} />
+                                        <p>Add a new activity</p>
+                                    </div>
+
+
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup21'>
+                                        <p>Status Changed  4:30 pm</p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+
+                                        <div className='Admissionfollowup23'>
+                                            <div className='Admissionfollowup24'>
+                                                <p>Process for Payment</p>
+                                            </div>
+                                            <IoIosArrowRoundForward color='#000000' size={25} />
+                                            <div className='Admissionfollowup24'>
+                                                <p>PDC in Progress</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='Admissionfollowup25'>
+                                        <p>PDC Created  <span>4:31 PM</span></p>
+                                        <div className='Admissionfollowup22'>
+                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                        </div>
+                                        <div className='Admissionfollowup26'>
+                                            <p>abc</p>
+                                            <p>Source: call</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Offcanvas.Body>
+            </Offcanvas>
+        </>
+    );
+}
+
+
+// NewTask Modal for admission page
+export function CRMNewTask(props) {
+    const [widthStyle, setWidthStyle] = useState('82%');
+
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            let newWidthStyle;
+
+            if (screenWidth < 580) {
+                newWidthStyle = '100%'; // Full width for screens less than 580px
+            } else if (screenWidth < 980) {
+                newWidthStyle = '100%';
+            } else {
+                newWidthStyle = '82%';
+            }
+
+            setWidthStyle(newWidthStyle);
+        };
+
+        // Call handleResize on initial mount
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+    return (
+        <>
+            <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle, }}>
+                <Offcanvas.Body className='historyModal101'>
+                    <div className='Admissionfollowup'>
+                        <div className='Admissionfollowup1'>
+                            <div className='Admissionfollowup2'>
+                                <h6>New Task</h6>
+                            </div>
+                            <div className='Admissionfollowup3' onClick={props.onHide}>
+                                <MdOutlineCancel color='#000000' size={25} />
+                            </div>
+                        </div>
+
+                        <div className='newtask'>
+                            <div className='newtask1'>
+                                <div className='newtask2'>
+                                    <h6>CRM:</h6>
+                                </div>
+                                <div className='newtask3'>
+                                    <textarea name="" id="" cols="130" rows="10"></textarea>
+                                </div>
+
+                                <div className='newtask4'>
+                                    <div className='newtask5'>
+                                        <MdOutlineAttachFile color='#444444' opacity={0.5} />
+                                        <p>File</p>
+                                    </div>
+                                    <div className='newtask5'>
+                                        <IoDocumentText color='#444444' opacity={0.5} />
+                                        <p>New Document</p>
+                                    </div>
+                                    <div className='newtask5'>
+                                        <MdAlternateEmail color='#444444' opacity={0.5} />
+                                        <p>Mention</p>
+                                    </div>
+                                    <div className='newtask5'>
+                                        <p>Checklist</p>
+                                    </div>
+                                    <div className='newtask5'>
+                                        <p>Add to checklist</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='newtask6'>
+                                <p>Responsible Person</p>
+                                <div className='newtask7'>
+                                    <div className='newtask8'>
+                                        <p>Dhiraj Rajput</p>
+                                        <IoMdClose />
+                                    </div>
+                                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                        <div className='newtask9'>
+                                            <p>+Add Members</p>
+                                        </div>
+                                    </OverlayTrigger>
+                                </div>
+                            </div>
+
+
+                            <div className='newtask10'>
+                                <div className='newtask11'>
+                                    <div className='newtask12'>
+                                        <label htmlFor="">Deadline</label>
+                                        <input type="date" className='newtask1296' />
+                                    </div>
+                                    <div className='newtask12'>
+                                        <label htmlFor="">Next Payment accepted Date</label>
+                                        <input type="date" />
+                                    </div>
+                                </div>
+                                <div className='newtask11'>
+                                    <div className='newtask12'>
+                                        <label htmlFor="">Next Amount</label>
+                                        <input type="date" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='newtask13'>
+                                <p>Task status summary</p>
+                                <input type="checkbox" />
+                                <p>Task status summary is required</p>
+                            </div>
+
+
+                            <div className='newtask14'>
+                                <div className='newtask15'>
+                                    <button>ADD TASK</button>
+                                    <button>Cancel</button>
+                                </div>
+
+                                <div className='newtask16'>
+                                    <input type="checkbox" />
+                                    <p>Save as template</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Offcanvas.Body>
+            </Offcanvas>
+        </>
+    );
+}
+
+
+//CRMFieldModal  in filter for admission page
+export function CRMFieldModal(props) {
+    const [step, setStep] = useState(0);
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding1">
+                <div className='addfield'>
+                    <div className='addfield4'>
+                        <div className='paymentfieldmodalmoal'>
+                            <h5>Fields</h5>
+                        </div>
+
+                        <div className='addfield5'>
+                            <FaSearch color='#444444' />
+                            <input type="search" />
+                        </div>
+                    </div>
+
+
+
+                    <div className='paymentfieldmodalmoal'>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Lead ID</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Student Name</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Email</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Contact no.</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Course Name</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Created Date</p>
+                            </div>
+
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Admission Form</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Counsellor Form</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Payment Link</p>
+                            </div>
+
+                        </div>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Status Information</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Update by</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Source URL</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>IP Address</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Upcoming follow up</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Next follow up</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Pending follow up</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Lead Priority</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Reported leads</p>
+                            </div>
+                        </div>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Modified on</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Modified By</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Position</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Street, House no</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Apartment</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>City</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Region/ Area</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>District</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>State</p>
+                            </div>
+                        </div>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Country</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Amount Currency</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className='addfield9'>
+                        <div className='addfield10'>
+                            <div className='addfield11'>
+                                <IoReloadSharp color='#444444' size={20} />
+                                <h6>Default</h6>
+                            </div>
+                        </div>
+
+                        <div className='addfield14'>
+                            <p>Select All</p>
+                            <p>Select none</p>
+                        </div>
+                    </div>
+
+                    <div className='crmfieldmodalmodal'>
+                        <button onClick={() => props.onHide()}>APPLY</button>
+                        <button >CANCEL</button>
+                    </div>
+
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+//payment Filter Modal for payment page
+export function PaymentFilterModalmodal(props) {
+    const [step, setStep] = useState(0);
+    const options = [
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity" },
+        { label: "Loren Epsom University", value: "Unoversity", },
+    ];
+    const options1 = [
+        { label: "General", value: "General" },
+        { label: "OBC", value: "OBC" },
+        { label: "SC", value: "SC", },
+        { label: "ST", value: "ST", },
+    ];
+    const options2 = [
+        { label: "India", value: "India" },
+        { label: "UAE", value: "UAE" },
+        { label: "Ghana", value: "Ghana", },
+        { label: "Quatar", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options3 = [
+        { label: "O+", value: "O+" },
+        { label: "O-", value: "O-" },
+        { label: "A", value: "A", },
+        { label: "B", value: "B", },
+        { label: "AB", value: "AB", },
+    ];
+    const options4 = [
+        { label: "Utter Pradesh", value: "India" },
+        { label: "Hariyana", value: "UAE" },
+        { label: "Maharashtra", value: "Ghana", },
+        { label: "Punjab", value: "Quatar", },
+        { label: "Madhya Pradesh", value: "Yemen", },
+    ];
+    const options5 = [
+        { label: "Loren Epsom", value: "India" },
+        { label: "Loren Epsom", value: "UAE" },
+        { label: "Loren Epsom", value: "Ghana", },
+        { label: "Loren Epsom", value: "Quatar", },
+        { label: "Yemen", value: "Yemen", },
+    ];
+    const options6 = [
+        { label: "Hindu", value: "India" },
+        { label: "Muslim", value: "UAE" },
+        { label: "Buddhist", value: "Ghana", },
+        { label: "Chrishtian", value: "Quatar", },
+        { label: "Others", value: "Yemen", },
+    ];
+    const options7 = [
+        { label: "Married", value: "India" },
+        { label: "Unmarried", value: "UAE" },
+        { label: "Divorced", value: "Ghana", }
+    ];
+
+    const options8 = [
+        { label: "Yes", value: "India" },
+        { label: "No", value: "UAE" },
+    ];
+    const options9 = [
+        { label: "Employed", value: "India" },
+        { label: "Unemployed", value: "UAE" },
+    ];
+    const options10 = [
+        { label: "Internal", value: "India" },
+        { label: "External", value: "UAE" },
+    ];
+    const options11 = [
+        { label: "B.tech", value: "Unoversity" },
+        { label: "MBA", value: "Unoversity" },
+        { label: "Bsc", value: "Unoversity", },
+        { label: "Msc", value: "Unoversity" },
+        { label: "BA", value: "Unoversity" },
+        { label: "MA", value: "Unoversity", },
+        { label: "Bcom", value: "Unoversity" },
+        { label: "Mcom", value: "Unoversity" },
+        { label: "CA", value: "Unoversity", },
+        { label: "BCA", value: "Unoversity", },
+        { label: "BBA", value: "Unoversity", },
+        { label: "MBBS", value: "Unoversity", },
+        { label: "BHMS", value: "Unoversity", },
+        { label: "BAMS", value: "Unoversity", },
+        { label: "BDS", value: "Unoversity", },
+    ];
+    const options12 = [
+        { label: "Reverified", value: "India" },
+        { label: "N/A", value: "UAE" },
+        { label: "Reverification Rejected", value: "India" },
+    ];
+    const options13 = [
+        { label: "SBI", value: "UAE" },
+        { label: "Axis Bank", value: "India" },
+        { label: "Yes Bank", value: "India" },
+        { label: "PNB Bank", value: "India" },
+        { label: "HDFC Bank", value: "India" },
+        { label: "UCO Bank", value: "India" },
+        { label: "Bank of Baroda", value: "India" },
+        { label: "Union Bank", value: "India" },
+        { label: "Bank of India", value: "India" },
+    ];
+    const options17 = [
+        { label: "Cash", value: "UAE" },
+        { label: "UPI", value: "India" },
+        { label: "Online", value: "India" },
+        { label: "NEFT", value: "India" },
+        { label: "Demand Draft", value: "India" },
+        { label: "Credit Card", value: "India" },
+        { label: "Debit Card", value: "India" },
+    ];
+    const options14 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+    const options15 = [
+        { label: "Exact  Value", value: "India" },
+        { label: "Range", value: "UAE" },
+        { label: "More than", value: "UAE" },
+        { label: "Less than", value: "UAE" },
+    ];
+    const options16 = [
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter2'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6'>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+
+                    <div className='filter7'>
+                        <div className='paymentfiltermodalmodal'>
+                            <p>Payment filters</p>
+                        </div>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Admission No.</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Admission Date</label>
+                                <MultiSelect
+                                    options={options14}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+
+                            <div className='filter12'>
+                                <label htmlFor="">University</label>
+                                <MultiSelect
+                                    options={options}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Course</label>
+                                <MultiSelect
+                                    options={options11}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Created On</label>
+                                <MultiSelect
+                                    options={options14}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Created By</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Modified On</label>
+                                <MultiSelect
+                                    options={options14}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Modified By</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Change Responsible Person</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Assigned to</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Payment ID</label>
+                                <MultiSelect
+                                    options={options7}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Payment Approved Date</label>
+                                <MultiSelect
+                                    options={options14}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Payment Type</label>
+                                <MultiSelect
+                                    options={options17}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Responsible Person</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Assign Backend manager</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Assign Service manager</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Credited Bank A/C</label>
+                                <MultiSelect
+                                    options={options13}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Amount</label>
+                                <MultiSelect
+                                    options={options15}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Fee Structure Type</label>
+                                <MultiSelect
+                                    options={options12}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Admission Confirm Status</label>
+                                <input type="text" />
+                            </div>
+
+                            <div className='filter14'>
+                                <h6>EXAM BATCH</h6>
+
+                                <div className='filter15'>
+                                    <div className='filter16'>
+                                        <label htmlFor="">Month</label>
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                            <option value="">January</option>
+                                            <option value="">February</option>
+                                            <option value="">March</option>
+                                            <option value="">April</option>
+                                            <option value="">May</option>
+                                            <option value="">June</option>
+                                            <option value="">July</option>
+                                            <option value="">August</option>
+                                            <option value="">September</option>
+                                            <option value="">October</option>
+                                            <option value="">November</option>
+                                            <option value="">December</option>
+                                        </select>
+                                    </div>
+                                    <div className='filter16'>
+                                        <label htmlFor="">Year</label>
+                                        <select name="" id="">
+                                            <option value=""></option>
+                                            <option value="">2023</option>
+                                            <option value="">2022</option>
+                                            <option value="">2021</option>
+                                            <option value="">2020</option>
+                                            <option value="">2019</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='paymentfiltermodal'>
+                                <label htmlFor="">Status</label>
+                                <div className='paymentfiltermodal1'>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Pending</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Approved</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Rejected</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className='filter19'>
+                                <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                <span>Restore default fields </span>
+                            </div>
+
+                            <div className='filter20'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal >
+    );
+}
+
+//PaymentFieldModal  in filter for admission page
+export function PaymentFieldModal(props) {
+    const [step, setStep] = useState(0);
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding1">
+                <div className='addfield'>
+                    <div className='addfield4'>
+                        <div className='paymentfieldmodalmoal'>
+                            <h5>Fields</h5>
+                        </div>
+
+                        <div className='addfield5'>
+                            <FaSearch color='#444444' />
+                            <input type="search" />
+                        </div>
+                    </div>
+
+
+
+                    <div className='paymentfieldmodalmoal'>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Admission No</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Email ID</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Phone No.</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Whatsapp No.</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Assign Backend Manager</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Credited Bank A/C</p>
+                            </div>
+
+                        </div>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Admission Date</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Course</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>University</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Responsible Person</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Assign service manager</p>
+                            </div>
+                        </div>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Payment Date</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Amount Paid</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Payment Time</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Payment ID</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Assign  Responsible person</p>
+                            </div>
+                        </div>
+                        <div className='addfield6'>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Payment Approved Date</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Remark</p>
+                            </div>
+                            <div className='addfield7'>
+                                <input type="checkbox" name="" id="" />
+                                <p>Status</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className='addfield9'>
+                        <div className='addfield10'>
+                            <div className='addfield11'>
+                                <IoReloadSharp color='#444444' size={20} />
+                                <h6>Default</h6>
+                            </div>
+                        </div>
+
+                        <div className='addfield14'>
+                            <p>Select All</p>
+                            <p>Select none</p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
 
 //Filter Modal for admission page
 export function CourierFilterModal(props) {
@@ -4476,7 +6289,7 @@ export function History(props) {
 
 // History1 Modal for admission page
 export function History1(props) {
-
+    const navigate = useNavigate()
     const tableData1 = [
         {
             id: 1,
@@ -4549,7 +6362,7 @@ export function History1(props) {
                     <div className='Admissionfollowup3'>
                         <div className='Admissionfollowup4'>
                             <div className={props.modalShow3 === false ? "Admissionfollowup5" : "Admissionfollowup6"} onClick={() => setStep(0)}>
-                                <p onClick={props.onHide}>General</p>
+                                <p onClick={() => navigate('/automatic2feestructure')}>General</p>
                             </div>
                             <div className="Admissionfollowup5">
                                 <p>History</p>
@@ -5060,6 +6873,40 @@ export function NewTask(props) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
     return (
         <>
             <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle, }}>
@@ -5112,10 +6959,11 @@ export function NewTask(props) {
                                         <p>Dhiraj Rajput</p>
                                         <IoMdClose />
                                     </div>
-
-                                    <div className='newtask9'>
-                                        <p>+Add Members</p>
-                                    </div>
+                                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                        <div className='newtask9'>
+                                            <p>+Add Members</p>
+                                        </div>
+                                    </OverlayTrigger>
                                 </div>
                             </div>
 
@@ -5796,6 +7644,648 @@ export function Whatsapp(props) {
         </>
     );
 }
+
+
+
+
+
+
+
+// NewTask  Modal for Task page
+export function PendingTaskModal(props) {
+    const [widthStyle, setWidthStyle] = useState('82%');
+    const tableData1 = [
+        {
+            id: 1,
+            CreatedOn: 'Yesterday 12:30 AM',
+            CreatedBy: 'Lorem Ipsim',
+            Description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        },
+
+        {
+            id: 1,
+            CreatedOn: 'Yesterday 12:30 AM',
+            CreatedBy: 'Lorem Ipsim',
+            Description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        },
+        {
+            id: 1,
+            CreatedOn: 'Yesterday 12:30 AM',
+            CreatedBy: 'Lorem Ipsim',
+            Description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        },
+        {
+            id: 1,
+            CreatedOn: 'Yesterday 12:30 AM',
+            CreatedBy: 'Lorem Ipsim',
+            Description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        },
+        {
+            id: 1,
+            CreatedOn: 'Yesterday 12:30 AM',
+            CreatedBy: 'Lorem Ipsim',
+            Description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        },
+        {
+            id: 1,
+            CreatedOn: 'Yesterday 12:30 AM',
+            CreatedBy: 'Lorem Ipsim',
+            Description: 'Norem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
+        },
+
+    ];
+    useEffect(() => {
+        const handleResize = () => {
+            const screenWidth = window.innerWidth;
+            let newWidthStyle;
+
+            if (screenWidth < 580) {
+                newWidthStyle = '100%'; // Full width for screens less than 580px
+            } else if (screenWidth < 980) {
+                newWidthStyle = '100%';
+            } else {
+                newWidthStyle = '82%';
+            }
+
+            setWidthStyle(newWidthStyle);
+        };
+
+        // Call handleResize on initial mount
+        handleResize();
+
+        // Add event listener for window resize
+        window.addEventListener('resize', handleResize);
+
+        // Clean up event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+    // popoveraddbutton
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='callrecordingModal'>
+                <div className='Admissionfollowup'>
+                    <div className='Admissionfollowup1'>
+                        <div className='Admissionfollowup2'>
+                            <h6>New Task</h6>
+                        </div>
+                        <div className='Admissionfollowup3' onClick={props.onHide}>
+                            <MdOutlineCancel color='#000000' size={25} />
+                        </div>
+                    </div>
+
+                    <div className='newtask'>
+                        <div className='newtask1'>
+                            <div className='newtask2'>
+                                <h6>Title</h6>
+                            </div>
+                            <div className='newtask3'>
+                                <textarea name="" id="" cols="130" rows="10"></textarea>
+                            </div>
+
+                            <div className='newtask4'>
+                                <div className='newtask5'>
+                                    <MdOutlineAttachFile color='#444444' opacity={0.5} />
+                                    <p>File</p>
+                                </div>
+                                <div className='newtask5'>
+                                    <IoDocumentText color='#444444' opacity={0.5} />
+                                    <p>New Document</p>
+                                </div>
+                                <div className='newtask5'>
+                                    <MdAlternateEmail color='#444444' opacity={0.5} />
+                                    <p>Mention</p>
+                                </div>
+                                <div className='newtask5'>
+                                    <p>Checklist</p>
+                                </div>
+                                <div className='newtask5'>
+                                    <p>Add to checklist</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='newtask6'>
+                            <p>Responsible Person</p>
+                            <div className='newtask7'>
+                                <div className='newtask8'>
+                                    <p>Dhiraj Rajput</p>
+                                    <IoMdClose />
+                                </div>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='newtask9'>
+                                        <p>+Add Members</p>
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                        </div>
+
+
+                        <div className='newtask10'>
+                            <div className='newtask11'>
+                                <div className='newtask12'>
+                                    <label htmlFor="">Deadline</label>
+                                    <input type="date" className='newtask1296' />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className='pendingtaskmodal'>
+                            <div className='newtask13'>
+                                <input type="checkbox" />
+                                <p>Pending</p>
+                            </div>
+                            <div className='newtask13'>
+                                <input type="checkbox" />
+                                <p>Resolved</p>
+                            </div>
+                            <div className='newtask13'>
+                                <input type="checkbox" />
+                                <p>Rejected</p>
+                            </div>
+                        </div>
+
+
+
+
+                        <div className='newtask14'>
+                            <div className='newtask15'>
+                                <button>SAVE</button>
+                                <button>Cancel</button>
+                            </div>
+                        </div>
+
+                        <div className='pendingtaskmodal1'>
+                            <div className='pendingtaskmodal2'>
+                                <label htmlFor="">Add Comments :</label>
+                                <textarea name="" id=""></textarea>
+                            </div>
+                            <div className='pendingtaskmodal3'>
+                                <button>SAVE</button>
+                            </div>
+                            <div className='admission13'>
+                                <div className='table-container'>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Created On</th>
+                                                <th>Created By</th>
+                                                <th>Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {tableData1.map((data) => (
+                                                <tr key={data.id}>
+                                                    <td>{data.CreatedOn}</td>
+                                                    <td>{data.CreatedBy}</td>
+                                                    <div className='pendingtaskmodal4'>
+                                                        <p>{data.Description}</p>
+                                                    </div>                                                </tr>
+                                            ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div className='pendingpayment6'>
+                                <div className='pendingpayment7'>
+                                    <h6>Total:</h6>
+                                    <span>Show quantity</span>
+                                </div>
+
+                                <div className='pendingpayment8'>
+                                    <p>Page :1</p>
+                                </div>
+
+                                <div className='pendingpayment9'>
+                                    <p>Records</p>
+                                    <div className='pendingpayment10'>
+                                        <p>20</p>
+                                        <IoIosArrowDown color='#3F3F3F' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// PaymentEmailModal   for Task page
+export function PaymentEmailModal(props) {
+    const navigate = useNavigate()
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='callrecordingModal'>
+                <div className='payreceived5'>
+                    <div className='payreceived6'>
+                        <h6>EDUCATION</h6>
+                    </div>
+                    <div className='payreceived7'>
+                        <input type="search" placeholder='Search Here' />
+                        <IoSearchSharp color='#444444' size={20} />
+                    </div>
+                </div>
+                <div className='payreceived11'>
+                    <h6>Email</h6>
+                    <div className='email3'>
+                        <p>Templates :</p>
+                        <select name="" id="">
+                            <option value="">No Templates</option>
+                        </select>
+                    </div>
+                </div>
+                <div className='payreceived8'>
+                    <div className='email'>
+                        <div className='payreceived10'>
+                            <div className='payreceived9'>
+                                <div className='email5'>
+                                    <p>From:</p>
+                                    <PiUserCircleFill color='#444444' size={20} />
+                                </div>
+                                <div className='email6'>
+                                    <label htmlFor="">To:</label>
+                                    <input type="text" name="" id="" placeholder='+ Add Recipient' className='email66161' />
+                                </div>
+                                <div className='email6'>
+                                    <label htmlFor="">Subject:</label>
+                                    <input type="text" name="" id="" />
+                                </div>
+                                <div className='email7'>
+                                    <p>Cc</p>
+                                    <p>Bcc</p>
+                                </div>
+
+                                <div className='email8'>
+                                    <p>B</p>
+                                    <p>I</p>
+                                    <p>U</p>
+                                    <img src={img1} alt="" />
+                                    <img src={img2} alt="" />
+                                    <select name="" id="">
+                                        <option value="">Font</option>
+                                    </select>
+                                    <img src={img3} alt="" />
+                                    <img src={img4} alt="" />
+                                    <img src={img5} alt="" />
+                                    <GoListUnordered color='#444444' />
+                                    <MdFormatListNumbered color='#444444' />
+                                    <RiDoubleQuotesR color='#444444' />
+                                    <img src={img7} alt="" />
+                                </div>
+
+
+                                <div className='payreceived4'>
+                                    <textarea name="" id="" cols="130" rows="10"></textarea>
+                                </div>
+
+                                <div className='email10'>
+                                    <div className='email11'>
+                                        <MdOutlineAttachFile color='#444444' />
+                                        <p>File</p>
+                                    </div>
+                                    <div className='email11'>
+                                        <GrDocumentText color='#444444' />
+                                        <p>New Document</p>
+                                    </div>
+                                </div>
+
+                                <div className='zoommetting11'>
+                                    <button onClick={() => props.onHide()}>Send</button>
+                                    <button onClick={() => props.onHide()}>Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// PaymentEmailModal   for Task page
+export function PaymentTelgaramModal(props) {
+    const navigate = useNavigate()
+    const [showdate, setShowdate] = useState(0)
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='callrecordingModal'>
+                <div className='payreceived5'>
+                    <div className='payreceived6'>
+                        <h6>EDUCATION</h6>
+                    </div>
+                    <div className='payreceived7'>
+                        <input type="search" placeholder='Search Here' />
+                        <IoSearchSharp color='#444444' size={20} />
+                    </div>
+                </div>
+                <>  {showdate === 0 ? (
+                    <div className='whatsapp1'>
+                        <div className='whatsapp3'>
+                            <div className='whatsapp9'>
+                                <div className='whatsapp8'>
+                                    <p>Telegram</p>
+                                </div>
+                                <div className='whatsapp4'>
+                                    <div className='whatsapp5'>
+                                        <div className='whatsapp6'>
+                                            <h6>Send Telegram Message</h6>
+                                            <div className='whatsapp7'>
+                                                <p>Template :</p>
+                                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                                    <option value="1">While Create lead send WhatsApp message</option>
+                                                    <option value="1">Yes lead created WhatsApp response from customer</option>
+                                                    <option value="1">No lead created  WhatsApp response from customer</option>
+                                                    <option value="1">First Message</option>
+                                                    <option value="1">Yes lead created WhatsApp response from customer new</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : showdate === 1 ? (
+                    <div className='whatsapp10'>
+                        <div className='whatsapp11'>
+                            <div className='whatsapp12'>
+                                <div className='whatsapp13'>
+                                    <p>Telegram</p>
+                                </div>
+                                <div className='whatsapp14'>
+                                    <div className='whatsapp15'>
+                                        <div className='whatsapp16'>
+                                            <h6>Send Telegram Message</h6>
+                                        </div>
+                                        <div className='whatsapp17'>
+                                            <div className='payreceived13'>
+                                                <div className='payreceived14'>
+                                                    <p>Template :</p>
+                                                    <p>Telegram number :</p>
+                                                </div>
+                                                <div className='payreceived15'>
+                                                    <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                                        <option value="1">While Create lead send WhatsApp message</option>
+                                                        <option value="1">Yes lead created WhatsApp response from customer</option>
+                                                        <option value="1">No lead created  WhatsApp response from customer</option>
+                                                        <option value="1">First Message</option>
+                                                        <option value="1">Yes lead created WhatsApp response from customer new</option>
+                                                    </select>
+                                                    <input type="text" />
+                                                </div>
+                                            </div>
+                                            <div className='whatsapp19'>
+                                                <p>Message:</p>
+                                                <textarea name="" id="" cols="90" rows="5"></textarea>
+                                            </div>
+
+                                            <div className='whatsapp20'>
+                                                <button onClick={() => props.onHide()}>Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    ""
+                )}
+                </>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// PaymentEmailModal   for Task page
+export function PaymentSMSModal(props) {
+    const navigate = useNavigate()
+    const [showdate, setShowdate] = useState(0)
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='callrecordingModal'>
+                <div className='payreceived55'>
+                    <div className='payreceived6'>
+                        <h6>EDUCATION</h6>
+                    </div>
+                    <div className='payreceived7'>
+                        <input type="search" placeholder='Search Here' />
+                        <IoSearchSharp color='#444444' size={20} />
+                    </div>
+                </div>
+
+                <div className='payreceived16'>
+                    <div className='payreceived17'>
+                        <h6>Student ID</h6>
+                        <div className='payreceived18'>
+                            <div className='payreceived19'>
+                                <p>Student 1</p>
+                                <IoMdClose />
+                            </div>
+                            <div className='payreceived19'>
+                                <p>Student 1</p>
+                                <IoMdClose />
+                            </div>
+                            <div className='payreceived19'>
+                                <p>Student 1</p>
+                                <IoMdClose />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='email3'>
+                        <p>Templates :</p>
+                        <select name="" id="">
+                            <option value="">No Templates</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div className='payreceived20'>
+                    <p>Message</p>
+                    <div className='payreceived21'>
+                        <div className='payreceived22'>
+                            <textarea name="" id="" placeholder='Write here.....'></textarea>
+                            <div className='payreceived23'>
+                                <button onClick={() => props.onHide()}>Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+// PaymentEmailModal   for Task page
+export function PaymentWhatsappModal(props) {
+    const navigate = useNavigate()
+    const [showdate, setShowdate] = useState(0)
+
+
+    return (
+        <Modal
+            {...props}
+            size="xl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className='callrecordingModal'>
+                <div className='payreceived5'>
+                    <div className='payreceived6'>
+                        <h6>EDUCATION</h6>
+                    </div>
+                    <div className='payreceived7'>
+                        <input type="search" placeholder='Search Here' />
+                        <IoSearchSharp color='#444444' size={20} />
+                    </div>
+                </div>
+                <>  {showdate === 0 ? (
+                    <div className='whatsapp1'>
+                        <div className='payreceived24'>
+                            <div className='whatsapp9'>
+                                <div className='whatsapp8'>
+                                    <p>What’s app section</p>
+                                </div>
+                                <div className='whatsapp4'>
+                                    <div className='whatsapp5'>
+                                        <div className='whatsapp6'>
+                                            <h6>Send What’sapp Message</h6>
+                                            <div className='whatsapp7'>
+                                                <p>Template :</p>
+                                                <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                                    <option value="1">While Create lead send WhatsApp message</option>
+                                                    <option value="1">Yes lead created WhatsApp response from customer</option>
+                                                    <option value="1">No lead created  WhatsApp response from customer</option>
+                                                    <option value="1">First Message</option>
+                                                    <option value="1">Yes lead created WhatsApp response from customer new</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : showdate === 1 ? (
+                    <div className='whatsapp10'>
+                        <div className='whatsapp11'>
+                            <div className='whatsapp12'>
+                                <div className='whatsapp13'>
+                                    <p>What’s app section</p>
+                                </div>
+                                <div className='whatsapp14'>
+                                    <div className='whatsapp15'>
+                                        <div className='whatsapp16'>
+                                            <h6>Send What’sapp Message</h6>
+                                        </div>
+                                        <div className='whatsapp17'>
+                                            <div className='payreceived13'>
+                                                <div className='payreceived14'>
+                                                    <p>Template :</p>
+                                                    <p>Telegram number :</p>
+                                                </div>
+                                                <div className='payreceived15'>
+                                                    <select name="" id="" onChange={(e) => setShowdate(parseInt(e.target.value))}>
+                                                        <option value="1">While Create lead send WhatsApp message</option>
+                                                        <option value="1">Yes lead created WhatsApp response from customer</option>
+                                                        <option value="1">No lead created  WhatsApp response from customer</option>
+                                                        <option value="1">First Message</option>
+                                                        <option value="1">Yes lead created WhatsApp response from customer new</option>
+                                                    </select>
+                                                    <input type="text" />
+                                                </div>
+                                            </div>
+                                            <div className='whatsapp19'>
+                                                <p>Message:</p>
+                                                <textarea name="" id="" cols="90" rows="5"></textarea>
+                                            </div>
+
+                                            <div className='whatsapp20'>
+                                                <button onClick={() => props.onHide()}>Send</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                ) : (
+                    ""
+                )}
+                </>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
 
 
 
@@ -7175,7 +9665,7 @@ export function CallRecordinglist(props) {
                                             <td>{data.Responsible}</td>
                                             <td>{data.Addedon}</td>
                                             <td><IoIosPlayCircle size={25} color='#2155CD' /></td>
-                                            <td>{data.Remarks} <PiWarningCircle size={20} color='#2155CD' /></td>
+                                            <td>{data.Remarks} <PiWarningCircle size={20} color='#2155CD'  onClick={() => props.setModalShow1(true)}/></td>
                                             <td>
                                                 {/* Render stars based on the 'Rating' */}
                                                 {Array.from({ length: parseInt(data.Rating, 10) }, (_, index) => (
@@ -9270,7 +11760,7 @@ export function PropertiesModal(props) {
                         <div className='PropertiesModal6'>
                             <p>Field Name</p>
                             <div className='PropertiesModal5'>
-                                <h6 style={{color:'#7E758F'}}>New Text</h6>
+                                <h6 style={{ color: '#7E758F' }}>New Text</h6>
                             </div>
                         </div>
 

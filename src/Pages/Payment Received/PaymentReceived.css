@@ -9,7 +9,7 @@
   cursor: pointer;
 }
 
-.payreceived1 button {
+.payreceived1button {
   width: auto;
   height: auto;
   background-color: #2155cd;
@@ -25,4 +25,278 @@
   margin: 0;
   cursor: pointer;
 }
+
+.payreceived3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.payreceived3 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.payreceived4 {
+  margin-top: 20px;
+}
+
+.payreceived4 textarea {
+  width: 100%;
+  height: 260px;
+  border: none;
+  outline: none;
+  background-color: #f4f4f4;
+  padding-top: 20px;
+  padding-left: 20px;
+  border-radius: 13px;
+}
+
+.payreceived5 {
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
+.payreceived55 {
+  margin-left: 30px;
+  margin-bottom: 50px;
+}
+
+.payreceived6 {
+}
+
+.payreceived6 h6 {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+.payreceived7 {
+  width: 60%;
+  height: 56px;
+  border-radius: 8px;
+  border: 1px solid #3f3f3f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+}
+
+.payreceived7 input {
+  border: none;
+  outline: none;
+  flex: 1;
+  height: 100%;
+  padding-left: 10px;
+  background-color: transparent;
+}
+
+.payreceived8 {
+  width: 100%;
+  margin: auto;
+}
+
+.payreceived10 {
+  width: 90%;
+  height: 100%;
+  padding: 20px;
+  margin: auto;
+}
+
+.payreceived9 {
+  background-color: #ffffff;
+  border-radius: 11px;
+  padding: 20px;
+}
+
+.payreceived11 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  margin: auto;
+}
+
+.payreceived13 {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.payreceived14 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payreceived14 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.28px;
+  color: #3f3f3f;
+  margin: 0;
+}
+
+.payreceived15 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payreceived15 select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #3f3f3f;
+  border-radius: 4px;
+  outline: none;
+  padding-left: 20px;
+}
+
+.payreceived15 input {
+  width: 355px;
+  height: 40px;
+  border: 1px solid #3f3f3f;
+  outline: none;
+  border-radius: 4px;
+  padding-left: 20px;
+}
+
+.payreceived16 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 30px;
+}
+
+.payreceived17 {
+  display: flex;
+  flex-direction: column;
+}
+
+.payreceived18 {
+  width: 684px;
+  height: 46px;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+}
+
+.payreceived19 {
+  width: auto;
+  height: auto;
+  background-color: #d9d9d9;
+  padding: 8px 19px 8px 19px;
+  border-radius: 21px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.payreceived19 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #000000;
+  margin: 0;
+}
+
+.payreceived20 {
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.payreceived20 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 27.28px;
+  color: #000000;
+  margin: 0;
+}
+
+.payreceived21 {
+  margin-top: 20px;
+  background: linear-gradient(
+    110.06deg,
+    rgba(0, 0, 127, 0.67) 0.67%,
+    rgba(0, 0, 127, 0) 107.47%
+  );
+  width: 100%;
+  height: 479px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.payreceived22 {
+  width: 90%;
+  height: 354px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.payreceived22 textarea{
+  width: 100%;
+  height: 75%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+
+
+.payreceived23{
+  text-align: center;
+}
+
+
+.payreceived23 button{
+  width: auto;
+  height: auto;
+  padding: 12px 171px 12px 171px;
+  background-color: #2155CD;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #FFFFFF;
+  margin: 0;
+}
+
+
+
+
+.payreceived24 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
 

@@ -3,7 +3,7 @@ import './PaymentReceived.css'
 import HOC from '../../Components/HOC/HOC'
 import {
     Remarkspayment, PaymentStatus,
-    FilterModal,
+    PaymentFilterModalmodal,
     MYDEALSModal,
     AddFieldModal,
     AdmissionFollowUp,
@@ -15,16 +15,28 @@ import {
     Whatsapp,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    PaymentFieldModal,
+    PaymentEmailModal,
+    PaymentTelgaramModal,
+    PaymentSMSModal,
+    PaymentWhatsappModal
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
 
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
+import { MdEmail } from "react-icons/md";
 import { IoIosMore } from "react-icons/io";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Dropdown } from "react-bootstrap";
+import { FaTelegram } from "react-icons/fa6";
+import { MdSms } from "react-icons/md";
+import { RiWhatsappFill } from "react-icons/ri";
 
+import Popover from 'react-bootstrap/Popover';
 import img from '../../Img/img33.png'
 
 const PaymentReceived = () => {
@@ -242,6 +254,30 @@ const PaymentReceived = () => {
 
     const [modalShow8, setModalShow8] = React.useState(false);
 
+
+    // PaymentFieldModal
+
+    const [modalShow9, setModalShow9] = React.useState(false);
+
+
+    // PaymentEmailModal
+
+    const [modalShow10, setModalShow10] = React.useState(false);
+
+
+    // PaymentTelgaramModal
+
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // PaymentSMSModal
+
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+
+    // PaymentWhatsappModal
+
+    const [modalShow13, setModalShow13] = React.useState(false);
+
     return (
         <>
             <Remarkspayment
@@ -252,7 +288,7 @@ const PaymentReceived = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
-            <FilterModal
+            <PaymentFilterModalmodal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
@@ -324,6 +360,26 @@ const PaymentReceived = () => {
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
             />
+            <PaymentFieldModal
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
+            />
+            <PaymentEmailModal
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
+            />
+            <PaymentTelgaramModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+            />
+            <PaymentSMSModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+            />
+            <PaymentWhatsappModal
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
+            />
             <div className='payreceived'>
                 <div className='admission1'>
                     <p>Payment</p>
@@ -356,20 +412,49 @@ const PaymentReceived = () => {
                     </div>
                 </div>
 
-                <div className='admission8' onClick={() => setModalShow2(true)}>
+                <div className='admission8' >
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow2(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
                         </div>
                     </div>
-
                     <div className='payreceived1'>
-                        <button>Export File</button>
-                        <IoIosMore color='#444444' size={20} />
+                        <button className='payreceived1button'>Export File</button>
+                        <Dropdown>
+                            <Dropdown.Toggle variant="none" className="table-icon">
+                                <IoIosMore color='#444444' size={20} />
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu>
+                                <Dropdown.Item>
+                                    <div className='payreceived3' onClick={() => setModalShow10(true)}>
+                                        <MdEmail color='#444444' size={20} />
+                                        <p>Email</p>
+                                    </div>
+                                </Dropdown.Item>
+                                <Dropdown.Item>
+                                    <div className='payreceived3' onClick={() => setModalShow11(true)}>
+                                        <FaTelegram color='#444444' size={20} />
+                                        <p>Telegram</p>
+                                    </div>
+                                </Dropdown.Item>
+                                <Dropdown.Item>
+                                    <div className='payreceived3' onClick={() => setModalShow12(true)}>
+                                        <MdSms color='#444444' size={20} />
+                                        <p>SMS</p>
+                                    </div>
+                                </Dropdown.Item>
+                                <Dropdown.Item>
+                                    <div className='payreceived3' onClick={() => setModalShow13(true)}>
+                                        <RiWhatsappFill color='#444444' size={20}  />
+                                        <p>Whatsapp</p>
+                                    </div>
+                                </Dropdown.Item>
+                            </Dropdown.Menu>
+                        </Dropdown>
                     </div>
                 </div>
 
@@ -379,7 +464,7 @@ const PaymentReceived = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} onClick={() => setModalShow4(true)} /></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow9(true)} /></th>
                                     <th>Student Name</th>
                                     <th>Admission No.</th>
                                     <th>Email_ID</th>
@@ -399,8 +484,6 @@ const PaymentReceived = () => {
                                     <th>Status</th>
                                     <th>History</th>
                                 </tr>
-
-
                             </thead>
                             <tbody>
                                 {tableData.map((data) => (
