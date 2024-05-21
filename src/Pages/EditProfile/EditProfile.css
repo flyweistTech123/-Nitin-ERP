@@ -1306,10 +1306,12 @@
 
 
 .editprofile85{
-
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
-.editprofile85 p{
+.editprofile85 > p{
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
@@ -1319,4 +1321,45 @@
   text-decoration: underline;
   text-align: end;
   cursor: pointer;
+  width: 150px;
+}
+
+
+
+
+
+
+
+
+.editprofile86{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #000000;
+}
+
+
+
+.editprofile86 h6{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.editprofile87{
+  display: flex;
+  align-items: center;
+}
+
+
+.nested-dropdown {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-top: -1rem; /* Adjust according to your needs */
+  z-index: 1000; /* Ensure it*/
 }

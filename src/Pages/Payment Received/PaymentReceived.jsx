@@ -20,7 +20,8 @@ import {
     PaymentEmailModal,
     PaymentTelgaramModal,
     PaymentSMSModal,
-    PaymentWhatsappModal
+    PaymentWhatsappModal,
+    AddNewFilter
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -278,6 +279,11 @@ const PaymentReceived = () => {
 
     const [modalShow13, setModalShow13] = React.useState(false);
 
+
+    // AddNewFilter
+
+    const [modalShow14, setModalShow14] = React.useState(false);
+
     return (
         <>
             <Remarkspayment
@@ -293,6 +299,7 @@ const PaymentReceived = () => {
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
                 setModalShow2={setModalShow4}
+                setModalShow14={setModalShow14}
             />
             <MYDEALSModal
                 show={modalShow3}
@@ -303,6 +310,10 @@ const PaymentReceived = () => {
             <AddFieldModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
+            />
+            <AddNewFilter
+                show={modalShow14}
+                onHide={() => setModalShow14(false)}
             />
             <AdmissionFollowUp
                 show={show}
@@ -449,7 +460,7 @@ const PaymentReceived = () => {
                                 </Dropdown.Item>
                                 <Dropdown.Item>
                                     <div className='payreceived3' onClick={() => setModalShow13(true)}>
-                                        <RiWhatsappFill color='#444444' size={20}  />
+                                        <RiWhatsappFill color='#444444' size={20} />
                                         <p>Whatsapp</p>
                                     </div>
                                 </Dropdown.Item>

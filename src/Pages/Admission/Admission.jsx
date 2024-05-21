@@ -31,7 +31,10 @@ import {
     Whatsapp,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter,
+    PropertiesModal,
+    NewViewModal
 } from '../Modals/Modals.jsx'
 
 
@@ -268,7 +271,15 @@ const Admission = () => {
 
     const [modalShow6, setModalShow6] = React.useState(false);
 
+    // AddNewFilter Modal
 
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+    // property modal
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow9, setModalShow9] = React.useState(false);
 
     return (
         <>
@@ -277,6 +288,7 @@ const Admission = () => {
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <MYDEALSModal
                 show={modalShow1}
@@ -288,6 +300,10 @@ const Admission = () => {
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
             />
+            <AddNewFilter
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
@@ -297,6 +313,8 @@ const Admission = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow8}
+                setModalShow9={setModalShow9}
                 title={"Admission"}
             />
             <NeWLead
@@ -343,6 +361,14 @@ const Admission = () => {
             <AddNewEvent
                 show={modalShow6}
                 onHide={() => setModalShow6(false)}
+            />
+            <PropertiesModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+            />
+            <NewViewModal
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
             />
             <div className='admission'>
                 <div className='admission1'>

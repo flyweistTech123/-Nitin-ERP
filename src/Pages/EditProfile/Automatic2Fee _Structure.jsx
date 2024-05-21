@@ -6,19 +6,30 @@ import EditProfile from './EditProfile';
 import { IoMdEye } from "react-icons/io";
 
 
+import {
+    AddFeestStructure
+} from '../Modals/Modals.jsx'
+
 const Automatic2FeeStructure = () => {
     const navigate = useNavigate();
     const [step, setStep] = useState(0);
 
+    // add fee structure Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+
     return (
         <>
+            <AddFeestStructure
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
             <div className='editprofile1'>
                 <EditProfile />
 
                 <div className='editprofile26'>
                     <div className='editprofile69'>
                         <h6>Fee Structure</h6>
-                        <button>Add Fee Structure</button>
+                        <button onClick={() => setModalShow(true)}>Add Fee Structure</button>
                     </div>
 
                     <div className="editprofile70">

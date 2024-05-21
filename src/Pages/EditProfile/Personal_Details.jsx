@@ -143,7 +143,11 @@ const Personal_Details = () => {
                                             <label htmlFor="">ID Proof type (Aadhar/Passport/Pan card/ DL)</label>
                                             <div className='editprofile48'>
                                                 <select name="" id="">
-                                                    <option value=""></option>
+                                                    <option value="">Aadhar Card</option>
+                                                    <option value="">Passport</option>
+                                                    <option value="">Driving License</option>
+                                                    <option value="">Voter ID</option>
+                                                    <option value="">Other</option>
                                                 </select>
                                                 <button>Upload</button>
                                             </div>
@@ -155,6 +159,12 @@ const Personal_Details = () => {
                                             <div className='editprofile48'>
                                                 <select name="" id="">
                                                     <option value=""></option>
+                                                    <option value="">No Pending Documents</option>
+                                                    <option value="">10th Marksheet</option>
+                                                    <option value="">12th Marksheet</option>
+                                                    <option value="">Loren Epsom</option>
+                                                    <option value="">Loren Epsom</option>
+                                                    <option value="">Loren Epsom</option>
                                                 </select>
                                                 <button>Upload</button>
                                             </div>
@@ -169,10 +179,16 @@ const Personal_Details = () => {
                                             </div>
                                         </div>
                                         <div className='editprofile47'>
-                                            <label htmlFor="">Upload Document</label>
+                                            <label htmlFor="">Pending Documents</label>
                                             <div className='editprofile48'>
                                                 <select name="" id="">
                                                     <option value=""></option>
+                                                    <option value="">No Pending Documents</option>
+                                                    <option value="">10th Marksheet</option>
+                                                    <option value="">12th Marksheet</option>
+                                                    <option value="">Loren Epsom</option>
+                                                    <option value="">Loren Epsom</option>
+                                                    <option value="">Loren Epsom</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -180,7 +196,7 @@ const Personal_Details = () => {
                                 </div>
 
                                 <div className='editprofile50'>
-                                    <input type="text"  placeholder='Eg ASP12334' />
+                                    <input type="text" placeholder='Eg ASP12334' />
                                 </div>
 
 

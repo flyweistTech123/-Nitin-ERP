@@ -28,7 +28,8 @@ import {
     CRMFieldModal,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter
 } from '../Modals/Modals.jsx'
 
 const CRM = () => {
@@ -169,6 +170,11 @@ const CRM = () => {
     const [modalShow6, setModalShow6] = React.useState(false);
 
 
+    // AddNewFilter Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
+
+
 
     // NewTask Modal
 
@@ -223,6 +229,7 @@ const CRM = () => {
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
                 setModalShow2={setModalShow4}
+                setModalShow7={setModalShow7}
             />
             <MYDEALSModal
                 show={modalShow3}
@@ -233,6 +240,10 @@ const CRM = () => {
             <AddFieldModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
+            />
+            <AddNewFilter
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
             />
             <CRMFieldModal
                 show={modalShow6}
@@ -375,7 +386,7 @@ const CRM = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20}  onClick={() => setModalShow6(true)}/></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow6(true)} /></th>
                                     <th>Student Name</th>
                                     <th>Email</th>
                                     <th>Contact</th>

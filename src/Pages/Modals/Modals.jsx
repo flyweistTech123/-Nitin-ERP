@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom';
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
+import { Dropdown } from "react-bootstrap";
 
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosMore } from "react-icons/io";
@@ -49,6 +50,7 @@ import { FaRegCopy } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
 import { IoSearchSharp } from "react-icons/io5";
 
+import { IoMdArrowDropdown } from "react-icons/io";
 
 
 
@@ -65,6 +67,35 @@ import img19 from '../../Img/img83.png'
 import img20 from '../../Img/img82.png'
 import { GiOverhead } from 'react-icons/gi';
 
+
+
+export function AddNewFilter(props) {
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='addnewfilterModal'>
+                    <div className='addnewfilterModal1'>
+                        <label htmlFor="">Add New Filter Name</label>
+                        <div className='addnewfilterModal2'>
+                            <IoMdClose color='#444444' size={20} />
+                        </div>
+                    </div>
+                    <div className='addnewfilterModal3'>
+                        <button onClick={() => props.onHide()}>SAVE</button>
+                        <button onClick={() => props.onHide()}>CANCEL</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
 
 
 
@@ -205,7 +236,7 @@ export function FilterModal(props) {
                             <p>MY DEALS</p>
                         </div>
 
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow7(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -2575,7 +2606,7 @@ export function CRMFilterModal(props) {
                             <p>CLOSED LEADS</p>
                         </div>
 
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow7(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -2717,6 +2748,8 @@ export function CRMNeWLead(props) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+
 
     return (
         <>
@@ -3959,7 +3992,7 @@ export function PaymentFilterModalmodal(props) {
                             <p>MY DEALS</p>
                         </div>
 
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow14(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -5433,6 +5466,54 @@ export function AdmissionFollowUp(props) {
         };
     }, []);
 
+    const handleModal = () => {
+        props.setModalShow8(true);
+    };
+
+    const handleModal1 = () => {
+        props.setModalShow9(true);
+    };
+
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='popoveradd'>
+                    <div className='popoveradd2'>
+                        <p>Enable custom profile view</p>
+                        <p>Enable standard profile view</p>
+                        <p onClick={handleModal1}>New View</p>
+                        <p>Reset Profile View</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className="toppart7">
+                    <div className="toppart8" onClick={handleModal}>
+                        <h6>String</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Date</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>List</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Yes/ No</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
     return (
         <>
             <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle }}>
@@ -5512,8 +5593,12 @@ export function AdmissionFollowUp(props) {
                                     </div>
                                 </div>
                                 <div className='Admissionfollowup14'>
-                                    <p>Add Section</p>
-                                    <p>Create a field</p>
+                                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                        <p>Add Section</p>
+                                    </OverlayTrigger>
+                                    <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                        <p>Create a field</p>
+                                    </OverlayTrigger>
                                 </div>
                             </div>
 
@@ -9665,7 +9750,7 @@ export function CallRecordinglist(props) {
                                             <td>{data.Responsible}</td>
                                             <td>{data.Addedon}</td>
                                             <td><IoIosPlayCircle size={25} color='#2155CD' /></td>
-                                            <td>{data.Remarks} <PiWarningCircle size={20} color='#2155CD'  onClick={() => props.setModalShow1(true)}/></td>
+                                            <td>{data.Remarks} <PiWarningCircle size={20} color='#2155CD' onClick={() => props.setModalShow1(true)} /></td>
                                             <td>
                                                 {/* Render stars based on the 'Rating' */}
                                                 {Array.from({ length: parseInt(data.Rating, 10) }, (_, index) => (
@@ -11566,7 +11651,7 @@ export function Counsellorform(props) {
                             <p>Create a field</p>
                         </div>
 
-                        <div className='counsellorformmodal4'>
+                        <div className='counsellorformmodal4' style={{ marginTop: "50px" }}>
                             <div className='counsellorformmodal5'>
                                 <div className='counsellorformmodal6'>
                                     <label htmlFor="">Id Card</label>
@@ -11801,6 +11886,479 @@ export function PropertiesModal(props) {
         </Modal>
     );
 }
+
+
+
+
+
+export function AddFeestStructure(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title>Add Fee structure</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='addfeestructuremodal'>
+                    <div className='addfeestructuremodal1'>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Type</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Type</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Automatic</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Manual</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">University</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>University</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Loren Epsom</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Loren Epsom</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Course</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Course</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>B.tech</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>MBA</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Bsc</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Msc</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>BA</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>MA</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Bcom</p>
+                                                <input type="checkbox" />
+                                            </div>
+
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Mcom</p>
+                                                <input type="checkbox" />
+                                            </div>
+
+                                            <div className='addfeestructuremodal5'>
+                                                <p>CA</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>BCA</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>BBA</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>MBBS</p>
+                                                <input type="checkbox" />
+                                            </div>
+
+                                            <div className='addfeestructuremodal5'>
+                                                <p>BHMS</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>BAMS</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>BDS</p>
+                                                <input type="checkbox" />
+                                            </div>
+
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Specialization</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Specialization</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Arts Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Science Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Science Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Biology Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Arts Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Arts Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Arts Lorem Ipsum</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Mode of fee structure</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Mode of fee structure</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Semester</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Yearly</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Exam Mode</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Exam mode</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Semester</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Yearly</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Applied batches</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Applied Batches</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>1</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>2</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>3</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Add GAP charges</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>University</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Loren Epsom</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>Loren Epsom</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Add GAP charges</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Batch No (GAP Charges)</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>3</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>3</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                        <div className='addfeestructuremodal2'>
+                            <label htmlFor="">Add R.R charges in batches</label>
+                            <Dropdown>
+                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item>
+                                        <div className='addfeestructuremodal4'>
+                                            <h6>Batch No (R.R Charges)</h6>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>3</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                            <div className='addfeestructuremodal5'>
+                                                <p>3</p>
+                                                <input type="checkbox" />
+                                            </div>
+                                        </div>
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
+                        </div>
+                    </div>
+                    <div className='addfeestructuremodal6'>
+                        <h5>First Exam Batch</h5>
+                        <div className='addfeestructuremodal1' style={{ marginTop: "20px" }}>
+                            <div className='addfeestructuremodal2'>
+                                <label htmlFor="">Month</label>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item>
+                                            <div className='addfeestructuremodal4'>
+                                                <h6>Month</h6>
+                                                <div className='addfeestructuremodal5'>
+                                                    <p>January</p>
+                                                </div>
+                                                <div className='addfeestructuremodal5'>
+                                                    <p>February</p>
+                                                </div>
+                                                <div className='addfeestructuremodal5'>
+                                                    <p>March</p>
+                                                </div>
+                                            </div>
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
+                            <div className='addfeestructuremodal2'>
+                                <label htmlFor="">Year</label>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
+                                    </Dropdown.Toggle>
+
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item>
+                                            <div className='addfeestructuremodal4'>
+                                                <h6>Year</h6>
+                                                <div className='addfeestructuremodal5'>
+                                                    <p>2023</p>
+                                                </div>
+                                                <div className='addfeestructuremodal5'>
+                                                    <p>2022</p>
+                                                </div>
+                                            </div>
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
+                        </div>
+                    </div>
+                    <div className='addfeestructuremodal6'>
+                        <h5>Exam Batch Alignment</h5>
+                        <div className='addfeestructuremodal7'>
+                            <div className='addfeestructuremodal8'>
+                                <p>Automatic</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal8'>
+                                <p>Manual</p>
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+                    <div className='addfeestructuremodal6'>
+                        <h5>Other Charges</h5>
+                        <div className='addfeestructuremodal7'>
+                            <div className='addfeestructuremodal8'>
+                                <p>Registration</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal8'>
+                                <p>TOC</p>
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                        <div className='addfeestructuremodal7'>
+                            <div className='addfeestructuremodal8'>
+                                <p>LE</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal8'>
+                                <p>Multiple</p>
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='addfeestructuremodal9'>
+                        <button onClick={() => props.onHide()}>Add</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+
+export function NewViewModal(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header>
+                <Modal.Title className='newViewModalmodal'>New View</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <div className='newViewModalmodal1'>
+                    <div className='newViewModalmodal2'>
+                        <label htmlFor="">View Name</label>
+                        <input type="text" />
+                    </div>
+                    <div className='newViewModalmodal2'>
+                        <label htmlFor="">Select the users for new view</label>
+                        <div className='newViewModalmodal3'>
+                            <p>+ Add</p>
+                        </div>
+                    </div>
+
+                    <div className='newViewModalmodal4'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Set this view for selected users</label>
+                    </div>
+
+                    <div className='newViewModalmodal5'>
+                        <button onClick={()=>props.onHide()}>Save</button>
+                        <button onClick={()=>props.onHide()}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
 
 
 
