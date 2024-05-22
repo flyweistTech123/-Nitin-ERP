@@ -10,7 +10,8 @@ import {
     ITReportFilterModal,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter,
 } from '../Modals/Modals.jsx'
 
 
@@ -126,7 +127,7 @@ const ITReport = () => {
     // add field Modal
     const [modalShow2, setModalShow2] = React.useState(false);
 
-    
+
     // History Modal
 
     const [modalShow4, setModalShow4] = React.useState(false);
@@ -140,6 +141,9 @@ const ITReport = () => {
     // AddNewEvent Modal
 
     const [modalShow6, setModalShow6] = React.useState(false);
+
+    // AddNewFilter Modal
+    const [modalShow7, setModalShow7] = React.useState(false);
 
     function ContentAdded(props) {
 
@@ -198,6 +202,7 @@ const ITReport = () => {
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <MYDEALSModal
                 show={modalShow1}
@@ -208,6 +213,10 @@ const ITReport = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <AddNewFilter
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
             />
             <History1
                 show={modalShow4}

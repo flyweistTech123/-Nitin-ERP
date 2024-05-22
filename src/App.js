@@ -113,6 +113,14 @@ import Automatic2FeeStructure from './Pages/EditProfile/Automatic2Fee _Structure
 import CreateTask from './Pages/Task/CreateTask';
 import CreateEvent from './Pages/Calender/CreateEvent';
 import GeneralAdminMode from './Pages/General/GeneralAdminMode';
+import ActionWatiTemplate from './Pages/Template/Whatsapp Template/ActionWatiTemplate';
+import ActionInteraktTemplate from './Pages/Template/Whatsapp Template/ActionInteraktTemplate';
+import ActionWatiTemplateselect from './Pages/Template/Whatsapp Template/ActionWatiTemplateselect';
+import AddTelegaramTemplate from './Pages/Template/AddTelegaramTemplate';
+import ConnectTelegaramTemplate from './Pages/Template/ConnectTelegaramTemplate';
+import AddSMSTemplate from './Pages/Template/AddSMSTemplate';
+import ConnectSMSTemplate from './Pages/Template/ConnectSMSTemplate';
+import AddEmailTemplate from './Pages/Template/AddEmailTemplate';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -232,6 +240,14 @@ function App() {
           <Route path="/createtask" element={<CreateTask />} />
           <Route path="/createevent" element={<CreateEvent />} />
           <Route path="/generalAdminMode" element={<GeneralAdminMode />} />
+          <Route path="/actionWatiTemplate" element={<ActionWatiTemplate />} />
+          <Route path="/actionInteraktTemplate" element={<ActionInteraktTemplate />} />
+          <Route path="/actionWatiTemplateselect" element={<ActionWatiTemplateselect />} />
+          <Route path="/addtelegaramtemplate" element={<AddTelegaramTemplate />} />
+          <Route path="/connectTelegaramTemplate" element={<ConnectTelegaramTemplate />} />
+          <Route path="/addsmstemplate" element={<AddSMSTemplate />} />
+          <Route path="/connectsmstemplate" element={<ConnectSMSTemplate />} />
+          <Route path="/addemailtemplate" element={<AddEmailTemplate />} />
         </Routes>
       </BrowserRouter>
     </>

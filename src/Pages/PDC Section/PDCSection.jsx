@@ -21,7 +21,12 @@ import {
     Remarks,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    PDCAddFieldModal,
+    AddNewFilter,
+    PropertiesModal,
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals'
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -331,6 +336,25 @@ const PDCSection = () => {
 
     const [modalShow12, setModalShow12] = React.useState(false);
 
+
+    // PDCAddfield Modal
+
+    const [modalShow13, setModalShow13] = React.useState(false);
+
+
+    // AddNewFilter Modal
+
+    const [modalShow14, setModalShow14] = React.useState(false);
+
+    // property modal
+    const [modalShow15, setModalShow15] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow16, setModalShow16] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow17, setModalShow17] = React.useState(false);
+
     return (
         <>
             <FeeStructure
@@ -355,6 +379,7 @@ const PDCSection = () => {
                 onHide={() => setModalShow4(false)}
                 setModalShow1={setModalShow5}
                 setModalShow2={setModalShow6}
+                setModalShow7={setModalShow14}
             />
             <MYDEALSModal
                 show={modalShow5}
@@ -366,6 +391,10 @@ const PDCSection = () => {
                 show={modalShow6}
                 onHide={() => setModalShow6(false)}
             />
+            <AddNewFilter
+                show={modalShow14}
+                onHide={() => setModalShow14(false)}
+            />
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
@@ -375,6 +404,9 @@ const PDCSection = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow15}
+                setModalShow9={setModalShow16}
+                setModalShow10={setModalShow17}
                 title={"PDC"}
             />
             <NeWLead
@@ -430,6 +462,22 @@ const PDCSection = () => {
             <AddNewEvent
                 show={modalShow12}
                 onHide={() => setModalShow12(false)}
+            />
+            <PDCAddFieldModal
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
+            />
+            <PropertiesModal
+                show={modalShow15}
+                onHide={() => setModalShow15(false)}
+            />
+            <NewViewModal
+                show={modalShow16}
+                onHide={() => setModalShow16(false)}
+            />
+            <Counsellorform
+                show={modalShow17}
+                onHide={() => setModalShow17(false)}
             />
             <div className='pdc'>
                 <div className='admission1'>
@@ -502,7 +550,7 @@ const PDCSection = () => {
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} onClick={() => setModalShow6(true)} /></th>
+                                    <th><IoSettings size={20} onClick={() => setModalShow13(true)} /></th>
                                     <th>University</th>
                                     <th>Course</th>
                                     <th>Batchwise Fee</th>
@@ -546,12 +594,14 @@ const PDCSection = () => {
                                         <td>{data.course}</td>
                                         <td onClick={() => setModalShow(true)}><RiErrorWarningFill color='#2155CD' size={25} /></td>
                                         <td>
-                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
                                             {data.feeStructureMode}
                                         </td>
                                         <td onClick={() => setModalShow1(true)}><IoEye color='#2155CD' size={25} /></td>
                                         <td onClick={() => setModalShow2(true)}><IoEye color='#2155CD' size={25} /></td>
-                                        <td>{data.followUpData}</td>
+                                        <td>
+                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                            {data.followUpData}
+                                        </td>
                                         <td>{data.responsiblePerson}</td>
                                         <td>{data.contact}</td>
                                         <td>{data.contact}</td>

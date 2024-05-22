@@ -11,6 +11,7 @@ import {
     EmployeesFilterModal,
     MYDEALSModal,
     AddFieldModal,
+    AddNewFilter,
 } from '../Modals/Modals.jsx'
 import { InviteUsers } from '../Modals/Modals'
 
@@ -50,7 +51,7 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={()=>navigate('/general')}>
+                        <div className="icon-merged" onClick={() => navigate('/general')}>
                             <i className="fa-solid fa-pen"></i>
                             View Profile
                         </div>
@@ -74,24 +75,24 @@ const Employees = () => {
             position: 'Head Marketer',
             department: 'Marketing Team',
             action: <Dropdown>
-            <Dropdown.Toggle variant="none" className="table-icon">
-                <RxHamburgerMenu />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item>
-                    <div className="icon-merged" onClick={()=>navigate('/general')}>
-                        <i className="fa-solid fa-pen"></i>
-                        View Profile
-                    </div>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <div className="icon-merged">
-                        <i className="fa-regular fa-star"></i>
-                        Assign Task
-                    </div>
-                </Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>,
+                <Dropdown.Toggle variant="none" className="table-icon">
+                    <RxHamburgerMenu />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item>
+                        <div className="icon-merged" onClick={() => navigate('/general')}>
+                            <i className="fa-solid fa-pen"></i>
+                            View Profile
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            <i className="fa-regular fa-star"></i>
+                            Assign Task
+                        </div>
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>,
         },
         {
             id: 1,
@@ -102,24 +103,24 @@ const Employees = () => {
             position: 'Head Marketer',
             department: 'Marketing Team',
             action: <Dropdown>
-            <Dropdown.Toggle variant="none" className="table-icon">
-                <RxHamburgerMenu />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item>
-                    <div className="icon-merged" onClick={()=>navigate('/general')}>
-                        <i className="fa-solid fa-pen"></i>
-                        View Profile
-                    </div>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <div className="icon-merged">
-                        <i className="fa-regular fa-star"></i>
-                        Assign Task
-                    </div>
-                </Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>,
+                <Dropdown.Toggle variant="none" className="table-icon">
+                    <RxHamburgerMenu />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item>
+                        <div className="icon-merged" onClick={() => navigate('/general')}>
+                            <i className="fa-solid fa-pen"></i>
+                            View Profile
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            <i className="fa-regular fa-star"></i>
+                            Assign Task
+                        </div>
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>,
         },
         {
             id: 1,
@@ -130,24 +131,24 @@ const Employees = () => {
             position: 'Head Marketer',
             department: 'Marketing Team',
             action: <Dropdown>
-            <Dropdown.Toggle variant="none" className="table-icon">
-                <RxHamburgerMenu />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item>
-                    <div className="icon-merged" onClick={()=>navigate('/general')}>
-                        <i className="fa-solid fa-pen"></i>
-                        View Profile
-                    </div>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <div className="icon-merged">
-                        <i className="fa-regular fa-star"></i>
-                        Assign Task
-                    </div>
-                </Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>,
+                <Dropdown.Toggle variant="none" className="table-icon">
+                    <RxHamburgerMenu />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item>
+                        <div className="icon-merged" onClick={() => navigate('/general')}>
+                            <i className="fa-solid fa-pen"></i>
+                            View Profile
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            <i className="fa-regular fa-star"></i>
+                            Assign Task
+                        </div>
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>,
         },
         {
             id: 1,
@@ -158,24 +159,24 @@ const Employees = () => {
             position: 'Head Marketer',
             department: 'Marketing Team',
             action: <Dropdown>
-            <Dropdown.Toggle variant="none" className="table-icon">
-                <RxHamburgerMenu />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item>
-                    <div className="icon-merged" onClick={()=>navigate('/general')}>
-                        <i className="fa-solid fa-pen"></i>
-                        View Profile
-                    </div>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <div className="icon-merged">
-                        <i className="fa-regular fa-star"></i>
-                        Assign Task
-                    </div>
-                </Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>,
+                <Dropdown.Toggle variant="none" className="table-icon">
+                    <RxHamburgerMenu />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item>
+                        <div className="icon-merged" onClick={() => navigate('/general')}>
+                            <i className="fa-solid fa-pen"></i>
+                            View Profile
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            <i className="fa-regular fa-star"></i>
+                            Assign Task
+                        </div>
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>,
         },
         {
             id: 1,
@@ -186,24 +187,24 @@ const Employees = () => {
             position: 'Head Marketer',
             department: 'Marketing Team',
             action: <Dropdown>
-            <Dropdown.Toggle variant="none" className="table-icon">
-                <RxHamburgerMenu />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-                <Dropdown.Item>
-                    <div className="icon-merged" onClick={()=>navigate('/general')}>
-                        <i className="fa-solid fa-pen"></i>
-                        View Profile
-                    </div>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                    <div className="icon-merged">
-                        <i className="fa-regular fa-star"></i>
-                        Assign Task
-                    </div>
-                </Dropdown.Item>
-            </Dropdown.Menu>
-        </Dropdown>,
+                <Dropdown.Toggle variant="none" className="table-icon">
+                    <RxHamburgerMenu />
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    <Dropdown.Item>
+                        <div className="icon-merged" onClick={() => navigate('/general')}>
+                            <i className="fa-solid fa-pen"></i>
+                            View Profile
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            <i className="fa-regular fa-star"></i>
+                            Assign Task
+                        </div>
+                    </Dropdown.Item>
+                </Dropdown.Menu>
+            </Dropdown>,
         },
 
     ];
@@ -222,6 +223,9 @@ const Employees = () => {
     const [modalShow2, setModalShow2] = React.useState(false);
 
 
+    // AddNewFilter Modal
+    const [modalShow3, setModalShow3] = React.useState(false);
+
     return (
         <>
             <InviteUsers
@@ -233,6 +237,7 @@ const Employees = () => {
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow3={setModalShow3}
             />
             <MYDEALSModal
                 show={modalShow1}
@@ -243,6 +248,10 @@ const Employees = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <AddNewFilter
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
             />
             <div className='admission'>
                 <div className='admission1'>

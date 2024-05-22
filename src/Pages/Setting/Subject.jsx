@@ -17,6 +17,7 @@ import {
     MYDEALSModal,
     AddFieldModal,
     History,
+    AddNewFilter,
 } from '../Modals/Modals.jsx'
 
 
@@ -172,6 +173,10 @@ const Subject = () => {
 
     // History Modal
     const [modalShow3, setModalShow3] = React.useState(false);
+
+    // AddNewFilter Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
     return (
         <>
             <AddSubject
@@ -187,6 +192,7 @@ const Subject = () => {
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow12}
                 setModalShow2={setModalShow2}
+                setModalShow4={setModalShow4}
             />
             <MYDEALSModal
                 show={modalShow12}
@@ -197,6 +203,10 @@ const Subject = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <AddNewFilter
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
             />
             <History
                 show={modalShow3}

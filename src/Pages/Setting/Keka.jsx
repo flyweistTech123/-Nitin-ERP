@@ -9,20 +9,18 @@ const Keka = () => {
       <Navbar />
       <div className='telegramapi'>
         <div className='telegramapi1'>
-          <h6>CC avenue</h6>
+          <h6>Keka</h6>
         </div>
 
         <div className='ccavenueAPI'>
-          <div className='telegramapi3'>
+          <div className='ccavenueAPI1'>
             <label htmlFor="">Client _ID</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='telegramapi3'>
             <label htmlFor="">Client_Secret</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='telegramapi3'>
             <label htmlFor="">api_key</label>
+          </div>
+          <div className='ccavenueAPI2'>
+            <input type="text" name="" id="" placeholder='Text any type of data' />
+            <input type="text" name="" id="" placeholder='Text any type of data' />
             <input type="text" name="" id="" placeholder='Text any type of data' />
           </div>
         </div>

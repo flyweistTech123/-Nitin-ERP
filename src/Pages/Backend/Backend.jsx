@@ -16,7 +16,10 @@ import {
     Whatsapp,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    PropertiesModal,
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -193,6 +196,16 @@ const Backend = () => {
 
     const [modalShow9, setModalShow9] = React.useState(false);
 
+
+    // property modal
+    const [modalShow10, setModalShow10] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
     return (
         <>
             <CallRecoding
@@ -233,6 +246,9 @@ const Backend = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow10}
+                setModalShow9={setModalShow11}
+                setModalShow10={setModalShow12}
                 title={"Backend"}
             />
             <NeWLead
@@ -279,6 +295,18 @@ const Backend = () => {
             <AddNewEvent
                 show={modalShow9}
                 onHide={() => setModalShow9(false)}
+            />
+            <PropertiesModal
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
+            />
+            <NewViewModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+            />
+            <Counsellorform
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
             />
             <div className='backend'>
                 <div className='admission1'>

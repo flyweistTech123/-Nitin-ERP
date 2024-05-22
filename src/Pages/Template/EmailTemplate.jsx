@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import './Template.css'
 import HOC from '../../Components/HOC/HOC'
-import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
+import { useNavigate } from 'react-router-dom';
 
 
 import img from '../../Img/img33.png'
 
 
 const EmailTemplate = () => {
+    const navigate = useNavigate()
     const tableData = [
         {
             id: 1,
@@ -62,8 +62,8 @@ const EmailTemplate = () => {
                 <div className='admission1'>
                     <p>Email Template</p>
                     <div className='admission2'>
-                        <div className='cancel1'>
-                            <p>ADD TELEGRAM TEMPLATE</p>
+                        <div className='cancel1' onClick={()=>navigate('/addemailtemplate')}>
+                            <p>ADD E-MAIL TEMPLATE</p>
                         </div>
                         <div className='cancel2'>
                             <p>Edit</p>

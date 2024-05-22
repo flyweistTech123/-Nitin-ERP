@@ -34,7 +34,8 @@ import {
     AddNewEvent,
     AddNewFilter,
     PropertiesModal,
-    NewViewModal
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals.jsx'
 
 
@@ -272,7 +273,6 @@ const Admission = () => {
     const [modalShow6, setModalShow6] = React.useState(false);
 
     // AddNewFilter Modal
-
     const [modalShow7, setModalShow7] = React.useState(false);
 
     // property modal
@@ -280,6 +280,9 @@ const Admission = () => {
 
     // NewView Modal
     const [modalShow9, setModalShow9] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow10, setModalShow10] = React.useState(false);
 
     return (
         <>
@@ -315,6 +318,7 @@ const Admission = () => {
                 handleShow5={handleShow5}
                 setModalShow8={setModalShow8}
                 setModalShow9={setModalShow9}
+                setModalShow10={setModalShow10}
                 title={"Admission"}
             />
             <NeWLead
@@ -369,6 +373,10 @@ const Admission = () => {
             <NewViewModal
                 show={modalShow9}
                 onHide={() => setModalShow9(false)}
+            />
+            <Counsellorform
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
             />
             <div className='admission'>
                 <div className='admission1'>

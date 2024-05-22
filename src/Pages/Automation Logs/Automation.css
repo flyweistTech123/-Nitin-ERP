@@ -196,6 +196,14 @@
   margin: 0;
 }
 
+.telegramautomation13 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.1px;
+  margin: 0;
+}
+
 /* Responsive css for admissionfollowup  */
 @media screen and (max-width: 980px) {
   .telegramautomation4 {
@@ -209,9 +217,8 @@
     padding: 12px 15px 12px 15px;
   }
   .telegramautomation {
-   height: 100vh;
+    height: 100vh;
   }
-  
 }
 
 @media screen and (max-width: 580px) {

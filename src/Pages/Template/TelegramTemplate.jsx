@@ -4,12 +4,13 @@ import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
-
+import { useNavigate } from 'react-router-dom';
 
 import img from '../../Img/img33.png'
 
 
 const TelegramTemplate = () => {
+    const navigate = useNavigate()
     const tableData = [
         {
             id: 1,
@@ -62,13 +63,13 @@ const TelegramTemplate = () => {
                 <div className='admission1'>
                     <p>Telegram Template</p>
                     <div className='admission2'>
-                        <div className='cancel1'>
+                        <div className='cancel1' onClick={()=>navigate('/addtelegaramtemplate')}>
                             <p>ADD TELEGRAM TEMPLATE</p>
                         </div>
-                        <div className='cancel2'>
+                        <div className='cancel2' onClick={()=>navigate('/addsmstemplate')}>
                             <p>Edit</p>
                         </div>
-                        <div className='cancel3'>
+                        <div className='cancel3' onClick={()=>navigate('/addsmstemplate')}>
                             <p>Delete</p>
                         </div>
                     </div>

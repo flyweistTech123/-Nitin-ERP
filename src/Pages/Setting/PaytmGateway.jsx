@@ -14,20 +14,16 @@ const PaytmGateway = () => {
         </div>
 
         <div className='ccavenueAPI'>
-          <div className='paytmgateway'>
+          <div className='ccavenueAPI3'>
             <label htmlFor="">$mid = "YOUR_MID_HERE";</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='paytmgateway'>
             <label htmlFor="">$key = "YOUR_KEY_HERE";</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='paytmgateway'>
             <label htmlFor="">$website = "YOUR_WEBSITE_NAME";</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='paytmgateway'>
             <label htmlFor="">$client_id = "YOUR_CLIENT_ID_HERE";</label>
+          </div>
+          <div className='ccavenueAPI2'>
+            <input type="text" name="" id="" placeholder='Text any type of data' />
+            <input type="text" name="" id="" placeholder='Text any type of data' />
+            <input type="text" name="" id="" placeholder='Text any type of data' />
             <input type="text" name="" id="" placeholder='Text any type of data' />
           </div>
         </div>

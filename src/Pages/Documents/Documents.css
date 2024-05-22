@@ -1,6 +1,6 @@
 .documnets1{
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     align-items: center;
     gap: 10px;
     justify-content: space-between;
@@ -97,5 +97,8 @@
     .backend2{
         gap: 10px;
         margin-top: 10px;
+    }
+    .documnets1{
+        flex-direction: column;
     }
 }

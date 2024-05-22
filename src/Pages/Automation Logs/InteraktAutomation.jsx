@@ -5,6 +5,10 @@ import { IoCheckmarkSharp } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 
+import {
+    WhatsapppAddFieldModal,
+    RemainderWhatsappModal
+} from '../Modals/Modals.jsx'
 
 
 
@@ -62,6 +66,12 @@ const InteraktAutomation = () => {
         },
 
     ];
+
+    // whatsappfield Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+    // RemainderWhatsappModal Modal 
+    const [modalShow1, setModalShow1] = React.useState(false);
+
     return (
         <>
             <div className='telegramautomation'>
@@ -79,7 +89,7 @@ const InteraktAutomation = () => {
                             </div>
                         </div>
                         <div className='telegramautomation6'>
-                            <button>Filter</button>
+                            <button onClick={() => setModalShow(true)}>Filter</button>
                         </div>
                     </div>
                 </div>
@@ -104,7 +114,7 @@ const InteraktAutomation = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td>{data.recipient}</td>
-                                        <td><p className='telegramautomation7'>{data.templates}</p></td>
+                                        <td onClick={() => setModalShow1(true)}><p className='telegramautomation7'>{data.templates}</p></td>
                                         <td>{data.sendbyuser}</td>
                                         <td>{data.date}</td>
                                         <td><IoCheckmarkSharp color='#444444' size={25} /></td>

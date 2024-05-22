@@ -79,7 +79,8 @@
   margin-top: 30px;
 }
 
-.setting4 {}
+.setting4 {
+}
 
 .setting4 button {
   width: auto;
@@ -200,7 +201,8 @@
   margin: 0;
 }
 
-.setting10 {}
+.setting10 {
+}
 
 .setting10 button {
   width: auto;
@@ -356,7 +358,8 @@
   cursor: pointer;
 }
 
-.setting19 {}
+.setting19 {
+}
 
 .setting19 button {
   width: 201px;
@@ -376,7 +379,8 @@
 
 /* AddUniversity  Modal css  */
 
-.AddUniversityModal1 {}
+.AddUniversityModal1 {
+}
 
 .addUniversityModal2 {
   display: flex;
@@ -516,7 +520,6 @@
   margin: 0;
 }
 
-
 /* Responsive css for addUniversityModal  */
 
 @media screen and (max-width: 980px) {
@@ -554,8 +557,6 @@
     width: 100%;
   }
 }
-
-
 
 /* AddCourses  Modal css  */
 
@@ -722,8 +723,7 @@
 .addcoursesmodal6 {
   margin-top: 30px;
   display: grid;
-  grid-template-columns: repeat(3,
-      1fr);
+  grid-template-columns: repeat(3, 1fr);
   /* This creates three columns of equal width */
   gap: 10px;
 }
@@ -749,7 +749,6 @@
   color: #000000;
   margin: 0;
 }
-
 
 /* Responsive css for addUniversityModal  */
 
@@ -867,9 +866,11 @@
 
 /* AddBank  Modal  css  */
 
-.deleterecordmodal {}
+.deleterecordmodal {
+}
 
-.deleterecordmodal1 {}
+.deleterecordmodal1 {
+}
 
 .deleterecordmodal1 h6 {
   font-family: "Nunito Sans", sans-serif;
@@ -1234,7 +1235,8 @@
   gap: 20px;
 }
 
-.birthdaywishes2 {}
+.birthdaywishes2 {
+}
 
 .birthdaywishes3 {
   display: flex;
@@ -1447,7 +1449,8 @@
   margin: 0;
 }
 
-.birthdaywishes16 {}
+.birthdaywishes16 {
+}
 
 .birthdaywishes17 {
   width: 343px;
@@ -1518,7 +1521,6 @@
   gap: 10px;
 }
 
-
 @media screen and (max-width: 980px) {
   .birthdaywishes17 {
     width: 100%;
@@ -1532,7 +1534,7 @@
     font-size: 14.5px;
   }
   .birthdaywishes9 {
-    width:auto;
+    width: auto;
   }
   .birthdaywishes15 button:nth-child(1) {
     padding: 10px 15px 10px 15px;
@@ -1540,10 +1542,10 @@
   .birthdaywishes15 button:nth-child(2) {
     padding: 10px 15px 10px 15px;
   }
-  
-.birthdaywishes18 h6 {
-  font-size: 15px;
-}
+
+  .birthdaywishes18 h6 {
+    font-size: 15px;
+  }
 }
 
 @media screen and (max-width: 580px) {
@@ -1561,7 +1563,7 @@
     font-size: 12.5px;
   }
   .birthdaywishes9 {
-    width:auto;
+    width: auto;
   }
   .birthdaywishes15 button:nth-child(1) {
     padding: 10px 15px 10px 15px;
@@ -1569,12 +1571,11 @@
   .birthdaywishes15 button:nth-child(2) {
     padding: 10px 15px 10px 15px;
   }
-  
-.birthdaywishes18 h6 {
-  font-size: 15px;
-}
-}
 
+  .birthdaywishes18 h6 {
+    font-size: 15px;
+  }
+}
 
 /* TelegramAPI css */
 
@@ -1602,7 +1603,8 @@
   margin: 0;
 }
 
-.telegramapi2 {}
+.telegramapi2 {
+}
 
 .telegramapi3 {
   display: flex;
@@ -1711,7 +1713,8 @@
   padding-bottom: 100px;
 }
 
-.pettyCashTemplate3 {}
+.pettyCashTemplate3 {
+}
 
 .pettyCashTemplate3 P {
   font-family: "Nunito Sans", sans-serif;
@@ -1864,7 +1867,8 @@
 
 /* PendingDocumentListTemplate */
 
-.PendingDocumentListTemplate11 {}
+.PendingDocumentListTemplate11 {
+}
 
 .PendingDocumentListTemplate11 p {
   font-family: "Nunito Sans", sans-serif;
@@ -2051,7 +2055,8 @@
   margin-top: 100px;
 }
 
-.fonadaapi1 {}
+.fonadaapi1 {
+}
 
 .fonadaapi1 h6 {
   font-family: "Nunito Sans", sans-serif;
@@ -2271,7 +2276,8 @@
 
 /* CallyzerAPI css  */
 
-.callyzerapi {}
+.callyzerapi {
+}
 
 .callyzerapi1 {
   margin-top: 50px;
@@ -2544,7 +2550,6 @@
 
 /* Responsive css for setting  */
 
-
 @media screen and (max-width: 980px) {
   .setting3 {
     flex-direction: column;
@@ -2557,7 +2562,8 @@
     margin-left: 0;
   }
 
-  .setting9 {}
+  .setting9 {
+  }
 
   .setting9 button:nth-child(2) {
     padding: 12px 15px 12px 15px;
@@ -2646,7 +2652,6 @@
 
   .PendingDocumentListTemplate13 {
     padding-left: 20px;
-
   }
   .pettyCashTemplate2 {
     width: 100%;
@@ -2742,7 +2747,6 @@
 
   .studentedittemplate7 p {
     font-size: 15px;
-
   }
 
   .SendCourierModal4 button:nth-child(1) {
@@ -2786,7 +2790,8 @@
     margin-left: 0;
   }
 
-  .setting9 {}
+  .setting9 {
+  }
 
   .setting9 button:nth-child(2) {
     padding: 12px 15px 12px 15px;
@@ -2875,7 +2880,6 @@
 
   .PendingDocumentListTemplate13 {
     padding-left: 0;
-
   }
 
   .pettyCashTemplate505 {
@@ -2968,7 +2972,6 @@
 
   .studentedittemplate7 p {
     font-size: 15px;
-
   }
 
   .SendCourierModal4 button:nth-child(1) {
@@ -2998,4 +3001,62 @@
   .studentedittemplate14 input {
     width: 100%;
   }
+}
+
+.ccavenueAPI {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.ccavenueAPI1 {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.ccavenueAPI1 label {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #000000;
+  margin: 0;
+}
+
+.ccavenueAPI2 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex: 1;
+}
+
+.ccavenueAPI2 input {
+  width: 80%;
+  height: 54px;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 4px 0px #00000040;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  padding-left: 20px;
+}
+
+.ccavenueAPI2 input::placeholder {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16.37px;
+  color: #000000;
+  margin: 0;
+  opacity: 0.5;
+}
+
+.ccavenueAPI3 {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }

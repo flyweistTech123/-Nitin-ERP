@@ -20,7 +20,9 @@ import {
     DocumentFilterModal,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter,
+
 } from '../Modals/Modals'
 
 
@@ -156,7 +158,7 @@ const Documents = () => {
     const [modalShow16, setModalShow16] = React.useState(false);
 
 
-    
+
     // History Modal
 
     const [modalShow17, setModalShow17] = React.useState(false);
@@ -170,6 +172,10 @@ const Documents = () => {
     // AddNewEvent Modal
 
     const [modalShow19, setModalShow19] = React.useState(false);
+
+    // AddNewFilter Modal
+
+    const [modalShow20, setModalShow20] = React.useState(false);
 
     return (
         <>
@@ -227,6 +233,7 @@ const Documents = () => {
                 onHide={() => setModalShow16(false)}
                 setModalShow1={setModalShow13}
                 setModalShow2={setModalShow14}
+                setModalShow20={setModalShow20}
             />
             <MYDEALSModal
                 show={modalShow13}
@@ -255,6 +262,10 @@ const Documents = () => {
             <AddNewEvent
                 show={modalShow19}
                 onHide={() => setModalShow19(false)}
+            />
+            <AddNewFilter
+                show={modalShow20}
+                onHide={() => setModalShow20(false)}
             />
             <div className='backend'>
                 <div className='admission1'>

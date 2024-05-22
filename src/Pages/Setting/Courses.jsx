@@ -19,6 +19,7 @@ import {
     MYDEALSModal,
     AddFieldModal,
     History,
+    AddNewFilter
 } from '../Modals/Modals.jsx'
 
 
@@ -285,7 +286,8 @@ const Courses = () => {
 
     const [modalShow5, setModalShow5] = React.useState(false);
 
-
+    // AddNewFilter Modal
+    const [modalShow6, setModalShow6] = React.useState(false);
     return (
         <>
             <AddCourses
@@ -301,6 +303,7 @@ const Courses = () => {
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
                 setModalShow2={setModalShow4}
+                setModalShow6={setModalShow6}
             />
             <MYDEALSModal
                 show={modalShow3}
@@ -311,6 +314,10 @@ const Courses = () => {
             <AddFieldModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
+            />
+            <AddNewFilter
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
             />
             <History
                 show={modalShow5}
@@ -352,7 +359,7 @@ const Courses = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20}  onClick={() => setModalShow5(true)}/>      {data.University}</td>
+                                        <td><MdHistory color='#000000' size={20} onClick={() => setModalShow5(true)} />      {data.University}</td>
                                         <td>{data.Course}</td>
                                         <td>{data.Specialization}</td>
                                         <td>{data.exammode}</td>

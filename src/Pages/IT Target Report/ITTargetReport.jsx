@@ -143,8 +143,8 @@ const ITTargetReport = () => {
                 <div className='admission1'>
                     <p>IT Target Reports</p>
                 </div>
-                <div className='targetanalysis2' onClick={() => setModalShow11(true)}>
-                    <div className='targetanalysis1'>
+                <div className='targetanalysis2'>
+                    <div className='targetanalysis1'  onClick={() => setModalShow11(true)}>
                         <p>Filters</p>
                     </div>
 

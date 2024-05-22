@@ -14,51 +14,57 @@ const EmailAutomation = () => {
         {
             id: 1,
             recipient: 'Loren epsom',
-            templates: '1st Remainder.pdf',
+            Delivery: 'Sent',
             sendbyuser: 'Loren Epsom',
             date: 'DD/MM/YYYY',
-            Failed: 'Invalid Number',
+            FromAddress: 'Lorenepsom@gmail.com',
+            EmailID: 'Loren',
         },
 
         {
             id: 1,
             recipient: 'Loren epsom',
-            templates: '1st Remainder.pdf',
+            Delivery: 'Failed',
             sendbyuser: 'Loren Epsom',
             date: 'DD/MM/YYYY',
-            Failed: 'Invalid Number',
+            FromAddress: 'Lorenepsom@gmail.com',
+            EmailID: 'Loren',
         },
         {
             id: 1,
             recipient: 'Loren epsom',
-            templates: '1st Remainder.pdf',
+            Delivery: 'Pending',
             sendbyuser: 'Loren Epsom',
             date: 'DD/MM/YYYY',
-            Failed: 'Invalid Number',
+            FromAddress: 'Lorenepsom@gmail.com',
+            EmailID: 'Loren',
         },
         {
             id: 1,
             recipient: 'Loren epsom',
-            templates: '1st Remainder.pdf',
+            Delivery: 'Sent',
             sendbyuser: 'Loren Epsom',
             date: 'DD/MM/YYYY',
-            Failed: 'Invalid Number',
+            FromAddress: 'Lorenepsom@gmail.com',
+            EmailID: 'Loren',
         },
         {
             id: 1,
             recipient: 'Loren epsom',
-            templates: '1st Remainder.pdf',
+            Delivery: 'Failed',
             sendbyuser: 'Loren Epsom',
             date: 'DD/MM/YYYY',
-            Failed: 'Invalid Number',
+            FromAddress: 'Lorenepsom@gmail.com',
+            EmailID: 'Loren',
         },
         {
             id: 1,
             recipient: 'Loren epsom',
-            templates: '1st Remainder.pdf',
+            Delivery: 'Pending',
             sendbyuser: 'Loren Epsom',
             date: 'DD/MM/YYYY',
-            Failed: 'Invalid Number',
+            FromAddress: 'Lorenepsom@gmail.com',
+            EmailID: 'Loren',
         },
 
     ];
@@ -67,7 +73,7 @@ const EmailAutomation = () => {
             <div className='telegramautomation'>
                 <div className='telegramautomation1'>
                     <div className='telegramautomation2'>
-                        <GoArrowLeft size={30} color='#444444' onClick={()=>navigate(-1)} />
+                        <GoArrowLeft size={30} color='#444444' onClick={() => navigate(-1)} />
                         <h6>Email Automation Logs</h6>
                     </div>
 
@@ -90,28 +96,26 @@ const EmailAutomation = () => {
                             <thead>
                                 <tr>
                                     <th>Recipient</th>
-                                    <th>Templates</th>
-                                    <th>Send By User</th>
                                     <th>Date</th>
-                                    <th>Delivered</th>
-                                    <th>Read</th>
-                                    <th>Sent</th>
-                                    <th>Replied</th>
-                                    <th>Failed</th>
+                                    <th>Send By User</th>
+                                    <th>Delivery </th>
+                                    <th>From Address</th>
+                                    <th>Email-ID Template  Content</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td>{data.recipient}</td>
-                                        <td><p className='telegramautomation7'>{data.templates}</p></td>
-                                        <td>{data.sendbyuser}</td>
                                         <td>{data.date}</td>
-                                        <td><IoCheckmarkSharp color='#444444' size={25} /></td>
-                                        <td><IoCheckmarkSharp color='#444444' size={25} /></td>
-                                        <td><IoCheckmarkSharp color='#444444' size={25} /></td>
-                                        <td><IoCheckmarkSharp color='#444444' size={25} /></td>
-                                        <td>{data.Failed}</td>
+                                        <td>{data.sendbyuser}</td>
+                                        <td>
+                                            <div className='telegramautomation13'>
+                                                <p style={{ color: data.Delivery === 'Sent' ? '#257400' : data.Delivery === 'Failed'  ? '#FF0000':'#FFB800'}}>{data.Delivery}</p>
+                                            </div>
+                                        </td>
+                                        <td>{data.FromAddress}</td>
+                                        <td onClick={()=>navigate('/addemailtemplate')}><p className='telegramautomation7'>{data.EmailID}</p></td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -119,7 +123,7 @@ const EmailAutomation = () => {
                     </div>
                 </div>
 
-                
+
                 <div className='telegramautomation8'>
                     <div className='telegramautomation9'>
                         <h6>Total:</h6>

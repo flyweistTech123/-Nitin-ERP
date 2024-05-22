@@ -8,6 +8,15 @@
   display: flex;
 }
 
+.addfield1 h6{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32.74px;
+  color: #000000;
+  margin: 0;
+}
+
 .filter2 {
   width: 25%;
   height: 2571px;
@@ -770,6 +779,10 @@
   gap: 20px;
 }
 
+
+
+
+
 .addfield2 {
   width: auto;
   height: auto;
@@ -909,6 +922,7 @@
   line-height: 21.82px;
   color: #000000;
   margin: 0;
+  cursor: pointer;
 }
 
 .addfield14 {
@@ -1671,6 +1685,25 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 19.1px;
+  color: #000000;
+  margin: 0;
+}
+
+
+.Admissionfollowup45{
+
+}
+
+.Admissionfollowup46{
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.Admissionfollowup46 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.82px;
   color: #000000;
   margin: 0;
 }
@@ -5341,4 +5374,51 @@
   margin: 0;
   outline: none;
   border: 1px solid #000000;
+}
+
+
+
+
+
+
+
+.pdcfieladmodalmodal{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.pdcfieladmodalmodal1{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+
+
+.pdcfieladmodalmodal2{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.pdcfieladmodalmodal2 p{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  margin: 0;
+}
+
+
+
+.pdcfieladmodalmodal3{
+  width: 300px;
+  background-color: #ffffff;
+  border: 1px solid black;
+
 }

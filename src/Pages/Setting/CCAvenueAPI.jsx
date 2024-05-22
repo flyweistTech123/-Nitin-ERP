@@ -11,16 +11,14 @@ const CCAvenueAPI = () => {
         </div>
 
         <div className='ccavenueAPI'>
-          <div className='telegramapi3'>
+          <div className='ccavenueAPI1'>
             <label htmlFor="">Merchant ID</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='telegramapi3'>
             <label htmlFor="">Access Code</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='telegramapi3'>
             <label htmlFor="">Encryption Key</label>
+          </div>
+          <div className='ccavenueAPI2'>
+            <input type="text" name="" id="" placeholder='Text any type of data' />
+            <input type="text" name="" id="" placeholder='Text any type of data' />
             <input type="text" name="" id="" placeholder='Text any type of data' />
           </div>
         </div>

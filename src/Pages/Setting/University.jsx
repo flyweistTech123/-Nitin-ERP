@@ -20,6 +20,7 @@ import {
     MYDEALSModal,
     AddFieldModal,
     History,
+    AddNewFilter
 } from '../Modals/Modals.jsx'
 
 const University = () => {
@@ -189,7 +190,7 @@ const University = () => {
     // AddUniversity  Modal 
     const [modalShow1, setModalShow1] = React.useState(false);
 
-    
+
     // History Modal
     const [modalShow3, setModalShow3] = React.useState(false);
 
@@ -272,6 +273,9 @@ const University = () => {
         );
     }
 
+    // AddNewFilter Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
     return (
         <>
             <AddUniversity
@@ -287,6 +291,7 @@ const University = () => {
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow12}
                 setModalShow2={setModalShow2}
+                setModalShow4={setModalShow4}
             />
             <MYDEALSModal
                 show={modalShow12}
@@ -297,6 +302,10 @@ const University = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <AddNewFilter
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
             />
             <History
                 show={modalShow3}
@@ -341,7 +350,7 @@ const University = () => {
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20}  onClick={() => setModalShow3(true)}/>      {data.University}</td>
+                                        <td><MdHistory color='#000000' size={20} onClick={() => setModalShow3(true)} />      {data.University}</td>
                                         <td>{data.Registration}</td>
                                         <td>{data.toccharges}</td>
                                         <td>{data.lecharges}</td>

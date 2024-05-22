@@ -6,13 +6,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate, Link } from 'react-router-dom';
 
 import {
-    FilterModal,
+    ExamAttendenceFilterModal,
     MYDEALSModal,
     AddFieldModal,
     History,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter,
 } from '../Modals/Modals.jsx'
 
 
@@ -108,7 +109,7 @@ const ExamAttendanceStatus = () => {
 
 
 
-    
+
     // History Modal
 
     const [modalShow4, setModalShow4] = React.useState(false);
@@ -122,13 +123,18 @@ const ExamAttendanceStatus = () => {
     // AddNewEvent Modal
 
     const [modalShow6, setModalShow6] = React.useState(false);
+
+    // AddNewFilter Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
     return (
         <>
-            <FilterModal
+            <ExamAttendenceFilterModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <MYDEALSModal
                 show={modalShow1}
@@ -143,6 +149,10 @@ const ExamAttendanceStatus = () => {
             <History
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
+            />
+            <AddNewFilter
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
             />
             <History1
                 show={modalShow4}

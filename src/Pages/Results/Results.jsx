@@ -15,7 +15,7 @@ import { AiFillMinusCircle } from "react-icons/ai";
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
-    FilterModal,
+    ResultFilterModal,
     MYDEALSModal,
     AddFieldModal,
     AdmissionFollowUp,
@@ -27,7 +27,8 @@ import {
     Whatsapp,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter
 } from '../Modals/Modals.jsx'
 
 const Results = () => {
@@ -139,6 +140,10 @@ const Results = () => {
 
     const [modalShow6, setModalShow6] = React.useState(false);
 
+    // AddNewFilter Modal
+
+    const [modalShow7, setModalShow7] = React.useState(false);
+
     function ResultStatus(props) {
         const [selected, setSelected] = useState('');
         const [number, setNumber] = useState(1); // Initial value is 1
@@ -227,11 +232,12 @@ const Results = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <FilterModal
+            <ResultFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <MYDEALSModal
                 show={modalShow1}
@@ -242,6 +248,10 @@ const Results = () => {
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <AddNewFilter
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
             />
             <History
                 show={modalShow3}

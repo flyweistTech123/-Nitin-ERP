@@ -8,6 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import { BiSearch } from "react-icons/bi";
 
+import { useNavigate } from 'react-router-dom';
 
 const InteraktTemplate = () => {
     const tableData = [
@@ -55,7 +56,10 @@ const InteraktTemplate = () => {
             lastUpdated: 'DD/MM/YYYY 10:20PM',
         },
 
-    ];
+    ];    
+    
+    const navigate = useNavigate()
+
 
     return (
         <>
@@ -119,7 +123,7 @@ const InteraktTemplate = () => {
                                             </div>
                                         </td>
                                         <td>{data.lastUpdated}</td>
-                                        <td><IoEye color='#2155CD' size={25} /></td>
+                                        <td><IoEye color='#2155CD' size={25}  onClick={()=>navigate('/actionInteraktTemplate')}/></td>
                                     </tr>
                                 ))}
                             </tbody>

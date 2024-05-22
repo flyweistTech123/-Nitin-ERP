@@ -8,6 +8,8 @@ import { IoIosArrowDown } from "react-icons/io";
 
 import { BiSearch } from "react-icons/bi";
 
+import { useNavigate } from 'react-router-dom';
+
 
 const WatiTemplate = () => {
     const tableData = [
@@ -56,6 +58,8 @@ const WatiTemplate = () => {
         },
 
     ];
+
+    const navigate = useNavigate()
 
     return (
         <>
@@ -119,7 +123,7 @@ const WatiTemplate = () => {
                                             </div>
                                         </td>
                                         <td>{data.lastUpdated}</td>
-                                        <td><IoEye color='#2155CD' size={25} /></td>
+                                        <td onClick={()=>navigate('/actionWatiTemplate')}><IoEye color='#2155CD' size={25} /></td>
                                     </tr>
                                 ))}
                             </tbody>

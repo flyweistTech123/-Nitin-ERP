@@ -6,6 +6,10 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate } from 'react-router-dom';
 
 
+import {
+    WhatsapppAddFieldModal,
+    RemainderWhatsappModal
+} from '../Modals/Modals.jsx'
 
 
 const WatiAutomation = () => {
@@ -62,12 +66,26 @@ const WatiAutomation = () => {
         },
 
     ];
+
+
+    // whatsappfield Modal 
+    const [modalShow, setModalShow] = React.useState(false);
+    // RemainderWhatsappModal Modal 
+    const [modalShow1, setModalShow1] = React.useState(false);
     return (
         <>
+            <WhatsapppAddFieldModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+            />
+            <RemainderWhatsappModal
+                show={modalShow1}
+                onHide={() => setModalShow1(false)}
+            />
             <div className='telegramautomation'>
                 <div className='telegramautomation1'>
                     <div className='telegramautomation2'>
-                        <GoArrowLeft size={30} color='#444444' onClick={()=>navigate(-1)} />
+                        <GoArrowLeft size={30} color='#444444' onClick={() => navigate(-1)} />
                         <h6>Whatsapp Wati Automation Logs</h6>
                     </div>
 
@@ -79,7 +97,7 @@ const WatiAutomation = () => {
                             </div>
                         </div>
                         <div className='telegramautomation6'>
-                            <button>Filter</button>
+                            <button onClick={() => setModalShow(true)}>Filter</button>
                         </div>
                     </div>
                 </div>
@@ -104,7 +122,7 @@ const WatiAutomation = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td>{data.recipient}</td>
-                                        <td><p className='telegramautomation7'>{data.templates}</p></td>
+                                        <td onClick={() => setModalShow1(true)}><p className='telegramautomation7'>{data.templates}</p></td>
                                         <td>{data.sendbyuser}</td>
                                         <td>{data.date}</td>
                                         <td><IoCheckmarkSharp color='#444444' size={25} /></td>
@@ -119,7 +137,7 @@ const WatiAutomation = () => {
                     </div>
                 </div>
 
-                
+
                 <div className='telegramautomation8'>
                     <div className='telegramautomation9'>
                         <h6>Total:</h6>

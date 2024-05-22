@@ -12,16 +12,14 @@ const WatiApi = () => {
         </div>
 
         <div className='ccavenueAPI'>
-          <div className='telegramapi3'>
+          <div className='ccavenueAPI1'>
             <label htmlFor="">Access Token</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='telegramapi3'>
             <label htmlFor="">API Endpoint</label>
-            <input type="text" name="" id="" placeholder='Text any type of data' />
-          </div>
-          <div className='telegramapi3'>
             <label htmlFor="">Whatsapp number</label>
+          </div>
+          <div className='ccavenueAPI2'>
+            <input type="text" name="" id="" placeholder='Text any type of data' />
+            <input type="text" name="" id="" placeholder='Text any type of data' />
             <input type="text" name="" id="" placeholder='Text any type of data' />
           </div>
         </div>
