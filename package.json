@@ -23,6 +23,7 @@
     "react-icons": "^5.0.1",
     "react-multi-select-component": "^4.3.4",
     "react-multilevel-dropdown": "^4.0.0",
+    "react-otp-input": "^3.1.1",
     "react-router-dom": "^6.22.3",
     "react-scripts": "^5.0.1",
     "react-select": "^5.8.0",

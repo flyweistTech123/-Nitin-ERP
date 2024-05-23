@@ -5,7 +5,7 @@
 
 .register1 {
   width: 50%;
-  height: 100vh; 
+  height: 100vh;
   max-height: 100%;
   background-color: #2155cd;
   display: flex;
@@ -87,7 +87,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .register7 {
@@ -254,6 +254,21 @@
   border-radius: 4px;
 }
 
+.otp-input-container {
+  display: flex;
+  align-items: center;
+}
+
+.register7 .otp-input {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  margin-right: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
 /* Responsive css for Register  */
 
 @media screen and (max-width: 580px) {
@@ -266,9 +281,8 @@
   .register4 {
     width: 100%;
   }
-  .register55 h6{
+  .register55 h6 {
     font-size: 20px;
-
   }
   .register5 {
     width: 100%;
@@ -282,7 +296,7 @@
     height: auto;
     padding: 12px 15px 12px 15px;
   }
-  .register10{
+  .register10 {
     width: 98%;
     margin: auto;
   }

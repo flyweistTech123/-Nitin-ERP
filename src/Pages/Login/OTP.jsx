@@ -1,5 +1,5 @@
-import React from 'react'
-import './Register.css'
+import React, { useState } from 'react';
+import './Login.css'
 import register from '../../Img/img1.png'
 import register1 from '../../Img/img2.png'
 import register2 from '../../Img/img3.png'
@@ -7,7 +7,21 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-const Register = () => {
+const OTP = () => {
+
+    const [otp, setOtp] = useState(new Array(6).fill(''));
+
+    const handleChange = (element, index) => {
+        if (isNaN(element.value)) return false;
+
+        setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
+
+        // Focus next input
+        if (element.nextSibling) {
+            element.nextSibling.focus();
+        }
+    };
+
     const navigate = useNavigate();
     return (
         <>
@@ -22,28 +36,30 @@ const Register = () => {
                 <div className='register4'>
                     <div className='register5'>
                         <div className='register55'>
-                            <h6>Register</h6>
+                            <h6>OTP</h6>
+                            <p>Enter OTP to Forget Password</p>
                         </div>
+
                         <div className='register6'>
                             <div className='register7'>
-                                <label htmlFor="">Username</label>
-                                <input type="email" placeholder='Enter Email' />
-                            </div>
-                            <div className='register7'>
-                                <label htmlFor="">Email</label>
-                                <input type="email" placeholder='Enter Email' />
-                            </div>
-                            <div className='register7'>
-                                <label htmlFor="">Password</label>
-                                <input type="password" placeholder='Enter Password' />
-                            </div>
-                            <div className='register7'>
-                                <label htmlFor="">Confirm Password</label>
-                                <input type="password" placeholder='Enter Password' />
+                                <label htmlFor="">OTP</label>
+                                <div className='otp-input-container'>
+                                    {otp.map((data, index) => (
+                                        <input
+                                            key={index}
+                                            type="text"
+                                            className="otp-input"
+                                            value={data}
+                                            maxLength="1"
+                                            onChange={(e) => handleChange(e.target, index)}
+                                            onFocus={(e) => e.target.select()}
+                                        />
+                                    ))}
+                                </div>
                             </div>
 
                             <div className='register8'>
-                                <button onClick={() => navigate('/dashboard')}>Register</button>
+                                <button onClick={() => navigate('/newpassword')}>Submit</button>
                             </div>
                             <div className='register9'>
                                 <p>OR</p>
@@ -65,7 +81,7 @@ const Register = () => {
                             </div>
 
                             <div className='register12'>
-                                <p>Already have an account ? <span onClick={() => navigate('/')}>Sign IN</span></p>
+                                <p>Dont' have an account ? <span onClick={() => navigate('/register')}>Register</span></p>
                             </div>
                         </div>
                     </div>
@@ -75,4 +91,4 @@ const Register = () => {
     )
 }
 
-export default Register
+export default OTP

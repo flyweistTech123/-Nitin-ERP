@@ -121,15 +121,22 @@ import ConnectTelegaramTemplate from './Pages/Template/ConnectTelegaramTemplate'
 import AddSMSTemplate from './Pages/Template/AddSMSTemplate';
 import ConnectSMSTemplate from './Pages/Template/ConnectSMSTemplate';
 import AddEmailTemplate from './Pages/Template/AddEmailTemplate';
+import ForgetPassword from './Pages/Login/ForgetPassword';
+import OTP from './Pages/Login/OTP';
+import NewPassword from './Pages/Login/NewPassword';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
   return (
     <>
+
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgetPassword" element={<ForgetPassword />} />
+          <Route path="/otp" element={<OTP />} />
+          <Route path="/newpassword" element={<NewPassword />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/admission" element={<Admission />} />
           <Route path="/service" element={<Service />} />

@@ -63,7 +63,10 @@ const Login = () => {
                             </div>
 
                             <div className='register12'>
-                                <p>Dont' have an account ? <span onClick={()=>navigate('/')}>Register</span></p>
+                                <p>Dont' have an account ? <span onClick={()=>navigate('/register')}>Register</span></p>
+                            </div>
+                            <div className='register12'>
+                                <p> <span onClick={()=>navigate('/forgetPassword')}>Forget Password</span></p>
                             </div>
                         </div>
                     </div>
