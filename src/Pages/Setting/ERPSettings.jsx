@@ -25,7 +25,7 @@ const ERPSettings = () => {
                             <input type="text" />
                         </div>
                         <div className='fonadaapi4'>
-                            <label htmlFor="">U Key</label>
+                            <label htmlFor="">Description</label>
                             <textarea name="" id="" cols="30" rows="10"></textarea>
                         </div>
                         <div className='erpsettings'>

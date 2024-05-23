@@ -14,9 +14,37 @@ import { MdFormatListNumbered } from "react-icons/md";
 import { RiDoubleQuotesR } from "react-icons/ri";
 import { MdOutlineAttachFile } from "react-icons/md";
 import { GrDocumentText } from "react-icons/gr";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const SettingEditEmailTemplate = () => {
     const navigate = useNavigate();
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='dailyreportemplate11'>
+                    <div className='dailyreportemplate12'>
+                        <input type="search" placeholder='Search' />
+                    </div>
+
+                    <div className='dailyreportemplate13'>
+                        <p>Student Name</p>
+                        <p>Student Mobile Number</p>
+                        <p>Student Email</p>
+                        <p>Student Address</p>
+                        <p>Student Batch Wise Fees</p>
+                        <p>Student Total Fees All Batch</p>
+                        <p>Student Admission Date</p>
+                        <p>Student Batch Wise Fee Balance</p>
+                        <p>Student Total Fee Balance ( All Batches )</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <div className='studentedittemplate'>
@@ -34,7 +62,9 @@ const SettingEditEmailTemplate = () => {
                             <label htmlFor="">Subject:</label>
                             <div className='studentedittemplate14'>
                                 <input type="text" />
-                                <button>Add Variable</button>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <button>Add Variable</button>
+                                </OverlayTrigger>
                             </div>
                         </div>
 

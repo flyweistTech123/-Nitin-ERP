@@ -2021,6 +2021,221 @@ export function CallRecordingAnalysisFilterModal(props) {
 }
 
 
+
+//CallRecordingAnalysisFilterModal  for admission page
+export function PettyCashPaymentFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const starCount = 5; // number of stars you want
+    const stars = Array(starCount).fill(<MdStar size={20} color='#E2A03F' />);
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+
+    const options1 = [
+        { label: "1.Bad", value: "Unoversity" },
+        { label: "2.Good", value: "Unoversity" },
+        { label: "3.Great", value: "Unoversity", },
+        { label: "4.Best", value: "Unoversity", },
+        { label: "5.Other", value: "Unoversity", },
+    ];
+
+    const options2 = [
+        { label: <div>{stars}</div>, value: "Unoversity" },
+        { label: <div>{stars}</div>, value: "Unoversity" },
+        { label: <div>{stars}</div>, value: "Unoversity", },
+        { label: <div>{stars}</div>, value: "Unoversity" },
+        { label: <div>{stars}</div>, value: "Unoversity" },
+    ];
+
+
+    // 
+    // <MdStar size={20} color='#E2A03F' />
+    // <IoMdStarOutline size={20} color='#E2A03F' />
+    // <IoMdStarOutline size={20} color='#E2A03F' />
+
+    const options3 = [
+        { label: "Any Date", value: "India" },
+        { label: "Yesterday", value: "UAE" },
+        { label: "Current Day", value: "India" },
+        { label: "Tomorrow", value: "India" },
+        { label: "This Week", value: "India" },
+        { label: "This Month", value: "UAE" },
+        { label: "Current Quarter", value: "India" },
+        { label: "Last 7 days", value: "India" },
+    ];
+
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter226'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>MY FILTERS</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter11'>
+                            <div className='filter12'>
+                                <label htmlFor="">Request date</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Title</label>
+                                <input type="date" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Approved By</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Final Approved By</label>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <div className='filter13'>
+                                        <IoIosArrowDown />
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Final Approved On</label>
+                                <MultiSelect
+                                    options={options3}
+                                    value={selected}
+                                    onChange={setSelected}
+                                    labelledBy="Select"
+                                />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Amount</label>
+                                <input type="text" />
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Final Status</label>
+                                <input type="text" />
+
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Request Approved On</label>
+                                <input type="text" />
+
+                            </div>
+                            <div className='filter12'>
+                                <label htmlFor="">Request Approved By</label>
+                                <input type="text" />
+                            </div>
+                            <div className='paymentfiltermodal'>
+                                <label htmlFor="">Status</label>
+                                <div className='paymentfiltermodal1'>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Pending</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Approved</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Rejected</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div className='filter19'>
+                                <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                <span>Restore default fields </span>
+                            </div>
+                            <div className='documentfiltermodal6'>
+                                <button onClick={() => props.onHide()}>SAVE</button>
+                                <button onClick={() => props.onHide()}>RESET</button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
 //University Filter Modal for admission page
 export function UniversityFilterModal(props) {
     const [step, setStep] = useState(0);
@@ -2231,7 +2446,7 @@ export function CourseFilterModal(props) {
                             <p>MY DEALS</p>
                         </div>
 
-                        <div className='filter6'  onClick={() => props.setModalShow4(true)}>
+                        <div className='filter6' onClick={() => props.setModalShow4(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -2533,7 +2748,7 @@ export function DocumentFilterModal11(props) {
                             <p>MY DEALS</p>
                         </div>
 
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow7(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -13715,29 +13930,6 @@ export function AddFeestStructure(props) {
                                             </div>
                                             <div className='addfeestructuremodal5'>
                                                 <p>3</p>
-                                                <input type="checkbox" />
-                                            </div>
-                                        </div>
-                                    </Dropdown.Item>
-                                </Dropdown.Menu>
-                            </Dropdown>
-                        </div>
-                        <div className='addfeestructuremodal2'>
-                            <label htmlFor="">Add GAP charges</label>
-                            <Dropdown>
-                                <Dropdown.Toggle variant="none" className="addfeestructuremodal3">
-                                </Dropdown.Toggle>
-
-                                <Dropdown.Menu>
-                                    <Dropdown.Item>
-                                        <div className='addfeestructuremodal4'>
-                                            <h6>University</h6>
-                                            <div className='addfeestructuremodal5'>
-                                                <p>Loren Epsom</p>
-                                                <input type="checkbox" />
-                                            </div>
-                                            <div className='addfeestructuremodal5'>
-                                                <p>Loren Epsom</p>
                                                 <input type="checkbox" />
                                             </div>
                                         </div>

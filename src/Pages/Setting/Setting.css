@@ -870,6 +870,7 @@
 }
 
 .deleterecordmodal1 {
+  text-align: center;
 }
 
 .deleterecordmodal1 h6 {
@@ -878,6 +879,47 @@
   font-size: 24px;
   line-height: 32.74px;
   color: #000000;
+  margin: 0;
+}
+
+.deleterecordmodal2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+
+.deleterecordmodal2 button:nth-child(1) {
+  width: auto;
+  height: auto;
+  border: none;
+  outline: none;
+  padding: 12px 33px 12px 33px;
+  border-radius: 6px;
+  background-color: #2155cd;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.deleterecordmodal2 button:nth-child(2) {
+  width: auto;
+  height: auto;
+  border: 1px solid #2155CD;
+  outline: none;
+  padding: 12px 33px 12px 33px;
+  border-radius: 6px;
+  background-color: transparent;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19.1px;
+  color: #2155CD;
   margin: 0;
 }
 

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Navbar from '../../Components/Navbar/Navbar'
 import { IoClose } from "react-icons/io5";
 import { IoCheckmarkSharp } from "react-icons/io5";
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
 
 import img from '../../Img/img80.png'
 import img1 from '../../Img/img60.png'
@@ -30,6 +32,7 @@ import img23 from '../../Img/img97.png'
 import { GoListUnordered } from "react-icons/go";
 import { MdFormatListNumbered } from "react-icons/md";
 import { RiDoubleQuotesR } from "react-icons/ri";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const BirthdayWishes = () => {
     const [isActive, setIsActive] = useState(false);
@@ -38,6 +41,31 @@ const BirthdayWishes = () => {
     const toggleButton = () => {
         setIsActive(prevState => !prevState);
     };
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='dailyreportemplate11'>
+                    <div className='dailyreportemplate12'>
+                        <input type="search" placeholder='Search' />
+                    </div>
+
+                    <div className='dailyreportemplate13'>
+                        <p>Student Name</p>
+                        <p>Student Mobile Number</p>
+                        <p>Student Email</p>
+                        <p>Student Address</p>
+                        <p>Student Batch Wise Fees</p>
+                        <p>Student Total Fees All Batch</p>
+                        <p>Student Admission Date</p>
+                        <p>Student Batch Wise Fee Balance</p>
+                        <p>Student Total Fee Balance ( All Batches )</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <Navbar />
@@ -66,7 +94,9 @@ const BirthdayWishes = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button>Add Variable</button>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <button>Add Variable</button>
+                                </OverlayTrigger>
                             </div>
 
                         </div>

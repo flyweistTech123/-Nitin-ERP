@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './DailyReportTemplate.css'
 import HOC from '../../Components/HOC/HOC'
-import { useNavigate, Link } from 'react-router-dom';
-
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
 import {
     ITTargetReportsFilterModal,
     MYDEALSModal,
     AddFieldModal,
 } from '../Modals/Modals.jsx'
 
-import { IoIosArrowDown } from "react-icons/io";
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from '../../Img/img60.png'
@@ -17,7 +16,6 @@ import img2 from '../../Img/img61.png'
 import img3 from '../../Img/img62.png'
 import img4 from '../../Img/img63.png'
 import img5 from '../../Img/img64.png'
-import img6 from '../../Img/img65.png'
 import img7 from '../../Img/img71.png'
 import { GoListUnordered } from "react-icons/go";
 import { MdFormatListNumbered } from "react-icons/md";
@@ -112,6 +110,52 @@ const DailyReportTemplate = () => {
 
 
 
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='dailyreportemplate11'>
+                    <div className='dailyreportemplate12'>
+                        <input type="search" placeholder='Search' />
+                    </div>
+
+                    <div className='dailyreportemplate13'>
+                        <p>Student Name</p>
+                        <p>Student Mobile Number</p>
+                        <p>Student Email</p>
+                        <p>Student Address</p>
+                        <p>Student Batch Wise Fees</p>
+                        <p>Student Total Fees All Batch</p>
+                        <p>Student Admission Date</p>
+                        <p>Student Batch Wise Fee Balance</p>
+                        <p>Student Total Fee Balance ( All Batches )</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='dailyreportemplate11'>
+                    <div className='dailyreportemplate12'>
+                        <input type="search" placeholder='Search' />
+                    </div>
+
+                    <div className='dailyreportemplate13'>
+                        <p>No default country specified</p>
+                        <p>Lorenr</p>
+                        <p>Lorenr</p>
+                        <p>Lorenr</p>
+                        <p>Lorenr</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
     return (
         <>
             <ITTargetAnalysis
@@ -200,10 +244,11 @@ const DailyReportTemplate = () => {
                             <input type="checkbox" />
                             <p>Non active</p>
                         </div>
-
-                        <div className='dailyreportemplate3'>
-                            <button>Add Variable</button>
-                        </div>
+                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                            <div className='dailyreportemplate3'>
+                                <button>Add Variable</button>
+                            </div>
+                        </OverlayTrigger>
                     </div>
                 </div>
 
@@ -215,123 +260,163 @@ const DailyReportTemplate = () => {
                     <div className='dailyreportemplate5'>
                         <div className='dailyreportemplate6'>
                             <p>Lead Receive</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>NI-Lead by you</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Follow Up Done</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>High Priority follow up</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Lead to Admission Conversion</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Admission Justification</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Attendance status</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Total follow up taken</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Total follow up Closed</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>New Follow up created</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Admission Done</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Incoming call minutes</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Outcoming call minutes</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Missed Calls</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Total Call Duration</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Total Rejected Calls</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Not Pick up by client</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Highest call Duration Minutes & Number</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Fresh Leads Remaining</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Overdue follow-up</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                     </div>
                 </div>

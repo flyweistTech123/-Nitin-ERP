@@ -7,6 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 
+import { useNavigate, Link } from 'react-router-dom';
 
 import {
     CourierFilterModal,
@@ -16,6 +17,7 @@ import {
 } from '../Modals/Modals.jsx'
 
 const CourierSection = () => {
+    const navigate = useNavigate();
     const [state1, setState1] = useState(null);
 
     const handleState1 = (index) => {
@@ -775,8 +777,12 @@ const CourierSection = () => {
                         <p>START DIALING</p>
                     </div>
                     <div className='admission16'>
-                        <p>SELECT ACTION</p>
-                        <IoIosArrowDown color='#3F3F3F' />
+                        <select name="" id="">
+                            <option value="">Select Action</option>
+                            <option value="">Assign Responsible Person</option>
+                            <option value="">Assign Service Manager</option>
+                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
+                        </select>
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

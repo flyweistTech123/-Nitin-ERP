@@ -6,6 +6,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { IoIosArrowForward } from "react-icons/io";
 
 
 import {
@@ -21,6 +22,7 @@ const EditProfile = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [step, setStep] = useState(0);
+    const [step1, setStep1] = useState(0);
 
 
     // Counsellorform Modal 
@@ -68,6 +70,434 @@ const EditProfile = () => {
         </Popover>
     );
 
+
+    const popover2 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Type</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>Automatic</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Manual</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+
+    const popover3 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>University</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>Loren Epsom</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Loren Epsom</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+    const popover4 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Course</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>B.tech</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>MBA</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Bsc</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Msc</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>BA</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>MA</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Bcom</p>
+                        <input type="checkbox" />
+                    </div>
+
+                    <div className='addfeestructuremodal5'>
+                        <p>Mcom</p>
+                        <input type="checkbox" />
+                    </div>
+
+                    <div className='addfeestructuremodal5'>
+                        <p>CA</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>BCA</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>BBA</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>MBBS</p>
+                        <input type="checkbox" />
+                    </div>
+
+                    <div className='addfeestructuremodal5'>
+                        <p>BHMS</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>BAMS</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>BDS</p>
+                        <input type="checkbox" />
+                    </div>
+
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover5 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Specialization</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>Arts Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Science Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Science Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Biology Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Arts Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Arts Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Arts Lorem Ipsum</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+
+    const popover6 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Mode of fee structure</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>Semester</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Yearly</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover7 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Exam mode</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>Semester</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>Yearly</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+    const popover8 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Applied Batches</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>1</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>2</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>3</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover9 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Batch No (GAP Charges)</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>1</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>2</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover10 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Batch No (R.R Charges)</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>1</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>2</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover11 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Batch No (Back paper)</h6>
+                    <div className='addfeestructuremodal5'>
+                        <p>1</p>
+                        <input type="checkbox" />
+                    </div>
+                    <div className='addfeestructuremodal5'>
+                        <p>2</p>
+                        <input type="checkbox" />
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover12 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile95'>
+                <div className='addfeestructuremodal4'>
+                    <h6>Course Duration</h6>
+
+                    <div className="editprofile96">
+                        <div className={step1 === 0 ? "editprofile97" : "editprofile98"} onClick={() => setStep1(0)}>
+                            <p>Yearly</p>
+                        </div>
+                        <div className={step1 === 1 ? "editprofile97" : "editprofile98"} onClick={() => setStep1(1)}>
+                            <p>Monthly</p>
+                        </div>
+                    </div>
+                    {step1 === 0 ? (
+                        <div className='editprofile99'>
+                            <div className='addfeestructuremodal5'>
+                                <p>1</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>2</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>3</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>4</p>
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    ) : step1 === 1 ? (
+                        <div className='editprofile99'>
+                            <div className='addfeestructuremodal5'>
+                                <p>1</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>2</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>3</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>4</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>5</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>6</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>7</p>
+                                <input type="checkbox" />
+                            </div>
+                            <div className='addfeestructuremodal5'>
+                                <p>8</p>
+                                <input type="checkbox" />
+                            </div>
+                        </div>
+                    ) : (
+                        ""
+                    )}
+
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='editprofile94'>
+                <div className='editprofile91'>
+                    <h6>Add Charges</h6>
+                </div>
+                <div className='editprofile93'>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover2}>
+                        <div className='editprofile92'>
+                            <p>Automatic/manual</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover3}>
+                        <div className='editprofile92'>
+                            <p>University</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover4}>
+                        <div className='editprofile92'>
+                            <p>Course</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover5}>
+                        <div className='editprofile92'>
+                            <p>Specialization</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover6}>
+                        <div className='editprofile92'>
+                            <p>Mode of fee structure</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover7}>
+                        <div className='editprofile92'>
+                            <p>Exam Mode</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover8}>
+                        <div className='editprofile92'>
+                            <p>Applied Batches</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover12}>
+                        <div className='editprofile92'>
+                            <p>Total course Duration</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover10}>
+                        <div className='editprofile92'>
+                            <p>Add R.R charges in batches</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover9}>
+                        <div className='editprofile92'>
+                            <p>Add GAP charges</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                    <OverlayTrigger trigger="click" placement="right" overlay={popover11}>
+                        <div className='editprofile92'>
+                            <p>Add Back paper in batches</p>
+                            <IoIosArrowForward color='#242424' size={20} />
+                        </div>
+                    </OverlayTrigger>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <Counsellorform
@@ -100,9 +530,9 @@ const EditProfile = () => {
 
                     <div className='editprofile85'>
                         <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
-                            <p  className='editprofile85'>Create a field</p>
+                            <p className='editprofile85'>Create a field</p>
                         </OverlayTrigger>
-                        
+
                     </div>
 
                 ) : (
@@ -123,7 +553,9 @@ const EditProfile = () => {
                                 </div>
                             </OverlayTrigger>
                         ) : step === 0 ? (
-                            <button>Generate Fee Structure</button>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <button>Generate Fee Structure</button>
+                            </OverlayTrigger>
 
                         ) : (
                             " "

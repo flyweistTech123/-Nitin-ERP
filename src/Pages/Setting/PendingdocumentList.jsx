@@ -16,10 +16,14 @@ import { IoIosArrowDown } from "react-icons/io";
 
 
 import {
-    DocumentFilterModal11   ,
+    DocumentFilterModal11,
     MYDEALSModal,
     AddFieldModal,
     History,
+    AddNewFilter,
+    History1,
+    FilterModalhistory,
+    AddNewEvent,
 } from '../Modals/Modals.jsx'
 
 
@@ -106,6 +110,21 @@ const PendingdocumentList = () => {
     // History Modal
     const [modalShow3, setModalShow3] = React.useState(false);
 
+    // AddNewFilter Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+
+    // History Modal
+    const [modalShow44, setModalShow44] = React.useState(false);
+
+    // FilterModalhistory Modal
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+    // AddNewEvent Modal
+    const [modalShow6, setModalShow6] = React.useState(false);
+
     return (
         <>
             <AddDocument
@@ -117,20 +136,40 @@ const PendingdocumentList = () => {
                 onHide={() => setModalShow11(false)}
                 setModalShow1={setModalShow12}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow4}
             />
             <MYDEALSModal
                 show={modalShow12}
                 onHide={() => setModalShow12(false)}
                 setModalShow={setModalShow11}
                 setModalShow2={setModalShow2}
+
             />
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
             />
+            <AddNewFilter
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
             <History
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
+            />
+            <History1
+                show={modalShow44}
+                onHide={() => setModalShow44(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
+            />
+            <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -139,7 +178,7 @@ const PendingdocumentList = () => {
                         <div className='cancel1' onClick={() => setModalShow(true)}>
                             <p>Add</p>
                         </div>
-                        <div className='cancel1'>
+                        <div className='cancel1' onClick={() => setModalShow44(true)}>
                             <p><MdHistory size={20} /> History</p>
                         </div>
                     </div>

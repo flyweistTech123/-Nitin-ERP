@@ -5,7 +5,7 @@ import {
     Remarkspayment, PaymentStatus,
     PaymentFilterModalmodal,
     MYDEALSModal,
-    AddFieldModal,
+    PaymentFieldModal,
     AdmissionFollowUp,
     NewTask,
     History,
@@ -16,7 +16,6 @@ import {
     History1,
     FilterModalhistory,
     AddNewEvent,
-    PaymentFieldModal,
     PaymentEmailModal,
     PaymentTelgaramModal,
     PaymentSMSModal,
@@ -307,7 +306,7 @@ const PaymentReceived = () => {
                 setModalShow={setModalShow2}
                 setModalShow2={setModalShow4}
             />
-            <AddFieldModal
+            <PaymentFieldModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
             />

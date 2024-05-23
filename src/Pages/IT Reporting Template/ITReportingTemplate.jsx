@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './ITReportingTemplate.css'
 import HOC from '../../Components/HOC/HOC'
 import { useNavigate, Link } from 'react-router-dom';
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 
 
@@ -124,7 +126,50 @@ const ITReportingTemplate = () => {
     }
 
 
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='dailyreportemplate11'>
+                    <div className='dailyreportemplate12'>
+                        <input type="search" placeholder='Search' />
+                    </div>
 
+                    <div className='dailyreportemplate13'>
+                        <p>Student Name</p>
+                        <p>Student Mobile Number</p>
+                        <p>Student Email</p>
+                        <p>Student Address</p>
+                        <p>Student Batch Wise Fees</p>
+                        <p>Student Total Fees All Batch</p>
+                        <p>Student Admission Date</p>
+                        <p>Student Batch Wise Fee Balance</p>
+                        <p>Student Total Fee Balance ( All Batches )</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='dailyreportemplate11'>
+                    <div className='dailyreportemplate12'>
+                        <input type="search" placeholder='Search' />
+                    </div>
+
+                    <div className='dailyreportemplate13'>
+                        <p>No default country specified</p>
+                        <p>Lorenr</p>
+                        <p>Lorenr</p>
+                        <p>Lorenr</p>
+                        <p>Lorenr</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
 
     return (
         <>
@@ -215,9 +260,11 @@ const ITReportingTemplate = () => {
                             <p>Non active</p>
                         </div>
 
-                        <div className='dailyreportemplate3'>
-                            <button>Add Variable</button>
-                        </div>
+                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                            <div className='dailyreportemplate3'>
+                                <button>Add Variable</button>
+                            </div>
+                        </OverlayTrigger>
                     </div>
                 </div>
 
@@ -229,33 +276,43 @@ const ITReportingTemplate = () => {
                     <div className='dailyreportemplate5'>
                         <div className='dailyreportemplate6'>
                             <p>URL</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Website</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Justification</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Content</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                         <div className='dailyreportemplate6'>
                             <p>Content Word Count</p>
-                            <div className='dailyreportemplate7'>
-                                <MdMoreHoriz color='#444444' size={20} />
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <div className='dailyreportemplate7'>
+                                    <MdMoreHoriz color='#444444' size={20} />
+                                </div>
+                            </OverlayTrigger>
                         </div>
                     </div>
                 </div>

@@ -6,11 +6,25 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoCloseSharp } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import img20 from '../../Img/img82.png'
+import img19 from '../../Img/img83.png'
+
+// Modals 
+
+
+import {
+    PettyCashPaymentFilterModal,
+    PropertiesModal,
+    PaymentFieldModal,
+} from '../Modals/Modals.jsx'
 
 
 
 const PettyCashPayment = () => {
+    const navigate = useNavigate();
     const tableData = [
         {
             id: 1,
@@ -89,8 +103,40 @@ const PettyCashPayment = () => {
     ];
 
 
-    const navigate = useNavigate()
-
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
 
 
     // New Payment Request  Modal 
@@ -138,9 +184,11 @@ const PettyCashPayment = () => {
                             </div>
                             <div className='newpaymentrequest4'>
                                 <label htmlFor="">Authority (Final Only)</label>
-                                <select name="" id="">
-                                    <option value=""></option>
-                                </select>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                    <select name="" id="">
+                                        <option value=""></option>
+                                    </select>
+                                </OverlayTrigger>
                             </div>
                         </div>
 
@@ -258,6 +306,50 @@ const PettyCashPayment = () => {
     }
 
 
+
+
+    // Filter Modal 
+
+    const [modalShow3, setModalShow3] = React.useState(false);
+
+
+    // add field Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    // PropertiesModal
+    const [modalShow5, setModalShow5] = React.useState(false);
+
+
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className="toppart7">
+                    <div className="toppart8" onClick={() => setModalShow5(true)}>
+                        <h6>String</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Date</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>List</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Yes/ No</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+
+
     return (
         <>
             <NewPaymentRequest
@@ -272,14 +364,29 @@ const PettyCashPayment = () => {
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
             />
+            <PettyCashPaymentFilterModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+                setModalShow2={setModalShow4}
+            />
+            <PaymentFieldModal
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+            />
+            <PropertiesModal
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>PettyCash Payment</p>
                     <div className='admission2'>
-                        <div className='expense30'>
-                            <p>Create a field</p>
-                        </div>
-                        <div className='cancel2'>
+                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                            <div className='expense30'>
+                                <p>Create a field</p>
+                            </div>
+                        </OverlayTrigger>
+                        <div className='cancel2' onClick={() => setModalShow(true)}>
                             <p>Edit</p>
                         </div>
                         <div className='cancel3'>
@@ -292,8 +399,8 @@ const PettyCashPayment = () => {
                     <div className='itreport3'>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
-                        <div className='admission10'>
+                    <div className='admission9' onClick={() => setModalShow3(true)}>
+                        <div className='admission10' >
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />
                         </div>

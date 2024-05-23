@@ -25,7 +25,7 @@ const ForPublicPayment = () => {
                     <p>For Public</p>
                 </div>
                 <div className='paymenttypemode2'>
-                    <p>Select the list of the Payment methods you want to show for <span>‘Internal Employee Login User’</span> Only.</p>
+                    <p>Select the list of the Payment methods you want to show for <span>‘public user’</span> Only.</p>
                 </div>
                 
                 <div className='paymenttypemode4'>

@@ -73,7 +73,7 @@ const PDCFollowUpStatus = () => {
 
     const [modalShow1, setModalShow1] = React.useState(false);
 
-    function deleterecord11(props) {
+    function Addrecord1(props) {
 
         return (
             <Modal
@@ -85,12 +85,17 @@ const PDCFollowUpStatus = () => {
                 <Modal.Body >
                     <div className='deleterecordmodal'>
                         <div className='newpaymentrequest7'>
-                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow(false)} />
+                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow1(false)} />
                         </div>
 
                         <div className='deleterecordmodal1'>
                             <h6>Are you sure you want to<br />
                                 delete this record ?</h6>
+                        </div>
+
+                        <div className='deleterecordmodal2'>
+                            <button onClick={() => setModalShow1(false)}>Yes</button>
+                            <button onClick={() => setModalShow1(false)}>No</button>
                         </div>
                     </div>
                 </Modal.Body>
@@ -104,7 +109,7 @@ const PDCFollowUpStatus = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
             />
-            <deleterecord11
+            <Addrecord1
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />

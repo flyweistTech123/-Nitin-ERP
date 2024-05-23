@@ -8,12 +8,13 @@ import { IoIosArrowDown } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
-
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 
 import {
-    ExpenseFilterModal,
+    PettyCashPaymentFilterModal,
     MYDEALSModal,
-    AddFieldModal,
+    PaymentFieldModal,
 } from '../Modals/Modals.jsx'
 
 
@@ -410,6 +411,31 @@ const Expense = () => {
     const [modalShow7, setModalShow7] = React.useState(false);
 
 
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className="toppart7">
+                    <div className="toppart8" onClick={() => setModalShow5(true)}>
+                        <h6>String</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Date</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>List</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Yes/ No</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <AddExpense
@@ -432,7 +458,7 @@ const Expense = () => {
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
             />
-            <ExpenseFilterModal
+            <PettyCashPaymentFilterModal
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
                 setModalShow1={setModalShow6}
@@ -444,7 +470,7 @@ const Expense = () => {
                 setModalShow={setModalShow5}
                 setModalShow2={setModalShow7}
             />
-            <AddFieldModal
+            <PaymentFieldModal
                 show={modalShow7}
                 onHide={() => setModalShow7(false)}
             />
@@ -452,9 +478,11 @@ const Expense = () => {
                 <div className='admission1'>
                     <p>Expense</p>
                     <div className='admission2'>
-                        <div className='expense30'>
-                            <p>Create a field</p>
-                        </div>
+                        <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                            <div className='expense30'>
+                                <p>Create a field</p>
+                            </div>
+                        </OverlayTrigger>
                         <div className='cancel2' onClick={() => setModalShow3(true)}>
                             <p>Edit</p>
                         </div>
@@ -464,7 +492,7 @@ const Expense = () => {
                     </div>
                 </div>
 
-                <div className='itreport2'  onClick={() => setModalShow5(true)}>
+                <div className='itreport2' onClick={() => setModalShow5(true)}>
                     <div className='itreport3' >
                         <p>Filter</p>
                     </div>
