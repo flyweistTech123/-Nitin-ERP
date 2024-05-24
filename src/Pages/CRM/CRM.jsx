@@ -259,6 +259,7 @@ const CRM = () => {
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
                 handleShow6={handleShow6}
+                setModalShow8={setModalShow}
                 title={"Admission"}
             />
             <CRMAdmissionFollowUp
@@ -270,6 +271,7 @@ const CRM = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow}
                 title={"Admission"}
             />
             <NeWLead
@@ -281,6 +283,7 @@ const CRM = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                handleShow8={setModalShow}
             />
             <History
                 show={modalShow5}
@@ -294,6 +297,7 @@ const CRM = () => {
                 show={show3}
                 onHide={handleClose3}
                 setModalShow3={setModalShow5}
+                setModalShow8={setModalShow}
             />
             <Email
                 show={show4}

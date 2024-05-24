@@ -17,7 +17,8 @@ import {
     Whatsapp,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter,
 } from '../Modals/Modals'
 
 import { MdOutlineClose } from "react-icons/md";
@@ -125,6 +126,9 @@ const PendingOnlinePayments = () => {
 
     const [modalShow7, setModalShow7] = React.useState(false);
 
+    // AddNewFilter Modal
+    const [modalShow8, setModalShow8] = React.useState(false);
+
     return (
         <>
             <StudentDetails
@@ -140,16 +144,22 @@ const PendingOnlinePayments = () => {
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
                 setModalShow2={setModalShow4}
+                setModalShow7={setModalShow8}
             />
             <MYDEALSModal
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
                 setModalShow={setModalShow2}
                 setModalShow2={setModalShow4}
+                setModalShow7={setModalShow8}
             />
             <AddFieldModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
+            />
+            <AddNewFilter
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
             />
             <History1
                 show={modalShow5}

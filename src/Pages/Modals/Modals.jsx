@@ -777,7 +777,7 @@ export function MYDEALSModal(props) {
                             <p style={{ color: '#2155CD' }}>MY DEALS</p>
                         </div>
 
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow7(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -2964,6 +2964,27 @@ export function CRMNeWLead(props) {
     }, []);
 
 
+    const handleModal = () => {
+        props.setModalShow8(true);
+    };
+
+
+    const popover2 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='Admissionfollowup45'>
+                    <div className='Admissionfollowup46'>
+                        <p>Admission form</p>
+                    </div>
+                    <hr />
+                    <div className='Admissionfollowup46' onClick={handleModal}>
+                        <p>Counsellor commitment form</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
 
     return (
         <>
@@ -2991,9 +3012,11 @@ export function CRMNeWLead(props) {
                                 </div>
                             </div>
 
-                            <div className='Admissionfollowup7'>
-                                <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
+                                <div className='Admissionfollowup7'>
+                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                </div>
+                            </OverlayTrigger>
                         </div>
 
                         <div className='Admissionfollowup8'>
@@ -3366,6 +3389,28 @@ export function CRMAdmissionFollowUp(props) {
         };
     }, []);
 
+
+    const handleModal = () => {
+        props.setModalShow8(true);
+    };
+
+
+    const popover2 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='Admissionfollowup45'>
+                    <div className='Admissionfollowup46'>
+                        <p>Admission form</p>
+                    </div>
+                    <hr />
+                    <div className='Admissionfollowup46' onClick={handleModal}>
+                        <p>Counsellor commitment form</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle }}>
@@ -3392,9 +3437,11 @@ export function CRMAdmissionFollowUp(props) {
                                 </div>
                             </div>
 
-                            <div className='Admissionfollowup7'>
-                                <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
+                                <div className='Admissionfollowup7'>
+                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                </div>
+                            </OverlayTrigger>
                         </div>
 
                         <div className='Admissionfollowup8'>
@@ -6610,6 +6657,27 @@ export function NeWLead(props) {
         };
     }, []);
 
+    const handleModal = () => {
+        props.setModalShow8(true);
+    };
+
+
+    const popover2 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='Admissionfollowup45'>
+                    <div className='Admissionfollowup46'>
+                        <p>Admission form</p>
+                    </div>
+                    <hr />
+                    <div className='Admissionfollowup46' onClick={handleModal}>
+                        <p>Counsellor commitment form</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <Offcanvas show={props.show} onHide={props.onHide} placement="top" style={{ width: widthStyle, height: "100%", top: '10%', left: leftStyle }}>
@@ -6635,10 +6703,11 @@ export function NeWLead(props) {
                                     <p onClick={() => props.setModalShow3(true)}>History</p>
                                 </div>
                             </div>
-
-                            <div className='Admissionfollowup7'>
-                                <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
+                                <div className='Admissionfollowup7'>
+                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                </div>
+                            </OverlayTrigger>
                         </div>
 
                         <div className='Admissionfollowup8'>
@@ -7567,7 +7636,7 @@ export function PaymentFilterModal(props) {
                         <div className='filter4'>
                             <p>MY Filters</p>
                         </div>
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow7(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -7892,6 +7961,27 @@ export function SMS(props) {
         };
     }, []);
 
+        const handleModal = () => {
+        props.setModalShow8(true);
+    };
+
+
+    const popover2 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='Admissionfollowup45'>
+                    <div className='Admissionfollowup46'>
+                        <p>Admission form</p>
+                    </div>
+                    <hr />
+                    <div className='Admissionfollowup46' onClick={handleModal}>
+                        <p>Counsellor commitment form</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
     return (
         <>
             <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle, height: "100%" }}>
@@ -7918,9 +8008,11 @@ export function SMS(props) {
                                 </div>
                             </div>
 
-                            <div className='Admissionfollowup7'>
-                                <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
-                            </div>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
+                                <div className='Admissionfollowup7'>
+                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                </div>
+                            </OverlayTrigger>
                         </div>
 
                         <div className='Admissionfollowup8'>
@@ -8100,7 +8192,7 @@ export function SMS(props) {
                                     <div className='Admissionfollowup16'>
                                         <div className='Admissionfollowup17'>
                                             <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleClose3}>Comment</p>
+                                                <p onClick={props.handleShow1}>Comment</p>
                                             </div>
                                             <div className='Admissionfollowup19' >
                                                 <p onClick={props.handleShow2}>Task</p>

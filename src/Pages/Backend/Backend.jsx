@@ -240,7 +240,7 @@ const Backend = () => {
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
-                setModalShow3={setModalShow3}
+                setModalShow3={setModalShow6}
                 handleShow1={handleShow1}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}
@@ -254,12 +254,13 @@ const Backend = () => {
             <NeWLead
                 show={show1}
                 onHide={handleClose1}
-                setModalShow3={setModalShow3}
+                setModalShow3={setModalShow6}
                 handleShow={handleShow}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow12}
             />
             <History
                 show={modalShow6}
@@ -272,7 +273,12 @@ const Backend = () => {
             <SMS
                 show={show3}
                 onHide={handleClose3}
-                setModalShow3={setModalShow3}
+                setModalShow3={setModalShow6}
+                setModalShow8={setModalShow12}
+                handleShow={handleShow}
+                handleShow2={handleShow2}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}

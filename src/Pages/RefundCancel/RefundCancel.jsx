@@ -24,7 +24,11 @@ import {
     PaymentFilterModal,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    AddNewFilter,
+    PropertiesModal,
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals'
 
 import { IoSettings } from "react-icons/io5";
@@ -219,6 +223,20 @@ const RefundCancel = () => {
     // AddNewEvent Modal
 
     const [modalShow13, setModalShow13] = React.useState(false);
+
+
+    // AddNewFilter Modal
+    const [modalShow14, setModalShow14] = React.useState(false);
+
+    // property modal
+    const [modalShow15, setModalShow15] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow16, setModalShow16] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow17, setModalShow17] = React.useState(false);
+
     return (
         <>
             <UploadDocuments
@@ -250,6 +268,7 @@ const RefundCancel = () => {
                 onHide={() => setModalShow6(false)}
                 setModalShow1={setModalShow7}
                 setModalShow2={setModalShow8}
+                setModalShow7={setModalShow14}
             />
             <MYDEALSModal
                 show={modalShow7}
@@ -261,26 +280,34 @@ const RefundCancel = () => {
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
             />
+            <AddNewFilter
+                show={modalShow14}
+                onHide={() => setModalShow14(false)}
+            />
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
-                setModalShow3={modalShow9}
+                setModalShow3={setModalShow9}
                 handleShow1={handleShow1}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow15}
+                setModalShow9={setModalShow16}
+                setModalShow10={setModalShow17}
                 title={"Refund/ Cancel Requests"}
             />
             <NeWLead
                 show={show1}
                 onHide={handleClose1}
-                setModalShow3={modalShow9}
+                setModalShow3={setModalShow9}
                 handleShow={handleShow}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow17}
             />
             <History
                 show={modalShow9}
@@ -293,7 +320,13 @@ const RefundCancel = () => {
             <SMS
                 show={show3}
                 onHide={handleClose3}
-                setModalShow3={modalShow9}
+                setModalShow3={setModalShow9}
+                setModalShow8={setModalShow17}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}
@@ -316,6 +349,18 @@ const RefundCancel = () => {
             <AddNewEvent
                 show={modalShow13}
                 onHide={() => setModalShow13(false)}
+            />
+            <PropertiesModal
+                show={modalShow15}
+                onHide={() => setModalShow15(false)}
+            />
+            <NewViewModal
+                show={modalShow16}
+                onHide={() => setModalShow16(false)}
+            />
+            <Counsellorform
+                show={modalShow17}
+                onHide={() => setModalShow17(false)}
             />
             <div className='cancel'>
                 <div className='admission1'>

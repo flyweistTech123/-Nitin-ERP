@@ -27,8 +27,11 @@ import {
     Remarks,
     History1,
     FilterModalhistory,
-    AddNewEvent
-
+    AddNewEvent,
+    AddNewFilter,
+    PropertiesModal,
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals.jsx'
 
 const Service = () => {
@@ -174,6 +177,19 @@ const Service = () => {
     // AddNewEvent Modal
 
     const [modalShow8, setModalShow8] = React.useState(false);
+
+    // property modal
+    const [modalShow9, setModalShow9] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow10, setModalShow10] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // AddNewFilter Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
     return (
         <>
             <FilterModal
@@ -181,6 +197,7 @@ const Service = () => {
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow12}
             />
             <MYDEALSModal
                 show={modalShow1}
@@ -201,6 +218,9 @@ const Service = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow9}
+                setModalShow9={setModalShow10}
+                setModalShow10={setModalShow11}
                 title={"Service"}
             />
             <NeWLead
@@ -212,6 +232,7 @@ const Service = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow11}
             />
             <History
                 show={modalShow3}
@@ -225,6 +246,12 @@ const Service = () => {
                 show={show3}
                 onHide={handleClose3}
                 setModalShow3={setModalShow3}
+                setModalShow8={setModalShow11}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}
@@ -256,6 +283,22 @@ const Service = () => {
             <AddNewEvent
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
+            />
+            <PropertiesModal
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
+            />
+            <NewViewModal
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
+            />
+            <Counsellorform
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+            />
+            <AddNewFilter
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
             />
             <div className='service'>
                 <div className='admission1'>

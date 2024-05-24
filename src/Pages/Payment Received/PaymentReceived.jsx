@@ -20,7 +20,10 @@ import {
     PaymentTelgaramModal,
     PaymentSMSModal,
     PaymentWhatsappModal,
-    AddNewFilter
+    AddNewFilter,
+    PropertiesModal,
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -275,13 +278,20 @@ const PaymentReceived = () => {
 
 
     // PaymentWhatsappModal
-
     const [modalShow13, setModalShow13] = React.useState(false);
 
 
     // AddNewFilter
-
     const [modalShow14, setModalShow14] = React.useState(false);
+
+    // property modal
+    const [modalShow15, setModalShow15] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow16, setModalShow16] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow17, setModalShow17] = React.useState(false);
 
     return (
         <>
@@ -305,6 +315,7 @@ const PaymentReceived = () => {
                 onHide={() => setModalShow3(false)}
                 setModalShow={setModalShow2}
                 setModalShow2={setModalShow4}
+                setModalShow7={setModalShow14}
             />
             <PaymentFieldModal
                 show={modalShow4}
@@ -323,6 +334,9 @@ const PaymentReceived = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow15}
+                setModalShow9={setModalShow16}
+                setModalShow10={setModalShow17}
                 title={"Payment"}
             />
             <NeWLead
@@ -334,10 +348,11 @@ const PaymentReceived = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
-            />
+                setModalShow8={setModalShow17}            />
             <History
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
+
             />
             <NewTask
                 show={show2}
@@ -347,6 +362,12 @@ const PaymentReceived = () => {
                 show={show3}
                 onHide={handleClose3}
                 setModalShow3={setModalShow5}
+                setModalShow8={setModalShow17}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}
@@ -389,6 +410,18 @@ const PaymentReceived = () => {
             <PaymentWhatsappModal
                 show={modalShow13}
                 onHide={() => setModalShow13(false)}
+            />
+            <PropertiesModal
+                show={modalShow15}
+                onHide={() => setModalShow15(false)}
+            />
+            <NewViewModal
+                show={modalShow16}
+                onHide={() => setModalShow16(false)}
+            />
+            <Counsellorform
+                show={modalShow17}
+                onHide={() => setModalShow17(false)}
             />
             <div className='payreceived'>
                 <div className='admission1'>

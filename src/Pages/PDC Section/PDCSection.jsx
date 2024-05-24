@@ -386,6 +386,7 @@ const PDCSection = () => {
                 onHide={() => setModalShow5(false)}
                 setModalShow={setModalShow4}
                 setModalShow2={setModalShow6}
+                setModalShow7={setModalShow14}
             />
             <AddFieldModal
                 show={modalShow6}
@@ -418,6 +419,7 @@ const PDCSection = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow17}
             />
             <History
                 show={modalShow7}
@@ -431,6 +433,12 @@ const PDCSection = () => {
                 show={show3}
                 onHide={handleClose3}
                 setModalShow3={setModalShow7}
+                setModalShow8={setModalShow17}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}

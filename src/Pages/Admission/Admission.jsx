@@ -298,6 +298,7 @@ const Admission = () => {
                 onHide={() => setModalShow1(false)}
                 setModalShow={setModalShow}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <AddFieldModal
                 show={modalShow2}
@@ -330,6 +331,7 @@ const Admission = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow10}
             />
             <History
                 show={modalShow3}
@@ -343,6 +345,12 @@ const Admission = () => {
                 show={show3}
                 onHide={handleClose3}
                 setModalShow3={setModalShow3}
+                setModalShow8={setModalShow10}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}
