@@ -5857,9 +5857,12 @@ export function TaskFilterModal(props) {
                         <div className='filter4'>
                             <p>DEALS IN PROGRESS</p>
                         </div>
-
-                        <div className='filter4'>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
                             <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6' onClick={() => props.setModalShow4(true)}>
+                            <p>+Save Filter</p>
                         </div>
                     </div>
                     <div className='filter7'>
@@ -7961,7 +7964,7 @@ export function SMS(props) {
         };
     }, []);
 
-        const handleModal = () => {
+    const handleModal = () => {
         props.setModalShow8(true);
     };
 

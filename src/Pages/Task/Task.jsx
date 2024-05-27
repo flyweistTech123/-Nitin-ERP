@@ -8,6 +8,7 @@ import {
     MYDEALSModal,
     AddFieldModal,
     PendingTaskModal,
+    AddNewFilter,
 } from '../Modals/Modals.jsx'
 
 import { IoSettings } from "react-icons/io5";
@@ -137,6 +138,10 @@ const Task = () => {
         }
     };
 
+
+    // AddNewFilter Modal
+    const [modalShow4, setModalShow4] = React.useState(false);
+
     return (
         <>
             <TaskFilterModal
@@ -144,16 +149,22 @@ const Task = () => {
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
                 setModalShow2={setModalShow2}
+                setModalShow4={setModalShow4}
             />
             <MYDEALSModal
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
                 setModalShow={setModalShow}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow4}
             />
             <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <AddNewFilter
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
             />
             <PendingTaskModal
                 show={modalShow3}
@@ -203,7 +214,7 @@ const Task = () => {
                                     {tableData.map((data) => (
                                         <tr key={data.id}>
                                             <td><input type="checkbox" /></td>
-                                            <td><img src={img8} alt="" /></td>
+                                            <td></td>
                                             <td>{data.ID}</td>
                                             <td>{data.name}</td>
                                             <td>{data.createdOn}</td>
