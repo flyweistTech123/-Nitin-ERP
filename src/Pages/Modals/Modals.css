@@ -4262,8 +4262,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 200px;
   gap: 20px;
+  padding-top: 20px;
+  background-color: #1a1a1a;
 }
 
 .notificationmodal6 button:nth-child(1) {
@@ -4298,8 +4299,52 @@
   margin: 0;
 }
 
+
+
+.notificationmodal66 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 200px;
+  background-color: #1a1a1a;
+}
+
+.notificationmodal66 button:nth-child(1) {
+  width: auto;
+  height: auto;
+  padding: 12px 58px 12px 58px;
+  border-radius: 8px;
+  background-color: #404040;
+  border: none;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
+.notificationmodal66 button:nth-child(2) {
+  width: auto;
+  height: auto;
+  padding: 12px 58px 12px 58px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid #404040;
+  outline: none;
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #ffffff;
+  margin: 0;
+}
+
 .notificationmodal7 {
   margin-top: 50px;
+  width: 100%;
 }
 
 .notificationmodal8 {
@@ -4307,6 +4352,7 @@
   align-items: center;
   justify-content: end;
   gap: 30px;
+  width: 100%;
 }
 
 .notificationmodal8 p {
@@ -4339,6 +4385,7 @@
 
 .notificationmodal10 {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   width: 95%;
   margin: auto;
@@ -4347,6 +4394,7 @@
 
 .notificationmodal11 {
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 20px;
 }
@@ -4363,7 +4411,7 @@
 .notificationmodal12 {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 29px;
 }
 
 .notificationmodal13 {
@@ -4378,6 +4426,15 @@
 
 .notificationmodal14 {
   margin-top: 50px;
+}
+
+.notificationmodal15{
+  height: 500px;
+  overflow: auto;
+}
+
+.notificationmodal16{
+  background-color: 1a1a1a;
 }
 
 /* Counsellorform  Modal for CRM page */

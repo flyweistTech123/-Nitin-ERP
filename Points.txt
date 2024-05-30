@@ -3,3 +3,27 @@
 ->Add Button is not Working to add admission
 ->Delete Button is not selecting records
 ->Application Form, Counsellor Form, Payment Link not working in listing
+
+
+MOM of Nitin 
+
+->The notification should be scroll.
+->The backend page edit the see request data different.
+->Assign service action should show in all pages.
+->In PDC bitwise not clickble beacause of edit button showing frontent of bitwise.
+->The different details of filter in service and backend filter.
+->In Education level page the check box show of yes and no.
+->Check the crm page filter's details.
+->The profile image change.
+
+
+### Minutes of Meeting (MOM) - Nitin
+
+1. Implement scroll functionality for the notification feature to enhance usability.
+2. Redesign the backend page to present request data in a different format for better clarity.
+3. Ensure the "Assign Service" action button is available and visible on all relevant pages.
+4. Address the problem where the PDC bitwise is not clickable due to the edit button overlapping it.
+5. Clearly distinguish between the details of filters used in the service module and those in the backend module.
+6. Add checkboxes for "Yes" and "No" options on the Education Level page to improve user interaction.
+7. Check and verify the details of the filters used on the CRM page to ensure they function correctly.
+8. Enable the functionality for users to change their profile image easily.

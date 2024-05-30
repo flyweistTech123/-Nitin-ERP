@@ -343,11 +343,11 @@ const Service = () => {
                 </div>
 
 
-                <div className='admission8' onClick={() => setModalShow(true)}>
+                <div className='admission8' >
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />

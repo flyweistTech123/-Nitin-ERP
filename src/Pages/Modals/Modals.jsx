@@ -13371,7 +13371,7 @@ export function NotificationModal(props) {
                         </div>
                     </div>
 
-                    <div className='notificationmodal6'>
+                    <div className='notificationmodal66'>
                         <button onClick={() => props.onHide()}>Save</button>
                         <button onClick={() => props.onHide()}>Cancel</button>
                     </div>
@@ -13407,95 +13407,687 @@ export function NotificationModal2(props) {
                     </div>
 
                     <div className='notificationmodal7'>
-                        <div className='notificationmodal8'>
-                            <p>Site and <br />Application</p>
-                            <p>Email</p>
-                            <p>Push <br /> Notification</p>
-                        </div>
-
-                        <div className='notificationmodal9'>
-                            <p>Chat & Calls</p>
-                        </div>
-
-                        <div className='notificationmodal10'>
-                            <div className='notificationmodal11'>
-                                <label htmlFor="">Personal chat message</label>
-                                <label htmlFor="">Private chat message</label>
-                                <label htmlFor="">Public chat message</label>
-                                <label htmlFor="">Chat likes</label>
-                                <label htmlFor="">Someone mentioned in the chat</label>
-                                <label htmlFor="">Unrecognized Notification</label>
-                            </div>
-
-
-                            <div className='notificationmodal12'>
-                                <div className='notificationmodal13'>
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                </div>
-                                <div className='notificationmodal13'>
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                </div>
-                                <div className='notificationmodal13'>
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                </div>
-                                <div className='notificationmodal13'>
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                </div>
-                                <div className='notificationmodal13'>
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                </div>
-                                <div className='notificationmodal13'>
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                    <input type="checkbox" />
-                                </div>
+                        <div className='notificationmodal16'>
+                            <div className='notificationmodal8'>
+                                <p>Site and <br />Application</p>
+                                <p>Email</p>
+                                <p>Push <br /> Notification</p>
                             </div>
                         </div>
 
-                        <div className='notificationmodal14'>
 
-                            <div className='notificationmodal9'>
-                                <p>Conversation</p>
-                            </div>
-
-                            <div className='notificationmodal10'>
-                                <div className='notificationmodal11'>
-                                    <label htmlFor="">You were specified as a post recipient</label>
-                                    <label htmlFor="">Your message has been posted to Activity Stream.</label>
-                                    <label htmlFor="">A comment was added to your post</label>
+                        <div className='notificationmodal15'>
+                            <div className='notificationmodal144'>
+                                <div className='notificationmodal9'>
+                                    <p>Chat & Calls</p>
                                 </div>
 
-
-                                <div className='notificationmodal12'>
-                                    <div className='notificationmodal13'>
-                                        <input type="checkbox" />
-                                        <input type="checkbox" />
-                                        <input type="checkbox" />
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Personal chat message</label>
+                                        <label htmlFor="">Private chat message</label>
+                                        <label htmlFor="">Public chat message</label>
+                                        <label htmlFor="">Chat likes</label>
+                                        <label htmlFor="">Someone mentioned in the chat</label>
+                                        <label htmlFor="">Unrecognized Notification</label>
                                     </div>
-                                    <div className='notificationmodal13'>
-                                        <input type="checkbox" />
-                                        <input type="checkbox" />
-                                        <input type="checkbox" />
-                                    </div>
-                                    <div className='notificationmodal13'>
-                                        <input type="checkbox" />
-                                        <input type="checkbox" />
-                                        <input type="checkbox" />
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>Conversation</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">You were specified as a post recipient</label>
+                                        <label htmlFor="">Your message has been posted to Activity Stream.</label>
+                                        <label htmlFor="">A comment was added to your post</label>
+                                        <label htmlFor="">You were mentioned in a post</label>
+                                        <label htmlFor="">You were mentioned in comment</label>
+                                        <label htmlFor="">Your post was shared with more users</label>
+                                        <label htmlFor="">A post was shared with you</label>
+                                        <label htmlFor="">Send new message to all users</label>
+                                        <label htmlFor="">Appreciation notification</label>
+                                        <label htmlFor="">New unmoderated post</label>
+                                        <label htmlFor="">New unmoderated comment</label>
+                                        <label htmlFor="">Your post was published by the moderator</label>
+                                        <label htmlFor="">Your comment was published by the moderator</label>
+                                        <label htmlFor="">Your post was published by the moderator</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>EVENT CALENDAR</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Event invitation</label>
+                                        <label htmlFor="">Event reminder</label>
+                                        <label htmlFor="">Event updated</label>
+                                        <label htmlFor="">Confirm or decline event attendance</label>
+                                        <label htmlFor="">New comment on an event</label>
+                                        <label htmlFor="">Delete meeting room</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>CRM</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">There are new e-mails</label>
+                                        <label htmlFor="">You were specified as a post recipient</label>
+                                        <label htmlFor="">You were mentioned in a post</label>
+                                        <label htmlFor="">CRM form submitted</label>
+                                        <label htmlFor="">Callback requested</label>
+                                        <label htmlFor="">You have been assigned as a responsible person</label>
+                                        <label htmlFor="">Stage changed</label>
+                                        <label htmlFor="">Duplicate control notifications</label>
+                                        <label htmlFor="">Other notifications</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>DRIVE</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">File change notifications</label>
+                                        <label htmlFor="">File delete notifications</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>RATINGS AND LIKES</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">"I like it" notification</label>
+                                        <label htmlFor="">Notification on voting in posts that mention you</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>OPEN CHANNELS</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Client rating notification</label>
+                                        <label htmlFor="">Supervisor rating notification</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>INTRANET</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Sign in confirmation code</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>MAIL</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">New message</label>
+                                        <label htmlFor="">Maximum number of mailboxes exceeded</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>PHOTO GALLERY 2.0</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Photo comment notification</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>EMAIL MARKETING</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Segment ready to send</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>SOCIAL NETWORK</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Workgroup members change</label>
+                                        <label htmlFor="">Received invite or request to join workgroup; removed from workgroup</label>
+                                        <label htmlFor="">Group membership change (for moderators)</label>
+                                        <label htmlFor="">You were assigned or unassigned as a workgroup moderator</label>
+                                        <label htmlFor="">Workgroup owner change</label>
+                                        <label htmlFor="">Workgroup updates</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>TASKS</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">New comment added to a task</label>
+                                        <label htmlFor="">Task reminder</label>
+                                        <label htmlFor="">Task created or updated</label>
+                                        <label htmlFor="">Task assigned to you</label>
+                                        <label htmlFor="">Task almost overdue</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>WORKING TIME MANAGEMENT</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">New workday report</label>
+                                        <label htmlFor="">New workday report comment.</label>
+                                        <label htmlFor="">Workday report approved or unapproved</label>
+                                        <label htmlFor="">New entry in working time report</label>
+                                        <label htmlFor="">Working time report comment</label>
+                                        <label htmlFor="">Working time report update approved</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>POLLS AND SURVEYS</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Voting</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>TELEPHONY</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Telephony notifications</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>WIKI</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Wiki page comments</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='notificationmodal14'>
+
+                                <div className='notificationmodal9'>
+                                    <p>BUSINESS PROCESSES</p>
+                                </div>
+
+                                <div className='notificationmodal10'>
+                                    <div className='notificationmodal11'>
+                                        <label htmlFor="">Notifications from business processes</label>
+                                    </div>
+
+
+                                    <div className='notificationmodal12'>
+                                        <div className='notificationmodal13'>
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                            <input type="checkbox" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div className='notificationmodal6'>
@@ -13513,7 +14105,7 @@ export function NotificationModal2(props) {
 
 //  Counsellorform  Modal for CRM page
 export function Counsellorform(props) {
-    
+
     const handleModal = () => {
         props.setModalShow8(true);
     };
