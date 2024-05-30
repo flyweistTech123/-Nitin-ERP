@@ -385,6 +385,7 @@ const Admission = () => {
             <Counsellorform
                 show={modalShow10}
                 onHide={() => setModalShow10(false)}
+                setModalShow8={setModalShow8}
             />
             <div className='admission'>
                 <div className='admission1'>

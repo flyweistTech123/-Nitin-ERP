@@ -204,6 +204,7 @@ const Service = () => {
                 onHide={() => setModalShow1(false)}
                 setModalShow={setModalShow}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow12}
             />
             <AddFieldModal
                 show={modalShow2}
@@ -295,6 +296,7 @@ const Service = () => {
             <Counsellorform
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
+                setModalShow8={setModalShow9}
             />
             <AddNewFilter
                 show={modalShow12}

@@ -24,7 +24,10 @@ import {
     Whatsapp,
     History1,
     FilterModalhistory,
-    AddNewEvent
+    AddNewEvent,
+    PropertiesModal,
+    NewViewModal,
+    Counsellorform
 } from '../Modals/Modals.jsx'
 
 const ReferenceFormData = () => {
@@ -324,6 +327,15 @@ const ReferenceFormData = () => {
 
     const [modalShow6, setModalShow6] = React.useState(false);
 
+    // property modal
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+    // NewView Modal
+    const [modalShow9, setModalShow9] = React.useState(false);
+
+    // counsler Modal
+    const [modalShow10, setModalShow10] = React.useState(false);
+
     return (
         <>
             <Status
@@ -364,6 +376,9 @@ const ReferenceFormData = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow8}
+                setModalShow9={setModalShow9}
+                setModalShow10={setModalShow10}
                 title={"Reference Form"}
             />
             <NeWLead
@@ -375,6 +390,7 @@ const ReferenceFormData = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
+                setModalShow8={setModalShow10}
             />
             <NewTask
                 show={show2}
@@ -384,6 +400,12 @@ const ReferenceFormData = () => {
                 show={show3}
                 onHide={handleClose3}
                 setModalShow3={setModalShow3}
+                setModalShow8={setModalShow10}
+                handleShow1={handleShow1}
+                handleShow2={handleShow2}
+                handleShow3={handleShow3}
+                handleShow4={handleShow4}
+                handleShow5={handleShow5}
             />
             <Email
                 show={show4}
@@ -406,6 +428,19 @@ const ReferenceFormData = () => {
             <AddNewEvent
                 show={modalShow6}
                 onHide={() => setModalShow6(false)}
+            />
+            <PropertiesModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+            />
+            <NewViewModal
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
+            />
+            <Counsellorform
+                show={modalShow10}
+                onHide={() => setModalShow10(false)}
+                setModalShow8={setModalShow8}
             />
             <div className='cancel'>
                 <div className='admission1'>

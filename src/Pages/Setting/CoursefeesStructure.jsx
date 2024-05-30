@@ -189,6 +189,7 @@ const CoursefeesStructure = () => {
                 onHide={() => setModalShow12(false)}
                 setModalShow={setModalShow11}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow4}
             />
             <AddFieldModal
                 show={modalShow2}

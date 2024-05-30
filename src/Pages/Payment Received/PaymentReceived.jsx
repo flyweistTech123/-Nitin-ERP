@@ -348,7 +348,8 @@ const PaymentReceived = () => {
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
-                setModalShow8={setModalShow17}            />
+                setModalShow8={setModalShow17}
+            />
             <History
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
@@ -422,6 +423,7 @@ const PaymentReceived = () => {
             <Counsellorform
                 show={modalShow17}
                 onHide={() => setModalShow17(false)}
+                setModalShow8={setModalShow15}
             />
             <div className='payreceived'>
                 <div className='admission1'>

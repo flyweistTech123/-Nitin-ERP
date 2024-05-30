@@ -14,6 +14,7 @@ import {
     MYDEALSModal,
     AddFieldModal,
     History,
+    AddNewFilter,
 } from '../Modals/Modals.jsx'
 
 const CourierSection = () => {
@@ -587,6 +588,9 @@ const CourierSection = () => {
     // add field Modal
     const [modalShow8, setModalShow8] = React.useState(false);
 
+    // new filter Modal
+    const [modalShow9, setModalShow9] = React.useState(false);
+
 
     return (
         <>
@@ -619,16 +623,22 @@ const CourierSection = () => {
                 onHide={() => setModalShow6(false)}
                 setModalShow1={setModalShow7}
                 setModalShow2={setModalShow8}
+                setModalShow8={setModalShow9}
             />
             <MYDEALSModal
                 show={modalShow7}
                 onHide={() => setModalShow7(false)}
                 setModalShow={setModalShow6}
                 setModalShow2={setModalShow8}
+                setModalShow7={setModalShow9}
             />
             <AddFieldModal
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
+            />
+            <AddNewFilter
+                show={modalShow9}
+                onHide={() => setModalShow9(false)}
             />
             <div className='admission'>
                 <div className='admission1'>

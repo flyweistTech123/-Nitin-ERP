@@ -361,6 +361,7 @@ const RefundCancel = () => {
             <Counsellorform
                 show={modalShow17}
                 onHide={() => setModalShow17(false)}
+                setModalShow8={setModalShow15}
             />
             <div className='cancel'>
                 <div className='admission1'>

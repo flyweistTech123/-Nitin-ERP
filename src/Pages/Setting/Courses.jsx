@@ -303,13 +303,14 @@ const Courses = () => {
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
                 setModalShow2={setModalShow4}
-                setModalShow6={setModalShow6}
+                setModalShow4={setModalShow6}
             />
             <MYDEALSModal
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
                 setModalShow={setModalShow2}
                 setModalShow2={setModalShow4}
+                setModalShow7={setModalShow6}
             />
             <AddFieldModal
                 show={modalShow4}
@@ -328,11 +329,11 @@ const Courses = () => {
                     <p>Courses</p>
                 </div>
 
-                <div className='admission8' onClick={() => setModalShow2(true)}>
+                <div className='admission8'>
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9'  onClick={() => setModalShow2(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />

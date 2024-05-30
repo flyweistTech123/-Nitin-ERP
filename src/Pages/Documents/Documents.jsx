@@ -240,6 +240,7 @@ const Documents = () => {
                 onHide={() => setModalShow13(false)}
                 setModalShow={setModalShow16}
                 setModalShow2={setModalShow14}
+                setModalShow7={setModalShow20}
             />
             <AddFieldModal
                 show={modalShow14}

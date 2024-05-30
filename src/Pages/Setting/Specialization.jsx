@@ -172,6 +172,7 @@ const Specialization = () => {
                 onHide={() => setModalShow12(false)}
                 setModalShow={setModalShow11}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow4}
             />
             <AddFieldModal
                 show={modalShow2}
@@ -190,11 +191,11 @@ const Specialization = () => {
                     <p>Specialization</p>
                 </div>
 
-                <div className='admission8' onClick={() => setModalShow11(true)}>
+                <div className='admission8' >
                     <div>
                         <p>Filter</p>
                     </div>
-                    <div className='admission9'>
+                    <div className='admission9' onClick={() => setModalShow11(true)}>
                         <div className='admission10'>
                             <p>My filter</p>
                             <MdOutlineClose color='#FFFFFF' size={20} />

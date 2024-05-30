@@ -209,6 +209,7 @@ const ITReport = () => {
                 onHide={() => setModalShow1(false)}
                 setModalShow={setModalShow11}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <AddFieldModal
                 show={modalShow2}

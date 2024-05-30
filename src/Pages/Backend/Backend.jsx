@@ -19,7 +19,8 @@ import {
     AddNewEvent,
     PropertiesModal,
     NewViewModal,
-    Counsellorform
+    Counsellorform,
+    AddNewFilter
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -206,6 +207,9 @@ const Backend = () => {
     // counsler Modal
     const [modalShow12, setModalShow12] = React.useState(false);
 
+    // new filter  Modal
+    const [modalShow13, setModalShow13] = React.useState(false);
+
     return (
         <>
             <CallRecoding
@@ -226,16 +230,22 @@ const Backend = () => {
                 onHide={() => setModalShow3(false)}
                 setModalShow1={setModalShow4}
                 setModalShow2={setModalShow5}
+                setModalShow7={setModalShow13}
             />
             <MYDEALSModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
-                setModalShow={setModalShow}
+                setModalShow={setModalShow3}
                 setModalShow2={setModalShow5}
+                setModalShow7={setModalShow13}
             />
             <AddFieldModal
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
+            />
+            <AddNewFilter
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
             />
             <AdmissionFollowUp
                 show={show}
@@ -313,6 +323,7 @@ const Backend = () => {
             <Counsellorform
                 show={modalShow12}
                 onHide={() => setModalShow12(false)}
+                setModalShow8={setModalShow10}
             />
             <div className='backend'>
                 <div className='admission1'>

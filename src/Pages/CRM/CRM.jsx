@@ -29,7 +29,8 @@ import {
     History1,
     FilterModalhistory,
     AddNewEvent,
-    AddNewFilter
+    AddNewFilter,
+    PropertiesModal
 } from '../Modals/Modals.jsx'
 
 const CRM = () => {
@@ -174,7 +175,9 @@ const CRM = () => {
 
     const [modalShow7, setModalShow7] = React.useState(false);
 
+    // AddNewFilter Modal
 
+    const [modalShow8, setModalShow8] = React.useState(false);
 
     // NewTask Modal
 
@@ -218,6 +221,7 @@ const CRM = () => {
             <Counsellorform
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                setModalShow8={setModalShow8}
             />
 
             <Paymentlink
@@ -228,14 +232,14 @@ const CRM = () => {
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}
-                setModalShow2={setModalShow4}
+                setModalShow2={setModalShow6}
                 setModalShow7={setModalShow7}
             />
             <MYDEALSModal
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
                 setModalShow={setModalShow2}
-                setModalShow2={setModalShow4}
+                setModalShow2={setModalShow6}
             />
             <AddFieldModal
                 show={modalShow4}
@@ -306,6 +310,10 @@ const CRM = () => {
             <Whatsapp
                 show={show5}
                 onHide={handleClose5}
+            />
+            <PropertiesModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
             />
             <div className='admission'>
                 <div className='crm'>
@@ -406,7 +414,8 @@ const CRM = () => {
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
                                         <td><input type="checkbox" /></td>
-                                        <td><img src={img} alt="" /></td>
+                                        {/* <td><img src={img} alt="" /></td> */}
+                                        <td></td>
                                         <td>
                                             <p className='admission202'><button onClick={handleShow}><MdEdit size={20} /> Edit</button></p>
                                             {data.name}

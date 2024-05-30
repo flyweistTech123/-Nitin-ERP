@@ -486,6 +486,7 @@ const PDCSection = () => {
             <Counsellorform
                 show={modalShow17}
                 onHide={() => setModalShow17(false)}
+                setModalShow8={setModalShow15}
             />
             <div className='pdc'>
                 <div className='admission1'>

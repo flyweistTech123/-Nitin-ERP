@@ -141,6 +141,7 @@ const ExamAttendanceStatus = () => {
                 onHide={() => setModalShow1(false)}
                 setModalShow={setModalShow}
                 setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
             <AddFieldModal
                 show={modalShow2}

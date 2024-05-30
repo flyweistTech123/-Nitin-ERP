@@ -1170,7 +1170,7 @@ export function DocumentFilterModal(props) {
         >
             <Modal.Body className="no-padding">
                 <div className='filter1'>
-                    <div className='filter2'>
+                    <div className='filter230'>
                         <div className='filter3'>
                             <p>FILTERS</p>
                         </div>
@@ -4241,7 +4241,7 @@ export function PaymentFilterModalmodal(props) {
         >
             <Modal.Body className="no-padding">
                 <div className='filter1'>
-                    <div className='filter2'>
+                    <div className='filter229'>
                         <div className='filter3'>
                             <p>FILTERS</p>
                         </div>
@@ -4719,7 +4719,7 @@ export function CourierFilterModal(props) {
                             <p>MY DEALS</p>
                         </div>
 
-                        <div className='filter6'>
+                        <div className='filter6' onClick={() => props.setModalShow8(true)}>
                             <p>+Save Filter</p>
                         </div>
                     </div>
@@ -13513,6 +13513,35 @@ export function NotificationModal2(props) {
 
 //  Counsellorform  Modal for CRM page
 export function Counsellorform(props) {
+    
+    const handleModal = () => {
+        props.setModalShow8(true);
+    };
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className="toppart7">
+                    <div className="toppart8" onClick={handleModal}>
+                        <h6>String</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Date</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>List</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8">
+                        <h6>Yes/ No</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
 
 
     return (
@@ -13532,7 +13561,9 @@ export function Counsellorform(props) {
                     <div className='counsellorformmodal2'>
                         <div className='counsellorformmodal3'>
                             <h5>Fill counsellor Form</h5>
-                            <p>Create a field</p>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover1}>
+                                <p>Create a field</p>
+                            </OverlayTrigger>
                         </div>
 
                         <div className='counsellorformmodal4' style={{ marginTop: "50px" }}>
