@@ -1,9 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import './History.css'
 import HOC from '../../Components/HOC/HOC'
+import { useNavigate, Link } from 'react-router-dom';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import Popover from 'react-bootstrap/Popover';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { MdOutlineClose } from "react-icons/md";
+import { IoSettings } from "react-icons/io5";
+import { IoIosArrowDown } from "react-icons/io";
+import { MdEdit } from "react-icons/md";
+import { MultiSelect } from "react-multi-select-component";
+
+import img8 from '../../Img/img33.png'
+import img19 from '../../Img/img83.png'
+
+
+// Modals 
+
+
 import {
-    CallRecoding,
-    Remarks,
-    AdmissionStatus,
     FilterModal,
     MYDEALSModal,
     AddFieldModal,
@@ -17,29 +32,16 @@ import {
     History1,
     FilterModalhistory,
     AddNewEvent,
+    AddNewFilter,
     PropertiesModal,
     NewViewModal,
-    Counsellorform,
-    AddNewFilter,
-    AdmissionStatusModal
-} from '../Modals/Modals'
-
-import { useNavigate, Link } from 'react-router-dom';
-import { MultiSelect } from "react-multi-select-component";
+    Counsellorform
+} from '../Modals/Modals.jsx'
 
 
-import { MdOutlineClose } from "react-icons/md";
-import { IoSettings } from "react-icons/io5";
-import { MdEdit } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 
-
-import img from '../../Img/img33.png'
-import img19 from '../../Img/img83.png'
-
-import './Backend.css'
-const Backend = () => {
-    const navigate = useNavigate()
+const HistoryPage = () => {
+    const navigate = useNavigate();
     const tableData = [
         {
             id: 1,
@@ -48,10 +50,10 @@ const Backend = () => {
             email: 'loren@epsomgmail.com',
             address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
             course: 'Engineering',
+            admissionDate: 'DD/MM/YYYY',
             feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
+            paidDate: 'DD/MM/YYYY',
+            history: 'History'
         },
 
         {
@@ -61,10 +63,10 @@ const Backend = () => {
             email: 'loren@epsomgmail.com',
             address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
             course: 'Engineering',
+            admissionDate: 'DD/MM/YYYY',
             feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
+            paidDate: 'DD/MM/YYYY',
+            history: 'History'
         },
         {
             id: 1,
@@ -73,10 +75,10 @@ const Backend = () => {
             email: 'loren@epsomgmail.com',
             address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
             course: 'Engineering',
+            admissionDate: 'DD/MM/YYYY',
             feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
+            paidDate: 'DD/MM/YYYY',
+            history: 'History'
         },
         {
             id: 1,
@@ -85,10 +87,10 @@ const Backend = () => {
             email: 'loren@epsomgmail.com',
             address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
             course: 'Engineering',
+            admissionDate: 'DD/MM/YYYY',
             feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
+            paidDate: 'DD/MM/YYYY',
+            history: 'History'
         },
         {
             id: 1,
@@ -97,10 +99,10 @@ const Backend = () => {
             email: 'loren@epsomgmail.com',
             address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
             course: 'Engineering',
+            admissionDate: 'DD/MM/YYYY',
             feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
+            paidDate: 'DD/MM/YYYY',
+            history: 'History'
         },
         {
             id: 1,
@@ -109,35 +111,31 @@ const Backend = () => {
             email: 'loren@epsomgmail.com',
             address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
             course: 'Engineering',
+            admissionDate: 'DD/MM/YYYY',
             feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
+            paidDate: 'DD/MM/YYYY',
+            history: 'History'
         },
 
     ];
 
-    // call Recoding Modal 
-    const [modalShow, setModalShow] = React.useState(false);
 
-    // Remarks Modal 
-    const [modalShow1, setModalShow1] = React.useState(false);
-
-
-    // AdmissionStatus Modal 
-    const [modalShow2, setModalShow2] = React.useState(false);
 
 
 
     // Filter Modal 
 
-    const [modalShow3, setModalShow3] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(false);
 
     // mydeals Modal
-    const [modalShow4, setModalShow4] = React.useState(false);
+    const [modalShow1, setModalShow1] = React.useState(false);
 
     // add field Modal
-    const [modalShow5, setModalShow5] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
+
+
+
+
     // Admission Follow Up Modal
 
     const [show, setShow] = useState(false);
@@ -145,16 +143,21 @@ const Backend = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+
     // New Lead Modal
 
     const [show1, setShow1] = useState(false);
 
     const handleClose1 = () => setShow1(false);
     const handleShow1 = () => setShow1(true);
+
     // History Modal
 
+    const [modalShow3, setModalShow3] = React.useState(false);
 
-    const [modalShow6, setModalShow6] = React.useState(false);
+
+
+
 
 
     // NewTask Modal
@@ -164,11 +167,14 @@ const Backend = () => {
     const handleClose2 = () => setShow2(false);
     const handleShow2 = () => setShow2(true);
 
+
     // SMS Modal
     const [show3, setShow3] = useState(false);
 
     const handleClose3 = () => setShow3(false);
     const handleShow3 = () => setShow3(true);
+
+
 
 
     // Email Modal
@@ -186,37 +192,97 @@ const Backend = () => {
     const handleShow5 = () => setShow5(true);
 
 
+
+    // popoveraddbutton
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='popoveradd'>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Admission No</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Student Photo</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Aadhar Card</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Pan Card</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Passport</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Voter ID</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Driving License</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Marksheet</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Certificate</label>
+                    </div>
+                    <div className='popoveradd1'>
+                        <input type="checkbox" />
+                        <label htmlFor="">Other</label>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className='popoveradd'>
+                    <div className='popoveradd2'>
+                        <p>Export All Columns</p>
+                        <p>Export Open Columns</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+
     // History Modal
 
-    const [modalShow7, setModalShow7] = React.useState(false);
+    const [modalShow4, setModalShow4] = React.useState(false);
 
 
     // FilterModalhistory Modal
 
-    const [modalShow8, setModalShow8] = React.useState(false);
+    const [modalShow5, setModalShow5] = React.useState(false);
 
 
     // AddNewEvent Modal
 
-    const [modalShow9, setModalShow9] = React.useState(false);
+    const [modalShow6, setModalShow6] = React.useState(false);
 
+    // AddNewFilter Modal
+    const [modalShow7, setModalShow7] = React.useState(false);
 
     // property modal
-    const [modalShow10, setModalShow10] = React.useState(false);
+    const [modalShow8, setModalShow8] = React.useState(false);
 
     // NewView Modal
-    const [modalShow11, setModalShow11] = React.useState(false);
+    const [modalShow9, setModalShow9] = React.useState(false);
 
     // counsler Modal
-    const [modalShow12, setModalShow12] = React.useState(false);
-
-    // new filter  Modal
-    const [modalShow13, setModalShow13] = React.useState(false);
-
-    // admissionStatus  Modal
-    const [modalShow14, setModalShow14] = React.useState(false);
-
-
+    const [modalShow10, setModalShow10] = React.useState(false);
     const [selected, setSelected] = useState([]);
 
 
@@ -247,71 +313,59 @@ const Backend = () => {
         },
     ];
 
+
     return (
         <>
-            <CallRecoding
+            <FilterModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
+                setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
-            <Remarks
+            <MYDEALSModal
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
+                setModalShow={setModalShow}
+                setModalShow2={setModalShow2}
+                setModalShow7={setModalShow7}
             />
-            <AdmissionStatus
+            <AddFieldModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
             />
-            <FilterModal
-                show={modalShow3}
-                onHide={() => setModalShow3(false)}
-                setModalShow1={setModalShow4}
-                setModalShow2={setModalShow5}
-                setModalShow7={setModalShow13}
-            />
-            <MYDEALSModal
-                show={modalShow4}
-                onHide={() => setModalShow4(false)}
-                setModalShow={setModalShow3}
-                setModalShow2={setModalShow5}
-                setModalShow7={setModalShow13}
-            />
-            <AddFieldModal
-                show={modalShow5}
-                onHide={() => setModalShow5(false)}
-            />
             <AddNewFilter
-                show={modalShow13}
-                onHide={() => setModalShow13(false)}
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
             />
             <AdmissionFollowUp
                 show={show}
                 onHide={handleClose}
-                setModalShow3={setModalShow6}
+                setModalShow3={setModalShow3}
                 handleShow1={handleShow1}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
-                setModalShow8={setModalShow10}
-                setModalShow9={setModalShow11}
-                setModalShow10={setModalShow12}
-                title={"Backend"}
+                setModalShow8={setModalShow8}
+                setModalShow9={setModalShow9}
+                setModalShow10={setModalShow10}
+                title={"Admission"}
             />
             <NeWLead
                 show={show1}
                 onHide={handleClose1}
-                setModalShow3={setModalShow6}
+                setModalShow3={setModalShow3}
                 handleShow={handleShow}
                 handleShow2={handleShow2}
                 handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
-                setModalShow8={setModalShow12}
+                setModalShow8={setModalShow10}
             />
             <History
-                show={modalShow6}
-                onHide={() => setModalShow6(false)}
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
             />
             <NewTask
                 show={show2}
@@ -320,10 +374,11 @@ const Backend = () => {
             <SMS
                 show={show3}
                 onHide={handleClose3}
-                setModalShow3={setModalShow6}
-                setModalShow8={setModalShow12}
-                handleShow={handleShow}
+                setModalShow3={setModalShow3}
+                setModalShow8={setModalShow10}
+                handleShow1={handleShow1}
                 handleShow2={handleShow2}
+                handleShow3={handleShow3}
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
             />
@@ -336,125 +391,60 @@ const Backend = () => {
                 onHide={handleClose5}
             />
             <History1
-                show={modalShow7}
-                onHide={() => setModalShow7(false)}
-                setModalShow5={setModalShow8}
-                setModalShow6={setModalShow9}
+                show={modalShow4}
+                onHide={() => setModalShow4(false)}
+                setModalShow5={setModalShow5}
+                setModalShow6={setModalShow6}
             />
             <FilterModalhistory
+                show={modalShow5}
+                onHide={() => setModalShow5(false)}
+            />
+            <AddNewEvent
+                show={modalShow6}
+                onHide={() => setModalShow6(false)}
+            />
+            <PropertiesModal
                 show={modalShow8}
                 onHide={() => setModalShow8(false)}
             />
-            <AddNewEvent
+            <NewViewModal
                 show={modalShow9}
                 onHide={() => setModalShow9(false)}
             />
-            <PropertiesModal
+            <Counsellorform
                 show={modalShow10}
                 onHide={() => setModalShow10(false)}
+                setModalShow8={setModalShow8}
             />
-            <NewViewModal
-                show={modalShow11}
-                onHide={() => setModalShow11(false)}
-            />
-            <Counsellorform
-                show={modalShow12}
-                onHide={() => setModalShow12(false)}
-                setModalShow8={setModalShow10}
-            />
-            <AdmissionStatusModal
-                show={modalShow14}
-                onHide={() => setModalShow14(false)}
-            />
-            <div className='backend'>
+            <div className='admission'>
                 <div className='admission1'>
-                    <p>Backend</p>
-                    <div className='admission2'>
-                        <Link to={'/whatsapp'} className='link'>
-                            <div className='admission3'>
-                                <p>What’s App</p>
-                            </div>
-                        </Link>
-                        <Link to={'/email'} className='link'>
-                            <div className='admission4'>
-                                <p>Email</p>
-                            </div>
-                        </Link>
-                        <Link to={'/telegram'} className='link'>
-                            <div className='admission5'>
-                                <p>Telegram</p>
-                            </div>
-                        </Link>
-                        <Link to={'/zoommeeting'} className='link'>
-                            <div className='admission6'>
-                                <p>Zoom</p>
-                            </div>
-                        </Link>
-                        <Link to={'/voicecall'} className='link'>
-                            <div className='admission7'>
-                                <p>Voice Call</p>
-                            </div>
-                        </Link>
-                    </div>
+                    <p>History ( All Employee)</p>9
                 </div>
-                <div className='admission8' onClick={() => setModalShow3(true)}>
-                    <div>
-                        <p>Filter</p>
-                    </div>
-                    <div className='admission9'>
-                        <div className='admission10'>
-                            <p>My filter</p>
-                            <MdOutlineClose color='#FFFFFF' size={20} />
-                        </div>
-                    </div>
-                </div>
-
-                <div className='service3'>
-                </div>
-
-                <div className='backend1'>
-                    <p>Pending Admission</p>
-                </div>
-
-
-                <div className='backend2'>
-                    <div className='backend3'>
-                        <button onClick={() => setModalShow(true)}>Call Recoding</button>
-                        <button>Call Summary</button>
-                    </div>
-                    <div className='backend4'>
-                        <button>Import</button>
-                        <button>Export</button>
-                    </div>
-                </div>
-
-
-
                 <div className='admission13'>
                     <div className='table-container'>
                         <table>
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" /></th>
-                                    <th><IoSettings size={20} onClick={() => setModalShow5(true)} /></th>
-                                    <th>Student Name</th>
-                                    <th>Contact_no</th>
-                                    <th>Email_ID</th>
-                                    <th>Address</th>
+                                    <th>ID</th>
+                                    <th>Date</th>
+                                    <th>Entity</th>
+                                    <th>Title</th>
+                                    <th>Event</th>
+                                    <th>Description</th>
                                     <th>Course</th>
-                                    <th>Total Fees</th>
-                                    <th>Call Recording</th>
-                                    <th>Status</th>
-                                    <th>Reverification</th>
-                                    <th>Free Date fpr Verification</th>
+                                    <th>Admission Date</th>
+                                    <th>Fees Paid</th>
+                                    <th>Paid Date</th>
                                     <th>History</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {tableData.map((data) => (
                                     <tr key={data.id}>
+
                                         <td><input type="checkbox" /></td>
-                                        <td onClick={handleShow}><img src={img} alt="" /></td>
+                                        <td onClick={handleShow}><img src={img8} alt="" /></td>
                                         <td>
                                             <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
                                             {data.name}
@@ -465,22 +455,12 @@ const Backend = () => {
                                             <p>{data.address}</p>
                                         </div>
                                         <td>{data.course}</td>
+                                        <td>{data.admissionDate}</td>
                                         <td>{data.feesPaid}</td>
-                                        <td style={{ color: "#2155CD", textDecoration: "underline" }}>{data.callrecording}</td>
-                                        <td>
-                                            <div className='admission14' onClick={() => setModalShow14(true)}>
-                                                <button>{data.status}</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className='backend5' onClick={() => setModalShow2(true)}>
-                                                <button>N/A</button>
-                                            </div>
-                                        </td>
-                                        <td>{data.verificationdate}</td>
+                                        <td>{data.paidDate}</td>
                                         <td>
                                             <div className='admission14'>
-                                                <button onClick={() => setModalShow7(true)}>History</button>
+                                                <button onClick={() => setModalShow4(true)}>{data.history}</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -489,7 +469,6 @@ const Backend = () => {
                         </table>
                     </div>
                 </div>
-
                 <div className='pendingpayment6'>
                     <div className='pendingpayment7'>
                         <h6>Total:</h6>
@@ -545,4 +524,4 @@ const Backend = () => {
     )
 }
 
-export default HOC(Backend)
+export default HOC(HistoryPage)

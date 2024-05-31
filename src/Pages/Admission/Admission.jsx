@@ -9,10 +9,10 @@ import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdEdit } from "react-icons/md";
-
+import { MultiSelect } from "react-multi-select-component";
 
 import img8 from '../../Img/img33.png'
-
+import img19 from '../../Img/img83.png'
 
 
 // Modals 
@@ -283,6 +283,36 @@ const Admission = () => {
 
     // counsler Modal
     const [modalShow10, setModalShow10] = React.useState(false);
+    const [selected, setSelected] = useState([]);
+
+
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
 
     return (
         <>
@@ -495,7 +525,24 @@ const Admission = () => {
                         </table>
                     </div>
                 </div>
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
 
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
+                    </div>
+                </div>
 
                 <div className='admission15'>
                     <div className='admission16'>
@@ -508,6 +555,15 @@ const Admission = () => {
                             <option value="">Assign Service Manager</option>
                             <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
                         </select>
+                    </div>
+                    <div className='admission16'>
+                        <MultiSelect
+                            options={options}
+                            value={selected}
+                            onChange={setSelected}
+                            labelledBy="Select"
+                            className='admission1666'
+                        />
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

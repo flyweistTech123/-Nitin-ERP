@@ -132,6 +132,9 @@ const Sidebar = () => {
                                     <Link to={'/results'} className='link'>
                                         <li>Results</li>
                                     </Link>
+                                    <Link to={'/nextbatchgenerator'} className='link'>
+                                        <li>Next Bach Generate</li>
+                                    </Link>
 
                                 </ul>
                             </div>
@@ -272,10 +275,12 @@ const Sidebar = () => {
                                 <p>Company Structure</p>
                             </div>
                         </Link>
-                        <div className='sidebar2'>
-                            <img src={img8} alt="" />
-                            <p>History</p>
-                        </div>
+                        <Link to={'/history'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img8} alt="" />
+                                <p>History</p>
+                            </div>
+                        </Link>
                         <Link to={'/permissionaccess'} className='link'>
                             <div className='sidebar2'>
                                 <img src={img9} alt="" />

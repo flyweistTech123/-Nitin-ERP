@@ -15,6 +15,7 @@ import {
     PettyCashPaymentFilterModal,
     MYDEALSModal,
     PaymentFieldModal,
+    ExpenseAvailableCashModal
 } from '../Modals/Modals.jsx'
 
 
@@ -411,6 +412,10 @@ const Expense = () => {
     const [modalShow7, setModalShow7] = React.useState(false);
 
 
+    // Expense available cash Modal
+    const [modalShow8, setModalShow8] = React.useState(false);
+
+
     const popover1 = (
         <Popover id="popover-basic">
             <Popover.Body>
@@ -474,6 +479,10 @@ const Expense = () => {
                 show={modalShow7}
                 onHide={() => setModalShow7(false)}
             />
+            <ExpenseAvailableCashModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
+            />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Expense</p>
@@ -510,7 +519,7 @@ const Expense = () => {
 
                 <div className='expense31'>
                     <button onClick={() => setModalShow(true)}>Add Expense</button>
-                    <button>Available Cash on user</button>
+                    <button onClick={() => setModalShow8(true)}>Available Cash on user</button>
                 </div>
                 <div className='admission13'>
                     <div className='table-container'>
@@ -564,21 +573,22 @@ const Expense = () => {
                 </div>
 
 
-                <div className='admission15'>
-                    <div className='admission16'>
-                        <p>START DIALING</p>
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
                     </div>
-                    <div className='admission16'>
-                        <select name="" id="">
-                            <option value="">Select Action</option>
-                            <option value="">Assign Responsible Person</option>
-                            <option value="">Assign Service Manager</option>
-                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
-                        </select>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
                     </div>
-                    <div className='admission17'>
-                        <input type="checkbox" />
-                        <p>For All</p>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
                     </div>
                 </div>
 

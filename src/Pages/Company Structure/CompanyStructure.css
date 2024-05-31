@@ -64,6 +64,9 @@
 .companystructure4 {
   border-bottom: 1px solid #2155cd;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .companystructure4 p {
@@ -116,6 +119,13 @@
   line-height: 20px;
   color: #3f3f3f;
   margin: 0;
+}
+
+.companystructure9{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
 }
 
 /* Responsive css for companystructure  */

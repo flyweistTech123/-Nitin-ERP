@@ -124,6 +124,8 @@ import AddEmailTemplate from './Pages/Template/AddEmailTemplate';
 import ForgetPassword from './Pages/Login/ForgetPassword';
 import OTP from './Pages/Login/OTP';
 import NewPassword from './Pages/Login/NewPassword';
+import Nextbachgenrator from './Pages/NextBachGenerator/Nextbachgenrator';
+import HistoryPage from './Pages/History/History';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -255,6 +257,8 @@ function App() {
           <Route path="/addsmstemplate" element={<AddSMSTemplate />} />
           <Route path="/connectsmstemplate" element={<ConnectSMSTemplate />} />
           <Route path="/addemailtemplate" element={<AddEmailTemplate />} />
+          <Route path="/nextbatchgenerator" element={<Nextbachgenrator />} />
+          <Route path="/history" element={<HistoryPage />} />
         </Routes>
       </BrowserRouter>
     </>

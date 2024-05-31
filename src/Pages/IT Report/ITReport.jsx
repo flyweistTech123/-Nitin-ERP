@@ -8,7 +8,7 @@ import {
     MYDEALSModal,
     AddFieldModal,
     ITReportFilterModal,
-    History1,
+    HistoryLogsModal,
     FilterModalhistory,
     AddNewEvent,
     AddNewFilter,
@@ -41,6 +41,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
+            AIScore:"5",
+            Human:"5",
+            PlagReason:"Loren epsom",
+            Readbility:"Loren epsom",
+            primarykeyword:"Loren epsom",
+            Rank:"1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -54,6 +60,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
+            AIScore:"5",
+            Human:"5",
+            PlagReason:"Loren epsom",
+            Readbility:"Loren epsom",
+            primarykeyword:"Loren epsom",
+            Rank:"1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -66,6 +78,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
+            AIScore:"5",
+            Human:"5",
+            PlagReason:"Loren epsom",
+            Readbility:"Loren epsom",
+            primarykeyword:"Loren epsom",
+            Rank:"1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -78,6 +96,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
+            AIScore:"5",
+            Human:"5",
+            PlagReason:"Loren epsom",
+            Readbility:"Loren epsom",
+            primarykeyword:"Loren epsom",
+            Rank:"1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -90,6 +114,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
+            AIScore:"5",
+            Human:"5",
+            PlagReason:"Loren epsom",
+            Readbility:"Loren epsom",
+            primarykeyword:"Loren epsom",
+            Rank:"1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -102,6 +132,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
+            AIScore:"5",
+            Human:"5",
+            PlagReason:"Loren epsom",
+            Readbility:"Loren epsom",
+            primarykeyword:"Loren epsom",
+            Rank:"1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -132,15 +168,6 @@ const ITReport = () => {
 
     const [modalShow4, setModalShow4] = React.useState(false);
 
-
-    // FilterModalhistory Modal
-
-    const [modalShow5, setModalShow5] = React.useState(false);
-
-
-    // AddNewEvent Modal
-
-    const [modalShow6, setModalShow6] = React.useState(false);
 
     // AddNewFilter Modal
     const [modalShow7, setModalShow7] = React.useState(false);
@@ -219,19 +246,9 @@ const ITReport = () => {
                 show={modalShow7}
                 onHide={() => setModalShow7(false)}
             />
-            <History1
+            <HistoryLogsModal
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
-                setModalShow5={setModalShow5}
-                setModalShow6={setModalShow6}
-            />
-            <FilterModalhistory
-                show={modalShow5}
-                onHide={() => setModalShow5(false)}
-            />
-            <AddNewEvent
-                show={modalShow6}
-                onHide={() => setModalShow6(false)}
             />
             <div className='admission'>
                 <div className='admission1'>
@@ -278,6 +295,12 @@ const ITReport = () => {
                                     <th>URL</th>
                                     <th>Topic</th>
                                     <th>Keywords</th>
+                                    <th>AI Score</th>
+                                    <th>Human</th>
+                                    <th>Plag Reason</th>
+                                    <th>Readability</th>
+                                    <th>Primary keyword</th>
+                                    <th>Rank</th>
                                     <th>Responsible Person</th>
                                     <th>History</th>
                                 </tr>
@@ -293,6 +316,12 @@ const ITReport = () => {
                                         <td>{data.URL}</td>
                                         <td>{data.topic}</td>
                                         <td>{data.Keywords}</td>
+                                        <td>{data.AIScore}</td>
+                                        <td>{data.Human}</td>
+                                        <td>{data.PlagReason}</td>
+                                        <td>{data.Readbility}</td>
+                                        <td>{data.primarykeyword}</td>
+                                        <td>{data.Rank}</td>
                                         <td>{data.Responsible}</td>
                                         <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }} onClick={() => setModalShow4(true)}>{data.history}</td>
                                     </tr>

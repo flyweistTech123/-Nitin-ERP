@@ -26,7 +26,8 @@ import {
     AddNewFilter,
     PropertiesModal,
     NewViewModal,
-    Counsellorform
+    Counsellorform,
+    CallSummeryListModal
 } from '../Modals/Modals'
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -355,6 +356,9 @@ const PDCSection = () => {
     // counsler Modal
     const [modalShow17, setModalShow17] = React.useState(false);
 
+    // Call summery Modal
+    const [modalShow18, setModalShow18] = React.useState(false);
+
     return (
         <>
             <FeeStructure
@@ -373,6 +377,10 @@ const PDCSection = () => {
                 show={modalShow3}
                 onHide={() => setModalShow3(false)}
                 setModalShow1={setModalShow9}
+            />
+            <CallSummeryListModal
+                show={modalShow18}
+                onHide={() => setModalShow18(false)}
             />
             <FilterModal
                 show={modalShow4}
@@ -532,7 +540,7 @@ const PDCSection = () => {
                 </div>
                 <div className='service5'>
                     <button onClick={() => setModalShow8(true)}>Call Recoding</button>
-                    <button>Call Summary</button>
+                    <button onClick={() => setModalShow18(true)}>Call Summary</button>
                 </div>
 
                 <div className='pdc1'>

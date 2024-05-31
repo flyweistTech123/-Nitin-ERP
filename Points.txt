@@ -5,7 +5,7 @@
 ->Application Form, Counsellor Form, Payment Link not working in listing
 
 
-MOM of Nitin 
+MOM of Nitin Nitin(30/05/2024)
 
 ->The notification should be scroll.
 ->The backend page edit the see request data different.
@@ -17,7 +17,7 @@ MOM of Nitin
 ->The profile image change.
 
 
-### Minutes of Meeting (MOM) - Nitin
+### Minutes of Meeting (MOM) - Nitin(30/05/2024)
 
 1. Implement scroll functionality for the notification feature to enhance usability.
 2. Redesign the backend page to present request data in a different format for better clarity.
@@ -27,3 +27,66 @@ MOM of Nitin
 6. Add checkboxes for "Yes" and "No" options on the Education Level page to improve user interaction.
 7. Check and verify the details of the filters used on the CRM page to ensure they function correctly.
 8. Enable the functionality for users to change their profile image easily.
+
+
+### Minutes of Meeting (MOM) - Nitin(31/05/2024)
+1.add buttons login with google,linkedin and X on login and register page.
+2.Add the new page in section next batch generate.
+3.change the filter of next batch generate page.
+4.add a button generate fee on next batch generate.
+5.And after clicking  generate fee button show the pop up successfully fee generated  the fee generate automaticaly on backend logic(backend).
+6.Add the automaticly and manual button of fee structure page to all batch and both button have dfferenet color after clicking on these buttons the form show of manural and automaticly.
+7.The setting modal bottom things same in all setting modals.
+8.call summary modal add by clicking calling summery button to all pages that has this button.
+9.Add the same status modal that is payment page in backend page.
+10.The personal details page the data not for adding time.(the design is complete but data not show or show should handle on the time backend intregertion time)
+11.In personal details page the input box of social media link should be increase by clicking of "+add another" .
+12.The pagination design should add in all pages.
+13.In Payment status modal the two input field add first bank and transation Id.
+14.The counselor form the details show of student in refund and cancel(the design is complete but data not show or show should handle on the time backend intregertion time)
+15.The create a field modal on string modal created but I have to create all the modals that showing in creare a field modal.
+16.In IT Report page add new columns AI score, Human, Plag reson, Readybility, primary keyword, and rank.
+17.The list of target allotment list should change according vise months and years(backend).
+18.In IT Target Report the buttons of add and edit modal missing.(also in figma and not found )
+19.Add Variable button details should change and also add this button on email template page.
+20.In Sales Target modal add the column "Justification" also in sales target page.
+21.In employees page the more icon dropdown add one more item that is dismiss and if employe is dismiss show hire instet of dismiss.
+22.In company structure page The drop and put funclity and also add modals of add department and edit department modal.
+23.Add history page.
+24.In expense page add the modal by clicking of add cash  button also remove the select the action.
+25.The courier page should now add primary menu not in setting menu.
+26.In adimission detail page should one field of signture.
+27.In payment received page add colum directly pay to university and show the data form of radio button yes , no and NA.
+
+
+
+
+### Minutes of Meeting (MOM) - Nitin (31/05/2024)
+
+1. Add buttons for "Login with Google", "Login with LinkedIn", and "Login with X" on the login and register pages.
+2. Add a new page in the "Next Batch Generate" section.
+3. Change the filter options on the "Next Batch Generate" page.
+4. Add a "Generate Fee" button on the "Next Batch Generate" page.
+5. After clicking the "Generate Fee" button, show a popup saying "Successfully fee generated". The fee should be generated automatically with backend logic.
+6. On the fee structure page, add "Automatically" and "Manual" buttons for all batches, each with different colors. Clicking these buttons should display forms for manual and automatic options.
+7. Ensure the settings modal bottom section is consistent across all setting modals.
+8. Add a call summary modal that appears when the "Call Summary" button is clicked on all pages containing this button.
+9. Add the same status modal from the payment page to the backend page.
+10. On the personal details page, ensure data is handled properly during backend integration. The design is complete, but data should be displayed correctly.
+11. On the personal details page, increase the input box for social media links by allowing users to click "+Add Another".
+12. Add pagination design to all pages.
+13. In the Payment Status modal, add two input fields: "Bank" and "Transaction ID".
+14. In the counselor form, ensure student details are shown for refund and cancellation. The design is complete but data should be displayed correctly during backend integration.
+15. Create all the modals that are displayed in the "Create a Field" modal.
+16. In the IT Report page, add new columns: AI Score, Human, Plagiarism Reason, Readability, Primary Keyword, and Rank.
+17. Update the target allotment list according to months and years (backend).
+18. In the IT Target Report, ensure the add and edit modal buttons are included (not found in Figma).
+19. Change the details for the "Add Variable" button and also add this button on the email template page.
+20. In the Sales Target modal, add the "Justification" column, and also include it on the sales target page.
+21. On the employees page, add a dropdown item "Dismiss" under the more icon. If an employee is dismissed, show "Hire" instead of "Dismiss".
+22. On the company structure page, add drag-and-drop functionality and include modals for adding and editing departments.
+23. Add a history page.
+24. On the expense page, add a modal for the "Add Cash" button and remove the "Select the Action" option.
+25. Move the courier page to the primary menu instead of the settings menu.
+26. On the admission details page, add a field for the signature.
+27. On the payment received page, add a column for "Directly Pay to University" with radio button options: Yes, No, and NA.

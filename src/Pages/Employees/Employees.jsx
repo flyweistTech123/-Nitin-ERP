@@ -51,15 +51,19 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={() => navigate('/general')}>
-                            <i className="fa-solid fa-pen"></i>
+                        <div onClick={() => navigate('/general')}>
                             View Profile
                         </div>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         <div className="icon-merged">
-                            <i className="fa-regular fa-star"></i>
                             Assign Task
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            {/* if emplyee is dismiss then show hire */}
+                            Dismiss
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -80,15 +84,19 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={() => navigate('/general')}>
-                            <i className="fa-solid fa-pen"></i>
+                        <div onClick={() => navigate('/general')}>
                             View Profile
                         </div>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         <div className="icon-merged">
-                            <i className="fa-regular fa-star"></i>
                             Assign Task
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            {/* if emplyee is dismiss then show hire */}
+                            Dismiss
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -108,15 +116,19 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={() => navigate('/general')}>
-                            <i className="fa-solid fa-pen"></i>
+                        <div onClick={() => navigate('/general')}>
                             View Profile
                         </div>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         <div className="icon-merged">
-                            <i className="fa-regular fa-star"></i>
                             Assign Task
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            {/* if emplyee is dismiss then show hire */}
+                            Dismiss
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -136,15 +148,19 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={() => navigate('/general')}>
-                            <i className="fa-solid fa-pen"></i>
+                        <div onClick={() => navigate('/general')}>
                             View Profile
                         </div>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         <div className="icon-merged">
-                            <i className="fa-regular fa-star"></i>
                             Assign Task
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            {/* if emplyee is dismiss then show hire */}
+                            Dismiss
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -164,15 +180,19 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={() => navigate('/general')}>
-                            <i className="fa-solid fa-pen"></i>
+                        <div onClick={() => navigate('/general')}>
                             View Profile
                         </div>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         <div className="icon-merged">
-                            <i className="fa-regular fa-star"></i>
                             Assign Task
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            {/* if emplyee is dismiss then show hire */}
+                            Dismiss
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>
@@ -192,15 +212,19 @@ const Employees = () => {
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     <Dropdown.Item>
-                        <div className="icon-merged" onClick={() => navigate('/general')}>
-                            <i className="fa-solid fa-pen"></i>
+                        <div onClick={() => navigate('/general')}>
                             View Profile
                         </div>
                     </Dropdown.Item>
                     <Dropdown.Item>
                         <div className="icon-merged">
-                            <i className="fa-regular fa-star"></i>
                             Assign Task
+                        </div>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <div className="icon-merged">
+                            {/* if emplyee is dismiss then show hire */}
+                            Dismiss
                         </div>
                     </Dropdown.Item>
                 </Dropdown.Menu>

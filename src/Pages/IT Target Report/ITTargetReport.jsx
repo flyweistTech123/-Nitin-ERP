@@ -144,7 +144,7 @@ const ITTargetReport = () => {
                     <p>IT Target Reports</p>
                 </div>
                 <div className='targetanalysis2'>
-                    <div className='targetanalysis1'  onClick={() => setModalShow11(true)}>
+                    <div className='targetanalysis1' onClick={() => setModalShow11(true)}>
                         <p>Filters</p>
                     </div>
 
@@ -153,6 +153,9 @@ const ITTargetReport = () => {
                             <p>Target Allotments</p>
                         </div>
                     </div>
+                </div>
+                <div className='admission12'>
+                    <button>Edit</button>
                 </div>
                 <div className='admission13'>
                     <div className='table-container'>

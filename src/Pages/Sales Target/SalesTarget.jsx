@@ -13,6 +13,7 @@ const SalesTarget = () => {
         {
             id: 1,
             target: '200',
+            Justification: '2',
             targetMonth: 'Jan 2023',
             AddedOn: 'DD/MM/YYYY',
             ListTeam: 'Loren epsom'
@@ -21,6 +22,7 @@ const SalesTarget = () => {
         {
             id: 1,
             target: '200',
+            Justification: '2',
             targetMonth: 'Jan 2023',
             AddedOn: 'DD/MM/YYYY',
             ListTeam: 'Loren epsom'
@@ -28,6 +30,7 @@ const SalesTarget = () => {
         {
             id: 1,
             target: '200',
+            Justification: '2',
             targetMonth: 'Jan 2023',
             AddedOn: 'DD/MM/YYYY',
             ListTeam: 'Loren epsom'
@@ -35,6 +38,7 @@ const SalesTarget = () => {
         {
             id: 1,
             target: '200',
+            Justification: '2',
             targetMonth: 'Jan 2023',
             AddedOn: 'DD/MM/YYYY',
             ListTeam: 'Loren epsom'
@@ -42,6 +46,7 @@ const SalesTarget = () => {
         {
             id: 1,
             target: '200',
+            Justification: '2',
             targetMonth: 'Jan 2023',
             AddedOn: 'DD/MM/YYYY',
             ListTeam: 'Loren epsom'
@@ -49,6 +54,7 @@ const SalesTarget = () => {
         {
             id: 1,
             target: '200',
+            Justification: '2',
             targetMonth: 'Jan 2023',
             AddedOn: 'DD/MM/YYYY',
             ListTeam: 'Loren epsom'
@@ -107,6 +113,7 @@ const SalesTarget = () => {
                                 <tr>
                                     <th>Target</th>
                                     <th>Target Month</th>
+                                    <th>Justification</th>
                                     <th>Edit/Delete</th>
                                     <th>Added On</th>
                                 </tr>
@@ -116,6 +123,7 @@ const SalesTarget = () => {
                                     <tr key={data.id}>
                                         <td>{data.target}</td>
                                         <td>{data.targetMonth}</td>
+                                        <td>{data.Justification}</td>
                                         <td>
                                             <div className='salestarget'>
                                                 <button onClick={() => setModalShow1(true)}>Edit</button>

@@ -7,7 +7,9 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useNavigate, Link } from 'react-router-dom';
 
 import img from '../../Img/img33.png'
+import img19 from '../../Img/img83.png'
 import { MdEdit } from "react-icons/md";
+import { MultiSelect } from "react-multi-select-component";
 
 // Modals 
 
@@ -31,7 +33,8 @@ import {
     AddNewFilter,
     PropertiesModal,
     NewViewModal,
-    Counsellorform
+    Counsellorform,
+    CallSummeryListModal
 } from '../Modals/Modals.jsx'
 
 const Service = () => {
@@ -190,6 +193,39 @@ const Service = () => {
     // AddNewFilter Modal
     const [modalShow12, setModalShow12] = React.useState(false);
 
+    // Call summery Modal
+    const [modalShow13, setModalShow13] = React.useState(false);
+
+    const [selected, setSelected] = useState([]);
+
+
+    const options = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
     return (
         <>
             <FilterModal
@@ -302,6 +338,10 @@ const Service = () => {
                 show={modalShow12}
                 onHide={() => setModalShow12(false)}
             />
+            <CallSummeryListModal
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
+            />
             <div className='service'>
                 <div className='admission1'>
                     <p>Service</p>
@@ -363,7 +403,7 @@ const Service = () => {
 
                 <div className='service5'>
                     <button onClick={() => setModalShow4(true)}>Call Recoding</button>
-                    <button>Call Summary</button>
+                    <button onClick={() => setModalShow13(true)}>Call Summary</button>
                 </div>
 
                 <div className='service3'>
@@ -410,7 +450,24 @@ const Service = () => {
                     </div>
                 </div>
 
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
 
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
+                    </div>
+                </div>
 
                 <div className='admission15'>
                     <div className='admission16'>
@@ -423,6 +480,15 @@ const Service = () => {
                             <option value="">Assign Service Manager</option>
                             <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
                         </select>
+                    </div>
+                    <div className='admission16'>
+                        <MultiSelect
+                            options={options}
+                            value={selected}
+                            onChange={setSelected}
+                            labelledBy="Select"
+                            className='admission1666'
+                        />
                     </div>
                     <div className='admission17'>
                         <input type="checkbox" />

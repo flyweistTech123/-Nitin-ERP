@@ -1,8 +1,8 @@
 import React from 'react'
 import './Login.css'
 import register from '../../Img/img1.png'
-import register1 from '../../Img/img2.png'
-import register2 from '../../Img/img3.png'
+import register1 from '../../Img/img113.png'
+import register2 from '../../Img/x.avif'
 import { useNavigate } from 'react-router-dom'
 
 
@@ -54,11 +54,11 @@ const Login = () => {
                                 </div>
                                 <div className='register11'>
                                     <img src={register1} alt="" />
-                                    <p>Github</p>
+                                    <p>LinkedIn</p>
                                 </div>
                                 <div className='register11'>
                                     <img src={register2} alt="" />
-                                    <p>Twitter</p>
+                                    <p>X</p>
                                 </div>
                             </div>
 
