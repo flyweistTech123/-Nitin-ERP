@@ -100,10 +100,14 @@ const Education_Details = () => {
                             <div className='editprofile57'>
                                 <select name="" id="">
                                     <option value="">Select educational level</option>
-                                    <option value="">Aadhar Card</option>
-                                    <option value="">Passport</option>
-                                    <option value="">Driving License</option>
-                                    <option value="">Voter ID</option>
+                                    <option value="">10th</option>
+                                    <option value="">12th</option>
+                                    <option value="">Under Graduate</option>
+                                    <option value="">Post Graduate</option>
+                                    <option value="">Diploma</option>
+                                    <option value="">PG Diploma</option>
+                                    <option value="">Certificate</option>
+                                    <option value="">Other</option>
                                 </select>
                             </div>
 
@@ -239,6 +243,18 @@ const Education_Details = () => {
                                     ))}
                                 </tbody>
                             </table>
+                        </div>
+                    </div>
+
+                    <div className='editprofile100'>
+                        <label htmlFor="">Documents previous boards are approved </label>
+                        <div className='editprofile101' >
+                            <input type="radio" />
+                            <label htmlFor="">Yes</label>
+                        </div>
+                        <div className='editprofile101'>
+                            <input type="radio" />
+                            <label htmlFor="">No</label>
                         </div>
                     </div>
                 </div>

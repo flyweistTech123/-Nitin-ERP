@@ -5,16 +5,9 @@ import HOC from '../../Components/HOC/HOC'
 import {
     StudentDetails,
     ApproveOnlinePayment,
-    FilterModal,
+    PendingOnlineFilterModal,
     MYDEALSModal,
     AddFieldModal,
-    AdmissionFollowUp,
-    NewTask,
-    History,
-    NeWLead,
-    SMS,
-    Email,
-    Whatsapp,
     History1,
     FilterModalhistory,
     AddNewEvent,
@@ -139,7 +132,7 @@ const PendingOnlinePayments = () => {
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
             />
-            <FilterModal
+            <PendingOnlineFilterModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
                 setModalShow1={setModalShow3}

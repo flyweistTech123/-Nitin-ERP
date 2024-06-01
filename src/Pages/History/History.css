@@ -1,0 +1,70 @@
+.historymenu1{
+    margin-top: 20px;
+}
+
+
+.historymenu11{
+    box-shadow: 0px 0px 4px 0px #00000040;
+    height: 84px;
+    background: #FFFFFF;
+    border-radius: 9px;
+
+}
+
+
+
+.historymenu12{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.historymenu12 label{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 20px;
+    color: #3F3F3F;
+    margin: 0;
+    cursor: pointer;
+}
+
+
+
+.historymenu13{
+    box-shadow: 0px 0px 4px 0px #00000040;
+    height: 61px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 10px;
+}
+
+
+.historymenu14{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: 48px;
+    background-color: #D9D9D9;
+    border-radius: 2px;
+    padding: 10px;
+    gap: 5px;
+    cursor: pointer;
+}
+
+
+.historymenu14 p{
+    font-family: "Nunito Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3F3F3F;
+    margin: 0;
+
+}

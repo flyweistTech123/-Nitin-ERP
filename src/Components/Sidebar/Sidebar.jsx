@@ -370,9 +370,9 @@ const Sidebar = () => {
                                         <li>Pending Document List</li>
                                     </Link>
                                     <li>Final Approval Cash Temp</li>
-                                    <Link to={'/couriersection'} className='link'>
+                                    {/* <Link to={'/couriersection'} className='link'>
                                         <li>Courier Section</li>
-                                    </Link>
+                                    </Link> */}
                                     <Link to={'/pendingdocumentLlisttemplate'} className='link'>
                                         <li>Pending Docs List Temp</li>
                                     </Link>
@@ -412,6 +412,12 @@ const Sidebar = () => {
                                 </ul>
                             </div>
                         )}
+                        <Link to={'/couriersection'} className='link'>
+                            <div className='sidebar2'>
+                                <img src={img9} alt="" />
+                                <p>Courier Section</p>
+                            </div>
+                        </Link>
                         <Link to={'/referenceformdata'} className='link'>
                             <div className='sidebar2'>
                                 <img src={img9} alt="" />

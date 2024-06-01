@@ -11,7 +11,6 @@ import {
     AddRefundCancelRequests,
     EditRefundCancelRequests,
     DeleteRequest,
-    FilterModal,
     MYDEALSModal,
     AddFieldModal,
     AdmissionFollowUp,
@@ -21,7 +20,7 @@ import {
     SMS,
     Email,
     Whatsapp,
-    PaymentFilterModal,
+    RefundCancelFilterModal,
     History1,
     FilterModalhistory,
     AddNewEvent,
@@ -263,7 +262,7 @@ const RefundCancel = () => {
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
             />
-            <PaymentFilterModal
+            <RefundCancelFilterModal
                 show={modalShow6}
                 onHide={() => setModalShow6(false)}
                 setModalShow1={setModalShow7}

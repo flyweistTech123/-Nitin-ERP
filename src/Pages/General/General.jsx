@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 
 import img from '../../Img/img105.png'
 import img1 from '../../Img/img106.png'
+import img2 from '../../Img/img114.png'
 
 const General = () => {
     const naviagte = useNavigate()
@@ -33,6 +34,7 @@ const General = () => {
     // tell about yourself Modal 
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
+    const [img2, setImg2] = useState(null);
 
 
     const popover1 = (
@@ -72,6 +74,18 @@ const General = () => {
         </Popover>
     );
 
+
+    const handleImageChange = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            setImg2(file);
+        }
+    };
+
+    const triggerFileInput = () => {
+        document.getElementById('fileInput').click();
+    };
+
     return (
         <>
             <Tellaboutyourself
@@ -109,7 +123,13 @@ const General = () => {
 
                             <div className='general9'>
                                 <div className='general10'>
-                                    <FaUser className='general11' />
+                                    <input type="file" id='fileInput' style={{ display: 'none' }} onChange={handleImageChange} />
+                                    <img
+                                        src={img2 ? URL.createObjectURL(img2) : img2}
+                                        alt="No image"
+                                        onClick={triggerFileInput}
+                                        style={{ cursor: 'pointer' }}
+                                    />
                                 </div>
                             </div>
                             <div className='general12'>

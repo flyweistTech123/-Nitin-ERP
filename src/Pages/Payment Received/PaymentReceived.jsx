@@ -561,6 +561,7 @@ const PaymentReceived = () => {
                                     <th>Payment ID</th>
                                     <th>Payment Approved Date</th>
                                     <th>Remarks</th>
+                                    <th>pay directly to university</th>
                                     <th>Status</th>
                                     <th>History</th>
                                 </tr>
@@ -586,6 +587,22 @@ const PaymentReceived = () => {
                                         <td>{data.paymentID}</td>
                                         <td>{data.paymentApprovedDate}</td>
                                         <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => setModalShow(true)}>{data.Remarks}</td>
+                                        <td>
+                                            <div className='attendanc1'>
+                                                <div className='attendanc2'>
+                                                    <input type="radio" name='status' />
+                                                    <label htmlFor="" style={{ color: "#40AF0C" }}>Yes</label>
+                                                </div>
+                                                <div className='attendanc2'>
+                                                    <input type="radio" name='status' />
+                                                    <label htmlFor="" style={{ color: "#FF0000" }}>No</label>
+                                                </div>
+                                                <div className='attendanc2'>
+                                                    <input type="radio" name='status' />
+                                                    <label htmlFor="" style={{ color: "#FFB800" }}>N/A</label>
+                                                </div>
+                                            </div>
+                                        </td>
                                         <td>
                                             <div className='admission14' onClick={() => setModalShow1(true)}>
                                                 <button>{data.status}</button>

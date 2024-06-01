@@ -126,6 +126,11 @@ import OTP from './Pages/Login/OTP';
 import NewPassword from './Pages/Login/NewPassword';
 import Nextbachgenrator from './Pages/NextBachGenerator/Nextbachgenrator';
 import HistoryPage from './Pages/History/History';
+import WhatsApp_SectionEdit from './Pages/EditProfile/WhatsApp_SectionEdit';
+import TelegramEdit from './Pages/EditProfile/TelegramEdit';
+import EmailTemplateEdit from './Pages/EditProfile/EmailTemplateEdit';
+import ZoomEdit from './Pages/EditProfile/ZoomEdit';
+import MeetingEdit from './Pages/EditProfile/MeetingEdit';
 // import Whatsappsection from './Pages/WHATSAPP/Whatsappsection';
 
 function App() {
@@ -259,6 +264,11 @@ function App() {
           <Route path="/addemailtemplate" element={<AddEmailTemplate />} />
           <Route path="/nextbatchgenerator" element={<Nextbachgenrator />} />
           <Route path="/history" element={<HistoryPage />} />
+          <Route path="/whatsAppsectionedit" element={<WhatsApp_SectionEdit />} />
+          <Route path="/telegramedit" element={<TelegramEdit />} />
+          <Route path="/emailtemplateedit" element={<EmailTemplateEdit />} />
+          <Route path="/zoomedit" element={<ZoomEdit />} />
+          <Route path="/meetingedit" element={<MeetingEdit />} />
         </Routes>
       </BrowserRouter>
     </>

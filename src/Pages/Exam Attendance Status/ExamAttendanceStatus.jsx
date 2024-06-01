@@ -297,7 +297,6 @@ const ExamAttendanceStatus = () => {
                                                     <label htmlFor="" style={{ color: "#FFB800" }}>N/A</label>
                                                 </div>
                                             </div>
-
                                         </td>
                                         <td>
                                             <div className='admission14'>

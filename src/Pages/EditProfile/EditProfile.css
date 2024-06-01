@@ -131,7 +131,8 @@
   line-height: 20px;
   color: #2155cd;
   margin: 0;
-  border-bottom: 2px solid #2155cd;
+  /* border-bottom: 2px solid #2155cd; */
+  text-decoration: underline;
 }
 
 .editprofile9 {
@@ -1418,4 +1419,100 @@
 
 .editprofile99{
   margin-top: 10px;
+}
+
+
+
+
+
+.editprofile100{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.editprofile100 label{
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21.82px;
+  color: #3F3F3F;
+  margin: 0;
+}
+
+
+.editprofile101{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
+
+
+.editprofile102 {
+  background: linear-gradient(
+    93.42deg,
+    rgba(0, 0, 127, 0.67) 0.35%,
+    rgba(0, 0, 127, 0) 103.46%
+  );
+  /* width: 100%;/ */
+  width: 100%;
+  height: 284px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.editprofile103 {
+  width: 100%;
+}
+
+
+
+.editprofile105{
+  margin-top: 50px;
+}
+
+
+.editprofile106 {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+  padding-bottom: 50px;
+}
+
+
+
+.editprofile107{
+  width: 100%;
+  margin: auto;
+}
+
+
+.editprofile108{
+  margin-left: 4%;
+}
+
+
+
+.editprofile109 {
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  border: 1px solid #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  padding-left: 100px;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+
+
+.editprofile110 {
+  margin-top: 50px;
 }

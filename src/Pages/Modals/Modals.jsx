@@ -7604,7 +7604,7 @@ export function FilterModalhistory(props) {
 
 
 //PaymentFilterModal Modal for admission page
-export function PaymentFilterModal(props) {
+export function RefundCancelFilterModal(props) {
     const [step, setStep] = useState(0);
     const options = [
         { label: "Loren Epsom University", value: "Unoversity" },
@@ -7645,75 +7645,6 @@ export function PaymentFilterModal(props) {
         { label: "Loren Epsom", value: "Quatar", },
         { label: "Yemen", value: "Yemen", },
     ];
-    const options6 = [
-        { label: "Hindu", value: "India" },
-        { label: "Muslim", value: "UAE" },
-        { label: "Buddhist", value: "Ghana", },
-        { label: "Chrishtian", value: "Quatar", },
-        { label: "Others", value: "Yemen", },
-    ];
-    const options7 = [
-        { label: "Married", value: "India" },
-        { label: "Unmarried", value: "UAE" },
-        { label: "Divorced", value: "Ghana", }
-    ];
-
-    const options8 = [
-        { label: "Yes", value: "India" },
-        { label: "No", value: "UAE" },
-    ];
-    const options9 = [
-        { label: "Employed", value: "India" },
-        { label: "Unemployed", value: "UAE" },
-    ];
-    const options10 = [
-        { label: "Internal", value: "India" },
-        { label: "External", value: "UAE" },
-    ];
-    const options11 = [
-        { label: "Aadhar Card", value: "India" },
-        { label: "Passport", value: "UAE" },
-        { label: "Driving License", value: "India" },
-        { label: "Voter ID", value: "UAE" },
-        { label: "Other", value: "India" },
-    ];
-    const options12 = [
-        { label: "Reverified", value: "India" },
-        { label: "N/A", value: "UAE" },
-        { label: "Reverification Rejected", value: "India" },
-    ];
-    const options13 = [
-        { label: "Approved", value: "UAE" },
-        { label: "Pending", value: "India" },
-        { label: "Rejected", value: "India" },
-    ];
-    const options17 = [
-        { label: "Send", value: "UAE" },
-        { label: "Received", value: "India" },
-        { label: "Waiting", value: "India" },
-    ];
-    const options14 = [
-        { label: "Any Date", value: "India" },
-        { label: "Yesterday", value: "UAE" },
-        { label: "Current Day", value: "India" },
-        { label: "Tomorrow", value: "India" },
-        { label: "This Week", value: "India" },
-        { label: "This Month", value: "UAE" },
-        { label: "Current Quarter", value: "India" },
-        { label: "Last 7 days", value: "India" },
-    ];
-
-    const options15 = [
-        { label: "Automatic", value: "India" },
-        { label: "Manual", value: "UAE" },
-    ];
-    const options16 = [
-        { label: "Admission Confirm Status ", value: "India" },
-        { label: "Admission Confirm Status ", value: "India" },
-        { label: "Admission Confirm Status ", value: "India" },
-        { label: "Admission Confirm Status ", value: "India" },
-        { label: "Admission Confirm Status ", value: "India" },
-    ];
 
     const [selected, setSelected] = useState([]);
 
@@ -7739,7 +7670,7 @@ export function PaymentFilterModal(props) {
                         </div>
                     </div>
                     <div className='filter7'>
-                        <div className='filter8'>
+                        <div className='paymentfiltermodalmodal'>
                             <p>Payment filters</p>
                         </div>
                         <div className='filter11'>
@@ -15921,7 +15852,7 @@ export function AddDepartmentModal(props) {
                 <div className='adddepartmentmodal'>
                     <div className='adddepartmentmodal1'>
                         <label htmlFor="">Department Name</label>
-                        <input type="text"  placeholder='New Team 3'/>
+                        <input type="text" placeholder='New Team 3' />
                     </div>
                     <div className='adddepartmentmodal1'>
                         <label htmlFor="">Parent Department</label>
@@ -15966,9 +15897,9 @@ export function EditDepartmentModal(props) {
                 <div className='adddepartmentmodal'>
                     <div className='adddepartmentmodal1'>
                         <label htmlFor="">Department Name</label>
-                        <input type="text"  placeholder='SUPERADMIN'/>
+                        <input type="text" placeholder='SUPERADMIN' />
                     </div>
-    
+
                     <div className='adddepartmentmodal1'>
                         <label htmlFor="">Supervisor</label>
                         <div className='adddepartmentmodal2'>
@@ -15978,6 +15909,411 @@ export function EditDepartmentModal(props) {
 
                     <div className='adddepartmentmodal3'>
                         <button onClick={() => props.onHide()}>SAVE</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+//Filter Modal for pendingOnline payment page
+export function PendingOnlineFilterModal(props) {
+    const [step, setStep] = useState(0);
+    const options1 = [
+        { label: "Reverified", value: "India" },
+        { label: "N/A", value: "UAE" },
+        { label: "Reverification Rejected", value: "India" },
+    ];
+    const options2 = [
+        { label: "Approved", value: "UAE" },
+        { label: "Pending", value: "India" },
+        { label: "Rejected", value: "India" },
+    ];
+    const options3 = [
+        { label: "Automatic", value: "India" },
+        { label: "Manual", value: "UAE" },
+    ];
+    const options4 = [
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+        { label: "Admission Confirm Status ", value: "India" },
+    ];
+
+    const options5 = [
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom1"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom2"
+        },
+        {
+            label: (
+                <>
+                    <img src={img19} alt="img19" style={{ width: '20px', height: '20px', marginRight: '10px' }} />
+                    Loren Epsom
+                </>
+            ), value: "Loren Epsom3"
+        },
+    ];
+
+    const [selected, setSelected] = useState([]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body className="no-padding">
+                <div className='filter1'>
+                    <div className='filter2'>
+                        <div className='filter3'>
+                            <p>FILTERS</p>
+                        </div>
+
+                        <div className='filter4'>
+                            <p>DEALS IN PROGRESS</p>
+                        </div>
+                        <div className='filter5' onClick={() => props.setModalShow1(true)}>
+                            <p>MY DEALS</p>
+                        </div>
+
+                        <div className='filter6' onClick={() => props.setModalShow7(true)}>
+                            <p>+Save Filter</p>
+                        </div>
+                    </div>
+                    <div className='filter7'>
+                        <div className='filter8'>
+                            <div className={step === 0 ? "filter9" : "filter10"} onClick={() => setStep(0)}>
+                                <p>Personal Details</p>
+                            </div>
+                            <div className={step === 1 ? "filter9" : "filter10"} onClick={() => setStep(1)}>
+                                <p>Payment Details</p>
+                            </div>
+                        </div>
+                        {step === 0 ? (
+                            <div className='filter11'>
+                                <div className='filter12'>
+                                    <label htmlFor="">Name</label>
+                                    <MultiSelect
+                                        options={options5}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Date</label>
+                                    <input type="date" />
+                                </div>
+
+                                <div className='filter12'>
+                                    <label htmlFor="">Order ID</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Amount</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Type</label>
+                                    <MultiSelect
+                                        options={options1}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Status</label>
+                                    <MultiSelect
+                                        options={options2}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Fee Structure Type</label>
+                                    <MultiSelect
+                                        options={options3}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Admission Confirm Status</label>
+                                    <MultiSelect
+                                        options={options4}
+                                        value={selected}
+                                        onChange={setSelected}
+                                        labelledBy="Select"
+                                    />
+                                </div>
+                                <div className='filter14'>
+                                    <h6>EXAM BATCH</h6>
+
+                                    <div className='filter15'>
+                                        <div className='filter16'>
+                                            <label htmlFor="">Month</label>
+                                            <select name="" id="">
+                                                <option value=""></option>
+                                                <option value="">January</option>
+                                                <option value="">February</option>
+                                                <option value="">March</option>
+                                                <option value="">April</option>
+                                                <option value="">May</option>
+                                                <option value="">June</option>
+                                                <option value="">July</option>
+                                                <option value="">August</option>
+                                                <option value="">September</option>
+                                                <option value="">October</option>
+                                                <option value="">November</option>
+                                                <option value="">December</option>
+                                            </select>
+                                        </div>
+                                        <div className='filter16'>
+                                            <label htmlFor="">Year</label>
+                                            <select name="" id="">
+                                                <option value=""></option>
+                                                <option value="">2023</option>
+                                                <option value="">2022</option>
+                                                <option value="">2021</option>
+                                                <option value="">2020</option>
+                                                <option value="">2019</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='filter20'>
+                                    <button onClick={() => props.onHide()}>SAVE</button>
+                                    <button onClick={() => props.onHide()}>RESET</button>
+                                </div>
+
+
+                            </div>
+                        ) : step === 1 ? (
+                            <div className='filter11'>
+                                <div className='filter12'>
+                                    <label htmlFor="">Responsible Person</label>
+                                    <input type="text" />
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Confirmation</label>
+                                    <div className='filter21'>
+                                        <p>Not Specified</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Approved Date</label>
+                                    <div className='filter21'>
+                                        <p>Any Date</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Book Fees (Batch)</label>
+                                    <div className='filter21'>
+                                        <p>Batch 1</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Exact Value</label>
+                                    <div className='filter22'>
+                                        <select name="" id="">
+                                            <option value="">Exact Value</option>
+                                        </select>
+                                        <input type="text" />
+                                        <IoIosMore color='#444444' size={25} />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Course Fees (Batch)</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Exam Fees</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Paid Fees</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Assignement Fees</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">GST (Batch)</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Other</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">TOC</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Reg</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">LE</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">GAP</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">RR</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Back Paper</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Multiple</label>
+                                    <div className='filter21'>
+                                        <p>Exact Value</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Type of fees strucure</label>
+                                    <div className='filter21'>
+                                        <p>Manual</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Profile Complete</label>
+                                    <div className='filter21'>
+                                        <p>10%</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Created On</label>
+                                    <div className='filter23'>
+                                        <select name="" id="">
+                                            <option value="">Any Date</option>
+                                        </select>
+                                        <IoIosMore color='#444444' size={25} />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Last Modified On</label>
+                                    <div className='filter23'>
+                                        <select name="" id="">
+                                            <option value="">Any Date</option>
+                                        </select>
+                                        <IoIosMore color='#444444' size={25} />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Last Modified By</label>
+                                    <div className='filter21'>
+                                        <p>Loren Epsom</p>
+                                        <IoIosArrowDown color='#444444' />
+                                    </div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Course</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Payment Type</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Gender</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Admission Status</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+                                <div className='filter12'>
+                                    <label htmlFor="">Specilization</label>
+                                    <div className='filter13'><IoIosArrowDown color='#444444' /></div>
+                                </div>
+
+                                <div className='filter19'>
+                                    <p onClick={() => props.setModalShow2(true)}>Add Field</p>
+                                    <span>Restore default fields</span>
+                                </div>
+
+                                <div className='filter20'>
+                                    <button onClick={() => props.onHide()}>SAVE</button>
+                                    <button onClick={() => props.onHide()}>RESET</button>
+                                </div>
+
+                            </div>
+                        ) : (
+                            ""
+                        )}
+
                     </div>
                 </div>
             </Modal.Body>
