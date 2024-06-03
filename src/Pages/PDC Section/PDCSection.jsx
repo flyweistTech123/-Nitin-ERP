@@ -27,7 +27,10 @@ import {
     PropertiesModal,
     NewViewModal,
     Counsellorform,
-    CallSummeryListModal
+    CallSummeryListModal,
+    CreateDateFieldsModal,
+    CreateListFieldsModal,
+    CreateYesNOFieldsModal
 } from '../Modals/Modals'
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -359,6 +362,17 @@ const PDCSection = () => {
     // Call summery Modal
     const [modalShow18, setModalShow18] = React.useState(false);
 
+
+    // CreateDateFieldsModal Modal
+    const [modalShow19, setModalShow19] = React.useState(false);
+
+    // CreateListFieldsModal Modal
+    const [modalShow20, setModalShow20] = React.useState(false);
+
+    // CreateYesNOFieldsModal Modal
+    const [modalShow21, setModalShow21] = React.useState(false);
+
+
     return (
         <>
             <FeeStructure
@@ -386,14 +400,14 @@ const PDCSection = () => {
                 show={modalShow4}
                 onHide={() => setModalShow4(false)}
                 setModalShow1={setModalShow5}
-                setModalShow2={setModalShow6}
+                setModalShow2={setModalShow13}
                 setModalShow7={setModalShow14}
             />
             <MYDEALSModal
                 show={modalShow5}
                 onHide={() => setModalShow5(false)}
                 setModalShow={setModalShow4}
-                setModalShow2={setModalShow6}
+                setModalShow2={setModalShow13}
                 setModalShow7={setModalShow14}
             />
             <AddFieldModal
@@ -416,6 +430,9 @@ const PDCSection = () => {
                 setModalShow8={setModalShow15}
                 setModalShow9={setModalShow16}
                 setModalShow10={setModalShow17}
+                setModalShow11={setModalShow19}
+                setModalShow12={setModalShow20}
+                setModalShow13={setModalShow21}
                 title={"PDC"}
             />
             <NeWLead
@@ -495,6 +512,21 @@ const PDCSection = () => {
                 show={modalShow17}
                 onHide={() => setModalShow17(false)}
                 setModalShow8={setModalShow15}
+                setModalShow9={setModalShow19}
+                setModalShow10={setModalShow20}
+                setModalShow11={setModalShow21}
+            />
+            <CreateDateFieldsModal
+                show={modalShow19}
+                onHide={() => setModalShow19(false)}
+            />
+            <CreateListFieldsModal
+                show={modalShow20}
+                onHide={() => setModalShow20(false)}
+            />
+            <CreateYesNOFieldsModal
+                show={modalShow21}
+                onHide={() => setModalShow21(false)}
             />
             <div className='pdc'>
                 <div className='admission1'>

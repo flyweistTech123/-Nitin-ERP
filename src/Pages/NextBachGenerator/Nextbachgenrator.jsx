@@ -36,7 +36,10 @@ import {
     AddNewFilter,
     PropertiesModal,
     NewViewModal,
-    Counsellorform
+    Counsellorform,
+    CreateDateFieldsModal,
+    CreateListFieldsModal,
+    CreateYesNOFieldsModal
 } from '../Modals/Modals.jsx'
 
 
@@ -285,6 +288,17 @@ const Nextbachgenrator = () => {
     // counsler Modal
     const [modalShow10, setModalShow10] = React.useState(false);
 
+
+    //CreateDateFieldsModal Modal
+    const [modalShow11, setModalShow11] = React.useState(false);
+
+    // CreateListFieldsModal Modal
+    const [modalShow12, setModalShow12] = React.useState(false);
+
+    // CreateYesNOFieldsModal Modal
+    const [modalShow13, setModalShow13] = React.useState(false);
+
+
     const [selected, setSelected] = useState([]);
 
 
@@ -351,7 +365,10 @@ const Nextbachgenrator = () => {
                 setModalShow8={setModalShow8}
                 setModalShow9={setModalShow9}
                 setModalShow10={setModalShow10}
-                title={"Admission"}
+                setModalShow11={setModalShow11}
+                setModalShow12={setModalShow12}
+                setModalShow13={setModalShow13}
+                title={"Next Batch Generate"}
             />
             <NeWLead
                 show={show1}
@@ -417,6 +434,21 @@ const Nextbachgenrator = () => {
                 show={modalShow10}
                 onHide={() => setModalShow10(false)}
                 setModalShow8={setModalShow8}
+                setModalShow9={setModalShow11}
+                setModalShow10={setModalShow12}
+                setModalShow11={setModalShow13}
+            />
+            <CreateDateFieldsModal
+                show={modalShow11}
+                onHide={() => setModalShow11(false)}
+            />
+            <CreateListFieldsModal
+                show={modalShow12}
+                onHide={() => setModalShow12(false)}
+            />
+            <CreateYesNOFieldsModal
+                show={modalShow13}
+                onHide={() => setModalShow13(false)}
             />
             <div className='admission'>
                 <div className='admission1'>

@@ -278,7 +278,7 @@ const BankAccount = () => {
                             <MdOutlineClose color='#FFFFFF' size={20} />
                         </div>
                     </div>
-                    <div className='payreceived1'>
+                    <div className='uviversitynewbutton'>
                         <button onClick={() => setModalShow(true)}>New</button>
                     </div>
                 </div>

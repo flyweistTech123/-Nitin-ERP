@@ -23,7 +23,10 @@ import {
     AddNewFilter,
     PropertiesModal,
     NewViewModal,
-    Counsellorform
+    Counsellorform,
+    CreateDateFieldsModal,
+    CreateListFieldsModal,
+    CreateYesNOFieldsModal
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -297,6 +300,16 @@ const PaymentReceived = () => {
     const [modalShow17, setModalShow17] = React.useState(false);
 
 
+    // CreateDateFieldsModal Modal
+    const [modalShow18, setModalShow18] = React.useState(false);
+
+    // CreateListFieldsModal Modal
+    const [modalShow19, setModalShow19] = React.useState(false);
+
+    // CreateYesNOFieldsModal Modal
+    const [modalShow20, setModalShow20] = React.useState(false);
+
+
     const [selected, setSelected] = useState([]);
 
 
@@ -372,6 +385,9 @@ const PaymentReceived = () => {
                 setModalShow8={setModalShow15}
                 setModalShow9={setModalShow16}
                 setModalShow10={setModalShow17}
+                setModalShow11={setModalShow18}
+                setModalShow12={setModalShow19}
+                setModalShow13={setModalShow20}
                 title={"Payment"}
             />
             <NeWLead
@@ -459,6 +475,22 @@ const PaymentReceived = () => {
                 show={modalShow17}
                 onHide={() => setModalShow17(false)}
                 setModalShow8={setModalShow15}
+                setModalShow9={setModalShow18}
+                setModalShow10={setModalShow19}
+                setModalShow11={setModalShow20}
+            />
+
+            <CreateDateFieldsModal
+                show={modalShow18}
+                onHide={() => setModalShow18(false)}
+            />
+            <CreateListFieldsModal
+                show={modalShow19}
+                onHide={() => setModalShow19(false)}
+            />
+            <CreateYesNOFieldsModal
+                show={modalShow20}
+                onHide={() => setModalShow20(false)}
             />
             <div className='payreceived'>
                 <div className='admission1'>

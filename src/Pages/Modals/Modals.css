@@ -4880,6 +4880,26 @@
   margin: 0;
 }
 
+.PropertiesModal55 input {
+  width: 351px;
+  height: 40px;
+  border: 1px solid #3f3f3f;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  outline: none;
+}
+
+.PropertiesModal55 select {
+  width: 351px;
+  height: 40px;
+  border: 1px solid #3f3f3f;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  outline: none;
+}
+
 .PropertiesModal5 {
   width: 351px;
   height: 40px;
@@ -4899,7 +4919,7 @@
 }
 
 .PropertiesModal6 {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .PropertiesModal6 p {
@@ -4972,6 +4992,7 @@
 .PropertiesModal10 {
   text-align: end;
   cursor: pointer;
+  margin-top: 20px;
 }
 
 .PropertiesModal10 p {
@@ -5493,19 +5514,19 @@
 
 /* add department Modal */
 
-.adddepartmentmodal{
+.adddepartmentmodal {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.adddepartmentmodal1{
+.adddepartmentmodal1 {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.adddepartmentmodal1 label{
+.adddepartmentmodal1 label {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -5514,8 +5535,8 @@
   margin: 0;
 }
 
-.adddepartmentmodal1 input{
-  border: 1px solid #3F3F3F;
+.adddepartmentmodal1 input {
+  border: 1px solid #3f3f3f;
   outline: none;
   border-radius: 4px;
   /* opacity: 0.5; */
@@ -5523,7 +5544,7 @@
   padding-left: 10px;
 }
 
-.adddepartmentmodal1 input::placeholder{
+.adddepartmentmodal1 input::placeholder {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -5532,9 +5553,8 @@
   margin: 0;
 }
 
-
-.adddepartmentmodal1 select{
-  border: 1px solid #3F3F3F;
+.adddepartmentmodal1 select {
+  border: 1px solid #3f3f3f;
   outline: none;
   border-radius: 4px;
   /* opacity: 0.5; */
@@ -5547,7 +5567,6 @@
   color: #00000099;
   margin: 0;
 }
-
 
 .adddepartmentmodal2 {
   width: 165px;
@@ -5568,25 +5587,34 @@
   margin: 0;
 }
 
-
-
-.adddepartmentmodal3{
+.adddepartmentmodal3 {
   text-align: center;
   margin-top: 50px;
 }
 
-.adddepartmentmodal3 button{
+.adddepartmentmodal3 button {
   width: auto;
   height: auto;
   padding: 10px 43px 10px 43px;
   border-radius: 3px;
-  background-color: #2155CD;
+  background-color: #2155cd;
   font-family: "Nunito Sans", sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   outline: none;
   border: none;
+}
+
+
+
+
+.right-side-modal .modal-dialog {
+  position: fixed;
+  right: 30%; 
+  top: 10%;
+  transform: translateY(-50%);
+  margin: 0;
 }

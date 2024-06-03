@@ -21,7 +21,10 @@ import {
     NewViewModal,
     Counsellorform,
     AddNewFilter,
-    AdmissionStatusModal
+    AdmissionStatusModal,
+    CreateDateFieldsModal,
+    CreateListFieldsModal,
+    CreateYesNOFieldsModal
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -217,6 +220,17 @@ const Backend = () => {
     const [modalShow14, setModalShow14] = React.useState(false);
 
 
+    // CreateDateFieldsModal Modal
+    const [modalShow15, setModalShow15] = React.useState(false);
+
+    // CreateListFieldsModal Modal
+    const [modalShow16, setModalShow16] = React.useState(false);
+
+    // CreateYesNOFieldsModal Modal
+    const [modalShow17, setModalShow17] = React.useState(false);
+
+
+
     const [selected, setSelected] = useState([]);
 
 
@@ -296,6 +310,9 @@ const Backend = () => {
                 setModalShow8={setModalShow10}
                 setModalShow9={setModalShow11}
                 setModalShow10={setModalShow12}
+                setModalShow11={setModalShow15}
+                setModalShow12={setModalShow16}
+                setModalShow13={setModalShow17}
                 title={"Backend"}
             />
             <NeWLead
@@ -361,10 +378,25 @@ const Backend = () => {
                 show={modalShow12}
                 onHide={() => setModalShow12(false)}
                 setModalShow8={setModalShow10}
+                setModalShow9={setModalShow15}
+                setModalShow10={setModalShow16}
+                setModalShow11={setModalShow17}
             />
             <AdmissionStatusModal
                 show={modalShow14}
                 onHide={() => setModalShow14(false)}
+            />
+            <CreateDateFieldsModal
+                show={modalShow15}
+                onHide={() => setModalShow15(false)}
+            />
+            <CreateListFieldsModal
+                show={modalShow16}
+                onHide={() => setModalShow16(false)}
+            />
+            <CreateYesNOFieldsModal
+                show={modalShow17}
+                onHide={() => setModalShow17(false)}
             />
             <div className='backend'>
                 <div className='admission1'>

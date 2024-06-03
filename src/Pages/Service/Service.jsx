@@ -34,7 +34,10 @@ import {
     PropertiesModal,
     NewViewModal,
     Counsellorform,
-    CallSummeryListModal
+    CallSummeryListModal,
+    CreateDateFieldsModal,
+    CreateListFieldsModal,
+    CreateYesNOFieldsModal
 } from '../Modals/Modals.jsx'
 
 const Service = () => {
@@ -196,6 +199,16 @@ const Service = () => {
     // Call summery Modal
     const [modalShow13, setModalShow13] = React.useState(false);
 
+
+    // CreateDateFieldsModal Modal
+    const [modalShow14, setModalShow14] = React.useState(false);
+
+    // CreateListFieldsModal Modal
+    const [modalShow15, setModalShow15] = React.useState(false);
+
+    // CreateYesNOFieldsModal Modal
+    const [modalShow16, setModalShow16] = React.useState(false);
+
     const [selected, setSelected] = useState([]);
 
 
@@ -258,6 +271,9 @@ const Service = () => {
                 setModalShow8={setModalShow9}
                 setModalShow9={setModalShow10}
                 setModalShow10={setModalShow11}
+                setModalShow11={setModalShow14}
+                setModalShow12={setModalShow15}
+                setModalShow13={setModalShow16}
                 title={"Service"}
             />
             <NeWLead
@@ -333,6 +349,9 @@ const Service = () => {
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}
                 setModalShow8={setModalShow9}
+                setModalShow9={setModalShow14}
+                setModalShow10={setModalShow15}
+                setModalShow11={setModalShow16}
             />
             <AddNewFilter
                 show={modalShow12}
@@ -341,6 +360,18 @@ const Service = () => {
             <CallSummeryListModal
                 show={modalShow13}
                 onHide={() => setModalShow13(false)}
+            />
+            <CreateDateFieldsModal
+                show={modalShow14}
+                onHide={() => setModalShow14(false)}
+            />
+            <CreateListFieldsModal
+                show={modalShow15}
+                onHide={() => setModalShow15(false)}
+            />
+            <CreateYesNOFieldsModal
+                show={modalShow16}
+                onHide={() => setModalShow16(false)}
             />
             <div className='service'>
                 <div className='admission1'>

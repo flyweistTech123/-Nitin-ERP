@@ -33,6 +33,11 @@ const Admission_Details = () => {
                                     <button><FaLink size={20} /> COPY URL</button>
                                 </div>
                             </div>
+                            <div className='editprofile23'>
+                                <label htmlFor="">Upload Signature</label>
+                                <input type="file" />
+                            </div>
+
                         </div>
                     </div>
                 </div>

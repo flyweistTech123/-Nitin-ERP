@@ -844,6 +844,82 @@ export function AddFieldModal(props) {
     const [step, setStep] = useState(0);
 
 
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pdcfieladmodalmodal3'>
+                <div className='pdcfieladmodalmodal'>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pdcfieladmodalmodal3'>
+                <div className='pdcfieladmodalmodal'>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img19} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img20} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img19} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img20} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+
+
     return (
         <Modal
             {...props}
@@ -1104,11 +1180,15 @@ export function AddFieldModal(props) {
                             <div className='addfield12'>
                                 <div className='addfield13'>
                                     <input type="checkbox" />
-                                    <label htmlFor="">Apply for Users</label>
+                                    <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+                                        <label htmlFor="">Apply for Users</label>
+                                    </OverlayTrigger>
                                 </div>
                                 <div className='addfield13'>
                                     <input type="checkbox" />
-                                    <label htmlFor="">Apply for Users</label>
+                                    <OverlayTrigger trigger="click" placement="top" overlay={popover1}>
+                                        <label htmlFor="">Apply for Departments</label>
+                                    </OverlayTrigger>
                                 </div>
                             </div>
                         </div>
@@ -4600,7 +4680,81 @@ export function PaymentFilterModalmodal(props) {
 //PaymentFieldModal  in filter for admission page
 export function PaymentFieldModal(props) {
     const [step, setStep] = useState(0);
+    // popoveraddbutton
+    const popover1 = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pdcfieladmodalmodal3'>
+                <div className='pdcfieladmodalmodal'>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img21} alt="" />
+                            <p>Depatment : Lorem Ipsum</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
 
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pdcfieladmodalmodal3'>
+                <div className='pdcfieladmodalmodal'>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img19} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img20} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img19} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                    <div className='pdcfieladmodalmodal1'>
+                        <input type="checkbox" />
+                        <div className='pdcfieladmodalmodal2'>
+                            <img src={img20} alt="" />
+                            <p>Lorem Ipsum</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
 
     return (
         <Modal
@@ -4718,6 +4872,20 @@ export function PaymentFieldModal(props) {
                             <div className='addfield11'>
                                 <IoReloadSharp color='#444444' size={20} />
                                 <h6>Default</h6>
+                            </div>
+                            <div className='addfield12'>
+                                <div className='addfield13'>
+                                    <input type="checkbox" />
+                                    <OverlayTrigger trigger="click" placement="top" overlay={popover}>
+                                        <label htmlFor="">Apply for Users</label>
+                                    </OverlayTrigger>
+                                </div>
+                                <div className='addfield13'>
+                                    <input type="checkbox" />
+                                    <OverlayTrigger trigger="click" placement="top" overlay={popover1}>
+                                        <label htmlFor="">Apply for Departments</label>
+                                    </OverlayTrigger>
+                                </div>
                             </div>
                         </div>
 
@@ -6360,6 +6528,15 @@ export function AdmissionFollowUp(props) {
     const handleModal2 = () => {
         props.setModalShow10(true);
     };
+    const handleModal3 = () => {
+        props.setModalShow11(true);
+    };
+    const handleModal4 = () => {
+        props.setModalShow12(true);
+    };
+    const handleModal5 = () => {
+        props.setModalShow13(true);
+    };
 
 
     const popover = (
@@ -6385,15 +6562,15 @@ export function AdmissionFollowUp(props) {
                         <h6>String</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={handleModal3}>
                         <h6>Date</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={handleModal4}>
                         <h6>List</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={handleModal5}>
                         <h6>Yes/ No</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
@@ -14328,6 +14505,16 @@ export function Counsellorform(props) {
         props.setModalShow8(true);
     };
 
+    const handleModal1 = () => {
+        props.setModalShow9(true);
+    };
+    const handleModal2 = () => {
+        props.setModalShow10(true);
+    };
+    const handleModal3 = () => {
+        props.setModalShow11(true);
+    };
+
     const popover1 = (
         <Popover id="popover-basic">
             <Popover.Body>
@@ -14336,15 +14523,15 @@ export function Counsellorform(props) {
                         <h6>String</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={handleModal1}>
                         <h6>Date</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={handleModal2}>
                         <h6>List</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={handleModal3}>
                         <h6>Yes/ No</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
@@ -14544,6 +14731,42 @@ export function Paymentlink(props) {
 //  Paymentlink  Modal for CRM page
 export function PropertiesModal(props) {
 
+    const handleModal2 = () => {
+        props.setModalShow10(true);
+    };
+    const handleModal3 = () => {
+        props.setModalShow11(true);
+    };
+    const handleModal4 = () => {
+        props.setModalShow12(true);
+    };
+    const handleModal5 = () => {
+        props.setModalShow13(true);
+    };
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body>
+                <div className="toppart7">
+                    <div className="toppart8" onClick={handleModal2}>
+                        <h6>String</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8" onClick={handleModal3}>
+                        <h6>Date</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8" onClick={handleModal4}>
+                        <h6>List</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div className="toppart8" onClick={handleModal5}>
+                        <h6>Yes/ No</h6>
+                        <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
 
     return (
         <Modal
@@ -14551,6 +14774,7 @@ export function PropertiesModal(props) {
             size="sl"
             aria-labelledby="contained-modal-title-vcenter"
             centered
+            className="right-side-modal"
         >
             <Modal.Body className='counsellorformmodalpadding'>
                 <div className='PropertiesModal1'>
@@ -14569,8 +14793,8 @@ export function PropertiesModal(props) {
 
                         <div className='PropertiesModal6'>
                             <p>Field Name</p>
-                            <div className='PropertiesModal5'>
-                                <h6 style={{ color: '#7E758F' }}>New Text</h6>
+                            <div className='PropertiesModal55'>
+                                <input type="text" placeholder='New Text' />
                             </div>
                         </div>
 
@@ -14598,9 +14822,84 @@ export function PropertiesModal(props) {
                         </div>
 
                         <div className='PropertiesModal9'>
-                            <button >Save</button>
-                            <button>Cancel</button>
+                            <button onClick={() => props.onHide()}>Save</button>
+                            <button onClick={() => props.onHide()}>Cancel</button>
                         </div>
+
+                        <div className='PropertiesModal10'>
+                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover}>
+                                <p>Create a field</p>
+                            </OverlayTrigger>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+//  Paymentlink  Modal for CRM page
+export function CreateDateFieldsModal(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            className="right-side-modal"
+        >
+            <Modal.Body className='counsellorformmodalpadding'>
+                <div className='PropertiesModal1'>
+                    <div className='PropertiesModal2'>
+                        <p>Properties</p>
+                        <span>Edit</span>
+                    </div>
+                    <div className='PropertiesModal3'>
+                        <div className='PropertiesModal4'>
+                            <p>Section</p>
+                            <div className='PropertiesModal5'>
+                                <h6>+ADD</h6>
+                            </div>
+                        </div>
+
+
+                        <div className='PropertiesModal6'>
+                            <p>Field Name</p>
+                            <div className='PropertiesModal55'>
+                                <input type="text" placeholder='New date' />
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal7'>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Required</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Multiple</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show them online</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show Always</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Make this filed visible to selected user’s only</p>
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal9'>
+                            <button onClick={() => props.onHide()}>Save</button>
+                            <button onClick={() => props.onHide()}>Cancel</button>
+                        </div>
+
 
                         <div className='PropertiesModal10'>
                             <p>Create a field</p>
@@ -14611,6 +14910,175 @@ export function PropertiesModal(props) {
         </Modal>
     );
 }
+
+
+export function CreateListFieldsModal(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            className="right-side-modal"
+        >
+            <Modal.Body className='counsellorformmodalpadding'>
+                <div className='PropertiesModal1'>
+                    <div className='PropertiesModal2'>
+                        <p>Properties</p>
+                        <span>Edit</span>
+                    </div>
+                    <div className='PropertiesModal3'>
+                        <div className='PropertiesModal4'>
+                            <p>Section</p>
+                            <div className='PropertiesModal5'>
+                                <h6>+ADD</h6>
+                            </div>
+                        </div>
+
+
+                        <div className='PropertiesModal6'>
+                            <p>Field Name</p>
+                            <div className='PropertiesModal55'>
+                                <input type="text" placeholder='New list' />
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal6'>
+                            <p>List items</p>
+                            <div className='PropertiesModal55'>
+                                <input type="text" placeholder='New list' />
+                            </div>
+                        </div>
+
+                        <div>
+                            <hr />
+                        </div>
+
+                        <div className='PropertiesModal6'>
+                            <div className='PropertiesModal55'>
+                                <select name="" id="">
+                                    <option value="">MultiSelect list</option>
+                                    <option value="">Entity Selection dialog</option>
+                                    <option value="">List</option>
+                                    <option value="">Checkboxes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal7'>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Required</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Multiple</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show them online</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show Always</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Make this filed visible to selected user’s only</p>
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal9'>
+                            <button onClick={() => props.onHide()}>Save</button>
+                            <button onClick={() => props.onHide()}>Cancel</button>
+                        </div>
+
+
+                        <div className='PropertiesModal10'>
+                            <p>Create a field</p>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function CreateYesNOFieldsModal(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+            className="right-side-modal"
+        >
+            <Modal.Body className='counsellorformmodalpadding'>
+                <div className='PropertiesModal1'>
+                    <div className='PropertiesModal2'>
+                        <p>Properties</p>
+                        <span>Edit</span>
+                    </div>
+                    <div className='PropertiesModal3'>
+                        <div className='PropertiesModal4'>
+                            <p>Section</p>
+                            <div className='PropertiesModal5'>
+                                <h6>+ADD</h6>
+                            </div>
+                        </div>
+
+
+                        <div className='PropertiesModal6'>
+                            <p>Field Name</p>
+                            <div className='PropertiesModal55'>
+                                <input type="text" placeholder='New Text' />
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal7'>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Required</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Multiple</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show them online</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Show Always</p>
+                            </div>
+                            <div className='PropertiesModal8'>
+                                <input type="checkbox" />
+                                <p>Make this filed visible to selected user’s only</p>
+                            </div>
+                        </div>
+
+                        <div className='PropertiesModal9'>
+                            <button onClick={() => props.onHide()}>Save</button>
+                            <button onClick={() => props.onHide()}>Cancel</button>
+                        </div>
+
+
+                        <div className='PropertiesModal10'>
+                            <p>Create a field</p>
+                        </div>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
 
 
 

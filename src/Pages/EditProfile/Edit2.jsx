@@ -17,7 +17,10 @@ import {
     FilterModalhistory,
     AddNewEvent,
     Counsellorform,
-    PropertiesModal
+    PropertiesModal,
+    CreateDateFieldsModal,
+    CreateListFieldsModal,
+    CreateYesNOFieldsModal
 } from '../Modals/Modals.jsx'
 
 
@@ -43,6 +46,10 @@ const Edit2 = () => {
     const [modalShow6, setModalShow6] = React.useState(false);
 
     const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow3, setModalShow3] = React.useState(false);
+    const [modalShow7, setModalShow7] = React.useState(false);
+    const [modalShow8, setModalShow8] = React.useState(false);
+
 
     const popover = (
         <Popover id="popover-basic">
@@ -52,15 +59,15 @@ const Edit2 = () => {
                         <h6>String</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={() => setModalShow3(true)}>
                         <h6>Date</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={() => setModalShow7(true)}>
                         <h6>List</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
-                    <div className="toppart8">
+                    <div className="toppart8" onClick={() => setModalShow8(true)}>
                         <h6>Yes/ No</h6>
                         <p>Qorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
@@ -68,6 +75,7 @@ const Edit2 = () => {
             </Popover.Body>
         </Popover>
     );
+
 
 
 
@@ -104,6 +112,18 @@ const Edit2 = () => {
             <PropertiesModal
                 show={modalShow2}
                 onHide={() => setModalShow2(false)}
+            />
+            <CreateDateFieldsModal
+                show={modalShow3}
+                onHide={() => setModalShow3(false)}
+            />
+            <CreateListFieldsModal
+                show={modalShow7}
+                onHide={() => setModalShow7(false)}
+            />
+            <CreateYesNOFieldsModal
+                show={modalShow8}
+                onHide={() => setModalShow8(false)}
             />
             <div className=''>
                 <div className='editprofile2'>
