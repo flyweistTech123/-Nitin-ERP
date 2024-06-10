@@ -24,7 +24,8 @@ import {
     AdmissionStatusModal,
     CreateDateFieldsModal,
     CreateListFieldsModal,
-    CreateYesNOFieldsModal
+    CreateYesNOFieldsModal,
+    CallSummeryListModal
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -231,6 +232,9 @@ const Backend = () => {
 
 
 
+    //Call summery Modal
+    const [modalShow18, setModalShow18] = React.useState(false);
+
     const [selected, setSelected] = useState([]);
 
 
@@ -267,6 +271,10 @@ const Backend = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
+            />
+             <CallSummeryListModal
+                show={modalShow18}
+                onHide={() => setModalShow18(false)}
             />
             <Remarks
                 show={modalShow1}
@@ -452,7 +460,7 @@ const Backend = () => {
                 <div className='backend2'>
                     <div className='backend3'>
                         <button onClick={() => setModalShow(true)}>Call Recoding</button>
-                        <button>Call Summary</button>
+                        <button onClick={() => setModalShow18(true)}>Call Summary</button>
                     </div>
                     <div className='backend4'>
                         <button>Import</button>

@@ -6033,6 +6033,34 @@ export function EmployeesFilterModal(props) {
                                     labelledBy="Select"
                                 />
                             </div>
+                            <div className='paymentfiltermodal'>
+                                <label htmlFor="">Employee status</label>
+                                <div className='paymentfiltermodal1'>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Active</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Dismissed</label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className='paymentfiltermodal'>
+                                <label htmlFor="">Status</label>
+                                <div className='paymentfiltermodal1'>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Online</label>
+                                    </div>
+                                    <div className='paymentfiltermodal2'>
+                                        <input type="radio" />
+                                        <label htmlFor="">Offline</label>
+                                    </div>
+                                </div>
+
+                            </div>
 
                             <div className='documentfiltermodal6'>
                                 <button onClick={() => props.onHide()}>SAVE</button>

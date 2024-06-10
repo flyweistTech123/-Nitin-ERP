@@ -781,25 +781,6 @@ const CourierSection = () => {
                     ""
                 )}
 
-
-                < div className='admission15'>
-                    <div className='admission16'>
-                        <p>START DIALING</p>
-                    </div>
-                    <div className='admission16'>
-                        <select name="" id="">
-                            <option value="">Select Action</option>
-                            <option value="">Assign Responsible Person</option>
-                            <option value="">Assign Service Manager</option>
-                            <option value="" onClick={() => navigate('/paymentreceived')}>Assign Backend Person</option>
-                        </select>
-                    </div>
-                    <div className='admission17'>
-                        <input type="checkbox" />
-                        <p>For All</p>
-                    </div>
-                </div>
-
                 <div className='admission18'>
                     <button>Previous</button>
                     <button>Next</button>
