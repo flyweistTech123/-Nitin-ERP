@@ -52,12 +52,12 @@
 }
 
 .register5 {
-  width: 500px;
+  width: auto;
   height: auto;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Set box shadow */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   background-color: #ffffff;
   border-radius: 6px;
-  padding-bottom: 10px;
+  padding: 1.2rem;
 }
 
 .register55 h6 {
@@ -85,7 +85,7 @@
 .register6 {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px;
   margin-top: 20px;
 }
@@ -106,9 +106,11 @@
 }
 
 .register7 input {
-  width: 440px;
+  min-width: 440px;
+  width: 100%;
   height: 38px;
   border: 1px solid #e0e6ed;
+  /* border: 1px solid red; */
   border-radius: 6px;
   padding-left: 20px;
   outline: none;
@@ -125,10 +127,11 @@
 
 .register8 {
   /* margin-top: 30px; */
+  text-align: center;
 }
 
 .register8 button {
-  width: 440px;
+  width: 100%;
   height: 38px;
   border-radius: 6px;
   border: none;
@@ -143,6 +146,10 @@
   cursor: pointer;
 }
 
+.register8 img{
+  
+}
+
 .register9 {
   position: relative;
   display: flex;
@@ -155,8 +162,8 @@
   content: "";
   position: absolute;
   top: 50%;
-  width: 180px;
-  border-bottom: 2px solid #ebedf2; /* Adjust line color and style as needed */
+  width: 100%;
+  /* border-bottom: 2px solid #ebedf2; */
 }
 
 .register9::before {
@@ -184,6 +191,7 @@
 .register10 {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -199,7 +207,7 @@
   gap: 10px;
 }
 
-.register11 img{
+.register11 img {
   width: 20px;
   height: 20px;
 }
@@ -214,6 +222,7 @@
 }
 
 .register12 {
+  text-align: center;
 }
 
 .register12 p {
@@ -274,33 +283,69 @@
   border-radius: 4px;
 }
 
+.input-container-password {
+  position: relative;
+  width: 100%;
+  height: 38px;
+  /* border: 1px solid red; */
+  border: 1px solid #e0e6ed;
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.input-container-password input {
+  width: 100%;
+  height: 100%;
+  padding-left: 20px;
+  border: none;
+  outline: none;
+  position: relative;
+}
+
+
+.logininputseye{
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+}
+
+
 /* Responsive css for Register  */
 
 @media screen and (max-width: 580px) {
   .register {
     flex-direction: column;
   }
+
   .register1 {
     width: 100%;
   }
+
   .register4 {
     width: 100%;
   }
+
   .register55 h6 {
     font-size: 20px;
   }
+
   .register5 {
     width: 100%;
     margin: auto;
   }
+
   .register7 input {
     width: 100%;
   }
+
   .register8 button {
     width: auto;
     height: auto;
     padding: 12px 15px 12px 15px;
   }
+
   .register10 {
     width: 98%;
     margin: auto;

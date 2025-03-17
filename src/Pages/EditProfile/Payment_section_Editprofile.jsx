@@ -81,6 +81,9 @@ const Payment_section_Editprofile = () => {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
+                <Modal.Header closeButton>
+                    <Modal.Title>Request List</Modal.Title>
+                </Modal.Header>
                 <Modal.Body>
                     <div className='admission13'>
                         <div className='table-container'>
@@ -88,12 +91,10 @@ const Payment_section_Editprofile = () => {
                                 <thead>
                                     <tr>
                                         <th>Approved Date</th>
-                                        <th>Amount</th>
-                                        <th>Payment Type</th>
+                                        <th>Refund Amount</th>
                                         <th>Remark</th>
                                         <th>Status</th>
-                                        <th>Student Receipt</th>
-                                        <th>Internal Receipt</th>
+                                        <th>Receipt</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -101,20 +102,11 @@ const Payment_section_Editprofile = () => {
                                         <tr key={data.id}>
                                             <td>{data.ApprovedDate}</td>
                                             <td>{data.Amount}</td>
-                                            <td>
-                                                <div className='editprofile37'>
-                                                    {data.PaymentType}
-                                                    <p>Link</p>
-                                                </div>
-                                            </td>
                                             <td>{data.Remark}</td>
                                             <td>
                                                 <div className='editprofile38'>
                                                     {data.Status}
                                                 </div>
-                                            </td>
-                                            <td>
-                                                <LuDownload color='#2155CD' size={20} />
                                             </td>
                                             <td>
                                                 <LuDownload color='#2155CD' size={20} />

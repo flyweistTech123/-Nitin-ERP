@@ -44,18 +44,23 @@
 .admission3 {
   background-color: #00ab55;
 }
+
 .admission4 {
   background-color: #e7515a;
 }
+
 .admission5 {
   background-color: #00007f;
 }
+
 .admission6 {
   background-color: #1b55e2;
 }
+
 .admission7 {
   background-color: #ffb800;
 }
+
 .admission3 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
@@ -295,7 +300,7 @@
   margin-top: 100px;
 }
 
-.admission16 select{
+.admission16 select {
   width: auto;
   height: 44px;
   border: 1px solid #3f3f3f;
@@ -410,13 +415,28 @@
 
 .admission13 table tr:hover {
   background: #b5c7f0b2;
+
   .admission202 {
     display: block;
     z-index: 1000;
   }
 }
+
 .admission202:hover {
   display: block;
+}
+
+.tableloading img {
+  width: 100px;
+  height: 100px;
+}
+
+.tableloading p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FF5534;
+  margin: 0;
 }
 
 /* Filter Modal  */
@@ -427,12 +447,15 @@
   .admission {
     margin-bottom: 50px;
   }
+
   .admission13 .table-container {
     overflow-x: auto;
   }
+
   .admission13 {
     overflow: auto;
   }
+
   .admission8 {
     flex-direction: column;
     align-items: normal;
@@ -445,12 +468,15 @@
   .admission {
     margin-bottom: 50px;
   }
+
   .admission13 .table-container {
     overflow-x: auto;
   }
+
   .admission13 {
     overflow: auto;
   }
+
   .admission8 {
     flex-direction: column;
     align-items: normal;
@@ -481,7 +507,7 @@
 }
 
 
-.popoveradd2{
+.popoveradd2 {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -489,7 +515,7 @@
 }
 
 
-.popoveradd2 p{
+.popoveradd2 p {
   font-family: "Nunito Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
@@ -499,6 +525,6 @@
 }
 
 
-.popoveradd2 p:hover{
+.popoveradd2 p:hover {
   color: #2155cd;
 }

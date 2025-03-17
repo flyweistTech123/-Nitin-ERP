@@ -63,13 +63,13 @@ const TelegramTemplate = () => {
                 <div className='admission1'>
                     <p>Telegram Template</p>
                     <div className='admission2'>
-                        <div className='cancel1' onClick={()=>navigate('/addtelegaramtemplate')}>
+                        <div className='cancel1' onClick={() => navigate('/addtelegaramtemplate')}>
                             <p>ADD TELEGRAM TEMPLATE</p>
                         </div>
-                        <div className='cancel2' onClick={()=>navigate('/addsmstemplate')}>
+                        <div className='cancel2' onClick={() => navigate('/addsmstemplate')}>
                             <p>Edit</p>
                         </div>
-                        <div className='cancel3' onClick={()=>navigate('/addsmstemplate')}>
+                        <div className='cancel3' onClick={() => navigate('/addsmstemplate')}>
                             <p>Delete</p>
                         </div>
                     </div>
@@ -103,6 +103,24 @@ const TelegramTemplate = () => {
                     </div>
                 </div>
 
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
+                    </div>
+                </div>
 
                 <div className='template8'>
                     <p>Selected: 0/16</p>

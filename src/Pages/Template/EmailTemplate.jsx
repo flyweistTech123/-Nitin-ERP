@@ -3,6 +3,7 @@ import './Template.css'
 import HOC from '../../Components/HOC/HOC'
 import { IoSettings } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import { IoIosArrowDown } from "react-icons/io";
 
 
 import img from '../../Img/img33.png'
@@ -62,7 +63,7 @@ const EmailTemplate = () => {
                 <div className='admission1'>
                     <p>Email Template</p>
                     <div className='admission2'>
-                        <div className='cancel1' onClick={()=>navigate('/addemailtemplate')}>
+                        <div className='cancel1' onClick={() => navigate('/addemailtemplate')}>
                             <p>ADD E-MAIL TEMPLATE</p>
                         </div>
                         <div className='cancel2'>
@@ -102,6 +103,24 @@ const EmailTemplate = () => {
                     </div>
                 </div>
 
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
+                    </div>
+                </div>
 
                 <div className='template8'>
                     <p>Selected: 0/16</p>

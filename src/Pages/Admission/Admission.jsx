@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Admission.css'
 import HOC from '../../Components/HOC/HOC'
 import { useNavigate, Link } from 'react-router-dom';
@@ -13,6 +13,7 @@ import { MultiSelect } from "react-multi-select-component";
 
 import img8 from '../../Img/img33.png'
 import img19 from '../../Img/img83.png'
+import img1 from '../../Img/loading.gif'
 
 
 // Modals 
@@ -40,6 +41,8 @@ import {
     CreateListFieldsModal,
     CreateYesNOFieldsModal
 } from '../Modals/Modals.jsx'
+import endPoints from '../../Repository/apiConfig.js';
+import { getApi } from '../../Repository/Api.js';
 
 
 
@@ -121,6 +124,23 @@ const Admission = () => {
         },
 
     ];
+
+
+    const [admissionData, setAdmissionData] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getalladmissions, {
+            setResponse: setAdmissionData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch Banner data!",
+        })
+    }, []);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
 
 
 
@@ -328,6 +348,12 @@ const Admission = () => {
     ];
 
 
+
+
+
+
+
+
     return (
         <>
             <FilterModal
@@ -528,31 +554,46 @@ const Admission = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-
-                                        <td><input type="checkbox" /></td>
-                                        <td onClick={handleShow}><img src={img8} alt="" /></td>
-                                        <td>
-                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
-                                            {data.name}
-                                        </td>
-                                        <td>{data.contact}</td>
-                                        <td>{data.email}</td>
-                                        <div className='admission19'>
-                                            <p>{data.address}</p>
-                                        </div>
-                                        <td>{data.course}</td>
-                                        <td>{data.admissionDate}</td>
-                                        <td>{data.feesPaid}</td>
-                                        <td>{data.paidDate}</td>
-                                        <td>
-                                            <div className='admission14'>
-                                                <button onClick={() => setModalShow4(true)}>{data.history}</button>
-                                            </div>
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan="8" className='tableloading'>
+                                            <img src={img1} alt="" />
                                         </td>
                                     </tr>
-                                ))}
+                                ) :
+                                    admissionData?.data?.lenght === 0 ? (
+                                        <tr>
+                                            <td colSpan="8" className='tableloading'>
+                                                <p>No data available.</p>
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        admissionData?.data?.map((data) => (
+                                            <tr key={data.id}>
+
+                                                <td><input type="checkbox" /></td>
+                                                <td onClick={handleShow}><img src={img8} alt="" /></td>
+                                                <td>
+                                                    <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                                    {data.name}
+                                                </td>
+                                                <td>{data.phone}</td>
+                                                <td>{data.email}</td>
+                                                <div className='admission19'>
+                                                    <p>{data.address}</p>
+                                                </div>
+                                                <td>{data?.courseInfo?.course}</td>
+                                                <td>{data.admissionDate.slice(0,16)}</td>
+                                                <td>{data.paidAmount}</td>
+                                                <td>{data.admissionDate.slice(0,16)}</td>
+                                                <td>
+                                                    <div className='admission14'>
+                                                        <button onClick={() => setModalShow4(true)}>History</button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )}
                             </tbody>
                         </table>
                     </div>

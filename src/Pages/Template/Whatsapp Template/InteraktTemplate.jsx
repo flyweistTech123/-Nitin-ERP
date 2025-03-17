@@ -56,8 +56,8 @@ const InteraktTemplate = () => {
             lastUpdated: 'DD/MM/YYYY 10:20PM',
         },
 
-    ];    
-    
+    ];
+
     const navigate = useNavigate()
 
 
@@ -123,11 +123,30 @@ const InteraktTemplate = () => {
                                             </div>
                                         </td>
                                         <td>{data.lastUpdated}</td>
-                                        <td><IoEye color='#2155CD' size={25}  onClick={()=>navigate('/actionInteraktTemplate')}/></td>
+                                        <td><IoEye color='#2155CD' size={25} onClick={() => navigate('/actionInteraktTemplate')} /></td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
                     </div>
                 </div>
 

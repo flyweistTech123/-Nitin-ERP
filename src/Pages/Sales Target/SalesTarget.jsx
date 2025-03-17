@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import './SalesTarget.css'
 import HOC from '../../Components/HOC/HOC'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { IoIosArrowDown } from "react-icons/io";
 
-import {AddSalesTarget, EditSalesTarget} from '../Modals/Modals'
+import { AddSalesTarget, EditSalesTarget } from '../Modals/Modals'
 
 
 
@@ -76,7 +77,7 @@ const SalesTarget = () => {
 
 
 
- 
+
     return (
         <>
             <AddSalesTarget
@@ -135,6 +136,25 @@ const SalesTarget = () => {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
                     </div>
                 </div>
 

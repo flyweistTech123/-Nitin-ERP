@@ -21,11 +21,11 @@ import {
     NewViewModal,
     Counsellorform,
     AddNewFilter,
+    CallSummeryListModal,
     AdmissionStatusModal,
     CreateDateFieldsModal,
     CreateListFieldsModal,
-    CreateYesNOFieldsModal,
-    CallSummeryListModal
+    CreateYesNOFieldsModal
 } from '../Modals/Modals'
 
 import { useNavigate, Link } from 'react-router-dom';
@@ -231,9 +231,11 @@ const Backend = () => {
     const [modalShow17, setModalShow17] = React.useState(false);
 
 
-
-    //Call summery Modal
+    // Call summery Modal
     const [modalShow18, setModalShow18] = React.useState(false);
+
+
+
 
     const [selected, setSelected] = useState([]);
 
@@ -271,10 +273,6 @@ const Backend = () => {
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 setModalShow1={setModalShow1}
-            />
-             <CallSummeryListModal
-                show={modalShow18}
-                onHide={() => setModalShow18(false)}
             />
             <Remarks
                 show={modalShow1}
@@ -405,6 +403,10 @@ const Backend = () => {
             <CreateYesNOFieldsModal
                 show={modalShow17}
                 onHide={() => setModalShow17(false)}
+            />
+            <CallSummeryListModal
+                show={modalShow18}
+                onHide={() => setModalShow18(false)}
             />
             <div className='backend'>
                 <div className='admission1'>

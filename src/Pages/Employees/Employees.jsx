@@ -3,6 +3,7 @@ import './Employees.css'
 import HOC from '../../Components/HOC/HOC'
 import { useNavigate, Link } from 'react-router-dom';
 import { Dropdown } from "react-bootstrap";
+import { IoIosArrowDown } from "react-icons/io";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -345,6 +346,25 @@ const Employees = () => {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
                     </div>
                 </div>
             </div>

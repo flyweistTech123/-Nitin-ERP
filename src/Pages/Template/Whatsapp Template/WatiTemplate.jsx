@@ -123,11 +123,30 @@ const WatiTemplate = () => {
                                             </div>
                                         </td>
                                         <td>{data.lastUpdated}</td>
-                                        <td onClick={()=>navigate('/actionWatiTemplate')}><IoEye color='#2155CD' size={25} /></td>
+                                        <td onClick={() => navigate('/actionWatiTemplate')}><IoEye color='#2155CD' size={25} /></td>
                                     </tr>
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <div className='pendingpayment6'>
+                    <div className='pendingpayment7'>
+                        <h6>Total:</h6>
+                        <span>Show quantity</span>
+                    </div>
+
+                    <div className='pendingpayment8'>
+                        <p>Page :1</p>
+                    </div>
+
+                    <div className='pendingpayment9'>
+                        <p>Records</p>
+                        <div className='pendingpayment10'>
+                            <p>20</p>
+                            <IoIosArrowDown color='#3F3F3F' />
+                        </div>
                     </div>
                 </div>
 

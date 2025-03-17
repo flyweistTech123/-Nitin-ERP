@@ -21,7 +21,7 @@ import { useNavigate } from 'react-router-dom';
 
 import img from '../../Img/img105.png'
 import img1 from '../../Img/img106.png'
-import img2 from '../../Img/img114.png'
+import img3 from '../../Img/img114.png'
 
 const General = () => {
     const naviagte = useNavigate()
@@ -35,6 +35,7 @@ const General = () => {
     const [modalShow, setModalShow] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
     const [img2, setImg2] = useState(null);
+    
 
 
     const popover1 = (
@@ -125,7 +126,7 @@ const General = () => {
                                 <div className='general10'>
                                     <input type="file" id='fileInput' style={{ display: 'none' }} onChange={handleImageChange} />
                                     <img
-                                        src={img2 ? URL.createObjectURL(img2) : img2}
+                                        src={img2 ? URL.createObjectURL(img2) : img3}
                                         alt="No image"
                                         onClick={triggerFileInput}
                                         style={{ cursor: 'pointer' }}
