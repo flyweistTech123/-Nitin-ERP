@@ -7,7 +7,6 @@ import Popover from 'react-bootstrap/Popover';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
 import { MdEdit } from "react-icons/md";
 import { MultiSelect } from "react-multi-select-component";
 
@@ -43,6 +42,7 @@ import {
 } from '../Modals/Modals.jsx'
 import endPoints from '../../Repository/apiConfig.js';
 import { getApi } from '../../Repository/Api.js';
+import Pagination from '../../Components/Pagination/Pagination.jsx';
 
 
 
@@ -129,18 +129,52 @@ const Admission = () => {
     const [admissionData, setAdmissionData] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
+
 
     const fetchData = useCallback(async () => {
-        await getApi(endPoints.getalladmissions, {
+        await getApi(endPoints.getalladmissions(pagination.currentPage, pagination.limit), {
             setResponse: setAdmissionData,
             setLoading: setLoading,
-            errorMsg: "Failed to fetch Banner data!",
+            errorMsg: "Failed to fetch data!",
         })
-    }, []);
+    }, [pagination.currentPage, pagination.limit]);
+
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: admissionData?.pagination?.currentPage,
+            totalPages: admissionData?.pagination?.totalPages,
+            totalRecords: admissionData?.pagination?.totalRecords,
+        }));
+    }, [admissionData]);
 
     useEffect(() => {
         fetchData();
     }, [fetchData]);
+
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1  // Reset to first page when changing limit
+        }));
+    };
 
 
 
@@ -556,49 +590,52 @@ const Admission = () => {
                             <tbody>
                                 {loading ? (
                                     <tr>
-                                        <td colSpan="8" className='tableloading'>
+                                        <td colSpan="11" className='tableloading'>
                                             <img src={img1} alt="" />
                                         </td>
                                     </tr>
-                                ) :
-                                    admissionData?.data?.lenght === 0 ? (
-                                        <tr>
-                                            <td colSpan="8" className='tableloading'>
-                                                <p>No data available.</p>
+                                ) : admissionData?.data?.length === 0 ? (  
+                                    <tr>
+                                        <td colSpan="11" className='tableloading'>
+                                            <p>No data available.</p>
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    admissionData?.data?.map((data) => (
+                                        <tr key={data.id}>
+                                            <td><input type="checkbox" /></td>
+                                            <td onClick={handleShow}><img src={img8} alt="" /></td>
+                                            <td>
+                                                <p className='admission202'>
+                                                    <button onClick={() => navigate('/admission_details')}>
+                                                        <MdEdit size={20} /> Edit
+                                                    </button>
+                                                </p>
+                                                {data.name}
+                                            </td>
+                                            <td>{data.phone}</td>
+                                            <td>{data.email}</td>
+                                            <div className='admission19'>
+                                                <p>{data.address}</p>
+                                            </div>
+                                            <td>{data?.courseInfo?.course}</td>
+                                            <td>{data.admissionDate.slice(0, 16)}</td>
+                                            <td>RS.{data.paidAmount}</td>
+                                            <td>{data.admissionDate.slice(0, 16)}</td>
+                                            <td>
+                                                <div className='admission14'onClick={() => setModalShow4(true)}>
+                                                    <p>History</p>
+                                                </div>
                                             </td>
                                         </tr>
-                                    ) : (
-                                        admissionData?.data?.map((data) => (
-                                            <tr key={data.id}>
-
-                                                <td><input type="checkbox" /></td>
-                                                <td onClick={handleShow}><img src={img8} alt="" /></td>
-                                                <td>
-                                                    <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
-                                                    {data.name}
-                                                </td>
-                                                <td>{data.phone}</td>
-                                                <td>{data.email}</td>
-                                                <div className='admission19'>
-                                                    <p>{data.address}</p>
-                                                </div>
-                                                <td>{data?.courseInfo?.course}</td>
-                                                <td>{data.admissionDate.slice(0,16)}</td>
-                                                <td>{data.paidAmount}</td>
-                                                <td>{data.admissionDate.slice(0,16)}</td>
-                                                <td>
-                                                    <div className='admission14'>
-                                                        <button onClick={() => setModalShow4(true)}>History</button>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        ))
-                                    )}
+                                    ))
+                                )}
                             </tbody>
+
                         </table>
                     </div>
                 </div>
-                <div className='pendingpayment6'>
+                {/* <div className='pendingpayment6'>
                     <div className='pendingpayment7'>
                         <h6>Total:</h6>
                         <span>Show quantity</span>
@@ -615,8 +652,16 @@ const Admission = () => {
                             <IoIosArrowDown color='#3F3F3F' />
                         </div>
                     </div>
-                </div>
+                </div> */}
 
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
                 <div className='admission15'>
                     <div className='admission16'>
                         <p>START DIALING</p>
@@ -644,10 +689,8 @@ const Admission = () => {
                     </div>
                 </div>
 
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
-                </div>
+
+
             </div>
         </>
     )

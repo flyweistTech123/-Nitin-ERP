@@ -1,8 +1,30 @@
 
 const endPoints = {
+    //authication apis
     loginAdmin: "admin/loginAdmin",
     registerAdmin: "admin/register",
-    getalladmissions: "admin/getAllAdmissionSection",
+
+    //get apis
+    getalladmissions: (page, limit) =>
+        `admin/getAllAdmissionSection?page=${page}&limit=${limit}`,
+    getallbackend: (page, limit) =>
+        `admin/getAllAdmissionBackendSection?page=${page}&limit=${limit}`,
+
+
+
+    //update(put) apis
+
+    updateadmissionStatus: (id) =>
+        `admin/updateAdmissionBackendStatus/${id}`,
+
+
+
+
+
+
+
+
+
     getprivactpolicy: "api/v1/static/getPrivacy",
     getterms: "api/v1/static/getTerms",
     getprivactpolicybyid: (id) => `api/v1/static/privacy/${id}`,

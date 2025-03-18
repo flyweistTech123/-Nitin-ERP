@@ -1,5 +1,4 @@
-.pendingpayment {
-}
+.pendingpayment {}
 
 .pendingpayment1 {
   padding-top: 20px;
@@ -100,12 +99,9 @@
   line-height: 21.82px;
   color: #2155cd;
   margin: 0;
-  cursor: pointer;
   text-transform: uppercase;
 }
 
-.pendingpayment8 {
-}
 
 .pendingpayment8 p {
   font-family: "Nunito Sans", sans-serif;
@@ -114,7 +110,6 @@
   line-height: 21.82px;
   color: #000000;
   margin: 0;
-  cursor: pointer;
   text-transform: uppercase;
 }
 
@@ -133,26 +128,17 @@
   margin: 0;
 }
 
-.pendingpayment10 {
-  width: 101px;
+
+.pendingpayment10 select {
+  width: 80px;
   height: 32px;
   border: 1px solid #3f3f3f;
+  outline: none;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
   cursor: pointer;
+  padding-left: 0.5rem;
 }
 
-.pendingpayment10 p {
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
-  color: #000000;
-  margin: 0;
-}
 
 .pendingpayment11 {
   margin-top: 60px;
@@ -161,7 +147,7 @@
 /* Responsive css for pendingpayment  */
 
 @media screen and (max-width: 580px) {
-  .pendingpayment6{
+  .pendingpayment6 {
     gap: 10px;
   }
 }

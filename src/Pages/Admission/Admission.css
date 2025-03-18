@@ -268,28 +268,33 @@
   line-height: 20px;
   color: #000000;
   margin: 0;
-  /* text-align: center; */
   cursor: pointer;
   white-space: nowrap;
   padding-left: 20px;
   padding-right: 20px;
 }
 
-.admission14 button {
-  width: 80px;
-  height: 31px;
-  background-color: #ffb800;
-  border: none;
-  outline: none;
-  border-radius: 6px;
-  font-family: "Nunito Sans", sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  color: #ffffff;
-  margin: 0;
-  cursor: pointer;
+.admission14 {
+  width: 121px;
+  height: 34px;
+  border-radius: 4px;
+  background: #FFB800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.admission14 p {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: #FFFFFF;
+  margin: 0;
+}
+
 
 .admission15 {
   display: flex;
@@ -374,6 +379,11 @@
   cursor: pointer;
 }
 
+.admission18 button:disabled {
+  cursor: not-allowed;
+  background-color: grey;
+}
+
 .admission19 {
   width: 200px;
   margin-top: 20px;
@@ -426,16 +436,20 @@
   display: block;
 }
 
-.tableloading img {
-  width: 100px;
-  height: 100px;
+.tableloading {
+  text-align: center;
 }
 
+/* .tableloading img {
+  width: 100px;
+  height: 100px;
+} */
+
 .tableloading p {
-  font-weight: 500;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  color: #FF5534;
+  color: #2155CD;
   margin: 0;
 }
 

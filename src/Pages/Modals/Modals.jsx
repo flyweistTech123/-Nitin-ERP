@@ -66,6 +66,8 @@ import img19 from '../../Img/img83.png'
 import img20 from '../../Img/img82.png'
 import { GiOverhead } from 'react-icons/gi';
 import img21 from '../../Img/img110.png'
+import { putApi } from '../../Repository/Api';
+import endPoints from '../../Repository/apiConfig';
 
 
 export function AddNewFilter(props) {
@@ -10993,7 +10995,41 @@ export function PaymentStatus(props) {
 
 
 export function AdmissionStatusModal(props) {
+    const { onHide, data, fetchdata } = props;
+    const id = data?._id;
 
+    const [loading, setLoading] = useState(false);
+    const [status, setStatus] = useState(data?.admissionConfirmationstatus || '');
+    const [remark, setRemark] = useState(data?.addRemark || '');
+
+    useEffect(() => {
+        if ( data) {
+            setStatus(data?.admissionConfirmationstatus || "");
+            setRemark(data?.addRemark|| "");
+        }
+    }, [data]);
+
+
+    const handleupdate = async () => {
+        if (!status) {
+            alert("Please select a status");
+            return;
+        }
+
+        const payload = {
+            admissionConfirmationstatus:status,
+            addRemark: remark
+        };
+
+        await putApi(endPoints.updateadmissionStatus(id), payload, {
+            setLoading: setLoading,
+            successMsg: `Status updated successfully!`,
+            errorMsg: "Failed to update user status!",
+        });
+
+        fetchdata();
+        onHide();
+    };
 
     return (
         <Modal
@@ -11002,45 +11038,66 @@ export function AdmissionStatusModal(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Body >
-                <div className='paymentremarkmodal'>
-                    <div className='paymentstatusModal'>
-                        <IoIosCloseCircleOutline color='#000000' size={25} onClick={() => props.onHide()} />
-                    </div>
-
-
-                    <div className='paymentstatusModal1'>
+            <Modal.Body>
+                <div className="paymentremarkmodal">
+                    <div className="paymentstatusModal">
                         <h6>Change Admission Status</h6>
-                        <div className='paymentstatusModal2'>
-                            <div className='paymentstatusModal3'>
-                                <input type="radio" name='pending' />
-                                <div className='paymentstatusModal4' style={{ backgroundColor: "#FFB800" }}>
+                        <IoIosCloseCircleOutline color="#000000" size={30} onClick={onHide} />
+                    </div>
+                    <div className="paymentstatusModal1">
+                        <div className="paymentstatusModal2">
+                            <div className="paymentstatusModal3">
+                                <input 
+                                    type="radio" 
+                                    name="status" 
+                                    value="PENDING" 
+                                    checked={status === "PENDING"} 
+                                    onChange={(e) => setStatus(e.target.value)} 
+                                />
+                                <div className="paymentstatusModal4" style={{ backgroundColor: "#FFB800" }}>
                                     <p>Pending</p>
                                 </div>
                             </div>
-                            <div className='paymentstatusModal3'>
-                                <input type="radio" name='pending' />
-                                <div className='paymentstatusModal4' style={{ backgroundColor: "#40AF0C" }}>
+                            <div className="paymentstatusModal3">
+                                <input 
+                                    type="radio" 
+                                    name="status" 
+                                    value="APPROVED" 
+                                    checked={status === "APPROVED"} 
+                                    onChange={(e) => setStatus(e.target.value)} 
+                                />
+                                <div className="paymentstatusModal4" style={{ backgroundColor: "#40AF0C" }}>
                                     <p>Approved</p>
                                 </div>
                             </div>
-                            <div className='paymentstatusModal3'>
-                                <input type="radio" name='pending' />
-                                <div className='paymentstatusModal4' style={{ backgroundColor: "#FF0000" }}>
+                            <div className="paymentstatusModal3">
+                                <input 
+                                    type="radio" 
+                                    name="status" 
+                                    value="REJECT" 
+                                    checked={status === "REJECT"} 
+                                    onChange={(e) => setStatus(e.target.value)} 
+                                />
+                                <div className="paymentstatusModal4" style={{ backgroundColor: "#FF0000" }}>
                                     <p>Rejected</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className='paymentstatusModal5'>
+                    <div className="paymentstatusModal5">
                         <h6>Remarks</h6>
-
-                        <textarea name="" id="" cols="30" rows="10" placeholder='Type Here.....'></textarea>
+                        <textarea 
+                            placeholder="Type Here....." 
+                            value={remark} 
+                            onChange={(e) => setRemark(e.target.value)}
+                        />
                     </div>
 
-                    <div className='paymentstatusModal6'>
-                        <button onClick={() => props.onHide()}>SUBMIT</button>
+                    <div className="paymentstatusModal6">
+                        <button onClick={handleupdate} disabled={loading}>
+                            {loading ? "Submitting..." : "SUBMIT"}
+                        </button>
                     </div>
                 </div>
             </Modal.Body>

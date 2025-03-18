@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import HOC from '../../Components/HOC/HOC'
 import {
     CallRecoding,
@@ -35,15 +35,78 @@ import { MultiSelect } from "react-multi-select-component";
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { MdEdit } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 
 
 import img from '../../Img/img33.png'
 import img19 from '../../Img/img83.png'
+import img1 from '../../Img/loading.gif'
+
 
 import './Backend.css'
+import endPoints from '../../Repository/apiConfig';
+import { getApi } from '../../Repository/Api';
+import Pagination from '../../Components/Pagination/Pagination';
+
+
+
 const Backend = () => {
     const navigate = useNavigate()
+    const [backendData, setBackendData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
+
+
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
+
+
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getallbackend(pagination.currentPage, pagination.limit), {
+            setResponse: setBackendData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        })
+    }, [pagination.currentPage, pagination.limit]);
+
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: backendData?.pagination?.currentPage,
+            totalPages: backendData?.pagination?.totalPages,
+            totalRecords: backendData?.pagination?.totalRecords,
+        }));
+    }, [backendData]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1  // Reset to first page when changing limit
+        }));
+    };
+
+
+
+
+
     const tableData = [
         {
             id: 1,
@@ -240,6 +303,8 @@ const Backend = () => {
     const [selected, setSelected] = useState([]);
 
 
+
+
     const options = [
         {
             label: (
@@ -266,6 +331,13 @@ const Backend = () => {
             ), value: "Loren Epsom3"
         },
     ];
+
+
+
+    const openStatusModal = (item) => {
+        setSelectedItem(item);
+        setModalShow14(true);
+    };
 
     return (
         <>
@@ -391,6 +463,8 @@ const Backend = () => {
             <AdmissionStatusModal
                 show={modalShow14}
                 onHide={() => setModalShow14(false)}
+                data={selectedItem}
+                fetchdata={fetchData}
             />
             <CreateDateFieldsModal
                 show={modalShow15}
@@ -493,63 +567,76 @@ const Backend = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td><input type="checkbox" /></td>
-                                        <td onClick={handleShow}><img src={img} alt="" /></td>
-                                        <td>
-                                            <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
-                                            {data.name}
-                                        </td>
-                                        <td>{data.contact}</td>
-                                        <td>{data.email}</td>
-                                        <div className='admission19'>
-                                            <p>{data.address}</p>
-                                        </div>
-                                        <td>{data.course}</td>
-                                        <td>{data.feesPaid}</td>
-                                        <td style={{ color: "#2155CD", textDecoration: "underline" }}>{data.callrecording}</td>
-                                        <td>
-                                            <div className='admission14' onClick={() => setModalShow14(true)}>
-                                                <button>{data.status}</button>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div className='backend5' onClick={() => setModalShow2(true)}>
-                                                <button>N/A</button>
-                                            </div>
-                                        </td>
-                                        <td>{data.verificationdate}</td>
-                                        <td>
-                                            <div className='admission14'>
-                                                <button onClick={() => setModalShow7(true)}>History</button>
-                                            </div>
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan="13" className='tableloading'>
+                                            <img src={img1} alt="" />
                                         </td>
                                     </tr>
-                                ))}
+                                ) : backendData?.data?.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="13" className='tableloading'>
+                                            <p>No data available.</p>
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    backendData?.data?.map((data) => (
+                                        <tr key={data.id}>
+                                            <td><input type="checkbox" /></td>
+                                            <td onClick={handleShow}><img src={img} alt="" /></td>
+                                            <td>
+                                                <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
+                                                {data.name}
+                                            </td>
+                                            <td>{data.phone}</td>
+                                            <td>{data.email}</td>
+                                            <div className='admission19'>
+                                                <p>{data.address || 'N/A'}</p>
+                                            </div>
+                                            <td>{data?.courseInfo?.course}</td>
+                                            <td>RS.{data.paidAmount}</td>
+                                            <td style={{ color: "#2155CD", textDecoration: "underline" }}>Call.mp3</td>
+                                            <td>
+                                                <div
+                                                    className='admission14'
+                                                    onClick={() => openStatusModal(data)}
+                                                    style={{
+                                                        background: 
+                                                            data.admissionConfirmationstatus === "APPROVED" ? '#40AF0C' :
+                                                            data.admissionConfirmationstatus === "PENDING" ? '#FF0000' :
+                                                            ''
+                                                    }}
+                                                >
+                                                    <p>{data.admissionConfirmationstatus}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className='backend5' onClick={() => setModalShow2(true)}>
+                                                    <button>N/A</button>
+                                                </div>
+                                            </td>
+                                            <td>{data.admissionDate.slice(0, 16)}</td>
+                                            <td>
+                                                <div className='admission14' onClick={() => setModalShow7(true)}>
+                                                    <p>History</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
-
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
 
                 <div className='admission15'>
                     <div className='admission16'>
@@ -576,11 +663,6 @@ const Backend = () => {
                         <input type="checkbox" />
                         <p>For All</p>
                     </div>
-                </div>
-
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
                 </div>
             </div>
         </>
