@@ -581,20 +581,20 @@ const Backend = () => {
                                     </tr>
                                 ) : (
                                     backendData?.data?.map((data) => (
-                                        <tr key={data.id}>
+                                        <tr key={data?._id}>
                                             <td><input type="checkbox" /></td>
                                             <td onClick={handleShow}><img src={img} alt="" /></td>
                                             <td>
                                                 <p className='admission202'><button onClick={() => navigate('/admission_details')}><MdEdit size={20} /> Edit</button></p>
-                                                {data.name}
+                                                {data?.name}
                                             </td>
-                                            <td>{data.phone}</td>
-                                            <td>{data.email}</td>
+                                            <td>{data?.phone}</td>
+                                            <td>{data?.email}</td>
                                             <div className='admission19'>
                                                 <p>{data.address || 'N/A'}</p>
                                             </div>
                                             <td>{data?.courseInfo?.course}</td>
-                                            <td>RS.{data.paidAmount}</td>
+                                            <td>RS.{data?.paidAmount}</td>
                                             <td style={{ color: "#2155CD", textDecoration: "underline" }}>Call.mp3</td>
                                             <td>
                                                 <div
@@ -602,12 +602,12 @@ const Backend = () => {
                                                     onClick={() => openStatusModal(data)}
                                                     style={{
                                                         background: 
-                                                            data.admissionConfirmationstatus === "APPROVED" ? '#40AF0C' :
-                                                            data.admissionConfirmationstatus === "PENDING" ? '#FF0000' :
+                                                            data?.admissionConfirmationstatus === "APPROVED" ? '#40AF0C' :
+                                                            data?.admissionConfirmationstatus === "REJECT" ? '#FF0000' :
                                                             ''
                                                     }}
                                                 >
-                                                    <p>{data.admissionConfirmationstatus}</p>
+                                                    <p>{data?.admissionConfirmationstatus}</p>
                                                 </div>
                                             </td>
                                             <td>
@@ -615,7 +615,7 @@ const Backend = () => {
                                                     <button>N/A</button>
                                                 </div>
                                             </td>
-                                            <td>{data.admissionDate.slice(0, 16)}</td>
+                                            <td>{data?.admissionDate.slice(0, 16)}</td>
                                             <td>
                                                 <div className='admission14' onClick={() => setModalShow7(true)}>
                                                     <p>History</p>

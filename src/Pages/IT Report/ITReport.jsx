@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './ITReport.css'
 import Modal from 'react-bootstrap/Modal';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import HOC from '../../Components/HOC/HOC'
 import {
@@ -9,15 +9,12 @@ import {
     AddFieldModal,
     ITReportFilterModal,
     HistoryLogsModal,
-    FilterModalhistory,
-    AddNewEvent,
     AddNewFilter,
 } from '../Modals/Modals.jsx'
 
 
 
 import { MdOutlineClose } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 import { GoListUnordered } from "react-icons/go";
 import { MdFormatListNumbered } from "react-icons/md";
 import { RiDoubleQuotesR } from "react-icons/ri";
@@ -28,9 +25,111 @@ import img3 from '../../Img/img62.png'
 import img4 from '../../Img/img63.png'
 import img5 from '../../Img/img64.png'
 import img7 from '../../Img/img71.png'
+import img8 from '../../Img/loading.gif'
+
+
+import { getApi } from '../../Repository/Api.js';
+import endPoints from '../../Repository/apiConfig.js';
+import Pagination from '../../Components/Pagination/Pagination.jsx';
 
 const ITReport = () => {
     const navigate = useNavigate();
+
+    const [itReportData, setItReportData] = useState(null);
+    const [loading, setLoading] = useState(false);
+    const [selectedItems, setSelectedItems] = useState([]);
+
+
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
+
+
+    const fetchData = useCallback(async () => {
+        if (!pagination.currentPage || pagination.currentPage < 1) return;
+        setLoading(true);
+
+        await getApi(endPoints.getAllItreportsDetails(pagination.currentPage, pagination.limit), {
+            setResponse: setItReportData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        })
+    }, [pagination.currentPage, pagination.limit]);
+
+    useEffect(() => {
+        if (itReportData?.data) {
+            setPagination((prevPagination) => ({
+                ...prevPagination,
+                currentPage: itReportData?.data?.currentPage || 1,
+                totalPages: itReportData?.data?.totalPages || 1,
+                totalRecords: itReportData?.data?.totalReports || 0,
+            }));
+        }
+    }, [itReportData]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1
+        }));
+    };
+
+
+
+
+
+    const handleCheckboxChange = (id) => {
+        setSelectedItems((prev) =>
+            prev.includes(id)
+                ? prev.filter((item) => item !== id)
+                : [...prev, id]
+        );
+    };
+
+    const handleSelectAll = () => {
+        const allIds = itReportData?.data?.reports?.map((data) => data?._id) || [];
+        setSelectedItems((prev) =>
+            prev.length === allIds.length ? [] : allIds  // Toggle select all
+        );
+    };
+
+
+    const handleDelete = async () => {
+        if (selectedItems.length === 0) return;
+
+        await Promise.all(
+            selectedItems.map(async (itemId) => {
+                await getApi(endPoints.deleteItreports(itemId), {
+                    setLoading,
+                    successMsg: 'Data deleted successfully!',
+                    errorMsg: 'Failed to delete data!',
+                });
+            })
+        );
+
+        setSelectedItems([]);
+        fetchData();
+    };
+
+
     const tableData = [
         {
             id: 1,
@@ -41,12 +140,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
-            AIScore:"5",
-            Human:"5",
-            PlagReason:"Loren epsom",
-            Readbility:"Loren epsom",
-            primarykeyword:"Loren epsom",
-            Rank:"1",
+            AIScore: "5",
+            Human: "5",
+            PlagReason: "Loren epsom",
+            Readbility: "Loren epsom",
+            primarykeyword: "Loren epsom",
+            Rank: "1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -60,12 +159,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
-            AIScore:"5",
-            Human:"5",
-            PlagReason:"Loren epsom",
-            Readbility:"Loren epsom",
-            primarykeyword:"Loren epsom",
-            Rank:"1",
+            AIScore: "5",
+            Human: "5",
+            PlagReason: "Loren epsom",
+            Readbility: "Loren epsom",
+            primarykeyword: "Loren epsom",
+            Rank: "1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -78,12 +177,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
-            AIScore:"5",
-            Human:"5",
-            PlagReason:"Loren epsom",
-            Readbility:"Loren epsom",
-            primarykeyword:"Loren epsom",
-            Rank:"1",
+            AIScore: "5",
+            Human: "5",
+            PlagReason: "Loren epsom",
+            Readbility: "Loren epsom",
+            primarykeyword: "Loren epsom",
+            Rank: "1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -96,12 +195,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
-            AIScore:"5",
-            Human:"5",
-            PlagReason:"Loren epsom",
-            Readbility:"Loren epsom",
-            primarykeyword:"Loren epsom",
-            Rank:"1",
+            AIScore: "5",
+            Human: "5",
+            PlagReason: "Loren epsom",
+            Readbility: "Loren epsom",
+            primarykeyword: "Loren epsom",
+            Rank: "1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -114,12 +213,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
-            AIScore:"5",
-            Human:"5",
-            PlagReason:"Loren epsom",
-            Readbility:"Loren epsom",
-            primarykeyword:"Loren epsom",
-            Rank:"1",
+            AIScore: "5",
+            Human: "5",
+            PlagReason: "Loren epsom",
+            Readbility: "Loren epsom",
+            primarykeyword: "Loren epsom",
+            Rank: "1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -132,12 +231,12 @@ const ITReport = () => {
             URL: 'http//sdhsa/sdkdshf/sdg',
             topic: 'Loren epsom',
             Keywords: 'Loren',
-            AIScore:"5",
-            Human:"5",
-            PlagReason:"Loren epsom",
-            Readbility:"Loren epsom",
-            primarykeyword:"Loren epsom",
-            Rank:"1",
+            AIScore: "5",
+            Human: "5",
+            PlagReason: "Loren epsom",
+            Readbility: "Loren epsom",
+            primarykeyword: "Loren epsom",
+            Rank: "1",
             Responsible: 'Loren epsom',
             history: 'Logs'
         },
@@ -272,7 +371,7 @@ const ITReport = () => {
                         <div className='cancel2'>
                             <p>Edit</p>
                         </div>
-                        <div className='cancel3'>
+                        <div className='cancel3' onClick={handleDelete}>
                             <p>Delete</p>
                         </div>
                     </div>
@@ -287,7 +386,15 @@ const ITReport = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" /></th>
+                                    <th>
+                                        <input
+                                            type="checkbox"
+                                            onChange={handleSelectAll}
+                                            checked={
+                                                selectedItems.length === itReportData?.data?.reports?.length
+                                            }
+                                        />
+                                    </th>
                                     <th>Recorded Date</th>
                                     <th>Website</th>
                                     <th>Content Added</th>
@@ -306,56 +413,58 @@ const ITReport = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td><input type="checkbox" /></td>
-                                        <td>{data.recordeddate}</td>
-                                        <td>{data.website}</td>
-                                        <td style={{ color: "#00B25D", textDecoration: "underline" }} onClick={() => setModalShow(true)}>{data.contentAdded}</td>
-                                        <td>{data.contentwordCount}</td>
-                                        <td>{data.URL}</td>
-                                        <td>{data.topic}</td>
-                                        <td>{data.Keywords}</td>
-                                        <td>{data.AIScore}</td>
-                                        <td>{data.Human}</td>
-                                        <td>{data.PlagReason}</td>
-                                        <td>{data.Readbility}</td>
-                                        <td>{data.primarykeyword}</td>
-                                        <td>{data.Rank}</td>
-                                        <td>{data.Responsible}</td>
-                                        <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }} onClick={() => setModalShow4(true)}>{data.history}</td>
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan="16" className='tableloading'>
+                                            <img src={img8} alt="" />
+                                        </td>
                                     </tr>
-                                ))}
+                                ) : itReportData?.data?.reports?.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="16" className='tableloading'>
+                                            <p>No data available.</p>
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    itReportData?.data?.reports?.map((data) => (
+                                        <tr key={data?._id}>
+                                            <td><input
+                                                type="checkbox"
+                                                checked={selectedItems.includes(data?._id)}
+                                                onChange={() => handleCheckboxChange(data?._id)}
+                                            /></td>
+                                            <td>{data?.recordedDate.slice(0, 10)}</td>
+                                            <td>{data?.website}</td>
+                                            <td style={{ color: "#00B25D", textDecoration: "underline" }} onClick={() => setModalShow(true)}>{data?.contentAdded}</td>
+                                            <td>{data?.contentWordCount}</td>
+                                            <td>{data?.url}</td>
+                                            <td>{data?.topic}</td>
+                                            <td>{data?.keywords}</td>
+                                            <td>{data?.AIScore}</td>
+                                            <td>{data?.Human}</td>
+                                            <td>{data?.PlagReason}</td>
+                                            <td>{data?.Readbility}</td>
+                                            <td>{data?.keywords}</td>
+                                            <td>{data?.Rank}</td>
+                                            <td>{data?.responsiblePerson}</td>
+                                            <td style={{ fontWeight: '600', color: "#2155CD", textDecoration: "underline" }} onClick={() => setModalShow4(true)}>History</td>
+                                        </tr>
+                                    ))
+                                )}
                             </tbody>
                         </table>
                     </div>
                 </div>
 
 
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
-
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
-
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
-                </div>
-
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
             </div>
         </>
     )

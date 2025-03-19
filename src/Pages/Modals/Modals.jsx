@@ -66,8 +66,9 @@ import img19 from '../../Img/img83.png'
 import img20 from '../../Img/img82.png'
 import { GiOverhead } from 'react-icons/gi';
 import img21 from '../../Img/img110.png'
-import { putApi } from '../../Repository/Api';
+import { postApi, putApi } from '../../Repository/Api';
 import endPoints from '../../Repository/apiConfig';
+import { toast } from 'react-toastify';
 
 
 export function AddNewFilter(props) {
@@ -10804,6 +10805,35 @@ export function StudentDetails(props) {
 
 //  Approve Online Payment Modal  for pending payment page
 export function ApproveOnlinePayment(props) {
+    const { onHide, data, fetchdata } = props;
+    const id = data?._id;
+
+    const [loading, setLoading] = useState(false);
+    const [modaldata, setModalData] = useState({});
+
+    useEffect(() => {
+        if (data) {
+            setModalData(data || {});
+        }
+    }, [data]);
+
+
+    const handleupdate = async () => {
+
+
+        const payload = {
+            paymentStatus: "APPROVED",
+        };
+
+        await putApi(endPoints.approvePaymentStatus(id), payload, {
+            setLoading: setLoading,
+            successMsg: `Status updated successfully!`,
+            errorMsg: "Failed to update user status!",
+        });
+
+        fetchdata();
+        onHide();
+    };
 
 
     return (
@@ -10822,7 +10852,7 @@ export function ApproveOnlinePayment(props) {
                         <div className='studentdetailModal2'>
                             <label htmlFor="">Name</label>
                             <div className='studentdetailModal3'>
-                                <p>LOREM IPSUM</p>
+                                <p>{modaldata?.fullName}</p>
                             </div>
                         </div>
                         <div className='studentdetailModal2'>
@@ -10856,7 +10886,7 @@ export function ApproveOnlinePayment(props) {
                         <div className='studentdetailModal2'>
                             <label htmlFor="">Course</label>
                             <div className='studentdetailModal3'>
-                                <p>BA</p>
+                                <p>{modaldata?.courseName}</p>
                             </div>
                         </div>
                     </div>
@@ -10864,24 +10894,24 @@ export function ApproveOnlinePayment(props) {
                         <div className='studentdetailModal2'>
                             <label htmlFor="">University</label>
                             <div className='studentdetailModal3'>
-                                <p>LOREM IPSUM</p>
+                                <p>{modaldata?.universityName}</p>
                             </div>
                         </div>
                         <div className='studentdetailModal2'>
                             <label htmlFor="">Counselor</label>
                             <div className='studentdetailModal3'>
-                                <p>LOREM IPSUM</p>
+                                <p>{modaldata?.fullName}</p>
                             </div>
                         </div>
                     </div>
 
                     <div className='approvepaymentmodal'>
-                        <h6>Are you sure to approve payment : <span>12500</span> and Order ID : <span>IMTS-67845</span>?</h6>
+                        <h6>Are you sure to approve payment : <span>{modaldata?.payAmount}</span> and Order ID : <span>IMTS-67845</span>?</h6>
                     </div>
 
                     <div className='approvepaymentmodal1'>
-                        <button onClick={() => props.onHide()}>Yes</button>
-                        <button onClick={() => props.onHide()}>No</button>
+                        <button onClick={handleupdate} disabled={loading}>Yes</button>
+                        <button onClick={onHide}>No</button>
                     </div>
                 </div>
             </Modal.Body>
@@ -11003,9 +11033,9 @@ export function AdmissionStatusModal(props) {
     const [remark, setRemark] = useState(data?.addRemark || '');
 
     useEffect(() => {
-        if ( data) {
+        if (data) {
             setStatus(data?.admissionConfirmationstatus || "");
-            setRemark(data?.addRemark|| "");
+            setRemark(data?.addRemark || "");
         }
     }, [data]);
 
@@ -11017,7 +11047,7 @@ export function AdmissionStatusModal(props) {
         }
 
         const payload = {
-            admissionConfirmationstatus:status,
+            admissionConfirmationstatus: status,
             addRemark: remark
         };
 
@@ -11047,36 +11077,36 @@ export function AdmissionStatusModal(props) {
                     <div className="paymentstatusModal1">
                         <div className="paymentstatusModal2">
                             <div className="paymentstatusModal3">
-                                <input 
-                                    type="radio" 
-                                    name="status" 
-                                    value="PENDING" 
-                                    checked={status === "PENDING"} 
-                                    onChange={(e) => setStatus(e.target.value)} 
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="PENDING"
+                                    checked={status === "PENDING"}
+                                    onChange={(e) => setStatus(e.target.value)}
                                 />
                                 <div className="paymentstatusModal4" style={{ backgroundColor: "#FFB800" }}>
                                     <p>Pending</p>
                                 </div>
                             </div>
                             <div className="paymentstatusModal3">
-                                <input 
-                                    type="radio" 
-                                    name="status" 
-                                    value="APPROVED" 
-                                    checked={status === "APPROVED"} 
-                                    onChange={(e) => setStatus(e.target.value)} 
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="APPROVED"
+                                    checked={status === "APPROVED"}
+                                    onChange={(e) => setStatus(e.target.value)}
                                 />
                                 <div className="paymentstatusModal4" style={{ backgroundColor: "#40AF0C" }}>
                                     <p>Approved</p>
                                 </div>
                             </div>
                             <div className="paymentstatusModal3">
-                                <input 
-                                    type="radio" 
-                                    name="status" 
-                                    value="REJECT" 
-                                    checked={status === "REJECT"} 
-                                    onChange={(e) => setStatus(e.target.value)} 
+                                <input
+                                    type="radio"
+                                    name="status"
+                                    value="REJECT"
+                                    checked={status === "REJECT"}
+                                    onChange={(e) => setStatus(e.target.value)}
                                 />
                                 <div className="paymentstatusModal4" style={{ backgroundColor: "#FF0000" }}>
                                     <p>Rejected</p>
@@ -11087,9 +11117,9 @@ export function AdmissionStatusModal(props) {
 
                     <div className="paymentstatusModal5">
                         <h6>Remarks</h6>
-                        <textarea 
-                            placeholder="Type Here....." 
-                            value={remark} 
+                        <textarea
+                            placeholder="Type Here....."
+                            value={remark}
                             onChange={(e) => setRemark(e.target.value)}
                         />
                     </div>
@@ -16839,6 +16869,304 @@ export function PendingOnlineFilterModal(props) {
                             ""
                         )}
 
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function AddUniversity(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [universityname, setUniversityName] = useState(data?.UniversityName || '')
+    const [registrationcharges, setRegistrationCharges] = useState(data?.RegistrationCharges || '')
+    const [TOCcharge, setTOCCharge] = useState(data?.TOCCharge || '')
+    const [LECharge, setLECharge] = useState(data?.LECharge || '')
+    const [MultipleCharges, setMultipleCharges] = useState(data?.MultipleCharges || '')
+    const [RRCharges, setRRCharges] = useState(data?.RRCharges || '')
+    const [GapCharges, setGapCharges] = useState(data?.GapCharges || '')
+    const [BackPaperCharges, setBackPaperCharges] = useState(data?.BackPaperCharges || '')
+    const [Address, setAddress] = useState(data?.Address || '')
+    const [Description, setDescription] = useState(data?.Description || '')
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (edit && data) {
+            setUniversityName(data?.UniversityName || '');
+            setRegistrationCharges(data?.RegistrationCharges || '');
+            setTOCCharge(data?.TOCCharge || '');
+            setLECharge(data?.LECharge || '');
+            setMultipleCharges(data?.MultipleCharges || '');
+            setRRCharges(data?.RRCharges || '');
+            setGapCharges(data?.GapCharges || '');
+            setBackPaperCharges(data?.BackPaperCharges || '');
+            setAddress(data?.Address || '');
+            setDescription(data?.Description || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setUniversityName("");
+        setRegistrationCharges("");
+        setLECharge("");
+        setMultipleCharges("");
+        setRRCharges("");
+        setGapCharges("");
+        setBackPaperCharges("");
+        setAddress("");
+        setDescription("");
+    };
+
+    const handleSubmit = async () => {
+        if (!universityname || !registrationcharges || !GapCharges) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            UniversityName: universityname,
+            RegistrationCharges: registrationcharges,
+            TOCCharge: TOCcharge,
+            LECharge: LECharge,
+            MultipleCharges: MultipleCharges,
+            RRCharges: RRCharges,
+            GapCharges: GapCharges,
+            BackPaperCharges: BackPaperCharges,
+            Address: Address,
+            Description: Description,
+        }
+
+        await postApi(endPoints.addUniversity, payload, {
+            setLoading,
+            successMsg: "University added successfully!",
+            errorMsg: "Failed to add university!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            UniversityName: universityname,
+            RegistrationCharges: registrationcharges,
+            TOCCharge: TOCcharge,
+            LECharge: LECharge,
+            MultipleCharges: MultipleCharges,
+            RRCharges: RRCharges,
+            GapCharges: GapCharges,
+            BackPaperCharges: BackPaperCharges,
+            Address: Address,
+            Description: Description,
+        }
+
+        await putApi(endPoints.updateUniversity(id), payload, {
+            setLoading,
+            successMsg: "University updated successfully!",
+            errorMsg: "Failed to update university!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const closing = () => {
+        resetForm();
+        onHide();
+    };
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit University/college" : "Create University/college"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='addUniversityModal1'>
+                    <div className='addUniversityModal2'>
+                        <div className='addUniversityModal3'>
+                            <label htmlFor="">Name<span>*</span></label>
+                            <input type="text"
+                                value={universityname}
+                                onChange={(e) => setUniversityName(e.target.value)}
+                            />
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Address</label>
+                                <textarea name="" id="" cols="50" rows="3"
+                                    value={Address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                >
+
+                                </textarea>
+                            </div>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Description</label>
+                                <textarea name="" id="" cols="50" rows="3"
+                                    value={Description}
+                                    onChange={(e) => setDescription(e.target.value)}
+                                ></textarea>
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Registration Charges<span>*</span></label>
+                                <input type="text"
+                                    value={registrationcharges}
+                                    onChange={(e) => setRegistrationCharges(e.target.value)}
+                                />
+                            </div>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">RR Charges<span>*</span></label>
+                                <input type="text"
+                                    value={RRCharges}
+                                    onChange={(e) => setRRCharges(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">TOC Charges<span>*</span></label>
+                                <input type="text"
+                                    value={TOCcharge}
+                                    onChange={(e) => setTOCCharge(e.target.value)}
+                                />
+                            </div>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Gap Charges<span>*</span></label>
+                                <input type="text"
+                                    value={GapCharges}
+                                    onChange={(e) => setGapCharges(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">LE Charges<span>*</span></label>
+                                <input type="text"
+                                    value={LECharge}
+                                    onChange={(e) => setLECharge(e.target.value)}
+                                />
+                            </div>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Back Paper Charges<span>*</span></label>
+                                <input type="text"
+                                    value={BackPaperCharges}
+                                    onChange={(e) => setBackPaperCharges(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Multiple Charges<span>*</span></label>
+                                <input type="text"
+                                    value={MultipleCharges}
+                                    onChange={(e) => setMultipleCharges(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='addUniversityModal6'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit}
+                            disabled={loading}>
+                            {loading ? "Saving" : "Save"}
+                        </button>
+                        <button onClick={closing}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function EditUniversity(props) {
+
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>Edit University/college</Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='addUniversityModal1'>
+                    <div className='addUniversityModal2'>
+                        <div className='addUniversityModal3'>
+                            <label htmlFor="">Name<span>*</span></label>
+                            <input type="text" />
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Address</label>
+                                <textarea name="" id="" cols="50" rows="3"></textarea>
+                            </div>
+                            <div className='addUniversityModal3'>
+                                <label htmlFor="">Description</label>
+                                <textarea name="" id="" cols="50" rows="3"></textarea>
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Registration Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">RR Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">TOC Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Gap Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">LE Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Back Paper Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div className='addUniversityModal4'>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Multiple Charges<span>*</span></label>
+                                <input type="text" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='addUniversityModal6'>
+                        <button>Save</button>
+                        <button >Cancel</button>
                     </div>
                 </div>
             </Modal.Body>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import './PendingOnlinePayments.css'
 import HOC from '../../Components/HOC/HOC'
 
@@ -18,9 +18,69 @@ import { MdOutlineClose } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoEye } from "react-icons/io5";
 import { FaCheck } from "react-icons/fa";
+import endPoints from '../../Repository/apiConfig';
+import { getApi } from '../../Repository/Api';
+import img1 from '../../Img/loading.gif'
+import Pagination from '../../Components/Pagination/Pagination';
 
 
 const PendingOnlinePayments = () => {
+    const [paymentData, setPaymentData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
+
+
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
+
+
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getAllPaymentDetails(pagination.currentPage, pagination.limit), {
+            setResponse: setPaymentData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        })
+    }, [pagination.currentPage, pagination.limit]);
+
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: paymentData?.pagination?.currentPage,
+            totalPages: paymentData?.pagination?.totalPages,
+            totalRecords: paymentData?.pagination?.totalItems,
+        }));
+    }, [paymentData]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1  // Reset to first page when changing limit
+        }));
+    };
+
+
+
+
+
     const tableData = [
         {
             id: 1,
@@ -122,6 +182,13 @@ const PendingOnlinePayments = () => {
     // AddNewFilter Modal
     const [modalShow8, setModalShow8] = React.useState(false);
 
+
+
+    const openStatusModal = (item) => {
+        setSelectedItem(item);
+        setModalShow1(true);
+    };
+
     return (
         <>
             <StudentDetails
@@ -131,6 +198,8 @@ const PendingOnlinePayments = () => {
             <ApproveOnlinePayment
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
+                data={selectedItem}
+                fetchdata={fetchData}
             />
             <PendingOnlineFilterModal
                 show={modalShow2}
@@ -205,44 +274,65 @@ const PendingOnlinePayments = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {tableData.map((data) => (
-                                        <tr key={data.id}>
-                                            <td>
-                                                <div className='pendingpayment3'>
-                                                    <input type="checkbox" />
-                                                    {data.name}
-                                                    <div className='pendingpayment4' onClick={() => setModalShow(true)}>
-                                                        <IoEye color='#FFFFFF' size={20} />
-                                                    </div>
-
-                                                    <div className='pendingpayment5' onClick={() => setModalShow1(true)}>
-                                                        <FaCheck color='#FFFFFF' size={18} />
-                                                        <p>Approve</p>
-                                                    </div>
-                                                </div>
-
-                                            </td>
-                                            <td>{data.Date}</td>
-                                            <td>{data.OrderID}</td>
-                                            <td>{data.amount}</td>
-                                            <div className='admission20'>
-                                                <p>{data.paymentype}</p>
-                                            </div>
-                                            <td>
-                                                <div className='admission14'>
-                                                    <button>{data.Status}</button>
-                                                </div>
-                                            </td>
-                                            <div className='admission19'>
-                                                <p>{data.Remarks}</p>
-                                            </div>
-                                            <td>
-                                                <div className='admission14'>
-                                                    <button onClick={() => setModalShow5(true)}>History</button>
-                                                </div>
+                                    {loading ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <img src={img1} alt="" />
                                             </td>
                                         </tr>
-                                    ))}
+                                    ) : paymentData?.data?.length === 0 ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <p>No data available.</p>
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        paymentData?.data?.map((data) => (
+                                            <tr key={data.id}>
+                                                <td>
+                                                    <div className='pendingpayment3'>
+                                                        <input type="checkbox" />
+                                                        {data?.fullName}
+                                                        <div className='pendingpayment4' onClick={() => setModalShow(true)}>
+                                                            <IoEye color='#FFFFFF' size={20} />
+                                                        </div>
+                                                        {data.paymentStatus === "PENDING" &&
+                                                            <div className='pendingpayment5' onClick={() => openStatusModal(data)}>
+                                                                <FaCheck color='#FFFFFF' size={18} />
+                                                                <p>Approve</p>
+                                                            </div>
+                                                        }
+                                                    </div>
+
+                                                </td>
+                                                <td>{data?.Date}</td>
+                                                <td>{data?.OrderID}</td>
+                                                <td>RS.{data?.payAmount}</td>
+                                                <td>{data?.paymentType}</td>
+                                                <td>
+                                                    <div
+                                                        className='admission14'
+                                                        style={{
+                                                            background:
+                                                                data.paymentStatus === "APPROVED" ? '#40AF0C' :
+                                                                    data.paymentStatus === "REJECT" ? '#FF0000' :
+                                                                        ''
+                                                        }}
+                                                    >
+                                                        <p>{data?.paymentStatus}</p>
+                                                    </div>
+                                                </td>
+                                                <div className='admission19'>
+                                                    <p>{data?.Remarks}</p>
+                                                </div>
+                                                <td>
+                                                    <div className='admission14' onClick={() => setModalShow5(true)}>
+                                                        <p>History</p>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -252,29 +342,15 @@ const PendingOnlinePayments = () => {
 
 
 
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
 
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
-
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
-                </div>
 
             </div>
         </>

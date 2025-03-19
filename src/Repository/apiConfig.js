@@ -9,6 +9,17 @@ const endPoints = {
         `admin/getAllAdmissionSection?page=${page}&limit=${limit}`,
     getallbackend: (page, limit) =>
         `admin/getAllAdmissionBackendSection?page=${page}&limit=${limit}`,
+    getAllPaymentDetails: (page, limit) =>
+        `admin/getAllPaymentDetails?page=${page}&limit=${limit}`,
+    getAllItreportsDetails: (page, limit) =>
+        `admin/getItReport?page=${page}&limit=${limit}`,
+    getAllUniversity: (page, limit) =>
+        `admin/getAllUniversitiesOrColleges?page=${page}&limit=${limit}`,
+
+
+
+    // add apis
+    addUniversity: "admin/addUniversityOrCollege",
 
 
 
@@ -16,6 +27,19 @@ const endPoints = {
 
     updateadmissionStatus: (id) =>
         `admin/updateAdmissionBackendStatus/${id}`,
+    approvePaymentStatus: (id) =>
+        `admin/approvePaymentStatus/${id}`,
+    updateUniversity: (id) =>
+        `admin/updateUniversityOrCollege/${id}`,
+
+
+
+    //delete apis
+
+    deleteItreports: (id) =>
+        `admin/deleteItReportById/${id}`,
+    deleteUniversity: (id) =>
+        `admin/deleteUniversityOrCollege/${id}`,
 
 
 

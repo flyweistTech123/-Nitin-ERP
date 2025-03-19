@@ -494,6 +494,11 @@
   cursor: pointer;
 }
 
+.addUniversityModal6 button:disabled{
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 .addUniversityModal6 button:nth-child(2) {
   width: auto;
   height: auto;
