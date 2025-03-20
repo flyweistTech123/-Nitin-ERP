@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
 import Modal from 'react-bootstrap/Modal';
@@ -10,93 +10,97 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
 
+import img1 from '../../Img/loading.gif'
+
+
 import {
     SpecializationFilterModal,
     MYDEALSModal,
     AddFieldModal,
     History,
-    AddNewFilter
+    AddNewFilter,
+    AddSpecialization
 } from '../Modals/Modals.jsx'
+import endPoints from '../../Repository/apiConfig.js';
+import { deleteApi, getApi } from '../../Repository/Api.js';
+import Pagination from '../../Components/Pagination/Pagination.jsx';
 
 const Specialization = () => {
-    const tableData = [
-        {
-            id: 1,
-            specializationName: 'Arts Loren Epsom',
-            Description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-        },
 
-        {
-            id: 1,
-            specializationName: 'Arts Loren Epsom',
-            Description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-        },
-        {
-            id: 1,
-            specializationName: 'Arts Loren Epsom',
-            Description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-        },
-        {
-            id: 1,
-            specializationName: 'Arts Loren Epsom',
-            Description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-        },
-        {
-            id: 1,
-            specializationName: 'Arts Loren Epsom',
-            Description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-        },
-        {
-            id: 1,
-            specializationName: 'Arts Loren Epsom',
-            Description: 'Qorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.',
-        },
-
-    ];
+    const [specializationsData, setSpecializationsData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [isEditMode, setIsEditMode] = useState(false);
 
 
-    // AddSpecialization  Modal 
-    const [modalShow, setModalShow] = React.useState(false);
-
-    function AddSpecialization(props) {
-
-
-        return (
-            <Modal
-                {...props}
-                size="lg"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Header closeButton>
-                    <Modal.Title className='addUniversityModal7'>Add Specialization</Modal.Title>
-                </Modal.Header>
-                <Modal.Body >
-                    <div className=''>
-                        <div className='returnmodal'>
-                            <div className='EditCourses1'>
-                                <label htmlFor="">Specialization Name<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                            <div className='EditCourses1'>
-                                <label htmlFor="">Description<span>*</span></label>
-                                <textarea name="" id="" cols="30" rows="5"></textarea>
-                            </div>
-                        </div>
-
-                        <div className='addUniversityModal6'>
-                            <button onClick={() => setModalShow(false)}>Save</button>
-                            <button onClick={() => setModalShow(false)}>Cancel</button>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
 
 
-    // AddSpecialization  Modal 
     const [modalShow1, setModalShow1] = React.useState(false);
+    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow11, setModalShow11] = React.useState(false);
+    const [modalShow12, setModalShow12] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow3, setModalShow3] = React.useState(false);
+    const [modalShow4, setModalShow4] = React.useState(false);
+
+
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getAllSpecializations(pagination.currentPage, pagination.limit), {
+            setResponse: setSpecializationsData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        })
+    }, [pagination.currentPage, pagination.limit]);
+
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: specializationsData?.currentPage,
+            totalPages: specializationsData?.totalPages,
+            totalRecords: specializationsData?.totalSpecializations,
+        }));
+    }, [specializationsData]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+    const handleDelete = async () => {
+        if (!selectedItem) return;
+        await deleteApi(endPoints.deleteSpecialization(selectedItem), {
+            setLoading,
+            successMsg: 'Data deleted successfully!',
+            errorMsg: 'Failed to delete data!',
+        });
+        fetchData();
+    };
+
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1
+        }));
+    };
+
+
+
 
     function EditSpecialization(props) {
 
@@ -135,26 +139,33 @@ const Specialization = () => {
     }
 
 
-    // Filter Modal 
+    const openAddModal = () => {
+        setSelectedItem(null);
+        setIsEditMode(false);
+        setModalShow(true);
+    };
 
-    const [modalShow11, setModalShow11] = React.useState(false);
+    const openEditModal = (item) => {
+        setSelectedItem(item);
+        setIsEditMode(true);
+        setModalShow(true);
+    };
 
-    // mydeals Modal
-    const [modalShow12, setModalShow12] = React.useState(false);
+    const openDeleteModal = (categoryId) => {
+        setSelectedItem(categoryId);
+        handleDelete();
+    };
 
-    // add field Modal
-    const [modalShow2, setModalShow2] = React.useState(false);
 
-    // History Modal
-    const [modalShow3, setModalShow3] = React.useState(false);
 
-    // AddNewFilter Modal
-    const [modalShow4, setModalShow4] = React.useState(false);
     return (
         <>
             <AddSpecialization
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                fetchdata={fetchData}
+                data={selectedItem}
+                edit={isEditMode}
             />
             <EditSpecialization
                 show={modalShow1}
@@ -202,7 +213,7 @@ const Specialization = () => {
                         </div>
                     </div>
                     <div className='uviversitynewbutton'>
-                        <button onClick={() => setModalShow(true)}>New</button>
+                        <button onClick={openAddModal}>New</button>
                     </div>
                 </div>
 
@@ -217,49 +228,57 @@ const Specialization = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td><MdHistory color='#000000' size={20} onClick={() => setModalShow3(true)} />      {data.specializationName}</td>
-                                        <div className='setting1'>
-                                            <p>{data.Description}</p>
-                                        </div>
-                                        <td>
-                                            <div className='setting'>
-                                                <button onClick={() => setModalShow1(true)}><MdEdit /> Edit</button>
-                                                <button><RiDeleteBin6Fill /> Delete</button>
-                                            </div>
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan="13" className='tableloading'>
+                                            <img src={img1} alt="" />
                                         </td>
                                     </tr>
-                                ))}
+                                ) : specializationsData?.data?.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="13" className='tableloading'>
+                                            <p>No data available.</p>
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    specializationsData?.data?.map((data) => (
+                                        <tr key={data.id}>
+                                            <td>
+                                                <MdHistory
+                                                    color='#000000'
+                                                    size={20}
+                                                    onClick={() => setModalShow3(true)}
+                                                />
+                                                {data.SpecializationName}
+                                            </td>
+                                            <td>
+                                                <div className='setting1'>
+                                                    <p>{data.Description}</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div className='setting'>
+                                                    <button onClick={() => openEditModal(data)}><MdEdit /> Edit</button>
+                                                    <button onClick={() => openDeleteModal(data?._id)}><RiDeleteBin6Fill /> Delete</button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
                             </tbody>
                         </table>
                     </div>
                 </div>
 
 
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
-
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
-
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
-                </div>
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
             </div>
         </>
     )

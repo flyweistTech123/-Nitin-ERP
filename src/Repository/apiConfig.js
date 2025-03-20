@@ -15,11 +15,23 @@ const endPoints = {
         `admin/getItReport?page=${page}&limit=${limit}`,
     getAllUniversity: (page, limit) =>
         `admin/getAllUniversitiesOrColleges?page=${page}&limit=${limit}`,
+    getAllSpecializations: (page, limit) =>
+        `admin/getAllSpecializations?page=${page}&limit=${limit}`,
+    getAllSubjects: (page, limit) =>
+        `admin/getAllSubjects?page=${page}&limit=${limit}`,
+    getAllBankDetails: (page, limit) =>
+        `admin/getAllBankDetails?page=${page}&limit=${limit}`,
+    getAllStudyMedium: (page, limit) =>
+        `admin/getAllStudyMediums?page=${page}&limit=${limit}`,
 
 
 
     // add apis
     addUniversity: "admin/addUniversityOrCollege",
+    addSpecialization: "admin/createSpecialization",
+    addSubject: "admin/createSubject",
+    addBankDetails: "admin/settingBankDetails",
+    addStudyMedium: "admin/createStudyMedium",
 
 
 
@@ -31,6 +43,14 @@ const endPoints = {
         `admin/approvePaymentStatus/${id}`,
     updateUniversity: (id) =>
         `admin/updateUniversityOrCollege/${id}`,
+    updateSpecialization: (id) =>
+        `admin/updateSpecialization/${id}`,
+    updateSubject: (id) =>
+        `admin/updateSubject/${id}`,
+    updateBankDetails: (id) =>
+        `admin/updateBankDetails/${id}`,
+    updateStudyMedium: (id) =>
+        `admin/updateStudyMedium/${id}`,
 
 
 
@@ -40,6 +60,14 @@ const endPoints = {
         `admin/deleteItReportById/${id}`,
     deleteUniversity: (id) =>
         `admin/deleteUniversityOrCollege/${id}`,
+    deleteSpecialization: (id) =>
+        `admin/deleteSpecialization/${id}`,
+    deleteSubjects: (id) =>
+        `admin/deleteSubject/${id}`,
+    deleteBankDetails: (id) =>
+        `admin/deleteBankDetails/${id}`,
+    deleteStudyMedium: (id) =>
+        `admin/deleteStudyMedium/${id}`,
 
 
 

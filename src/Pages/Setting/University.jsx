@@ -1,12 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
-import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { MdOutlineClose } from "react-icons/md";
 import { MdEdit } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { MdHistory } from "react-icons/md";
 import img1 from '../../Img/loading.gif'
@@ -21,7 +19,6 @@ import {
     History,
     AddNewFilter,
     AddUniversity,
-    EditUniversity
 } from '../Modals/Modals.jsx'
 import endPoints from '../../Repository/apiConfig.js';
 import { deleteApi, getApi } from '../../Repository/Api.js';
@@ -47,7 +44,6 @@ const University = () => {
     const [modalShow11, setModalShow11] = React.useState(false);
     const [modalShow12, setModalShow12] = React.useState(false);
     const [modalShow2, setModalShow2] = React.useState(false);
-    const [modalShow1, setModalShow1] = React.useState(false);
     const [modalShow3, setModalShow3] = React.useState(false);
     const [modalShow4, setModalShow4] = React.useState(false);
 
@@ -134,10 +130,10 @@ const University = () => {
                 data={selectedItem}
                 edit={isEditMode}
             />
-            <EditUniversity
+            {/* <EditUniversity
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
-            />
+            /> */}
             <UniversityFilterModal
                 show={modalShow11}
                 onHide={() => setModalShow11(false)}

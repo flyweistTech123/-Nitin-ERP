@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { MultiSelect } from "react-multi-select-component";
-import { useNavigate } from 'react-router-dom';
+import { Form, useNavigate } from 'react-router-dom';
 
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Popover from 'react-bootstrap/Popover';
@@ -17096,8 +17096,71 @@ export function AddUniversity(props) {
 }
 
 
-export function EditUniversity(props) {
+export function AddSpecialization(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
 
+    const [specializationname, setSpecializationName] = useState(data?.SpecializationName || '')
+    const [Description, setDescription] = useState(data?.Description || '')
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (edit && data) {
+            setSpecializationName(data?.SpecializationName || '');
+            setDescription(data?.Description || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setSpecializationName("");
+        setDescription("");
+    };
+
+    const handleSubmit = async () => {
+        if (!specializationname || !Description) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            SpecializationName: specializationname,
+            Description: Description,
+        }
+
+        await postApi(endPoints.addSpecialization, payload, {
+            setLoading,
+            successMsg: "Specialization added successfully!",
+            errorMsg: "Failed to add specialization!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            SpecializationName: specializationname,
+            Description: Description,
+        }
+
+        await putApi(endPoints.updateSpecialization(id), payload, {
+            setLoading,
+            successMsg: "Specialization updated successfully!",
+            errorMsg: "Failed to update specialization!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const closing = () => {
+        resetForm();
+        onHide();
+    };
 
     return (
         <Modal
@@ -17107,66 +17170,479 @@ export function EditUniversity(props) {
             centered
         >
             <Modal.Header closeButton>
-                <Modal.Title className='addUniversityModal7'>Edit University/college</Modal.Title>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Specialization" : "Add Specialization"}
+                </Modal.Title>
             </Modal.Header>
             <Modal.Body >
-                <div className='addUniversityModal1'>
-                    <div className='addUniversityModal2'>
-                        <div className='addUniversityModal3'>
-                            <label htmlFor="">Name<span>*</span></label>
-                            <input type="text" />
+                <div className=''>
+                    <div className='returnmodal'>
+                        <div className='EditCourses1'>
+                            <label htmlFor="">Specialization Name<span>*</span></label>
+                            <input type="text"
+                                value={specializationname}
+                                onChange={(e) => setSpecializationName(e.target.value)}
+                            />
+                        </div>
+                        <div className='EditCourses1'>
+                            <label htmlFor="">Description<span>*</span></label>
+                            <textarea name="" id="" cols="50" rows="3"
+                                value={Description}
+                                onChange={(e) => setDescription(e.target.value)}
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div className='addUniversityModal6'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit}
+                            disabled={loading}>
+                            {loading ? "Saving" : "Save"}
+                        </button>
+                        <button onClick={closing}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+export function AddSubject({ data, edit, fetchdata, onHide, ...props }) {
+    const id = data?._id;
+
+    const [subjectName, setSubjectName] = useState('');
+    const [description, setDescription] = useState('');
+    const [file, setFile] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const fileInputRef = useRef(null);
+
+    const MAX_FILE_SIZE_MB = 5;
+    const VALID_FILE_TYPES = ["application/pdf", "application/msword", "image/png", "image/jpeg"];
+
+    // Reset form on mount or edit
+    useEffect(() => {
+        if (edit && data) {
+            setSubjectName(data?.SubjectName || '');
+            setDescription(data?.Description || '');
+            setFile(data?.pdfUpload || null);
+        } else {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setSubjectName('');
+        setDescription('');
+        setFile(null);
+    };
+
+    const handleFileChange = (e) => {
+        const selectedFile = e.target.files[0];
+        if (selectedFile) {
+            if (!VALID_FILE_TYPES.includes(selectedFile.type)) {
+                toast.error("Invalid file type! Only PDF, DOC, PNG, and JPEG are allowed.");
+                return;
+            }
+
+            if (selectedFile.size > MAX_FILE_SIZE_MB * 1024 * 1024) {
+                toast.error(`File size should not exceed ${MAX_FILE_SIZE_MB} MB.`);
+                return;
+            }
+
+            setFile(selectedFile);
+        }
+    };
+
+    const handleClearFile = () => {
+        setFile(null);
+    };
+
+    const handleUploadClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleSubmit = async () => {
+        if (!subjectName || !description) {
+            toast.error("Please fill all required fields.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("SubjectName", subjectName);
+        formData.append("Description", description);
+        if (file) {
+            formData.append("file", file);
+        }
+
+        try {
+            if (edit) {
+                await putApi(endPoints.updateSubject(id), formData, {
+                    setLoading,
+                    successMsg: "Subject updated successfully!",
+                    errorMsg: "Failed to update subject!",
+                });
+            } else {
+                await postApi(endPoints.addSubject, formData, {
+                    setLoading,
+                    successMsg: "Subject added successfully!",
+                    errorMsg: "Failed to add subject!",
+                });
+            }
+
+            fetchdata();
+            onHide();
+            resetForm();
+        } catch (error) {
+            toast.error("Something went wrong!");
+        }
+    };
+
+    const handleClose = () => {
+        resetForm();
+        onHide();
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title>
+                    {edit ? "Edit Subject" : "Add Subject"}
+                </Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+                <div className='returnmodal'>
+                    <div className='EditCourses1'>
+                        <label>Subject Name<span>*</span></label>
+                        <input
+                            type="text"
+                            value={subjectName}
+                            onChange={(e) => setSubjectName(e.target.value)}
+                        />
+                    </div>
+
+                    <div className='EditCourses1'>
+                        <label>Description<span>*</span></label>
+                        <textarea
+                            cols="50"
+                            rows="3"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                        />
+                    </div>
+
+                    <div className='EditCourses2'>
+                        <label>Upload File</label>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                            <button onClick={handleUploadClick}>
+                                {file ? "Change File" : "Upload File"}
+                            </button>
+
+                            {file && (
+                                <div>
+                                    <span>{file.name}</span>
+                                    <button onClick={handleClearFile} style={{ marginLeft: '10px' }}>Remove</button>
+                                </div>
+                            )}
+                        </div>
+                        <input
+                            type="file"
+                            ref={fileInputRef}
+                            style={{ display: 'none' }}
+                            onChange={handleFileChange}
+                        />
+                        <p>.pdf, .doc, .png, .jpeg files only (Max {MAX_FILE_SIZE_MB}MB)</p>
+                    </div>
+
+                    <div className='addUniversityModal6'>
+                        <button
+                            onClick={handleSubmit}
+                            disabled={loading}
+                        >
+                            {loading ? "Saving..." : "Save"}
+                        </button>
+                        <button onClick={handleClose}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function AddBank(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [bankname, setBankName] = useState(data?.bankName || '')
+    const [accountnumber, setAccountNumber] = useState(data?.accountNumber || '')
+    const [ifscnumber, setIFSCNumber] = useState(data?.ifscNumber || '')
+    const [bankbranch, setBankBranch] = useState(data?.bankBranch || '')
+    const [loading, setLoading] = useState(false);
+    const [fetchingDetails, setFetchingDetails] = useState(false);
+    useEffect(() => {
+        if (edit && data) {
+            setBankName(data?.bankName || '');
+            setAccountNumber(data?.accountNumber || '');
+            setIFSCNumber(data?.ifscNumber || '');
+            setBankBranch(data?.bankBranch || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setBankName("");
+        setAccountNumber("");
+        setIFSCNumber("");
+        setBankBranch("");
+    };
+
+    const handleSubmit = async () => {
+        if (!bankname || !accountnumber || !ifscnumber || !bankbranch) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            bankName: bankname,
+            accountNumber: accountnumber,
+            ifscNumber: ifscnumber,
+            bankBranch: bankbranch,
+        }
+
+        await postApi(endPoints.addBankDetails, payload, {
+            setLoading,
+            successMsg: "Bank Details added successfully!",
+            errorMsg: "Failed to add bank details!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            bankName: bankname,
+            accountNumber: accountnumber,
+            ifscNumber: ifscnumber,
+            bankBranch: bankbranch,
+        }
+
+        await putApi(endPoints.updateBankDetails(id), payload, {
+            setLoading,
+            successMsg: "Bank Details updated successfully!",
+            errorMsg: "Failed to update bank details!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const closing = () => {
+        resetForm();
+        onHide();
+    };
+
+    // Fetch bank details when IFSC code changes
+    useEffect(() => {
+        const fetchBankDetails = async () => {
+            if (ifscnumber.length === 11) {
+                try {
+                    setFetchingDetails(true);
+                    const response = await fetch(`https://ifsc.razorpay.com/${ifscnumber}`);
+                    if (!response.ok) throw new Error('Invalid IFSC code');
+
+                    const { BANK, BRANCH } = await response.json();
+                    setBankName(BANK);
+                    setBankBranch(BRANCH);
+                } catch (error) {
+                    toast.error('Invalid IFSC code');
+                    setBankName('');
+                    setBankBranch('');
+                } finally {
+                    setFetchingDetails(false);
+                }
+            }
+        };
+
+        fetchBankDetails();
+    }, [ifscnumber]);
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Bank" : "Create Bank"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className=''>
+                    <div className='returnmodal'>
+                        <div className='EditCourses1'>
+                            <label htmlFor="">Bank Name<span>*</span></label>
+                            <input
+                                type="text"
+                                value={bankname}
+                                onChange={(e) => setBankName(e.target.value)}
+                                disabled={fetchingDetails}
+                                placeholder={fetchingDetails ? "Fetching bank details..." : ""}
+                            />
                         </div>
                         <div className='addUniversityModal4'>
-                            <div className='addUniversityModal3'>
-                                <label htmlFor="">Address</label>
-                                <textarea name="" id="" cols="50" rows="3"></textarea>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">Account Number<span>*</span></label>
+                                <input type="text"
+                                    value={accountnumber}
+                                    onChange={(e) => setAccountNumber(e.target.value)}
+                                />
                             </div>
-                            <div className='addUniversityModal3'>
-                                <label htmlFor="">Description</label>
-                                <textarea name="" id="" cols="50" rows="3"></textarea>
+                            <div className='addUniversityModal5'>
+                                <label htmlFor="">IFSC Number<span>*</span></label>
+                                <input
+                                    type="text"
+                                    value={ifscnumber}
+                                    onChange={(e) => setIFSCNumber(e.target.value.toUpperCase())}
+                                    maxLength={11}
+                                    placeholder="Enter 11-character IFSC"
+                                />
                             </div>
                         </div>
                         <div className='addUniversityModal4'>
                             <div className='addUniversityModal5'>
-                                <label htmlFor="">Registration Charges<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                            <div className='addUniversityModal5'>
-                                <label htmlFor="">RR Charges<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                        </div>
-                        <div className='addUniversityModal4'>
-                            <div className='addUniversityModal5'>
-                                <label htmlFor="">TOC Charges<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                            <div className='addUniversityModal5'>
-                                <label htmlFor="">Gap Charges<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                        </div>
-                        <div className='addUniversityModal4'>
-                            <div className='addUniversityModal5'>
-                                <label htmlFor="">LE Charges<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                            <div className='addUniversityModal5'>
-                                <label htmlFor="">Back Paper Charges<span>*</span></label>
-                                <input type="text" />
-                            </div>
-                        </div>
-                        <div className='addUniversityModal4'>
-                            <div className='addUniversityModal5'>
-                                <label htmlFor="">Multiple Charges<span>*</span></label>
-                                <input type="text" />
+                                <label htmlFor="">Bank Branch<span>*</span></label>
+                                <input
+                                    type="text"
+                                    value={bankbranch}
+                                    onChange={(e) => setBankBranch(e.target.value)}
+                                    disabled={fetchingDetails}
+                                    placeholder={fetchingDetails ? "Fetching branch details..." : ""}
+                                />
                             </div>
                         </div>
                     </div>
 
                     <div className='addUniversityModal6'>
-                        <button>Save</button>
-                        <button >Cancel</button>
+                        <button onClick={props.edit ? handleupdate : handleSubmit}
+                            disabled={loading}>
+                            {loading ? "Saving" : "Save"}
+                        </button>
+                        <button onClick={closing}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+export function AddStudyMedium(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [name, setName] = useState(data?.name || '')
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        if (edit && data) {
+            setName(data?.name || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setName("");
+    };
+
+    const handleSubmit = async () => {
+        if (!name) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            name: name,
+        }
+
+        await postApi(endPoints.addStudyMedium, payload, {
+            setLoading,
+            successMsg: "Study Medium added successfully!",
+            errorMsg: "Failed to add study medium!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            name: name,
+        }
+
+        await putApi(endPoints.updateStudyMedium(id), payload, {
+            setLoading,
+            successMsg: "Study Medium updated successfully!",
+            errorMsg: "Failed to update study medium!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const closing = () => {
+        resetForm();
+        onHide();
+    };
+
+    return (
+        <Modal
+            {...props}
+            size="lg"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Study Medium" : "Create Study Medium"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className=''>
+                    <div className='returnmodal'>
+                        <div className='EditCourses1'>
+                            <label htmlFor="">Study Medium<span>*</span></label>
+                            <input type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='addUniversityModal6'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit}
+                            disabled={loading}>
+                            {loading ? "Saving" : "Save"}
+                        </button>
+                        <button onClick={closing}>Cancel</button>
                     </div>
                 </div>
             </Modal.Body>

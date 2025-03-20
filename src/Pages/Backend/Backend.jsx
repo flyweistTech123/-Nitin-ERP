@@ -99,90 +99,11 @@ const Backend = () => {
         setPagination((prev) => ({
             ...prev,
             limit: newLimit,
-            currentPage: 1  // Reset to first page when changing limit
+            currentPage: 1  
         }));
     };
 
 
-
-
-
-    const tableData = [
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
-            course: 'Engineering',
-            feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
-        },
-
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
-            course: 'Engineering',
-            feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
-            course: 'Engineering',
-            feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
-            course: 'Engineering',
-            feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
-            course: 'Engineering',
-            feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            address: 'A88, sector 56,near Noida, Utter Pradesh 422233',
-            course: 'Engineering',
-            feesPaid: 'RS.100,000',
-            callrecording: 'Call.mp3',
-            verificationdate: 'DD/MM/YYYY',
-            status: 'Pending'
-        },
-
-    ];
 
     // call Recoding Modal 
     const [modalShow, setModalShow] = React.useState(false);
