@@ -47,6 +47,13 @@ const ITReport = () => {
         limit: 20
     });
 
+    const [modalShow, setModalShow] = React.useState(false);
+    const [modalShow11, setModalShow11] = React.useState(false);
+    const [modalShow1, setModalShow1] = React.useState(false);
+    const [modalShow2, setModalShow2] = React.useState(false);
+    const [modalShow4, setModalShow4] = React.useState(false);
+    const [modalShow7, setModalShow7] = React.useState(false);
+
 
     const fetchData = useCallback(async () => {
         if (!pagination.currentPage || pagination.currentPage < 1) return;
@@ -130,146 +137,10 @@ const ITReport = () => {
     };
 
 
-    const tableData = [
-        {
-            id: 1,
-            recordeddate: 'DD/MM/YYYY',
-            website: 'WWW.abc.com',
-            contentAdded: 'Loren Epsom',
-            contentwordCount: '1000',
-            URL: 'http//sdhsa/sdkdshf/sdg',
-            topic: 'Loren epsom',
-            Keywords: 'Loren',
-            AIScore: "5",
-            Human: "5",
-            PlagReason: "Loren epsom",
-            Readbility: "Loren epsom",
-            primarykeyword: "Loren epsom",
-            Rank: "1",
-            Responsible: 'Loren epsom',
-            history: 'Logs'
-        },
-
-        {
-            id: 1,
-            recordeddate: 'DD/MM/YYYY',
-            website: 'WWW.abc.com',
-            contentAdded: 'Loren Epsom',
-            contentwordCount: '1000',
-            URL: 'http//sdhsa/sdkdshf/sdg',
-            topic: 'Loren epsom',
-            Keywords: 'Loren',
-            AIScore: "5",
-            Human: "5",
-            PlagReason: "Loren epsom",
-            Readbility: "Loren epsom",
-            primarykeyword: "Loren epsom",
-            Rank: "1",
-            Responsible: 'Loren epsom',
-            history: 'Logs'
-        },
-        {
-            id: 1,
-            recordeddate: 'DD/MM/YYYY',
-            website: 'WWW.abc.com',
-            contentAdded: 'Loren Epsom',
-            contentwordCount: '1000',
-            URL: 'http//sdhsa/sdkdshf/sdg',
-            topic: 'Loren epsom',
-            Keywords: 'Loren',
-            AIScore: "5",
-            Human: "5",
-            PlagReason: "Loren epsom",
-            Readbility: "Loren epsom",
-            primarykeyword: "Loren epsom",
-            Rank: "1",
-            Responsible: 'Loren epsom',
-            history: 'Logs'
-        },
-        {
-            id: 1,
-            recordeddate: 'DD/MM/YYYY',
-            website: 'WWW.abc.com',
-            contentAdded: 'Loren Epsom',
-            contentwordCount: '1000',
-            URL: 'http//sdhsa/sdkdshf/sdg',
-            topic: 'Loren epsom',
-            Keywords: 'Loren',
-            AIScore: "5",
-            Human: "5",
-            PlagReason: "Loren epsom",
-            Readbility: "Loren epsom",
-            primarykeyword: "Loren epsom",
-            Rank: "1",
-            Responsible: 'Loren epsom',
-            history: 'Logs'
-        },
-        {
-            id: 1,
-            recordeddate: 'DD/MM/YYYY',
-            website: 'WWW.abc.com',
-            contentAdded: 'Loren Epsom',
-            contentwordCount: '1000',
-            URL: 'http//sdhsa/sdkdshf/sdg',
-            topic: 'Loren epsom',
-            Keywords: 'Loren',
-            AIScore: "5",
-            Human: "5",
-            PlagReason: "Loren epsom",
-            Readbility: "Loren epsom",
-            primarykeyword: "Loren epsom",
-            Rank: "1",
-            Responsible: 'Loren epsom',
-            history: 'Logs'
-        },
-        {
-            id: 1,
-            recordeddate: 'DD/MM/YYYY',
-            website: 'WWW.abc.com',
-            contentAdded: 'Loren Epsom',
-            contentwordCount: '1000',
-            URL: 'http//sdhsa/sdkdshf/sdg',
-            topic: 'Loren epsom',
-            Keywords: 'Loren',
-            AIScore: "5",
-            Human: "5",
-            PlagReason: "Loren epsom",
-            Readbility: "Loren epsom",
-            primarykeyword: "Loren epsom",
-            Rank: "1",
-            Responsible: 'Loren epsom',
-            history: 'Logs'
-        },
-
-    ];
-
-
-    // ContentAdded Modal 
-
-
-    const [modalShow, setModalShow] = React.useState(false);
 
 
 
 
-    // Filter Modal 
-
-    const [modalShow11, setModalShow11] = React.useState(false);
-
-    // mydeals Modal
-    const [modalShow1, setModalShow1] = React.useState(false);
-
-    // add field Modal
-    const [modalShow2, setModalShow2] = React.useState(false);
-
-
-    // History Modal
-
-    const [modalShow4, setModalShow4] = React.useState(false);
-
-
-    // AddNewFilter Modal
-    const [modalShow7, setModalShow7] = React.useState(false);
 
     function ContentAdded(props) {
 

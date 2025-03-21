@@ -1,126 +1,150 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
-import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { IoCloseSharp } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
+import { AddAdmissionConfirmStatuses, PdcFollowUpStatusesDeleteConfirm } from '../Modals/Modals';
+import endPoints from '../../Repository/apiConfig';
+import { deleteApi, getApi } from '../../Repository/Api';
 
+import img1 from '../../Img/loading.gif';
+import Pagination from '../../Components/Pagination/Pagination';
 
 
 const AdmissionConfirmStatus = () => {
-    const tableData = [
-        {
-            id: 1,
-            ExpenseType: 'Admission Confirm Status',
-        },
-
-        {
-            id: 1,
-            ExpenseType: 'Admission Confirm Status',
-        },
-        {
-            id: 1,
-            ExpenseType: 'Admission Confirm Status',
-        },
-        {
-            id: 1,
-            ExpenseType: 'Admission Confirm Status',
-        },
-        {
-            id: 1,
-            ExpenseType: 'Admission Confirm Status',
-        },
-        {
-            id: 1,
-            ExpenseType: 'Admission Confirm Status',
-        }, ,
-
-    ];
-
+    const [expensesData, setExpernsesData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [selectedItems, setSelectedItems] = useState([]);
+    const [isEditMode, setIsEditMode] = useState(false);
+    const [editData, setEditData] = useState(null);
 
     const [modalShow, setModalShow] = React.useState(false);
-
-    function Addrecord(props) {
-
-        return (
-            <Modal
-                {...props}
-                size="sl"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body >
-                    <div className='newpaymentrequest1'>
-                        <div className='newpaymentrequest7'>
-                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow(false)} />
-                        </div>
-
-                        <div className='newpaymentrequest3'>
-                            <div className='newpaymentrequest4'>
-                                <label htmlFor="">Record</label>
-                                <input type="text" placeholder='Add Here' />
-                            </div>
-                        </div>
-
-                        <div className='newpaymentrequest5'>
-                            <button onClick={() => setModalShow(false)} style={{ backgroundColor: "#2155CD" }} >Add</button>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
-        );
-    }
-
     const [modalShow1, setModalShow1] = React.useState(false);
 
-    function Addrecord1(props) {
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
 
-        return (
-            <Modal
-                {...props}
-                size="sl"
-                aria-labelledby="contained-modal-title-vcenter"
-                centered
-            >
-                <Modal.Body >
-                    <div className='deleterecordmodal'>
-                        <div className='newpaymentrequest7'>
-                            <IoCloseSharp size={20} color='#000000' onClick={() => setModalShow1(false)} />
-                        </div>
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getAllAdmissionConfirmStatuses(pagination.currentPage, pagination.limit), {
+            setResponse: setExpernsesData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        });
+    }, [pagination.currentPage, pagination.limit]);
 
-                        <div className='deleterecordmodal1'>
-                            <h6>Are you sure you want to<br />
-                                delete this record ?</h6>
-                        </div>
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: expensesData?.pagination?.currentPage || 1,
+            totalPages: expensesData?.pagination?.totalPages || 1,
+            totalRecords: expensesData?.pagination?.totalRecords || 1,
+        }));
+    }, [expensesData]);
 
-                        <div className='deleterecordmodal2'>
-                            <button onClick={() => setModalShow1(false)}>Yes</button>
-                            <button onClick={() => setModalShow1(false)}>No</button>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1
+        }));
+    };
+
+    const handleCheckboxChange = (id) => {
+        setSelectedItems((prev) =>
+            prev.includes(id)
+                ? prev.filter((item) => item !== id)
+                : [...prev, id]
         );
-    }
+    };
+
+    const handleSelectAll = () => {
+        const allIds = expensesData?.data?.reports?.map((data) => data?._id) || [];
+        setSelectedItems((prev) =>
+            prev.length === allIds.length ? [] : allIds
+        );
+    };
+
+    const handleDelete = async () => {
+        if (selectedItems.length === 0) {
+            alert("Please select an item to delete.");
+            return;
+        }
+
+        await Promise.all(
+            selectedItems.map(async (itemId) => {
+                await deleteApi(endPoints.deleteAdmissionConfirmStatuses(itemId), {
+                    setLoading,
+                    successMsg: 'Data deleted successfully!',
+                    errorMsg: 'Failed to delete data!',
+                });
+            })
+        );
+
+        setSelectedItems([]);
+        setModalShow1(false);
+        fetchData();
+    };
+
+    const openAddModal = () => {
+        setEditData(null);
+        setIsEditMode(false);
+        setModalShow(true);
+    };
+
+    const openEditModal = () => {
+        if (selectedItems.length === 0) {
+            alert("Please select an item to edit.");
+            return;
+        }
+
+        const selectedId = selectedItems[0];
+        const itemToEdit = expensesData?.data?.find(item => item._id === selectedId);
+
+        if (itemToEdit) {
+            setEditData(itemToEdit);
+            setIsEditMode(true);
+            setModalShow(true);
+        }
+    };
+
     return (
         <>
-            <Addrecord
+            <AddAdmissionConfirmStatuses
                 show={modalShow}
                 onHide={() => setModalShow(false)}
+                fetchdata={fetchData}
+                data={editData}
+                edit={isEditMode}
             />
-            <Addrecord1
+            <PdcFollowUpStatusesDeleteConfirm
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
+                handleDelete={handleDelete}
             />
             <div className='admission'>
                 <div className='admission1'>
                     <p>Admission Confirm Status</p>
                     <div className='admission2'>
-                        <div className='cancel1' onClick={() => setModalShow(true)}>
+                        <div className='cancel1' onClick={openAddModal}>
                             <p>Add</p>
                         </div>
-                        <div className='cancel2'>
+                        <div className='cancel2' onClick={openEditModal}>
                             <p>Edit</p>
                         </div>
                         <div className='cancel3' onClick={() => setModalShow1(true)}>
@@ -135,37 +159,56 @@ const AdmissionConfirmStatus = () => {
                         <table>
                             <thead>
                                 <tr>
+                                    <th>
+                                        <input
+                                            type="checkbox"
+                                            onChange={handleSelectAll}
+                                            checked={selectedItems.length === expensesData?.data?.length}
+                                        />
+                                    </th>
                                     <th>Admission Confirm Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td><input type="checkbox" />  {data.ExpenseType}</td>
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan="13" className='tableloading'>
+                                            <img src={img1} alt="" />
+                                        </td>
                                     </tr>
-                                ))}
+                                ) : expensesData?.data?.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="13" className='tableloading'>
+                                            <p>No data available.</p>
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    expensesData?.data?.map((data) => (
+                                        <tr key={data?._id}>
+                                            <td>
+                                                <input
+                                                    type="checkbox"
+                                                    checked={selectedItems.includes(data?._id)}
+                                                    onChange={() => handleCheckboxChange(data?._id)}
+                                                />
+                                            </td>
+                                            <td>{data.admissionConfirmStatus}</td>
+                                        </tr>
+                                    ))
+                                )}
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
 
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
             </div>
         </>
     )

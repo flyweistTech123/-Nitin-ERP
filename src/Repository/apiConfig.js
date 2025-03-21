@@ -23,7 +23,16 @@ const endPoints = {
         `admin/getAllBankDetails?page=${page}&limit=${limit}`,
     getAllStudyMedium: (page, limit) =>
         `admin/getAllStudyMediums?page=${page}&limit=${limit}`,
-
+    getAllPdcFollowUpStatuses: (page, limit) =>
+        `admin/getAllPdcFollowUpStatuses?page=${page}&limit=${limit}`,
+    getAllexpenseType: (page, limit) =>
+        `admin/getAllExpenseTypes?page=${page}&limit=${limit}`,
+    getAllComplainTypes: (page, limit) =>
+        `admin/getAllComplainTypes?page=${page}&limit=${limit}`,
+    getAllRequestTypes: (page, limit) =>
+        `admin/getAllRequestTypes?page=${page}&limit=${limit}`,
+    getAllAdmissionConfirmStatuses: (page, limit) =>
+        `admin/getAllAdmissionConfirmStatuses?page=${page}&limit=${limit}`,
 
 
     // add apis
@@ -32,6 +41,11 @@ const endPoints = {
     addSubject: "admin/createSubject",
     addBankDetails: "admin/settingBankDetails",
     addStudyMedium: "admin/createStudyMedium",
+    addPdcFollowUpStatuses: "admin/createPdcFollowUpStatus",
+    addexpenseType: "admin/createExpenseType",
+    addeComplainTypes: "admin/createComplainType",
+    addeRequestTypes: "admin/createRequestType",
+    addeAdmissionConfirmStatus: "admin/createAdmissionConfirmStatus",
 
 
 
@@ -51,6 +65,14 @@ const endPoints = {
         `admin/updateBankDetails/${id}`,
     updateStudyMedium: (id) =>
         `admin/updateStudyMedium/${id}`,
+    updatPdcFollowUpStatuses: (id) =>
+        `admin/updatePdcFollowUpStatus/${id}`,
+    updatexpenseType: (id) =>
+        `admin/updateExpenseType/${id}`,
+    updatRequesttypes: (id) =>
+        `admin/updateRequestType/${id}`,
+    updatAdmissionConfirmStatus: (id) =>
+        `admin/updateAdmissionConfirmStatus/${id}`,
 
 
 
@@ -68,6 +90,14 @@ const endPoints = {
         `admin/deleteBankDetails/${id}`,
     deleteStudyMedium: (id) =>
         `admin/deleteStudyMedium/${id}`,
+    deletePdcFollowUpStatuses: (id) =>
+        `admin/deletePdcFollowUpStatus/${id}`,
+    deleteComplainTypes: (id) =>
+        `admin/deleteComplainType/${id}`,
+    deleteRequestTypes: (id) =>
+        `admin/deleteRequestType/${id}`,
+    deleteAdmissionConfirmStatuses: (id) =>
+        `admin/deleteAdmissionConfirmStatus/${id}`,
 
 
 

@@ -51,6 +51,7 @@ import { IoSearchSharp } from "react-icons/io5";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { AiFillMinusCircle } from "react-icons/ai";
 
+import { IoCloseSharp } from "react-icons/io5";
 
 
 
@@ -17643,6 +17644,551 @@ export function AddStudyMedium(props) {
                             {loading ? "Saving" : "Save"}
                         </button>
                         <button onClick={closing}>Cancel</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function AddPdcFollowUpStatuses(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [expensetype, setExpenseType] = useState(data?.expenseType || '')
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        if (edit && data) {
+            setExpenseType(data?.expenseType || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setExpenseType("");
+    };
+
+    const handleSubmit = async () => {
+        if (!expensetype) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            expenseType: expensetype,
+        }
+
+        await postApi(endPoints.addPdcFollowUpStatuses, payload, {
+            setLoading,
+            successMsg: "PDC Follow Up Status added successfully!",
+            errorMsg: "Failed to add pdc follow up status!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            expenseType: expensetype,
+        }
+
+        await putApi(endPoints.updatPdcFollowUpStatuses(id), payload, {
+            setLoading,
+            successMsg: "PDC Follow Up Status updated successfully!",
+            errorMsg: "Failed to update pdc follow up status!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit PdcFollowUp Status" : "Create PdcFollowUp Status"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='newpaymentrequest1'>
+                    <div className='newpaymentrequest3'>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Record</label>
+                            <input
+                                type="text"
+                                placeholder='Add Here'
+                                value={expensetype}
+                                onChange={(e) => setExpenseType(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='newpaymentrequest5'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit} disabled={loading}>
+                            {loading
+                                ? (props.edit ? "Updating..." : "Adding...")
+                                : (props.edit ? "Edit" : "Add")}
+                        </button>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+export function PdcFollowUpStatusesDeleteConfirm(props) {
+    const { handleDelete, onHide } = props;
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body >
+                <div className='deleterecordmodal'>
+                    <div className='newpaymentrequest7'>
+                        <IoCloseSharp size={20} color='#000000' onClick={onHide} />
+                    </div>
+
+                    <div className='deleterecordmodal1'>
+                        <h6>Are you sure you want to<br />
+                            delete this record ?</h6>
+                    </div>
+
+                    <div className='deleterecordmodal2'>
+                        <button onClick={handleDelete}>Yes</button>
+                        <button onClick={onHide}>No</button>
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function AddExpensType(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [expensetype, setExpenseType] = useState(data?.expenseType || '')
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        if (edit && data) {
+            setExpenseType(data?.expenseType || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setExpenseType("");
+    };
+
+    const handleSubmit = async () => {
+        if (!expensetype) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            expenseType: expensetype,
+        }
+
+        await postApi(endPoints.addexpenseType, payload, {
+            setLoading,
+            successMsg: "Expense Type added successfully!",
+            errorMsg: "Failed to add expense type!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            expenseType: expensetype,
+        }
+
+        await putApi(endPoints.updatexpenseType(id), payload, {
+            setLoading,
+            successMsg: "Expense Type updated successfully!",
+            errorMsg: "Failed to update expense type!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Expense Type" : "Create Expense Type"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='newpaymentrequest1'>
+                    <div className='newpaymentrequest3'>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Record</label>
+                            <input
+                                type="text"
+                                placeholder='Add Here'
+                                value={expensetype}
+                                onChange={(e) => setExpenseType(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='newpaymentrequest5'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit} disabled={loading}>
+                            {loading
+                                ? (props.edit ? "Updating..." : "Adding...")
+                                : (props.edit ? "Edit" : "Add")}
+                        </button>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+export function AddComplainType(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [expensetype, setExpenseType] = useState(data?.complainTypeName || '')
+    const [description, setDescription] = useState(data?.description || '')
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        if (edit && data) {
+            setExpenseType(data?.complainTypeName || '');
+            setDescription(data?.description || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setExpenseType("");
+        setDescription("");
+    };
+
+    const handleSubmit = async () => {
+        if (!expensetype) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            complainTypeName: expensetype,
+            description: description,
+        }
+
+        await postApi(endPoints.addeComplainTypes, payload, {
+            setLoading,
+            successMsg: "Complain Types added successfully!",
+            errorMsg: "Failed to add complain types!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            complainTypeName: expensetype,
+            description: description,
+        }
+
+        await putApi(endPoints.updatComplainTypes(id), payload, {
+            setLoading,
+            successMsg: "Complain Types updated successfully!",
+            errorMsg: "Failed to update complain types!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Complain Type" : "Create Complain Type"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='newpaymentrequest1'>
+                    <div className='newpaymentrequest3'>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Record</label>
+                            <input
+                                type="text"
+                                placeholder='Add Here'
+                                value={expensetype}
+                                onChange={(e) => setExpenseType(e.target.value)}
+                            />
+                        </div>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Description</label>
+                            <textarea
+                                placeholder='Add Here'
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='newpaymentrequest5'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit} disabled={loading}>
+                            {loading
+                                ? (props.edit ? "Updating..." : "Adding...")
+                                : (props.edit ? "Edit" : "Add")}
+                        </button>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+export function AddRequestTypes(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [expensetype, setExpenseType] = useState(data?.typeName || '')
+    const [description, setDescription] = useState(data?.description || '')
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        if (edit && data) {
+            setExpenseType(data?.typeName || '');
+            setDescription(data?.description || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setExpenseType("");
+        setDescription("");
+    };
+
+    const handleSubmit = async () => {
+        if (!expensetype) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            typeName: expensetype,
+            description: description,
+        }
+
+        await postApi(endPoints.addeRequestTypes, payload, {
+            setLoading,
+            successMsg: "Request Types added successfully!",
+            errorMsg: "Failed to add request types!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            typeName: expensetype,
+            description: description,
+        }
+
+        await putApi(endPoints.updatRequesttypes(id), payload, {
+            setLoading,
+            successMsg: "Request Types updated successfully!",
+            errorMsg: "Failed to update request types!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Request Types" : "Create Request Types"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='newpaymentrequest1'>
+                    <div className='newpaymentrequest3'>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Record</label>
+                            <input
+                                type="text"
+                                placeholder='Add Here'
+                                value={expensetype}
+                                onChange={(e) => setExpenseType(e.target.value)}
+                            />
+                        </div>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Description</label>
+                            <textarea
+                                placeholder='Add Here'
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='newpaymentrequest5'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit} disabled={loading}>
+                            {loading
+                                ? (props.edit ? "Updating..." : "Adding...")
+                                : (props.edit ? "Edit" : "Add")}
+                        </button>
+
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+export function AddAdmissionConfirmStatuses(props) {
+    const { data, edit, fetchdata, onHide } = props;
+    const id = data?._id;
+
+    const [expensetype, setExpenseType] = useState(data?.admissionConfirmStatus || '')
+    const [loading, setLoading] = useState(false);
+
+
+    useEffect(() => {
+        if (edit && data) {
+            setExpenseType(data?.admissionConfirmStatus || '');
+        } else if (!edit) {
+            resetForm();
+        }
+    }, [edit, data]);
+
+    const resetForm = () => {
+        setExpenseType("");
+    };
+
+    const handleSubmit = async () => {
+        if (!expensetype) {
+            toast.error("Please provide all the fields!");
+            return;
+        }
+
+        const payload = {
+            admissionConfirmStatus: expensetype,
+        }
+
+        await postApi(endPoints.addeAdmissionConfirmStatus, payload, {
+            setLoading,
+            successMsg: "Admission Confirm Status added successfully!",
+            errorMsg: "Failed to add admission confirm status!",
+        });
+        fetchdata();
+        onHide();
+        resetForm(); 
+    };
+
+
+    const handleupdate = async () => {
+        const payload = {
+            admissionConfirmStatus: expensetype,
+        }
+
+        await putApi(endPoints.updatAdmissionConfirmStatus(id), payload, {
+            setLoading,
+            successMsg: "Admission Confirm Status updated successfully!",
+            errorMsg: "Failed to update admission confirm status!",
+        });
+        fetchdata();
+        onHide();
+        resetForm();
+    };
+
+
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Header closeButton>
+                <Modal.Title className='addUniversityModal7'>
+                    {props.edit ? "Edit Admission Confirm Status" : "Create Admission Confirm Status"}
+                </Modal.Title>
+            </Modal.Header>
+            <Modal.Body >
+                <div className='newpaymentrequest1'>
+                    <div className='newpaymentrequest3'>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Record</label>
+                            <input
+                                type="text"
+                                placeholder='Add Here'
+                                value={expensetype}
+                                onChange={(e) => setExpenseType(e.target.value)}
+                            />
+                        </div>
+                    </div>
+
+                    <div className='newpaymentrequest5'>
+                        <button onClick={props.edit ? handleupdate : handleSubmit} disabled={loading}>
+                            {loading
+                                ? (props.edit ? "Updating..." : "Adding...")
+                                : (props.edit ? "Edit" : "Add")}
+                        </button>
+
                     </div>
                 </div>
             </Modal.Body>
