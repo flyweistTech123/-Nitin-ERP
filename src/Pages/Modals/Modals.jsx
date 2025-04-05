@@ -18136,7 +18136,7 @@ export function AddAdmissionConfirmStatuses(props) {
         });
         fetchdata();
         onHide();
-        resetForm(); 
+        resetForm();
     };
 
 
@@ -18189,6 +18189,93 @@ export function AddAdmissionConfirmStatuses(props) {
                                 : (props.edit ? "Edit" : "Add")}
                         </button>
 
+                    </div>
+                </div>
+            </Modal.Body>
+        </Modal>
+    );
+}
+
+
+
+
+export function NewPaymentRequest(props) {
+
+    const popover = (
+        <Popover id="popover-basic">
+            <Popover.Body className='pendingtaskmodal55'>
+                <div className='pendingtaskmodal5'>
+                    <div className='pendingtaskmodal6'>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img19} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                        <div className='pendingtaskmodal7'>
+                            <img src={img20} alt="" />
+                            <p>Loren Ipsom</p>
+                        </div>
+                    </div>
+                </div>
+            </Popover.Body>
+        </Popover>
+    );
+    return (
+        <Modal
+            {...props}
+            size="sl"
+            aria-labelledby="contained-modal-title-vcenter"
+            centered
+        >
+            <Modal.Body >
+                <div className='newpaymentrequest1'>
+                    <div className='newpaymentrequest2'>
+                        <p>New Payment Request</p>
+                        <IoCloseSharp size={20} color='#000000' />
+                    </div>
+
+                    <div className='newpaymentrequest3'>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Title</label>
+                            <input type="text" />
+                        </div>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Details</label>
+                            <input type="text" />
+                        </div>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Amount</label>
+                            <input type="text" />
+                        </div>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Reason</label>
+                            <select name="" id="">
+                                <option value=""></option>
+                            </select>
+                        </div>
+                        <div className='newpaymentrequest4'>
+                            <label htmlFor="">Authority (Final Only)</label>
+                            
+                        </div>
+                    </div>
+
+                    <div className='newpaymentrequest5'>
+                        <button>Submit</button>
                     </div>
                 </div>
             </Modal.Body>

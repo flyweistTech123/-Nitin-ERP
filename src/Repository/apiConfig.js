@@ -33,6 +33,14 @@ const endPoints = {
         `admin/getAllRequestTypes?page=${page}&limit=${limit}`,
     getAllAdmissionConfirmStatuses: (page, limit) =>
         `admin/getAllAdmissionConfirmStatuses?page=${page}&limit=${limit}`,
+    getAllsendCouriersList: (page, limit) =>
+        `admin/getPendingCouriersList?page=${page}&limit=${limit}`,
+    getAllreturnCouriersList: (page, limit) =>
+        `admin/getNonPendingCouriersList?page=${page}&limit=${limit}`,
+    getAllreceivedCouriersList: (page, limit) =>
+        `admin/getAllReceivedCouriers?page=${page}&limit=${limit}`,
+    getAllPettyCashList: (page, limit) =>
+        `admin/getAllPaymentRequests?page=${page}&limit=${limit}`,
 
 
     // add apis

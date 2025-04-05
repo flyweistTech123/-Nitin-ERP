@@ -1,24 +1,104 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './Setting.css'
 import HOC from '../../Components/HOC/HOC'
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import { MdOutlineClose } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
 
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import {
     CourierFilterModal,
     MYDEALSModal,
     AddFieldModal,
-    History,
     AddNewFilter,
 } from '../Modals/Modals.jsx'
+import endPoints from '../../Repository/apiConfig.js';
+import { getApi } from '../../Repository/Api.js';
+
+import img1 from '../../Img/loading.gif';
+import Pagination from '../../Components/Pagination/Pagination.jsx';
+
 
 const CourierSection = () => {
     const navigate = useNavigate();
+    const [sendcourierlist, setcourierList] = useState([]);
+    const [returnlist, setReturnList] = useState([]);
+    const [receivedlist, setReceivedList] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
+
+    const fetchsendData = useCallback(async () => {
+        await getApi(endPoints.getAllsendCouriersList(pagination.currentPage, pagination.limit), {
+            setResponse: setcourierList,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        });
+    }, [pagination.currentPage, pagination.limit]);
+
+    const fetchReturnData = useCallback(async () => {
+        await getApi(endPoints.getAllreturnCouriersList(pagination.currentPage, pagination.limit), {
+            setResponse: setReturnList,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        });
+    }, [pagination.currentPage, pagination.limit]);
+
+
+    const fetchReceivedData = useCallback(async () => {
+        await getApi(endPoints.getAllreceivedCouriersList(pagination.currentPage, pagination.limit), {
+            setResponse: setReceivedList,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        });
+    }, [pagination.currentPage, pagination.limit]);
+
+
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: sendcourierlist?.pagination?.currentPage || 1,
+            totalPages: sendcourierlist?.pagination?.totalPages || 1,
+            totalRecords: sendcourierlist?.pagination?.totalRecords || 1,
+        }));
+    }, [sendcourierlist]);
+
+    useEffect(() => {
+        fetchsendData();
+    }, [fetchsendData]);
+    useEffect(() => {
+        fetchReturnData();
+    }, [fetchReturnData]);
+    useEffect(() => {
+        fetchReceivedData();
+    }, [fetchReceivedData]);
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1
+        }));
+    };
+
+
+
     const [state1, setState1] = useState(null);
 
     const handleState1 = (index) => {
@@ -706,15 +786,29 @@ const CourierSection = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {tableData.map((data) => (
-                                        <tr key={data.id}>
-                                            <td>{data.SenderName}</td>
-                                            <td>{data.ReceiverName}</td>
-                                            <td>{data.MobileNo}</td>
-                                            <td>{data.CourierCompanyName}</td>
-                                            <td>{data.DoketNo}</td>
+                                    {loading ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <img src={img1} alt="" />
+                                            </td>
                                         </tr>
-                                    ))}
+                                    ) : !sendcourierlist ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <p>No data available.</p>
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        sendcourierlist?.data?.map((data) => (
+                                            <tr key={data._id}>
+                                                <td>{data.SenderName}</td>
+                                                <td>{data.ReceiverName}</td>
+                                                <td>{data.MobileNo}</td>
+                                                <td>{data.CourierCompanyName}</td>
+                                                <td>{data.DoketNo}</td>
+                                            </tr>
+                                        ))
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -735,17 +829,31 @@ const CourierSection = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {tableData.map((data) => (
-                                        <tr key={data.id}>
-                                            <td>{data.SenderName}</td>
-                                            <td>{data.ReceiverName}</td>
-                                            <td>{data.MobileNo}</td>
-                                            <td>{data.CourierCompanyName}</td>
-                                            <td>{data.DoketNo}</td>
-                                            <td>{data.DocType}</td>
-                                            <td>{data.ReturnedOn}</td>
+                                    {loading ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <img src={img1} alt="" />
+                                            </td>
                                         </tr>
-                                    ))}
+                                    ) : !returnlist ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <p>No data available.</p>
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        returnlist?.data?.map((data) => (
+                                            <tr key={data._id}>
+                                                <td>{data.receiverName}</td>
+                                                <td>{data.ReceiverName}</td>
+                                                <td>{data.MobileNo}</td>
+                                                <td>{data.CourierCompanyName}</td>
+                                                <td>{data.DoketNo}</td>
+                                                <td>{data.DocType}</td>
+                                                <td>{data.ReturnedOn}</td>
+                                            </tr>
+                                        ))
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -764,15 +872,29 @@ const CourierSection = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {tableData.map((data) => (
-                                        <tr key={data.id}>
-                                            <td>{data.SenderName}</td>
-                                            <td>{data.ReceiverName}</td>
-                                            <td>{data.MobileNo}</td>
-                                            <td>{data.CourierCompanyName}</td>
-                                            <td>{data.DoketNo}</td>
+                                    {loading ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <img src={img1} alt="" />
+                                            </td>
                                         </tr>
-                                    ))}
+                                    ) : !receivedlist ? (
+                                        <tr>
+                                            <td colSpan="13" className='tableloading'>
+                                                <p>No data available.</p>
+                                            </td>
+                                        </tr>
+                                    ) : (
+                                        receivedlist?.data?.map((data) => (
+                                            <tr key={data._id}>
+                                                <td>{data.receiverName}</td>
+                                                <td>{data.receiverName}</td>
+                                                <td>{data.mobileNo}</td>
+                                                <td>{data.receiverCompany}</td>
+                                                <td>{data.docketNumber}</td>
+                                            </tr>
+                                        ))
+                                    )}
                                 </tbody>
                             </table>
                         </div>
@@ -782,27 +904,17 @@ const CourierSection = () => {
                 )}
 
 
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
-
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
 
 
-                < div className='admission15'>
+                <div className='admission15'>
                     <div className='admission16'>
                         <p>START DIALING</p>
                     </div>
@@ -818,11 +930,6 @@ const CourierSection = () => {
                         <input type="checkbox" />
                         <p>For All</p>
                     </div>
-                </div>
-
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
                 </div>
             </div >
         </>
