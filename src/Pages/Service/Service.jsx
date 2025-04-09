@@ -470,8 +470,8 @@ const Service = () => {
                                         <td>{data.university}</td>
                                         <td>{data.course}</td>
                                         <td>
-                                            <div className='admission14'>
-                                                <button onClick={() => setModalShow6(true)}>History</button>
+                                            <div className='admission14' onClick={() => setModalShow6(true)}>
+                                                <p>History</p>
                                             </div>
                                         </td>
                                     </tr>

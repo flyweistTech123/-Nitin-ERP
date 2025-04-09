@@ -70,6 +70,7 @@ import img21 from '../../Img/img110.png'
 import { postApi, putApi } from '../../Repository/Api';
 import endPoints from '../../Repository/apiConfig';
 import { toast } from 'react-toastify';
+import { formatDate } from '../../utils/utils';
 
 
 export function AddNewFilter(props) {
@@ -14762,9 +14763,26 @@ export function Counsellorform(props) {
 }
 
 
-//  Paymentlink  Modal for CRM page
 export function Paymentlink(props) {
+    const { data, onHide } = props;
 
+    const [paymentdata, setPaymentData] = useState(data || {});
+    const [copied, setCopied] = useState(false);
+
+    useEffect(() => {
+        if (data) {
+            setPaymentData(data);
+        }
+    }, [data]);
+
+    const handleCopy = () => {
+        if (paymentdata?.paymentLink) {
+            navigator.clipboard.writeText(paymentdata.paymentLink).then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000); // Hide after 2s
+            });
+        }
+    };
 
     return (
         <Modal
@@ -14773,31 +14791,46 @@ export function Paymentlink(props) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Body className='counsellorformmodalpadding'>
-                <div className='paymentcrmmodal'>
-                    <div className='paymentcrmmodal1'>
-                        <h6>Counselor commitment form Link</h6>
-                        <p>Application ID: 1123</p>
+            <Modal.Body className="counsellorformmodalpadding">
+                <div className="paymentcrmmodal">
+                    <div className="paymentcrmmodal1">
+                        <h6>Counselor Commitment Form Link</h6>
+                        <p>Application ID: {paymentdata?.leadId}</p>
                     </div>
 
-                    <div className='paymentcrmmodal2'>
-                        <div className='paymentcrmmodal3'>
-                            <p>Counsellor Name: <span>loren Epsom</span></p>
-                            <p>Date: DD/MM/YYYY</p>
+                    <div className="paymentcrmmodal2">
+                        <div className="paymentcrmmodal3">
+                            <p>
+                                Counsellor Name: <span>Loren Epsom</span>
+                            </p>
+                            <p>Date: {formatDate(data?.createdAt)}</p>
                         </div>
-                        <div className='paymentcrmmodal4'>
-                            <p>From : Univeristy Name</p>
+                        <div className="paymentcrmmodal4">
+                            <p>From: {paymentdata?.universityCollage}</p>
                         </div>
 
-                        <div className='paymentcrmmodal4'>
-                            <div className='paymentcrmmodal5'>
-                                <p>Rorem ipsum/dolor sit amet/consectetur/adipiscing elit001/Rorem</p>
-                                <div className='paymentcrmmodal66'>
-                                    <FaRegCopy />
+                        <div className="paymentcrmmodal4">
+                            <div className='paymentcrmmodal456'>
+                                <div className="paymentcrmmodal5">
+                                    <p>{paymentdata?.paymentLink}</p>
+                                    <div
+                                        className="paymentcrmmodal66"
+                                        onClick={handleCopy}
+                                        style={{ cursor: "pointer" }}
+                                        title="Copy link"
+                                    >
+                                        <FaRegCopy />
+                                    </div>
                                 </div>
+                                {copied && (
+                                    <p style={{ color: "green", fontSize: "0.9rem" }}>
+                                        Link copied!
+                                    </p>
+                                )}
                             </div>
-                            <div className='paymentcrmmodal6'>
-                                <button>Send</button>
+
+                            <div className="paymentcrmmodal6">
+                                <button onClick={onHide}>Send</button>
                             </div>
                         </div>
                     </div>
@@ -18270,7 +18303,7 @@ export function NewPaymentRequest(props) {
                         </div>
                         <div className='newpaymentrequest4'>
                             <label htmlFor="">Authority (Final Only)</label>
-                            
+
                         </div>
                     </div>
 

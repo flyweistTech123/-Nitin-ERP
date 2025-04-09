@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './CRM.css'
 import HOC from '../../Components/HOC/HOC'
 import { MdOutlineClose } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
-import { IoIosArrowDown } from "react-icons/io";
 import { Counsellorform, Paymentlink } from '../Modals/Modals'
 import { useNavigate, Link } from 'react-router-dom';
 import { MdEdit } from "react-icons/md";
 
-import img from '../../Img/img33.png'
+import img1 from '../../Img/loading.gif'
 
 // Modals 
 
@@ -26,15 +25,98 @@ import {
     Whatsapp,
     CRMAdmissionFollowUp,
     CRMFieldModal,
-    History1,
-    FilterModalhistory,
-    AddNewEvent,
     AddNewFilter,
     PropertiesModal
 } from '../Modals/Modals.jsx'
+import endPoints from '../../Repository/apiConfig.js';
+import { getApi } from '../../Repository/Api.js';
+import Pagination from '../../Components/Pagination/Pagination.jsx';
+import { formatDate } from '../../utils/utils.js';
 
 const CRM = () => {
-    const navigate = useNavigate()
+
+    const navigate = useNavigate();
+    const [leadData, setLeadData] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItems, setSelectedItems] = useState([]);
+
+
+    const [pagination, setPagination] = useState({
+        currentPage: 1,
+        totalPages: 1,
+        totalRecords: 1,
+        limit: 20
+    });
+
+
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getallleads(pagination.currentPage, pagination.limit), {
+            setResponse: setLeadData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        })
+    }, [pagination.currentPage, pagination.limit]);
+
+    useEffect(() => {
+        setPagination((prevPagination) => ({
+            ...prevPagination,
+            currentPage: leadData?.pagination?.currentPage,
+            totalPages: leadData?.pagination?.totalPages,
+            totalRecords: leadData?.pagination?.totalRecords,
+        }));
+    }, [leadData]);
+
+    useEffect(() => {
+        fetchData();
+    }, [fetchData]);
+
+
+    const handlePageChange = (newPage) => {
+        if (newPage >= 1 && newPage <= pagination.totalPages) {
+            setPagination((prev) => ({
+                ...prev,
+                currentPage: newPage
+            }));
+        }
+    };
+
+    const handleLimitChange = (newLimit) => {
+        setPagination((prev) => ({
+            ...prev,
+            limit: newLimit,
+            currentPage: 1
+        }));
+    };
+
+
+
+    const handleCheckboxChange = (id) => {
+        setSelectedItems((prev) =>
+            prev.includes(id)
+                ? prev.filter((item) => item !== id)
+                : [...prev, id]
+        );
+    };
+
+    const handleSelectAll = () => {
+        const allIds = leadData?.data?.map((data) => data?._id) || [];
+        setSelectedItems((prev) =>
+            prev.length === allIds.length ? [] : allIds  // Toggle select all
+        );
+    };
+
+
+
+
+    const openPaymentModal = (item) => {
+        setSelectedItem(item);
+        setModalShow1(true);
+    };
+
+
+
+
     const [state, setState] = useState(null);
 
     const handleState = (index) => {
@@ -49,82 +131,7 @@ const CRM = () => {
     };
 
 
-    const tableData = [
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            university: 'Lorem epsom',
-            course: 'Engineering',
-            createdDate: 'DD/MM/YYYY',
-            Admissionform: 'Form',
-            counsellorform: 'Form',
-            Payment: 'Link'
-        },
 
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            university: 'Lorem epsom',
-            course: 'Engineering',
-            createdDate: 'DD/MM/YYYY',
-            Admissionform: 'Form',
-            counsellorform: 'Form',
-            Payment: 'Link'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            university: 'Lorem epsom',
-            course: 'Engineering',
-            createdDate: 'DD/MM/YYYY',
-            Admissionform: 'Form',
-            counsellorform: 'Form',
-            Payment: 'Link'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            university: 'Lorem epsom',
-            course: 'Engineering',
-            createdDate: 'DD/MM/YYYY',
-            Admissionform: 'Form',
-            counsellorform: 'Form',
-            Payment: 'Link'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            university: 'Lorem epsom',
-            course: 'Engineering',
-            createdDate: 'DD/MM/YYYY',
-            Admissionform: 'Form',
-            counsellorform: 'Form',
-            Payment: 'Link'
-        },
-        {
-            id: 1,
-            name: 'Loren Epsom',
-            contact: '9999999999',
-            email: 'loren@epsomgmail.com',
-            university: 'Lorem epsom',
-            course: 'Engineering',
-            createdDate: 'DD/MM/YYYY',
-            Admissionform: 'Form',
-            counsellorform: 'Form',
-            Payment: 'Link'
-        },
-
-    ];
 
     // Counsellorform Modal 
 
@@ -227,6 +234,8 @@ const CRM = () => {
             <Paymentlink
                 show={modalShow1}
                 onHide={() => setModalShow1(false)}
+                fetchdata={fetchData}
+                data={selectedItem}
             />
             <CRMFilterModal
                 show={modalShow2}
@@ -397,7 +406,13 @@ const CRM = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" /></th>
+                                    <th> <input
+                                        type="checkbox"
+                                        onChange={handleSelectAll}
+                                        checked={
+                                            selectedItems.length === leadData?.data?.length
+                                        }
+                                    /></th>
                                     <th><IoSettings size={20} onClick={() => setModalShow6(true)} /></th>
                                     <th>Student Name</th>
                                     <th>Email</th>
@@ -411,48 +426,55 @@ const CRM = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {tableData.map((data) => (
-                                    <tr key={data.id}>
-                                        <td><input type="checkbox" /></td>
-                                        {/* <td><img src={img} alt="" /></td> */}
-                                        <td></td>
-                                        <td>
-                                            <p className='admission202'><button onClick={handleShow}><MdEdit size={20} /> Edit</button></p>
-                                            {data.name}
+                                {loading ? (
+                                    <tr>
+                                        <td colSpan="11" className='tableloading'>
+                                            <img src={img1} alt="" />
                                         </td>
-                                        <td>{data.email}</td>
-                                        <td>{data.contact}</td>
-                                        <td>{data.university}</td>
-                                        <td>{data.course}</td>
-                                        <td>{data.createdDate}</td>
-                                        <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => navigate('/admission_details')}>{data.Admissionform}</td>
-                                        <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => setModalShow(true)}>{data.counsellorform}</td>
-                                        <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => setModalShow1(true)}>{data.Payment}</td>
                                     </tr>
-                                ))}
+                                ) : leadData?.data?.length === 0 ? (
+                                    <tr>
+                                        <td colSpan="11" className='tableloading'>
+                                            <p>No data available.</p>
+                                        </td>
+                                    </tr>
+                                ) : (
+                                    leadData?.data?.map((data) => (
+                                        <tr key={data.id}>
+                                            <td><input
+                                                type="checkbox"
+                                                checked={selectedItems.includes(data?._id)}
+                                                onChange={() => handleCheckboxChange(data?._id)}
+                                            /></td>
+                                            <td></td>
+                                            <td>
+                                                <p className='admission202'><button onClick={handleShow}><MdEdit size={20} /> Edit</button></p>
+                                                {data.studentName}
+                                            </td>
+                                            <td>{data.email}</td>
+                                            <td>{data.contactNumber}</td>
+                                            <td>{data.universityCollage}</td>
+                                            <td>{data.course}</td>
+                                            <td>{formatDate(data.createdAt)}</td>
+                                            <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => navigate('/admission_details')}>Form</td>
+                                            <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => setModalShow(true)}>Form</td>
+                                            <td style={{ color: '#2155CD', textDecoration: "underline" }} onClick={() => openPaymentModal(data)}>Link</td>
+                                        </tr>
+                                    ))
+                                )}
                             </tbody>
                         </table>
                     </div>
                 </div>
 
-                <div className='pendingpayment6'>
-                    <div className='pendingpayment7'>
-                        <h6>Total:</h6>
-                        <span>Show quantity</span>
-                    </div>
-
-                    <div className='pendingpayment8'>
-                        <p>Page :1</p>
-                    </div>
-
-                    <div className='pendingpayment9'>
-                        <p>Records</p>
-                        <div className='pendingpayment10'>
-                            <p>20</p>
-                            <IoIosArrowDown color='#3F3F3F' />
-                        </div>
-                    </div>
-                </div>
+                <Pagination
+                    currentPage={pagination.currentPage}
+                    totalPages={pagination.totalPages}
+                    totalRecords={pagination.totalRecords}
+                    limit={pagination.limit}
+                    onPageChange={handlePageChange}
+                    onLimitChange={handleLimitChange}
+                />
                 <div className='crm10'>
                     <div className='admission16'>
                         <p>START DIALING</p>
@@ -469,11 +491,6 @@ const CRM = () => {
                         <input type="checkbox" />
                         <p>For All</p>
                     </div>
-                </div>
-
-                <div className='admission18'>
-                    <button>Previous</button>
-                    <button>Next</button>
                 </div>
                 {/* <div className='admission11'>
                 </div> */}

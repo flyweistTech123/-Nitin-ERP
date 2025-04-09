@@ -50,7 +50,7 @@ const Admission = () => {
     const navigate = useNavigate();
 
 
-
+    const [selectedItems, setSelectedItems] = useState([]);
     const [admissionData, setAdmissionData] = useState([]);
     const [loading, setLoading] = useState(false);
 
@@ -100,6 +100,23 @@ const Admission = () => {
             currentPage: 1  // Reset to first page when changing limit
         }));
     };
+
+
+    const handleCheckboxChange = (id) => {
+        setSelectedItems((prev) =>
+            prev.includes(id)
+                ? prev.filter((item) => item !== id)
+                : [...prev, id]
+        );
+    };
+
+    const handleSelectAll = () => {
+        const allIds = admissionData?.data?.map((data) => data?._id) || [];
+        setSelectedItems((prev) =>
+            prev.length === allIds.length ? [] : allIds  // Toggle select all
+        );
+    };
+
 
 
 
@@ -499,7 +516,13 @@ const Admission = () => {
                         <table>
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" /></th>
+                                    <th> <input
+                                        type="checkbox"
+                                        onChange={handleSelectAll}
+                                        checked={
+                                            selectedItems.length === admissionData?.data?.length
+                                        }
+                                    /></th>
                                     <th><IoSettings size={20} onClick={() => setModalShow2(true)} /></th>
                                     <th>Student Name</th>
                                     <th>Contact</th>
@@ -519,7 +542,7 @@ const Admission = () => {
                                             <img src={img1} alt="" />
                                         </td>
                                     </tr>
-                                ) : admissionData?.data?.length === 0 ? (  
+                                ) : admissionData?.data?.length === 0 ? (
                                     <tr>
                                         <td colSpan="11" className='tableloading'>
                                             <p>No data available.</p>
@@ -528,7 +551,11 @@ const Admission = () => {
                                 ) : (
                                     admissionData?.data?.map((data) => (
                                         <tr key={data.id}>
-                                            <td><input type="checkbox" /></td>
+                                            <td><input
+                                                type="checkbox"
+                                                checked={selectedItems.includes(data?._id)}
+                                                onChange={() => handleCheckboxChange(data?._id)}
+                                            /></td>
                                             <td onClick={handleShow}><img src={img8} alt="" /></td>
                                             <td>
                                                 <p className='admission202'>
@@ -548,7 +575,7 @@ const Admission = () => {
                                             <td>RS.{data.paidAmount}</td>
                                             <td>{data.admissionDate.slice(0, 16)}</td>
                                             <td>
-                                                <div className='admission14'onClick={() => setModalShow4(true)}>
+                                                <div className='admission14' onClick={() => setModalShow4(true)}>
                                                     <p>History</p>
                                                 </div>
                                             </td>
@@ -613,9 +640,6 @@ const Admission = () => {
                         <p>For All</p>
                     </div>
                 </div>
-
-
-
             </div>
         </>
     )

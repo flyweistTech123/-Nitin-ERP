@@ -5,6 +5,8 @@ const endPoints = {
     registerAdmin: "admin/register",
 
     //get apis
+    getallleads: (page, limit) =>
+        `admin/getAllLeads?page=${page}&limit=${limit}`,
     getalladmissions: (page, limit) =>
         `admin/getAllAdmissionSection?page=${page}&limit=${limit}`,
     getallbackend: (page, limit) =>
