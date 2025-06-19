@@ -56,6 +56,7 @@ const endPoints = {
     addeComplainTypes: "admin/createComplainType",
     addeRequestTypes: "admin/createRequestType",
     addeAdmissionConfirmStatus: "admin/createAdmissionConfirmStatus",
+    createLead: "admin/createLead",
 
 
 

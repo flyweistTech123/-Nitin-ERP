@@ -3120,6 +3120,26 @@ export function CRMNeWLead(props) {
     const [widthStyle, setWidthStyle] = useState('82%');
     const [leftStyle, setLeftStyle] = useState('18.1%');
 
+    const [newField, setNewField] = useState("");
+    const [studentName, setStudentName] = useState("");
+    const [amount, setAmount] = useState();
+    const [currencyType, setCurrencyType] = useState("");
+    const [email, setEmail] = useState("");
+    const [contactNumber, setContactNumber] = useState("");
+    const [universityCollage, setUniversityCollage] = useState("");
+    const [date, setDate] = useState("");
+    const [phone, setPhone] = useState("");
+    const [course, setCourse] = useState("");
+    const [whatsappStatus, setWhatsappStatus] = useState(true);
+    const [whichForm, setWhichForm] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [country, setCountry] = useState("");
+    const [leadActivity, setLeadActivity] = useState("");
+    const [description, setDescription] = useState("");
+    const [loading, setLoading] = useState(false);
+
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -3146,6 +3166,37 @@ export function CRMNeWLead(props) {
 
     const handleModal = () => {
         props.setModalShow8(true);
+    };
+
+    const handleSubmit = async () => {
+
+        const payload = {
+            newField:"newfielad",
+            studentName,
+            amount,
+            currencyType,
+            email,
+            contactNumber,
+            universityCollage,
+            date,
+            phone,
+            course,
+            whatsappStatus,
+            whichForm,
+            city,
+            state,
+            country,
+            leadActivity,
+            description,
+        };
+
+
+        await postApi(endPoints.createLead, payload, {
+            setLoading,
+            successMsg: "Lead create successfully!",
+            errorMsg: "Failed to creat lead!",
+        });
+        props.onHide();
     };
 
 
@@ -3210,12 +3261,20 @@ export function CRMNeWLead(props) {
                                     <div className='newleadModal2'>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Student Name</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={studentName}
+                                                onChange={(e) => setStudentName(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Amount & Currency</label>
                                             <div className='newleadModal4'>
-                                                <input type="text" />
+                                                <input
+                                                    type="text"
+                                                    value={amount}
+                                                    onChange={(e) => setAmount(e.target.value)}
+                                                />
                                                 <div className='newleadModal5'>
                                                     <p>Indian Rupee</p>
                                                 </div>
@@ -3223,19 +3282,35 @@ export function CRMNeWLead(props) {
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Email</label>
-                                            <input type="text" />
+                                            <input
+                                                type="email"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Contact Number</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={contactNumber}
+                                                onChange={(e) => setContactNumber(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">University/ College</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={universityCollage}
+                                                onChange={(e) => setUniversityCollage(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Phone</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={phone}
+                                                onChange={(e) => setPhone(e.target.value)}
+                                            />
                                         </div>
 
                                     </div>
@@ -3248,35 +3323,50 @@ export function CRMNeWLead(props) {
                                     <div className='newleadModal2'>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Course</label>
-                                            <select name="" id="">
+                                            <select name="" id="" value={course} onChange={(e) => setCourse(e.target.value)}>
                                                 <option value="">Not Selected</option>
+                                                <option value="Computer Science">Computer Science</option>
                                             </select>
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">WhatsApp Status</label>
-                                            <select name="" id="">
+                                            <select name="" id="" value={whatsappStatus} onChange={(e) => setWhatsappStatus(e.target.value)}>
                                                 <option value="">Not Selected</option>
+                                                <option value="true">true</option>
                                             </select>
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Email</label>
-                                            <input type="text" />
+                                            <input type="email" value={email}
+                                                onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Which Form</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={whichForm} onChange={(e) => setWhichForm(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">City</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={city} onChange={(e) => setCity(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">State</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={state} onChange={(e) => setState(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Country</label>
-                                            <input type="text" />
+                                            <input
+                                                type="text"
+                                                value={country} onChange={(e) => setCountry(e.target.value)}
+                                            />
                                         </div>
                                     </div>
                                 </div>
@@ -3312,7 +3402,7 @@ export function CRMNeWLead(props) {
                                 </div>
 
                                 <div className='newleadModal11'>
-                                    <button onClick={props.handleShow6}>Save</button>
+                                    <button onClick={handleSubmit}>Save</button>
                                     <button onClick={props.handleShow6}>Cancel</button>
                                 </div>
                             </div>
