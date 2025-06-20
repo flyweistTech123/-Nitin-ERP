@@ -45,6 +45,11 @@ const endPoints = {
         `admin/getAllPaymentRequests?page=${page}&limit=${limit}`,
 
 
+
+    // get by id 
+    getallleadsbyid: (id) =>
+        `admin/getLeadById/${id}`,
+
     // add apis
     addUniversity: "admin/addUniversityOrCollege",
     addSpecialization: "admin/createSpecialization",

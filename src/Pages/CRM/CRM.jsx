@@ -221,7 +221,11 @@ const CRM = () => {
     const [show6, setShow6] = useState(false);
 
     const handleClose6 = () => setShow6(false);
-    const handleShow6 = () => setShow6(true);
+
+    const handleShow6 = (id)=>{
+        setSelectedItem(id)
+        setShow6(true);
+    }
 
     return (
         <>
@@ -286,6 +290,7 @@ const CRM = () => {
                 handleShow5={handleShow5}
                 setModalShow8={setModalShow}
                 title={"Admission"}
+                id={selectedItem}
             />
             <NeWLead
                 show={show1}
@@ -448,7 +453,7 @@ const CRM = () => {
                                             /></td>
                                             <td></td>
                                             <td>
-                                                <p className='admission202'><button onClick={handleShow}><MdEdit size={20} /> Edit</button></p>
+                                                <p className='admission202'><button onClick={()=>handleShow6(data?._id)}><MdEdit size={20} /> Edit</button></p>
                                                 {data.studentName}
                                             </td>
                                             <td>{data.email}</td>

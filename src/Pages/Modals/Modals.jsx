@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import './Modals.css'
 import Modal from 'react-bootstrap/Modal';
 import Offcanvas from 'react-bootstrap/Offcanvas';
@@ -67,7 +67,7 @@ import img19 from '../../Img/img83.png'
 import img20 from '../../Img/img82.png'
 import { GiOverhead } from 'react-icons/gi';
 import img21 from '../../Img/img110.png'
-import { postApi, putApi } from '../../Repository/Api';
+import { getApi, postApi, putApi } from '../../Repository/Api';
 import endPoints from '../../Repository/apiConfig';
 import { toast } from 'react-toastify';
 import { formatDate } from '../../utils/utils';
@@ -3171,10 +3171,10 @@ export function CRMNeWLead(props) {
     const handleSubmit = async () => {
 
         const payload = {
-            newField:"newfielad",
+            newField: "newfielad",
             studentName,
             amount,
-            currencyType,
+            currencyType: "rupee",
             email,
             contactNumber,
             universityCollage,
@@ -3305,6 +3305,14 @@ export function CRMNeWLead(props) {
                                             />
                                         </div>
                                         <div className='newleadModal3'>
+                                            <label htmlFor="">Created Date</label>
+                                            <input
+                                                type="date"
+                                                value={date}
+                                                onChange={(e) => setDate(e.target.value)}
+                                            />
+                                        </div>
+                                        <div className='newleadModal3'>
                                             <label htmlFor="">Phone</label>
                                             <input
                                                 type="text"
@@ -3334,11 +3342,6 @@ export function CRMNeWLead(props) {
                                                 <option value="">Not Selected</option>
                                                 <option value="true">true</option>
                                             </select>
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Email</label>
-                                            <input type="email" value={email}
-                                                onChange={(e) => setEmail(e.target.value)} />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Which Form</label>
@@ -3381,7 +3384,7 @@ export function CRMNeWLead(props) {
                                             <input type="text" placeholder='Call' />
                                         </div>
                                         <div className='newleadModal3'>
-                                            <label htmlFor="">Lead Source</label>
+                                            <label htmlFor="">Responsible Person</label>
                                             <div className='newleadModal7'>
                                                 <div className='newleadModal8'>
                                                     <FaUserCircle color='#000000' size={25} />
@@ -3631,6 +3634,19 @@ export function CRMNeWLead(props) {
 export function CRMAdmissionFollowUp(props) {
     const [widthStyle, setWidthStyle] = useState('82%');
 
+    const [leadData, setLeadData] = useState({})
+    const [loading, setLoading] = useState(false);
+
+
+    const fetchData = useCallback(async () => {
+        await getApi(endPoints.getallleadsbyid(props.id), {
+            setResponse: setLeadData,
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        })
+    }, [props.id]);
+
+
     useEffect(() => {
         const handleResize = () => {
             const screenWidth = window.innerWidth;
@@ -3658,6 +3674,14 @@ export function CRMAdmissionFollowUp(props) {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
+
+    useEffect(() => {
+        if (props.id) {
+            fetchData();
+        }
+    }, [props.id, fetchData]);
+
 
 
     const handleModal = () => {
@@ -3715,7 +3739,7 @@ export function CRMAdmissionFollowUp(props) {
                         </div>
 
                         <div className='Admissionfollowup8'>
-                            <div className='Admissionfollowup9'>
+                            <div className='newleadModal6'>
                                 <div className='Admissionfollowup10'>
                                     <div className='Admissionfollowup11'>
                                         <h6>LEADS INFORMATION</h6>
@@ -3725,7 +3749,7 @@ export function CRMAdmissionFollowUp(props) {
                                     <div className='Admissionfollowup12'>
                                         <div className='Admissionfollowup13'>
                                             <label htmlFor="">Student Name</label>
-                                            <p>Loren Epsom</p>
+                                            <p>{leadData?.data?.studentName}</p>
                                         </div>
                                         <div className='Admissionfollowup13'>
                                             <label htmlFor="">Amount & Currency</label>
@@ -3750,6 +3774,70 @@ export function CRMAdmissionFollowUp(props) {
                                         <div className='Admissionfollowup13'>
                                             <label htmlFor="">Created Date</label>
                                             <p>DD/MM/YYYY</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='Admissionfollowup10'>
+                                    <div className='Admissionfollowup11'>
+                                        <h6>LEADS INFORMATION</h6>
+                                        <p onClick={props.handleShow1}>Edit</p>
+                                    </div>
+
+                                    <div className='Admissionfollowup12'>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Course</label>
+                                            <p>Loren Epsom</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">WhatsApp Status</label>
+                                            <p>Rs. 5,000</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Email</label>
+                                            <p>LorenEpsom@gmail.com</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Which Form</label>
+                                            <p>Loren Epsom</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">City</label>
+                                            <p>9999999999</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">State</label>
+                                            <p>Loren Epsom</p>
+                                        </div>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Country</label>
+                                            <p>DD/MM/YYYY</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className='newleadModal1'>
+                                    <div className='Admissionfollowup11'>
+                                        <h6>MORE</h6>
+                                        <p onClick={props.onHide}>Edit</p>
+                                    </div>
+                                    <div className='newleadModal2'>
+                                        <div className='Admissionfollowup13'>
+                                            <label htmlFor="">Lead Source</label>
+                                            <p>Call</p>
+                                        </div>
+                                        <div className='newleadModal3'>
+                                            <label htmlFor="">Responsible Person</label>
+                                            <div className='newleadModal7' style={{ border: "none" }}>
+                                                <div className='newleadModal8'>
+                                                    <FaUserCircle color='#000000' size={25} />
+                                                    <p>Dhiraj Rajput</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className='newleadModal10' style={{ textAlign: "end" }}>
+                                            <h6>Create a field</h6>
                                         </div>
                                     </div>
                                 </div>
