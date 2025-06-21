@@ -5591,3 +5591,9 @@
   transform: translateY(-50%);
   margin: 0;
 }
+
+.modalloading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

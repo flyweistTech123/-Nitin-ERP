@@ -89,6 +89,8 @@ const endPoints = {
         `admin/updateRequestType/${id}`,
     updatAdmissionConfirmStatus: (id) =>
         `admin/updateAdmissionConfirmStatus/${id}`,
+    updatlead: (id) =>
+        `admin/updateLead/${id}`,
 
 
 

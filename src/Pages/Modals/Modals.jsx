@@ -65,13 +65,13 @@ import img8 from '../../Img/img72.png'
 import img9 from '../../Img/img108.png'
 import img19 from '../../Img/img83.png'
 import img20 from '../../Img/img82.png'
-import { GiOverhead } from 'react-icons/gi';
 import img21 from '../../Img/img110.png'
 import { getApi, postApi, putApi } from '../../Repository/Api';
 import endPoints from '../../Repository/apiConfig';
 import { toast } from 'react-toastify';
 import { formatDate } from '../../utils/utils';
 
+import loading11 from '../../Img/loading.gif'
 
 export function AddNewFilter(props) {
     return (
@@ -3135,6 +3135,7 @@ export function CRMNeWLead(props) {
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [country, setCountry] = useState("");
+    const [leadSource, setLeadSource] = useState("");
     const [leadActivity, setLeadActivity] = useState("");
     const [description, setDescription] = useState("");
     const [loading, setLoading] = useState(false);
@@ -3186,6 +3187,7 @@ export function CRMNeWLead(props) {
             city,
             state,
             country,
+            leadSource,
             leadActivity,
             description,
         };
@@ -3197,6 +3199,7 @@ export function CRMNeWLead(props) {
             errorMsg: "Failed to creat lead!",
         });
         props.onHide();
+        props.fetchData();
     };
 
 
@@ -3381,7 +3384,11 @@ export function CRMNeWLead(props) {
                                     <div className='newleadModal2'>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Lead Source</label>
-                                            <input type="text" placeholder='Call' />
+                                            <input
+                                                type="text"
+                                                placeholder='Call'
+                                                value={leadSource} onChange={(e) => setLeadSource(e.target.value)}
+                                            />
                                         </div>
                                         <div className='newleadModal3'>
                                             <label htmlFor="">Responsible Person</label>
@@ -3405,7 +3412,9 @@ export function CRMNeWLead(props) {
                                 </div>
 
                                 <div className='newleadModal11'>
-                                    <button onClick={handleSubmit}>Save</button>
+                                    <button onClick={handleSubmit}>
+                                        {loading ? "Saving" : "Save"}
+                                    </button>
                                     <button onClick={props.handleShow6}>Cancel</button>
                                 </div>
                             </div>
@@ -3705,356 +3714,361 @@ export function CRMAdmissionFollowUp(props) {
         </Popover>
     );
 
+
+    
+
     return (
         <>
             <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle }}>
                 <Offcanvas.Body className='Admissionfollowup101'>
-                    <div className='Admissionfollowup'>
-                        <div className='Admissionfollowup1'>
-                            <div className='Admissionfollowup2'>
-                                <h6>New Lead</h6>
-                                <ImLink color='#000000' size={20} />
-                            </div>
-                            <div className='Admissionfollowup3' onClick={props.onHide}>
-                                <MdOutlineCancel color='#000000' size={25} />
-                            </div>
+                    {loading ? (
+                        <div className='modalloading'>
+                            <img src={loading11} alt="" />
                         </div>
-
-
-                        <div className='Admissionfollowup3'>
-                            <div className='Admissionfollowup4'>
-                                <div className='Admissionfollowup5'>
-                                    <p>General</p>
+                    ) : (
+                        <div className='Admissionfollowup'>
+                            <div className='Admissionfollowup1'>
+                                <div className='Admissionfollowup2'>
+                                    <h6>New Lead</h6>
+                                    <ImLink color='#000000' size={20} />
                                 </div>
-                                <div className='Admissionfollowup6'>
-                                    <p onClick={() => props.setModalShow3(true)}>History</p>
+                                <div className='Admissionfollowup3' onClick={props.onHide}>
+                                    <MdOutlineCancel color='#000000' size={25} />
                                 </div>
                             </div>
 
-                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
-                                <div className='Admissionfollowup7'>
-                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
-                                </div>
-                            </OverlayTrigger>
-                        </div>
 
-                        <div className='Admissionfollowup8'>
-                            <div className='newleadModal6'>
-                                <div className='Admissionfollowup10'>
-                                    <div className='Admissionfollowup11'>
-                                        <h6>LEADS INFORMATION</h6>
-                                        <p onClick={props.handleShow1}>Edit</p>
+                            <div className='Admissionfollowup3'>
+                                <div className='Admissionfollowup4'>
+                                    <div className='Admissionfollowup5'>
+                                        <p>General</p>
                                     </div>
-
-                                    <div className='Admissionfollowup12'>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Student Name</label>
-                                            <p>{leadData?.data?.studentName}</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Amount & Currency</label>
-                                            <p>Rs. 5,000</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Email</label>
-                                            <p>LorenEpsom@gmail.com</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Responsible Person</label>
-                                            <p>Loren Epsom</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Contact Number</label>
-                                            <p>9999999999</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">University/ College</label>
-                                            <p>Loren Epsom</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Created Date</label>
-                                            <p>DD/MM/YYYY</p>
-                                        </div>
+                                    <div className='Admissionfollowup6'>
+                                        <p onClick={() => props.setModalShow3(true)}>History</p>
                                     </div>
                                 </div>
 
-                                <div className='Admissionfollowup10'>
-                                    <div className='Admissionfollowup11'>
-                                        <h6>LEADS INFORMATION</h6>
-                                        <p onClick={props.handleShow1}>Edit</p>
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
+                                    <div className='Admissionfollowup7'>
+                                        <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+
+                            <div className='Admissionfollowup8'>
+                                <div className='newleadModal6'>
+                                    <div className='Admissionfollowup10'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>LEADS INFORMATION</h6>
+                                            <p onClick={props.handleShow1}>Edit</p>
+                                        </div>
+
+                                        <div className='Admissionfollowup12'>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Student Name</label>
+                                                <p>{leadData?.data?.studentName}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Amount & Currency</label>
+                                                <p>Rs. {leadData?.data?.amount}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Email</label>
+                                                <p>{leadData?.data?.email}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Responsible Person</label>
+                                                <p>{leadData?.data?.leadSourceResposiblePerson}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Contact Number</label>
+                                                <p>{leadData?.data?.contactNumber}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">University/ College</label>
+                                                <p>{leadData?.data?.universityCollage}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Created Date</label>
+                                                <p>{leadData?.data?.date}</p>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className='Admissionfollowup12'>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Course</label>
-                                            <p>Loren Epsom</p>
+                                    <div className='Admissionfollowup10'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>LEADS INFORMATION</h6>
+                                            <p onClick={props.handleShow1}>Edit</p>
                                         </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">WhatsApp Status</label>
-                                            <p>Rs. 5,000</p>
+
+                                        <div className='Admissionfollowup12'>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Course</label>
+                                                <p>{leadData?.data?.course}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">WhatsApp Status</label>
+                                                <p>{leadData?.data?.whatsappStatus}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Which Form</label>
+                                                <p>{leadData?.data?.whichForm}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">City</label>
+                                                <p>{leadData?.data?.city}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">State</label>
+                                                <p>{leadData?.data?.state}</p>
+                                            </div>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Country</label>
+                                                <p>{leadData?.data?.country}</p>
+                                            </div>
                                         </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Email</label>
-                                            <p>LorenEpsom@gmail.com</p>
+                                    </div>
+
+                                    <div className='newleadModal1'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>MORE</h6>
+                                            <p onClick={props.onHide}>Edit</p>
                                         </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Which Form</label>
-                                            <p>Loren Epsom</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">City</label>
-                                            <p>9999999999</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">State</label>
-                                            <p>Loren Epsom</p>
-                                        </div>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Country</label>
-                                            <p>DD/MM/YYYY</p>
+                                        <div className='newleadModal2'>
+                                            <div className='Admissionfollowup13'>
+                                                <label htmlFor="">Lead Source</label>
+                                                <p>{leadData?.data?.leadSource}</p>
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Responsible Person</label>
+                                                <div className='newleadModal7' style={{ border: "none" }}>
+                                                    <div className='newleadModal8'>
+                                                        <FaUserCircle color='#000000' size={25} />
+                                                        <p>Dhiraj Rajput</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className='newleadModal10' style={{ textAlign: "end" }}>
+                                                <h6>Create a field</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div className='newleadModal1'>
-                                    <div className='Admissionfollowup11'>
-                                        <h6>MORE</h6>
-                                        <p onClick={props.onHide}>Edit</p>
-                                    </div>
-                                    <div className='newleadModal2'>
-                                        <div className='Admissionfollowup13'>
-                                            <label htmlFor="">Lead Source</label>
-                                            <p>Call</p>
+                                <div className='Admissionfollowup15'>
+
+                                    <div className='Admissionfollowup27'>
+                                        <div className='Admissionfollowup28'>
                                         </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Responsible Person</label>
-                                            <div className='newleadModal7' style={{ border: "none" }}>
-                                                <div className='newleadModal8'>
-                                                    <FaUserCircle color='#000000' size={25} />
-                                                    <p>Dhiraj Rajput</p>
+
+                                        <div className='Admissionfollowup29'>
+                                            <div className='Admissionfollowup30'>
+                                                <BiSolidMessageRounded color='#FFFFFF' size={25} />
+                                            </div>
+                                            <div className='Admissionfollowup31'>
+                                                <FiMessageSquare color='#FFFFFF' size={25} />
+                                            </div>
+                                            <div className='Admissionfollowup43'>
+                                                <div className='Admissionfollowup44'>
+                                                    <p>Things to do</p>
+                                                </div>
+                                            </div>
+                                            <div className='Admissionfollowup32'>
+                                                <RiErrorWarningFill color='#FFFFFF' size={25} />
+                                            </div>
+                                            <div className='Admissionfollowup35'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup36'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup37'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup38'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup39'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup40'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+
+                                            <div className='Admissionfollowup41'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+
+                                            <div className='Admissionfollowup42'>
+                                                <IoMdInformation color='#000000' size={20} opacity={0.6} />
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div>
+                                        <div className='Admissionfollowup16'>
+                                            <div className='Admissionfollowup17'>
+                                                <div className='Admissionfollowup18'>
+                                                    <p>Comment</p>
+                                                </div>
+                                                <div className='Admissionfollowup19' >
+                                                    <p onClick={props.handleShow2}>Task</p>
+                                                </div>
+                                                <div className='Admissionfollowup19'>
+                                                    <p onClick={props.handleShow3}>SMS</p>
+                                                </div>
+                                                <div className='Admissionfollowup19'>
+                                                    <p onClick={props.handleShow4}>E-mail</p>
+                                                </div>
+                                                <div className='Admissionfollowup19'>
+                                                    <p onClick={props.handleShow5}>What’sapp</p>
+                                                </div>
+                                            </div>
+                                            <input type="text" placeholder='Leave a Comment' />
+                                        </div>
+
+                                        <div className='Admissionfollowup20'>
+                                            <PiUserCircleFill color='#000000' size={20} />
+                                            <p>Invite to chat</p>
+                                        </div>
+
+                                        <div className='Admissionfollowup20'>
+                                            <AiFillPlusCircle color='#52FF00' size={20} />
+                                            <p>Add a new activity</p>
+                                        </div>
+
+
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                        <div className='newleadModal10' style={{ textAlign: "end" }}>
-                                            <h6>Create a field</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className='Admissionfollowup15'>
-
-                                <div className='Admissionfollowup27'>
-                                    <div className='Admissionfollowup28'>
-                                    </div>
-
-                                    <div className='Admissionfollowup29'>
-                                        <div className='Admissionfollowup30'>
-                                            <BiSolidMessageRounded color='#FFFFFF' size={25} />
-                                        </div>
-                                        <div className='Admissionfollowup31'>
-                                            <FiMessageSquare color='#FFFFFF' size={25} />
-                                        </div>
-                                        <div className='Admissionfollowup43'>
-                                            <div className='Admissionfollowup44'>
-                                                <p>Things to do</p>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className='Admissionfollowup32'>
-                                            <RiErrorWarningFill color='#FFFFFF' size={25} />
-                                        </div>
-                                        <div className='Admissionfollowup35'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup36'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup37'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup38'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup39'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup40'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                        <div className='Admissionfollowup41'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                        <div className='Admissionfollowup42'>
-                                            <IoMdInformation color='#000000' size={20} opacity={0.6} />
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                    </div>
-                                </div>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-
-                                <div>
-                                    <div className='Admissionfollowup16'>
-                                        <div className='Admissionfollowup17'>
-                                            <div className='Admissionfollowup18'>
-                                                <p>Comment</p>
-                                            </div>
-                                            <div className='Admissionfollowup19' >
-                                                <p onClick={props.handleShow2}>Task</p>
-                                            </div>
-                                            <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleShow3}>SMS</p>
-                                            </div>
-                                            <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleShow4}>E-mail</p>
-                                            </div>
-                                            <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleShow5}>What’sapp</p>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <input type="text" placeholder='Leave a Comment' />
-                                    </div>
-
-                                    <div className='Admissionfollowup20'>
-                                        <PiUserCircleFill color='#000000' size={20} />
-                                        <p>Invite to chat</p>
-                                    </div>
-
-                                    <div className='Admissionfollowup20'>
-                                        <AiFillPlusCircle color='#52FF00' size={20} />
-                                        <p>Add a new activity</p>
-                                    </div>
-
-
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
+                                        <div className='Admissionfollowup25'>
+                                            <p>PDC Created  <span>4:31 PM</span></p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
                                             </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
+                                            <div className='Admissionfollowup26'>
+                                                <p>abc</p>
+                                                <p>Source: call</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup25'>
-                                        <p>PDC Created  <span>4:31 PM</span></p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-                                        <div className='Admissionfollowup26'>
-                                            <p>abc</p>
-                                            <p>Source: call</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                 </Offcanvas.Body>
             </Offcanvas>
         </>
@@ -7091,6 +7105,68 @@ export function AdmissionFollowUp(props) {
 export function NeWLead(props) {
     const [widthStyle, setWidthStyle] = useState('82%');
     const [leftStyle, setLeftStyle] = useState('18.1%');
+    const [leadData, setLeadData] = useState(null);
+
+    const [newField, setNewField] = useState("");
+    const [studentName, setStudentName] = useState("");
+    const [amount, setAmount] = useState();
+    const [currencyType, setCurrencyType] = useState("");
+    const [email, setEmail] = useState("");
+    const [contactNumber, setContactNumber] = useState("");
+    const [universityCollage, setUniversityCollage] = useState("");
+    const [date, setDate] = useState("");
+    const [phone, setPhone] = useState("");
+    const [course, setCourse] = useState("");
+    const [whatsappStatus, setWhatsappStatus] = useState(true);
+    const [whichForm, setWhichForm] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [country, setCountry] = useState("");
+    const [leadSource, setLeadSource] = useState("");
+    const [leadActivity, setLeadActivity] = useState("");
+    const [description, setDescription] = useState("");
+    const [loading, setLoading] = useState(false);
+    const [loading1, setLoading1] = useState(false);
+
+
+    const fetchData = useCallback(async () => {
+        setLoading(true);
+
+        await getApi(endPoints.getallleadsbyid(props.id), {
+            setResponse: (res) => {
+                setLeadData(res.data);
+                if (res.data) {
+                    setNewField(res?.data?.newField || "");
+                    setStudentName(res?.data?.studentName || "");
+                    setAmount(res?.data?.amount || "");
+                    setCurrencyType(res.currencyType || "");
+                    setEmail(res?.data?.email || "");
+                    setContactNumber(res?.data?.contactNumber || "");
+                    setUniversityCollage(res?.data?.universityCollage || "");
+                    setDate(res?.data?.date || "");
+                    setPhone(res?.data?.phone || "");
+                    setCourse(res?.data?.course || "");
+                    setWhatsappStatus(res?.data?.whatsappStatus ?? true); // in case it's boolean
+                    setWhichForm(res?.data?.whichForm || "");
+                    setCity(res?.data?.city || "");
+                    setState(res?.data?.state || "");
+                    setCountry(res?.data?.country || "");
+                    setLeadSource(res?.data?.leadSource || "");
+                    setLeadActivity(res?.data?.leadActivity || "");
+                    setDescription(res?.data?.description || "");
+                }
+            },
+            setLoading: setLoading,
+            errorMsg: "Failed to fetch data!",
+        });
+    }, [props.id]);
+
+    useEffect(() => {
+        if (props.id) {
+            fetchData();
+        }
+    }, [props.id, fetchData]);
+
 
 
     useEffect(() => {
@@ -7115,9 +7191,44 @@ export function NeWLead(props) {
         };
     }, []);
 
+
     const handleModal = () => {
         props.setModalShow8(true);
     };
+
+    const handleSubmit = async () => {
+
+        const payload = {
+            newField: "newfielad",
+            studentName,
+            amount,
+            currencyType: "rupee",
+            email,
+            contactNumber,
+            universityCollage,
+            date,
+            phone,
+            course,
+            whatsappStatus,
+            whichForm,
+            city,
+            state,
+            country,
+            leadSource,
+            leadActivity,
+            description,
+        };
+
+
+        await putApi(endPoints.updatlead(props.id), payload, {
+            setLoading: setLoading1,
+            successMsg: "Lead updated successfully!",
+            errorMsg: "Failed to update lead!",
+        });
+        props.onHide();
+        props.fetchData();
+    };
+
 
 
     const popover2 = (
@@ -7136,376 +7247,431 @@ export function NeWLead(props) {
         </Popover>
     );
 
+
     return (
         <>
-            <Offcanvas show={props.show} onHide={props.onHide} placement="top" style={{ width: widthStyle, height: "100%", top: '10%', left: leftStyle }}>
+            <Offcanvas show={props.show} onHide={props.onHide} placement="end" style={{ width: widthStyle, height: "100%", left: leftStyle }}>
                 <Offcanvas.Body className='Admissionfollowup101'>
-                    <div className='Admissionfollowup'>
-                        <div className='Admissionfollowup1'>
-                            <div className='Admissionfollowup2'>
-                                <h6>New Lead</h6>
-                                <ImLink color='#000000' size={20} />
-                            </div>
-                            <div className='Admissionfollowup3' onClick={props.onHide}>
-                                <MdOutlineCancel color='#000000' size={25} />
-                            </div>
+                    {loading ? (
+                        <div className='modalloading'>
+                            <img src={loading11} alt="" />
                         </div>
-
-
-                        <div className='Admissionfollowup3'>
-                            <div className='Admissionfollowup4'>
-                                <div className='Admissionfollowup5'>
-                                    <p>General</p>
+                    ) : (
+                        <div className='Admissionfollowup'>
+                            <div className='Admissionfollowup1'>
+                                <div className='Admissionfollowup2'>
+                                    <h6>New Lead</h6>
+                                    <ImLink color='#000000' size={20} />
                                 </div>
-                                <div className='Admissionfollowup6'>
-                                    <p onClick={() => props.setModalShow3(true)}>History</p>
+                                <div className='Admissionfollowup3' onClick={props.onHide}>
+                                    <MdOutlineCancel color='#000000' size={25} />
                                 </div>
                             </div>
-                            <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
-                                <div className='Admissionfollowup7'>
-                                    <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
-                                </div>
-                            </OverlayTrigger>
-                        </div>
 
-                        <div className='Admissionfollowup8'>
-                            <div className='newleadModal6'>
-                                <div className='newleadModal1'>
-                                    <div className='Admissionfollowup11'>
-                                        <h6>LEADS INFORMATION</h6>
-                                        <p onClick={props.onHide}>Cancel</p>
+
+                            <div className='Admissionfollowup3'>
+                                <div className='Admissionfollowup4'>
+                                    <div className='Admissionfollowup5'>
+                                        <p>General</p>
+                                    </div>
+                                    <div className='Admissionfollowup6'>
+                                        <p onClick={() => props.setModalShow3(true)}>History</p>
+                                    </div>
+                                </div>
+
+                                <OverlayTrigger trigger="click" placement="bottom" overlay={popover2}>
+                                    <div className='Admissionfollowup7'>
+                                        <button>Forms <IoIosArrowDown color='#FFFFFF' size={20} /></button>
+                                    </div>
+                                </OverlayTrigger>
+                            </div>
+
+                            <div className='Admissionfollowup8'>
+                                <div className='newleadModal6'>
+                                    <div className='newleadModal1'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>LEADS INFORMATION</h6>
+                                            <p onClick={props.onHide}>Cancel</p>
+                                        </div>
+
+                                        <div className='newleadModal2'>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Student Name</label>
+                                                <input
+                                                    type="text"
+                                                    value={studentName}
+                                                    onChange={(e) => setStudentName(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Amount & Currency</label>
+                                                <div className='newleadModal4'>
+                                                    <input
+                                                        type="text"
+                                                        value={amount}
+                                                        onChange={(e) => setAmount(e.target.value)}
+                                                    />
+                                                    <div className='newleadModal5'>
+                                                        <p>Indian Rupee</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Email</label>
+                                                <input
+                                                    type="email"
+                                                    value={email}
+                                                    onChange={(e) => setEmail(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Contact Number</label>
+                                                <input
+                                                    type="text"
+                                                    value={contactNumber}
+                                                    onChange={(e) => setContactNumber(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">University/ College</label>
+                                                <input
+                                                    type="text"
+                                                    value={universityCollage}
+                                                    onChange={(e) => setUniversityCollage(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Created Date</label>
+                                                <input
+                                                    type="date"
+                                                    value={date}
+                                                    onChange={(e) => setDate(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Phone</label>
+                                                <input
+                                                    type="text"
+                                                    value={phone}
+                                                    onChange={(e) => setPhone(e.target.value)}
+                                                />
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div className='newleadModal1'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>LEADS INFORMATION</h6>
+                                            <p onClick={props.onHide}>Cancel</p>
+                                        </div>
+                                        <div className='newleadModal2'>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Course</label>
+                                                <select name="" id="" value={course} onChange={(e) => setCourse(e.target.value)}>
+                                                    <option value="">Not Selected</option>
+                                                    <option value="Computer Science">Computer Science</option>
+                                                </select>
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">WhatsApp Status</label>
+                                                <select name="" id="" value={whatsappStatus} onChange={(e) => setWhatsappStatus(e.target.value)}>
+                                                    <option value="">Not Selected</option>
+                                                    <option value="true">true</option>
+                                                </select>
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Which Form</label>
+                                                <input
+                                                    type="text"
+                                                    value={whichForm} onChange={(e) => setWhichForm(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">City</label>
+                                                <input
+                                                    type="text"
+                                                    value={city} onChange={(e) => setCity(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">State</label>
+                                                <input
+                                                    type="text"
+                                                    value={state} onChange={(e) => setState(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Country</label>
+                                                <input
+                                                    type="text"
+                                                    value={country} onChange={(e) => setCountry(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='newleadModal1'>
+                                        <div className='Admissionfollowup11'>
+                                            <h6>MORE</h6>
+                                            <p onClick={props.onHide}>Cancel</p>
+                                        </div>
+                                        <div className='newleadModal2'>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Lead Source</label>
+                                                <input
+                                                    type="text"
+                                                    placeholder='Call'
+                                                    value={leadSource} onChange={(e) => setLeadSource(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className='newleadModal3'>
+                                                <label htmlFor="">Responsible Person</label>
+                                                <div className='newleadModal7'>
+                                                    <div className='newleadModal8'>
+                                                        <FaUserCircle color='#000000' size={25} />
+                                                        <p>Dhiraj Rajput</p>
+                                                    </div>
+                                                    <div className='newleadModal9'>
+                                                        <p>Change</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div className='newleadModal10'>
+                                                <p>Observers</p>
+
+                                                <h6>+Add Participant</h6>
+                                            </div>
+                                        </div>
                                     </div>
 
-                                    <div className='newleadModal2'>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Student Name</label>
-                                            <input type="text" />
+                                    <div className='newleadModal11'>
+                                        <button onClick={handleSubmit}>
+                                            {loading1 ? "Saving" : "Save"}
+                                        </button>
+                                        <button onClick={props.handleShow6}>Cancel</button>
+                                    </div>
+                                </div>
+
+
+
+                                <div className='Admissionfollowup15'>
+
+                                    <div className='Admissionfollowup27'>
+                                        <div className='Admissionfollowup28'>
                                         </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Amount & Currency</label>
-                                            <div className='newleadModal4'>
-                                                <input type="text" />
-                                                <div className='newleadModal5'>
-                                                    <p>Indian Rupee</p>
+
+                                        <div className='Admissionfollowup29'>
+                                            <div className='Admissionfollowup30'>
+                                                <BiSolidMessageRounded color='#FFFFFF' size={25} />
+                                            </div>
+                                            <div className='Admissionfollowup31'>
+                                                <FiMessageSquare color='#FFFFFF' size={25} />
+                                            </div>
+                                            <div className='Admissionfollowup43'>
+                                                <div className='Admissionfollowup44'>
+                                                    <p>Things to do</p>
+                                                </div>
+                                            </div>
+                                            <div className='Admissionfollowup32'>
+                                                <RiErrorWarningFill color='#FFFFFF' size={25} />
+                                            </div>
+                                            <div className='Admissionfollowup35'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup36'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup37'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup38'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup39'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+                                            <div className='Admissionfollowup40'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+
+                                            <div className='Admissionfollowup41'>
+                                                <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            </div>
+
+                                            <div className='Admissionfollowup42'>
+                                                <IoMdInformation color='#000000' size={20} opacity={0.6} />
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+
+                                    <div>
+                                        <div className='Admissionfollowup16'>
+                                            <div className='Admissionfollowup17'>
+                                                <div className='Admissionfollowup18'>
+                                                    <p>Comment</p>
+                                                </div>
+                                                <div className='Admissionfollowup19' >
+                                                    <p onClick={props.handleShow2}>Task</p>
+                                                </div>
+                                                <div className='Admissionfollowup19'>
+                                                    <p onClick={props.handleShow3}>SMS</p>
+                                                </div>
+                                                <div className='Admissionfollowup19'>
+                                                    <p onClick={props.handleShow4}>E-mail</p>
+                                                </div>
+                                                <div className='Admissionfollowup19'>
+                                                    <p onClick={props.handleShow5}>What’sapp</p>
+                                                </div>
+                                            </div>
+                                            <input type="text" placeholder='Leave a Comment' />
+                                        </div>
+
+                                        <div className='Admissionfollowup20'>
+                                            <PiUserCircleFill color='#000000' size={20} />
+                                            <p>Invite to chat</p>
+                                        </div>
+
+                                        <div className='Admissionfollowup20'>
+                                            <AiFillPlusCircle color='#52FF00' size={20} />
+                                            <p>Add a new activity</p>
+                                        </div>
+
+
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
+
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Email</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Contact Number</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">University/ College</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Phone</label>
-                                            <input type="text" />
-                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                    </div>
-                                </div>
-                                <div className='newleadModal1'>
-                                    <div className='Admissionfollowup11'>
-                                        <h6>LEADS INFORMATION</h6>
-                                        <p onClick={props.onHide}>Cancel</p>
-                                    </div>
-                                    <div className='newleadModal2'>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Course</label>
-                                            <select name="" id="">
-                                                <option value="">Not Selected</option>
-                                            </select>
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">WhatsApp Status</label>
-                                            <select name="" id="">
-                                                <option value="">Not Selected</option>
-                                            </select>
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Email</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Which Form</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">City</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">State</label>
-                                            <input type="text" />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Country</label>
-                                            <input type="text" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='newleadModal1'>
-                                    <div className='Admissionfollowup11'>
-                                        <h6>MORE</h6>
-                                        <p onClick={props.onHide}>Cancel</p>
-                                    </div>
-                                    <div className='newleadModal2'>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Lead Source</label>
-                                            <input type="text" placeholder='Call' />
-                                        </div>
-                                        <div className='newleadModal3'>
-                                            <label htmlFor="">Lead Source</label>
-                                            <div className='newleadModal7'>
-                                                <div className='newleadModal8'>
-                                                    <FaUserCircle color='#000000' size={25} />
-                                                    <p>Dhiraj Rajput</p>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
                                                 </div>
-                                                <div className='newleadModal9'>
-                                                    <p>Change</p>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
                                                 </div>
                                             </div>
                                         </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                        <div className='newleadModal10'>
-                                            <p>Observers</p>
-
-                                            <h6>+Add Participant</h6>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className='newleadModal11'>
-                                    <button onClick={props.onHide}>Save</button>
-                                    <button onClick={props.onHide}>Cancel</button>
-                                </div>
-                            </div>
-
-
-
-                            <div className='Admissionfollowup15'>
-
-                                <div className='Admissionfollowup27'>
-                                    <div className='Admissionfollowup28'>
-                                    </div>
-
-                                    <div className='Admissionfollowup29'>
-                                        <div className='Admissionfollowup30'>
-                                            <BiSolidMessageRounded color='#FFFFFF' size={25} />
-                                        </div>
-                                        <div className='Admissionfollowup31'>
-                                            <FiMessageSquare color='#FFFFFF' size={25} />
-                                        </div>
-                                        <div className='Admissionfollowup43'>
-                                            <div className='Admissionfollowup44'>
-                                                <p>Things to do</p>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <div className='Admissionfollowup32'>
-                                            <RiErrorWarningFill color='#FFFFFF' size={25} />
-                                        </div>
-                                        <div className='Admissionfollowup35'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup36'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup37'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup38'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup39'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
-                                        <div className='Admissionfollowup40'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
-                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                        <div className='Admissionfollowup41'>
-                                            <PiTagSimpleFill color='#000000' size={20} opacity={0.6} />
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                        <div className='Admissionfollowup42'>
-                                            <IoMdInformation color='#000000' size={20} opacity={0.6} />
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
                                         </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-                                    </div>
-                                </div>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='Admissionfollowup21'>
+                                            <p>Status Changed  4:30 pm</p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
+                                            </div>
 
-
-
-                                <div>
-                                    <div className='Admissionfollowup16'>
-                                        <div className='Admissionfollowup17'>
-                                            <div className='Admissionfollowup18'>
-                                                <p>Comment</p>
-                                            </div>
-                                            <div className='Admissionfollowup19' >
-                                                <p onClick={props.handleShow2}>Task</p>
-                                            </div>
-                                            <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleShow3}>SMS</p>
-                                            </div>
-                                            <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleShow4}>E-mail</p>
-                                            </div>
-                                            <div className='Admissionfollowup19'>
-                                                <p onClick={props.handleShow5}>What’sapp</p>
+                                            <div className='Admissionfollowup23'>
+                                                <div className='Admissionfollowup24'>
+                                                    <p>Process for Payment</p>
+                                                </div>
+                                                <IoIosArrowRoundForward color='#000000' size={25} />
+                                                <div className='Admissionfollowup24'>
+                                                    <p>PDC in Progress</p>
+                                                </div>
                                             </div>
                                         </div>
-                                        <input type="text" placeholder='Leave a Comment' />
-                                    </div>
-
-                                    <div className='Admissionfollowup20'>
-                                        <PiUserCircleFill color='#000000' size={20} />
-                                        <p>Invite to chat</p>
-                                    </div>
-
-                                    <div className='Admissionfollowup20'>
-                                        <AiFillPlusCircle color='#52FF00' size={20} />
-                                        <p>Add a new activity</p>
-                                    </div>
-
-
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
+                                        <div className='Admissionfollowup25'>
+                                            <p>PDC Created  <span>4:31 PM</span></p>
+                                            <div className='Admissionfollowup22'>
+                                                <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
                                             </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
+                                            <div className='Admissionfollowup26'>
+                                                <p>abc</p>
+                                                <p>Source: call</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup21'>
-                                        <p>Status Changed  4:30 pm</p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-
-                                        <div className='Admissionfollowup23'>
-                                            <div className='Admissionfollowup24'>
-                                                <p>Process for Payment</p>
-                                            </div>
-                                            <IoIosArrowRoundForward color='#000000' size={25} />
-                                            <div className='Admissionfollowup24'>
-                                                <p>PDC in Progress</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className='Admissionfollowup25'>
-                                        <p>PDC Created  <span>4:31 PM</span></p>
-                                        <div className='Admissionfollowup22'>
-                                            <PiUserCircleFill color='#000000' size={25} opacity={0.5} />
-                                        </div>
-                                        <div className='Admissionfollowup26'>
-                                            <p>abc</p>
-                                            <p>Source: call</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    )}
                 </Offcanvas.Body>
             </Offcanvas>
         </>
     );
 }
-
 
 
 // History Modal for admission page

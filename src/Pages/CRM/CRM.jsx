@@ -167,7 +167,11 @@ const CRM = () => {
     const [show1, setShow1] = useState(false);
 
     const handleClose1 = () => setShow1(false);
-    const handleShow1 = () => setShow1(true);
+    const handleShow1 = () => {
+        setShow1(true);
+        setShow6(false)
+    }
+
 
     // History Modal
 
@@ -220,9 +224,12 @@ const CRM = () => {
     // Whatsapp Modal
     const [show6, setShow6] = useState(false);
 
-    const handleClose6 = () => setShow6(false);
+    const handleClose6 = () => {
+        setShow6(false);
+        setSelectedItem('');
+    }
 
-    const handleShow6 = (id)=>{
+    const handleShow6 = (id) => {
         setSelectedItem(id)
         setShow6(true);
     }
@@ -277,6 +284,7 @@ const CRM = () => {
                 handleShow5={handleShow5}
                 handleShow6={handleShow6}
                 setModalShow8={setModalShow}
+                fetchData={fetchData}
                 title={"Admission"}
             />
             <CRMAdmissionFollowUp
@@ -302,6 +310,8 @@ const CRM = () => {
                 handleShow4={handleShow4}
                 handleShow5={handleShow5}
                 handleShow8={setModalShow}
+                fetchData={fetchData}
+                id={selectedItem}
             />
             <History
                 show={modalShow5}
@@ -453,7 +463,7 @@ const CRM = () => {
                                             /></td>
                                             <td></td>
                                             <td>
-                                                <p className='admission202'><button onClick={()=>handleShow6(data?._id)}><MdEdit size={20} /> Edit</button></p>
+                                                <p className='admission202'><button onClick={() => handleShow6(data?._id)}><MdEdit size={20} /> Edit</button></p>
                                                 {data.studentName}
                                             </td>
                                             <td>{data.email}</td>
